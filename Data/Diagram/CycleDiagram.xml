@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraSerializer version="1.0">
+  <Items value="1">
+    <Item1 ItemKind="DiagramRoot" SelectedStencils="BasicShapes, BasicFlowchartShapes" PageSize="800,600">
+      <Children value="11">
+        <Item1 Shape="BasicShapes.Ellipse" Content="PLAN&#xD;&#xA;&amp;&#xD;&#xA;DESIGN" ItemKind="DiagramShape" Position="355,60" Size="110,110" FontSize="14" />
+        <Item2 Shape="BasicShapes.Ellipse" Content="VISITOR&#xD;&#xA;ANALYSIS " ItemKind="DiagramShape" ThemeStyleId="Variant2" Position="580,200" Size="110,110" FontSize="14" />
+        <Item3 Shape="BasicShapes.Ellipse" Content="MAINTAIN QUALITY" ItemKind="DiagramShape" ThemeStyleId="ShapeId.Balanced5" Position="130,200" Size="110,110" FontSize="14" />
+        <Item4 Shape="BasicShapes.Ellipse" Content="SEO" ItemKind="DiagramShape" ThemeStyleId="Variant4" Position="230,430" Size="110,110" FontSize="14" />
+        <Item5 Shape="BasicShapes.Ellipse" Content="PROMOTE" ItemKind="DiagramShape" ThemeStyleId="Variant3" Position="484,430" Size="110,110" FontSize="14" />
+        <Item6 Shape="BasicShapes.Rectangle" Content="INTERNET MARKETING PROCESS" ItemKind="DiagramShape" Position="330,250" Size="160,90" FontSize="14" />
+        <Item7 Shape="ArrowShapes.SimpleArrow" ItemKind="DiagramShape" Angle="150" Position="490,140" Size="100,50" />
+        <Item8 Angle="60" Shape="ArrowShapes.SimpleArrow" ItemKind="DiagramShape" Position="549,348" Size="104,50" ThemeStyleId="Variant2" />
+        <Item9 Angle="-60" Shape="ArrowShapes.SimpleArrow" ItemKind="DiagramShape" Position="170,340" Size="100,50" ThemeStyleId="Variant4" />
+        <Item10 Angle="-150" Shape="ArrowShapes.SimpleArrow" ItemKind="DiagramShape" Position="240,140" Size="100,50" ThemeStyleId="ShapeId.Balanced5" />
+        <Item11 Shape="ArrowShapes.SimpleArrow" ItemKind="DiagramShape" ThemeStyleId="Variant3" Position="355,460" Size="110,50" />
+      </Children>
+    </Item1>
+  </Items>
+</XtraSerializer>

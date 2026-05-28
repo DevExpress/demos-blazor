@@ -1,0 +1,104 @@
+﻿@page "/Grid/Grouping/IntervalGrouping"
+@layout DataProviderAccessArea<INwindDataProvider>
+
+<DemoPageSectionComponent Id="Grid-Grouping-IntervalGrouping" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <div class="grid-container">
+            <DxGrid @ref="Grid"
+                    Data="@Data"
+                    ShowGroupPanel="true"
+                    ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                    TextWrapEnabled="false"
+                    SizeMode="Params.SizeMode"
+                    VirtualScrollingEnabled="true"
+                    AutoExpandAllGroupRows="true">
+                <Columns>
+                    <DxGridDataColumn FieldName="ProductName" MinWidth="100" />
+                    <DxGridDataColumn FieldName="CategoryName" MinWidth="100" />
+                    <DxGridDataColumn FieldName="Country" Width="10%" />
+                    <DxGridDataColumn FieldName="OrderDate" GroupIndex="0" GroupInterval="GridColumnGroupInterval.DateYear" MinWidth="70" Width="10%" />
+                    <DxGridDataColumn FieldName="UnitPrice" DisplayFormat="c" Width="10%" />
+                    <DxGridDataColumn FieldName="Quantity" Width="10%" />
+                    <DxGridDataColumn FieldName="Total"
+                                      UnboundType="GridUnboundColumnType.Decimal"
+                                      UnboundExpression = "[UnitPrice] * [Quantity]"
+                                      DisplayFormat="c"
+                                      MinWidth="100"
+                                      Width="15%" />
+                </Columns>
+                <TotalSummary>
+                    <DxGridSummaryItem SummaryType="GridSummaryItemType.Count" FieldName="ProductName" />
+                    <DxGridSummaryItem SummaryType="GridSummaryItemType.Sum" FieldName="Total" />
+                </TotalSummary>
+                <GroupSummary>
+                    <DxGridSummaryItem SummaryType="GridSummaryItemType.Count" FieldName="Country" />
+                    <DxGridSummaryItem SummaryType="GridSummaryItemType.Sum" FieldName="Quantity" />
+                    <DxGridSummaryItem SummaryType="GridSummaryItemType.Sum" FieldName="Total" />
+                </GroupSummary>
+                <ToolbarTemplate>
+                    <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Contained">
+                        <Items>
+                            <DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
+                                <Template Context="toolbar_item_context">
+                                    <div class="d-flex flex-row align-items-center h-100">
+                                        <label class="me-2" for="dateGroupIntervalInput">Date Group Interval:</label>
+                                        <DxComboBox Data="@GroupIntervals.Keys" Value="@CurrentGroupIntervalKey"
+                                                    ValueChanged="@((string value) => ChangeGrouping(value))" InputId="dateGroupIntervalInput" />
+                                    </div>
+                                </Template>
+                            </DxToolbarItem>
+                        </Items>
+                    </DxToolbar>
+                </ToolbarTemplate>
+            </DxGrid>
+        </div>
+
+        @code {
+            object Data { get; set; }
+
+            Dictionary<string, GridColumnGroupInterval> GroupIntervals { get; } = new Dictionary<string, GridColumnGroupInterval> {
+                { "Year", GridColumnGroupInterval.DateYear },
+                { "Month", GridColumnGroupInterval.DateMonth },
+                { "Date", GridColumnGroupInterval.Date }
+            };
+            string CurrentGroupIntervalKey { get; set; } = "Year";
+            IGrid Grid { get; set; }
+
+            protected override async Task OnInitializedAsync() {
+                var invoices = await NwindDataService.GetInvoicesAsync();
+                var products = await NwindDataService.GetProductsAsync();
+                var categories = await NwindDataService.GetCategoriesAsync();
+                Data = invoices.Join(products, i => i.ProductId, p => p.ProductId, (i, p) => {
+                    return new {
+                        ProductName = i.ProductName,
+                        CategoryId = p.CategoryId,
+                        Country = i.Country,
+                        OrderDate = i.OrderDate,
+                        UnitPrice = i.UnitPrice,
+                        Quantity = i.Quantity
+                    };
+                }).Join(categories, i => i.CategoryId, c => c.CategoryId, (i, c) => {
+                    return new {
+                        ProductName = i.ProductName,
+                        CategoryName = c.CategoryName,
+                        Country = i.Country,
+                        OrderDate = i.OrderDate,
+                        UnitPrice = i.UnitPrice,
+                        Quantity = i.Quantity
+                    };
+                });
+            }
+            // This method demonstrates how to group Grid data in code.
+            // In this demo, this method is called when the 'Date Group Interval' option value changes.
+            protected void ChangeGrouping(string key) {
+                CurrentGroupIntervalKey = key;
+                Grid.BeginUpdate();
+                var column = Grid.GetDataColumns().First(c => c.FieldName == "OrderDate");
+                column.GroupInterval = GroupIntervals[key];
+                Grid.EndUpdate();
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

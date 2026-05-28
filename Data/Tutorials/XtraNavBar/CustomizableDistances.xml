@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="H:\Work\XML Schemes\module-new.xsd">
+	<controls>
+		<controlentry>
+			<control>
+				<name>distanceChanger1</name>
+				<windowcaption>Bar Group Interval</windowcaption>
+				<description>If enabled, specifies the distance between groups provided that any of the explorer views is applied.</description>
+				<memberlist>ExplorerBarGroupInterval</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>distanceChanger2</name>
+				<windowcaption>Bar Group Outer Indent</windowcaption>
+				<description>If enabled, specifies the horizontal indent between groups and navbar's right and left edges provided that any of the explorer views is applied.</description>
+				<memberlist>ExplorerBarGroupOuterIndent</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>distanceChanger3</name>
+				<windowcaption>Link Interval</windowcaption>
+				<description>If enabled, specifies the distance between links in a group.</description>
+				<memberlist>LinkInterval</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+	</controls>
+</totalinfo>

@@ -1,0 +1,17 @@
+﻿@page "/RichEditSimpleView"
+@using System.IO;
+
+<DemoPageSectionComponent Id="RichEdit-SimpleView">
+    @inject IDocumentProvider DocumentProvider
+
+    <DxRichEdit @bind-DocumentContent="@DocumentContent" ViewType="ViewType.Simple" BarMode=BarMode.Toolbar CssClass="w-100 ch-720" />
+
+    @code {
+        byte[] DocumentContent;
+
+        protected override async Task OnInitializedAsync() {
+            DocumentContent = await DocumentProvider.GetDocumentAsync("AlbertEinstein.docx");
+            await base.OnInitializedAsync();
+        }
+    }
+</DemoPageSectionComponent>

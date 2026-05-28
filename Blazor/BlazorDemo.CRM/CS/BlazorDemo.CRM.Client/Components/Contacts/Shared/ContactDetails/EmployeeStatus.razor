@@ -1,0 +1,15 @@
+﻿@namespace BlazorDemo.CRM.Components.ContactDetails
+
+<span class="@(string.Join(' ', "status", GetStatusClass()))">@Value?.ToString()</span>
+
+@code {
+    [Parameter]
+    public string? Value { get; set; }
+
+    string GetStatusClass() => Value switch {
+        "Salaried" => "status-salaried",
+        "Commission" => "status-commission",
+        "Terminated" => "status-terminated",
+        _ => string.Empty
+    };
+}

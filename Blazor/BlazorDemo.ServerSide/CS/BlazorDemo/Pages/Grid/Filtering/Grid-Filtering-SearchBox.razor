@@ -1,0 +1,66 @@
+﻿@page "/Grid/Filtering/SearchBox"
+@layout DataProviderAccessArea<INwindDataProvider>
+
+<DemoPageSectionComponent Id="Grid-Filtering-SearchBox" VerticalAlignment="VerticalAlignment.Top" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <div class="grid-container">
+            <DxGrid Data="@Data"
+                    ShowSearchBox="true"
+                    SearchText="ana tr"
+                    SearchTextParseMode="CurrentSearchTextParseMode"
+                    ShowGroupPanel="true"
+                    AutoExpandAllGroupRows="true"
+                    ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                    TextWrapEnabled="false"
+                    SizeMode="Params.SizeMode">
+                <Columns>
+                    <DxGridDataColumn FieldName="ContactName" SortIndex="0" />
+                    <DxGridDataColumn FieldName="CompanyName" />
+                    <DxGridDataColumn FieldName="Country" GroupIndex="0" />
+                    <DxGridDataColumn FieldName="City" />
+                </Columns>
+                <ToolbarTemplate>
+                    <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Contained">
+                        <Items>
+                            <DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
+                                <Template Context="toolbar_item_context">
+                                    <div class="d-flex flex-row align-items-center h-100">
+                                        <label class="me-2" for="findRowsContainingInput">Find Rows Containing:</label>
+                                        <DxComboBox Data="@SearchTextParseModes.Keys"
+                                                    ValueChanged="@((string value) => ChangeSearchMode(value))"
+                                                    Value="@CurrentSearchTextParseModeDisplayText" InputId="findRowsContainingInput" />
+                                    </div>
+                                </Template>
+                            </DxToolbarItem>
+                        </Items>
+                    </DxToolbar>
+                </ToolbarTemplate>
+            </DxGrid>
+        </div>
+
+        @code {
+            IEnumerable<object> Data { get; set; }
+
+            Dictionary<string, GridSearchTextParseMode> SearchTextParseModes { get; } = new Dictionary<string, GridSearchTextParseMode>{
+                { "All words", GridSearchTextParseMode.GroupWordsByAnd },
+                { "Any word", GridSearchTextParseMode.GroupWordsByOr },
+                { "Exact match", GridSearchTextParseMode.ExactMatch }
+            };
+
+            void ChangeSearchMode(string key)
+            {
+                CurrentSearchTextParseModeDisplayText = key;
+                CurrentSearchTextParseMode = SearchTextParseModes[key];
+            }
+
+            string CurrentSearchTextParseModeDisplayText { get; set; } = "All words";
+            GridSearchTextParseMode CurrentSearchTextParseMode { get; set; } = GridSearchTextParseMode.GroupWordsByAnd;
+
+            protected override async Task OnInitializedAsync() {
+                Data = await NwindDataService.GetCustomersAsync();
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

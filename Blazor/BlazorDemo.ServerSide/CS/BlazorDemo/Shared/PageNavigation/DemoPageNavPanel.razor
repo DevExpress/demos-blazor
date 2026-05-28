@@ -1,0 +1,78 @@
+﻿@implements IDisposable
+@inject DemoConfiguration Configuration
+@inject NavigationManager NavigationManager
+
+<DemoScriptLoader @ref=@navPanelHelper Src="_content/BlazorDemo/lib/page-nav.js">
+</DemoScriptLoader>
+
+@if(Visible) {
+    <div class="demo-page-nav">
+        <DemoPageNavHeader Title="@demoPageSections.First().Title" @bind-StateCssClass="@HeaderStateCssClass"></DemoPageNavHeader>
+        <div class="nav-pills">
+            @foreach(var (demoPageSection, i) in demoPageSections.Select((s, index) => (s, index))) {
+                if(DemoRenderUtils.PreventRenderDemoSection(NavigationManager.Uri, demoPageSection.UniqueId))
+                    continue;
+                    
+                <DemoPageNavPanelItem @key="@($"{demoPage.Url}|{i}")"
+                                        Text="@demoPageSection.Title"
+                                        Url="@($"{demoPage.Url}#{demoPageSection.Id}")"
+                                        CssClass="@GetItemCssClass(i)">
+                    <Badge>@GetItemBadgeText(demoPageSection)</Badge>
+                </DemoPageNavPanelItem>
+            }
+        </div>
+    </div>
+}
+
+@code {
+    DemoScriptLoader navPanelHelper;
+
+    IEnumerable<DemoPageSection> demoPageSections;
+    DemoPage demoPage;
+
+    public bool Visible { get; set; }
+    public string HeaderStateCssClass { get; set; } = "collapse";
+
+    protected override void OnInitialized() {
+        NavigationManager.LocationChanged += OnLocationChanged;
+        UpdateVisibility(NavigationManager.Uri);
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender) {
+        await navPanelHelper.InvokeVoidAsync("DemoPageNavPanel.addDemoAnchorIntersectionObserver");
+    }
+
+    string GetItemCssClass(int itemIndex) {
+        if(itemIndex == 0) {
+            var uriFragment = NavigationManager.ToAbsoluteUri(NavigationManager.Uri).Fragment.Replace("#", "");
+            if(string.IsNullOrEmpty(uriFragment))
+                return "nav-target";
+        }
+        return "";
+    }
+
+    string GetItemBadgeText(DemoPageSection demoPageSection) {
+        var status = demoPageSection.GetStatus();
+        if(status == DemoItemStatus.New)
+            return "New";
+        if(status == DemoItemStatus.Updated)
+            return "Upd";
+        return string.Empty;
+    }
+
+    void OnLocationChanged(object sender, LocationChangedEventArgs args) {
+        HeaderStateCssClass = "collapse";
+        UpdateVisibility(args.Location);
+        InvokeAsync(StateHasChanged);
+    }
+
+    void UpdateVisibility(string currentUri) {
+        demoPage = Configuration.GetDemoPageByUrl(NavigationManager, currentUri) as DemoPage;
+        demoPageSections = demoPage != null ? demoPage.PageSections : new DemoPageSection[0];
+        Visible = demoPageSections.Count() > 1;
+    }
+
+    public void Dispose() {
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+}

@@ -1,0 +1,70 @@
+﻿@page "/Scheduler/Templates/DateHeaderTemplate"
+
+<DemoPageSectionComponent Id="Scheduler-Templates-DateHeaderTemplate">
+    <DemoChildContent>
+        @inject WeatherForecastService ForecastService
+
+        <DxScheduler @bind-StartDate="@StartDate" DataStorage="@DataStorage" CssClass="demo-sc-size">
+            <Views>
+                <DxSchedulerDayView DayCount="5" ShowWorkTimeOnly="true">
+                    <DateHeaderCellTemplate>
+                        <div class="d-flex">
+                            <div class="dxbl-sc-date-hr-wrapper w-100">
+                                <span class="dxbl-sc-date-hr-day">@context.Interval.Start.Day</span>
+                                <span class="dxbl-sc-date-hr-week">@context.Interval.Start.ToString("ddd")</span>
+                            </div>
+                            @{
+                                string cloudCover = GetCloudCoverByDate(context.Interval.Start);
+                                if(!string.IsNullOrEmpty(cloudCover)) {
+                                    <span class="@string.Format("scheduler-cloud-cover-icon {0}", cloudCover)"></span>
+                                }
+                            }
+                        </div>
+                    </DateHeaderCellTemplate>
+                </DxSchedulerDayView>
+            </Views>
+        </DxScheduler>
+    </DemoChildContent>
+
+    @code {
+        DateTime StartDate { get; set; } = DateTime.Today;
+
+        DxSchedulerDataStorage DataStorage = new DxSchedulerDataStorage() {
+            AppointmentsSource = AppointmentCollection.GetAppointments(),
+            AppointmentMappings = new DxSchedulerAppointmentMappings() {
+                Id = "Id",
+                Type = "AppointmentType",
+                Start = "StartDate",
+                End = "EndDate",
+                Subject = "Caption",
+                AllDay = "AllDay",
+                Location = "Location",
+                Description = "Description",
+                LabelId = "Label",
+                StatusId = "Status",
+                RecurrenceInfo = "Recurrence"
+            }
+        };
+
+        string GetCloudCoverByDate(DateTime date) {
+            foreach(WeatherForecast item in ForecastService.GetForecast())
+                if(date.Day == item.Date.Day)
+                    return GetCloudCoverCssClass(item.CloudCover);
+            return string.Empty;
+        }
+        string GetCloudCoverCssClass(string cloudCover) {
+            switch(cloudCover) {
+                case "Storm":
+                    return "scheduler-icon-storm";
+                case "Cloudy":
+                    return "scheduler-icon-cloudy";
+                case "Partly cloudy":
+                    return "scheduler-icon-partly-cloudy";
+                case "Sunny":
+                    return "scheduler-icon-sunny";
+                default:
+                    return string.Empty;
+            }
+        }
+    }
+</DemoPageSectionComponent>

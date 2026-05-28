@@ -1,0 +1,31 @@
+﻿@page "/Grid/DataBinding/LargeQueryableAsHttp"
+
+<DemoPageSectionComponent Id="Grid-DataBinding-LargeQueryableAsHttp" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NavigationManager NavigationManager
+        @inject HttpClient HttpClient
+
+        <div class="grid-container">
+            <DxGrid Data="@Data" SizeMode="Params.SizeMode"
+                ColumnResizeMode="GridColumnResizeMode.NextColumn" TextWrapEnabled="false"
+                ShowAllRows="true">
+                <Columns>
+                    <DxGridDataColumn FieldName="ProductName" MinWidth="100" />
+                    <DxGridDataColumn FieldName="QuantityPerUnit" Caption="Quantity per Unit" MinWidth="100" />
+                    <DxGridDataColumn FieldName="UnitPrice" DisplayFormat="c" MinWidth="60" Width="10%" />
+                    <DxGridDataColumn FieldName="UnitsInStock" Caption="Units in Stock" Width="10%" />
+                    <DxGridDataColumn FieldName="Discontinued" Width="10%" MinWidth="90" />
+                </Columns>
+            </DxGrid>
+        </div>
+
+        @code {
+            object Data { get; set; }
+
+            protected override void OnInitialized() {
+                var uri = NavigationManager.ToAbsoluteUri("api/nwind/getproducts");
+                Data = new GridDevExtremeDataSource<Product>(HttpClient, uri);
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

@@ -1,0 +1,1867 @@
+<?xml version="1.0" standalone="yes"?>
+<IssueList>
+  <xs:schema id="IssueList" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="IssueList" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Departments">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Items">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="Type" type="xs:boolean" minOccurs="0" />
+                <xs:element name="ProjectID" type="xs:int" minOccurs="0" />
+                <xs:element name="Priority" type="xs:short" minOccurs="0" />
+                <xs:element name="Status" type="xs:short" minOccurs="0" />
+                <xs:element name="CreatorID" type="xs:int" minOccurs="0" />
+                <xs:element name="CreatedDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="OwnerID" type="xs:int" minOccurs="0" />
+                <xs:element name="ModifiedDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="FixedDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="Description" type="xs:string" minOccurs="0" />
+                <xs:element name="Resolution" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Projects">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="ManagerID" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="ProjectTeam">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:int" minOccurs="0" />
+                <xs:element name="ProjectID" type="xs:int" minOccurs="0" />
+                <xs:element name="UserID" type="xs:int" minOccurs="0" />
+                <xs:element name="Function" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Scheduler">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:int" minOccurs="0" />
+                <xs:element name="ProjectID" type="xs:int" minOccurs="0" />
+                <xs:element name="UserID" type="xs:int" minOccurs="0" />
+                <xs:element name="Sunday" type="xs:unsignedByte" minOccurs="0" />
+                <xs:element name="Monday" type="xs:unsignedByte" minOccurs="0" />
+                <xs:element name="Tuesday" type="xs:unsignedByte" minOccurs="0" />
+                <xs:element name="Wednesday" type="xs:unsignedByte" minOccurs="0" />
+                <xs:element name="Thursday" type="xs:unsignedByte" minOccurs="0" />
+                <xs:element name="Friday" type="xs:unsignedByte" minOccurs="0" />
+                <xs:element name="Saturday" type="xs:unsignedByte" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Tasks">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="ParentID" type="xs:int" minOccurs="0" />
+                <xs:element name="UserID" type="xs:int" minOccurs="0" />
+                <xs:element name="StartDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="EndDate" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="Done" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Priority" type="xs:int" minOccurs="0" />
+                <xs:element name="Complete" type="xs:float" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Users">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:int" minOccurs="0" />
+                <xs:element name="FirstName" type="xs:string" minOccurs="0" />
+                <xs:element name="MiddleName" type="xs:string" minOccurs="0" />
+                <xs:element name="LastName" type="xs:string" minOccurs="0" />
+                <xs:element name="Country" type="xs:string" minOccurs="0" />
+                <xs:element name="PostalCode" type="xs:string" minOccurs="0" />
+                <xs:element name="City" type="xs:string" minOccurs="0" />
+                <xs:element name="Address" type="xs:string" minOccurs="0" />
+                <xs:element name="Phone" type="xs:string" minOccurs="0" />
+                <xs:element name="Fax" type="xs:string" minOccurs="0" />
+                <xs:element name="Email" type="xs:string" minOccurs="0" />
+                <xs:element name="HomePage" type="xs:string" minOccurs="0" />
+                <xs:element name="DepartmentID" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="Constraint1">
+        <xs:selector xpath=".//Departments" />
+        <xs:field xpath="ID" />
+      </xs:unique>
+      <xs:unique name="Projects_Constraint1" msdata:ConstraintName="Constraint1">
+        <xs:selector xpath=".//Projects" />
+        <xs:field xpath="ID" />
+      </xs:unique>
+      <xs:unique name="Users_Constraint1" msdata:ConstraintName="Constraint1">
+        <xs:selector xpath=".//Users" />
+        <xs:field xpath="ID" />
+      </xs:unique>
+      <xs:keyref name="DEPARTMENTSUSERS" refer="Constraint1">
+        <xs:selector xpath=".//Users" />
+        <xs:field xpath="DepartmentID" />
+      </xs:keyref>
+      <xs:keyref name="USERSSCHEDULER" refer="Users_Constraint1">
+        <xs:selector xpath=".//Scheduler" />
+        <xs:field xpath="UserID" />
+      </xs:keyref>
+      <xs:keyref name="PROJECTSSCHEDULER" refer="Projects_Constraint1">
+        <xs:selector xpath=".//Scheduler" />
+        <xs:field xpath="ProjectID" />
+      </xs:keyref>
+      <xs:keyref name="PROJECTSPROJECTTEAM" refer="Projects_Constraint1">
+        <xs:selector xpath=".//ProjectTeam" />
+        <xs:field xpath="ProjectID" />
+      </xs:keyref>
+      <xs:keyref name="USERSPROJECTS" refer="Users_Constraint1">
+        <xs:selector xpath=".//Projects" />
+        <xs:field xpath="ManagerID" />
+      </xs:keyref>
+      <xs:keyref name="USERSITEMS1" refer="Users_Constraint1">
+        <xs:selector xpath=".//Items" />
+        <xs:field xpath="OwnerID" />
+      </xs:keyref>
+      <xs:keyref name="USERSITEMS" refer="Users_Constraint1">
+        <xs:selector xpath=".//Items" />
+        <xs:field xpath="CreatorID" />
+      </xs:keyref>
+      <xs:keyref name="PROJECTSITEMS" refer="Projects_Constraint1">
+        <xs:selector xpath=".//Items" />
+        <xs:field xpath="ProjectID" />
+      </xs:keyref>
+    </xs:element>
+  </xs:schema>
+  <Departments>
+    <ID>1</ID>
+    <Name>R&amp;D</Name>
+  </Departments>
+  <Departments>
+    <ID>2</ID>
+    <Name>QA</Name>
+  </Departments>
+  <Departments>
+    <ID>3</ID>
+    <Name>Documentation</Name>
+  </Departments>
+  <Departments>
+    <ID>4</ID>
+    <Name>Support</Name>
+  </Departments>
+  <Departments>
+    <ID>5</ID>
+    <Name>Marketing</Name>
+  </Departments>
+  <Departments>
+    <ID>6</ID>
+    <Name>Management</Name>
+  </Departments>
+  <Items>
+    <ID>2</ID>
+    <Name>Accounting System: MasterView</Name>
+    <Type>false</Type>
+    <ProjectID>4</ProjectID>
+    <Priority>1</Priority>
+    <Status>3</Status>
+    <CreatorID>12</CreatorID>
+    <CreatedDate>2004-07-01T00:00:00+04:00</CreatedDate>
+    <OwnerID>4</OwnerID>
+    <ModifiedDate>2004-07-10T00:00:00+04:00</ModifiedDate>
+    <FixedDate>2004-07-10T00:00:00+04:00</FixedDate>
+    <Description>When entering a new transaction into the Accounting system, MasterView nodes collapse.                                                                                       </Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>3</ID>
+    <Name>Web Edition: Data Entry Page</Name>
+    <Type>false</Type>
+    <ProjectID>2</ProjectID>
+    <Priority>1</Priority>
+    <Status>2</Status>
+    <CreatorID>3</CreatorID>
+    <CreatedDate>2003-12-04T00:00:00+03:00</CreatedDate>
+    <OwnerID>11</OwnerID>
+    <ModifiedDate>2003-12-05T00:00:00+03:00</ModifiedDate>
+    <FixedDate>2003-12-05T00:00:00+03:00</FixedDate>
+    <Description>Unable to enter data into the web edition of the Accounting System.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>4</ID>
+    <Name>Payables Due Calculator</Name>
+    <Type>false</Type>
+    <ProjectID>3</ProjectID>
+    <Priority>1</Priority>
+    <Status>3</Status>
+    <CreatorID>18</CreatorID>
+    <CreatedDate>2004-07-11T00:00:00+04:00</CreatedDate>
+    <OwnerID>13</OwnerID>
+    <ModifiedDate>2004-07-23T00:00:00+04:00</ModifiedDate>
+    <FixedDate>2004-07-23T00:00:00+04:00</FixedDate>
+    <Description>Unable to calculate payables due.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>5</ID>
+    <Name>Web Edition: Search Page</Name>
+    <Type>false</Type>
+    <ProjectID>2</ProjectID>
+    <Priority>2</Priority>
+    <Status>1</Status>
+    <CreatorID>10</CreatorID>
+    <CreatedDate>2004-03-31T00:00:00+04:00</CreatedDate>
+    <OwnerID>9</OwnerID>
+    <ModifiedDate>2004-03-05T00:00:00+03:00</ModifiedDate>
+    <FixedDate>2004-08-09T00:00:00+04:00</FixedDate>
+    <Description>Unable to search for transactions via the search page. Date parameters are not being passed correctly.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>6</ID>
+    <Name>Main Menu: Duplicate Items</Name>
+    <Type>false</Type>
+    <ProjectID>2</ProjectID>
+    <Priority>3</Priority>
+    <Status>3</Status>
+    <CreatorID>9</CreatorID>
+    <CreatedDate>2004-07-27T00:00:00+04:00</CreatedDate>
+    <OwnerID>17</OwnerID>
+    <ModifiedDate>2004-07-10T00:00:00+04:00</ModifiedDate>
+    <FixedDate>2004-07-10T00:00:00+04:00</FixedDate>
+    <Description>There are duplicate items in the main menu. </Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>7</ID>
+    <Name>Receivables Calculator</Name>
+    <Type>false</Type>
+    <ProjectID>3</ProjectID>
+    <Priority>1</Priority>
+    <Status>1</Status>
+    <CreatorID>12</CreatorID>
+    <CreatedDate>2004-04-03T00:00:00+04:00</CreatedDate>
+    <OwnerID>16</OwnerID>
+    <ModifiedDate>2004-04-03T00:00:00+04:00</ModifiedDate>
+    <FixedDate>2004-08-11T00:00:00+04:00</FixedDate>
+    <Description>The system does not correctly sum all receivables due.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>8</ID>
+    <Name>Ledger: Inconsistency</Name>
+    <Type>true</Type>
+    <ProjectID>2</ProjectID>
+    <Priority>2</Priority>
+    <Status>3</Status>
+    <CreatorID>17</CreatorID>
+    <CreatedDate>2004-06-06T00:00:00+04:00</CreatedDate>
+    <OwnerID>16</OwnerID>
+    <ModifiedDate>2004-07-04T00:00:00+04:00</ModifiedDate>
+    <FixedDate>2004-07-04T00:00:00+04:00</FixedDate>
+    <Description>There are visual inconsistencies in the Ledger vs. other modules. The wrong grid is being used.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>10</ID>
+    <Name>Receivables Printing</Name>
+    <Type>false</Type>
+    <ProjectID>2</ProjectID>
+    <Priority>2</Priority>
+    <Status>1</Status>
+    <CreatorID>3</CreatorID>
+    <CreatedDate>2004-07-04T00:00:00+04:00</CreatedDate>
+    <OwnerID>9</OwnerID>
+    <FixedDate>2004-08-10T00:00:00+04:00</FixedDate>
+    <Description>Unable to print any receivables due report.                                                                                                                                         
+</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>11</ID>
+    <Name>Screen Redraw</Name>
+    <Type>false</Type>
+    <ProjectID>3</ProjectID>
+    <Priority>2</Priority>
+    <Status>1</Status>
+    <CreatorID>15</CreatorID>
+    <CreatedDate>2004-06-26T00:00:00+04:00</CreatedDate>
+    <OwnerID>7</OwnerID>
+    <ModifiedDate>2004-07-08T00:00:00+04:00</ModifiedDate>
+    <FixedDate>2004-08-18T00:00:00+04:00</FixedDate>
+    <Description>There is unnecessary screen redraws - appears as if the application is blinking</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>12</ID>
+    <Name>Email System</Name>
+    <Type>false</Type>
+    <ProjectID>2</ProjectID>
+    <Priority>1</Priority>
+    <Status>3</Status>
+    <CreatorID>15</CreatorID>
+    <CreatedDate>2003-11-05T00:00:00+03:00</CreatedDate>
+    <OwnerID>11</OwnerID>
+    <ModifiedDate>2004-01-28T00:00:00+03:00</ModifiedDate>
+    <FixedDate>2004-01-27T00:00:00+03:00</FixedDate>
+    <Description>Unable to send Email via Outlook Express.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>14</ID>
+    <Name>Adding New Vendors Fails</Name>
+    <Type>true</Type>
+    <ProjectID>3</ProjectID>
+    <Priority>2</Priority>
+    <Status>1</Status>
+    <CreatorID>15</CreatorID>
+    <CreatedDate>2004-05-20T00:00:00+04:00</CreatedDate>
+    <OwnerID>13</OwnerID>
+    <FixedDate>2004-08-16T00:00:00+04:00</FixedDate>
+    <Description>Unable to add new vendors to the system.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>16</ID>
+    <Name>History</Name>
+    <Type>true</Type>
+    <ProjectID>3</ProjectID>
+    <Priority>1</Priority>
+    <Status>2</Status>
+    <CreatorID>9</CreatorID>
+    <CreatedDate>2004-03-14T00:00:00+03:00</CreatedDate>
+    <OwnerID>11</OwnerID>
+    <ModifiedDate>2004-04-09T00:00:00+04:00</ModifiedDate>
+    <FixedDate>2004-08-10T00:00:00+04:00</FixedDate>
+    <Description>We need to track which user modified records in the database and when.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>19</ID>
+    <Name>Main Menu: Add a File menu</Name>
+    <Type>false</Type>
+    <ProjectID>4</ProjectID>
+    <Priority>2</Priority>
+    <Status>1</Status>
+    <CreatorID>3</CreatorID>
+    <CreatedDate>2003-10-10T00:00:00+04:00</CreatedDate>
+    <OwnerID>16</OwnerID>
+    <FixedDate>2004-08-08T00:00:00+04:00</FixedDate>
+    <Description>We need to add a file menu to the main menu. It looks strange without it.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>20</ID>
+    <Name>Currency Mask</Name>
+    <Type>false</Type>
+    <ProjectID>4</ProjectID>
+    <Priority>1</Priority>
+    <Status>1</Status>
+    <CreatorID>15</CreatorID>
+    <CreatedDate>2004-04-03T00:00:00+04:00</CreatedDate>
+    <OwnerID>13</OwnerID>
+    <FixedDate>2004-08-21T00:00:00+04:00</FixedDate>
+    <Description>The currency mask needs to include commas within it.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>21</ID>
+    <Name>Drag &amp; Drop</Name>
+    <Type>false</Type>
+    <ProjectID>4</ProjectID>
+    <Priority>1</Priority>
+    <Status>1</Status>
+    <CreatorID>12</CreatorID>
+    <CreatedDate>2004-02-07T00:00:00+03:00</CreatedDate>
+    <OwnerID>4</OwnerID>
+    <FixedDate>2004-08-25T00:00:00+04:00</FixedDate>
+    <Description>Cannot drag and drop transactions from one account type to another.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>22</ID>
+    <Name>Data Import</Name>
+    <Type>false</Type>
+    <ProjectID>4</ProjectID>
+    <Priority>1</Priority>
+    <Status>1</Status>
+    <CreatorID>15</CreatorID>
+    <CreatedDate>2004-05-15T00:00:00+04:00</CreatedDate>
+    <OwnerID>4</OwnerID>
+    <FixedDate>2004-08-15T00:00:00+04:00</FixedDate>
+    <Description>When importing information from Quicken, all banking information is lost.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>23</ID>
+    <Name>Reports</Name>
+    <Type>false</Type>
+    <ProjectID>4</ProjectID>
+    <Priority>1</Priority>
+    <Status>1</Status>
+    <CreatorID>3</CreatorID>
+    <CreatedDate>2004-03-13T00:00:00+03:00</CreatedDate>
+    <OwnerID>9</OwnerID>
+    <FixedDate>2004-08-16T00:00:00+04:00</FixedDate>
+    <Description>Unable to print receivable reports for last quarter.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>24</ID>
+    <Name>Data Archiving</Name>
+    <Type>false</Type>
+    <ProjectID>4</ProjectID>
+    <Priority>1</Priority>
+    <Status>1</Status>
+    <CreatorID>10</CreatorID>
+    <CreatedDate>2004-01-09T00:00:00+03:00</CreatedDate>
+    <OwnerID>17</OwnerID>
+    <Description>The data archiving function is not working properly - an exception occurs.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>25</ID>
+    <Name>New Users</Name>
+    <Type>false</Type>
+    <ProjectID>4</ProjectID>
+    <Priority>1</Priority>
+    <Status>4</Status>
+    <CreatorID>15</CreatorID>
+    <CreatedDate>2004-02-22T00:00:00+03:00</CreatedDate>
+    <OwnerID>11</OwnerID>
+    <Description>There is a limit of 10 users by default. This should be 50.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>27</ID>
+    <Name>Email Attachments</Name>
+    <Type>false</Type>
+    <ProjectID>2</ProjectID>
+    <Priority>1</Priority>
+    <Status>1</Status>
+    <CreatorID>3</CreatorID>
+    <CreatedDate>2004-07-14T00:00:00+04:00</CreatedDate>
+    <OwnerID>17</OwnerID>
+    <FixedDate>2004-08-02T00:00:00+04:00</FixedDate>
+    <Description>Attaching an invoice to an Email message is not possible.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>28</ID>
+    <Name>Faxing</Name>
+    <Type>false</Type>
+    <ProjectID>3</ProjectID>
+    <Priority>1</Priority>
+    <Status>1</Status>
+    <CreatorID>15</CreatorID>
+    <CreatedDate>2004-05-09T00:00:00+04:00</CreatedDate>
+    <OwnerID>17</OwnerID>
+    <FixedDate>2004-08-01T00:00:00+04:00</FixedDate>
+    <Description>Sending faxes via MS Fax fails.                                                                                                
+                                                                                  
+</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>30</ID>
+    <Name>Check Register</Name>
+    <Type>false</Type>
+    <ProjectID>3</ProjectID>
+    <Priority>3</Priority>
+    <Status>1</Status>
+    <CreatorID>15</CreatorID>
+    <CreatedDate>2004-08-25T00:00:00+04:00</CreatedDate>
+    <OwnerID>17</OwnerID>
+    <FixedDate>2004-08-25T00:00:00+04:00</FixedDate>
+    <Description>Unable to change bank accounts from the check register.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>31</ID>
+    <Name>Vendor List</Name>
+    <Type>true</Type>
+    <ProjectID>3</ProjectID>
+    <Priority>2</Priority>
+    <Status>1</Status>
+    <CreatorID>3</CreatorID>
+    <CreatedDate>2004-06-25T00:00:00+04:00</CreatedDate>
+    <OwnerID>16</OwnerID>
+    <FixedDate>2004-08-29T00:00:00+04:00</FixedDate>
+    <Description>We must allow users to easily add new fields for a given vendor.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>33</ID>
+    <Name>Data Export</Name>
+    <Type>false</Type>
+    <ProjectID>3</ProjectID>
+    <Priority>2</Priority>
+    <Status>3</Status>
+    <CreatorID>18</CreatorID>
+    <CreatedDate>2004-02-24T00:00:00+03:00</CreatedDate>
+    <OwnerID>7</OwnerID>
+    <ModifiedDate>2004-05-28T00:00:00+04:00</ModifiedDate>
+    <FixedDate>2004-05-28T00:00:00+04:00</FixedDate>
+    <Description>Exporting data to QuickBooks fails.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>35</ID>
+    <Name>Transaction Log</Name>
+    <Type>false</Type>
+    <ProjectID>2</ProjectID>
+    <Priority>1</Priority>
+    <Status>3</Status>
+    <CreatorID>3</CreatorID>
+    <CreatedDate>2004-05-10T00:00:00+04:00</CreatedDate>
+    <OwnerID>5</OwnerID>
+    <ModifiedDate>2004-05-15T00:00:00+04:00</ModifiedDate>
+    <FixedDate>2004-05-26T00:00:00+04:00</FixedDate>
+    <Description>Unable to export the transaction log to HTML.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>36</ID>
+    <Name>Transaction History</Name>
+    <Type>true</Type>
+    <ProjectID>2</ProjectID>
+    <Priority>1</Priority>
+    <Status>1</Status>
+    <CreatorID>3</CreatorID>
+    <CreatedDate>2004-03-27T00:00:00+03:00</CreatedDate>
+    <OwnerID>5</OwnerID>
+    <ModifiedDate>2004-04-19T00:00:00+04:00</ModifiedDate>
+    <FixedDate>2004-04-28T00:00:00+04:00</FixedDate>
+    <Description>Unable to open the transaction history window for any vendors.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>37</ID>
+    <Name>Help: Phone scripts</Name>
+    <Type>false</Type>
+    <ProjectID>2</ProjectID>
+    <Priority>1</Priority>
+    <Status>4</Status>
+    <CreatorID>10</CreatorID>
+    <CreatedDate>2004-05-27T00:00:00+04:00</CreatedDate>
+    <OwnerID>14</OwnerID>
+    <ModifiedDate>2004-06-17T00:00:00+04:00</ModifiedDate>
+    <FixedDate>2004-06-17T00:00:00+04:00</FixedDate>
+    <Description>The Phone Scripts form does not have the help file integration.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>38</ID>
+    <Name>Help File Duplicates</Name>
+    <Type>false</Type>
+    <ProjectID>3</ProjectID>
+    <Priority>1</Priority>
+    <Status>1</Status>
+    <CreatorID>10</CreatorID>
+    <CreatedDate>2004-05-10T00:00:00+04:00</CreatedDate>
+    <OwnerID>5</OwnerID>
+    <FixedDate>2004-08-08T00:00:00+04:00</FixedDate>
+    <Description>There are 2 entries for the Ledger in the TOC.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>39</ID>
+    <Name>Help File Topics</Name>
+    <Type>false</Type>
+    <ProjectID>2</ProjectID>
+    <Priority>1</Priority>
+    <Status>3</Status>
+    <CreatorID>15</CreatorID>
+    <CreatedDate>2004-02-21T00:00:00+03:00</CreatedDate>
+    <OwnerID>5</OwnerID>
+    <ModifiedDate>2004-04-03T00:00:00+04:00</ModifiedDate>
+    <FixedDate>2004-08-17T00:00:00+04:00</FixedDate>
+    <Description>The following topics are not described: Receivables &amp; Payables Due</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>41</ID>
+    <Name>Help File Integration</Name>
+    <Type>false</Type>
+    <ProjectID>3</ProjectID>
+    <Priority>1</Priority>
+    <Status>1</Status>
+    <CreatorID>12</CreatorID>
+    <CreatedDate>2004-05-14T00:00:00+04:00</CreatedDate>
+    <OwnerID>14</OwnerID>
+    <FixedDate>2004-08-11T00:00:00+04:00</FixedDate>
+    <Description>Numerous dialog windows are missing help file topics.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>42</ID>
+    <Name>Installer</Name>
+    <Type>true</Type>
+    <ProjectID>2</ProjectID>
+    <Priority>2</Priority>
+    <Status>1</Status>
+    <CreatorID>15</CreatorID>
+    <CreatedDate>2004-02-01T00:00:00+03:00</CreatedDate>
+    <OwnerID>16</OwnerID>
+    <FixedDate>2004-07-24T00:00:00+04:00</FixedDate>
+    <Description>The Cancel button must be enabled during file copying in order to stop the setup process.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>43</ID>
+    <Name>Installer</Name>
+    <Type>false</Type>
+    <ProjectID>2</ProjectID>
+    <Priority>2</Priority>
+    <Status>1</Status>
+    <CreatorID>15</CreatorID>
+    <CreatedDate>2004-05-12T00:00:00+04:00</CreatedDate>
+    <OwnerID>16</OwnerID>
+    <FixedDate>2004-08-08T00:00:00+04:00</FixedDate>
+    <Description>Cannot install the default database in repair mode.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>44</ID>
+    <Name>Vendor TAX IDs</Name>
+    <Type>false</Type>
+    <ProjectID>3</ProjectID>
+    <Priority>2</Priority>
+    <Status>3</Status>
+    <CreatorID>10</CreatorID>
+    <CreatedDate>2004-04-10T00:00:00+04:00</CreatedDate>
+    <OwnerID>13</OwnerID>
+    <ModifiedDate>2004-05-01T00:00:00+04:00</ModifiedDate>
+    <FixedDate>2004-05-10T00:00:00+04:00</FixedDate>
+    <Description>Unable to enter TAX ID for vendors - the mask is wrong.</Description>
+    <Resolution />
+  </Items>
+  <Items>
+    <ID>45</ID>
+    <Name>Vendor Name</Name>
+    <Type>false</Type>
+    <ProjectID>2</ProjectID>
+    <Priority>2</Priority>
+    <Status>4</Status>
+    <CreatorID>3</CreatorID>
+    <CreatedDate>2004-03-06T00:00:00+03:00</CreatedDate>
+    <OwnerID>13</OwnerID>
+    <ModifiedDate>2004-04-10T00:00:00+04:00</ModifiedDate>
+    <FixedDate>2004-08-01T00:00:00+04:00</FixedDate>
+    <Description>The field name for vendors is limited to 25 characters - increase to 75.</Description>
+    <Resolution />
+  </Items>
+  <Projects>
+    <ID>2</ID>
+    <Name>Enterprise Accounting System</Name>
+    <ManagerID>2</ManagerID>
+  </Projects>
+  <Projects>
+    <ID>3</ID>
+    <Name>Small-Business Accounting System</Name>
+    <ManagerID>15</ManagerID>
+  </Projects>
+  <Projects>
+    <ID>4</ID>
+    <Name>Home-Office Accounting System</Name>
+    <ManagerID>16</ManagerID>
+  </Projects>
+  <ProjectTeam>
+    <ID>2</ID>
+    <ProjectID>2</ProjectID>
+    <UserID>2</UserID>
+    <Function>Manager</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>3</ID>
+    <ProjectID>2</ProjectID>
+    <UserID>4</UserID>
+    <Function>CTO</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>4</ID>
+    <ProjectID>2</ProjectID>
+    <UserID>5</UserID>
+    <Function>Documentation Team Manager</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>5</ID>
+    <ProjectID>2</ProjectID>
+    <UserID>18</UserID>
+    <Function>Support</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>6</ID>
+    <ProjectID>2</ProjectID>
+    <UserID>3</UserID>
+    <Function>Developement</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>8</ID>
+    <ProjectID>2</ProjectID>
+    <UserID>14</UserID>
+    <Function>Documentation</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>9</ID>
+    <ProjectID>2</ProjectID>
+    <UserID>9</UserID>
+    <Function>Developement</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>10</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>15</UserID>
+    <Function>Manager</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>11</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>17</UserID>
+    <Function>Development</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>12</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>7</UserID>
+    <Function>Documentation Team Manager</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>13</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>8</UserID>
+    <Function>Development</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>14</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>12</UserID>
+    <Function>Support</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>15</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>16</UserID>
+    <Function>Manager</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>16</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>6</UserID>
+    <Function>Development</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>17</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>10</UserID>
+    <Function>Support</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>18</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>11</UserID>
+    <Function>Manager of the documentation team</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>19</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>13</UserID>
+    <Function>Development</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>20</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>4</UserID>
+    <Function>CTO</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>21</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>18</UserID>
+    <Function>Support</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>22</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>4</UserID>
+    <Function>CTO</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>23</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>3</UserID>
+    <Function>Development</Function>
+  </ProjectTeam>
+  <ProjectTeam>
+    <ID>24</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>12</UserID>
+    <Function>Support</Function>
+  </ProjectTeam>
+  <Scheduler>
+    <ID>2</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>2</UserID>
+    <Sunday>0</Sunday>
+    <Monday>3</Monday>
+    <Tuesday>3</Tuesday>
+    <Wednesday>2</Wednesday>
+    <Thursday>2</Thursday>
+    <Friday>4</Friday>
+    <Saturday>5</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>3</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>2</UserID>
+    <Sunday>0</Sunday>
+    <Monday>2</Monday>
+    <Tuesday>2</Tuesday>
+    <Wednesday>3</Wednesday>
+    <Thursday>2</Thursday>
+    <Friday>1</Friday>
+    <Saturday>2</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>4</ID>
+    <ProjectID>2</ProjectID>
+    <UserID>3</UserID>
+    <Sunday>4</Sunday>
+    <Monday>1</Monday>
+    <Tuesday>5</Tuesday>
+    <Wednesday>2</Wednesday>
+    <Thursday>6</Thursday>
+    <Friday>1</Friday>
+    <Saturday>6</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>5</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>3</UserID>
+    <Sunday>4</Sunday>
+    <Monday>3</Monday>
+    <Tuesday>3</Tuesday>
+    <Wednesday>6</Wednesday>
+    <Thursday>2</Thursday>
+    <Friday>7</Friday>
+    <Saturday>4</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>6</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>4</UserID>
+    <Sunday>0</Sunday>
+    <Monday>5</Monday>
+    <Tuesday>6</Tuesday>
+    <Wednesday>8</Wednesday>
+    <Thursday>4</Thursday>
+    <Friday>4</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>7</ID>
+    <ProjectID>2</ProjectID>
+    <UserID>5</UserID>
+    <Sunday>0</Sunday>
+    <Monday>1</Monday>
+    <Tuesday>2</Tuesday>
+    <Wednesday>5</Wednesday>
+    <Thursday>4</Thursday>
+    <Friday>4</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>8</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>5</UserID>
+    <Sunday>0</Sunday>
+    <Monday>3</Monday>
+    <Tuesday>3</Tuesday>
+    <Wednesday>1</Wednesday>
+    <Thursday>4</Thursday>
+    <Friday>2</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>9</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>5</UserID>
+    <Sunday>0</Sunday>
+    <Monday>2</Monday>
+    <Tuesday>3</Tuesday>
+    <Wednesday>1</Wednesday>
+    <Thursday>2</Thursday>
+    <Friday>2</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>10</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>6</UserID>
+    <Sunday>0</Sunday>
+    <Monday>4</Monday>
+    <Tuesday>3</Tuesday>
+    <Wednesday>2</Wednesday>
+    <Thursday>1</Thursday>
+    <Friday>1</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>11</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>6</UserID>
+    <Sunday>0</Sunday>
+    <Monday>4</Monday>
+    <Tuesday>3</Tuesday>
+    <Wednesday>5</Wednesday>
+    <Thursday>7</Thursday>
+    <Friday>7</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>13</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>7</UserID>
+    <Sunday>0</Sunday>
+    <Monday>8</Monday>
+    <Tuesday>8</Tuesday>
+    <Wednesday>5</Wednesday>
+    <Thursday>7</Thursday>
+    <Friday>6</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>14</ID>
+    <ProjectID>2</ProjectID>
+    <UserID>8</UserID>
+    <Sunday>0</Sunday>
+    <Monday>8</Monday>
+    <Tuesday>8</Tuesday>
+    <Wednesday>8</Wednesday>
+    <Thursday>8</Thursday>
+    <Friday>8</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>15</ID>
+    <ProjectID>2</ProjectID>
+    <UserID>9</UserID>
+    <Sunday>0</Sunday>
+    <Monday>1</Monday>
+    <Tuesday>1</Tuesday>
+    <Wednesday>12</Wednesday>
+    <Thursday>1</Thursday>
+    <Friday>2</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>16</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>9</UserID>
+    <Sunday>0</Sunday>
+    <Monday>2</Monday>
+    <Tuesday>1</Tuesday>
+    <Wednesday>3</Wednesday>
+    <Thursday>2</Thursday>
+    <Friday>2</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>17</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>9</UserID>
+    <Sunday>0</Sunday>
+    <Monday>4</Monday>
+    <Tuesday>12</Tuesday>
+    <Wednesday>4</Wednesday>
+    <Thursday>5</Thursday>
+    <Friday>4</Friday>
+    <Saturday>8</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>18</ID>
+    <ProjectID>2</ProjectID>
+    <UserID>10</UserID>
+    <Sunday>0</Sunday>
+    <Monday>12</Monday>
+    <Tuesday>5</Tuesday>
+    <Wednesday>4</Wednesday>
+    <Thursday>6</Thursday>
+    <Friday>3</Friday>
+    <Saturday>18</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>19</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>10</UserID>
+    <Sunday>0</Sunday>
+    <Monday>3</Monday>
+    <Tuesday>3</Tuesday>
+    <Wednesday>4</Wednesday>
+    <Thursday>2</Thursday>
+    <Friday>6</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>20</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>2</UserID>
+    <Sunday>0</Sunday>
+    <Monday>8</Monday>
+    <Tuesday>8</Tuesday>
+    <Wednesday>8</Wednesday>
+    <Thursday>8</Thursday>
+    <Friday>10</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>21</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>12</UserID>
+    <Sunday>0</Sunday>
+    <Monday>4</Monday>
+    <Tuesday>4</Tuesday>
+    <Wednesday>4</Wednesday>
+    <Thursday>4</Thursday>
+    <Friday>8</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>22</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>13</UserID>
+    <Sunday>4</Sunday>
+    <Monday>3</Monday>
+    <Tuesday>7</Tuesday>
+    <Wednesday>8</Wednesday>
+    <Thursday>10</Thursday>
+    <Friday>6</Friday>
+    <Saturday>1</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>23</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>13</UserID>
+    <Sunday>4</Sunday>
+    <Monday>7</Monday>
+    <Tuesday>3</Tuesday>
+    <Wednesday>2</Wednesday>
+    <Thursday>0</Thursday>
+    <Friday>4</Friday>
+    <Saturday>12</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>25</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>15</UserID>
+    <Sunday>4</Sunday>
+    <Monday>4</Monday>
+    <Tuesday>4</Tuesday>
+    <Wednesday>4</Wednesday>
+    <Thursday>4</Thursday>
+    <Friday>4</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>26</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>15</UserID>
+    <Sunday>4</Sunday>
+    <Monday>4</Monday>
+    <Tuesday>4</Tuesday>
+    <Wednesday>4</Wednesday>
+    <Thursday>4</Thursday>
+    <Friday>4</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>27</ID>
+    <ProjectID>2</ProjectID>
+    <UserID>16</UserID>
+    <Sunday>2</Sunday>
+    <Monday>0</Monday>
+    <Tuesday>3</Tuesday>
+    <Wednesday>2</Wednesday>
+    <Thursday>5</Thursday>
+    <Friday>2</Friday>
+    <Saturday>3</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>28</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>16</UserID>
+    <Sunday>3</Sunday>
+    <Monday>1</Monday>
+    <Tuesday>3</Tuesday>
+    <Wednesday>2</Wednesday>
+    <Thursday>4</Thursday>
+    <Friday>4</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>29</ID>
+    <ProjectID>4</ProjectID>
+    <UserID>16</UserID>
+    <Sunday>3</Sunday>
+    <Monday>2</Monday>
+    <Tuesday>3</Tuesday>
+    <Wednesday>5</Wednesday>
+    <Thursday>2</Thursday>
+    <Friday>4</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>30</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>17</UserID>
+    <Sunday>0</Sunday>
+    <Monday>10</Monday>
+    <Tuesday>10</Tuesday>
+    <Wednesday>10</Wednesday>
+    <Thursday>10</Thursday>
+    <Friday>10</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Scheduler>
+    <ID>31</ID>
+    <ProjectID>3</ProjectID>
+    <UserID>18</UserID>
+    <Sunday>0</Sunday>
+    <Monday>8</Monday>
+    <Tuesday>8</Tuesday>
+    <Wednesday>8</Wednesday>
+    <Thursday>8</Thursday>
+    <Friday>8</Friday>
+    <Saturday>0</Saturday>
+  </Scheduler>
+  <Tasks>
+    <ID>14</ID>
+    <Name>PrintingSystem</Name>
+    <ParentID>-1</ParentID>
+    <UserID>2</UserID>
+    <StartDate>2004-06-19T00:00:00+04:00</StartDate>
+    <EndDate>2004-07-09T00:00:00+04:00</EndDate>
+    <Done>true</Done>
+    <Priority>2</Priority>
+    <Complete>0.23</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>15</ID>
+    <Name>Testing and writing examples</Name>
+    <ParentID>14</ParentID>
+    <UserID>3</UserID>
+    <StartDate>2004-06-19T00:00:00+04:00</StartDate>
+    <EndDate>2004-07-09T00:00:00+04:00</EndDate>
+    <Done>true</Done>
+    <Priority>1</Priority>
+    <Complete>0</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>16</ID>
+    <Name>Writing CustomPrintingLink</Name>
+    <ParentID>15</ParentID>
+    <UserID>3</UserID>
+    <StartDate>2004-06-02T00:00:00+04:00</StartDate>
+    <EndDate>2004-07-07T00:00:00+04:00</EndDate>
+    <Done>true</Done>
+    <Priority>0</Priority>
+    <Complete>1</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>17</ID>
+    <Name>Testing</Name>
+    <ParentID>23</ParentID>
+    <UserID>10</UserID>
+    <Done>false</Done>
+    <Priority>2</Priority>
+    <Complete>0.68</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>18</ID>
+    <Name>Writing examples</Name>
+    <ParentID>15</ParentID>
+    <UserID>3</UserID>
+    <StartDate>2004-07-09T00:00:00+04:00</StartDate>
+    <EndDate>2004-07-07T00:00:00+04:00</EndDate>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>1</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>19</ID>
+    <Name>Writing Component</Name>
+    <ParentID>14</ParentID>
+    <UserID>9</UserID>
+    <StartDate>2004-07-09T00:00:00+04:00</StartDate>
+    <EndDate>2004-07-07T00:00:00+04:00</EndDate>
+    <Done>true</Done>
+    <Priority>1</Priority>
+    <Complete>0.84</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>20</ID>
+    <Name>StandartComponentsLinks</Name>
+    <ParentID>19</ParentID>
+    <UserID>9</UserID>
+    <StartDate>2005-01-01T00:00:00+03:00</StartDate>
+    <EndDate>2005-05-08T00:00:00+04:00</EndDate>
+    <Done>true</Done>
+    <Priority>2</Priority>
+    <Complete>1</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>21</ID>
+    <Name>GridLink</Name>
+    <ParentID>19</ParentID>
+    <UserID>9</UserID>
+    <StartDate>2005-01-01T00:00:00+03:00</StartDate>
+    <EndDate>2005-05-06T00:00:00+04:00</EndDate>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0.51</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>22</ID>
+    <Name>TreeListLink</Name>
+    <ParentID>19</ParentID>
+    <UserID>9</UserID>
+    <StartDate>2005-01-01T00:00:00+03:00</StartDate>
+    <EndDate>2005-05-10T00:00:00+04:00</EndDate>
+    <Done>true</Done>
+    <Priority>0</Priority>
+    <Complete>0</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>23</ID>
+    <Name>DBTree</Name>
+    <ParentID>14</ParentID>
+    <UserID>2</UserID>
+    <Done>true</Done>
+    <Priority>1</Priority>
+    <Complete>0</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>25</ID>
+    <Name>Testing and writing examples</Name>
+    <ParentID>17</ParentID>
+    <UserID>10</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>26</ID>
+    <Name>Writing Component</Name>
+    <ParentID>14</ParentID>
+    <UserID>11</UserID>
+    <Done>true</Done>
+    <Priority>1</Priority>
+    <Complete>0.15</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>28</ID>
+    <Name>Writing Help and Documetation</Name>
+    <ParentID>14</ParentID>
+    <UserID>11</UserID>
+    <Done>false</Done>
+    <Priority>2</Priority>
+    <Complete>0</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>32</ID>
+    <Name>Inspector</Name>
+    <ParentID>-1</ParentID>
+    <UserID>2</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0.03</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>33</ID>
+    <Name>Writing Help and Documetation</Name>
+    <ParentID>32</ParentID>
+    <UserID>5</UserID>
+    <Done>true</Done>
+    <Priority>1</Priority>
+    <Complete>1</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>34</ID>
+    <Name>Chart</Name>
+    <ParentID>-1</ParentID>
+    <UserID>2</UserID>
+    <StartDate>2004-06-19T00:00:00+04:00</StartDate>
+    <EndDate>2004-07-09T00:00:00+04:00</EndDate>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0.6</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>35</ID>
+    <Name>Testing and writing examples</Name>
+    <ParentID>34</ParentID>
+    <UserID>15</UserID>
+    <StartDate>2004-06-19T00:00:00+04:00</StartDate>
+    <EndDate>2004-06-02T00:00:00+04:00</EndDate>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>36</ID>
+    <Name>Writing Help and Documetation</Name>
+    <ParentID>34</ParentID>
+    <UserID>15</UserID>
+    <StartDate>2004-06-19T00:00:00+04:00</StartDate>
+    <EndDate>2004-06-19T00:00:00+04:00</EndDate>
+    <Done>false</Done>
+    <Priority>0</Priority>
+    <Complete>0.3</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>37</ID>
+    <Name>Writing Component</Name>
+    <ParentID>34</ParentID>
+    <UserID>7</UserID>
+    <StartDate>2004-06-02T00:00:00+04:00</StartDate>
+    <EndDate>2004-07-07T00:00:00+04:00</EndDate>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>38</ID>
+    <Name>Testing and writing examples</Name>
+    <ParentID>32</ParentID>
+    <UserID>5</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0.04</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>39</ID>
+    <Name>Writing Component</Name>
+    <ParentID>32</ParentID>
+    <UserID>17</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>40</ID>
+    <Name>InspectorDB</Name>
+    <ParentID>39</ParentID>
+    <UserID>17</UserID>
+    <Done>true</Done>
+    <Priority>1</Priority>
+    <Complete>1</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>41</ID>
+    <Name>Inspector</Name>
+    <ParentID>39</ParentID>
+    <UserID>17</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>42</ID>
+    <Name>RTTIInspector</Name>
+    <ParentID>39</ParentID>
+    <UserID>17</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>43</ID>
+    <Name>Chart</Name>
+    <ParentID>37</ParentID>
+    <UserID>7</UserID>
+    <StartDate>2004-06-07T00:00:00+04:00</StartDate>
+    <EndDate>2004-07-09T00:00:00+04:00</EndDate>
+    <Done>true</Done>
+    <Priority>2</Priority>
+    <Complete>1</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>44</ID>
+    <Name>Grid</Name>
+    <ParentID>-1</ParentID>
+    <UserID>2</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0.18</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>45</ID>
+    <Name>Writing Component</Name>
+    <ParentID>44</ParentID>
+    <UserID>13</UserID>
+    <Done>false</Done>
+    <Priority>0</Priority>
+    <Complete>0.64</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>46</ID>
+    <Name>DBGrid</Name>
+    <ParentID>45</ParentID>
+    <UserID>13</UserID>
+    <Done>true</Done>
+    <Priority>1</Priority>
+    <Complete>0.45</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>47</ID>
+    <Name>New Columns</Name>
+    <ParentID>45</ParentID>
+    <UserID>13</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0.8</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>48</ID>
+    <Name>ExLookupColumn</Name>
+    <ParentID>47</ParentID>
+    <UserID>13</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>49</ID>
+    <Name>PopupColumn</Name>
+    <ParentID>47</ParentID>
+    <UserID>13</UserID>
+    <Done>false</Done>
+    <Priority>2</Priority>
+    <Complete>0.3</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>50</ID>
+    <Name>TreeList</Name>
+    <ParentID>45</ParentID>
+    <UserID>4</UserID>
+    <Done>true</Done>
+    <Priority>1</Priority>
+    <Complete>0.9</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>51</ID>
+    <Name>Writing Help and Documetation</Name>
+    <ParentID>44</ParentID>
+    <UserID>4</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>1</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>52</ID>
+    <Name>Testing and writing examples</Name>
+    <ParentID>44</ParentID>
+    <UserID>4</UserID>
+    <Done>true</Done>
+    <Priority>2</Priority>
+    <Complete>1</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>53</ID>
+    <Name>Installation</Name>
+    <ParentID>-1</ParentID>
+    <UserID>7</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>54</ID>
+    <Name>Testing</Name>
+    <ParentID>53</ParentID>
+    <UserID>15</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0.9</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>55</ID>
+    <Name>Testing installation</Name>
+    <ParentID>54</ParentID>
+    <UserID>15</UserID>
+    <Done>false</Done>
+    <Priority>0</Priority>
+    <Complete>0</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>56</ID>
+    <Name>Testing examples</Name>
+    <ParentID>54</ParentID>
+    <UserID>15</UserID>
+    <Done>true</Done>
+    <Priority>1</Priority>
+    <Complete>0</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>57</ID>
+    <Name>Creating installations</Name>
+    <ParentID>53</ParentID>
+    <UserID>4</UserID>
+    <Done>true</Done>
+    <Priority>1</Priority>
+    <Complete>0.25</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>58</ID>
+    <Name>Reports</Name>
+    <ParentID>-1</ParentID>
+    <UserID>2</UserID>
+    <Done>false</Done>
+    <Priority>0</Priority>
+    <Complete>0</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>59</ID>
+    <Name>Testing and writing examples</Name>
+    <ParentID>58</ParentID>
+    <UserID>15</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0.7</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>60</ID>
+    <Name>Writing Help and Documetation</Name>
+    <ParentID>58</ParentID>
+    <UserID>14</UserID>
+    <Done>true</Done>
+    <Priority>1</Priority>
+    <Complete>1</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>61</ID>
+    <Name>Writing Component</Name>
+    <ParentID>58</ParentID>
+    <UserID>9</UserID>
+    <Done>false</Done>
+    <Priority>2</Priority>
+    <Complete>0</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>62</ID>
+    <Name>Reports</Name>
+    <ParentID>61</ParentID>
+    <UserID>9</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0.8</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>63</ID>
+    <Name>Bars</Name>
+    <ParentID>-1</ParentID>
+    <UserID>2</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>64</ID>
+    <Name>Writing Help and Documetation</Name>
+    <ParentID>63</ParentID>
+    <UserID>14</UserID>
+    <Done>true</Done>
+    <Priority>1</Priority>
+    <Complete>1</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>65</ID>
+    <Name>Testing and writing examples</Name>
+    <ParentID>63</ParentID>
+    <UserID>3</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0.45</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>66</ID>
+    <Name>Writing Component</Name>
+    <ParentID>63</ParentID>
+    <UserID>4</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0.55</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>67</ID>
+    <Name>Bars</Name>
+    <ParentID>66</ParentID>
+    <UserID>4</UserID>
+    <Done>false</Done>
+    <Priority>1</Priority>
+    <Complete>0.99</Complete>
+  </Tasks>
+  <Tasks>
+    <ID>68</ID>
+    <Name>NavBar</Name>
+    <ParentID>66</ParentID>
+    <UserID>4</UserID>
+    <Done>false</Done>
+    <Priority>2</Priority>
+    <Complete>0.15</Complete>
+  </Tasks>
+  <Users>
+    <ID>2</ID>
+    <FirstName>Paul</FirstName>
+    <LastName>Bailey</LastName>
+    <Country>USA</Country>
+    <PostalCode>12209</PostalCode>
+    <City>Westchester</City>
+    <Address>872 Single Hill Rd.</Address>
+    <Phone>(222) 428-2229</Phone>
+    <Fax>(222) 428-2230</Fax>
+    <Email>paulb@westchestercounty.com</Email>
+    <HomePage>http://www.westchestercountysite.com</HomePage>
+    <DepartmentID>6</DepartmentID>
+  </Users>
+  <Users>
+    <ID>3</ID>
+    <FirstName>Brad</FirstName>
+    <LastName>Barnes</LastName>
+    <Country>USA</Country>
+    <PostalCode>05021</PostalCode>
+    <City>Dallas</City>
+    <Address>4287 Maple Hill St.</Address>
+    <Phone>(513) 428-2999</Phone>
+    <Fax>(513) 428-2930</Fax>
+    <Email>barkk@barnesfamilywebsite.com</Email>
+    <HomePage>http://www.barnesfamilywebsite.com</HomePage>
+    <DepartmentID>2</DepartmentID>
+  </Users>
+  <Users>
+    <ID>4</ID>
+    <FirstName>Jerry</FirstName>
+    <LastName>Campbell</LastName>
+    <Country>USA</Country>
+    <PostalCode>12122</PostalCode>
+    <City>Irvine</City>
+    <Address>98 Michaels Lane</Address>
+    <Phone>(514) 229-9228</Phone>
+    <Fax>(514) 229-9229</Fax>
+    <Email>jerryc@campbellfamilywebsite.com</Email>
+    <HomePage>http://www.campbellfamilywebsite.com</HomePage>
+    <DepartmentID>1</DepartmentID>
+  </Users>
+  <Users>
+    <ID>5</ID>
+    <FirstName>Carl</FirstName>
+    <LastName>Lucas</LastName>
+    <Country>USA</Country>
+    <PostalCode>24872</PostalCode>
+    <City>Houston</City>
+    <Address>287 Oak Drive</Address>
+    <Phone>(171) 555-7788</Phone>
+    <Fax>(171) 555-7789</Fax>
+    <Email>carl@lucasfamilywebsite.com</Email>
+    <HomePage>http://www.lucasfamilywebsite.com</HomePage>
+    <DepartmentID>3</DepartmentID>
+  </Users>
+  <Users>
+    <ID>6</ID>
+    <FirstName>Peter</FirstName>
+    <LastName>Dolan</LastName>
+    <Country>USA</Country>
+    <PostalCode>91274</PostalCode>
+    <City>Dallas</City>
+    <Address>2767 LBJ Hwy Suite 1</Address>
+    <Phone>(888) 288-2229</Phone>
+    <Fax>(888) 288-2230</Fax>
+    <Email>peter@dolanfamilywebsite.com</Email>
+    <HomePage>http://www.dolanfamilywebsite.com</HomePage>
+    <DepartmentID>5</DepartmentID>
+  </Users>
+  <Users>
+    <ID>7</ID>
+    <FirstName>Ryan</FirstName>
+    <LastName>Fischer</LastName>
+    <Country>USA</Country>
+    <PostalCode>68306</PostalCode>
+    <City>Inglewood</City>
+    <Address>5998 Hoffner Blvd Suite 1</Address>
+    <Phone>(488) 288-9992</Phone>
+    <Fax>(488) 288-9945</Fax>
+    <Email>ryan@fischerfamilywebsite.com</Email>
+    <HomePage>http://www.fischerfamilywebsite.com</HomePage>
+    <DepartmentID>1</DepartmentID>
+  </Users>
+  <Users>
+    <ID>8</ID>
+    <FirstName>Richard</FirstName>
+    <LastName>Fisher</LastName>
+    <Country>USA</Country>
+    <PostalCode>90001</PostalCode>
+    <City>Los Angeles</City>
+    <Address>4726 Harper Hill St. Apt 1</Address>
+    <Phone>(288) 288-9288</Phone>
+    <Fax>(288) 288-9289</Fax>
+    <Email>richardf@fischerfamilywebsite.com</Email>
+    <HomePage>http://www.fischerfamilywebsite.com</HomePage>
+    <DepartmentID>5</DepartmentID>
+  </Users>
+  <Users>
+    <ID>9</ID>
+    <FirstName>Tom</FirstName>
+    <LastName>Hamlett</LastName>
+    <Country>USA</Country>
+    <PostalCode>28023</PostalCode>
+    <City>New York</City>
+    <Address>247 5th Ave Apt 487</Address>
+    <Phone>(877) 828-9229</Phone>
+    <Fax>(877) 828-9240</Fax>
+    <Email>tomh@hamlettfamilywebsite.com</Email>
+    <HomePage>http://www.hamlettfamilywebsite.com</HomePage>
+    <DepartmentID>1</DepartmentID>
+  </Users>
+  <Users>
+    <ID>10</ID>
+    <FirstName>Mark</FirstName>
+    <LastName>Hamilton</LastName>
+    <Country>USA</Country>
+    <PostalCode>13008</PostalCode>
+    <City>Thomasville</City>
+    <Address>4287 Indiane Rd</Address>
+    <Phone>(824) 882-2992</Phone>
+    <Fax>(824) 882-2993</Fax>
+    <Email>markh@vegassoftware.com</Email>
+    <HomePage>http://www.vegaspersons.com/markh</HomePage>
+    <DepartmentID>2</DepartmentID>
+  </Users>
+  <Users>
+    <ID>11</ID>
+    <FirstName>Steve</FirstName>
+    <LastName>Lee</LastName>
+    <Country>Canada</Country>
+    <PostalCode>J74 CK8</PostalCode>
+    <City>Ontario</City>
+    <Address>24 Tsawassen Blvd.</Address>
+    <Phone>(604) 842-3998</Phone>
+    <Fax>(604) 842-3999</Fax>
+    <Email>stevel@vegassoftware.com</Email>
+    <HomePage>http://www.vegaspersons.com/stevel</HomePage>
+    <DepartmentID>1</DepartmentID>
+  </Users>
+  <Users>
+    <ID>12</ID>
+    <FirstName>Jimmy</FirstName>
+    <LastName>Lewis</LastName>
+    <Country>Canada</Country>
+    <PostalCode>7H7 27B</PostalCode>
+    <City>Montreal</City>
+    <Address>2587 Trans Canada Hwy</Address>
+    <Phone>(276) 278-2827</Phone>
+    <Fax>(276) 278-2829</Fax>
+    <Email>jimmyl@vegassoftware.com</Email>
+    <HomePage>http://www.vegaspersons.com/jimmyl</HomePage>
+    <DepartmentID>4</DepartmentID>
+  </Users>
+  <Users>
+    <ID>13</ID>
+    <FirstName>Jeffrey</FirstName>
+    <MiddleName>W</MiddleName>
+    <LastName>McClain</LastName>
+    <Country>Canada</Country>
+    <PostalCode>10103</PostalCode>
+    <City>Toronto</City>
+    <Address>892 Rocket Richard Way</Address>
+    <Phone>(827) 843-3872</Phone>
+    <Fax>(827) 843-3873</Fax>
+    <Email>jeffreym@vegassoftware.com</Email>
+    <HomePage>http://www.vegaspersons.com/jeffreym</HomePage>
+    <DepartmentID>1</DepartmentID>
+  </Users>
+  <Users>
+    <ID>14</ID>
+    <FirstName>Andrew</FirstName>
+    <LastName>Miller</LastName>
+    <Country>Canada</Country>
+    <PostalCode>05022</PostalCode>
+    <City>Edmonton</City>
+    <Address>2767 Wayne Gretzy Hwy Apt 1</Address>
+    <Phone>(726) 288-2887</Phone>
+    <Fax>(726) 288-2888</Fax>
+    <Email>andrewm@vegassoftware.com</Email>
+    <HomePage>http://www.vegaspersons.com/andrewm</HomePage>
+    <DepartmentID>3</DepartmentID>
+  </Users>
+  <Users>
+    <ID>15</ID>
+    <FirstName>Dave</FirstName>
+    <LastName>Murrel</LastName>
+    <Country>Switzerland</Country>
+    <PostalCode>3012</PostalCode>
+    <City>Bern</City>
+    <Address>Hauptstr. 29</Address>
+    <Phone>(71) 452-0765</Phone>
+    <Fax>(71) 973-7252</Fax>
+    <Email>davem@vegassoftware.com</Email>
+    <HomePage>http://www.vegaspersons.com/davem</HomePage>
+    <DepartmentID>2</DepartmentID>
+  </Users>
+  <Users>
+    <ID>16</ID>
+    <FirstName>Bert</FirstName>
+    <LastName>Parkins</LastName>
+    <Country>USA</Country>
+    <PostalCode>05432</PostalCode>
+    <City>Los Angeles</City>
+    <Address>38427 Smith St.</Address>
+    <Phone>(213) 284-9938</Phone>
+    <Fax>(213) 284-9939</Fax>
+    <Email>bertp@vegassoftware.com</Email>
+    <HomePage>http://www.vegaspersons.com/bertp</HomePage>
+    <DepartmentID>1</DepartmentID>
+  </Users>
+  <Users>
+    <ID>17</ID>
+    <FirstName>Mike</FirstName>
+    <LastName>Roller</LastName>
+    <Country>UK</Country>
+    <PostalCode>11611</PostalCode>
+    <City>London</City>
+    <Address>Berkeley Gardens 22  Brewery</Address>
+    <Phone>(171) 554-5228</Phone>
+    <Fax>(171) 554-5229</Fax>
+    <Email>miker@vegassoftware.com</Email>
+    <HomePage>http://www.vegaspersons.com/miker</HomePage>
+    <DepartmentID>1</DepartmentID>
+  </Users>
+  <Users>
+    <ID>18</ID>
+    <FirstName>Ray</FirstName>
+    <LastName>Shipman</LastName>
+    <Country>Germany</Country>
+    <PostalCode>52066</PostalCode>
+    <City>Aachen</City>
+    <Address>Walserweg 20</Address>
+    <Phone>(423) 241-0312</Phone>
+    <Fax>(423) 241-0312</Fax>
+    <Email>rays@vegassoftware.com</Email>
+    <HomePage>http://www.vegaspersons.com/rays</HomePage>
+    <DepartmentID>4</DepartmentID>
+  </Users>
+</IssueList>

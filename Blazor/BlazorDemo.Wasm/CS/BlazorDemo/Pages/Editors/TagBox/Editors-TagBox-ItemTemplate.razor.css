@@ -1,0 +1,75 @@
+.tagbox-item-template {
+    display: flex;
+    align-items: center;
+}
+
+.tagbox-tag-template {
+    display: flex;
+    align-items: center;
+    padding: 0.125em 0.5em 0.125em 0;
+    position: relative;
+}
+
+.tagbox-tag-template:before {
+    content: " ";
+    position: absolute;
+    background-color: currentColor;
+    opacity: 0.15;
+    border-radius: 16px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.tagbox-item-template-employee-photo,
+.tagbox-tag-template-employee-photo {
+    margin-right: 0.5em;
+    border-radius: 16px;
+    border: 0 solid #000;
+}
+
+.tagbox-item-template-employee-photo {
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+}
+
+.tagbox-tag-template-employee-photo {
+    width: 24px;
+    height: 24px;
+}
+
+.tagbox-item-template-employee-home-phone {
+    opacity: 0.65;
+    display: block;
+}
+
+/*BeginHide*/::deep /*EndHide*/.tagbox-tag-template-close-btn {
+    border: 0;
+    border-radius: 3rem;
+    box-shadow: none;
+    font-weight: 600;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    margin: 0 0 0 0.5em;
+    opacity: 0.5;
+}
+
+/*BeginHide*/::deep /*EndHide*/.tagbox-tag-template-close-btn:hover {
+    opacity: 0.75;
+}
+
+/*BeginHide*/::deep /*EndHide*/.tagbox-tag-template-close-btn-icon {
+    height: 16px;
+    width: 16px;
+    mask-image: url("images/icons/clear.svg");
+    -webkit-mask-image: url("images/icons/clear.svg");
+    background-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    background-position: center center;
+    background-color: currentColor;
+}

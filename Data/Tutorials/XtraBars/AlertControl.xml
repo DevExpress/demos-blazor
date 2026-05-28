@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo>                                   
+<controls>
+<controlentry>
+		<control>
+			<name>seAutoFormDelay</name>
+			<windowcaption>Alert Form Delay</windowcaption>
+			<description>Specifies an alert window's delay, in milliseconds.</description>
+			<memberlist>AlertControl.AutoFormDelay</memberlist>
+			<dtimage></dtimage>
+		</control>
+</controlentry>
+
+  <controlentry>
+    <control>
+      <name>icbControlBoxPosition</name>
+      <windowcaption>Control Box Position</windowcaption>
+      <description>Specifies the position of an alert window's control box.</description>
+      <memberlist>AlertControl.ControlBoxPosition</memberlist>
+      <dtimage></dtimage>
+    </control>
+  </controlentry>
+  
+  <controlentry>
+    <control>
+      <name>icbFormDisplaySpeed</name>
+      <windowcaption>Form Display Speed</windowcaption>
+      <description>Specifies the speed of the appearance of an alert window.</description>
+      <memberlist>AlertControl.FormDisplaySpeed</memberlist>
+      <dtimage></dtimage>
+    </control>
+  </controlentry>
+
+
+  <controlentry>
+    <control>
+      <name>icbFormLocation</name>
+      <windowcaption>Form Location</windowcaption>
+      <description>Specifies the screen position where alert windows appear.</description>
+      <memberlist>AlertControl.FormLocation</memberlist>
+      <dtimage></dtimage>
+    </control>
+  </controlentry>
+
+  <controlentry>
+    <control>
+      <name>ceAllowHtmlText</name>
+      <windowcaption>HTML Formatting</windowcaption>
+      <description>Specifies whether HTML tags can be used to format an alert window's caption and text.</description>
+      <memberlist>AlertControl.AllowHtmlText</memberlist>
+      <dtimage></dtimage>
+    </control>
+  </controlentry>
+
+  <controlentry>
+    <control>
+      <name>ceShowCloseButton</name>
+      <windowcaption>Close Button</windowcaption>
+      <description>Shows the Close button in newly created alert windows.</description>
+      <memberlist>AlertControl.ShowCloseButton</memberlist>
+      <dtimage></dtimage>
+    </control>
+  </controlentry>
+
+  <controlentry>
+    <control>
+      <name>ceShowPinButton</name>
+      <windowcaption>Pin Button</windowcaption>
+      <description>Shows the Pin button in newly created alert windows.</description>
+      <memberlist>AlertControl.ShowPinButton</memberlist>
+      <dtimage></dtimage>
+    </control>
+  </controlentry>
+
+  <controlentry>
+    <control>
+      <name>ceShowPopupMenu</name>
+      <windowcaption>Show Popup Menu</windowcaption>
+      <description>Associates a popup menu with alert windows.</description>
+      <memberlist>AlertControl.PopupMenu</memberlist>
+      <dtimage></dtimage>
+    </control>
+  </controlentry>
+
+  <controlentry>
+    <control>
+      <name>ceShowTooltips</name>
+      <windowcaption>Show Tooltips</windowcaption>
+      <description>Enables tooltips for custom buttons in alert windows.</description>
+      <memberlist>AlertControl.ShowToolTips, AlertButton.Hint, AlertControl.Buttons</memberlist>
+      <dtimage></dtimage>
+    </control>
+  </controlentry>
+
+  <controlentry>
+    <control>
+      <name>ccbeButtons</name>
+      <windowcaption>Show Buttons</windowcaption>
+      <description>Shows and hides custom buttons in newly created alert windows.</description>
+      <memberlist>AlertControl.Buttons</memberlist>
+      <dtimage></dtimage>
+    </control>
+  </controlentry>
+
+  <controlentry>
+    <control>
+      <name>ceWidth</name>
+      <windowcaption>Alert Window Size</windowcaption>
+      <description>Sets the size of alert windows.</description>
+      <memberlist>The AlertForm parameter of the AlertControl.BeforeFormShow event.</memberlist>
+      <dtimage></dtimage>
+    </control>
+  </controlentry>
+
+  <controlentry>
+    <control>
+      <name>ceHeight</name>
+      <windowcaption>Alert Window Size</windowcaption>
+      <description>Sets the size of alert windows.</description>
+      <memberlist>The AlertForm parameter of the AlertControl.BeforeFormShow event.</memberlist>
+      <dtimage></dtimage>
+    </control>
+  </controlentry>
+
+  <controlentry>
+    <control>
+      <name>button1</name>
+      <windowcaption>Show Alert Window</windowcaption>
+      <description>Opens an alert window.</description>
+      <memberlist>AlertControl.Show</memberlist>
+      <dtimage></dtimage>
+    </control>
+  </controlentry>
+
+  <controlentry>
+    <control>
+      <name>groupControl2</name>
+      <windowcaption>Display Info</windowcaption>
+      <description>Provide display information for alert windows.</description>
+      <memberlist>AlertControl.Show</memberlist>
+      <dtimage></dtimage>
+    </control>
+  </controlentry>
+
+  
+</controls>  
+</totalinfo>                     

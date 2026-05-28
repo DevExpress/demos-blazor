@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="H:\Work\XML Schemes\module-new.xsd">
+	<controls>
+		<controlentry>
+			<control>
+				<name>gridControl1</name>
+				<windowcaption>Edit the Focused Record</windowcaption>
+				<description>Once the data navigator's 'Edit Record' button has been clicked, the modal form in which you can edit the current project is invoked. At this point the transaction is started. A persistent object which corresponds to the focused row is retrieved and passed to the modal form's constructor. It serves as a datasource for the editors displayed within the modal form.</description>
+				<memberlist>Session.BeginNestedUnitOfWork()</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+	</controls>
+</totalinfo>

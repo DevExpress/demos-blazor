@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <DxExtendStartupHost>False</DxExtendStartupHost>
+    <Configurations>Debug;Release;VisualTests</Configurations>
+    <EnableDefaultItems>False</EnableDefaultItems>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GenerateRuntimeConfigDevFile>true</GenerateRuntimeConfigDevFile>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <AssemblyName>BlazorDemo</AssemblyName>
+    <RootNamespace>BlazorDemo</RootNamespace>
+    <OutputType>Library</OutputType>
+    <IntermediateOutputPath>obj.WASM</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Markdig" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" />
+    <PackageReference Include="DevExtreme.AspNet.Data" />
+    <PackageReference Include="System.CodeDom" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" />
+    <PackageReference Include="System.Reactive" />
+    <ProjectReference Include="..\BlazorDemo.DemoData\BlazorDemo.DemoData.csproj" />
+    <ProjectReference Include="..\BlazorDemo.Reporting.Core\BlazorDemo.Reporting.Core.csproj" />
+    <PackageReference Include="System.Numerics.Tensors" />
+    <PackageReference Include="Azure.AI.OpenAI" />
+	<PackageReference Include="Microsoft.Agents.AI.Workflows" />
+    <PackageReference Include="Microsoft.Extensions.AI" />
+    <PackageReference Include="Microsoft.Extensions.AI.OpenAI" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Blazor.PdfViewer" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Blazor.Reporting.JSBasedControls.WebAssembly" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.AIIntegration.Blazor.Reporting.Viewer" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Images.Blazor" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Reporting.Demos" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Blazor.PivotTable" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.AIIntegration.Blazor" VersionOverride="26.1.2-beta-26148" />
+    
+	  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSources\Helpers\VehiclesData.cs" />
+    <Compile Include="Pages\Charts\DrillDown\Charts-DrillDown.razor.cs" />
+    <Compile Include="Pages\Editors\Common\Models\*.cs" />
+    <Compile Include="Pages\Icons\IconExplorer\*.cs" />
+    <Compile Include="Pages\Layout\Drawer\*.cs" />
+    <Compile Include="Pages\Editors\ColorPalette\Models\*.cs" />
+    <Compile Include="Pages\PivotTable\Filtering\CustomFilters\MPGCustomFilterItem.cs" />
+    <Compile Include="Pages\TreeList\TreeListRenderHelper.cs" />
+    <Compile Include="Pages\FilterBuilder\FilterBuilder-OperatorCustomization.razor.cs" />
+    <Compile Include="Services\BarGaugeTemperatureMeasurerService.cs" />
+    <Compile Include="Services\DemoStaticResourceService.cs" />
+    <Compile Include="Services\CustomAIFunctions.cs" />
+    <Compile Include="Services\DemoThemes.cs" />
+    <Compile Include="Services\GridAIFunctions.cs" />
+    <Compile Include="Services\ChatClientKeys.cs" />
+    <Compile Include="Services\DemoThemeService.cs" />
+    <Compile Include="Services\IAIExceptionHandler.cs" />
+    <Compile Include="Services\IBarGaugeTemperatureMeasurerService.cs" />
+    <Compile Include="Services\CspNonceService.cs" />
+    <Compile Include="Services\INetworkSpeedTesterService.cs" />
+    <Compile Include="Services\IStockQuoteByRegionService.cs" />
+    <Compile Include="Services\IStockQuoteService.cs" />
+    <Compile Include="Services\NetworkSpeedTesterService.cs" />
+    <Compile Include="Services\PromoteHttpStatusErrorsPipelineTransport.cs" />
+    <Compile Include="Services\StockQuoteByRegionService.cs" />
+    <Compile Include="Services\StockQuoteService.cs" />
+    <Compile Include="DataUtils.cs" />
+    <Compile Include="Services\VisualTestsStockQuoteService.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Configuration\**\*.cs" />
+    <Compile Include="DemoServiceCollectionExtensions.cs" />
+    <Compile Include="Data\**\*.cs" />
+    <Compile Include="DataProviders\**\*.cs" />
+    <Compile Include="Services\ProductsFlatService*.cs" />
+    <Compile Include="Services\RentInfoDataService*.cs" />
+    <Compile Include="Services\ContosoRetailDataService*.cs" />
+    <Compile Include="Services\WeatherForecastService*.cs" />
+    <Compile Include="Services\NwindDataService*.cs" />
+    <Compile Include="Services\HomesDataService*.cs" />
+    <Compile Include="Services\IssuesDataService*.cs" />
+    <Compile Include="Services\WorldcitiesDataService*.cs" />
+    <Compile Include="Shared\**\*.cs" />
+    <Compile Include="DocumentMetadata\Components\MetadataManager.cs" />
+    <Compile Include="DocumentMetadata\Components\MetadataStaticRenderer.cs" />
+    <Compile Include="DocumentMetadata\Renderers\**\*.cs" />
+    <Compile Include="DocumentMetadata\DocumentAttributes.cs" />
+    <Compile Include="DocumentMetadata\DocumentMetadata.cs" />
+    <Compile Include="DocumentMetadata\DocumentMetadata.Implementation.cs" />
+    <Compile Include="DocumentMetadata\Utils.cs" />
+    <Compile Include="DocumentMetadata\Components\WasmMetadataManager.cs" />
+    <Compile Include="DocumentMetadata\DocumentMetadata.Wasm.cs" />
+    <Content Include="wwwroot\**\*.*" Exclude="wwwroot\_code\**\*.*" CopyToPublishDirectory="Always" />
+    <Content Include="**\*.razor" Exclude="Pages\Reports\**\*.Server.razor;wwwroot\_code\**\*.razor;Pages\AI\Reports\**" />
+    <Content Include="Pages\**\*.md" />
+    <Content Include="Pages\**\*.razor.css" />
+    <Content Include="Shared\**\*.razor.css" />
+    <Content Include="Pages\Icons\IconExplorer\IconDetail.razor.js" />
+    <Content Include="DataSources\FileSystemDataItems.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Dictionaries\english.txt" />
+    <Content Include="NOTICE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataSources\Contacts.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\devav.sqlite3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\homes.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\nwind.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\vehicles.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\Countries.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\issue-list.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataSources\worldcities.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataSources\ChatResources\access.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </Content>
+    <Content Include="DataSources\ChatResources\dashboard.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </Content>
+    <Content Include="DataSources\ChatResources\dxaichat.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataSources\USDJPY.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataSources\AnnualWeather.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Pages\CodeSnippets\*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataSources\GlobalTemperatureIndex.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataSources\Vehicles.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Documents\ActiveCustomers.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Documents\AlbertEinstein.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Documents\Example.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Documents\MailMergeTemplate.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Dictionaries\english.xlg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Dictionaries\custom.dic">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Dictionaries\english.aff">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Documents\SpellChecking.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataSources\Invoice.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Documents\FirstLook.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Copy-VendorBundles.ps1" />
+    <Content Include="package.json" />
+    <Content Include="package-lock.json" />
+    <Content Include="..\..\Bin\npm\NpmUtils.ps1">
+      <Link>NpmUtils.ps1</Link>
+    </Content>
+    <Content Update="wwwroot\lib\vendor\**\*.*">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <Target Name="CopyVendorBundles" BeforeTargets="ResolveProjectStaticWebAssets" Condition="'$(DesignTimeBuild)' != 'true'">
+    <Exec Command="pwsh -NoProfile -NonInteractive -File &quot;Copy-VendorBundles.ps1&quot;" />
+    <ItemGroup>
+      <Content Remove="wwwroot\lib\vendor\**\*.*" />
+      <Content Include="wwwroot\lib\vendor\**\*.*" />
+      <Content Include="DataSources\IconMetadata.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+  </Target>
+  <Target Name="ControllersCreate" BeforeTargets="PreBuildEvent" Condition="!Exists('Controllers')">
+    <Exec Condition="$([MSBuild]::IsOSPlatform('Windows'))" Command="mklink /J &quot;Controllers&quot; &quot;..//BlazorDemo.ServerSide//Controllers&quot;" />
+    <Exec Condition="!$([MSBuild]::IsOSPlatform('Windows'))" Command="ln -s &quot;..//BlazorDemo.ServerSide//Controllers&quot; &quot;Controllers&quot;" />
+  </Target>
+  <Target Name="SourceCode" BeforeTargets="PreBuildEvent">
+    <ItemGroup>
+      <EmbeddedResource Include="Pages\**\*.*" Exclude="Pages\CodeSnippets\**\*.*" />
+      <EmbeddedResource Include="Data\**\*.*" />
+      <EmbeddedResource Include="DataProviders\**\*.*" />
+      <EmbeddedResource Include="Services\**\*.*" />
+      <EmbeddedResource Include="wwwroot\css\*.css" />
+      <EmbeddedResource Include="Controllers\**\*.*" />
+      <EmbeddedResource Include="DataUtils.cs" />
+    </ItemGroup>
+  </Target>
+</Project>

@@ -1,0 +1,16 @@
+.block-content {
+    border-radius: 0.5rem;
+    flex-grow: 0;
+    margin: auto;
+    max-width: 30rem;
+    padding: 1.5rem;
+    width: auto;
+}
+
+::deep .w-100 {
+    width: 100%;
+}
+
+::deep .text-danger {
+    color: var(--dxds-color-surface-danger-default-rest);
+}

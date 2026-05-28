@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<ArrayOfConsumptionAndInvestment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ConsumptionAndInvestment>
+    <Category>Receipts</Category>
+    <Value>3448.4</Value>
+    <Subcategories>
+      <ConsumptionAndInvestment>
+        <Category>Tax receipts</Category>
+        <Value>2100.3</Value>
+        <Subcategories>
+          <ConsumptionAndInvestment>
+            <Category>Personal taxes</Category>
+            <Value>1540.6</Value>
+            <Subcategories />
+          </ConsumptionAndInvestment>
+          <ConsumptionAndInvestment>
+            <Category>Corporate income taxes</Category>
+            <Value>401.2</Value>
+            <Subcategories />
+          </ConsumptionAndInvestment>
+          <ConsumptionAndInvestment>
+            <Category>Taxes on production and imports</Category>
+            <Value>137</Value>
+            <Subcategories />
+          </ConsumptionAndInvestment>
+          <ConsumptionAndInvestment>
+            <Category>Taxes from the rest of the world</Category>
+            <Value>21.5</Value>
+            <Subcategories />
+          </ConsumptionAndInvestment>
+        </Subcategories>
+      </ConsumptionAndInvestment>
+      <ConsumptionAndInvestment>
+        <Category>Contributions for social insurance</Category>
+        <Value>1230.2</Value>
+        <Subcategories />
+      </ConsumptionAndInvestment>
+      <ConsumptionAndInvestment>
+        <Category>Income receipts on assets</Category>
+        <Value>32.1</Value>
+        <Subcategories>
+          <ConsumptionAndInvestment>
+            <Category>Interest receipts</Category>
+            <Value>27.3</Value>
+            <Subcategories />
+          </ConsumptionAndInvestment>
+          <ConsumptionAndInvestment>
+            <Category>Rents and royalties</Category>
+            <Value>4.8</Value>
+            <Subcategories />
+          </ConsumptionAndInvestment>
+        </Subcategories>
+      </ConsumptionAndInvestment>
+      <ConsumptionAndInvestment>
+        <Category>Transfer receipts</Category>
+        <Value>74.6</Value>
+        <Subcategories>
+          <ConsumptionAndInvestment>
+            <Category>From business</Category>
+            <Value>47.4</Value>
+            <Subcategories />
+          </ConsumptionAndInvestment>
+          <ConsumptionAndInvestment>
+            <Category>From persons</Category>
+            <Value>27.3</Value>
+            <Subcategories />
+          </ConsumptionAndInvestment>
+        </Subcategories>
+      </ConsumptionAndInvestment>
+    </Subcategories>
+  </ConsumptionAndInvestment>
+  <ConsumptionAndInvestment>
+    <Category>Expenditures</Category>
+    <Value>4145.7</Value>
+    <Subcategories>
+      <ConsumptionAndInvestment>
+        <Category>Consumption expenditures</Category>
+        <Value>964.5</Value>
+        <Subcategories />
+      </ConsumptionAndInvestment>
+      <ConsumptionAndInvestment>
+        <Category>Transfer payments</Category>
+        <Value>2644.8</Value>
+        <Subcategories>
+          <ConsumptionAndInvestment>
+            <Category>Government social benefits</Category>
+            <Value>2039.3</Value>
+            <Subcategories>
+              <ConsumptionAndInvestment>
+                <Category>Social Security benefits</Category>
+                <Value>896.5</Value>
+                <Subcategories />
+              </ConsumptionAndInvestment>
+              <ConsumptionAndInvestment>
+                <Category>Medicare benefits</Category>
+                <Value>655.8</Value>
+                <Subcategories />
+              </ConsumptionAndInvestment>
+              <ConsumptionAndInvestment>
+                <Category>Unemployment benefits</Category>
+                <Value>31.7</Value>
+                <Subcategories />
+              </ConsumptionAndInvestment>
+              <ConsumptionAndInvestment>
+                <Category>Other benefits to persons</Category>
+                <Value>434.4</Value>
+                <Subcategories />
+              </ConsumptionAndInvestment>
+              <ConsumptionAndInvestment>
+                <Category>Benefits to the rest of the world</Category>
+                <Value>20.9</Value>
+                <Subcategories />
+              </ConsumptionAndInvestment>
+            </Subcategories>
+          </ConsumptionAndInvestment>
+        </Subcategories>
+      </ConsumptionAndInvestment>
+      <ConsumptionAndInvestment>
+        <Category>Other transfer payments</Category>
+        <Value>605.5</Value>
+        <Subcategories>
+          <ConsumptionAndInvestment>
+            <Category>Grants-in-aid to state &amp; local government</Category>
+            <Value>555.5</Value>
+            <Subcategories />
+          </ConsumptionAndInvestment>
+          <ConsumptionAndInvestment>
+            <Category>To the rest of the world</Category>
+            <Value>50</Value>
+            <Subcategories />
+          </ConsumptionAndInvestment>
+        </Subcategories>
+      </ConsumptionAndInvestment>
+      <ConsumptionAndInvestment>
+        <Category>Interest payments</Category>
+        <Value>475.1</Value>
+        <Subcategories>
+          <ConsumptionAndInvestment>
+            <Category>To persons and business</Category>
+            <Value>378.5</Value>
+            <Subcategories />
+          </ConsumptionAndInvestment>
+          <ConsumptionAndInvestment>
+            <Category>To the rest of the world</Category>
+            <Value>96.7</Value>
+            <Subcategories />
+          </ConsumptionAndInvestment>
+        </Subcategories>
+      </ConsumptionAndInvestment>
+      <ConsumptionAndInvestment>
+        <Category>Subsidies</Category>
+        <Value>61.3</Value>
+        <Subcategories />
+      </ConsumptionAndInvestment>
+    </Subcategories>
+  </ConsumptionAndInvestment>
+</ArrayOfConsumptionAndInvestment>

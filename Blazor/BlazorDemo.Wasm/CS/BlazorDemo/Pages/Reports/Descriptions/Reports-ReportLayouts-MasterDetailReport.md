@@ -1,0 +1,1 @@
+This demo illustrates the use of Detail Report bands when generating a [master-detail report](https://docs.devexpress.com/XtraReports/4785/create-report-types/create-a-master-detail-report-with-a-detail-report-band). The report displays the invoice data where the Detail Report lists the products ordered.

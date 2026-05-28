@@ -1,0 +1,21 @@
+.avatar-container {
+    display: flex;
+    border: 0.0625rem solid var(--dxds-color-border-neutral-default-rest);
+    border-radius: 50%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+    .avatar-container:hover {
+        cursor: pointer;
+        border-color: var(--dxds-color-surface-primary-default-rest);
+    }
+
+    .avatar-container img {
+        max-width: 100%;
+    }
+
+.no-hover {
+    pointer-events: none;
+}

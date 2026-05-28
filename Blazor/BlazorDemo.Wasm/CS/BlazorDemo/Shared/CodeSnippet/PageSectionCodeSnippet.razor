@@ -1,0 +1,23 @@
+﻿@inject IJSRuntime JS
+
+<DemoScriptLoader @ref=@sectionHelper Src="_content/BlazorDemo/lib/page-section-helper.js" />
+
+<code class="language-@Language">@ChildContent</code>
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+    [Parameter]
+    public string Language { get; set; } = "cshtml-razor";
+
+    ElementReference codeBlockRef;
+    DemoScriptLoader sectionHelper;
+    protected override async Task OnAfterRenderAsync(bool firstRender) {
+        if(firstRender) {
+            try {
+                await JS.InvokeVoidAsync("hljs.highlightAll");
+                await sectionHelper.InvokeVoidAsync("DemoPageSectionHelper.initExpandCodeButtons", codeBlockRef);
+            } catch { }
+        }
+        await base.OnAfterRenderAsync(firstRender);
+    }
+}

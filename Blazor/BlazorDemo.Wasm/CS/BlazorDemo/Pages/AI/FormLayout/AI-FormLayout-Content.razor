@@ -1,0 +1,187 @@
+<DemoPageSectionComponent Id="@Id" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @using DevExpress.AIIntegration.Blazor.Layout
+        <div>
+            <DxLayoutBreakpoint DeviceSize="DeviceSize.Small | DeviceSize.XSmall"
+                                @bind-IsActive="IsSmallScreen"/>
+            <DxStackLayout CssClass="w-100"
+                           Orientation="IsSmallScreen ? Orientation.Vertical : Orientation.Horizontal"
+                           ItemSpacing="12px">
+                <Items>
+                    @if(!IsSmallScreen) {
+                        <DxStackLayoutItem Length="2fr">
+                            <Template>
+                                <div class="d-flex flex-column">
+                                    <div class="fw-bold mb-3">Source Text:</div>
+                                    <DxMemo @bind-Text="SampleText"
+                                            Rows="14"
+                                            ResizeMode="MemoResizeMode.Auto"
+                                            SizeMode="Params.SizeMode"
+                                            aria-label="Source Text"/>
+                                </div>
+                            </Template>
+                        </DxStackLayoutItem>
+                    }
+                    <DxStackLayoutItem Length="@(IsSmallScreen ? "1fr" : "3fr")">
+                        <Template>
+                            <div class="d-flex flex-column">
+                                <div class="fw-bold mb-3">Billing Information:</div>
+                                <DxFormLayout @ref="FormLayout"
+                                              Data="@model"
+                                              SizeMode="Params.SizeMode"
+                                              CssClass="w-100 mb-2">
+                                    <Extensions>
+                                        <FormLayoutSmartPaste ItemDescriptions="@fieldDescriptions"
+                                                              PromptAugmentation="@PromptAugmentation"/>
+                                    </Extensions>
+                                    <ChildContent>
+                                        <DxFormLayoutItem Caption="Full Name" ColSpanMd="12"
+                                                          Field="@nameof(BillingFormModel.FullName)">
+                                            <DxTextBox @bind-Text="@model.FullName"
+                                                       NullText="Full Name"/>
+                                        </DxFormLayoutItem>
+                                        <DxFormLayoutItem Caption="Amount Due" ColSpanMd="12"
+                                                          Field="@nameof(BillingFormModel.AmountDue)">
+                                            <DxMaskedInput @bind-Value="@model.AmountDue"
+                                                           Mask="@NumericMask.Currency"
+                                                           NullText="$0.00"/>
+                                        </DxFormLayoutItem>
+                                        <DxFormLayoutItem Caption="Statement Date" ColSpanMd="12"
+                                                          Field="@nameof(BillingFormModel.StatementDate)">
+                                            <DxDateEdit @bind-Date="@model.StatementDate"
+                                                        NullText="MM/DD/YYYY"/>
+                                        </DxFormLayoutItem>
+                                        <DxFormLayoutItem Caption="Address" ColSpanMd="12"
+                                                          Field="@nameof(BillingFormModel.Street)">
+                                            <DxTextBox @bind-Text="@model.Street"
+                                                       NullText="Address"/>
+                                        </DxFormLayoutItem>
+                                        <DxFormLayoutItem Caption="City" ColSpanMd="12"
+                                                          Field="@nameof(BillingFormModel.City)">
+                                            <DxTextBox @bind-Text="@model.City"
+                                                       NullText="City"/>
+                                        </DxFormLayoutItem>
+                                        <DxFormLayoutItem Caption="State" ColSpanMd="6"
+                                                          Field="@nameof(BillingFormModel.State)">
+                                            <DxTextBox @bind-Text="@model.State"
+                                                       NullText="State"/>
+                                        </DxFormLayoutItem>
+                                        <DxFormLayoutItem Caption="ZIP" ColSpanMd="6"
+                                                          CaptionCssClass="zip-caption"
+                                                          Field="@nameof(BillingFormModel.Zip)">
+                                            <DxMaskedInput @bind-Value="@model.Zip"
+                                                           Mask="00000"
+                                                           NullText="00000"/>
+                                        </DxFormLayoutItem>
+                                        <DxFormLayoutItem Caption="Phone Number" ColSpanMd="12"
+                                                          Field="@nameof(BillingFormModel.PhoneNumber)">
+                                            <DxMaskedInput @bind-Value="@model.PhoneNumber"
+                                                           Mask="(000) 000-0000"
+                                                           NullText="(000) 000-0000"/>
+                                        </DxFormLayoutItem>
+                                        <DxFormLayoutItem Caption="Note" ColSpanMd="12"
+                                                          Field="@nameof(BillingFormModel.Note)">
+                                            <DxTextBox @bind-Text="@model.Note"
+                                                       NullText="Note"/>
+                                        </DxFormLayoutItem>
+                                    </ChildContent>
+                                </DxFormLayout>
+                                <div class="d-flex gap-2 mt-3">
+                                    <DxButton Text="Smart Paste"
+                                              IconCssClass="icon-ai-sparkle"
+                                              RenderStyle="ButtonRenderStyle.Primary"
+                                              SizeMode="Params.SizeMode"
+                                              Click="OnSmartPaste"/>
+                                    <DxButton Text="Reset"
+                                              RenderStyle="ButtonRenderStyle.Secondary"
+                                              SizeMode="Params.SizeMode"
+                                              Click="@OnResetClick"/>
+                                </div>
+                            </div>
+                        </Template>
+                    </DxStackLayoutItem>
+                    @if(IsSmallScreen) {
+                        <DxStackLayoutItem>
+                            <Template>
+                                <div class="d-flex flex-column">
+                                    <div class="fw-bold mb-3">Source Text:</div>
+                                    <DxMemo @bind-Text="SampleText"
+                                            Rows="14"
+                                            ResizeMode="MemoResizeMode.Auto"
+                                            SizeMode="Params.SizeMode"
+                                            aria-label="Source Text"/>
+                                </div>
+                            </Template>
+                        </DxStackLayoutItem>
+                    }
+                </Items>
+            </DxStackLayout>
+        </div>
+    </ChildContentWithParameters>
+
+    @code {
+
+        /*BeginHide*/
+        [Parameter] public string Id { get; set; }
+
+        /*EndHide*/
+        DxFormLayout FormLayout { get; set; }
+        bool IsSmallScreen { get; set; }
+        BillingFormModel model = new();
+
+        readonly Dictionary<string, string> fieldDescriptions = new() {
+            { nameof(BillingFormModel.PhoneNumber), "US phone number. Return exactly 10 digits without any formatting characters." }
+        };
+
+        const string PromptAugmentation = "Always override the current field value with the extracted one.";
+
+        string SampleText { get; set; } =
+            "Hi there,\n" +
+            " \n" +
+            "Following up on billing for April. The balance should be twelve hundred — it was adjusted after our last conversation.\n" +
+            "I also moved recently. My new billing address is:\n" +
+            "123 Market Street, San Francisco, CA 94103\n" +
+            "You can keep using my email: john.smith@dx-email.com.\n" +
+            "For phone, please use my mobile number going forward: 415-555-0199 (not the office line).\n" +
+            "The statement date should be mid-April.\n" +
+            "Let me know if you need anything else.\n" +
+            " \n" +
+            "Best regards,\n" +
+            "John Smith";
+
+        async Task OnSmartPaste() {
+            model.Reset();
+            await FormLayout.SmartPasteAsync(SampleText);
+        }
+
+        void OnResetClick() {
+            model.Reset();
+        }
+
+        class BillingFormModel {
+            public string FullName { get; set; }
+            public decimal AmountDue { get; set; }
+            public DateTime? StatementDate { get; set; }
+            public string Street { get; set; }
+            public string City { get; set; }
+            public string State { get; set; }
+            public string Zip { get; set; }
+            public string PhoneNumber { get; set; }
+            public string Note { get; set; }
+
+            public void Reset() {
+                FullName = null;
+                AmountDue = 0;
+                StatementDate = null;
+                Street = null;
+                City = null;
+                State = null;
+                Zip = null;
+                PhoneNumber = null;
+                Note = null;
+            }
+        }
+
+    }
+</DemoPageSectionComponent>
+

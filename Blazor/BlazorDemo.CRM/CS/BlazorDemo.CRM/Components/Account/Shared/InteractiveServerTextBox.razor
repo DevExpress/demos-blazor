@@ -1,0 +1,13 @@
+﻿@rendermode InteractiveServer
+
+<DxTextBox name="@Name" Password="@Password" CssClass="@CssClass" ShowValidationIcon="true" @bind-Text="@Value" Enabled="@Enabled" NullText="@NullText" @attributes=Attributes />
+
+@code {
+    [Parameter] public string? Name { get; set; }
+    [Parameter] public string? Value { get; set; }
+    [Parameter] public bool Password { get; set; }
+    [Parameter] public string? CssClass { get; set; }
+    [Parameter] public bool Enabled { get; set; } = true;
+    [Parameter] public string? NullText { get; set; }
+    [Parameter(CaptureUnmatchedValues = true)] public Dictionary<string, object>? Attributes { get; set; }
+}

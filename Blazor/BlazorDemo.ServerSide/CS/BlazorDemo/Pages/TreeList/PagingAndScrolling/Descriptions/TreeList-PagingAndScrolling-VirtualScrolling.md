@@ -1,0 +1,6 @@
+This sample illustrates the capabilities of our Blazor TreeList when virtual scrolling mode is enabled within a DevExpress-powered app ([VirtualScrollingEnabled](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxTreeList.VirtualScrollingEnabled) is `true`). As you can see, virtual scrolling allows our Blazor TreeList to render only a subset of rows/columns based on viewport size and loads additional cells dynamically as you scroll. Use this mode to optimize usability/performance when a TreeList is bound to a large data source.
+
+Options:
+- [Virtual Scrolling Mode](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxTreeList.VirtualScrollingMode) — Select whether the TreeList virtualizes rows, columns, or both. 
+- [Skeleton Rows](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxTreeList.SkeletonRowsEnabled) — Use skeleton rendering for rows while values are being loaded.
+- [Wrap Text](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxTreeList.TextWrapEnabled) — Keep disabled if rendering speed is of utmost concern (ensures that each row has the same height).

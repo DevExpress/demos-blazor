@@ -1,0 +1,59 @@
+::deep .scheduler {
+    --dxbl-scheduler-border-radius: 0.25rem;
+    width: 100%;
+    max-height: 100%;
+}
+
+::deep .resource-0-bg {
+    background-color: var(--dxds-color-surface-utility-cyan-subdued-rest);
+    border-color: var(--dxds-color-surface-utility-cyan-subdued-rest);
+    color: var(--dxds-color-content-neutral-default-rest);
+}
+
+::deep .resource-1-bg {
+    background-color: var(--dxds-color-surface-utility-green-subdued-rest);
+    border-color: var(--dxds-color-surface-utility-green-subdued-rest);
+    color: var(--dxds-color-content-neutral-default-rest);
+}
+
+::deep .resource-2-bg {
+    background-color: var(--dxds-color-surface-utility-red-subdued-rest);
+    border-color: var(--dxds-color-surface-utility-red-subdued-rest);
+    color: var(--dxds-color-content-neutral-default-rest);
+}
+
+::deep .resource-3-bg {
+    background-color: var(--dxds-color-surface-utility-yellow-subdued-rest);
+    border-color: var(--dxds-color-surface-utility-yellow-subdued-rest);
+    color: var(--dxds-color-content-neutral-default-rest);
+}
+
+::deep .resource-4-bg {
+    background-color: var(--dxds-color-surface-utility-purple-subdued-rest);
+    border-color: var(--dxds-color-surface-utility-purple-subdued-rest);
+    color: var(--dxds-color-content-neutral-default-rest);
+}
+
+::deep .resource-0-text {
+    color: var(--dxds-color-content-neutral-default-rest);
+}
+
+::deep .resource-1-text {
+    color: var(--dxds-color-content-neutral-default-rest);
+}
+
+::deep .resource-2-text {
+    color: var(--dxds-color-content-neutral-default-rest);
+}
+
+::deep .resource-3-text {
+    color: var(--dxds-color-content-neutral-default-rest);
+}
+
+::deep .resource-4-text {
+    color: var(--dxds-color-content-neutral-default-rest);
+}
+
+.h-100 {
+    height: 100%;
+}

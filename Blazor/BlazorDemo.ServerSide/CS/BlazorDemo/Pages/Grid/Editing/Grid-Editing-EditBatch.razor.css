@@ -1,0 +1,23 @@
+/*BeginHide*/::deep .grid-toolbar-new,
+::deep .grid-toolbar-delete,
+::deep .grid-toolbar-save,
+::deep .grid-toolbar-cancel {
+    background-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    background-position: center center;
+}
+
+::deep .grid-delete-btn:hover {
+    color: var(--dxds-color-surface-warning-default-rest);
+}
+/*EndHide*/
+
+/*BeginHide*/::deep /*EndHide*/.grid-modified-cell {
+    background-color: color-mix(in srgb, var(--dxds-primary-80, var(--bs-primary)) 15%, white) !important;
+}
+
+/*BeginHide*/ .grid-container {
+    display: contents;
+}
+/*EndHide*/

@@ -1,0 +1,45 @@
+#chat-window {
+    background-color: rgba(191, 191, 191, 0.15);
+    padding: 10px;
+    width: 100%;
+}
+
+.message {
+    background-color: inherit;
+    display: flex;
+    max-width: 60%;
+    width: fit-content;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--dxds-color-surface-neutral-default-rest, var(--bs-body-bg));
+}
+
+.name {
+    font-weight: bold;
+}
+
+.date {
+    opacity: 0.5;
+}
+
+.photo > img {
+    height: 40px;
+    width: 40px;
+    display: block;
+    border-radius: 40px;
+    margin-right: 10px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.mention {
+    color: var(--dxds-color-content-primary-default-rest, var(--bs-primary));
+}
+
+@media (max-width: 576px) {
+    .message {
+        max-width: unset;
+    }
+}

@@ -1,0 +1,290 @@
+﻿@page "/ContactList"
+
+@using System.Text.RegularExpressions
+@using BlazorDemo.CRM.Models
+@using BlazorDemo.CRM.Client.Components.ContactList
+@using BlazorDemo.CRM.Services.DataProviders
+@using Microsoft.AspNetCore.Authorization
+
+@implements IDisposable
+
+@attribute [Authorize]
+
+@inject ContactDataProvider DataProvider
+
+<div class="content-root">
+    <div class="card toolbar">
+        <DxToolbar Title="Contacts" ItemRenderStyleMode="ToolbarRenderStyleMode.Plain">
+            <DxToolbarItem Text="@StatusFilterValue" RenderStyleMode="ToolbarItemRenderStyleMode.Plain">
+                <Items>
+                    <DxToolbarItem Text="All" Click="FilterByStatus" />
+                    @foreach(var status in Statuses) {
+                        <DxToolbarItem Text="@status" Click="FilterByStatus" />
+                    }
+                </Items>
+            </DxToolbarItem>
+            <DxToolbarItem Text="Add Contact" Click="OnAddContactClick" Alignment="ToolbarItemAlignment.Right" IconCssClass="add-icon icon medium-icon" />
+            <DxToolbarItem Tooltip="Column Chooser" Alignment="ToolbarItemAlignment.Right" Click="OnColumnChooserItemClick" IconCssClass="column-chooser-icon icon medium-icon" />
+            <DxToolbarItem Text="Export" Alignment="ToolbarItemAlignment.Right" IconCssClass="export-icon icon medium-icon">
+                <Items>
+                    <DxToolbarItem Text="Export all data to Excel" Click="ExportAllDataToExcel" />
+                    <DxToolbarItem Text="Export selected rows to Excel" Click="ExportSelectedRowsToExcel" />
+                    <DxToolbarItem Text="Export all data to CSV" Click="ExportAllDataToCsv" />
+                    <DxToolbarItem Text="Export selected rows to CSV" Click="ExportSelectedRowsDataToCsv" />
+                    <DxToolbarItem Text="Export all data to PDF" Click="ExportAllDataToPdf" />
+                    <DxToolbarItem Text="Export selected rows to PDF" Click="ExportSelectedRowsDataToPdf" />
+                </Items>
+            </DxToolbarItem>
+            <DxToolbarItem Alignment="ToolbarItemAlignment.Right" CssClass="search-textbox-item" Tooltip="Search">
+                <Template Context="SearchContext">
+                    <div class="custom-item">
+                        <DxSearchBox CssClass="search-textbox"
+                                     NullText="Search"
+                                     BindValueMode="BindValueMode.OnInput"
+                                     ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                                     @bind-Text=SearchText />
+                    </div>
+                </Template>
+            </DxToolbarItem>
+            <DxToolbarItem Tooltip="Refresh" BeginGroup="true" Click="@LoadGridDataAsync" Alignment="ToolbarItemAlignment.Right" IconCssClass="refresh-icon icon medium-icon" />
+        </DxToolbar>
+    </div>
+    <div class="contact-list-root">
+        <DxDrawer CssClass="contact-list-drawer"
+                  @bind-IsOpen="IsContactPanelOpen"
+                  Position="DrawerPosition.Right"
+                  Mode="@DrawerMode"
+                  CloseOnEscape="true"
+                  ApplyBackgroundShading="false"
+                  PanelWidth="@GetContactPanelWidth()">
+            <HeaderTemplate>
+                <div class="contact-details-header contact-details">
+                    <div>
+                        @ActiveContact?.Name
+                        <EmployeeStatus Value="@ActiveContact?.Status" />
+                    </div>
+                    <div>
+                        <DxButton Click="@OnPinClick"
+                                  CssClass="standalone-btn"
+                                  IconCssClass="@($"{GetPinButtonIconCss()} icon medium-icon")"
+                                  RenderStyle="ButtonRenderStyle.Link" />
+                        <DxButton Click="@OnCloseClick"
+                                  CssClass="standalone-btn"
+                                  IconCssClass="close-icon icon medium-icon"
+                                  RenderStyle="ButtonRenderStyle.Link" />
+                    </div>
+                </div>
+            </HeaderTemplate>
+            <BodyTemplate>
+                <DxLoadingPanel Visible="@IsActiveContactLoading"
+                                IsContentVisible="@(ActiveContact != null)"
+                                IsContentBlocked="true"
+                                IndicatorVisible="true"
+                                IndicatorAreaVisible="true"
+                                Text="Loading..."
+                                CssClass="contact-list-loading-panel">
+                    <div class="contact-details-body contact-details">
+                            <DxStackLayout Orientation="Orientation.Vertical">
+                                <Items>
+                                    <DxStackLayoutItem Length="fit-content">
+                                        <Template>
+                                            <ContactForm Data="@ActiveContact" DataChanged="@OnActiveContactChanged" />
+                                        </Template>
+                                    </DxStackLayoutItem>
+                                    <DxStackLayoutItem>
+                                        <Template>
+                                            <ContactData Opportunities="@ActiveContact?.Opportunities" Activities="@ActiveContact?.Activities" />
+                                        </Template>
+                                    </DxStackLayoutItem>
+                                </Items>
+                            </DxStackLayout>
+                    </div>
+                </DxLoadingPanel>
+            </BodyTemplate>
+            <TargetContent>
+                <div class="h-100">
+                    <DxLoadingPanel Visible="@(!IsDataLoaded)"
+                                    IsContentBlocked="true"
+                                    IsContentVisible="false"
+                                    IndicatorVisible="true"
+                                    IndicatorAreaVisible="true"
+                                    ZIndex="101"
+                                    Text="Loading..."
+                                    CssClass="contact-list-loading-panel">
+                        <DxGrid @ref="Grid"
+                                Data="Data"
+                                KeyFieldName="Id"
+                                CssClass="contact-list"
+                                SearchText="@SearchText"
+                                EditMode="GridEditMode.PopupEditForm"
+                                PopupEditFormCssClass="pw-800"
+                                SkeletonRowsEnabled="true"
+                                ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                                FilterMenuButtonDisplayMode="GridFilterMenuButtonDisplayMode.Always"
+                                TextWrapEnabled="false"
+                                FocusedRowEnabled="true"
+                                ShowAllRows="true"
+                                VirtualScrollingEnabled="true"
+                                RowClick="@OnRowClick"
+                                HighlightRowOnHover="true">
+                            <Columns>
+                                <DxGridSelectionColumn Width="1.5em" />
+                                <DxGridDataColumn FieldName="Name" MinWidth="50" SortIndex="0">
+                                    <CellDisplayTemplate>
+                                        <div>
+                                            <div>@context.Value</div>
+                                            <div class="sub-item">@(((Contact)context.DataItem).Position)</div>
+                                        </div>
+                                    </CellDisplayTemplate>
+                                </DxGridDataColumn>
+                                <DxGridDataColumn FieldName="Company" MinWidth="50" />
+                                <DxGridDataColumn FieldName="Status" MinWidth="30">
+                                    <CellDisplayTemplate>
+                                        <EmployeeStatus Value="@(context.Value as string)" />
+                                    </CellDisplayTemplate>
+                                </DxGridDataColumn>
+                                <DxGridDataColumn FieldName="AssignedTo" Caption="Assigned To" MinWidth="50" />
+                                <DxGridDataColumn FieldName="Phone" Width="15%" MinWidth="50" />
+                                <DxGridDataColumn FieldName="Email" Width="15%" MinWidth="50" />
+                                <DxGridDataColumn FieldName="Position" Visible="false" />
+                            </Columns>
+                            <EditFormTemplate Context="EditFormContext">
+                                @{
+                                    var contact = (Contact)EditFormContext.EditModel;
+                                }
+                                <DxFormLayout CssClass="w-100">
+                                    <DxFormLayoutItem Caption="Name:" ColSpanMd="6">
+                                        @EditFormContext.GetEditor("Name")
+                                    </DxFormLayoutItem>
+                                    <DxFormLayoutItem Caption="Company:" ColSpanMd="6">
+                                        @EditFormContext.GetEditor("Company")
+                                    </DxFormLayoutItem>
+                                    <DxFormLayoutItem Caption="Position:" ColSpanMd="6">
+                                        @EditFormContext.GetEditor("Position")
+                                    </DxFormLayoutItem>
+                                    <DxFormLayoutItem Caption="Status:" ColSpanMd="6">
+                                        <DxComboBox @bind-Value="@contact.Status" Data="@Statuses" />
+                                    </DxFormLayoutItem>
+                                    <DxFormLayoutItem Caption="Assigned To:" ColSpanMd="6">
+                                        @EditFormContext.GetEditor("AssignedTo")
+                                    </DxFormLayoutItem>
+                                    <DxFormLayoutItem Caption="Phone:" ColSpanMd="6">
+                                        <DxMaskedInput @bind-Value="@contact.Phone" Mask="(000)000-0000" />
+                                    </DxFormLayoutItem>
+                                    <DxFormLayoutItem Caption="Email:" ColSpanMd="6">
+                                        <DxMaskedInput @bind-Value="@contact.Email"
+                                                       Mask="@(@"(\w|[.-])+@(\w|-)+\.(\w|-){2,4}")"
+                                                       MaskMode="MaskMode.RegEx" />
+                                    </DxFormLayoutItem>
+                                </DxFormLayout>
+                            </EditFormTemplate>
+                        </DxGrid>
+                    </DxLoadingPanel>
+                </div>
+            </TargetContent>
+        </DxDrawer>
+    </div>
+</div>
+
+@code {
+    CancellationTokenSource disposalTokenSource = new CancellationTokenSource();
+
+    [CascadingParameter(Name = "ParentSizeMode")]
+    SizeMode SizeMode { get; set; }
+    List<Contact>? Data { get; set; }
+    bool IsDataLoaded { get; set; }
+    bool IsContactPanelOpen { get; set; }
+    bool IsContactPanelPinned { get; set; }
+    bool IsActiveContactLoading { get; set; }
+    DrawerMode DrawerMode => IsContactPanelPinned ? DrawerMode.Shrink : DrawerMode.Overlap;
+    ContactDetail? ActiveContact { get; set; }
+
+    IGrid? Grid { get; set; }
+    string? SearchText { get; set; }
+    string StatusFilterValue { get; set; } = "All";
+    string[] Statuses { get; } = new[] { "Salaried", "Commission", "Terminated" };
+
+    protected override async Task OnInitializedAsync() {
+        await LoadGridDataAsync();
+        await base.OnInitializedAsync();
+    }
+
+    async Task LoadGridDataAsync() {
+        IsDataLoaded = false;
+        Data = await DataProvider.GetAsync(disposalTokenSource.Token);
+        IsDataLoaded = true;
+    }
+
+    void OnDataChanged(List<Contact> data) => Data = data;
+
+    void OnPinClick() => IsContactPanelPinned = !IsContactPanelPinned;
+
+    void OnCloseClick() {
+        IsContactPanelOpen = false;
+        IsContactPanelPinned = false;
+    }
+
+    string GetPinButtonIconCss() => $"{(IsContactPanelPinned ? "pinned-icon" : "unpinned-icon")} medium-icon";
+
+    void OnActiveContactChanged(ContactDetail contact) {
+        var index = Data!.FindIndex(c => c.Id == ActiveContact!.Id);
+        if(index >= 0) {
+            var newData = new List<Contact>(Data);
+            newData[index] = new Contact {
+                Id = contact.Id,
+                Company = contact.Company,
+                AssignedTo = contact.Manager,
+                Email = contact.Email,
+                Name = contact.Name,
+                Phone = contact.Phone,
+                Position = contact.Position,
+                Status = contact.Status
+            };
+            Data = newData;
+        }
+    }
+
+    Task OnAddContactClick() => Grid!.StartEditNewRowAsync();
+
+    void OnColumnChooserItemClick(ToolbarItemClickEventArgs e) => Grid!.ShowColumnChooser();
+
+    Task ExportAllDataToExcel() => Grid!.ExportToXlsxAsync("Contacts");
+
+    Task ExportSelectedRowsToExcel() => Grid!.ExportToXlsxAsync("Selected Contacts", new GridXlExportOptions { ExportSelectedRowsOnly = true });
+
+    Task ExportAllDataToCsv() => Grid!.ExportToCsvAsync("Contacts");
+
+    Task ExportSelectedRowsDataToCsv() => Grid!.ExportToCsvAsync("Selected Contacts", new GridCsvExportOptions { ExportSelectedRowsOnly = true });
+
+    Task ExportAllDataToPdf() => Grid!.ExportToPdfAsync("Contacts");
+
+    Task ExportSelectedRowsDataToPdf() => Grid!.ExportToPdfAsync("Selected Contacts", new GridPdfExportOptions { ExportSelectedRowsOnly = true });
+
+    void FilterByStatus(ToolbarItemClickEventArgs item) {
+        StatusFilterValue = item.Info.Text;
+        Grid!.FilterBy("Status", GridFilterRowOperatorType.Equal, StatusFilterValue != "All" ? StatusFilterValue : null);
+    }
+
+    async void OnRowClick(GridRowClickEventArgs args) {
+        if(!IsContactPanelOpen) {
+            IsContactPanelOpen = true;
+            ActiveContact = null;
+        }
+        IsActiveContactLoading = true;
+        var contact = (Contact)Grid!.GetDataItem(args.VisibleIndex);
+        ActiveContact = await DataProvider.GetAsync(contact.Id, false, disposalTokenSource.Token);
+        IsActiveContactLoading = false;
+        StateHasChanged();
+    }
+
+    string GetContactPanelWidth() => SizeMode switch {
+        SizeMode.Small => "20.25rem",
+        SizeMode.Large => "27rem",
+        _ => "23.625rem",
+    };
+
+    void IDisposable.Dispose() {
+        disposalTokenSource.Cancel();
+        disposalTokenSource.Dispose();
+    }
+}

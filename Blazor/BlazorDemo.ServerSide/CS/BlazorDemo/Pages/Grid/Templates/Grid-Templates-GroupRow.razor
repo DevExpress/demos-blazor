@@ -1,0 +1,75 @@
+﻿@page "/Grid/Templates/GroupRow"
+@layout DataProviderAccessArea<INwindDataProvider>
+
+<DemoPageSectionComponent Id="Grid-Templates-GroupRow" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <div class="grid-container">
+            <DxGrid @ref="Grid"
+                    Data="@Data"
+                    ShowGroupPanel="true"
+                    SizeMode="Params.SizeMode"
+                    ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                    TextWrapEnabled="false"
+                    VirtualScrollingEnabled="true">
+                <Columns>
+                    <DxGridDataColumn FieldName="CompanyName" MinWidth="100" />
+                    <DxGridDataColumn FieldName="Country" GroupIndex="0" Width="10%">
+                        <GroupRowTemplate>
+                            <text>@context.ColumnCaption: @context.GroupValue</text>
+                            @{
+                                var summaryItems = context.Grid.GetGroupSummaryItems();
+                                if(summaryItems.Any()) {
+                                    <text> (</text>
+                                    foreach(var i in summaryItems) {
+                                        if(i != summaryItems.First()) {
+                                            <text>, </text>
+                                        }
+                                        @context.Grid.GetGroupSummaryLabel(i, context.VisibleIndex)
+                                        <text>: </text>
+                                        <b>@context.Grid.GetGroupSummaryFormattedValue(i, context.VisibleIndex)</b>
+                                    }
+                                    <text>)</text>
+                                }
+                            }
+                        </GroupRowTemplate>
+                    </DxGridDataColumn>
+                    <DxGridDataColumn FieldName="City" Width="10%" />
+                    <DxGridDataColumn FieldName="UnitPrice" DisplayFormat="c" Width="10%" />
+                    <DxGridDataColumn FieldName="Quantity" Width="10%" />
+                    <DxGridDataColumn FieldName="Total"
+                                      UnboundType="GridUnboundColumnType.Decimal"
+                                      UnboundExpression="[UnitPrice] * [Quantity]"
+                                      DisplayFormat="c"
+                                      MinWidth="100"
+                                      Width="15%" />
+                </Columns>
+                <GroupSummary>
+                    <DxGridSummaryItem SummaryType="GridSummaryItemType.Sum" FieldName="Total" />
+                    <DxGridSummaryItem SummaryType="GridSummaryItemType.Count" FieldName="CompanyName" />
+                </GroupSummary>
+            </DxGrid>
+        </div>
+
+        @code {
+            object Data { get; set; }
+            IGrid Grid { get; set; }
+
+            protected override async Task OnInitializedAsync() {
+                var invoices = await NwindDataService.GetInvoicesAsync();
+                var customers = await NwindDataService.GetCustomersAsync();
+                Data = invoices.OrderBy(i => i.OrderDate).Join(customers, i => i.CustomerId, c => c.CustomerId, (i, c) => {
+                    return new {
+                        CompanyName = c.CompanyName,
+                        City = i.City,
+                        Region = i.Region,
+                        Country = i.Country,
+                        UnitPrice = i.UnitPrice,
+                        Quantity = i.Quantity
+                    };
+                });
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

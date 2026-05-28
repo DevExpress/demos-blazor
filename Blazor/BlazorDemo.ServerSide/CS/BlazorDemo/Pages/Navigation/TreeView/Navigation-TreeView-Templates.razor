@@ -1,0 +1,50 @@
+﻿<DemoPageSectionComponent Id="Navigation-TreeView-Templates" VerticalAlignment=VerticalAlignment.Top>
+    @*BeginHide*@
+    <div class="d-flex flex-row justify-content-center w-100">
+    @*EndHide*@
+    <DxTreeView Data="@ComponentSets.Data"
+                CssClass="demo-treeview-template cw-880"
+                AnimationType="LayoutAnimationType.Slide"
+                @ref="@treeView">
+        <DataMappings>
+            <DxTreeViewDataMapping Children="ComponentSets" />
+        </DataMappings>
+        <NodeTemplate>
+            @{
+                var dataItem = (ComponentSet)context.DataItem;
+            }
+            @if(!context.IsLeaf) {
+                <h4 class="my-0 p-2 d-flex align-items-center">
+                    <span class="treeview-expand-btn @(context.Expanded ? "expanded" : "collapsed")" />
+                    <span class="ms-3 flex-grow-1">@dataItem.Title</span>
+                </h4>
+            } else {
+                <div class="d-flex p-2">
+                    <div class="flex-shrink-0 me-3">
+                        <div class="rounded-circle bg-primary">
+                            <img class="treeview-template-icon treeview-standard-icon" src="@dataItem.ImageUrl" alt="@dataItem.Title"/>
+                            <img class="treeview-template-icon treeview-fluent-icon" src="@dataItem.FluentImageUrl" alt="@dataItem.Title"/>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1">
+                        <h5 class="mt-0">@dataItem.Title</h5>
+                        @dataItem.Description
+                    </div>
+                </div>
+            }
+        </NodeTemplate>
+    </DxTreeView>
+    @*BeginHide*@
+    </div>
+    @*EndHide*@
+    @code {
+        @*BeginCollapse*@
+        DxTreeView treeView;
+        protected override Task OnAfterRenderAsync(bool firstRender) {
+            if(firstRender)
+                treeView.ExpandAll();
+            return base.OnAfterRenderAsync(firstRender);
+        }
+        @*EndCollapse*@
+    }
+</DemoPageSectionComponent>

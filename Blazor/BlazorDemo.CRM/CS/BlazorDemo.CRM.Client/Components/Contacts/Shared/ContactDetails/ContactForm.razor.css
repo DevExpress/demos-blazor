@@ -1,0 +1,90 @@
+.small-size .contact-form {
+    --contacts-caption-font-size: var(--dxds-font-size-base-md);
+    --contacts-caption-font-weight: var(--dxds-font-weight-base-strong);
+    --contacts-caption-line-height: var(--dxds-line-height-base-md);
+}
+
+.medium-size .contact-form {
+    --contacts-caption-font-size: var(--dxds-font-size-base-lg);
+    --contacts-caption-font-weight: var(--dxds-font-weight-base-strong);
+    --contacts-caption-line-height: var(--dxds-line-height-base-lg);
+}
+
+.large-size .contact-form {
+    --contacts-caption-font-size: var(--dxds-font-size-title-md);
+    --contacts-caption-font-weight: var(--dxds-font-weight-title-default);
+    --contacts-caption-line-height: var(--dxds-line-height-title-md);
+}
+
+::deep .toolbar {
+    margin-bottom: 1rem;
+}
+
+::deep .contact-item {
+    height: 2em;
+    display: flex;
+    align-items: center;
+}
+
+::deep .user-avatar-item {
+    margin: auto;
+}
+
+.user-avatar {
+    display: flex;
+    border: 1px solid var(--dxds-color-border-neutral-default-rest);
+    border-radius: 50%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.small-size .user-avatar {
+    max-width: 8.75rem;
+    max-height: 8.75rem;
+}
+
+.medium-size .user-avatar {
+    max-width: 10rem;
+    max-height: 10rem;
+}
+
+.large-size .user-avatar {
+    max-width: 11.25rem;
+    max-height: 11.25rem;
+}
+
+.user-avatar img {
+    max-width: 100%;
+}
+
+::deep .caption {
+    font-weight: 600;
+}
+
+::deep .contacts-caption {
+    font-size: var(--contacts-caption-font-size);
+    line-height: var(--contacts-caption-line-height);
+    font-weight: var(--contacts-caption-font-weight);
+    margin-bottom: 1rem;
+}
+
+::deep .edit-icon {
+    mask-image: url("images/icons/edit.svg");
+}
+
+::deep .w-100 {
+    width: 100%;
+}
+
+.separator {
+    margin: 0;
+    color: inherit;
+    border: 0;
+    border-top: var(--dxds-spacing-10) solid;
+    opacity: var(--dxds-opacity-25);
+}
+
+::deep .text-danger {
+    color: var(--dxds-color-surface-danger-default-rest);
+}

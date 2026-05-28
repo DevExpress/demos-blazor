@@ -1,0 +1,36 @@
+::deep .activities {
+    --dxbl-list-box-border-width: 0;
+    width: 100%;
+    height: 100%;
+}
+
+::deep .activity {
+    font-family: var(--dxds-font-family-sans-serif);
+    font-weight: 400;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border-left: 0.25rem solid var(--dxds-primary-90);
+    box-shadow: 0 0.125rem 0.25rem 0 #00000024, 0 0 0.125rem 0 #0000001F;
+}
+
+::deep .name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+::deep .info {
+    opacity: 0.8;
+}
+
+::deep .grid-item {
+    display: flex;
+    align-items: center;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100%;
+}

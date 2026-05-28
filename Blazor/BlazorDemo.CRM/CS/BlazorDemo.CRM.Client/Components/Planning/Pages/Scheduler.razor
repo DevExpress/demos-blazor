@@ -1,0 +1,83 @@
+﻿@page "/Scheduler"
+
+@using BlazorDemo.CRM.Models
+@using BlazorDemo.CRM.Services.DataProviders
+@using BlazorDemo.CRM.Components.Scheduler
+@using Microsoft.AspNetCore.Authorization
+
+@attribute [Authorize]
+
+@inject TasksDataProvider DataProvider
+
+<DxLayoutBreakpoint DeviceSize="DeviceSize.Medium | DeviceSize.Small | DeviceSize.XSmall" IsActive="IsSmallScreen" IsActiveChanged="OnScreenSizeChanged" />
+<div class="h-100">
+    <DxLoadingPanel Visible="@(!IsDataLoaded)"
+                    IsContentBlocked="true"
+                    IsContentVisible="false"
+                    IndicatorVisible="true"
+                    IndicatorAreaVisible="true"
+                    ZIndex="101"
+                    Text="Loading..."
+                    CssClass="scheduler-loading-panel">
+        @if (IsSmallScreen) {
+            <div class="compact-view">
+                <DxButton RenderStyle="ButtonRenderStyle.Secondary" CssClass="menu-button" IconCssClass="icon medium-icon hamburger-icon" Click="@(_ => IsSideMenuOpen = !IsSideMenuOpen)" />
+                <DxDrawer @bind-IsOpen="IsSideMenuOpen"
+                          Mode="DrawerMode.Overlap"
+                          Position="DrawerPosition.Left"
+                          ApplyBackgroundShading="false"
+                          ZIndex="151"
+                          PanelWidth="24em">
+                    <BodyTemplate>
+                        <Settings @bind-VisibleResources=VisibleResources @bind-SelectedDate=SelectedDate OnCreateEvent="@(_ => scheduler!.CreateAppointmentAsync())" />
+                    </BodyTemplate>
+                    <TargetContent>
+                        <WorkTaskScheduler @ref=scheduler
+                                           @bind-StartDate="@SelectedDate"
+                                           Data="@Data"
+                                           VisibleResources="@VisibleResources"/>
+                    </TargetContent>
+                </DxDrawer>
+            </div>
+        } else {
+            <DxStackLayout Orientation="Orientation.Horizontal" ItemSpacing="1em" CssClass="normal-view">
+                <Items>
+                    <DxStackLayoutItem CssClass="card settings" Length="max-content">
+                        <Template>
+                            <Settings @bind-VisibleResources=VisibleResources @bind-SelectedDate=SelectedDate OnCreateEvent="@(_ => scheduler!.CreateAppointmentAsync())" />
+                        </Template>
+                    </DxStackLayoutItem>
+                    <DxStackLayoutItem>
+                        <Template>
+                            <WorkTaskScheduler @ref=scheduler @bind-StartDate="@SelectedDate" Data="@Data" VisibleResources="@VisibleResources" />
+                        </Template>
+                    </DxStackLayoutItem>
+                </Items>
+            </DxStackLayout>
+        }
+    </DxLoadingPanel>
+</div>
+
+@code {
+    WorkTaskScheduler? scheduler;
+    bool IsSmallScreen { get; set; }
+    bool IsSideMenuOpen { get; set; }
+    DrawerMode SideMenuMode { get; set; } = DrawerMode.Shrink;
+    DateTime SelectedDate { get; set; } = DateTime.Today;
+    List<WorkTaskDetail>? Data { get; set; }
+    IEnumerable<Resource>? VisibleResources { get; set; }
+    bool IsDataLoaded { get; set; }
+
+    protected override async Task OnInitializedAsync() {
+        IsDataLoaded = false;
+        Data = await DataProvider.GetAsync();
+        VisibleResources = Resources.GetResources();
+        IsDataLoaded = true;
+        await base.OnInitializedAsync();
+    }
+
+    void OnScreenSizeChanged(bool isSmallScreen) {
+        IsSmallScreen = isSmallScreen;
+        SideMenuMode = IsSmallScreen ? DrawerMode.Overlap : DrawerMode.Shrink;
+    }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="H:\Work\XML Schemes\module-new.xsd">
+	<controls>
+		<controlentry>
+			<control>
+				<name>gridControl1</name>
+				<windowcaption>One-to-Many Relation</windowcaption>
+				<description>Orders are associated with a particular customer via the relationship between the Orders property in the Customer object (the primary key) and the Customer property in the Orders object (the foreign key).</description>
+				<memberlist></memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+	</controls>
+</totalinfo>

@@ -1,0 +1,38 @@
+﻿@inject ICarouselImageDataProvider CarouselImageDataProvider
+@using DevExpress.AIIntegration.Blazor.Chat
+@using Microsoft.Extensions.AI
+@using System.Text;
+
+<DemoPageSectionComponent Id="AIChat-MessageHandling"
+                          ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <div class="chat-demo-container">
+            <DxAIChat FileUploadEnabled="true"
+                      CssClass="demo-chat"
+                      MessageSending="OnMessageSending"
+                      SizeMode="Params.SizeMode"/>
+        </div>
+
+        @code {
+            async Task OnMessageSending(MessageSendingEventArgs args) {
+                var fileNames = args.Files.Select(x => x.Name);
+                var sb = new StringBuilder();
+                sb.AppendLine("Your message:");
+                sb.AppendLine(args.Text);
+
+                if(fileNames.Any()) {
+                    sb.AppendLine();
+                    sb.AppendLine("Attached files:");
+                    foreach(var fileName in fileNames) {
+                        sb.AppendLine(fileName);
+                    }
+                }
+
+                await args.Chat.AppendMessageAsync(args.Text, ChatRole.User);
+                await args.Chat.AppendMessageAsync(sb.ToString(), ChatRole.Assistant);
+                args.Cancel = true;
+            }
+        }
+
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

@@ -1,0 +1,1487 @@
+/*
+Generics
+*/
+
+body, html
+{
+	margin: 0;
+	padding: 0;
+	color: #000;
+    background-image: none;
+    font-family: Arial, Helvetica;
+}
+
+form
+{
+    
+}
+
+.Common
+{
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+}
+
+#CommonHeader
+{
+	padding: 0;
+	margin: 0 0 32px 0;
+	width: 100%;
+	overflow: hidden;
+}
+
+#CommonHeader table
+{
+    padding: 0;
+    margin: 0;
+}
+
+#CommonHeaderImage
+{
+    vertical-align: bottom;
+}
+
+#CommonHeaderImage a
+{
+    display: block;
+    margin: 0 8px 0 0;
+    position: relative;
+    z-index: 100;
+}
+
+#CommonHeaderTitle
+{
+    margin: 0;
+	padding: 0;
+	vertical-align: bottom;
+	font-size: 140%;
+	line-height: 90%;
+	letter-spacing: -1px;
+	color: #000;
+}
+
+#CommonHeaderTitle h1
+{
+    margin: 0;
+    padding: 0;
+    font-size: 280%;
+    color: #000;
+    line-height: 120%;
+    letter-spacing: -2px;
+    font-weight: bold;
+}
+
+#CommonHeaderDescription
+{
+    margin: 0;
+    padding: 0 0 0 4px;
+}
+
+#CommonHeaderUserArea
+{
+	display: none;
+}
+
+#CommonFooter
+{
+	clear: both;
+	margin: 40px 0 0 0;
+	padding: 24px 0 24px 0;
+	width: 100%;
+	overflow: hidden;
+	text-align: center;
+	font-size: 85%;
+	font-weight: bold;
+	color: #000;
+	line-height: 240%;
+}
+
+#CommonNavigation
+{
+    display: none;
+}
+
+#CommonNavigationShadow
+{
+	display: none;
+}
+
+#CommonContent {
+	margin: 0;
+	padding: 0;
+	height: 1%; /* IE6 hack... it's very minor, though */
+	overflow: hidden;
+}
+
+#CommonContentInner
+{
+	width: 100%;
+	overflow: hidden;
+}
+
+#CommonSidebarLeft
+{
+    display: none;
+}
+
+
+#CommonSidebarRight
+{
+    display: none;
+}
+
+
+A:LINK, A:ACTIVE
+{
+    color: #000;
+}
+
+A:VISITED
+{
+    color: #000;
+}
+
+A:HOVER
+{
+	text-decoration: underline;
+}
+
+SELECT, TEXTAREA, INPUT, BUTTON
+{
+    font-family: Arial, Helvetica;
+    font-size: 90%;
+}
+
+TABLE
+{
+    empty-cells: show;
+}
+
+/*
+Common Styles
+*/
+
+.CommonFeedArea
+{
+	font-size: 90%;
+	padding: 4px 0;
+	font-weight: bold;
+}
+
+.CommonPagingArea
+{
+	font-size: 90%;
+	padding: 4px;
+	margin: 0 3px;
+	font-weight: bold;
+	color: #000;
+}
+
+.CommonPagingArea a:link, .CommonPagingArea a:visited
+{
+    color: #000;
+}
+
+.CommonBreadCrumbArea
+{
+	margin: 0;
+	padding: 8px 0 8px 0;
+	font-size: 85%;
+	color: #000;
+}
+
+.CommonBreadCrumbArea a:link, .CommonBreadCrumbArea a:visited, .CommonBreadCrumbArea a:active
+{
+    color: #000;
+}
+
+.CommonFilterArea
+{
+	font-size: 90%;
+	padding: 4px;
+	margin: 0 40px 0 3px;
+	font-weight: bold;
+}
+
+.CommonSearchResults
+{
+	font-size: 80%;
+	font-weight: bold;
+	padding: 8px;
+}
+
+.CommonSearchResultsArea
+{
+    margin: 16px 0;
+}
+
+/* 
+Tree Form Element
+*/
+
+.CommonTreeFormArea
+{
+	border: solid 1px #000;
+	padding: 2px;
+	width: 350px;
+	height: 175px;
+	overflow: auto;
+	margin: 4px 4px 2px 4px;
+}
+
+.CommonTreeFormTree
+{
+	padding: 0;
+}
+
+.CommonTreeFormNode
+{
+	cursor: pointer;
+	font-size: 90%;
+}
+
+.CommonTreeFormNodeSelected
+{
+	padding: 1px;
+	font-weight: bold;
+	border: solid 1px #000;
+	cursor: pointer;
+	font-size: 90%;
+}
+
+.CommonTreeFormNodeHover
+{
+	cursor: pointer;
+	font-size: 90%;
+}
+
+/*
+Form Styles
+*/
+
+.CommonFormArea
+{
+    display: none;
+}
+
+.CommonFormTitle
+{
+	color: #000;
+	font-size: 180%;
+	letter-spacing: -1px;
+	font-weight: bold;
+	padding: 0;
+	margin: 0 0 16px 0;
+}
+
+.CommonFormDescription
+{
+	padding: 8px 2px 8px 0;
+}
+
+TD.CommonFormFieldName
+{
+	color: #000;
+	padding: 2px 8px 2px 2px;
+	font-weight: bold;
+}
+
+DIV.CommonFormFieldName
+{
+	color: #000;
+	padding: 8px 2px 2px 2px;
+	font-weight: bold;
+}
+
+TD.CommonFormFieldDescription
+{
+	padding: 2px;
+	font-size: 90%;
+	font-weight: normal;
+}
+
+DIV.CommonFormFieldDescription
+{
+	padding: 2px;
+	font-size: 90%;
+	font-weight: normal;
+}
+
+TD.CommonFormField
+{
+	color: #000;
+	padding: 2px;
+}
+
+DIV.CommonFormField
+{
+	color: #000;
+	padding: 2px;
+}
+
+/*
+Message Styles
+*/
+
+.CommonMessageArea
+{
+	width: 50%;
+	margin: 64px 0;
+}
+
+.CommonMessageTitle
+{
+	text-align: left;
+	font-size: 180%;
+	letter-spacing: -1px;
+	font-weight: bold;
+	color: #000;
+	padding: 6px 6px 6px 8px;
+	margin: 0;
+	border: solid 0 #000;
+	border-bottom-width: 1px;
+}
+
+.CommonMessageContent
+{
+	font-size: 100%;
+	color: #000;
+	padding: 8px 8px 16px 8px;
+	text-align: left;
+	border: solid 1px #000;
+	border-top-width: 0;
+}
+
+.CommonInlineMessageArea
+{
+	margin: 4px 0;
+	border: solid 1px #000;
+	background-position: left top;
+	background-repeat: repeat-x;
+}
+
+.CommonInlineMessageTitle
+{
+	text-align: left;
+	font-size: 100%;
+	font-weight: bold;
+	color: #000;
+	padding: 6px 6px 6px 8px;
+	margin: 0;
+	border: solid 0 #000;
+	border-bottom-width: 1px;
+}
+
+ol.CommonInlineMessageList, ul.CommonInlineMessageList
+{
+    margin: 0;
+    padding: 0;
+}
+
+.CommonInlineMessageList li
+{
+    margin-left: 30px;
+}
+
+.CommonInlineMessageContent
+{
+	font-size: 80%;
+	color: #000;
+	padding: 8px;
+	text-align: left;
+}
+
+.CommonMessageSuccess
+{
+	padding: 8px;
+	font-size: 100%;
+	color: #000;
+	font-weight: bold;
+	border: solid 2px #000;
+	margin: 8px 0;
+}
+
+.CommonMessageError
+{
+	margin: 8px 0 12px 0;
+	padding: 8px;
+	font-size: 100%;
+	color: #000;
+	font-weight: bold;
+	border: solid 2px #000;
+}
+
+/*
+Content
+*/
+
+.CommonTextBig
+{
+	margin: 1px;
+	padding: 5px;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+.CommonInputBig
+{
+	width: 90%;
+	font-size: 130%;
+}
+
+.CommonContentArea
+{
+    margin: 16px 0 0 0;
+}
+
+.CommonTitle, .CommonProfileTitle
+{
+	color: #000;
+	font-size: 280%;
+	letter-spacing: -1px;
+	font-weight: bold;
+	padding: 0;
+	margin: 0 0 32px 0;
+}
+
+.CommonTitle A:LINK, .CommonTitle A:ACTIVE, .CommonTitle A:VISITED, .CommonTitle A:HOVER
+{
+    color: #000;
+}
+
+.CommonSubTitle
+{
+	color: #000;
+	font-size: 180%;
+	letter-spacing: -1px;
+	font-weight: bold;
+	padding: 0;
+	margin: 0 0 32px 0;
+}
+
+.CommonHeader
+{
+	color: #000;
+	font-size: 130%;
+	font-weight: bold;
+	padding: 0;
+	margin: 8px 0 0 0;
+}
+
+.CommonContent
+{
+}
+
+.CommonGroupedContentArea
+{
+	padding: 0 0 8px 0;
+	margin: 0 0 16px 0;
+	border: solid 0 #000;
+	border-bottom-width: 1px;
+}
+
+/*
+Text Button
+*/
+
+.CommonTextButton
+{
+	visibility: hidden;
+}
+
+.CommonTextButtonHighlight
+{
+	visibility: hidden;
+}
+
+.CommonImageTextButton
+{
+	visibility: hidden;
+}
+
+.CommonImageTextButtonHighlight
+{
+	visibility: hidden;
+}
+
+/*
+Advertisements
+*/
+
+.CommonStandardTopAdArea
+{
+	text-align: center;
+	padding: 4px;
+	margin: 0 0 4px 0;
+	border: solid 0 #000;
+	border-top-width: 1px;
+}
+
+.CommonStandardTopAdArea IFRAME
+{
+	margin: 0 auto;
+}
+
+.CommonStandardBottomAdArea
+{
+	text-align: center;
+	padding: 4px;
+	border: solid 0 #000;
+	border-top-width: 1px;
+	margin: 4px 0 0 0;
+}
+
+.CommonStandardBottomAdArea IFRAME
+{
+	border: solid 1px #000;
+	margin: 0 auto;
+}
+
+/*
+List 
+*/
+
+.CommonListArea
+{
+	padding: 8px 0;
+}
+
+.CommonListTitle
+{
+	padding: 6px 6px 6px 0;
+	color: #000;
+	font-size: 180%;
+	font-weight: bold;
+	margin: 0;
+}
+
+.CommonListTitle A, .CommonListTitle A:VISITED, .CommonListTitle A:ACTIVE, .CommonListTitle A:HOVER
+{
+	color: #000;
+}
+
+.CommonListHeaderLeftMost
+{
+	text-align: left;
+	padding: 4px;
+	border: solid 1px #000;
+	color: #000;
+	font-size: 80%;
+	font-weight: bold;
+}
+
+.CommonListHeader
+{
+	text-align: left;
+	padding: 4px;
+	border: solid 1px #000;
+	border-left-width: 0;
+	color: #000;
+	font-size: 80%;
+	font-weight: bold;
+}
+
+.CommonListCellLeftMost
+{
+	padding: 4px;
+	border: solid 1px #000;
+	border-top-width: 0;
+	color: #000;
+	font-size: 80%;
+}
+
+.CommonListCell
+{
+	padding: 4px;
+	border: solid 1px #000;
+	border-top-width: 0;
+	border-left-width: 0;
+	color: #000;
+	font-size: 80%;
+	text-align: left;
+}
+
+.CommonListRow
+{
+}
+
+.CommonListRowAlt td
+{
+    
+}
+
+/*
+Search Results
+*/
+
+.CommonSearchResultArea
+{
+	margin: 0 0 20px 0;
+	border: solid 0 #000;
+	border-bottom-width: 1px;
+	padding: 0 0 20px 0;
+}
+
+.CommonSearchResult
+{
+	font-size: 100%;
+}
+
+.CommonSearchResultName
+{
+	font-size: 150%;
+	font-weight: normal;
+	padding: 0;
+	margin: 0 0 4px 0;
+}
+
+.CommonSearchResultDetails
+{
+	margin: 4px 0 0 0;
+	color: #000;
+	font-size: 80%;
+}
+
+.CommonSearchStatistics
+{
+	margin: 4px 0 0 0;
+	color: #000;
+	font-size: 80%;
+}
+
+UL.CommonSearchResultList
+{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+/*
+Validation Styles
+*/
+
+.CommonValidationWarning
+{
+	font-size: 100%;
+	color: #000;
+	font-weight: bold;
+	padding: 2px;
+}
+
+/*
+ContentParts
+*/
+
+.CommonContentPartBorderOff
+{
+	padding: 1px;
+}
+
+.CommonContentPartBorderOn
+{
+	border: dashed 1px #000;
+}
+
+/* Modal Styles */
+
+.CommonModalMask
+{
+	opacity: .4;
+	filter: alpha(opacity=40);
+}
+
+.CommonModal
+{
+	border: solid 1px #000;
+	border-right-width: 3px;
+	border-right-color: #000;
+	border-bottom-width: 3px;
+	border-bottom-color: #000;
+	font-size: 75%;
+}
+
+.CommonModalTitle
+{
+	font-size: 16px;
+	padding: 5px 5px 7px 5px;
+	border: solid 0 #000;
+	border-bottom-width: 1px;
+	color: #000;
+	font-weight: bold;
+	cursor: move;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.CommonModalClose
+{
+	width: 33px;
+	height: 12px;
+	background-image: url(../images/common/close.gif);
+	background-repeat: no-repeat;
+	overflow: hidden;
+	cursor: pointer;
+	float: right;
+}
+
+.CommonModalContent
+{
+}
+
+.CommonModalFooter
+{
+	border: solid 0 #000;
+	border-top-width: 1px;
+	padding: 2px;
+}
+
+.CommonModalResize
+{
+	width: 14px;
+	height: 14px;
+	background-image: url(../images/common/resize.gif);
+	background-repeat: no-repeat;
+	overflow: hidden;
+	float: right;
+	cursor: se-resize;
+}
+
+/*
+Rating Styles
+*/
+
+.CommonRateControlReadOnly
+{
+	display: inline-table;
+	display: -moz-inline-box;
+	display: inline-block;
+	border: solid 1px #000;
+	padding: 1px;
+	white-space: nowrap;
+}
+
+.CommonRateControl
+{
+	display: inline-table;
+	display: -moz-inline-box;
+	display: inline-block;
+	border: solid 1px #000;
+	cursor: pointer;
+	padding: 1px;
+	white-space: nowrap;
+}
+
+.CommonRateControlActive
+{
+	display: inline-table;
+	display: -moz-inline-box;
+	display: inline-block;
+	border: solid 1px #000;
+	cursor: pointer;
+	padding: 1px;
+	white-space: nowrap;
+}
+
+/*
+Content Selector Styles 
+*/
+
+.CommonContentSelectorTreeArea
+{
+	height: 330px;
+	margin: 5px;
+	margin-left: 0;
+	border: solid 1px #000;
+	overflow: auto;
+}
+
+.CommonContentSelectorItemsArea
+{
+	margin: 5px;
+	margin-right: 0;
+	margin-left: 0;
+	border: solid 1px #000;
+	overflow: auto;
+	padding: 4px;
+	height: 322px;
+}
+
+.CommonContentSelectorOptionsArea
+{
+	margin: 0;
+	border: solid 1px #000;
+	padding: 4px;
+}
+
+.CommonContentSelectorTree
+{
+	padding: 0;
+	height: 330px;
+	width: 215px;
+	overflow: visible;
+}
+
+.CommonContentSelectorTreeNode
+{
+	cursor: pointer;
+}
+
+.CommonContentSelectorTreeNodeSelected
+{
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.CommonContentSelectorTreeNodeHover
+{
+	cursor: pointer;
+}
+
+.CommonContentSelectorItemArea
+{
+    float: left;
+}
+
+.CommonContentSelectorItem
+{
+	font-size: 90%;
+	border: solid 1px #000;
+	cursor: pointer;
+	padding: 3px;
+	width: 79px;
+	height: 79px;
+	overflow: hidden;
+	margin: 6px 6px 0 6px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.CommonContentSelectorItemSelected
+{
+	font-size: 90%;
+	border: solid 3px #000;
+	cursor: pointer;
+	padding: 1px;
+	width: 79px;
+	height: 79px;
+	overflow: hidden;
+	margin: 6px 6px 0 6px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.CommonContentSelectorItem img, .CommonContentSelectorItemSelected img
+{
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.CommonContentSelectorItemName
+{
+	font-size: 90%;
+	font-weight: normal;
+	text-align: center;
+	cursor: pointer;
+	padding: 2px;
+	width: 83px;
+	height: 12px;
+	overflow: hidden;
+	margin: 1px 6px 16px 6px;
+}
+
+.CommonContentSelectorItemNameSelected
+{
+	font-size: 90%;
+	font-weight: normal;
+	text-align: center;
+	cursor: pointer;
+	padding: 2px;
+	width: 83px;
+	height: 12px;
+	overflow: hidden;
+	margin: 1px 6px 16px 6px;
+}
+
+.CommonContentSelectorButtonArea
+{
+	text-align: right;
+	margin: 5px;
+}
+
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+{
+	margin: 0 0 .0001pt 0;
+}
+
+/* Comments */
+
+/* Comment List */
+
+#comments table, .FileCommentsContent table
+{
+    width: 100%;
+    table-layout: fixed;
+}
+
+.Comment
+{
+	padding: 12px 8px 8px 8px;
+	border: solid 0 #000;
+	border-bottom-width: 1px;
+}
+
+.CommentOwner
+{
+	padding: 8px;
+}
+
+.CommentAvatar
+{
+	white-space: nowrap;
+	width: 15%;
+}
+
+.CommentAvatar img
+{
+	margin-right: 8px;
+}
+
+.CommentContent
+{
+    width: 85%;
+    overflow: hidden;
+}
+
+.CommentTitle
+{
+	font-size: 110%;
+	margin: 0;
+	padding: 0;
+}
+
+.CommentText
+{
+	padding: 2px 0;
+}
+
+.CommentFooter
+{
+	font-size: 80%;
+	color: #000;
+}
+
+/* Help Icon */
+
+.CommonHelpIcon
+{
+    display: none;
+}
+
+/* Poll Styles */
+
+.CommonPollMoveUpButton
+{
+	display: inline-table;
+	display: -moz-inline-box;
+	display: inline-block;
+	margin: 1px;
+	border: solid 1px #000;
+	border-top-color: #000;
+	border-left-color: #000;
+	color: #000;
+	font-size: 80%;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	background-position: left top;
+	width: 20px;
+	height: 20px;
+	line-height: normal;
+	background-image: url(../images/common/up.gif);
+}
+
+.CommonPollMoveUpButton:LINK, .CommonPollMoveUpButton:VISTED, .CommonPollMoveUpButton:ACTIVE
+{
+	text-decoration: none;
+	color: #000;
+}
+
+.CommonPollMoveUpButton:HOVER
+{
+	text-decoration: none;
+	color: #000;
+}
+
+.CommonPollMoveDownButton
+{
+	display: inline-table;
+	display: -moz-inline-box;
+	display: inline-block;
+	margin: 1px;
+	border: solid 1px #000;
+	border-top-color: #000;
+	border-left-color: #000;
+	color: #000;
+	font-size: 80%;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	background-position: left top;
+	width: 20px;
+	height: 20px;
+	line-height: normal;
+	background-image: url(../images/common/down.gif);
+}
+
+.CommonPollMoveDownButton:LINK, .CommonPollMoveDownButton:VISTED, .CommonPollMoveDownButton:ACTIVE
+{
+	text-decoration: none;
+	color: #000;
+}
+
+.CommonPollMoveDownButton:HOVER
+{
+	text-decoration: none;
+	color: #000;
+}
+
+.CommonPollDeleteButton
+{
+	display: inline-table;
+	display: -moz-inline-box;
+	display: inline-block;
+	margin: 1px;
+	border: solid 1px #000;
+	border-top-color: #000;
+	border-left-color: #000;
+	color: #000;
+	font-size: 80%;
+	font-weight: bold;
+	background-repeat: no-repeat;
+	background-position: left top;
+	width: 20px;
+	height: 20px;
+	line-height: normal;
+	background-image: url(../images/common/delete.gif);
+}
+
+.CommonPollDeleteButton:LINK, .CommonPollDeleteButton:VISITED, .CommonPollDeleteButton:ACTIVE
+{
+	text-decoration: none;
+	color: #000;
+}
+
+.CommonPollDeleteButton:HOVER
+{
+	text-decoration: none;
+	color: #000;
+}
+
+ol.CommonPollAnswerList
+{
+	margin: 0;
+	padding: 0;
+}
+
+ol.CommonPollAnswerList li
+{
+	margin-left: 24px;
+}
+
+/* rendered poll styles */
+
+.CommonPollArea
+{
+	width: 375px;
+	border: solid 1px #000;
+	margin: 0 auto;
+}
+
+.CommonPollQuestion
+{
+	border: solid 0 #000;
+	border-bottom-width: 1px;
+	padding: 4px;
+	color: #000;
+	margin: 0;
+	font-size: 105%;
+}
+
+.CommonPollContent
+{
+	padding: 4px;
+}
+
+.CommonPollDescription
+{
+}
+
+.CommonPollSwitchedContent
+{
+	width: 275px;
+	margin: 6px auto;
+}
+
+ul.CommonPollAnswerList
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.CommonPollAnswerList li
+{
+	padding: 0;
+	margin: 6px 0 0 0;
+}
+
+.CommonPollAnswer
+{
+	padding: 2px;
+}
+
+.CommonPollUserVote
+{
+	color: #000;
+}
+
+.CommonPollFooter
+{
+	padding: 2px;
+	border: solid 0 #000;
+	border-top-width: 1px;
+	font-size: 80%;
+}
+
+ul.CommonPollFooterList
+{
+	list-style-type: none;
+	margin: 0;
+	text-align: center;
+}
+
+ul.CommonPollFooterList li
+{
+	display: inline;
+	margin: 0 6px;
+}
+
+/* End Poll Styles */
+
+/* Tag Styles */
+
+.CommonTagCloud
+{
+	padding: 16px 8px 16px 8px;
+	margin: 32px 0;
+	color: #000;
+	line-height: 250%;
+	list-style-type: none;
+}
+
+.CommonSidebarTagCloud
+{
+	line-height: 225%;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.CommonTag1, .CommonTag2, .CommonTag3, .CommonTag3, .CommonTag4, .CommonTag5, .CommonTag6
+{
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+.CommonTag1 a:link, .CommonTag1 a:visited, .CommonTag1 a:active
+{
+	margin-right: 6px;
+	text-decoration: none;
+	color: #000;
+	font-size: 225%;
+	font-weight: 900;
+}
+
+.CommonTag2 a:link, .CommonTag2 a:visited, .CommonTag2 a:active
+{
+	margin-right: 6px;
+	text-decoration: none;
+	color: #000;
+	font-size: 175%;
+	font-weight: 800;
+}
+
+.CommonTag3 a:link, .CommonTag3 a:visited, .CommonTag3 a:active
+{
+	margin-right: 6px;
+	text-decoration: none;
+	color: #000;
+	font-size: 150%;
+	font-weight: 600;
+}
+
+.CommonTag4 a:link, .CommonTag4 a:visited, .CommonTag4 a:active
+{
+	margin-right: 6px;
+	text-decoration: none;
+	color: #000;
+	font-size: 120%;
+	font-weight: 500;
+}
+
+.CommonTag5 a:link, .CommonTag5 a:visited, .CommonTag5 a:active
+{
+	margin-right: 6px;
+	text-decoration: none;
+	color: #000;
+	font-size: 100%;
+	font-weight: 300;
+}
+
+.CommonTag6 a:link, .CommonTag6 a:visited, .CommonTag6 a:active
+{
+	margin-right: 6px;
+	text-decoration: none;
+	color: #000;
+	font-size: 80%;
+	font-weight: 200;
+}
+
+.CommonTag1 a:hover, .CommonTag2 a:hover, .CommonTag3 a:hover, .CommonTag4 a:hover, .CommonTag5 a:hover, .CommonTag6 a:hover
+{
+	text-decoration: underline;
+}
+
+/* End Tag Styles */
+
+/*
+TabPane Styles
+*/
+
+.CommonPane
+{
+	font-size: 10pt;
+	border: solid 1px #000;
+	border-top-width: 0;
+	padding: 8px;
+}
+
+.CommonPaneTabSet
+{
+	font-size: 11px;
+	padding: 0;
+	background-image: url(../images/common/tabset.gif);
+	background-position: bottom left;
+	background-repeat: repeat-x;
+	white-space: nowrap;
+}
+
+.CommonPaneTab
+{
+	padding-right: 4px;
+	background-image: url(../images/common/tab-right.gif);
+	background-repeat: no-repeat;
+	background-position: top right;	height: 21px;
+	margin-top: 1px;
+}
+
+.CommonPaneTab1
+{
+	padding-left: 3px;
+	background-image: url(../images/common/tab-left.gif);
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+.CommonPaneTab2
+{
+	padding: 4px;
+	height: 13px;
+	cursor: pointer;
+	white-space: nowrap;
+	background-image: url(../images/common/tab.gif);
+	background-repeat: repeat-x;
+	background-position: top left;
+	text-align: center;
+	overflow: hidden;
+}
+
+.CommonPaneTabSelected
+{
+	padding-right: 4px;
+	background-image: url(../images/common/tab-selected-right.gif);
+	background-repeat: no-repeat;
+	background-position: top right;	height: 21px;
+	margin-top: 1px;
+}
+
+.CommonPaneTabSelected1
+{
+	padding-left: 3px;
+	background-image: url(../images/common/tab-selected-left.gif);
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+.CommonPaneTabSelected2
+{
+	padding: 3px 4px 5px 4px;
+	height: 13px;
+	cursor: pointer;
+	white-space: nowrap;
+	background-image: url(../images/common/tab-selected.gif);
+	background-repeat: repeat-x;
+	background-position: top left;
+	text-align: center;
+	font-weight: bold;
+	overflow: hidden;
+}
+
+.CommonPaneTabHover
+{
+	padding-right: 4px;
+	background-image: url(../images/common/tab-hover-right.gif);
+	background-repeat: no-repeat;
+	background-position: top right;	height: 21px;
+	margin-top: 1px;
+}
+
+.CommonPaneTabHover1
+{
+	padding-left: 3px;
+	background-image: url(../images/common/tab-hover-left.gif);
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+.CommonPaneTabHover2
+{
+	padding: 4px;
+	cursor: pointer;
+	white-space: nowrap;
+	height: 13px;
+	background-image: url(../images/common/tab-hover.gif);
+	background-repeat: repeat-x;
+	background-position: top left;
+	text-align: center;
+	overflow: hidden;
+}
+
+/* Inline tag editor */
+.CommonInlineTagEditor
+{
+	padding: 4px;
+	border: solid 1px #000;
+}
+
+/* Common Tree List */
+ul.CommonTreeList
+{
+	margin: 0;
+	padding: 0;
+}
+
+ul.CommonTreeList li
+{
+    margin: 0;
+    padding: 5px 0 0 18px;
+    list-style-type: none;
+}
+
+.CommonTreeListItemSelected
+{
+    font-weight: bold;
+    padding: 5px 0 0 18px;
+	background-image: url(../images/common/folder_open.gif);
+	background-repeat: no-repeat;
+	background-position: left 3px;
+}
+
+.CommonTreeListItem
+{
+    font-weight: normal;
+    padding: 5px 0 0 18px;
+	background-image: url(../images/common/folder.gif);
+	background-repeat: no-repeat;
+	background-position: left 3px;
+}
+
+.CommonTreeListItemSelected a:link, .CommonTreeListItemSelected a:visited, .CommonTreeListItemSelected a:active, 
+.CommonTreeListItem a:link, .CommonTreeListItem a:visited, .CommonTreeListItem a:active
+{
+    text-decoration: none;
+    color: #000;
+}
+
+.CommonTreeListItemSelected a:hover, .CommonTreeListItem a:hover
+{
+    text-decoration: underline;
+    color: #000;
+}
+
+.CommonHalfWidthArea
+{
+    float: left;
+    width: 50%;
+}
+
+.CommonHalfWidthContent
+{
+    padding: 10px;
+    padding-left: 0;
+}
+
+.CommonHalfWidthBreak
+{
+    clear: both;
+}
+
+.CommonInlineListArea
+{
+}
+
+.CommonInlineListHeader
+{
+    font-weight: bold;
+    font-size: 115%;    
+    margin: 0 0 0 .4em;
+}
+
+.CommonInlineList
+{
+    margin: 0;
+    padding: 0;
+}
+
+.CommonInlineList li
+{
+    margin: 0 0 .5em 25px;
+    padding: 0;
+    list-style-type: square;
+}
+
+.CommonAvatarListArea
+{
+    margin: 12px 12px 0 0 ;
+	padding: 3px 3px 3px 0;
+	width: 80px;
+	height: 100px;
+	text-align: center;
+	vertical-align: middle;
+	overflow: hidden;
+	float: left;
+	font-size: 120%;
+}
+
+.CommonAvatarAreaHighlight
+{
+    
+    border: solid 1px #000;
+    display: block;
+}
+
+.CommonAvatarArea
+{
+    display: block;
+    padding: 1px;
+}

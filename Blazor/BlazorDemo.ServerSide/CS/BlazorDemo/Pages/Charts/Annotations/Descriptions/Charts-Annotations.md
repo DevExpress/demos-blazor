@@ -1,0 +1,8 @@
+DevExpress Blazor Chart components allow you to display and configure [annotations](https://docs.devexpress.com/Blazor/405150/components/charts/descriptive-elements/annotations) (comments about chart content). DevExpress Chart components support text and image annotations. These annotations can be anchored to chart elements or remain unanchored (positioned with X and Y coordinates).
+ 
+To create an annotation, you must:
+1. Add an appropriate annotation object to chart markup ([DxChartAnnotation](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxChartAnnotation) for [DxChart](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxChart-1), [DxPieChartAnnotation](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxPieChartAnnotation) for [DxPieChart](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxPieChart-1)).
+2. Specify annotation [type](https://docs.devexpress.com/Blazor/405150/components/charts/descriptive-elements/annotations#type) and [location](https://docs.devexpress.com/Blazor/405150/components/charts/descriptive-elements/annotations#location).
+3. *Optional*. Customize annotation [size](https://docs.devexpress.com/Blazor/405150/components/charts/descriptive-elements/annotations#size) and [appearance](https://docs.devexpress.com/Blazor/405150/components/charts/descriptive-elements/annotations#appearance-customization), and configure [tooltips](https://docs.devexpress.com/Blazor/405150/components/charts/descriptive-elements/annotations#tooltips).
+ 
+Note the customized annotations (with tooltips) used in this demo: four text annotations anchored to series points and one draggable image annotation positioned with pixel coordinates.

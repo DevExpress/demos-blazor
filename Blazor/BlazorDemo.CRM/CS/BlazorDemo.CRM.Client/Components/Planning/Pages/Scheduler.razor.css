@@ -1,0 +1,54 @@
+::deep .normal-view {
+    height: inherit;
+}
+
+::deep .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow-wrap: break-word;
+    background-color: var(--dxds-color-surface-neutral-default-rest);
+    background-clip: border-box;
+    border: var(--dxds-border-radius-10) solid var(--dxds-color-border-neutral-default-rest);
+    border-radius: 0.25rem;
+}
+
+.compact-view {
+    display: flex;
+    height: 100%;
+    justify-items: start;
+}
+
+::deep .menu-button {
+    height: fit-content;
+    position: relative;
+    top: 1em;
+    left: 0.25em;
+}
+
+::deep .settings {
+    padding: 1em;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+::deep .scheduler-loading-panel {
+    height: 100%;
+}
+
+::deep .scheduler-drawer .dxbl-drawer-body {
+    padding: 0;
+}
+
+::deep .scheduler-drawer > .dxbl-drawer-panel {
+    margin-left: unset;
+    transition-property: visibility, width, margin-left;
+    border: 0.063rem solid var(--dxds-color-border-neutral-default-rest);
+    border-top: none;
+    border-bottom-right-radius: 0.25rem;
+    margin-top: calc(var(--CRM-scheduler-panel-margin-top) + 0.1rem);
+    box-shadow: none !important;
+}

@@ -1,0 +1,19 @@
+﻿@typeparam T
+<OptionComponent Id="@id" Label="@Label" LabelPosition="LabelPosition.Right" CssClass="option-component-check">
+    <DxCheckBox InputId="@id" T="@T" Checked="Checked" CheckedChanged="@OnCheckedChange" Enabled="@Enabled"/>
+</OptionComponent>
+
+@code {
+    readonly string id = Guid.NewGuid().ToString();
+    [Parameter] public T Checked { get; set; }
+    [Parameter] public EventCallback<T> CheckedChanged { get; set; }
+    [Parameter] public string Label { get; set; }
+    [Parameter] public bool Enabled { get; set; } = true;
+
+    protected void OnCheckedChange(T newValue) {
+        if(!Equals(Checked, newValue)) {
+            Checked = newValue;
+            CheckedChanged.InvokeAsync(newValue);
+        }
+    }
+}

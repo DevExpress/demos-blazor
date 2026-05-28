@@ -1,0 +1,36 @@
+﻿<XtraSerializer version="17.1.0.0">
+  <Items>
+    <Item1 ItemKind="DiagramRoot" PageSize="884,835" Theme="Linear" SelectedStencils="BasicShapes, ArrowShapes" SugiyamaLayoutColumnSpacing="46">
+      <Children>
+        <Item1 Position="100,24" Size="100,75" FontSize="14" Angle="0" Content="Layer 1" ItemKind="DiagramShape" />
+        <Item2 Position="465,139" Size="100,75" FontSize="14" Angle="0" Content="Layer 2" ItemKind="DiagramShape" />
+        <Item3 Position="100,139" Size="100,75" FontSize="14" Angle="0" Content="Layer 2" ItemKind="DiagramShape" />
+        <Item4 Position="465,254" Size="100,75" FontSize="14" Angle="0" Content="Layer 3" ItemKind="DiagramShape" />
+        <Item5 Position="100,254" Size="100,75" FontSize="14" Angle="0" Content="Layer 3" ItemKind="DiagramShape" />
+        <Item6 Position="538,369" Size="100,75" FontSize="14" Angle="0" Content="Layer 4" ItemKind="DiagramShape" />
+        <Item7 Position="246,369" Size="100,75" FontSize="14" Angle="0" Content="Layer 4" ItemKind="DiagramShape" />
+        <Item8 Position="392,484" Size="100,75" FontSize="14" Angle="0" Content="Layer 5" ItemKind="DiagramShape" />
+        <Item9 FontSize="14" BeginItemPointIndex="-1" EndItemPointIndex="-1" Points="(Empty)" Type="Curved" ItemKind="DiagramConnector" BeginItem="0" EndItem="1" BeginPoint="200,61.5" EndPoint="320,157.5" />
+        <Item10 FontSize="14" BeginItemPointIndex="-1" EndItemPointIndex="-1" Points="(Empty)" Type="Curved" ItemKind="DiagramConnector" BeginItem="0" EndItem="2" BeginPoint="150,99" EndPoint="150,139" />
+        <Item11 FontSize="14" BeginItemPointIndex="-1" EndItemPointIndex="-1" Points="(Empty)" Type="Curved" ItemKind="DiagramConnector" BeginItem="1" EndItem="3" BeginPoint="370,195" EndPoint="465,291.5" />
+        <Item12 FontSize="14" BeginItemPointIndex="-1" EndItemPointIndex="-1" Points="(Empty)" Type="Curved" ItemKind="DiagramConnector" BeginItem="3" EndItem="5" BeginPoint="515,329" EndPoint="538,406.5" />
+        <Item13 FontSize="14" BeginItemPointIndex="-1" EndItemPointIndex="-1" Points="(Empty)" Type="Curved" ItemKind="DiagramConnector" BeginItem="5" EndItem="7" BeginPoint="588,444" EndPoint="492,521.5" />
+        <Item14 FontSize="14" BeginItemPointIndex="-1" EndItemPointIndex="-1" Points="(Empty)" Type="Curved" ItemKind="DiagramConnector" BeginItem="3" EndItem="6" BeginPoint="465,291.5" EndPoint="346,406.5" />
+        <Item15 FontSize="14" BeginItemPointIndex="-1" EndItemPointIndex="-1" Points="(Empty)" Type="Curved" ItemKind="DiagramConnector" BeginItem="2" EndItem="4" BeginPoint="150,214" EndPoint="150,254" />
+        <Item16 Position="538,484" Size="100,75" FontSize="14" Angle="0" Content="Layer 5" ItemKind="DiagramShape" />
+        <Item17 Position="684,484" Size="100,75" FontSize="14" Angle="0" Content="Layer 5" ItemKind="DiagramShape" />
+        <Item18 FontSize="14" BeginItemPointIndex="-1" EndItemPointIndex="-1" Points="(Empty)" Type="Curved" ItemKind="DiagramConnector" BeginItem="5" EndItem="15" BeginPoint="588,444" EndPoint="588,484" />
+        <Item19 FontSize="14" BeginItemPointIndex="-1" EndItemPointIndex="-1" Points="(Empty)" Type="Curved" ItemKind="DiagramConnector" BeginItem="5" EndItem="16" BeginPoint="588,444" EndPoint="684,521.5" />
+        <Item20 Position="246,254" Size="100,75" FontSize="14" Angle="0" Content="Layer 3" ItemKind="DiagramShape" />
+        <Item21 FontSize="14" BeginItemPointIndex="-1" EndItemPointIndex="-1" Points="(Empty)" Type="Curved" ItemKind="DiagramConnector" BeginItem="1" EndItem="19" BeginPoint="370,195" EndPoint="296,254" />
+        <Item22 FontSize="14" BeginItemPointIndex="-1" EndItemPointIndex="-1" Points="442,369" Type="Curved" ItemKind="DiagramConnector" BeginItem="3" EndItem="7" BeginPoint="515,329" EndPoint="442,484" />
+        <Item23 Position="173,599" Size="100,75" FontSize="14" Angle="0" Content="Layer 6" ItemKind="DiagramShape" />
+        <Item24 FontSize="14" BeginItemPointIndex="-1" EndItemPointIndex="-1" Points="150,369 150,484" Type="Curved" ItemKind="DiagramConnector" BeginItem="4" EndItem="22" BeginPoint="150,329" EndPoint="223,599" />
+        <Item25 FontSize="14" BeginItemPointIndex="-1" EndItemPointIndex="-1" Points="(Empty)" Type="Curved" ItemKind="DiagramConnector" BeginItem="7" EndItem="22" BeginPoint="392,521.5" EndPoint="273,636.5" />
+        <Item26 Position="392,24" Size="100,75" FontSize="14" Angle="0" Content="Layer 1" ItemKind="DiagramShape" />
+        <Item27 BeginItemPointIndex="-1" EndItemPointIndex="-1" Points="296,139" Type="Curved" ItemKind="DiagramConnector" BeginItem="3" EndItem="25" BeginPoint="565,291.5" EndPoint="492,61.5" />
+        <Item28 BeginItemPointIndex="-1" EndItemPointIndex="-1" Points="(Empty)" Type="Curved" ItemKind="DiagramConnector" BeginItem="25" EndItem="1" BeginPoint="442,99" EndPoint="420,157.5" />
+      </Children>
+    </Item1>
+  </Items>
+</XtraSerializer>

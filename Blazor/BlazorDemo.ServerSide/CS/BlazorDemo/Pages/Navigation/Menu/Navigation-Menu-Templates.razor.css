@@ -1,0 +1,42 @@
+
+/*BeginHide*/ ::deep /*EndHide*/ .dxbl-menu-item-tmpl {
+    display: flex;
+    align-items: center;
+}
+
+/*BeginHide*/ ::deep /*EndHide*/ .notoggle svg {
+    display: none;
+}
+
+.dxbl-menu-item .search {
+    min-width: 123px
+}
+
+.dxbl-menu-item-tmpl > .search {
+    position: relative;
+}
+
+.user-profile .logo-container {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.user-profile .log-off-btn {
+    padding-top: 0.815rem;
+    padding-bottom: 0.815rem;
+    border-top: 1px solid #e5e5e5;
+}
+
+.menu-icon-user-profile {
+    opacity: 0.75;
+}
+
+.user-profile .menu-icon-user-profile {
+    opacity: 0.25;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.user-name-container .tm-8 {
+    opacity: 0.8;
+}

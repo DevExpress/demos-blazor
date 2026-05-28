@@ -1,0 +1,29 @@
+/*BeginHide*/::deep /*EndHide*/.dxbl-grid {
+    height: 522px;
+}
+
+/*BeginHide*/ .grid-container {
+    display: contents;
+}
+/*EndHide*/
+
+/*BeginHide*/ ::deep /*EndHide*/ .header-bold {
+    background-color: #E6E6E6 !important;
+}
+
+/*BeginHide*/ ::deep /*EndHide*/ .header-bold span {
+    font-weight: 700;
+    color: #161616;
+}
+
+/* DevExpress and Bootstrap Themes */
+/*BeginHide*/main:not(.theme-fluent-dark):not(.theme-fluent-light) .grid-container ::deep /*EndHide*/.alt-item > td:not(.dxbl-grid-empty-cell),
+/*BeginHide*/main:not(.theme-fluent-dark):not(.theme-fluent-light) .grid-container ::deep /*EndHide*/.alt-item > td:not(.dxbl-grid-indent-cell) {
+    background-color: #F7F7F7 !important;
+    color: #161616;
+}
+
+/* Fluent Themes */
+/*BeginHide*/::deep /*EndHide*/ .alt-item {
+    --dxbl-grid-row-bg: var(--dxds-color-surface-neutral-subdued-rest);
+}

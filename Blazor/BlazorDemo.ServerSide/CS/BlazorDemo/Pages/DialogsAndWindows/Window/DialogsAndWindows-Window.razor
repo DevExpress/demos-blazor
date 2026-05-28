@@ -1,0 +1,17 @@
+﻿@page "/Window"
+@layout DataProviderAccessArea<IHomesDataProvider>
+@using DevExpress.Blazor.Popup.Internal
+<DemoScriptLoader @ref=@scrollable Src="_content/BlazorDemo/lib/scrollable.js" />
+
+<DialogsAndWindows_Window_Overview />
+<DialogsAndWindows_Window_ShowOptions />
+<DialogsAndWindows_Window_Resizing />
+<DialogsAndWindows_Window_Dragging />
+<DialogsAndWindows_Window_Multiple />
+
+@code {
+    DemoScriptLoader scrollable;
+    protected override async Task OnAfterRenderAsync(bool firstRender) {
+        await scrollable.InvokeVoidAsync("init").SafeInvokeAsync();
+    }
+}

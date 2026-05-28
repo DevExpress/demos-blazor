@@ -1,0 +1,55 @@
+﻿@page "/TreeList/DataBinding/LargeDataset"
+
+<DemoPageSectionComponent Id="TreeList-DataBinding-LargeDataset" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject IEmployeeTaskDataProvider EmployeeTaskDataProvider
+
+        <DxTreeList Data="Data"
+                    KeyFieldName="Id"
+                    ParentKeyFieldName="ParentId"
+                    HasChildrenFieldName="HasChildren"
+                    ShowFilterRow="true"
+                    VirtualScrollingEnabled="true"
+                    ColumnResizeMode="TreeListColumnResizeMode.NextColumn"
+                    TextWrapEnabled="false"
+                    SizeMode="Params.SizeMode"
+                    CssClass="max-h-480">
+            <Columns>
+                <DxTreeListDataColumn FieldName="Name" Caption="Task" SortOrder="TreeListColumnSortOrder.Ascending" />
+                <DxTreeListDataColumn FieldName="EmployeeName" Caption="Assigned To" TextAlignment="TreeListTextAlignment.Left" Width="200px" />
+                <DxTreeListDataColumn FieldName="StartDate" Width="100px" />
+                <DxTreeListDataColumn FieldName="DueDate" Width="100px" />
+                <DxTreeListDataColumn FieldName="Priority" Width="100px" CaptionAlignment="TreeListTextAlignment.Center" TextAlignment="TreeListTextAlignment.Center">
+                    <CellDisplayTemplate>
+                        @{
+                            var displayText = EmployeeTask.EmployeeTaskPriorityToString((EmployeeTask)context.DataItem);
+                        }
+                        <span title="@displayText priority">@displayText</span>
+                    </CellDisplayTemplate>
+                </DxTreeListDataColumn>
+                <DxTreeListDataColumn Caption="Progress" FieldName="Status" Width="100px" CaptionAlignment="TreeListTextAlignment.Center" TextAlignment="TreeListTextAlignment.Center">
+                    <CellDisplayTemplate>
+                        <DxProgressBar Value="Convert.ToDouble(context.Value)"
+                                       MinValue="0"
+                                       MaxValue="100"
+                                       Thickness="0.875em"
+                                       Size="100%"
+                                       ShowLabel="false"
+                                       aria-label="Progress" />
+                    </CellDisplayTemplate>
+                </DxTreeListDataColumn>
+            </Columns>
+        </DxTreeList>
+
+        @code {
+            object Data { get; set; }
+
+            protected override void OnInitialized() {
+                var tasks = EmployeeTaskDataProvider.GenerateLargeData().AsQueryable();
+                var dataSource = new GridDevExtremeDataSource<EmployeeTask>(tasks);
+                Data = dataSource;
+            }
+        }
+
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

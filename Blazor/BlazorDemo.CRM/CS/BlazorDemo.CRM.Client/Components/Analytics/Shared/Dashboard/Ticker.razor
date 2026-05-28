@@ -1,0 +1,45 @@
+﻿@using System.Globalization
+@using System.Drawing
+
+@namespace BlazorDemo.CRM.Components.Dashboard
+
+<div class="ticker">
+    <div class="@GetLabelCssClasses()">
+        <span class="@GetLabelIconCssClasses()"></span>
+    </div>
+    <div class="middle">
+        <div class="title">@Title</div>
+        <div class="total">@Total</div>
+    </div>
+    <div class="@GetValueCssClasses()">
+        <span class="@GetToneIconCssClasses()"></span>
+        @(Math.Abs(Value).ToString("P1"))
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string? Title { get; set; }
+    [Parameter]
+    public string? Total { get; set; }
+    [Parameter]
+    public double Value { get; set; }
+    [Parameter]
+    public string? LabelCss { get; set; }
+    [Parameter]
+    public string? LabelIconCss { get; set; }
+
+    bool IsPositiveValue => Value > 0;
+
+    string GetValueCssClasses() => $"{GetToneCssClasses()} percentage tone-bg";
+
+    string GetToneCssClasses() => IsPositiveValue ? "positive" : "negative";
+
+    string GetToneIconCssClasses() =>
+        $"{(IsPositiveValue ? "chevron-up-icon" : "chevron-down-icon")} icon small-icon";
+
+    string GetLabelCssClasses() =>
+        string.Join(' ', "icon-wrapper", "tone-bg", (LabelCss ?? GetToneCssClasses()));
+
+    string GetLabelIconCssClasses() => string.Join(' ', "icon medium-icon", LabelIconCss);
+}

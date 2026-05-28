@@ -1,0 +1,53 @@
+﻿<DemoPageSectionComponent Id="Navigation-Toolbar-RenderStyle" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <div class="card w-100">
+            <div class="card-body">
+                <DxToolbar ItemRenderStyleMode="@selectedRenderMode"
+                           Data="@DataItems"
+                           SizeMode="Params.SizeMode"
+                           Title="Toolbar title">
+                    <DataMappings>
+                        <DxToolbarDataMapping Text="Text"
+                                              RenderStyle="RenderStyle"
+                                              BeginGroup="BeginGroup" />
+                    </DataMappings>
+                </DxToolbar>
+            </div>
+        </div>
+    </ChildContentWithParameters>
+    <OptionsContent>
+        <OptionComboBox Label="Render Style Mode:"
+                        Data="@(Enum.GetNames(typeof(ToolbarRenderStyleMode)))"
+                        Value="@(selectedRenderMode.ToString())"
+                        ValueChanged="@((string selectedItem) => { selectedRenderMode = Enum.Parse<ToolbarRenderStyleMode>(selectedItem); })"/>
+    </OptionsContent>
+
+    @code{
+        ToolbarRenderStyleMode selectedRenderMode = ToolbarRenderStyleMode.Contained;
+        List<ToolbarRenderStyleDataItem> _dataItems;
+        List<ToolbarRenderStyleDataItem> DataItems { get => _dataItems; }
+
+        protected override void OnInitialized() {
+            base.OnInitialized();
+            var btnStyles = new List<ButtonRenderStyle>((ButtonRenderStyle[])Enum.GetValues(typeof(ButtonRenderStyle)));
+            @*BeginHide*@
+            btnStyles.RemoveAt(0);
+            btnStyles.Remove(ButtonRenderStyle.Dark);
+            btnStyles.Remove(ButtonRenderStyle.Light);
+            btnStyles.Add(ButtonRenderStyle.None);
+            @*EndHide*@
+            _dataItems = btnStyles.Select(style => new ToolbarRenderStyleDataItem {
+                Text = style.ToString(),
+                RenderStyle = style,
+                BeginGroup = true
+            }).ToList();
+        }
+
+        class ToolbarRenderStyleDataItem {
+            public string Text { get; set; }
+            public ButtonRenderStyle RenderStyle { get; set; }
+            public bool BeginGroup { get; set; }
+        }
+    }
+
+</DemoPageSectionComponent>

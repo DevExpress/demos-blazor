@@ -1,0 +1,64 @@
+﻿<DemoPageSectionComponent Id="DialogsAndWindows-Toast-Overview" ShowSizeMode="true" MinHeight="580" UseScrollableContainer="true">
+    <ChildContentWithParameters Context="Params">
+        <div class="d-flex align-items-center custom-toast-background">
+            <DxToastProvider Name="Overview"
+                             MaxToastCount="5"
+                             AnimationType="ToastAnimationType.Slide"
+                             HorizontalAlignment="HorizontalAlignment.Center"
+                             DisplayTime="TimeSpan.Zero"
+                             SizeMode="Params.SizeMode"
+                             Width="360px"/>
+        </div>
+    </ChildContentWithParameters>
+
+    @code {
+        [Inject] IToastNotificationService ToastService { get; set; }
+
+        protected override void OnAfterRender(bool firstRender) {
+            ToastService.ShowToast(new ToastOptions() {
+                ProviderName = "Overview",
+                ThemeMode = ToastThemeMode.Light,
+                RenderStyle = ToastRenderStyle.Warning,
+                Title = "Cannot open file",
+                Text = "The file may have been moved, renamed, or deleted."
+            }, RenderButtons());
+
+            ToastService.ShowToast(new ToastOptions() {
+                ProviderName = "Overview",
+                ThemeMode = ToastThemeMode.Pastel,
+                RenderStyle = ToastRenderStyle.Primary,
+                Text = "Job is running: 'validation'."
+            });
+
+            ToastService.ShowToast(new ToastOptions() {
+                ProviderName = "Overview",
+                ThemeMode = ToastThemeMode.Dark,
+                RenderStyle = ToastRenderStyle.Info,
+                Title = "New mail",
+                Text = "You received a message from Mary."
+            });
+
+            ToastService.ShowToast(new ToastOptions() {
+                ProviderName = "Overview",
+                ThemeMode = ToastThemeMode.Saturated,
+                RenderStyle = ToastRenderStyle.Success,
+                Title = "File download complete"
+            });
+
+            ToastService.ShowToast(new ToastOptions() {
+                ProviderName = "Overview",
+                ThemeMode = ToastThemeMode.Saturated,
+                RenderStyle = ToastRenderStyle.Danger,
+                Title = "Job failed: 'validation'"
+            });
+        }
+
+        private RenderFragment RenderButtons() {
+            return @<div class="d-flex gap-2">
+            <DxButton RenderStyle="ButtonRenderStyle.Warning">Show details...</DxButton>
+                       <DxButton RenderStyle="ButtonRenderStyle.Secondary">OK</DxButton>
+                   </div>;
+        }
+    }
+
+</DemoPageSectionComponent>

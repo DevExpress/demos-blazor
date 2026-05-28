@@ -1,0 +1,117 @@
+﻿@page "/Grid/Layout"
+@layout DataProviderAccessArea<INwindDataProvider>
+
+<DemoPageSectionComponent Id="Grid-Layout" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @using System.Text.Json
+        @inject NwindDataService NwindDataService
+        @inject IJSRuntime JSRuntime
+
+        <div class="grid-container">
+        @if(PreRendered) {
+            <DxGrid @ref="Grid" Data="GridData" AutoExpandAllGroupRows="true"
+                ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                ShowGroupPanel="true"
+                ShowFilterRow="true"
+                PageSizeSelectorVisible="true"
+                PageSizeSelectorAllRowsItemVisible="true"
+                LayoutAutoLoading="Grid_LayoutAutoLoading"
+                LayoutAutoSaving="Grid_LayoutAutoSaving"
+                TextWrapEnabled="false"
+                SizeMode="Params.SizeMode"
+                VirtualScrollingEnabled="true">
+                <Columns>
+                    <DxGridDataColumn FieldName="Country" GroupIndex="0" />
+                    <DxGridDataColumn FieldName="City" GroupIndex="1" />
+                    <DxGridDataColumn FieldName="CompanyName" />
+                    <DxGridDataColumn FieldName="Address" />
+                    <DxGridDataColumn FieldName="Phone" />
+                    <DxGridDataColumn FieldName="ContactName" />
+                </Columns>
+                <ToolbarTemplate>
+                    <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Contained">
+                        <Items>
+                            <DxToolbarItem Text="Reload Page" Click="ReloadPageButton_ClickAsync" BeginGroup="true" />
+                            <DxToolbarItem Text="Reset Layout" Click="ResetLayoutButton_ClickAsync" BeginGroup="true" />
+                            <DxToolbarItem Text="Show Column Chooser" Click="ShowColumnChooser_Click" BeginGroup="true" />
+                        </Items>
+                    </DxToolbar>
+                </ToolbarTemplate>
+            </DxGrid>
+        } else {
+            <em>Loading...</em>
+        }
+        </div>
+
+        @code {
+            const string LocalStorageKey = "Grid-LayoutPersistence-Data";
+
+            bool PreRendered { get; set; }
+            IGrid Grid { get; set; }
+            object GridData { get; set; }
+
+            protected override async Task OnInitializedAsync() {
+                GridData = await NwindDataService.GetCustomersAsync();
+            }
+
+            protected override void OnAfterRender(bool firstRender) {
+                if(firstRender) {
+                    PreRendered = true;
+                    StateHasChanged();
+                }
+            }
+
+            async Task Grid_LayoutAutoLoading(GridPersistentLayoutEventArgs e) {
+                e.Layout = await LoadLayoutFromLocalStorageAsync();
+            }
+
+            async Task Grid_LayoutAutoSaving(GridPersistentLayoutEventArgs e) {
+                await SaveLayoutToLocalStorageAsync(e.Layout);
+            }
+
+            // Refer to https://learn.microsoft.com/en-us/aspnet/core/blazor/state-management/
+            // to learn more about Blazor state management
+            // In Blazor Server apps, prefer ASP.NET Core Protected Browser Storage
+
+            async Task<GridPersistentLayout> LoadLayoutFromLocalStorageAsync() {
+                try {
+                    var json = await JSRuntime.InvokeAsync<string>("localStorage.getItem", LocalStorageKey);
+                    return JsonSerializer.Deserialize<GridPersistentLayout>(json);
+                } catch {
+                    // Mute exceptions for the server prerender stage
+                    return null;
+                }
+            }
+
+            async Task SaveLayoutToLocalStorageAsync(GridPersistentLayout layout) {
+                try {
+                    var json = JsonSerializer.Serialize(layout);
+                    await JSRuntime.InvokeVoidAsync("localStorage.setItem", LocalStorageKey, json);
+                } catch {
+                    // Mute exceptions for the server prerender stage
+                }
+            }
+
+            async Task RemoveLayoutFromLocalStorageAsync() {
+                try {
+                    await JSRuntime.InvokeVoidAsync("localStorage.removeItem", LocalStorageKey);
+                } catch {
+                    // Mute exceptions for the server prerender stage
+                }
+            }
+
+            async Task ReloadPageButton_ClickAsync() {
+                await JSRuntime.InvokeVoidAsync("location.reload");
+            }
+
+            async Task ResetLayoutButton_ClickAsync() {
+                await RemoveLayoutFromLocalStorageAsync();
+                await JSRuntime.InvokeVoidAsync("location.reload");
+            }
+
+            void ShowColumnChooser_Click() {
+                Grid.ShowColumnChooser();
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

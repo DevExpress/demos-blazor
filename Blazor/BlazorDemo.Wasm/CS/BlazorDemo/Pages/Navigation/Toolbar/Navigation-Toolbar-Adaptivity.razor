@@ -1,0 +1,82 @@
+﻿@inject ICspNonceService NonceProvider
+<DemoPageSectionComponent Id="Navigation-Toolbar-Adaptivity" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <DemoResizableContent>
+            <style nonce="@NonceProvider.Nonce">
+                @foreach(var font in FontInfo.DefaultFonts) {
+                    var cssRule = $".{GetFontToolbarItemCssClassName(font)} {{ {font.GetCssString()} }}";
+                    <text>@cssRule</text>
+                }
+            </style>
+
+            @*BeginHide*@
+            <div class="card border-0">
+                <div class="card-header border-0 p-2 rounded demo-bg-transparent">
+                    @*EndHide*@
+                    <DxToolbar Title="New Article" ItemRenderStyleMode="ToolbarRenderStyleMode.Plain" SizeMode="Params.SizeMode"
+                               AdaptivityMinRootItemCount="2" AdaptivityAutoHideRootItems="true" AdaptivityAutoCollapseItemsToIcons="true">
+                        <Items>
+                            <DxToolbarItem BeginGroup="true" Name="Undo" IconCssClass="tb-icon tb-icon-undo" AdaptiveText="Undo"
+                                           Tooltip="Undo"/>
+                            <DxToolbarItem Name="Redo" IconCssClass="tb-icon tb-icon-redo" AdaptiveText="Redo"
+                                           Tooltip="Redo"/>
+                            <DxToolbarItem Name="FontFamily" Text="@currentFont.Name" BeginGroup="true" AdaptiveText="Font Family"
+                                           Tooltip="Font Family">
+                                <Items>
+                                    @foreach(var font in FontInfo.DefaultFonts) {
+                                        <DxToolbarItem Text="@font.Name"
+                                                       Click="(x) => { currentFont = font; }"
+                                                       Checked="currentFont == font"
+                                                       CssClass="@GetFontToolbarItemCssClassName(font)" />
+                                    }
+                                </Items>
+                            </DxToolbarItem>
+                            <DxToolbarItem Name="FontSize" Text="@currentSize.Size.ToString()" BeginGroup="true" AdaptiveText="Font Size"
+                                           Tooltip="Font Size">
+                                <Items>
+                                    @foreach(var fontSize in FontSizeInfo.DefaultFontSizes) {
+                                        <DxToolbarItem Text="@fontSize.Size.ToString()"
+                                                       Click="(x) => { currentSize = fontSize; }"
+                                                       Checked="currentSize == fontSize" />
+                                    }
+                                </Items>
+                            </DxToolbarItem>
+                            <DxToolbarItem AdaptivePriority="1" GroupName="font-bold" BeginGroup="true" Name="Bold"
+                                           IconCssClass="tb-icon tb-icon-bold" AdaptiveText="Bold" Tooltip="Bold"/>
+                            <DxToolbarItem AdaptivePriority="1" GroupName="font-italic" Name="Italic"
+                                           IconCssClass="tb-icon tb-icon-italic" AdaptiveText="Italic" Tooltip="Italic" />
+                            <DxToolbarItem AdaptivePriority="1" GroupName="font-underline" Name="Underline"
+                                           IconCssClass="tb-icon tb-icon-underline" AdaptiveText="Underline" Tooltip="Underline" />
+                            <DxToolbarItem AdaptivePriority="1" BeginGroup="true" GroupName="align"
+                                           IconCssClass="tb-icon tb-icon-align-left" AdaptiveText="Left" Tooltip="Align Left" />
+                            <DxToolbarItem AdaptivePriority="1" GroupName="align" IconCssClass="tb-icon tb-icon-align-center" AdaptiveText="Center"
+                                           Tooltip="Align Center"/>
+                            <DxToolbarItem AdaptivePriority="1" GroupName="align" IconCssClass="tb-icon tb-icon-align-right" AdaptiveText="Right"
+                                           Tooltip="Align Right"/>
+                        </Items>
+                    </DxToolbar>
+                    @*BeginHide*@
+                </div>
+            </div>
+            @*EndHide*@
+        </DemoResizableContent>
+    </ChildContentWithParameters>
+    @code {
+        Orientation orientation;
+        FontInfo currentFont = FontInfo.DefaultFonts[0];
+        FontSizeInfo currentSize = FontSizeInfo.DefaultFontSizes[0];
+        string GetOrientation() {
+            return orientation.ToString().ToLower();
+        }
+        void ChangeOrientation(Orientation orientation) {
+            if(this.orientation == orientation)
+                return;
+            this.orientation = orientation;
+            InvokeAsync(StateHasChanged);
+        }
+        string GetButtonOrientationSelector(Orientation orientation) {
+            return this.orientation == orientation ? "active" : string.Empty;
+        }
+        string GetFontToolbarItemCssClassName(FontInfo font) => $"toobar-item-font-{font.Name.ToLower().Replace(" ", "_")}";
+    }
+</DemoPageSectionComponent>

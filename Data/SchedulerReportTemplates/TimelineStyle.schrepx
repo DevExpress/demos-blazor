@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="22.1.0.0" Ref="0" ControlType="DevExpress.XtraScheduler.Reporting.XtraSchedulerReport, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="TimelineStyle" PageWidth="850" PageHeight="1100" Version="22.1">
+  <Views>
+    <Item1 SchedulerViewType="DevExpress.XtraScheduler.Reporting.ReportTimelineView, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Ref="1" VisibleIntervalCount="7">
+      <Appearance Ref="2" />
+    </Item1>
+  </Views>
+  <Bands>
+    <Item1 Ref="3" ControlType="DetailBand" Name="Detail" PageBreak="AfterBand" HeightF="732" TextAlignment="TopLeft" Padding="0,0,0,0,100">
+      <Controls>
+        <Item1 Ref="4" ControlType="DevExpress.XtraScheduler.Reporting.TimelineScaleHeaders, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="timelineScaleHeaders1" View="#Ref-1" SizeF="650,50" LocationFloat="0,173">
+          <PrintColorSchemas Ref="5" />
+        </Item1>
+        <Item2 Ref="6" ControlType="DevExpress.XtraScheduler.Reporting.TimelineCells, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="timelineCells1" HorizontalHeaders="#Ref-4" View="#Ref-1" SizeF="650,500" LocationFloat="0,223">
+          <AppointmentDisplayOptions Ref="7" StartTimeVisibility="Never" EndTimeVisibility="Never" AppointmentHeight="30" />
+          <PrintColorSchemas Ref="8" />
+        </Item2>
+        <Item3 Ref="9" ControlType="DevExpress.XtraScheduler.Reporting.CalendarControl, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="calendarControl1" TimeCells="#Ref-6" View="#Ref-1" SizeF="350,138" LocationFloat="283,8">
+          <PrintColorSchemas Ref="10" />
+        </Item3>
+      </Controls>
+    </Item1>
+    <Item2 Ref="11" ControlType="TopMarginBand" Name="topMarginBand1" />
+    <Item3 Ref="12" ControlType="BottomMarginBand" Name="bottomMarginBand1" />
+  </Bands>
+</XtraReportsLayoutSerializer>

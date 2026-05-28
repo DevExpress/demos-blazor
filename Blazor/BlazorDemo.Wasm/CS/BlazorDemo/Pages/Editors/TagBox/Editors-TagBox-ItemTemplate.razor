@@ -1,0 +1,58 @@
+﻿<DemoPageSectionComponent Id="Editors-TagBox-ItemTemplate" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+        @*BeginHide*@
+        <div class="cw-480">
+            @*EndHide*@
+            <label for="tbItemTemplate" class="demo-text cw-480 mb-1">
+                Employees
+            </label>
+            <DxTagBox Data="@Data"
+                      @bind-Values="@Values"
+                      SizeMode="Params.SizeMode"
+                      CssClass="cw-480"
+                      InputId="tbItemTemplate">
+                <TagDisplayTemplate Context="tagContext">
+                    <div class="tagbox-tag-template">
+                        <img class="tagbox-tag-template-employee-photo" src="@GetImageFileName(tagContext.DataItem)" alt="@tagContext.DataItem.FullName" />
+                        <div>@tagContext.DataItem.FullName</div>
+                        <DxButton tabindex="-1"
+                                  aria-label="Remove Tag"
+                                  Click="@tagContext.RemoveTagAction"
+                                  CssClass="tagbox-tag-template-close-btn"
+                                  IconCssClass="tagbox-tag-template-close-btn-icon"
+                            RenderStyle="ButtonRenderStyle.None" RenderStyleMode="ButtonRenderStyleMode.Text">
+                        </DxButton>
+                    </div>
+                </TagDisplayTemplate>
+                <ItemDisplayTemplate>
+                    <div class="tagbox-item-template">
+                        <img class="tagbox-item-template-employee-photo" src="@GetImageFileName(context.DataItem)" alt="@context.DataItem.FullName" />
+                        <div>
+                            <span class="tagbox-item-template-employee-first-name">@context.DataItem.FullName</span>
+                            <span class="tagbox-item-template-employee-home-phone">@context.DataItem.HomePhone</span>
+                        </div>
+                    </div>
+                </ItemDisplayTemplate>
+            </DxTagBox>
+            @*BeginHide*@
+        </div>
+        @*EndHide*@
+    </ChildContentWithParameters>
+
+
+    @code {
+        IEnumerable<Employee> Data { get; set; }
+        IEnumerable<Employee> Values { get; set; }
+
+        protected override async Task OnInitializedAsync() {
+            Data = await NwindDataService.GetEmployeesAsync();
+            Values = Data.Take(1);
+        }
+
+        string GetImageFileName(Employee employee) {
+            return StaticAssetUtils.GetEmployeeImagePath(employee.EmployeeId);
+        }
+    }
+
+</DemoPageSectionComponent>

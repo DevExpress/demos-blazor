@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="H:\Work\XML Schemes\module-new.xsd">
+	<controls>
+		<controlentry>
+			<control>
+				<name>button1</name>
+				<windowcaption>Add New Group</windowcaption>
+				<description>This button allows you to create a new navbar group. The new group is automatically added to the navbar control's Groups collection.</description>
+				<memberlist>NavBarControl.Groups, NavGroupCollection.Add</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>button2</name>
+				<windowcaption>Delete Last Group</windowcaption>
+				<description>This button allows you to delete the last group within the navbar control.</description>
+				<memberlist>NavBarControl.Groups, NavBarGroup.Dispose</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+	</controls>
+</totalinfo>

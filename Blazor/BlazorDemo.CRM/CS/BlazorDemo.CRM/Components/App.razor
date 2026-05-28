@@ -1,0 +1,66 @@
+﻿@using BlazorDemo.CRM.Client.Components
+@using BlazorDemo.CRM.Client.Services
+@using BlazorDemo.CRM.Data
+@using BlazorDemo.CRM.Utils
+@inject ThemeManager ThemeManager
+@inject SizeModeManager SizeModeManager
+@inject NavigationManager NavigationManager
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <base href="@(new Uri(NavigationManager.BaseUri).LocalPath)"/>
+    @DxResourceManager.RegisterTheme(ThemeManager.CurrentTheme)
+    <link rel="stylesheet" href="app.css"/>
+    <link rel="icon" type="image/ico" href="favicon.ico"/>
+    <link rel="stylesheet" href="BlazorDemo.CRM.styles.css"/>
+    @DxResourceManager.RegisterScripts()
+    <HeadOutlet @rendermode="RenderModeForPage"/>
+</head>
+
+<body class="@SizeModeManager.GetClassName(SizeMode)">
+    @if(RenderModeForPage != null) {
+        <div class="loading-panel" style="height: 100%; width: 100%">
+            <div class="loader">
+                <span class="spinner"></span>
+                <span class="label">Loading...</span>
+            </div>
+        </div>
+        <script>
+            const observer = new MutationObserver((mutations) => {
+                const mutation = mutations.find(m => m.target.matches(".page"));
+                if(mutation && mutation.type == "childList") {
+                    observer.disconnect();
+                    document.querySelector(".loading-panel")?.remove();
+                }
+            });
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        </script>
+    }
+    <Routes @rendermode="RenderModeForPage"/>
+    <script src="_framework/blazor.web.js"></script>
+</body>
+
+</html>
+
+@code {
+    [CascadingParameter]
+    HttpContext HttpContext { get; set; } = default!;
+    [CascadingParameter(Name = "ParentSizeMode")]
+    SizeMode SizeMode { get; set; }
+    [Inject] DemoData DemoData { get; set; } = default!;
+
+    IComponentRenderMode? RenderModeForPage => HttpContext.Request.Path.StartsWithSegments("/Account") ? null : new InteractiveAutoRenderMode(false);
+
+    protected override async Task OnInitializedAsync() {
+        ThemeManager.ObtainTheme(HttpContext?.Request.Cookies.Select(x => new KeyValuePairSerializer<string, string>(x.Key, x.Value)).ToList());
+        await DemoData.InitAsync();
+        await base.OnInitializedAsync();
+    }
+}

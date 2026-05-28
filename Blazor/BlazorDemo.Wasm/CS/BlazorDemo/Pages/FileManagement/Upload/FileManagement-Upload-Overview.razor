@@ -1,0 +1,37 @@
+﻿<DemoPageSectionComponent Id="FileManagement-Upload-Overview">
+    @inject NavigationManager NavigationManager
+
+    <div id="overviewDemoDropZone" class="card custom-drop-zone rounded-3 w-100 m-0">
+        <span class="drop-file-icon mb-3"></span>
+        <span class="drop-file-label">Drag and Drop File Here</span><span class="m-1">or</span>
+        <DxButton Id="overviewDemoSelectButton"
+                  CssClass="m-1"
+                  RenderStyle="ButtonRenderStyle.Primary"
+                  Text="Select File" />
+    </div>
+    <DxUpload Name="myFile"
+              Visible="@UploadVisible"
+              ExternalSelectButtonCssSelector="#overviewDemoSelectButton"
+              ExternalDropZoneCssSelector="#overviewDemoDropZone"
+              ExternalDropZoneDragOverCssClass="custom-drop-zone-hover"
+              MaxFileSize="15000000"
+              UploadUrl="@GetUploadUrl("api/Upload/Upload/")"
+              SelectedFilesChanged="@SelectedFilesChanged">
+    </DxUpload>
+    <div class="upload-validation-text info-text">
+        Uploads are limited to a single file up to 15 MB.
+    </div>
+
+    @code {
+        bool UploadVisible { get; set; } = false;
+
+        protected void SelectedFilesChanged(IEnumerable<UploadFileInfo> files) {
+            UploadVisible = files.ToList().Count > 0;
+
+            InvokeAsync(StateHasChanged);
+        }
+        protected string GetUploadUrl(string url) {
+            return NavigationManager.ToAbsoluteUri(url).AbsoluteUri;
+        }
+    }
+</DemoPageSectionComponent>

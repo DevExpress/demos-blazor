@@ -1,0 +1,25 @@
+﻿<DemoPageSectionComponent Id="Editors-TagBox-Overview" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <label for="tbOverview" class="demo-text cw-480 mb-1">
+            Employees
+        </label>
+        <DxTagBox Data="@Data"
+                  TextFieldName="@nameof(Employee.Text)"
+                  @bind-Values="@Values"
+                  SizeMode="Params.SizeMode"
+                  CssClass="cw-480"
+                  InputId="tbOverview" />
+    </ChildContentWithParameters>
+
+    @code {
+        IEnumerable<Employee> Data { get; set; }
+        IEnumerable<Employee> Values { get; set; }
+
+        protected override async Task OnInitializedAsync() {
+            Data = await NwindDataService.GetEmployeesAsync();
+            Values = Data.Take(1);
+        }
+    }
+</DemoPageSectionComponent>

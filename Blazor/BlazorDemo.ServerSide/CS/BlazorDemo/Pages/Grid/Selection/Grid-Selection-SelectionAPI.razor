@@ -1,0 +1,79 @@
+﻿@page "/Grid/Selection/SelectionAPI"
+@layout DataProviderAccessArea<INwindDataProvider>
+
+<DemoPageSectionComponent Id="Grid-Selection-SelectionAPI" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <div class="grid-container">
+            <DxGrid @ref="Grid"
+                    Data="@Products"
+                    PageSize="20"
+                    KeyFieldName="ProductId"
+                    @bind-SelectedDataItems="@SelectedDataItems"
+                    ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                    TextWrapEnabled="false"
+                    SizeMode="Params.SizeMode">
+                <Columns>
+                    <DxGridDataColumn FieldName="ProductName" MinWidth="100" />
+                    <DxGridDataColumn FieldName="CategoryId" Caption="Category" MinWidth="100">
+                        <EditSettings>
+                            <DxComboBoxSettings Data="Categories" ValueFieldName="CategoryId" TextFieldName="CategoryName" />
+                        </EditSettings>
+                    </DxGridDataColumn>
+                    <DxGridDataColumn FieldName="UnitPrice" DisplayFormat="c" Width="10%" />
+                    <DxGridDataColumn FieldName="UnitsInStock" Caption="Units in Stock" Width="10%" />
+                    <DxGridDataColumn FieldName="QuantityPerUnit" Caption="Quantity per Unit" Width="15%" MinWidth="80" />
+                    <DxGridDataColumn FieldName="Discontinued" Width="10%" MinWidth="90" />
+                </Columns>
+                 <ToolbarTemplate>
+                    <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Contained" SizeMode="Params.SizeMode">
+                        <Items>
+                            <DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
+                                <Template Context="toolbar_item_context">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <label class="me-2" for="categoryInput">Category:</label>
+                                        <DxComboBox Data="@Categories" TextFieldName="CategoryName"
+                                            @bind-Value="@SelectedCategory" InputId="categoryInput" />
+                                    </div>
+                                </Template>
+                            </DxToolbarItem>
+                            <DxToolbarItem Text="Select" Click="Select_Click" BeginGroup="true" />
+                            <DxToolbarItem Text="Deselect" Click="Deselect_Click" />
+                            <DxToolbarItem Text="Clear Selection" Click="ClearSelection_Click" BeginGroup="true" />
+                        </Items>
+                    </DxToolbar>
+                </ToolbarTemplate>
+            </DxGrid>
+            <p class="demo-text w-100 mt-2">The number of selected products: <b>@(SelectedDataItems.Count())</b></p>
+        </div>
+
+        @code {
+            IEnumerable<Product> Products { get; set; }
+            IReadOnlyList<Category> Categories { get; set; }
+            IReadOnlyList<object> SelectedDataItems { get; set; }
+            Category SelectedCategory { get; set; }
+            IGrid Grid { get; set; }
+
+            protected override async Task OnInitializedAsync() {
+                Categories = (await NwindDataService.GetCategoriesAsync()).ToList();
+                Products = await NwindDataService.GetProductsAsync();
+
+                SelectedCategory = Categories.FirstOrDefault();
+                SelectedDataItems = GetProductsByCategory(Categories.FirstOrDefault()).ToList();
+            }
+            void Select_Click() {
+                Grid.SelectDataItems(GetProductsByCategory(SelectedCategory));
+            }
+            void Deselect_Click() {
+                Grid.DeselectDataItems(GetProductsByCategory(SelectedCategory));
+            }
+            void ClearSelection_Click() {
+                Grid.ClearSelection();
+            }
+            IEnumerable<Product> GetProductsByCategory(Category category) {
+                return Products.Where(p => p.CategoryId == category.CategoryId);
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

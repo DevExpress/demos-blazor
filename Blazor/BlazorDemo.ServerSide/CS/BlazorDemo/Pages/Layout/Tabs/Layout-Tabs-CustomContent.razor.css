@@ -1,0 +1,15 @@
+/*BeginHide*/
+.tabs-border-top-0 {
+    border-top-width: 0 !important;
+}
+
+.tabs-border-radius-top-0 {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.theme-fluent-light .card,
+.theme-fluent-dark .card {
+    --bs-card-border-color: transparent;
+}
+/*EndHide*/

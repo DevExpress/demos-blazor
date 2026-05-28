@@ -1,0 +1,45 @@
+﻿<DemoPageSectionComponent Id="Editors-Memo-ResizeMode"
+                          ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <label for="memoResizeMode" class="demo-text cw-480 mb-1">
+            Description
+        </label>
+        <DxMemo @bind-Text="TextValue"
+                SizeMode="Params.SizeMode"
+                ResizeMode="MemoResizeMode"
+                CssClass="cw-480"
+                Rows="5"
+                MaxRows="@MaxRows"
+                InputId="memoResizeMode" />
+    </ChildContentWithParameters>
+
+    <OptionsContent>
+        <OptionComboBox Label="Resize Mode:"
+                        Data="@(Enum.GetNames(typeof(MemoResizeMode)))"
+                        Value="@(MemoResizeMode.ToString())"
+                        ValueChanged="@((string selectedItem) =>
+                                        { MemoResizeMode = Enum.Parse<MemoResizeMode>(selectedItem); })" />
+        <OptionSpinEdit CssClass="ow-150"
+                        MinValue="8"
+                        MaxValue="15"
+                        Increment="1"
+                        Enabled="@(MaxRowsEnabled)"
+                        Label="Max Rows:"
+                        @bind-Value="MaxRows" />
+    </OptionsContent>
+
+    @code {
+        public int? MaxRows { get; set; } = 10;
+        MemoResizeMode MemoResizeMode { get; set; } = MemoResizeMode.Auto;
+        IEnumerable<MemoResizeMode> HeightRestrictedResizeModes { get; set; } =  new[] { MemoResizeMode.Auto, MemoResizeMode.Vertical, MemoResizeMode.VerticalAndHorizontal };
+        bool MaxRowsEnabled { get { return HeightRestrictedResizeModes.Contains(MemoResizeMode); } }
+
+        string TextValue { get; set; } =
+            "Prepare 2020 Marketing Plan: We need to double revenues in 2020 "+
+            "and our marketing strategy is going to be key here. " +
+            "R&D is improving existing products and creating new products so we can "+
+            "deliver great AV equipment to our customers. " +
+            "Robert, please make certain to create a PowerPoint presentation "+"" +
+            "for the members of the executive team.";
+    }
+</DemoPageSectionComponent>

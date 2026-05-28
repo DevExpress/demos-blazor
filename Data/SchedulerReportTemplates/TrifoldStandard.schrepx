@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="22.1.0.0" Ref="0" ControlType="DevExpress.XtraScheduler.Reporting.XtraSchedulerReport, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="TrifoldStandard" Landscape="true" PageWidth="1100" PageHeight="850" Version="22.1">
+  <Views>
+    <Item1 SchedulerViewType="DevExpress.XtraScheduler.Reporting.ReportWeekView, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Ref="1">
+      <Appearance Ref="2" />
+    </Item1>
+    <Item2 SchedulerViewType="DevExpress.XtraScheduler.Reporting.ReportDayView, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Ref="3">
+      <Appearance Ref="4">
+        <AllDayAreaToday Ref="5" />
+        <SelectedAllDayAreaToday Ref="6" />
+        <TimeRulerCurrentHourCell Ref="7" />
+      </Appearance>
+    </Item2>
+  </Views>
+  <Bands>
+    <Item1 Ref="8" ControlType="DetailBand" Name="Detail" PageBreak="AfterBand" HeightF="837.5001" TextAlignment="TopLeft" Padding="0,0,0,0,100">
+      <Controls>
+        <Item1 Ref="9" ControlType="DevExpress.XtraScheduler.Reporting.HorizontalResourceHeaders, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="horizontalResourceHeaders1" View="#Ref-3" SizeF="898.9953,26" LocationFloat="0,0">
+          <Options Ref="10" />
+          <PrintColorSchemas Ref="11" />
+        </Item1>
+        <Item2 Ref="12" ControlType="XRTable" Name="xrTable2" TextAlignment="TopCenter" SizeF="312.66,54" LocationFloat="305.13,26" Borders="All">
+          <Rows>
+            <Item1 Ref="13" ControlType="XRTableRow" Name="xrTableRow39" Weight="1.1739130434782608">
+              <Cells>
+                <Item1 Ref="14" ControlType="XRTableCell" Name="xrTableCell39" Weight="3.1266012573242192" Text="Notes" Font="Times New Roman, 14pt" Borders="Top">
+                  <StylePriority Ref="15" UseFont="false" UseBorders="false" />
+                </Item1>
+              </Cells>
+            </Item1>
+          </Rows>
+          <StylePriority Ref="16" UseBorders="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="17" ControlType="XRPageInfo" Name="xrPageInfo3" PageInfo="UserName" SizeF="229.1667,26" LocationFloat="0,617.9583" Padding="2,2,0,0,100" />
+        <Item4 Ref="18" ControlType="XRPageInfo" Name="xrPageInfo2" PageInfo="DateTime" TextFormatString="{0:MM/dd/yyyy hh:mm tt}" TextAlignment="TopRight" SizeF="260.3766,26" LocationFloat="639.6185,617.9583" Padding="2,2,0,0,100">
+          <StylePriority Ref="19" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="20" ControlType="XRPageInfo" Name="xrPageInfo1" TextAlignment="TopCenter" SizeF="50,26" LocationFloat="431.2452,617.9583" Padding="2,2,0,0,100">
+          <StylePriority Ref="21" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="22" ControlType="XRTable" Name="xrTable1" SizeF="311.66,532" LocationFloat="306.13,80" Borders="Top">
+          <Rows>
+            <Item1 Ref="23" ControlType="XRTableRow" Name="xrTableRow4" Weight="1">
+              <Cells>
+                <Item1 Ref="24" ControlType="XRTableCell" Name="xrTableCell4" Weight="3" TextAlignment="TopCenter">
+                  <StylePriority Ref="25" UseTextAlignment="false" />
+                </Item1>
+              </Cells>
+            </Item1>
+            <Item2 Ref="26" ControlType="XRTableRow" Name="xrTableRow5" Weight="1">
+              <Cells>
+                <Item1 Ref="27" ControlType="XRTableCell" Name="xrTableCell5" Weight="3" />
+              </Cells>
+            </Item2>
+            <Item3 Ref="28" ControlType="XRTableRow" Name="xrTableRow6" Weight="1">
+              <Cells>
+                <Item1 Ref="29" ControlType="XRTableCell" Name="xrTableCell6" Weight="3" />
+              </Cells>
+            </Item3>
+            <Item4 Ref="30" ControlType="XRTableRow" Name="xrTableRow9" Weight="1">
+              <Cells>
+                <Item1 Ref="31" ControlType="XRTableCell" Name="xrTableCell9" Weight="3" />
+              </Cells>
+            </Item4>
+            <Item5 Ref="32" ControlType="XRTableRow" Name="xrTableRow8" Weight="1">
+              <Cells>
+                <Item1 Ref="33" ControlType="XRTableCell" Name="xrTableCell8" Weight="3" />
+              </Cells>
+            </Item5>
+            <Item6 Ref="34" ControlType="XRTableRow" Name="xrTableRow7" Weight="1">
+              <Cells>
+                <Item1 Ref="35" ControlType="XRTableCell" Name="xrTableCell7" Weight="3" />
+              </Cells>
+            </Item6>
+            <Item7 Ref="36" ControlType="XRTableRow" Name="xrTableRow1" Weight="1">
+              <Cells>
+                <Item1 Ref="37" ControlType="XRTableCell" Name="xrTableCell1" Weight="3" />
+              </Cells>
+            </Item7>
+            <Item8 Ref="38" ControlType="XRTableRow" Name="xrTableRow3" Weight="1">
+              <Cells>
+                <Item1 Ref="39" ControlType="XRTableCell" Name="xrTableCell3" Weight="3" />
+              </Cells>
+            </Item8>
+            <Item9 Ref="40" ControlType="XRTableRow" Name="xrTableRow2" Weight="1">
+              <Cells>
+                <Item1 Ref="41" ControlType="XRTableCell" Name="xrTableCell2" Weight="3" />
+              </Cells>
+            </Item9>
+            <Item10 Ref="42" ControlType="XRTableRow" Name="xrTableRow10" Weight="1">
+              <Cells>
+                <Item1 Ref="43" ControlType="XRTableCell" Name="xrTableCell10" Weight="3" />
+              </Cells>
+            </Item10>
+            <Item11 Ref="44" ControlType="XRTableRow" Name="xrTableRow11" Weight="1">
+              <Cells>
+                <Item1 Ref="45" ControlType="XRTableCell" Name="xrTableCell11" Weight="3" />
+              </Cells>
+            </Item11>
+            <Item12 Ref="46" ControlType="XRTableRow" Name="xrTableRow12" Weight="1">
+              <Cells>
+                <Item1 Ref="47" ControlType="XRTableCell" Name="xrTableCell12" Weight="3" />
+              </Cells>
+            </Item12>
+            <Item13 Ref="48" ControlType="XRTableRow" Name="xrTableRow13" Weight="1">
+              <Cells>
+                <Item1 Ref="49" ControlType="XRTableCell" Name="xrTableCell13" Weight="3" />
+              </Cells>
+            </Item13>
+            <Item14 Ref="50" ControlType="XRTableRow" Name="xrTableRow14" Weight="1">
+              <Cells>
+                <Item1 Ref="51" ControlType="XRTableCell" Name="xrTableCell14" Weight="3" />
+              </Cells>
+            </Item14>
+            <Item15 Ref="52" ControlType="XRTableRow" Name="xrTableRow15" Weight="1">
+              <Cells>
+                <Item1 Ref="53" ControlType="XRTableCell" Name="xrTableCell15" Weight="3" />
+              </Cells>
+            </Item15>
+            <Item16 Ref="54" ControlType="XRTableRow" Name="xrTableRow16" Weight="1">
+              <Cells>
+                <Item1 Ref="55" ControlType="XRTableCell" Name="xrTableCell16" Weight="3" />
+              </Cells>
+            </Item16>
+            <Item17 Ref="56" ControlType="XRTableRow" Name="xrTableRow17" Weight="1">
+              <Cells>
+                <Item1 Ref="57" ControlType="XRTableCell" Name="xrTableCell17" Weight="3" />
+              </Cells>
+            </Item17>
+            <Item18 Ref="58" ControlType="XRTableRow" Name="xrTableRow18" Weight="1">
+              <Cells>
+                <Item1 Ref="59" ControlType="XRTableCell" Name="xrTableCell18" Weight="3" />
+              </Cells>
+            </Item18>
+            <Item19 Ref="60" ControlType="XRTableRow" Name="xrTableRow19" Weight="1">
+              <Cells>
+                <Item1 Ref="61" ControlType="XRTableCell" Name="xrTableCell19" Weight="3" />
+              </Cells>
+            </Item19>
+            <Item20 Ref="62" ControlType="XRTableRow" Name="xrTableRow28" Weight="1">
+              <Cells>
+                <Item1 Ref="63" ControlType="XRTableCell" Name="xrTableCell28" Weight="3" />
+              </Cells>
+            </Item20>
+            <Item21 Ref="64" ControlType="XRTableRow" Name="xrTableRow29" Weight="1">
+              <Cells>
+                <Item1 Ref="65" ControlType="XRTableCell" Name="xrTableCell29" Weight="3" />
+              </Cells>
+            </Item21>
+            <Item22 Ref="66" ControlType="XRTableRow" Name="xrTableRow20" Weight="1">
+              <Cells>
+                <Item1 Ref="67" ControlType="XRTableCell" Name="xrTableCell20" Weight="3" />
+              </Cells>
+            </Item22>
+            <Item23 Ref="68" ControlType="XRTableRow" Name="xrTableRow22" Weight="1">
+              <Cells>
+                <Item1 Ref="69" ControlType="XRTableCell" Name="xrTableCell22" Weight="3" />
+              </Cells>
+            </Item23>
+            <Item24 Ref="70" ControlType="XRTableRow" Name="xrTableRow27" Weight="1">
+              <Cells>
+                <Item1 Ref="71" ControlType="XRTableCell" Name="xrTableCell27" Weight="3" />
+              </Cells>
+            </Item24>
+            <Item25 Ref="72" ControlType="XRTableRow" Name="xrTableRow26" Weight="1">
+              <Cells>
+                <Item1 Ref="73" ControlType="XRTableCell" Name="xrTableCell26" Weight="3" />
+              </Cells>
+            </Item25>
+            <Item26 Ref="74" ControlType="XRTableRow" Name="xrTableRow23" Weight="1">
+              <Cells>
+                <Item1 Ref="75" ControlType="XRTableCell" Name="xrTableCell23" Weight="3" />
+              </Cells>
+            </Item26>
+            <Item27 Ref="76" ControlType="XRTableRow" Name="xrTableRow21" Weight="1">
+              <Cells>
+                <Item1 Ref="77" ControlType="XRTableCell" Name="xrTableCell21" Weight="3" />
+              </Cells>
+            </Item27>
+            <Item28 Ref="78" ControlType="XRTableRow" Name="xrTableRow25" Weight="1">
+              <Cells>
+                <Item1 Ref="79" ControlType="XRTableCell" Name="xrTableCell25" Weight="3" />
+              </Cells>
+            </Item28>
+            <Item29 Ref="80" ControlType="XRTableRow" Name="xrTableRow24" Weight="1">
+              <Cells>
+                <Item1 Ref="81" ControlType="XRTableCell" Name="xrTableCell24" Weight="3" />
+              </Cells>
+            </Item29>
+            <Item30 Ref="82" ControlType="XRTableRow" Name="xrTableRow30" Weight="1">
+              <Cells>
+                <Item1 Ref="83" ControlType="XRTableCell" Name="xrTableCell30" Weight="3" />
+              </Cells>
+            </Item30>
+            <Item31 Ref="84" ControlType="XRTableRow" Name="xrTableRow31" Weight="1">
+              <Cells>
+                <Item1 Ref="85" ControlType="XRTableCell" Name="xrTableCell31" Weight="3" />
+              </Cells>
+            </Item31>
+            <Item32 Ref="86" ControlType="XRTableRow" Name="xrTableRow32" Weight="1">
+              <Cells>
+                <Item1 Ref="87" ControlType="XRTableCell" Name="xrTableCell32" Weight="3" />
+              </Cells>
+            </Item32>
+            <Item33 Ref="88" ControlType="XRTableRow" Name="xrTableRow33" Weight="1">
+              <Cells>
+                <Item1 Ref="89" ControlType="XRTableCell" Name="xrTableCell33" Weight="3" />
+              </Cells>
+            </Item33>
+            <Item34 Ref="90" ControlType="XRTableRow" Name="xrTableRow35" Weight="1">
+              <Cells>
+                <Item1 Ref="91" ControlType="XRTableCell" Name="xrTableCell35" Weight="3" />
+              </Cells>
+            </Item34>
+            <Item35 Ref="92" ControlType="XRTableRow" Name="xrTableRow34" Weight="1">
+              <Cells>
+                <Item1 Ref="93" ControlType="XRTableCell" Name="xrTableCell34" Weight="3" />
+              </Cells>
+            </Item35>
+            <Item36 Ref="94" ControlType="XRTableRow" Name="xrTableRow36" Weight="1">
+              <Cells>
+                <Item1 Ref="95" ControlType="XRTableCell" Name="xrTableCell36" Weight="3" />
+              </Cells>
+            </Item36>
+            <Item37 Ref="96" ControlType="XRTableRow" Name="xrTableRow37" Weight="1">
+              <Cells>
+                <Item1 Ref="97" ControlType="XRTableCell" Name="xrTableCell37" Weight="3" />
+              </Cells>
+            </Item37>
+            <Item38 Ref="98" ControlType="XRTableRow" Name="xrTableRow38" Weight="1">
+              <Cells>
+                <Item1 Ref="99" ControlType="XRTableCell" Name="xrTableCell38" Weight="3" Borders="Top, Bottom">
+                  <StylePriority Ref="100" UseBorders="false" />
+                </Item1>
+              </Cells>
+            </Item38>
+          </Rows>
+          <StylePriority Ref="101" UseBorders="false" />
+        </Item6>
+        <Item7 Ref="103" ControlType="DevExpress.XtraScheduler.Reporting.TimeIntervalInfo, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="timeIntervalInfo2" TimeCells="#Ref-102" AutoScaleFont="false" View="#Ref-1" SizeF="280.21,54" LocationFloat="618.79,26" Borders="All">
+          <Font Ref="104" />
+          <PrintColorSchemas Ref="105" />
+        </Item7>
+        <Item8 Ref="107" ControlType="DevExpress.XtraScheduler.Reporting.TimeIntervalInfo, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="timeIntervalInfo1" TimeCells="#Ref-106" View="#Ref-3" SizeF="305.13,54" LocationFloat="0,26" Borders="All">
+          <PrintColorSchemas Ref="108" />
+        </Item8>
+        <Item9 Ref="109" ControlType="DevExpress.XtraScheduler.Reporting.DayViewTimeRuler, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="dayViewTimeRuler1" TimeCells="#Ref-106" View="#Ref-3" SizeF="50,532" LocationFloat="0,80">
+          <TimeRuler Ref="110" />
+          <Corners Ref="111" />
+          <PrintColorSchemas Ref="112" />
+        </Item9>
+        <Item10 Ref="102" ControlType="DevExpress.XtraScheduler.Reporting.FullWeek, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="fullWeek1" View="#Ref-1" SizeF="280.21,532" LocationFloat="618.79,80">
+          <AppointmentDisplayOptions Ref="113" StartTimeVisibility="Never" EndTimeVisibility="Never" />
+          <PrintColorSchemas Ref="114" />
+        </Item10>
+        <Item11 Ref="106" ControlType="DevExpress.XtraScheduler.Reporting.DayViewTimeCells, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="dayViewTimeCells1" TimeScale="01:00:00" VisibleTimeSnapMode="false" View="#Ref-3" SizeF="255.13,532" LocationFloat="50,80">
+          <AppointmentDisplayOptions Ref="115" ShowShadows="false">
+            <ColumnPadding Ref="116" />
+          </AppointmentDisplayOptions>
+          <VisibleTime Ref="117" Start="07:00:00" End="18:00:00" />
+          <ExtraCells Ref="118" />
+          <PrintColorSchemas Ref="119" />
+        </Item11>
+      </Controls>
+    </Item1>
+  </Bands>
+</XtraReportsLayoutSerializer>

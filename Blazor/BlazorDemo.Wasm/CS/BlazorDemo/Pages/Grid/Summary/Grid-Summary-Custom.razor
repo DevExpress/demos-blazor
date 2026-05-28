@@ -1,0 +1,92 @@
+﻿@page "/Grid/Summary/Custom"
+@layout DataProviderAccessArea<INwindDataProvider>
+
+<DemoPageSectionComponent Id="Grid-Summary-Custom" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+        <div class="grid-container">
+            <DxGrid @ref="Grid"
+                    Data="@Data"
+                    AllowSelectRowByClick="true"
+                    SelectedDataItems="@SelectedDataItems"
+                    SelectedDataItemsChanged="Grid_SelectedDataItemsChanged"
+                    CustomSummary="Grid_CustomSummary"
+                    CustomizeSummaryDisplayText="Grid_CustomizeSummaryDisplayText"
+                    ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                    TextWrapEnabled="false"
+                    SizeMode="Params.SizeMode"
+                    VirtualScrollingEnabled="true"
+                    HighlightRowOnHover="true">
+                <Columns>
+                    <DxGridSelectionColumn Width="60px"/>
+                    <DxGridDataColumn FieldName="OrderId" Caption="Order ID" TextAlignment="GridTextAlignment.Left" DisplayFormat="d" Width="10%" MinWidth="80" />
+                    <DxGridDataColumn FieldName="CustomerId" Caption="Customer" Width="20%" MinWidth="100">
+                        <EditSettings>
+                            <DxComboBoxSettings Data="Customers" ValueFieldName="CustomerId" TextFieldName="ContactName" />
+                        </EditSettings>
+                    </DxGridDataColumn>
+                    <DxGridDataColumn FieldName="OrderDate" Width="10%" MinWidth="80" />
+                    <DxGridDataColumn FieldName="ShipCountry" MinWidth="100" />
+                    <DxGridDataColumn FieldName="ShipCity" MinWidth="100" />
+                    <DxGridDataColumn FieldName="ShippedDate" Width="10%" MinWidth="80" />
+                    <DxGridDataColumn FieldName="Total" DisplayFormat="c" Width="220px" />
+                </Columns>
+                <TotalSummary>
+                    <DxGridSummaryItem SummaryType="GridSummaryItemType.Custom" Name="Custom" FieldName="Total" />
+                    <DxGridSummaryItem SummaryType="GridSummaryItemType.Sum" FieldName="Total" DisplayText="Grand Total: {0}" ValueDisplayFormat="c0" />
+                </TotalSummary>
+            </DxGrid>
+        </div>
+
+        @code {
+            IEnumerable<object> Data { get; set; }
+            IReadOnlyList<Customer> Customers { get; set; }
+            IReadOnlyList<object> SelectedDataItems { get; set; }
+            IGrid Grid { get; set; }
+
+            protected override async Task OnInitializedAsync() {
+                Customers = (await NwindDataService.GetCustomersAsync()).ToList();
+                var orders = await NwindDataService.GetOrdersAsync();
+                var orderDetails = await NwindDataService.GetOrderDetailsAsync();
+                var orderCosts = orderDetails
+                    .GroupBy(d => d.OrderId)
+                    .ToDictionary(
+                        g => g.Key,
+                        g => g.Sum(x => x.UnitPrice * x.Quantity)
+                    );
+                Data = orders.Join(orderCosts, o => o.OrderId, c => c.Key, (o, c) => {
+                    return new {
+                        OrderId = o.OrderId,
+                        CustomerId = o.CustomerId,
+                        OrderDate = o.OrderDate,
+                        ShippedDate = o.ShippedDate,
+                        ShipCountry = o.ShipCountry,
+                        ShipCity = o.ShipCity,
+                        Total = c.Value
+                    };
+                });
+                SelectedDataItems = Data.Skip(1).Take(2).ToList();
+            }
+            void Grid_CustomSummary(GridCustomSummaryEventArgs e) {
+                switch(e.SummaryStage) {
+                    case GridCustomSummaryStage.Start:
+                        e.TotalValue = 0m;
+                        break;
+                    case GridCustomSummaryStage.Calculate:
+                        if(e.Grid.IsDataItemSelected(e.DataItem))
+                            e.TotalValue = (decimal)e.TotalValue + (decimal)e.GetRowValue("Total");
+                        break;
+                }
+            }
+            void Grid_CustomizeSummaryDisplayText(GridCustomizeSummaryDisplayTextEventArgs e) {
+                if(e.Item.Name == "Custom")
+                    e.DisplayText = string.Format("Sum of Selected ({0}): {1:c0}", SelectedDataItems.Count, e.Value);
+            }
+            void Grid_SelectedDataItemsChanged(IReadOnlyList<object> newSelection) {
+                SelectedDataItems = newSelection;
+                Grid.RefreshSummary();
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>
+

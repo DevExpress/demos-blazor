@@ -1,0 +1,55 @@
+.content-root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+    .content-root .contact-details {
+        flex-grow: 1;
+    }
+
+.toolbar {
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 1rem;
+}
+
+    .toolbar .title {
+        font-size: var(--dxbl-toolbar-title-font-size);
+        line-height: var(--dxbl-toolbar-title-line-height);
+        font-weight: var(--dxbl-toolbar-title-font-weight);
+        margin: auto 0;
+    }
+
+    .toolbar .custom-item {
+        display: flex;
+        height: 100%;
+        margin: 0 0.5rem;
+    }
+
+::deep .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow-wrap: break-word;
+    background-color: var(--dxds-color-surface-neutral-default-rest);
+    background-clip: border-box;
+    border: var(--dxds-border-radius-10) solid var(--dxds-color-border-neutral-default-rest);
+    border-radius: 0.25rem;
+}
+
+::deep .card:not(.toolbar) {
+    padding: 1.5rem;
+}
+
+::deep .tabs {
+    padding-top: 0.5rem !important;
+    height: 100%;
+}
+
+::deep .tab-page {
+    margin-bottom: 0.625rem;
+}
+
+::deep .h-100 {
+    height: 100%;
+}

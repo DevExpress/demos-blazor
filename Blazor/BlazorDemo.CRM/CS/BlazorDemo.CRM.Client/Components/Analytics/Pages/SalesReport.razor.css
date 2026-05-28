@@ -1,0 +1,50 @@
+.content-root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.toolbar {
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.sales-report {
+    flex-grow: 1;
+}
+
+::deep .sales-report-loading-panel {
+    height: 100%;
+}
+
+.placeholder {
+    height: 100%;
+}
+
+::deep .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow-wrap: break-word;
+    background-color: var(--dxds-color-surface-neutral-default-rest);
+    background-clip: border-box;
+    border: var(--dxds-border-radius-10) solid var(--dxds-color-border-neutral-default-rest);
+    border-radius: 0.25rem;
+}
+
+    ::deep .card:not(.toolbar) {
+        padding: 1rem;
+    }
+
+::deep .add-icon {
+    mask-image: url("images/icons/add.svg");
+}
+
+::deep .export-icon {
+    mask-image: url("images/icons/arrow-export-up.svg");
+}
+
+.chart-tooltip {
+    padding: 0.5rem;
+}

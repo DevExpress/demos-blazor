@@ -1,0 +1,46 @@
+﻿<DemoPageSectionComponent Id="Charts-Axes-AxesLabels-LabelOverlap">
+    <DemoChildContent>
+        @*BeginHide*@
+        <div class="w-100 max-w-900">
+            @*EndHide*@
+            @inject IPopulationDataProvider PopulationDataProvider
+            <DxChart Data="@Data" Width="100%">
+                <DxChartTitle Text="Population by Country 2023" CssClass="mb-1"/>
+                <DxChartLegend Visible="false"/>
+                <DxChartLineSeries ArgumentField="@((PopulationPoint s) => s.Country)"
+                                   ValueField="@((PopulationPoint s) => s.Value)"/>
+                <DxChartTooltip Enabled="true">
+                    <div class="chart-tooltip">
+                        <div class="fw-bold">@context.Point.Argument</div>
+                        <div>
+                            Population:
+                            @if((long)context.Point.Value > 1000000000) {
+                                @string.Format("{0:0,,,.###B}", context.Point.Value)
+                            } else {
+                                @string.Format("{0:0,,M}", context.Point.Value)
+                            }
+                        </div>
+                    </div>
+                </DxChartTooltip>
+                <DxChartArgumentAxis>
+                    <DxChartAxisLabel WordWrap="ChartWordWrap.None" Overlap="@CurrentOverlapMode"/>
+                </DxChartArgumentAxis>
+            </DxChart>
+            @*BeginHide*@
+        </div>
+        @*EndHide*@
+
+        @code {
+            ChartAxisLabelOverlap CurrentOverlapMode = ChartAxisLabelOverlap.Stagger;
+            List<PopulationPoint> Data;
+
+            protected override void OnInitialized() {
+                Data = PopulationDataProvider.GetData();
+            }
+        }
+
+    </DemoChildContent>
+    <OptionsContent>
+        <OptionComboBox Label="Overlap Mode:" Data="Enum.GetValues<ChartAxisLabelOverlap>()" @bind-Value="@CurrentOverlapMode"/>
+    </OptionsContent>
+</DemoPageSectionComponent>

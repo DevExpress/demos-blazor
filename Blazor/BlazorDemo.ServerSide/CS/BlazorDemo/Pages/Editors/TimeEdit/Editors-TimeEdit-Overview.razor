@@ -1,0 +1,18 @@
+﻿<DemoPageSectionComponent Id="Editors-TimeEdit-Overview" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <label for="teOverview" class="demo-text cw-320 mb-1">
+            Time
+        </label>
+        <DxTimeEdit @bind-Time="@TimeValue"
+                    SizeMode="Params.SizeMode"
+                    CssClass="cw-320"
+                    InputId="teOverview" />
+        <p class="demo-text cw-320 mt-3">
+            Selected time: <b>@TimeValue.ToString(@"hh\:mm\:ss")</b>
+        </p>
+    </ChildContentWithParameters>
+
+    @code {
+        TimeSpan TimeValue { get; set; } = DateTime.Now.TimeOfDay;
+    }
+</DemoPageSectionComponent>

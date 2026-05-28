@@ -1,0 +1,16 @@
+﻿@namespace BlazorDemo.CRM.Components
+
+<div class="@(string.Join(' ', "avatar-container", CssClass, SuppressHover ? "no-hover" : ""))">
+    <img src="@Src" alt="@AltText" />
+</div>
+
+@code {
+    [Parameter]
+    public string? Src { get; set; }
+    [Parameter]
+    public string? AltText { get; set; }
+    [Parameter]
+    public string CssClass { get; set; } = string.Empty;
+    [Parameter]
+    public bool SuppressHover { get; set; }
+}

@@ -1,0 +1,24 @@
+﻿<XtraSerializer version="1.0" application="PhotoViewerData">
+  <property name="Others" isnull="true" iskey="true">
+    <property name="Date">07/22/2010 12:05:04</property>
+    <property name="Description">Other image files</property>
+    <property name="Name">Other</property>
+    <property name="Files" iskey="true" value="0" />
+  </property>
+  <property name="FirstRun">true</property>
+  <property name="Albums" iskey="true" value="2">
+    <property name="Item1" isnull="true" iskey="true">
+      <property name="Date">07/22/2010 12:05:04</property>
+      <property name="Description">This is a sample album 1</property>
+      <property name="Name">Sample Album 1</property>
+      <property name="Files" iskey="true" value="0"></property>
+    </property>
+    <property name="Item2" isnull="true" iskey="true">
+      <property name="Date">07/22/2010 12:05:04</property>
+      <property name="Description">This is a sample album 2</property>
+      <property name="Name">Sample Album 2</property>
+      <property name="Files" iskey="true" value="0"></property>
+    </property>
+  </property>
+  <property name="Folders" iskey="true" value="0"></property>
+</XtraSerializer>

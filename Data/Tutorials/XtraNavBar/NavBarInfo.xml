@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="H:\Work\XML Schemes\module-new.xsd">
+	<controls>
+		<controlentry>
+			<control>
+				<name>button1</name>
+				<windowcaption>NavBar Info...</windowcaption>
+				<description>The GetNavBarInfo method returns the information on navbar control's elements (groups, items, links).</description>
+				<memberlist></memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+	</controls>
+</totalinfo>

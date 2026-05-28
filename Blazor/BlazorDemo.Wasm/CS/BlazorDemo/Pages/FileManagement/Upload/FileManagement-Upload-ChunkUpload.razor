@@ -1,0 +1,32 @@
+﻿<DemoPageSectionComponent Id="FileManagement-Upload-ChunkUpload">
+    @inject NavigationManager NavigationManager
+
+    <div class="upload-container">
+        <div class="@(SelectedFilesCount > 0 ? "d-none" : null)">
+            <span class="drop-file-icon mb-3"></span>
+            <span class="drop-file-label mb-3">Click the button below to start your upload</span>
+        </div>
+        <DxUpload Name="myFile"
+                  ChunkSize="200000"
+                  MaxFileSize="15000000"
+                  UploadUrl="@GetUploadUrl("api/UploadChunks/Upload/")"
+                  SelectedFilesChanged="@SelectedFilesChanged">
+        </DxUpload>
+    </div>
+    <div class="upload-validation-text info-text">
+        Uploads are limited to a single file up to 15 MB.
+    </div>
+
+    @code {
+        int SelectedFilesCount { get; set; }
+
+        protected void SelectedFilesChanged(IEnumerable<UploadFileInfo> files) {
+            SelectedFilesCount = files.ToList().Count;
+
+            InvokeAsync(StateHasChanged);
+        }
+        protected string GetUploadUrl(string url) {
+            return NavigationManager.ToAbsoluteUri(url).AbsoluteUri;
+        }
+    }
+</DemoPageSectionComponent>

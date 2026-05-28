@@ -1,0 +1,56 @@
+﻿@page "/PivotTable/DataBinding/ServerMode"
+
+<DemoPageSectionComponent Id="PivotTable-DataBinding-ServerMode" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @using DevExpress.Data.Linq
+        @inherits OwningComponentBase
+        @implements IDisposable
+        @inject Microsoft.Extensions.Configuration.IConfiguration Configuration
+
+        <DataProviderAccessAreaContainer DataProvider="@ContosoRetailDataProvider">
+            <div class="pivot-container">
+                <DxPivotTable Data="@EntityServerModeSource"
+                              VirtualScrollingEnabled="true"
+                              SizeMode="Params.SizeMode"
+                              FilterHeaderAreaDisplayMode="PivotTableFilterHeaderAreaDisplayMode.Never">
+                    <Fields>
+                        <DxPivotTableField Field="@nameof(Sale.StoreName)" Caption="Store" Area="PivotTableArea.Row"/>
+                        <DxPivotTableField Field="@nameof(Sale.Year)" Caption="Year" Area="PivotTableArea.Column"/>
+                        <DxPivotTableField Field="@nameof(Sale.Quarter)" Caption="Quarter" Area="PivotTableArea.Column">
+                            <ValueTemplate>
+                                <span>@($"Q{context.Text}")</span>
+                            </ValueTemplate>
+                        </DxPivotTableField>
+                        <DxPivotTableField Field="@nameof(Sale.SalesAmount)" Caption="Amount" Area="PivotTableArea.Data" SummaryType="PivotTableSummaryType.Sum" Width="150" />
+                        <DxPivotTableField Field="@nameof(Sale.Id)" Caption="Count" Area="PivotTableArea.Data" SummaryType="PivotTableSummaryType.Count" />
+                    </Fields>
+                </DxPivotTable>
+            </div>
+        </DataProviderAccessAreaContainer>
+    </ChildContentWithParameters>
+
+    @code {
+        IContosoRetailDataProvider ContosoRetailDataProvider { get; set; }
+        ContosoRetailDataService ContosoRetailDataService { get; set; }
+
+        EntityServerModeSource EntityServerModeSource;
+
+        protected override void OnInitialized() {
+            // Refer to https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.components.owningcomponentbase
+            ContosoRetailDataProvider = ScopedServices.GetRequiredService<IContosoRetailDataProvider>();
+            ContosoRetailDataService = ScopedServices.GetRequiredService<ContosoRetailDataService>();
+
+            var connectionString = ConnectionStringUtils.GetPivotTableLargeDataConnectionString(Configuration);
+            if(string.IsNullOrEmpty(connectionString)) return;
+
+            EntityServerModeSource = new EntityServerModeSource();
+            EntityServerModeSource.KeyExpression = "Id";
+            EntityServerModeSource.QueryableSource = ContosoRetailDataService.GetSales();
+        }
+
+        public void Dispose() {
+            EntityServerModeSource?.Dispose();
+        }
+    }
+
+</DemoPageSectionComponent>

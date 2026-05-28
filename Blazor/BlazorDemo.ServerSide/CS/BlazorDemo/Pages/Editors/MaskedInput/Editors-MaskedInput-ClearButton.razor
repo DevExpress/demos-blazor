@@ -1,0 +1,20 @@
+﻿<DemoPageSectionComponent Id="Editors-MaskedInput-ClearButton" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <label for="teClearButton" class="demo-text cw-320 mb-1">
+            Currency
+        </label>
+        <DxMaskedInput @bind-Value="@Currency"
+                       T="double?"
+                       Mask="@NumericMask.Currency"
+                       ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                       BindValueMode="BindValueMode.OnInput"
+                       NullText="Type text..."
+                       SizeMode="Params.SizeMode"
+                       CssClass="cw-320"
+                       InputId="teClearButton"/>
+    </ChildContentWithParameters>
+
+    @code {
+        double? Currency { get; set; } = 123.45;
+    }
+</DemoPageSectionComponent>

@@ -1,0 +1,26 @@
+﻿@page "/Grid/DataBinding/Data"
+
+<DemoPageSectionComponent Id="Grid-DataBinding-Data" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject WeatherForecastService ForecastService
+
+        <DxGrid Data="@Data" SizeMode="Params.SizeMode" PageSize="15"
+            ColumnResizeMode="GridColumnResizeMode.NextColumn" TextWrapEnabled="false">
+            <Columns>
+                <DxGridDataColumn FieldName="Date" DisplayFormat="D" MinWidth="100" />
+                <DxGridDataColumn FieldName="Forecast" Width="15%" />
+                <DxGridDataColumn FieldName="CloudCover" Width="15%" />
+                <DxGridDataColumn FieldName="TemperatureC" Caption="@("Temp. (\x2103)")" Width="10%" />
+                <DxGridDataColumn FieldName="TemperatureF" Caption="@("Temp. (\x2109)")" Width="10%" />
+            </Columns>
+        </DxGrid>
+
+        @code {
+            object Data { get; set; }
+
+            protected override void OnInitialized() {
+                Data = ForecastService.GetForecast().ToList();
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo>                                   
+<controls>
+<controlentry>
+		<control>
+			<name>checkedListBox1</name>
+			<windowcaption></windowcaption>
+			<description>Allows you to select items whose links are displayed within the BarLinkContainerItem.</description>
+			<memberlist>BarLinkContainerItem.AddItem, BarLinkContainerItem.RemoveLink</memberlist>
+			<dtimage></dtimage>
+		</control>
+</controlentry>
+</controls>
+</totalinfo>                     

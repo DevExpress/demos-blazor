@@ -1,0 +1,103 @@
+﻿@page "/ChartPieSeries"
+
+<DemoPageSectionComponent Id="Charts-PieSeries-PieDonut">
+    <DemoChildContent>
+        @inject ISalesInfoDataProvider Sales
+
+        <DxPieChart Data="@SalesData"
+                    Diameter="diameter"
+                    InnerDiameter="innerDiameter"
+                    StartAngle="startAngle"
+                    SegmentDirection="segmentDirection"
+                    T="SaleInfo">
+
+            <DxPieChartSeries T="SaleInfo"
+                              TArgument="string"
+                              TValue="double"
+                              ValueField="si => si.Amount"
+                              ArgumentField="si => si.Region"
+                              SummaryMethod="Enumerable.Sum">
+                <DxChartSeriesLabel Visible="showLabels"
+                                    Position="labelPosition"
+                                    ValueFormat="ChartElementFormat.Thousands(1)">
+                    <DxChartSeriesLabelConnector Visible="true" />
+                </DxChartSeriesLabel>
+            </DxPieChartSeries>
+
+            <DxChartTooltip Enabled="true"
+                            Position="RelativePosition.Outside">
+                <div class="m-75">
+                    <div class="fw-bold">@context.Point.Argument</div>
+                    <div>Sales: @($"${context.Point.Value:#,0.}")</div>
+                </div>
+            </DxChartTooltip>
+
+            <DxChartTitle Text="Sales by Continent">
+                <DxChartSubTitle Text="USD" />
+            </DxChartTitle>
+
+            <DxChartLegend HorizontalAlignment="HorizontalAlignment.Center"
+                           VerticalAlignment="VerticalEdge.Bottom"
+                           Position="RelativePosition.Outside"
+                           Orientation="Orientation.Horizontal" />
+        </DxPieChart>
+    </DemoChildContent>
+
+    <OptionsContent>
+        <OptionSpinEdit T="double?"
+                        Label="Diameter:"
+                        MinValue="0.3"
+                        MaxValue="1"
+                        Increment="0.05"
+                        NullText="Auto"
+                        DisplayFormat="0.0#"
+                        @bind-Value="diameter"
+                        ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                        CssClass="ow-120" />
+        <OptionSpinEdit T="double"
+                        Label="Inner Diameter:"
+                        MinValue="0.0"
+                        MaxValue="0.9"
+                        Increment="0.05"
+                        DisplayFormat="0.0#"
+                        @bind-Value="innerDiameter"
+                        CssClass="ow-120" />
+        <OptionSpinEdit T="int"
+                        Label="Start Angle:"
+                        MinValue="-360"
+                        MaxValue="360"
+                        @bind-Value="startAngle"
+                        Increment="10"
+                        CssClass="ow-120" />
+        <OptionComboBox T="PieChartSegmentDirection"
+                        TData="PieChartSegmentDirection"
+                        Label="Segment Direction:"
+                        Data="Enum.GetValues<PieChartSegmentDirection>()"
+                        @bind-Value="segmentDirection"
+                        CssClass="ow-120" />
+        <OptionComboBox T="RelativePosition"
+                        TData="RelativePosition"
+                        Label="Label Position:"
+                        Data="Enum.GetValues<RelativePosition>()"
+                        @bind-Value="labelPosition"
+                        Enabled="showLabels"
+                        CssClass="ow-120" />
+        <OptionCheckBox T="bool"
+                        @bind-Checked="showLabels"
+                        Label="Show Labels" />
+    </OptionsContent>
+
+    @code {
+        IEnumerable<SaleInfo> SalesData;
+        double? diameter = null;
+        double innerDiameter = 0.5;
+        bool showLabels = true;
+        int startAngle = 0;
+        PieChartSegmentDirection segmentDirection = PieChartSegmentDirection.Clockwise;
+        RelativePosition labelPosition = RelativePosition.Outside;
+
+        protected override async Task OnInitializedAsync() {
+            SalesData = await Sales.GetSalesAsync();
+        }
+    }
+</DemoPageSectionComponent>

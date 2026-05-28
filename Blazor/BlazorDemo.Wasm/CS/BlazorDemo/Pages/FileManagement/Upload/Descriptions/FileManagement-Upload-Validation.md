@@ -1,0 +1,3 @@
+The [Upload](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxUpload) component allows you to validate uploaded files on the client. This demo demonstrates how to use the [MaxFileSize](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxUpload.MaxFileSize) and [AllowedFileExtensions](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxUpload.AllowedFileExtensions) properties to limit the maximum file size and specify accepted file extensions.
+
+You should also validate uploaded files on the server side (in controller actions). The code above creates the UploadValidationController that checks file extensions and file size.

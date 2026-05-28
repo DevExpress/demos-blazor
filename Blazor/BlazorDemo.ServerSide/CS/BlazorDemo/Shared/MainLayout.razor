@@ -1,0 +1,288 @@
+﻿@inherits LayoutComponentBase
+@implements IDisposable
+@inject DemoConfiguration Configuration
+@inject DemoThemeService Themes
+
+<DemoScriptLoader @ref=@pageHelper Src="_content/BlazorDemo/lib/page-helper.js" />
+<header class="@GetDemoHeaderContainerCss()">
+    <nav class="demo-header p-0 navbar navbar-dark" aria-label="Header menu">
+        <DemoLayoutToggleButton @bind-Toggled="@LayoutToggled" />
+        <div class="logo-image">
+            <a href="https://www.devexpress.com/" target="_blank" title="DevExpress">
+                <span class="logo-img"></span>
+            </a>
+            <div class="logo-sep"></div>
+            <a href="" target="_blank" title="Blazor Demos Home Page" >
+                <span class="logo-sec-img"></span>
+            </a>
+        </div>
+        <div class="demo-btn-container d-flex">
+            <DxButton NavigateUrl="https://go.devexpress.com/DevexpressDownload_UniversalTrial.aspx"
+                CssClass="download-btn"
+                IconCssClass="demo-download-icon"
+                Text="Free Trial" SizeMode="SizeMode.Large"></DxButton>
+            <DxButton NavigateUrl="https://github.com/DevExpress/demos-blazor"
+                        CssClass="github-btn"
+                        IconCssClass="demo-github-icon"
+                        RenderStyle="ButtonRenderStyle.Secondary" RenderStyleMode="ButtonRenderStyleMode.Outline"
+                        Text="GitHub" SizeMode="SizeMode.Large"></DxButton>
+            <div class="btn-sep"></div>
+            <DxButton Click="@ToggleThemeSwitcherPanel" CssClass="@GetThemeSwitcherCssClass()" SizeMode="SizeMode.Large"
+                        RenderStyle="ButtonRenderStyle.Secondary" RenderStyleMode="ButtonRenderStyleMode.Outline" IconCssClass="demo-theme-icon"
+                        aria-label="Themes"
+                        aria-haspopup="True"
+                        aria-expanded="@(ThemeSwitcherShown.ToString())">
+            </DxButton>
+        </div>
+        <ThemeSwitcher @bind-Shown="@ThemeSwitcherShown" />
+    </nav>
+    <div class="@GetDemoBreadcrumbsContainerCss()">
+    <div class="breadcrumb">
+        <div class="@GetDemoBreadcrumbsCss()">
+            <DemoBreadcrumbs></DemoBreadcrumbs>
+        </div>
+    </div>
+    </div>
+</header>
+<main class="@GetDemoContentContainerCss()" @ref="@contentContainerRef">
+    <div class="demo-content @LayoutStateCssClass">
+        <div class="sidebar">
+            <DemoSideBar></DemoSideBar>
+        </div>
+        <div class="main">
+            <div class="content" @key="ShouldUseThemeNameKey() ? ThemeKey : null">
+                @Body
+            </div>
+            <div class="content-footer"></div>
+        </div>
+        @if(!_isDesktop) {
+            <DemoModalBackdrop Shown="@ModalBackgroundShown" ShownChanged="@ModalBackdropShownChanged" />
+        }
+    </div>
+</main>
+<DxToastProvider Name="AITost"
+                 MaxToastCount="3"
+                 Width="500px"
+                 ShowCloseButton="true" />
+
+@code {
+    bool _layoutToggled;
+    bool _themeSwitcherShown;
+    bool _isDesktop = true;
+    string _currentAIToastId;
+    PromoteHttpStatusErrorsPipelineMessage _currentAIMessage;
+    ElementReference contentContainerRef;
+    DemoScriptLoader pageHelper;
+
+    [Inject]
+    protected NavigationManager NavigationManager { get; set; }
+    [Inject]
+    IJSRuntime JsRuntime { get; set; }
+    [Inject] AIHttpResponseProcessor AIHttpResponseProcessor { get; set; }
+    [Inject] IToastNotificationService ToastService { get; set; }
+
+    protected override void OnInitialized() {
+        NavigationManager.LocationChanged += OnLocationChanged;
+        AIHttpResponseProcessor.OnProcess += ProcessAIResponse;
+    }
+
+    void ProcessAIResponse(PromoteHttpStatusErrorsPipelineMessage message, string waitingTime) {
+        _currentAIToastId = Guid.NewGuid().ToString("N");
+        _currentAIMessage = message;
+        ToastService.ShowToast(new ToastOptions {
+            ProviderName = "AITost",
+            Id = _currentAIToastId,
+            DisplayTime = TimeSpan.FromSeconds(Convert.ToDouble(waitingTime)),
+            Title = "Waiting for AI Service",
+            Text = $"Our demo AI Service reached a temporary request limit. Your operation will resume automatically in {waitingTime} seconds. You can press Cancel to abort the operation."
+        }, RenderToastButtons());
+    }
+
+    void CancelAIGeneration() {
+        if(_currentAIMessage != null) {
+            _currentAIMessage.Cancel();
+            ToastService.CloseToast(_currentAIToastId);
+            _currentAIMessage = null;
+            _currentAIToastId = string.Empty;
+        }
+    }
+
+    RenderFragment RenderToastButtons() {
+        return @<DxButton RenderStyle="ButtonRenderStyle.Warning" Click="() => CancelAIGeneration()">Cancel</DxButton>;
+    }
+
+    void TryRedirect(string url) {
+            if(TryGetRedirectUrl(url, out var uri))
+                NavigationManager.NavigateTo(uri, true);
+        }
+    protected bool TryGetRedirectUrl(string currentUrl, out string redirectUrl) {
+        redirectUrl = "";
+        return currentUrl?.Length > NavigationManager.BaseUri?.Length && Configuration.Redirects.TryGetValue(currentUrl.Substring(NavigationManager.BaseUri.Length).ToLower(), out redirectUrl);
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender) {
+        TryRedirect(NavigationManager.Uri);
+        if(firstRender) {
+            await ScrollToMainTopIfNeeded(NavigationManager.Uri);
+
+            await pageHelper.InvokeVoidAsync("DemoPageHelper.demoMatchesQuery", "(min-width: 1200px)", DotNetObjectReference.Create(this));
+            await pageHelper.InvokeVoidAsync("DemoPageHelper.patchAppElement");
+        }
+        else {
+            await pageHelper.InvokeVoidAsync("DemoPageHelper.themes.setTheme",
+                DemoThemeService.ThemeCookieKey,
+                Themes.ActiveTheme.Name, Themes.ThemeState.ToString());
+
+            if(_isDesktop && SavedLayoutToggled != LayoutToggled)
+                await pageHelper.InvokeVoidAsync("DemoPageHelper.raiseWindowOnResize");
+        }
+        await ScrollToTargetIfNeeded(NavigationManager.Uri);
+        SavedLayoutToggled = LayoutToggled;
+        IsFirstTimeRendered = true;
+    }
+    async void OnLocationChanged(object sender, LocationChangedEventArgs args) {
+        TryRedirect(args.Location);
+        ThemeSwitcherShown = false;
+        if(!_isDesktop) {
+            LayoutToggled = false;
+        }
+        CancelAIGeneration();
+        await ScrollToMainTopIfNeeded(args.Location);
+        await InvokeAsync(StateHasChanged);
+    }
+
+    [JSInvokable]
+    public async Task OnQueryChanged(bool isDesktop) {
+        if(_isDesktop != isDesktop) {
+            _isDesktop = isDesktop;
+            LayoutToggled = false;
+            ThemeSwitcherShown = false;
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+    bool LayoutToggled {
+        get { return _layoutToggled; }
+        set {
+            if(_layoutToggled != value) {
+                _layoutToggled = value;
+                if(!_isDesktop && _layoutToggled)
+                    ThemeSwitcherShown = false;
+            }
+        }
+    }
+    string LayoutStateCssClass { get { return IsFirstTimeRendered ? ((_isDesktop && LayoutToggled || !_isDesktop && !LayoutToggled) ? "sidebar-hidden" : "sidebar-shown") : ""; } }
+    bool SavedLayoutToggled { get; set; }
+    bool ModalBackgroundShown { get { return !_isDesktop && (ThemeSwitcherShown || LayoutToggled); } }
+    bool IsFirstTimeRendered { get; set; }
+
+    bool ThemeSwitcherShown {
+        get { return _themeSwitcherShown; }
+        set {
+            if(_themeSwitcherShown != value) {
+                _themeSwitcherShown = value;
+                if(!_isDesktop && _themeSwitcherShown)
+                    LayoutToggled = false;
+            }
+        }
+    }
+
+    string ThemeKey {
+        get {
+            string key = Themes.ActiveTheme.Name;
+
+            if(Themes.ActiveTheme.IsFluent)
+                key += Themes.ThemeState.Mode.ToString()?.ToLowerInvariant();
+
+            return key;
+        }
+    }
+
+    void ToggleThemeSwitcherPanel() {
+        ThemeSwitcherShown = !ThemeSwitcherShown;
+    }
+
+    bool ShouldUseThemeNameKey() {
+        var page = Configuration.GetDemoPageByUrl(NavigationManager, NavigationManager.Uri);
+        while(page != null) {
+            if(page.ReCreateOnThemeChange.HasValue)
+                return page.ReCreateOnThemeChange.Value;
+            page = page.ParentPage;
+        }
+        return true;
+    }
+
+    void ModalBackdropShownChanged(bool shown) {
+        if(!shown) {
+            ThemeSwitcherShown = false;
+            LayoutToggled = false;
+        }
+    }
+
+    bool HasAnchorInUrl(string uri) {
+        return !string.IsNullOrEmpty(NavigationManager.ToAbsoluteUri(uri).Fragment.Replace("#", ""));
+    }
+    async Task ScrollToMainTopIfNeeded(string uri) {
+        if(!HasAnchorInUrl(uri))
+            await pageHelper.InvokeVoidAsync("DemoPageHelper.scroll.toElementTop", contentContainerRef);
+    }
+    async Task ScrollToTargetIfNeeded(string uri) {
+        if(HasAnchorInUrl(uri))
+            await pageHelper.InvokeVoidAsync("DemoPageHelper.scroll.ensureNavigationTargetIsVisible");
+    }
+
+    string GetDemoContentContainerCss() {
+        List<string> cssClasses = new List<string>();
+        cssClasses.Add("demo-content-container");
+#if !VISUALTESTS
+        if(IsFirstTimeRendered)
+            cssClasses.Add("animated");
+#endif
+        cssClasses.Add(GetThemeCssClass());
+        if(Themes.ActiveTheme.IsBootstrapNative)
+            cssClasses.Add("theme-external");
+        return string.Join(" ", cssClasses);
+    }
+    string GetDemoBreadcrumbsContainerCss() {
+        List<string> cssClasses = new List<string>();
+        cssClasses.Add("demo-breadcrumbs-container");
+        cssClasses.Add(GetThemeCssClass());
+        if(Themes.ActiveTheme.IsBootstrapNative)
+            cssClasses.Add("theme-external");
+        return string.Join(" ", cssClasses);
+    }
+    string GetDemoBreadcrumbsCss() {
+        List<string> cssClasses = new List<string>();
+        cssClasses.Add("demo-breadcrumbs");
+        cssClasses.Add(LayoutStateCssClass);
+        return string.Join(" ", cssClasses);
+    }
+    string GetDemoHeaderContainerCss() {
+        List<string> cssClasses = new List<string>();
+        cssClasses.Add("demo-header-container");
+        cssClasses.Add(GetThemeCssClass());
+        if(Themes.ActiveTheme.IsBootstrapNative)
+            cssClasses.Add("theme-external");
+        return string.Join(" ", cssClasses);
+    }
+    string GetThemeCssClass() {
+        if(Themes.ActiveTheme.IsFluent) {
+            switch (Themes.ThemeState.Mode)
+            {
+                case ThemeMode.Light:
+                    return "theme-fluent-light";
+                case ThemeMode.Dark:
+                    return "theme-fluent-dark";
+            }
+        }
+
+        return "theme-" + Themes.ActiveTheme.Name.Replace(" ", "-");
+    }
+
+    string GetThemeSwitcherCssClass() {
+        return "theme-settings " + ThemeSwitcherShown;
+    }
+    public void Dispose() {
+        NavigationManager.LocationChanged -= OnLocationChanged;
+        AIHttpResponseProcessor.OnProcess -= ProcessAIResponse;
+    }
+}

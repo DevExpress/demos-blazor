@@ -1,0 +1,198 @@
+﻿@using BlazorDemo.CRM.Models
+@using BlazorDemo.CRM.Client.Services
+@using Microsoft.AspNetCore.Authorization
+@using System.Security.Claims
+@inherits LayoutComponentBase
+@implements IDisposable
+
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+@inject SearchManager SearchManager
+@inject ThemeManager ThemeManager
+@inject SizeModeManager SizeModeManager
+@inject CascadingValueSource<SizeMode> SizeModeSource
+
+<PageTitle>@($"Blazor CRM - {CurrentModule} | DevExpress")</PageTitle>
+
+<div class="page">
+    <header class="header">
+        <div class="content header-content">
+            <AuthorizeView Context="authorizeContext">
+                @{
+                    var userName = authorizeContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
+                    var email = authorizeContext.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+                }
+                <DxToolbar CssClass="toolbar" ItemRenderStyleMode="ToolbarRenderStyleMode.Plain">
+                    <Items>
+                        <DxToolbarItem IconCssClass="hamburger-icon icon medium-icon"
+                                       Click="@(() => IsSideMenuOpen = !IsSideMenuOpen)"
+                                       Tooltip="Hide or show side menu" />
+                        <DxToolbarItem>
+                            <Template>
+                                <div class="custom-item">
+                                    <span class="title">Blazor CRM Demo</span>
+                                </div>
+                            </Template>
+                        </DxToolbarItem>
+                        <DxToolbarItem Alignment="ToolbarItemAlignment.Right" CssClass="search-textbox-item" Tooltip="Search">
+                            <Template>
+                                <div class="custom-item">
+                                    <DxSearchBox CssClass="search-textbox"
+                                                 NullText="Search"
+                                                 BindValueMode="BindValueMode.OnInput"
+                                                 ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                                                 @bind-Text=SearchManager.SearchText />
+                                </div>
+                            </Template>
+                        </DxToolbarItem>
+                        <DxToolbarItem Alignment="ToolbarItemAlignment.Right"
+                                       Name="SizeMode"
+                                       Text="@(GetSizeModeDescriptor().Text)"
+                                       AdaptiveText="Size Mode"
+                                       Tooltip="Change the application size mode.">
+                            <Items>
+                                <DxToolbarItem Name="@(GetSizeModeDescriptor(SizeMode.Small).Name)" Click="OnSizeModeChanged" Text="@(GetSizeModeDescriptor(SizeMode.Small).Text)"></DxToolbarItem>
+                                <DxToolbarItem Name="@(GetSizeModeDescriptor(SizeMode.Medium).Name)" Click="OnSizeModeChanged" Text="@(GetSizeModeDescriptor(SizeMode.Medium).Text)"></DxToolbarItem>
+                                <DxToolbarItem Name="@(GetSizeModeDescriptor(SizeMode.Large).Name)" Click="OnSizeModeChanged" Text="@(GetSizeModeDescriptor(SizeMode.Large).Text)"></DxToolbarItem>
+                            </Items>
+                        </DxToolbarItem>
+                        <DxToolbarItem Alignment="ToolbarItemAlignment.Right"
+                                       IconCssClass="@GetThemeSwitcherIconCssClasses()"
+                                       Click="OnThemeChanged"
+                                       AdaptiveText="Switch Theme"
+                                       Tooltip="Switch theme" />
+                        <DxToolbarItem Alignment="ToolbarItemAlignment.Right"
+                                       IconCssClass="bell-icon icon medium-icon"
+                                       CssClass="@(NotificationCount > 0 ? "notification" : "")"
+                                       notification-count="@NotificationCount"
+                                       AdaptiveText="Notifications"
+                                       Tooltip="@($"Notifications. You have {NotificationCount} active notifications.")" />
+                        <DxToolbarItem Alignment="ToolbarItemAlignment.Right"
+                                       CssClass="current-user-item"
+                                       Click="@(_ => ShowUserInfo = !ShowUserInfo)"
+                                       AdaptiveText="@userName"
+                                       Tooltip="Current user's information">
+                            <Template>
+                                <div class="avatar-item">
+                                    <UserAvatar Src="images/users/01.png" CssClass="avatar" AltText="@userName" />
+                                    @if(context.HiddenToAdaptiveMenu) {
+                                        <div class="avatar-label">@context.AdaptiveText</div>
+                                    }
+                                </div>
+                            </Template>
+                        </DxToolbarItem>
+                    </Items>
+                </DxToolbar>
+                <DxDropDown PositionTarget=":not(div).current-user-item:not([style*='display: none'])" @bind-IsOpen="@ShowUserInfo" PositionMode="DropDownPositionMode.Bottom">
+                    <BodyContentTemplate>
+                        <AccountManager DisplayName="@userName" Email="@email" AvatarSrc="images/users/01.png" />
+                    </BodyContentTemplate>
+                </DxDropDown>
+            </AuthorizeView>
+        </div>
+    </header>
+    <main class="main">
+        <div class="content main-content">
+            <DxLayoutBreakpoint DeviceSize="DeviceSize.XSmall | DeviceSize.Small | DeviceSize.Medium | DeviceSize.Large" IsActive="IsSmallScreen" IsActiveChanged="OnScreenSizeChanged" />
+            <DxDrawer CssClass="main-menu-drawer"
+                      @bind-IsOpen="IsSideMenuOpen"
+                      Mode="@SideMenuMode"
+                      Position="DrawerPosition.Left"
+                      ZIndex="102"
+                      PanelWidth="22rem">
+                <BodyTemplate>
+                    <DxTreeView AllowSelectNodes="true"
+                                SelectionChanged="@(e => CurrentModule = e.NodeInfo?.Text)"
+                                NodeExpandCollapseAction="TreeViewNodeExpandCollapseAction.NodeClick"
+                                AnimationType="LayoutAnimationType.Slide"
+                                ShowFilterPanel="true"
+                                TextWrapEnabled="true"
+                                FilterMode="NavigationFilterMode.Nodes"
+                                CssClass="main-menu">
+                        <Nodes>
+                            <DxTreeViewNode Text="Contacts" AllowSelection="false" Expanded="true" IconCssClass="crm-icon icon medium-icon">
+                                <Nodes>
+                                    <DxTreeViewNode Text="Contact List" NavigateUrl="ContactList" />
+                                    <DxTreeViewNode Text="Contact Details" NavigateUrl="ContactDetails" />
+                                </Nodes>
+                            </DxTreeViewNode>
+                            <DxTreeViewNode Text="Planning" AllowSelection="false" Expanded="true" IconCssClass="planning-icon icon medium-icon">
+                                <Nodes>
+                                    <DxTreeViewNode Text="Task List" NavigateUrl="TaskList" />
+                                    <DxTreeViewNode Text="Scheduler" NavigateUrl="Scheduler" />
+                                </Nodes>
+                            </DxTreeViewNode>
+                            <DxTreeViewNode Text="Analytics" AllowSelection="false" Expanded="true" IconCssClass="analytics-icon icon medium-icon">
+                                <Nodes>
+                                    <DxTreeViewNode Text="Dashboard" NavigateUrl="Dashboard" />
+                                    <DxTreeViewNode Text="Sales Analysis" NavigateUrl="SalesAnalysis" />
+                                </Nodes>
+                            </DxTreeViewNode>
+                        </Nodes>
+                    </DxTreeView>
+                </BodyTemplate>
+                <TargetContent>
+                    <div class="module-content" @key="@ThemeManager.CurrentTheme.Name">
+                        @Body
+                    </div>
+                </TargetContent>
+            </DxDrawer>
+        </div>
+
+        <DxToastProvider MaxToastCount="2"
+                         HorizontalAlignment="HorizontalAlignment.Right"
+                         VerticalAlignment="VerticalEdge.Bottom"
+                         ShowCloseButton="true" />
+    </main>
+</div>
+
+@code {
+    IDisposable? locationChangeSubscription;
+
+    [CascadingParameter(Name = "NotificationCount")]
+    public int NotificationCount { get; set; }
+    [CascadingParameter(Name = "ParentSizeMode")]
+    SizeMode SizeMode { get; set; }
+    bool IsSmallScreen { get; set; }
+    bool IsSideMenuOpen { get; set; } = true;
+    DrawerMode SideMenuMode { get; set; } = DrawerMode.Shrink;
+    bool ShowUserInfo { get; set; }
+    string? CurrentModule { get; set; }
+
+    protected override void OnInitialized() {
+        locationChangeSubscription = NavigationManager.RegisterLocationChangingHandler(context => {
+            if(SideMenuMode == DrawerMode.Overlap)
+                IsSideMenuOpen = false;
+            return ValueTask.CompletedTask;
+        });
+        base.OnInitialized();
+    }
+
+    async Task OnThemeChanged() => await ThemeManager.ToggleThemeAsync();
+
+    string GetThemeSwitcherIconCssClasses() => $"{(ThemeManager.IsDarkTheme ? "sun-icon" : "moon-icon")} icon medium-icon";
+
+    async Task OnSizeModeChanged(ToolbarItemClickEventArgs e) {
+        await SizeModeSource.NotifyChangedAsync(e.ItemName switch {
+            "Small" => SizeMode.Small,
+            "Large" => SizeMode.Large,
+            _ => SizeMode.Medium
+        });
+        await SizeModeManager.SwitchToSizeModeAsync(SizeMode);
+    }
+
+    (string Name, string Text) GetSizeModeDescriptor(SizeMode? sizeMode = null) {
+        var value = sizeMode ?? SizeMode;
+        var name = value.ToString();
+        return (name, $"{name} size");
+    }
+
+    void OnScreenSizeChanged(bool isSmallScreen) {
+        IsSmallScreen = isSmallScreen;
+        IsSideMenuOpen = !IsSmallScreen;
+        SideMenuMode = IsSmallScreen ? DrawerMode.Overlap : DrawerMode.Shrink;
+    }
+
+    public void Dispose() => locationChangeSubscription?.Dispose();
+}
+

@@ -1,0 +1,67 @@
+﻿@page "/Grid/Sorting"
+@layout DataProviderAccessArea<INwindDataProvider>
+
+<DemoPageSectionComponent Id="Grid-Sorting" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <div class="grid-container">
+            <DxGrid @ref="Grid"
+                    Data="@Data"
+                    ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                    TextWrapEnabled="false"
+                    SizeMode="Params.SizeMode"
+                    PageSize="20">
+                <Columns>
+                    <DxGridDataColumn FieldName="ContactName" MinWidth="100" />
+                    <DxGridDataColumn FieldName="CompanyName" MinWidth="100" />
+                    <DxGridDataColumn FieldName="City" Width="15%" />
+                    <DxGridDataColumn FieldName="Region" Width="10%" />
+                    <DxGridDataColumn FieldName="Country" SortIndex="0" SortOrder="GridColumnSortOrder.Ascending" Width="15%" />
+                </Columns>
+                <ToolbarTemplate>
+                    <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Plain" SizeMode="Params.SizeMode">
+                        <Items>
+                            <DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
+                                <Template Context="toolbar_item_context">
+                                    <div class="d-flex flex-row align-items-center h-100">
+                                        <div class="me-2" id="@sortOptionId">Sort by:</div>
+                                        <DxComboBox Data="@SortInfo.Keys" Value="@CurrentSortInfoKey" aria-labelledby="@sortOptionId"
+                                                    ValueChanged="@((string value) => ChangeSorting(value))" CssClass="ow-180" />
+                                    </div>
+                                </Template>
+                            </DxToolbarItem>
+                        </Items>
+                    </DxToolbar>
+                </ToolbarTemplate>
+            </DxGrid>
+        </div>
+
+        @code {
+            object Data { get; set; }
+            Dictionary<string, string[]> SortInfo { get; } = new Dictionary<string, string[]> {
+                { "Country", new string[] { "Country" } },
+                { "Country, City", new string[] { "Country", "City" } },
+                { "Company Name", new string[] { "CompanyName" } }
+            };
+            string CurrentSortInfoKey { get; set; } = "Country";
+            string sortOptionId = "sort-by-option";
+            IGrid Grid { get; set; }
+
+            protected override async Task OnInitializedAsync() {
+                Data = await NwindDataService.GetCustomersAsync();
+            }
+            // This method demonstrates how to sort Grid data in code.
+            // In this demo, this method is called when the 'Sort by' option value changes.
+            protected void ChangeSorting(string key) {
+                CurrentSortInfoKey = key;
+                var currentSortInfo = SortInfo[key];
+                Grid.BeginUpdate();
+                Grid.ClearSort();
+                foreach(var columnName in currentSortInfo)
+                    Grid.SortBy(columnName);
+                Grid.EndUpdate();
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

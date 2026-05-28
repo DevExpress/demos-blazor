@@ -1,0 +1,97 @@
+﻿@namespace BlazorDemo.CRM.Components
+@using BlazorDemo.CRM.Client.Services
+
+@inject NavigationManager NavigationManager
+
+<div class="user-info @GetSizeModeCssClass()">
+    <DxGridLayout ColumnSpacing="@GetGridLayoutItemsGap()" RowSpacing="@GetGridLayoutItemsGap()">
+        <Rows>
+            <DxGridLayoutRow Height="auto" />
+            <DxGridLayoutRow Height="auto" />
+            <DxGridLayoutRow Height="auto" />
+        </Rows>
+        <Columns>
+            <DxGridLayoutColumn Width="auto" />
+            <DxGridLayoutColumn Width="3fr" />
+        </Columns>
+        <Items>
+            <DxGridLayoutItem Row="0" Column="0">
+                <Template>
+                    <UserAvatar Src="@AvatarSrc" CssClass="user-avatar" AltText="@DisplayName" SuppressHover="true" />
+                </Template>
+            </DxGridLayoutItem>
+            <DxGridLayoutItem Row="0" Column="1">
+                <Template>
+                    <DxStackLayout Orientation="Orientation.Vertical" ItemSpacing="2px">
+                        <Items>
+                            <DxStackLayoutItem>
+                                <Template>
+                                    <span class="display-name">@DisplayName</span>
+                                </Template>
+                            </DxStackLayoutItem>
+                            <DxStackLayoutItem>
+                                <Template>
+                                    <span>@Email</span>
+                                </Template>
+                            </DxStackLayoutItem>
+                        </Items>
+                    </DxStackLayout>
+                </Template>
+            </DxGridLayoutItem>
+            <DxGridLayoutItem Row="1" ColumnSpan="2">
+                <Template>
+                    <hr class="separator" />
+                </Template>
+            </DxGridLayoutItem>
+            <DxGridLayoutItem Row="2" ColumnSpan="2">
+                <Template>
+                    <DxStackLayout Orientation="Orientation.Vertical" ItemSpacing="2px">
+                        <Items>
+                            <DxStackLayoutItem>
+                                <Template>
+                                    <DxButton Text="Log in with different account" RenderStyle="ButtonRenderStyle.None" Click="@OnLoginClick" CssClass="button" IconCssClass="icon medium-icon person-add-icon" />
+                                </Template>
+                            </DxStackLayoutItem>
+                            <DxStackLayoutItem>
+                                <Template>
+                                    <DxButton Text="Log out" RenderStyle="ButtonRenderStyle.None" Click="@OnLogoutClick" CssClass="button" IconCssClass="icon medium-icon sign-out-icon" />
+                                </Template>
+                            </DxStackLayoutItem>
+                        </Items>
+                    </DxStackLayout>
+                </Template>
+            </DxGridLayoutItem>
+        </Items>
+    </DxGridLayout>
+</div>
+
+@code {
+    [Parameter] public string? AvatarSrc { get; set; }
+    [Parameter] public string? DisplayName { get; set; }
+    [Parameter] public string? Email { get; set; }
+    [CascadingParameter(Name = "ParentSizeMode")]
+    SizeMode SizeMode { get; set; }
+
+    void OnLogoutClick() => NavigationManager.NavigateTo(GetUrl("Logout"), true);
+
+    void OnLoginClick() => NavigationManager.NavigateTo(GetUrl("Login"), true);
+
+    void OnManageAccountClick() => NavigationManager.NavigateTo("Account/Manage", true);
+
+    string GetUrl(string page) {
+        var currentUrl = NavigationManager.ToBaseRelativePath(NavigationManager.Uri);
+        return NavigationManager.GetUriWithQueryParameters($"Account/{page}", new Dictionary<string, object?> { ["ReturnUrl"] = currentUrl });
+    }
+
+    string GetSizeModeCssClass() => SizeMode switch {
+        SizeMode.Small => "small-size",
+        SizeMode.Large => "large-size",
+        _ => "medium-size"
+    };
+
+    string GetGridLayoutItemsGap() => SizeMode switch {
+        SizeMode.Small => "0.5rem",
+        SizeMode.Large => "1rem",
+        _ => "0.75rem"
+    };
+}

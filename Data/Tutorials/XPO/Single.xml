@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="H:\Work\XML Schemes\module-new.xsd">
+	<controls>
+		<controlentry>
+			<control>
+				<name>gclSingleMain</name>
+				<windowcaption>Load Employees</windowcaption>
+				<description>Load Employees who have Orders.</description>
+				<memberlist/>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>splitContainerControl1</name>
+				<windowcaption>Single aggregate type equivalent of Reference</windowcaption>
+				<description>Load Products using a reference and its Single aggregate type equivalent.</description>
+				<memberlist/>
+				<dtimage/>
+			</control>
+		</controlentry>
+	</controls>
+</totalinfo>

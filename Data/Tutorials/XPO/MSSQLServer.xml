@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="H:\Work\XML Schemes\module-new.xsd">
+	<controls>
+		<controlentry>
+			<control>
+				<name>gridControl1</name>
+				<windowcaption>Connection type (SQL Server or MS Access)</windowcaption>
+				<description>XPO determines the connection type (SQL Server or Access) from the given connection string: if it contains the "Microsoft.Jet.OLEDB" string then it is recognized as an Access connection, if the "Initial Catalog" string is found within the connection string then it is recognized as a SQL Server connection.</description>
+				<memberlist>Session.ConnectionString</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+	</controls>
+</totalinfo>

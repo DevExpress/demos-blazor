@@ -1,0 +1,70 @@
+﻿@page "/TreeList/Gridlines"
+
+<DemoPageSectionComponent Id="TreeList-GridLines" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject ISalesByRegionDataProvider SalesByRegionDataProvider
+
+        <DxTreeList Data="@Data"
+                    GridlinesVisible="@GetGridlines()"
+                    KeyFieldName="ID"
+                    ParentKeyFieldName="RegionID"
+                    ShowAllRows="true"
+                    ColumnResizeMode="TreeListColumnResizeMode.NextColumn"
+                    TextWrapEnabled="false"
+                    ContextMenus="TreeListContextMenus.Header"
+                    SizeMode="Params.SizeMode"
+                    CssClass="max-h-480">
+            <ToolbarTemplate>
+                <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Plain" SizeMode="Params.SizeMode">
+                    <Items>
+                        <DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
+                            <Template Context="toolbar_item_context">
+                                <div class="d-flex flex-row align-items-center h-100 me-2">
+                                    <DxCheckBox @bind-Checked="ShowHLines">Horizontal Lines</DxCheckBox>
+                                </div>
+                            </Template>
+                        </DxToolbarItem>
+                        <DxToolbarItem Alignment="ToolbarItemAlignment.Left">
+                            <Template Context="toolbar_item_context">
+                                <div class="d-flex flex-row align-items-center h-100 me-2">
+                                    <DxCheckBox @bind-Checked="ShowVLines">Vertical Lines</DxCheckBox>
+                                </div>
+                            </Template>
+                        </DxToolbarItem>
+                        <DxToolbarItem Alignment="ToolbarItemAlignment.Left">
+                            <Template Context="toolbar_item_context">
+                                <div class="d-flex flex-row align-items-center h-100">
+                                    <DxCheckBox @bind-Checked="ShowOutside">Outside Border</DxCheckBox>
+                                </div>
+                            </Template>
+                        </DxToolbarItem>
+                    </Items>
+                </DxToolbar>
+            </ToolbarTemplate>
+            <Columns>
+                <DxTreeListDataColumn FieldName="Region" />
+                <DxTreeListDataColumn FieldName="MarchSales" DisplayFormat="c0" />
+                <DxTreeListDataColumn FieldName="SeptemberSales" DisplayFormat="c0" />
+                <DxTreeListDataColumn FieldName="MarchChange" DisplayFormat="p2" />
+                <DxTreeListDataColumn FieldName="SeptemberChange" DisplayFormat="p2" />
+                <DxTreeListDataColumn FieldName="MarketShare" DisplayFormat="p0" />
+            </Columns>
+        </DxTreeList>
+
+        @code {
+            object Data { get; set; }
+            bool ShowHLines { get; set; } = true;
+            bool ShowVLines { get; set; } = true;
+            bool ShowOutside { get; set; } = true;
+
+            TreeListGridlines GetGridlines() =>
+                (ShowHLines ? TreeListGridlines.Horizontal : TreeListGridlines.None) |
+                (ShowVLines ? TreeListGridlines.Vertical : TreeListGridlines.None) |
+                (ShowOutside ? TreeListGridlines.Outside : TreeListGridlines.None);
+
+            protected override void OnInitialized() {
+                Data = SalesByRegionDataProvider.GenerateData();
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

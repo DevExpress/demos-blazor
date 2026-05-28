@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo>                                   
+<controls>
+<controlentry>
+		<control>
+			<name>button1</name>
+			<windowcaption>Add New Bar</windowcaption>
+			<description>Creates a new Bar and docks it to the top of the form.</description>
+			<memberlist>Bar.DockStyle, BarManager.Bars</memberlist>
+			<dtimage></dtimage>
+		</control>
+</controlentry>
+<controlentry>
+		<control>
+			<name>button2</name>
+			<windowcaption>Delete Last Bar</windowcaption>
+			<description>Deletes the last bar within the bar manager's Bars collection.</description>
+			<memberlist>BarManager.Bars</memberlist>
+			<dtimage></dtimage>
+		</control>
+</controlentry>
+</controls>
+</totalinfo>                     

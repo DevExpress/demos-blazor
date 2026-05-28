@@ -1,0 +1,210 @@
+:root {
+    --CRM-icon-size: 1.25rem;
+    --CRM-avatar-size: 2rem;
+    --CRM-avatar-margin-left: 0.75rem;
+    --CRM-header-padding: 0.625rem;
+    --CRM-toolbar-margin-bottom: 1rem;
+    --CRM-module-content-padding: 1rem;
+    --CRM-toolbar-padding-x: 0.375rem;
+    --CRM-messagelist-padding-x: 1.25rem;
+    --CRM-messagelist-padding-y: 2rem;
+    --CRM-submitarea-padding-x: 1.25rem;
+    --CRM-submitarea-padding-y: 0.5rem;
+    --CRM-chatui-header-padding: 1.25rem;
+    --CRM-chatui-header-padding-bottom: 0.5rem;
+    --CRM-scheduler-panel-margin-top: 3.5rem;
+}
+
+.small-size {
+    --CRM-icon-size: 1rem;
+    --CRM-avatar-size: 1.5rem;
+    --CRM-avatar-margin-left: 0.5rem;
+    --CRM-toolbar-padding-x: 0.25rem;
+    --CRM-messagelist-padding-x: 0.75rem;
+    --CRM-messagelist-padding-y: 1.5rem;
+    --CRM-submitarea-padding-x: 0.75rem;
+    --CRM-submitarea-padding-y: 0.375rem;
+    --CRM-chatui-header-padding: 0.75rem;
+    --CRM-chatui-header-padding-bottom: 0.375rem;
+    --CRM-scheduler-panel-margin-top: 3rem;
+}
+
+.large-size {
+    --CRM-icon-size: 1.5rem;
+    --CRM-avatar-size: 2.5rem;
+    --CRM-avatar-margin-left: 1rem;
+    --CRM-toolbar-padding-x: 0.5rem;
+    --CRM-messagelist-padding-x: 1.75rem;
+    --CRM-messagelist-padding-y: 2.5rem;
+    --CRM-submitarea-padding-x: 1.75rem;
+    --CRM-submitarea-padding-y: 0.625rem;
+    --CRM-chatui-header-padding: 1.75rem;
+    --CRM-chatui-header-padding-bottom: 0.625rem;
+    --CRM-scheduler-panel-margin-top: 4rem;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    letter-spacing: var(--dxds-letter-spacing-base-md);
+    background-color: var(--dxds-color-surface-neutral-subdued-rest);
+}
+
+*, ::after, ::before {
+    box-sizing: border-box
+}
+
+.icon {
+    opacity: 0.7;
+    background-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: 100% 100%;
+    background-color: currentColor;
+}
+
+.medium-icon {
+    width: var(--CRM-icon-size);
+    height: var(--CRM-icon-size);
+}
+
+.avatar {
+    width: var(--CRM-avatar-size);
+    height: var(--CRM-avatar-size);
+    margin-left: var(--CRM-avatar-margin-left);
+}
+
+.icon.small-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+}
+
+.sun-icon {
+    mask-image: url("images/icons/weather-sunny.svg");
+}
+
+.moon-icon {
+    mask-image: url("images/icons/weather-moon.svg");
+}
+
+.bell-icon {
+    mask-image: url("images/icons/bell.svg");
+}
+
+.github-icon {
+    mask-image: url("images/icons/github.svg");
+}
+
+.back-icon {
+    mask-image: url("images/icons/arrow-left.svg");
+}
+
+.copy-icon {
+    mask-image: url("images/icons/copy.svg");
+}
+
+.refresh-icon {
+    mask-image: url("images/icons/arrow-sync.svg");
+}
+
+.person-add-icon {
+    mask-image: url("images/icons/person-add.svg");
+}
+
+.sign-out-icon {
+    mask-image: url("images/icons/sign-out.svg");
+}
+
+.call-icon {
+    mask-image: url("images/icons/call.svg");
+}
+
+.mail-icon {
+    mask-image: url("images/icons/mail.svg");
+}
+
+.more-icon {
+    mask-image: url("images/icons/more-horizontal.svg");
+}
+
+.ai-chat-icon {
+    mask-image: url("images/icons/ai-chat.svg");
+}
+
+.notification {
+    position: relative;
+}
+
+.notification::after {
+    content: attr(notification-count) / "";
+    color: white;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 5%;
+    font-size: 0.8em;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 50%;
+    background-color: red;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-no-padding {
+    --dxbl-dropdown-body-padding-x: 0;
+    --dxbl-dropdown-body-padding-y: 0;
+}
+
+@media (min-width: 899.98px) {
+    .pw-800 {
+        max-width: 800px !important;
+        width: 800px !important;
+    }
+}
+
+.loading-panel {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-panel > .loader {
+    display: flex;
+    align-items: center;
+}
+
+.loading-panel > .loader > .spinner {
+    width: 2rem;
+    height: 2rem;
+    border: 0.25rem solid color-mix(in sRGB, var(--dxds-color-surface-primary-default-rest) 30%, transparent);
+    border-bottom-color: var(--dxds-color-surface-primary-default-rest);
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 0.75s linear infinite;
+}
+
+.loading-panel > .loader > .label {
+    color: var(--dxds-color-content-neutral-default-rest);
+    font-size: var(--dxds-font-size-base-lg);
+    font-weight: var(--dxds-font-weight-base-strong);
+    margin-left: 0.75rem;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+

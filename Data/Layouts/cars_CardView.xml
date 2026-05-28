@@ -1,0 +1,102 @@
+﻿<XtraSerializer version="1.0" application="View">
+  <property name="ViewCaption" />
+  <property name="VertScrollVisibility">Never</property>
+  <property name="DetailHeight">160</property>
+  <property name="BorderStyle">Default</property>
+  <property name="PrintMaximumCardColumns">-1</property>
+  <property name="CardWidth">341</property>
+  <property name="MaximumCardColumns">-1</property>
+  <property name="CardCaptionFormat">Record N {0}</property>
+  <property name="DetailTabHeaderLocation">Top</property>
+  <property name="MaximumCardRows">-1</property>
+  <property name="Columns" iskey="true" value="8">
+    <property name="Item1" isnull="true" iskey="true">
+      <property name="Name">colTrademark</property>
+      <property name="FieldName">Trademark</property>
+      <property name="ColumnEditName" />
+      <property name="SortIndex">-1</property>
+      <property name="VisibleIndex">0</property>
+      <property name="Visible">true</property>
+      <property name="Caption">Trademark</property>
+    </property>
+    <property name="Item2" isnull="true" iskey="true">
+      <property name="Name">colModel</property>
+      <property name="FieldName">Model</property>
+      <property name="ColumnEditName" />
+      <property name="SortIndex">-1</property>
+      <property name="VisibleIndex">1</property>
+      <property name="Visible">true</property>
+      <property name="Caption">Model</property>
+    </property>
+    <property name="Item3" isnull="true" iskey="true">
+      <property name="Name">colCategory</property>
+      <property name="FieldName">Category</property>
+      <property name="ColumnEditName">repositoryItemImageComboBox1</property>
+      <property name="SortIndex">-1</property>
+      <property name="VisibleIndex">2</property>
+      <property name="Visible">true</property>
+      <property name="Caption">Category</property>
+    </property>
+    <property name="Item4" isnull="true" iskey="true">
+      <property name="Name">colDescription</property>
+      <property name="FieldName">Description</property>
+      <property name="ColumnEditName">repositoryItemMemoExEdit1</property>
+      <property name="SortIndex">-1</property>
+      <property name="VisibleIndex">4</property>
+      <property name="Visible">true</property>
+      <property name="Caption">Description</property>
+    </property>
+    <property name="Item5" isnull="true" iskey="true">
+      <property name="Name">colPicture</property>
+      <property name="FieldName">Picture</property>
+      <property name="ColumnEditName">repositoryItemPictureEdit1</property>
+      <property name="SortIndex">-1</property>
+      <property name="VisibleIndex">3</property>
+      <property name="Visible">true</property>
+      <property name="Caption">Picture</property>
+    </property>
+    <property name="Item6" isnull="true" iskey="true">
+      <property name="Name">colPrice</property>
+      <property name="FieldName">Price</property>
+      <property name="ColumnEditName">repositoryItemSpinEdit1</property>
+      <property name="SortIndex">-1</property>
+      <property name="VisibleIndex">5</property>
+      <property name="DisplayFormat" isnull="true" iskey="true">
+        <property name="FormatString">$#,0.00</property>
+        <property name="FormatType">Numeric</property>
+      </property>
+      <property name="Visible">true</property>
+      <property name="Caption">Price</property>
+    </property>
+    <property name="Item7" isnull="true" iskey="true">
+      <property name="Name">colDate</property>
+      <property name="FieldName">Delivery Date</property>
+      <property name="ColumnEditName" />
+      <property name="SortIndex">-1</property>
+      <property name="VisibleIndex">6</property>
+      <property name="Visible">true</property>
+      <property name="Caption">Delivery Date</property>
+    </property>
+    <property name="Item8" isnull="true" iskey="true">
+      <property name="Name">colStock</property>
+      <property name="FieldName">Is In Stock</property>
+      <property name="ColumnEditName" />
+      <property name="SortIndex">-1</property>
+      <property name="VisibleIndex">7</property>
+      <property name="Visible">true</property>
+      <property name="Caption">Is In Stock</property>
+    </property>
+  </property>
+  <property name="ActiveFilterEnabled">true</property>
+  <property name="Name">cardView1</property>
+  <property name="CardScrollButtonBorderStyle">Default</property>
+  <property name="OptionsSelection" isnull="true" iskey="true">
+    <property name="MultiSelect">false</property>
+  </property>
+  <property name="ShowButtonMode">ShowForFocusedCell</property>
+  <property name="SynchronizeClones">true</property>
+  <property name="OptionsBehavior" isnull="true" iskey="true">
+    <property name="FieldAutoHeight">true</property>
+  </property>
+  <property name="CardInterval">10</property>
+</XtraSerializer>

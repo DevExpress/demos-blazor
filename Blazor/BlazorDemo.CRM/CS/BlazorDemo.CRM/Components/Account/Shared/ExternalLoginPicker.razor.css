@@ -1,0 +1,39 @@
+.external-logins {
+    display: flex;
+    gap: 0.5rem;
+}
+
+@media (max-width: 500px) {
+    .external-logins {
+        flex-direction: column;
+    }
+}
+
+.info-message {
+    padding: 0.625rem 1rem 0.625rem 1rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .info-message::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.15;
+        background: var(--dxds-primary-90);
+        z-index: -1;
+    }
+
+::deep a {
+    color: var(--dxds-color-content-primary-default-rest);
+    text-decoration: underline;
+}
+
+::deep .w-100 {
+    width: 100%;
+}

@@ -1,0 +1,28 @@
+﻿@using DevExpress.AIIntegration.Blazor.HtmlEditor
+
+<DemoPageSectionComponent Id="@Id">
+    @inject IHtmlEditorStringDataProvider HtmlEditorStringDataProvider
+    <DxHtmlEditor Markup="@markup" Height="500px">
+        <Extensions>
+            <SummarizeAIToolbarItem />
+            <ExpandAIToolbarItem />
+            <ProofreadAIToolbarItem/>
+            <ShortenAIToolbarItem />
+            <AskAssistantAIToolbarItem />
+            <ChangeStyleAIToolbarItem />
+            <ChangeToneAIToolbarItem />
+            <TranslateAIToolbarItem Languages="@("English, German, French, Chinese")" />
+        </Extensions>
+    </DxHtmlEditor>
+
+    @code {
+        /*BeginHide*/
+        [Parameter] public string Id { get; set; }
+        /*EndHide*/
+        string markup = "";
+
+        protected override void OnInitialized() {
+            markup = HtmlEditorStringDataProvider.GetData();
+        }
+    }
+</DemoPageSectionComponent>

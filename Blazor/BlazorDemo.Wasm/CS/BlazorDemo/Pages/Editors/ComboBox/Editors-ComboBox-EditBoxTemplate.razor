@@ -1,0 +1,55 @@
+﻿@inject DemoThemeService ThemeService
+
+<DemoPageSectionComponent Id="Editors-ComboBox-EditBoxTemplate" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <label for="cbTemplate" class="demo-text cw-480 mb-1">
+            Color
+        </label>
+        <DxComboBox Data="@Colors"
+                    @bind-Value="@CurrentColor"
+                    NullText="Select a color..."
+                    SearchMode="@ListSearchMode.AutoSearch"
+                    SearchFilterCondition="@ListSearchFilterCondition.StartsWith"
+                    ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                    CssClass="cw-480"
+                    SizeMode="Params.SizeMode"
+                    InputId="cbTemplate">
+            <EditBoxDisplayTemplate>
+                @GetEditBoxTemplateContent(context.DataItem)
+            </EditBoxDisplayTemplate>
+            <ItemDisplayTemplate>
+                @GetItemTemplateContent(context)
+            </ItemDisplayTemplate>
+        </DxComboBox>
+    </ChildContentWithParameters>
+    @code {
+        string CurrentColor { get; set; }
+        IEnumerable<string> Colors = new List<string>() { "Green", "Red", "Blue", "Yellow", "Orange", "Purple" };
+
+        RenderFragment GetEditBoxTemplateContent(string item) {
+            return @<div class="template-container">
+                       @GetTemplateIcon(item)
+                       <DxInputBox/>
+                   </div>;
+        }
+        RenderFragment GetItemTemplateContent(ComboBoxItemDisplayTemplateContext<string> context) {
+            return @<div class="template-container">
+                       @GetTemplateIcon(context.DataItem)
+                       @context.HighlightedDisplayText
+                   </div>;
+        }
+
+        RenderFragment GetTemplateIcon(string item) {
+            if(string.IsNullOrEmpty(item))
+                return @<text></text>;
+            return @<span class="@GetIconCssClass(item)"></span>;
+        }
+
+        string GetIconCssClass(string item) {
+            return $"template-icon {item.ToLower()}";
+        }
+        protected override void OnInitialized() {
+            CurrentColor = Colors.First();
+        }
+    }
+</DemoPageSectionComponent>

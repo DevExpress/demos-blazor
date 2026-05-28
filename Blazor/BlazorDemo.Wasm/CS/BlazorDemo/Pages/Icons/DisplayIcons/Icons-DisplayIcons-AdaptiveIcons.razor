@@ -1,0 +1,310 @@
+﻿<DemoPageSectionComponent Id="Icons-DisplayIcons-AdaptiveIcons" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <div class="ribbon-container">
+            <DxRibbon SizeMode="@Params.SizeMode" ItemClick="OnRibbonItemClick" ApplicationTabItemClick="OnApplicationTabItemClick">
+                <DxRibbonApplicationTab Text="File">
+                    <DxRibbonApplicationTabItem Text="New"
+                                                IconUrl="@Icon.DocumentBlank" />
+                    <DxRibbonApplicationTabItem Text="Open"
+                                                IconUrl="@Icon.FolderOpen" />
+                    <DxRibbonApplicationTabItem Text="Save as"
+                                                IconUrl="@Icon.Save">
+                        <DxRibbonApplicationTabItem Text="Plain Text" />
+                        <DxRibbonApplicationTabItem Text="Word Document" />
+                        <DxRibbonApplicationTabItem Text="PDF" />
+                    </DxRibbonApplicationTabItem>
+                    <DxRibbonApplicationTabItem Text="Share"
+                                                IconUrl="@Icon.Share" />
+                    <DxRibbonApplicationTabItem Text="Print"
+                                                IconUrl="@Icon.Printer" />
+                </DxRibbonApplicationTab>
+                <DxRibbonTab Text="Home">
+                    <DxRibbonGroup Text="Mail">
+                        <DxRibbonItem Text="New Mail"
+                                      IconUrl="@Icon.Mail"
+                                      SplitDropDownButton="true"
+                                      IsPrimary="true"
+                                      Tooltip="New Mail">
+                            <DxRibbonItem Text="New Mail"
+                                          IconUrl="@Icon.Mail"
+                                          Tooltip="New Mail"/>
+                            <DxRibbonItem Text="New Meeting"
+                                          IconUrl="@Icon.CalendarToday"
+                                          Tooltip="New Meeting"/>
+                        </DxRibbonItem>
+                        <DxRibbonItem Text="Delete"
+                                      IconUrl="@Icon.Delete"
+                                      Tooltip="Delete"/>
+                        <DxRibbonItem Text="Archive"
+                                      IconUrl="@Icon.Archive"
+                                      IconCssClass="icon-color-green"
+                                      Tooltip="Archive"/>
+                        <DxRibbonItem Text="Sweep"
+                                      IconUrl="@Icon.ClearHistory"
+                                      Tooltip="Sweep"/>
+                        <DxRibbonItem Text="Move to"
+                                      IconUrl="@Icon.FolderArrowRight"
+                                      IconCssClass="icon-color-blue"
+                                      Tooltip="Move to"/>
+                    </DxRibbonGroup>
+                    <DxRibbonGroup Text="Tags">
+                        <DxRibbonItem Text="Chat"
+                                      IconUrl="@Icon.ChatPerson"
+                                      IconCssClass="icon-color-green"
+                                      Tooltip="Chat">
+                            <DxRibbonItem Text="Chat with all participants"
+                                          IconUrl="@Icon.ChatPerson"
+                                          IconCssClass="icon-color-green"
+                                          Tooltip="Chat with all participants"/>
+                        </DxRibbonItem>
+                        <DxRibbonItem Text="Categorize"
+                                      IconUrl="@Icon.Tag"
+                                      Tooltip="Categorize">
+                            <DxRibbonItem Text="New category"
+                                          Tooltip="New category"/>
+                            <DxRibbonItem Text="Manage categories"
+                                          Tooltip="Manage categories"/>
+                        </DxRibbonItem>
+                        <DxRibbonItem Text="Flag/Unflag"
+                                      IconUrl="@Icon.Flag"
+                                      SplitDropDownButton="true"
+                                      Tooltip="Flag/Unflag">
+                            <DxRibbonItem Text="Today"
+                                          Tooltip="Today"/>
+                            <DxRibbonItem Text="Tomorrow"
+                                          Tooltip="Tomorrow"/>
+                            <DxRibbonItem Text="This week"
+                                          Tooltip="This week"/>
+                            <DxRibbonItem Text="Next week"
+                                          Tooltip="Next week"/>
+                            <DxRibbonItem Text="No date"
+                                          Tooltip="No date"/>
+                            <DxRibbonItem Text="Custom"
+                                          Tooltip="Custom"/>
+                        </DxRibbonItem>
+                        <DxRibbonItem Text="Snooze"
+                                      IconUrl="@Icon.Clock"
+                                      Tooltip="Snooze"/>
+                    </DxRibbonGroup>
+                    <DxRibbonGroup Text="Print">
+                        <DxRibbonItem Text="Print"
+                                      IconUrl="@Icon.Printer"
+                                      Tooltip="Print"/>
+                    </DxRibbonGroup>
+                </DxRibbonTab>
+                <DxRibbonTab Text="Edit">
+                    <DxRibbonGroup>
+                        <DxRibbonItem Text="Undo"
+                                      IconUrl="@Icon.ArrowUndo"
+                                      Tooltip="Undo" />
+                        <DxRibbonItem Text="Redo"
+                                      IconUrl="@Icon.ArrowRedo"
+                                      Tooltip="Redo" />
+                        <DxRibbonItem Text="Paste"
+                                      IconUrl="@Icon.Clipboard"
+                                      SplitDropDownButton="true"
+                                      Tooltip="Paste">
+                            <DxRibbonItem Text="Copy"
+                                          IconUrl="@Icon.Copy"
+                                          Tooltip="Copy" />
+                            <DxRibbonItem Text="Cut"
+                                          IconUrl="@Icon.Cut"
+                                          Tooltip="Cut" />
+                        </DxRibbonItem>
+                        <DxRibbonItem Text="Paint format"
+                                      IconUrl="@Icon.PaintBrush"
+                                      Tooltip="Paint format" />
+                    </DxRibbonGroup>
+                    <DxRibbonGroup>
+                        <DxRibbonComboBoxItem Data="Fonts"
+                                              @bind-Value="CurrentFont"
+                                              TextFieldName="@nameof(FontInfo.Name)"
+                                              Width="7.5rem" />
+                        <DxRibbonComboBoxItem Data="FontSizes"
+                                              @bind-Value="CurrentFontSize"
+                                              TextFieldName="@nameof(FontSizeInfo.Size)"
+                                              Width="4rem" />
+                    </DxRibbonGroup>
+                    <DxRibbonGroup>
+                        <DxRibbonToggleItem Text="Bold"
+                                            @bind-Checked="BoldActive"
+                                            IconUrl="@Icon.TextFontBold"
+                                            Tooltip="Bold" />
+                        <DxRibbonToggleItem Text="Italic"
+                                            @bind-Checked="ItalicActive"
+                                            IconUrl="@Icon.TextFontItalic"
+                                            Tooltip="Italic" />
+                        <DxRibbonToggleItem Text="Underline"
+                                            @bind-Checked="UnderlineActive"
+                                            IconUrl="@Icon.TextFontUnderline"
+                                            Tooltip="Underline" />
+                        <DxRibbonColorPaletteItem Text="Font Color"
+                                                  @bind-Value="color"
+                                                  Tooltip="Font Color">
+                            <IconTemplate>
+                                @if (Themes.ActiveTheme.IsFluent) {
+                                    <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill="@color" d="M4.5 12C3.67157 12 3 12.6716 3 13.5V16.5C3 17.3284 3.67157 18 4.5 18H15.5C16.3284 18 17 17.3284 17 16.5V13.5C17 12.6716 16.3284 12 15.5 12H4.5Z" />
+                                        <path d="M10.4642 2.3143C10.3883 2.12448 10.2045 2 10 2C9.79556 2 9.6117 2.12448 9.53577 2.3143L6.53577 9.8143C6.43322 10.0707 6.55792 10.3617 6.81432 10.4642C7.07071 10.5668 7.36169 10.4421 7.46425 10.1857L8.53707 7.50364H11.4629L12.5358 10.1857C12.6383 10.4421 12.9293 10.5668 13.1857 10.4642C13.4421 10.3617 13.5668 10.0707 13.4642 9.8143L10.4642 2.3143ZM10 3.84629L11.0629 6.50364H8.93707L10 3.84629Z" />
+                                    </svg>
+                                } else {
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16" width="16" height="16">
+                                        <path fill="currentColor" d="M2.66797 10.6667H4.65057L5.66797 8H10.3346L11.3521 10.6667H13.3346L9.02538 0H6.97725L2.66797 10.6667ZM6.0013 6.66667L8.0013 2L10.0013 6.66667H6.0013Z" />
+                                        <path fill="@color" d="M1 13C1 12.4477 1.52233 12 2.16667 12H13.8333C14.4777 12 15 12.4477 15 13V15C15 15.5523 14.4777 16 13.8333 16H2.16667C1.52233 16 1 15.5523 1 15V13Z" />
+                                    </svg>
+                                }
+                            </IconTemplate>
+                        </DxRibbonColorPaletteItem>
+
+                    </DxRibbonGroup>
+                    <DxRibbonGroup>
+                        <DxRibbonItem Text="Bullets"
+                                      IconUrl="@Icon.ListBullet"
+                                      SplitDropDownButton="true"
+                                      Tooltip="Bullets">
+                            <DxRibbonItem Text="Numbering"
+                                          Tooltip="Numbering" />
+                            <DxRibbonItem Text="Multilevel list"
+                                          Tooltip="Multilevel list" />
+                        </DxRibbonItem>
+                        <DxRibbonToggleGroup>
+                            <DxRibbonToggleItem Text="Align Left"
+                                                IconUrl="@Icon.TextAlignLeft"
+                                                Tooltip="Align Left">
+                            </DxRibbonToggleItem>
+                            <DxRibbonToggleItem Text="Align Center"
+                                                IconUrl="@Icon.TextAlignCenter"
+                                                Tooltip="Align Center">
+                            </DxRibbonToggleItem>
+                            <DxRibbonToggleItem Text="Align Right"
+                                                IconUrl="@Icon.TextAlignRight"
+                                                Tooltip="Align Right">
+                            </DxRibbonToggleItem>
+                        </DxRibbonToggleGroup>
+                    </DxRibbonGroup>
+                    <DxRibbonGroup>
+                        <DxRibbonComboBoxItem Data="FontStyles"
+                                              @bind-Value="FontStyle"
+                                              Width="7.5rem" />
+                    </DxRibbonGroup>
+                    <DxRibbonGroup>
+                        <DxRibbonItem Text="Search"
+                                      IconUrl="@Icon.Search"
+                                      SplitDropDownButton="true"
+                                      Tooltip="Search">
+                            <DxRibbonItem Text="Replace"
+                                          Tooltip="Replace" />
+                            <DxRibbonItem Text="Select"
+                                          Tooltip="Select" />
+                        </DxRibbonItem>
+                    </DxRibbonGroup>
+                    <DxRibbonGroup>
+                        <DxRibbonItem Text="Dictate"
+                                      IconUrl="@Icon.Microphone"
+                                      SplitDropDownButton="true"
+                                      Tooltip="Dictate">
+                            <DxRibbonItem Text="Transcribe"
+                                          Tooltip="Transcribe" />
+                        </DxRibbonItem>
+                        <DxRibbonItem Text="Settings"
+                                      Tooltip="Settings" />
+                    </DxRibbonGroup>
+                </DxRibbonTab>
+                <DxRibbonTab Text="Insert" Contextual="true">
+                    <DxRibbonGroup>
+                        <DxRibbonItem Text="Page Break"
+                                      IconUrl="@Icon.DocumentPageBreak"
+                                      Tooltip="Page Break" />
+                        <DxRibbonItem Text="Table"
+                                      IconUrl="@Icon.Table"
+                                      SplitDropDownButton="true"
+                                      Tooltip="Table">
+                            <DxRibbonItem Text="Insert Table..."
+                                          Tooltip="Insert Table..." />
+                            <DxRibbonItem Text="Draw Table"
+                                          Tooltip="Draw Table" />
+                        </DxRibbonItem>
+                        <DxRibbonItem Text="Picture"
+                                      IconUrl="@Icon.Image"
+                                      SplitDropDownButton="true"
+                                      Tooltip="Picture">
+                            <DxRibbonItem Text="This Device..."
+                                          Tooltip="This Device..." />
+                            <DxRibbonItem Text="Stock Images..."
+                                          Tooltip="Stock Images..." />
+                            <DxRibbonItem Text="Online Pictures..."
+                                          Tooltip="Online Pictures..." />
+                        </DxRibbonItem>
+                        <DxRibbonItem Text="Link"
+                                      IconUrl="@Icon.Link"
+                                      Tooltip="Link">
+                        </DxRibbonItem>
+                        <DxRibbonItem Text="Bookmark"
+                                      IconUrl="@Icon.Bookmark"
+                                      Tooltip="Bookmark">
+                        </DxRibbonItem>
+                        <DxRibbonItem Text="Page Numbers"
+                                      IconUrl="@Icon.DocumentPageNumber"
+                                      SplitDropDownButton="true"
+                                      Tooltip="Page Numbers">
+                            <DxRibbonItem Text="Format Page Numbers..."
+                                          Tooltip="Format Page Numbers..." />
+                            <DxRibbonItem Text="Remove Page Numbers..."
+                                          Tooltip="Remove Page Numbers..." />
+                        </DxRibbonItem>
+                        <DxRibbonItem Text="Symbol"
+                                      IconUrl="@Icon.PiEquation"
+                                      Tooltip="Symbol">
+                        </DxRibbonItem>
+                    </DxRibbonGroup>
+                </DxRibbonTab>
+            </DxRibbon>
+            <DxToastProvider Name="IconsUsageOverview"
+                             RenderStyle="ToastRenderStyle.Info"
+                             ThemeMode="ToastThemeMode.Pastel"
+                             HorizontalAlignment="HorizontalAlignment.Center"
+                             VerticalAlignment="VerticalEdge.Bottom"
+                             DisplayTime="TimeSpan.FromSeconds(2)"
+                             MaxToastCount="1" />
+        </div>
+    </ChildContentWithParameters>
+    @code {
+        [Inject] private IToastNotificationService ToastService { get; set; }
+        [Inject] private DemoThemeService Themes { get; set; }
+        string color = "Red";
+
+        private FontInfo CurrentFont { get; set; } = FontInfo.DefaultFonts[0];
+        private IEnumerable<FontInfo> Fonts => FontInfo.DefaultFonts;
+
+        private FontSizeInfo CurrentFontSize { get; set; } = FontSizeInfo.DefaultFontSizes[0];
+        private IEnumerable<FontSizeInfo> FontSizes => FontSizeInfo.DefaultFontSizes;
+
+        private string FontStyle { get; set; }
+        private string[] FontStyles { get; set; } = [
+        "Normal", "Header 1", "Header 2", "Title"
+        ];
+        private bool UnderlineActive { get; set; }
+        private bool BoldActive { get; set; }
+        private bool ItalicActive { get; set; }
+
+        void ShowToast(string name) {
+            ToastService.ShowToast(new ToastOptions {
+                ProviderName = "IconsUsageOverview",
+                Text = "Clicked: " + name,
+            });
+        }
+        void OnApplicationTabItemClick(RibbonApplicationTabItemClickEventArgs args) {
+            ShowToast(args.Item.Text);
+        }
+        void OnRibbonItemClick(RibbonItemClickEventArgs args) {
+            ShowToast(args.Item.Text);
+        }
+    }
+</DemoPageSectionComponent>
+
+@code {
+    public override Task SetParametersAsync(ParameterView parameters) {
+        FontStyle = FontStyles[0];
+        return base.SetParametersAsync(parameters);
+    }
+}

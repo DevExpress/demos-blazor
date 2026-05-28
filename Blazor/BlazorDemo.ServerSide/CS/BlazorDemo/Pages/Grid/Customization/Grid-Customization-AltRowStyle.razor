@@ -1,0 +1,62 @@
+﻿@page "/Grid/Customization/AltRowStyle"
+@layout DataProviderAccessArea<INwindDataProvider>
+
+<DemoPageSectionComponent Id="Grid-Customization-AltRowStyle" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <div class="grid-container">
+            <DxGrid @ref="Grid"
+                    Data="@Data"
+                    CustomizeElement="Grid_CustomizeElement"
+                    SizeMode="Params.SizeMode"
+                    TextWrapEnabled="false" 
+                    ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                    VirtualScrollingEnabled="true">
+                <Columns>
+                    <DxGridDataColumn FieldName="CompanyName" MinWidth="100" />
+                    <DxGridDataColumn FieldName="City" Width="10%" />
+                    <DxGridDataColumn FieldName="Region" Width="10%" />
+                    <DxGridDataColumn FieldName="Country" Name="Country" Width="10%" />
+                    <DxGridDataColumn FieldName="UnitPrice" DisplayFormat="c" Width="10%" />
+                    <DxGridDataColumn FieldName="Quantity" MinWidth="80" Width="10%" />
+                    <DxGridDataColumn FieldName="Total"
+                                      Name="Total"
+                                      UnboundType="GridUnboundColumnType.Decimal"
+                                      UnboundExpression="[UnitPrice] * [Quantity]"
+                                      DisplayFormat="c"
+                                      MinWidth="100"
+                                      Width="15%" />
+                </Columns>
+            </DxGrid>
+        </div>
+    </ChildContentWithParameters>
+
+    @code {
+        object Data { get; set; }
+        IGrid Grid { get; set; }
+
+        protected override async Task OnInitializedAsync() {
+            var invoices = await NwindDataService.GetInvoicesAsync();
+            var customers = await NwindDataService.GetCustomersAsync();
+            Data = invoices.OrderBy(i => i.OrderDate).Join(customers, i => i.CustomerId, c => c.CustomerId, (i, c) => {
+                return new {
+                    CompanyName = c.CompanyName,
+                    City = i.City,
+                    Region = i.Region,
+                    Country = i.Country,
+                    UnitPrice = i.UnitPrice,
+                    Quantity = i.Quantity
+                };
+            });
+        }
+        void Grid_CustomizeElement(GridCustomizeElementEventArgs e) {
+            if(e.ElementType == GridElementType.DataRow && e.VisibleIndex % 2 == 1) {
+                e.CssClass = "alt-item";
+            }
+            if(e.ElementType == GridElementType.HeaderCell) {
+                e.CssClass = "header-bold";
+            }
+        }
+    }
+</DemoPageSectionComponent>

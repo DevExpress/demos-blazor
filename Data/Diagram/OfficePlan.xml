@@ -1,0 +1,53 @@
+﻿<XtraSerializer version="17.1.0.0">
+  <Items>
+    <Item1 ItemKind="DiagramRoot" CanvasSizeMode="None" PageSize="1347.61877441406,960.618774414063" ShowGrid="false" ShowRulers="false" ShowPageBreaks="false" Theme="Linear" SelectedStencils="HomeObjects, BasicShapes">
+      <Children>
+        <Item1 Position="206,104" Size="302.104644775391,148.305923461914" CanEdit="false" Shape="HomeObjects.Table" ItemKind="DiagramShape" />
+        <Item2 Position="879.958984375,104" Size="302.104644775391,148.305923461914" CanEdit="false" Shape="HomeObjects.Table" ItemKind="DiagramShape" />
+        <Item3 Position="206,681.660705566406" Size="302.104644775391,148.305923461914" CanEdit="false" Shape="HomeObjects.Table" ItemKind="DiagramShape" />
+        <Item4 Position="898.268310546875,681.660705566406" Size="302.104644775391,148.305923461914" CanEdit="false" Shape="HomeObjects.Table" ItemKind="DiagramShape" />
+        <Item5 Position="498.678466796875,186.027145385742" Size="66.8292083740234,74.152961730957" CanEdit="false" Shape="HomeObjects.Nightstand" ItemKind="DiagramShape" />
+        <Item6 Position="821.535034179688,185.886352539063" Size="66.8292083740234,74.152961730957" CanEdit="false" Shape="HomeObjects.Nightstand" ItemKind="DiagramShape" />
+        <Item7 Position="499.70263671875,677.538452148438" Size="66.8292083740234,74.152961730957" CanEdit="false" Angle="180" Shape="HomeObjects.Nightstand" ItemKind="DiagramShape" />
+        <Item8 Position="841.30712890625,677.091796875" Size="66.8292083740234,74.152961730957" CanEdit="false" Angle="180" Shape="HomeObjects.Nightstand" ItemKind="DiagramShape" />
+        <Item9 Position="315.856231689453,259.629699707031" Size="82.3921737670898,64.0828094482422" CanEdit="false" Shape="HomeObjects.Chair" ItemKind="DiagramShape" />
+        <Item10 Position="989.815185546875,261.460601806641" Size="82.3921737670898,64.0828094482422" CanEdit="false" Shape="HomeObjects.Chair 1" ItemKind="DiagramShape" />
+        <Item11 Position="1008.12463378906,613.916076660156" Size="82.3921737670898,64.0828094482422" CanEdit="false" Angle="180" Shape="HomeObjects.Chair" ItemKind="DiagramShape" />
+        <Item12 Position="315.856231689453,613.916076660156" Size="82.3921737670898,64.0828094482422" CanEdit="false" Shape="HomeObjects.Chair 2" ItemKind="DiagramShape" />
+        <Item13 Position="298.920074462891,133.295013427734" Size="116.264518737793,23.8021850585938" CanEdit="false" Shape="HomeObjects.Monitor" ItemKind="DiagramShape" />
+        <Item14 Position="972.879028320313,135.125946044922" Size="116.264518737793,23.8021850585938" CanEdit="false" Shape="HomeObjects.Monitor" ItemKind="DiagramShape" />
+        <Item15 Position="991.1884765625,782.3623046875" Size="116.264518737793,23.8021850585938" CanEdit="false" Angle="-180" Shape="HomeObjects.Monitor 1" ItemKind="DiagramShape" />
+        <Item16 Position="392.755584716797,743.912536621094" Size="116.264518737793,23.8021850585938" CanEdit="false" Angle="-150" Shape="HomeObjects.Monitor" ItemKind="DiagramShape" />
+        <Item17 Position="231.633117675781,178.152969360352" Size="44.8579635620117,29.2949962615967" CanEdit="false" Angle="45" Shape="HomeObjects.Notebook" ItemKind="DiagramShape" />
+        <Item18 Position="303.955139160156,191.885009765625" Size="106.194358825684,46.6888999938965" CanEdit="false" Shape="HomeObjects.Keyboard" ItemKind="DiagramShape" />
+        <Item19 Position="436.698089599609,191.885009765625" Size="29.2949962615967,25.6331214904785" CanEdit="false" Shape="HomeObjects.Cup" ItemKind="DiagramShape" />
+        <Item20 Position="1114.31884765625,193.715942382813" Size="29.2949962615967,25.6331214904785" CanEdit="false" Shape="HomeObjects.Cup" ItemKind="DiagramShape" />
+        <Item21 Position="314.940765380859,699.970092773438" Size="84.2231140136719,53.0971794128418" CanEdit="false" Angle="-180" Shape="HomeObjects.Laptop" ItemKind="DiagramShape" />
+        <Item22 Position="247.322265625,727.434143066406" Size="29.2949962615967,25.6331214904785" CanEdit="false" Angle="180" Shape="HomeObjects.Cup" ItemKind="DiagramShape" />
+        <Item23 Position="977.914184570313,193.715942382813" Size="106.194358825684,46.6888999938965" CanEdit="false" Shape="HomeObjects.Keyboard" ItemKind="DiagramShape" />
+        <Item24 Position="996.223388671875,696.308166503906" Size="106.194358825684,46.6888999938965" CanEdit="false" Angle="-180" Shape="HomeObjects.Keyboard 1" ItemKind="DiagramShape" />
+        <Item25 Position="942.210815429688,710.955688476563" Size="29.2949962615967,25.6331214904785" CanEdit="false" Shape="HomeObjects.Cup 1" ItemKind="DiagramShape" />
+        <Item26 Position="160.2265625,378.640594482422" Size="201.403106689453,75.0684280395508" CanEdit="false" Shape="HomeObjects.Couch" ItemKind="DiagramShape" />
+        <Item27 Position="832.354614257813,402.442779541016" Size="107.109832763672,53.0971794128418" CanEdit="false" Shape="HomeObjects.Cupboard" ItemKind="DiagramShape" />
+        <Item28 Position="938.548950195313,402.442779541016" Size="107.109832763672,53.0971794128418" CanEdit="false" Shape="HomeObjects.Cupboard" ItemKind="DiagramShape" />
+        <Item29 Position="1041.08154296875,402.442779541016" Size="107.109832763672,53.0971794128418" CanEdit="false" Shape="HomeObjects.Cupboard" ItemKind="DiagramShape" />
+        <Item30 Position="1143.61376953125,402.442779541016" Size="107.109832763672,53.0971794128418" CanEdit="false" Shape="HomeObjects.Cupboard" ItemKind="DiagramShape" />
+        <Item31 Position="1076.3271484375,415.1748046875" Size="36.6187438964844,36.6187438964844" CanEdit="false" Shape="HomeObjects.Flowers 1" ItemKind="DiagramShape" />
+        <Item32 Position="379.023559570313,378.640594482422" Size="86.9695205688477,75.0684280395508" CanEdit="false" Shape="HomeObjects.Armchair" ItemKind="DiagramShape" />
+        <Item33 Position="478.809692382813,377.725128173828" Size="86.9695205688477,75.0684280395508" CanEdit="false" Shape="HomeObjects.Armchair" ItemKind="DiagramShape" />
+        <Item34 Position="1125.06103515625,723.780700683594" Size="44.8579635620117,29.2949962615967" CanEdit="false" Angle="-150" Shape="HomeObjects.Notebook 1" ItemKind="DiagramShape" />
+        <Item35 Position="243.660385131836,52" Size="36.6187438964844,36.6187438964844" CanEdit="false" Shape="HomeObjects.Flowers 1" ItemKind="DiagramShape" />
+        <Item36 Position="338.742950439453,52" Size="36.6187438964844,36.6187438964844" CanEdit="false" Shape="HomeObjects.Flowers 2" ItemKind="DiagramShape" />
+        <Item37 Position="429.374328613281,52" Size="36.6187438964844,36.6187438964844" CanEdit="false" Shape="HomeObjects.Flowers 3" ItemKind="DiagramShape" />
+        <Item38 Position="540,52" Size="36.6187438964844,36.6187438964844" CanEdit="false" Shape="HomeObjects.Flowers 1" ItemKind="DiagramShape" />
+        <Item39 Position="278,875" Size="36.6187438964844,36.6187438964844" CanEdit="false" Shape="HomeObjects.Flowers 4" ItemKind="DiagramShape" />
+        <Item40 Position="514.807861328125,875" Size="36.6187438964844,36.6187438964844" CanEdit="false" Shape="HomeObjects.Flowers 1" ItemKind="DiagramShape" />
+        <Item41 Position="871.517578125,875" Size="36.6187438964844,36.6187438964844" CanEdit="false" Shape="HomeObjects.Flowers 3" ItemKind="DiagramShape" />
+        <Item42 Position="1120.7421875,875" Size="36.6187438964844,36.6187438964844" CanEdit="false" Shape="HomeObjects.Flowers 1" ItemKind="DiagramShape" />
+        <Item43 Position="856.412353515625,52" Size="36.6187438964844,36.6187438964844" CanEdit="false" Shape="HomeObjects.Flowers 5" ItemKind="DiagramShape" />
+        <Item44 Position="1137.619140625,52" Size="36.6187438964844,36.6187438964844" CanEdit="false" Shape="HomeObjects.Flowers 1" ItemKind="DiagramShape" />
+        <Item45 Position="946.046752929688,188.223129272461" Size="19.7741241455078,24.1683712005615" CanEdit="false" Angle="45" Shape="HomeObjects.Notebook 2" ItemKind="DiagramShape" />
+      </Children>
+    </Item1>
+  </Items>
+</XtraSerializer>

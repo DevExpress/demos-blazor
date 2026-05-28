@@ -1,0 +1,77 @@
+﻿@page "/Grid/Grouping/GroupData"
+@layout DataProviderAccessArea<INwindDataProvider>
+
+<DemoPageSectionComponent Id="Grid-Grouping-GroupData" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <div class="grid-container">
+            <DxGrid @ref="Grid"
+                    Data="@Data"
+                    ShowGroupPanel="true"
+                    AutoExpandAllGroupRows="true"
+                    ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                    TextWrapEnabled="false"
+                    SizeMode="Params.SizeMode"
+                    VirtualScrollingEnabled="true">
+                <Columns>
+                    <DxGridDataColumn FieldName="ContactName" MinWidth="100" />
+                    <DxGridDataColumn FieldName="CompanyName" MinWidth="100" />
+                    <DxGridDataColumn FieldName="City" Width="10%" />
+                    <DxGridDataColumn FieldName="Region" Width="10%" />
+                    <DxGridDataColumn FieldName="Country" GroupIndex="0" Width="10%" />
+                </Columns>
+                <ToolbarTemplate>
+                    <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Contained">
+                        <Items>
+                            <DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
+                                <Template Context="toolbar_item_context">
+                                    <div class="d-flex flex-row align-items-center h-100">
+                                        <label class="me-2" for="groupByInput">Group by:</label>
+                                        <DxComboBox Data="@GroupInfo.Keys" Value="@CurrentGroupInfoKey"
+                                                    ValueChanged="@((string value) => ChangeGrouping(value))" CssClass="ow-180" InputId="groupByInput" />
+                                    </div>
+                                </Template>
+                            </DxToolbarItem>
+                            <DxToolbarItem Text="Collapse All Rows" Click="CollapseAllRows_Click" BeginGroup="true" />
+                            <DxToolbarItem Text="Expand All Rows" Click="ExpandAllRows_Click" BeginGroup="true" />
+                        </Items>
+                    </DxToolbar>
+                </ToolbarTemplate>
+            </DxGrid>
+        </div>
+
+        @code {
+            object Data { get; set; }
+            Dictionary<string, string[]> GroupInfo { get; } = new Dictionary<string, string[]> {
+                { "Country", new string[] { "Country" } },
+                { "Country, City", new string[] { "Country", "City" } },
+                { "Company Name", new string[] { "CompanyName" } }
+            };
+            string CurrentGroupInfoKey { get; set; } = "Country";
+            IGrid Grid { get; set; }
+
+            protected override async Task OnInitializedAsync() {
+                Data = await NwindDataService.GetCustomersAsync();
+            }
+            void ExpandAllRows_Click() {
+                 Grid.ExpandAllGroupRows();
+            }
+            void CollapseAllRows_Click() {
+                 Grid.CollapseAllGroupRows();
+            }
+            // This method demonstrates how to group Grid data in code.
+            // In this demo, this method is called when the 'Group by' option value changes.
+            protected void ChangeGrouping(string key) {
+                CurrentGroupInfoKey = key;
+                var currentGroupInfo = GroupInfo[key];
+
+                Grid.BeginUpdate();
+                Grid.ClearSort();
+                foreach(var columnName in currentGroupInfo)
+                    Grid.GroupBy(columnName);
+                Grid.EndUpdate();
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

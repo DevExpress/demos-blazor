@@ -1,0 +1,35 @@
+﻿@namespace BlazorDemo.CRM.Components.Scheduler
+@using BlazorDemo.CRM.Client.Services
+@using BlazorDemo.CRM.Client.Tools
+@using Microsoft.Extensions.AI
+
+<div class="chat-container">
+    <DxAIChat Initialized="OnChatInitialized"
+              IncludeFunctionCallInfo="true"
+              UseStreaming="true"
+              CssClass="chat"
+              ResponseContentFormat="ResponseContentFormat.Markdown"
+              ShowHeader="true"
+              ChatResponseProviderServiceKey="@ChatResponseProviderServiceKeys.Scheduler"
+              HeaderText="AI Scheduling Assistant">
+        <MessageContentTemplate>
+            <div class="chat-content">@MarkdownRenderer.ToSafeHtml(context.Content)</div>
+        </MessageContentTemplate>
+        <PromptSuggestions>
+            <DxAIChatPromptSuggestion SendOnClick="true"
+                                      Title="Check Availability"
+                                      Text="Check 9 AM slots this week"
+                                      PromptMessage="List my available slots at 9:00 AM for the remainder of this week."/>
+            <DxAIChatPromptSuggestion Title="Schedule an Appointment"
+                                      Text="Book a shareholder meeting this Friday."
+                                      PromptMessage="Schedule a 'Shareholder Meeting' for this Friday from 12:00 PM to 1:00 PM."/>
+        </PromptSuggestions>
+    </DxAIChat>
+</div>
+
+@code {
+    void OnChatInitialized(IAIChat chat) {
+        var prompt = AIChatPrompts.GetSchedulerChatPrompt(SchedulerTools.GetCurrentTime());
+        chat.LoadMessages([new(ChatRole.System, prompt)]);
+    }
+}

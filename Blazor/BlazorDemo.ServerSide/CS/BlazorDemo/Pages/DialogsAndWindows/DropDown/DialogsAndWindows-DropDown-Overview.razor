@@ -1,0 +1,33 @@
+﻿<DemoPageSectionComponent Id="DialogsAndWindows-DropDown-Overview" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <div id="dropdown-overview-target-container">
+            <DxButton
+                Click="() => IsOpen = !IsOpen"
+                RenderStyle="@ButtonRenderStyle.Secondary">SHOW A DROPDOWN</DxButton>
+        </div>
+
+        <DxDropDown
+            @bind-IsOpen="@IsOpen"
+            Id="dropDown-overview"
+            HeaderVisible="true"
+            HeaderText="Header"
+            BodyText="@Constants.Content"
+            PositionMode="DropDownPositionMode.Bottom"
+            Width="max(25vw, 250px)"
+            PositionTarget="#dropdown-overview-target-container"
+            RestrictionTarget="#Navigation-DropDown-Overview"
+            CloseMode="DropDownCloseMode.Close"
+            PreventCloseOnPositionTargetClick="true"
+            FooterVisible="true"
+            SizeMode="Params.SizeMode">
+            <FooterContentTemplate>
+                <DxButton CssClass="popup-button my-1 ms-2" RenderStyle="ButtonRenderStyle.Primary" Text="OK" Click="@context.CloseCallback" />
+            </FooterContentTemplate>
+        </DxDropDown>
+    </ChildContentWithParameters>
+
+    @code {
+        bool IsOpen { get; set; } = false;
+    }
+
+</DemoPageSectionComponent>

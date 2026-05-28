@@ -1,0 +1,305 @@
+﻿@page "/SalesAnalysis"
+@using BlazorDemo.CRM.Client.Services
+@using BlazorDemo.CRM.Models
+@using BlazorDemo.CRM.Services.DataProviders
+@using Microsoft.AspNetCore.Authorization
+@using System.Linq.Expressions
+@using System.Drawing
+
+@implements IDisposable
+
+@attribute [Authorize]
+
+@inject AnalyticDataProvider DataProvider
+@inject IToastNotificationService ToastService
+
+<DxLayoutBreakpoint DeviceSize="DeviceSize.Small | DeviceSize.XSmall" @bind-IsActive="@IsSmallScreen" />
+
+<div class="content-root">
+    <div class="card toolbar">
+        <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Plain" Title="Sales Analysis">
+            <Items>
+                <DxToolbarItem Text="Add Card" Click="OnAddCardClick" Alignment="ToolbarItemAlignment.Right" IconCssClass="add-icon icon medium-icon" />
+                <DxToolbarItem Alignment="ToolbarItemAlignment.Right" Click="@ExportData" Tooltip="Export" Enabled="@IsDataLoaded" IconCssClass="export-icon icon medium-icon" />
+                <DxToolbarItem Alignment="ToolbarItemAlignment.Right" Click="@LoadDataAsync" Tooltip="Reload Data" IconCssClass="refresh-icon icon medium-icon" />
+            </Items>
+        </DxToolbar>
+    </div>
+    <div class="sales-report">
+        <DxLoadingPanel Visible="@(!IsDataLoaded)"
+                        IsContentBlocked="true"
+                        IsContentVisible="false"
+                        IndicatorVisible="true"
+                        IndicatorAreaVisible="true"
+                        ZIndex="101"
+                        Text="Loading..."
+                        CssClass="sales-report-loading-panel">
+            @if(IsDataLoaded) {
+                <DxStackLayout Orientation="Orientation.Vertical" ItemSpacing="1rem">
+                    <Items>
+                        <DxStackLayoutItem CssClass="card" Length="auto">
+                            <Template>
+                                <DxRangeSelector Width="100%"
+                                                    Height="6.25rem"
+                                                    Data="@Sales"
+                                                    SelectedRangeStartValue="@SelectedRangeStart"
+                                                    SelectedRangeEndValue="@SelectedRangeEnd"
+                                                    ValueChanged="@OnValueChanged"
+                                                    ValueChangeMode="RangeSelectorValueChangeMode.OnHandleRelease">
+                                    <DxRangeSelectorChart>
+                                        @CreateChartAreaSeries(s => s.Total)
+                                    </DxRangeSelectorChart>
+
+                                    <DxRangeSelectorSliderMarker>
+                                        <DxTextFormatSettings Type="TextFormat.ShortDate" />
+                                    </DxRangeSelectorSliderMarker>
+
+                                    <DxRangeSelectorScale ValueType="ChartAxisDataType.DateTime" TickInterval="ChartAxisInterval.Month" MinorTickInterval="ChartAxisInterval.Day">
+                                        <DxRangeSelectorScaleMinorTick Visible="false" />
+                                        <DxRangeSelectorScaleMarker Visible="false" />
+                                        <DxRangeSelectorScaleLabel>
+                                            <DxTextFormatSettings LdmlString="MMM yyyy" />
+                                        </DxRangeSelectorScaleLabel>
+                                    </DxRangeSelectorScale>
+                                </DxRangeSelector>
+                            </Template>
+                        </DxStackLayoutItem>
+                        <DxStackLayoutItem CssClass="card" Length="auto">
+                            <Template>
+                                <DxGridLayout>
+                                    <Rows>
+                                        @if(IsSmallScreen) {
+                                            <DxGridLayoutRow Areas="item1" Height="auto" />
+                                            <DxGridLayoutRow Areas="item2" Height="auto" />
+                                            <DxGridLayoutRow Areas="item3" Height="1fr" />
+                                        } else {
+                                            <DxGridLayoutRow Areas="item1 item1" Height="auto" />
+                                            <DxGridLayoutRow Areas="item2 item3" Height="1fr" />
+                                        }
+                                    </Rows>
+                                    <Columns>
+                                        @if(IsSmallScreen) {
+                                            <DxGridLayoutColumn />
+                                        } else {
+                                            <DxGridLayoutColumn Width="auto" />
+                                            <DxGridLayoutColumn Width="1fr" />
+                                        }
+                                    </Columns>
+                                    <Items>
+                                        <DxGridLayoutItem Area="item1">
+                                            <Template>
+                                                <DxToolbar Title="Sales by Date Range">
+                                                    <DxToolbarItem Alignment="ToolbarItemAlignment.Right">
+                                                        <Template>
+                                                            <DxDropDownButton IconCssClass="icon more-icon medium-icon"
+                                                                                RenderStyle="ButtonRenderStyle.Link"
+                                                                                DropDownToggleVisible="false">
+                                                                <Items>
+                                                                    <DxDropDownButtonItem Text="Configure" />
+                                                                    <DxDropDownButtonItem Text="Remove" />
+                                                                </Items>
+                                                            </DxDropDownButton>
+                                                        </Template>
+                                                    </DxToolbarItem>
+                                                </DxToolbar>
+                                            </Template>
+                                        </DxGridLayoutItem>
+                                        <DxGridLayoutItem Area="item2">
+                                            <Template>
+                                                <DxPieChart Data="@SalesByCategory"
+                                                            CustomizeSeriesPoint="PreparePointColor"
+                                                            InnerDiameter="0.6"
+                                                            T="SaleByCategory">
+                                                    <DxPieChartSeries T="SaleByCategory"
+                                                                        TArgument="string"
+                                                                        TValue="double?"
+                                                                        ValueField="s => s.Value / TotalSales"
+                                                                        ArgumentField="s => s.Name"
+                                                                        SummaryMethod="Enumerable.Sum">
+                                                        <DxChartSeriesLabel Visible="true"
+                                                                            Position="RelativePosition.Outside"
+                                                                            ValueFormat="ChartElementFormat.Percent(0)">
+                                                            <DxChartSeriesLabelConnector Visible="true" />
+                                                        </DxChartSeriesLabel>
+                                                    </DxPieChartSeries>
+                                                    <DxChartLegend Visible="false" />
+                                                </DxPieChart>
+                                            </Template>
+                                        </DxGridLayoutItem>
+                                        <DxGridLayoutItem Area="item3">
+                                            <Template>
+                                                <DxChart T="SaleByCategory"
+                                                            Data="@SalesByCategory"
+                                                            CustomizeSeriesPoint="PreparePointColor"
+                                                            Rotated="true"
+                                                            Width="100%">
+                                                    <DxChartBarSeries T="SaleByCategory"
+                                                                        TArgument="string"
+                                                                        TValue="double?"
+                                                                        ArgumentField="s => s.Name"
+                                                                        ValueField="s => s.Value"
+                                                                        SummaryMethod="Enumerable.Sum" />
+                                                    <DxChartLegend Visible="false" />
+                                                    <DxChartAnimationSettings Enabled="true"/>
+                                                </DxChart>
+                                            </Template>
+                                        </DxGridLayoutItem>
+                                    </Items>
+                                </DxGridLayout>
+                            </Template>
+                        </DxStackLayoutItem>
+                        <DxStackLayoutItem CssClass="card" Length="auto">
+                            <Template>
+                                <DxStackLayout Orientation="Orientation.Vertical">
+                                    <Items>
+                                        <DxStackLayoutItem Length="auto">
+                                            <Template>
+                                                <DxToolbar Title="Sales Performance">
+                                                    <DxToolbarItem Text="@OrderDate" RenderStyleMode="ToolbarItemRenderStyleMode.Plain">
+                                                        <Items>
+                                                            @foreach(var orderDate in OrderDates) {
+                                                                <DxToolbarItem Text="@orderDate" Checked="@(OrderDate == orderDate)" Click="@(() => OnOrderDateChanged(orderDate))" />
+                                                            }
+                                                        </Items>
+                                                    </DxToolbarItem>
+                                                    <DxToolbarItem Alignment="ToolbarItemAlignment.Right">
+                                                        <Template>
+                                                            <DxDropDownButton IconCssClass="icon more-icon medium-icon"
+                                                                                RenderStyle="ButtonRenderStyle.Link"
+                                                                                DropDownToggleVisible="false">
+                                                                <Items>
+                                                                    <DxDropDownButtonItem Text="Configure" />
+                                                                    <DxDropDownButtonItem Text="Remove" />
+                                                                </Items>
+                                                            </DxDropDownButton>
+                                                        </Template>
+                                                    </DxToolbarItem>
+                                                </DxToolbar>
+                                            </Template>
+                                        </DxStackLayoutItem>
+                                        <DxStackLayoutItem>
+                                            <Template>
+                                                <DxChart T="Sale"
+                                                            Data="@SalesByOrderDateFiltered"
+                                                            Width="100%">
+                                                    @foreach(var category in CategoryToColorMap.Keys) {
+                                                        <DxChartLineSeries Name="@category"
+                                                                            T="Sale"
+                                                                            TArgument="DateTime?"
+                                                                            TValue="double?"
+                                                                            Color="@GetColorByCategory(category)"
+                                                                            ArgumentField="s => s.Date"
+                                                                            ValueField="s => s.Total"
+                                                                            SummaryMethod="Enumerable.Sum"
+                                                                            Filter='s => s.Category == category' />
+                                                    }
+                                                    <DxChartLegend Visible="false" />
+                                                    <DxChartTooltip Enabled="true">
+                                                        @context.Point.Render((seriesPoint) => @<div class="chart-tooltip">@seriesPoint.SeriesName</div>)
+                                                    </DxChartTooltip>
+                                                </DxChart>
+                                            </Template>
+                                        </DxStackLayoutItem>
+                                    </Items>
+                                </DxStackLayout>
+                            </Template>
+                        </DxStackLayoutItem>
+                    </Items>
+                </DxStackLayout>
+            } else {
+                <div class="placeholder"></div>
+            }
+        </DxLoadingPanel>
+    </div>
+</div>
+
+@code {
+    CancellationTokenSource disposalTokenSource = new CancellationTokenSource();
+
+    static readonly DateTime Min = new DateTime(2018, 1, 1);
+    static readonly DateTime Max = new DateTime(2022, 1, 1);
+    static readonly DateTime SelectedRangeStart =new DateTime(2020, 5, 8);
+    static readonly DateTime SelectedRangeEnd = new DateTime(2021, 6, 21);
+    string[] OrderDates = new string[] { "Day", "Month" };
+    Dictionary<string, string> CategoryToColorMap = new() {
+        { "Video Players", "#eb3573" },
+        { "Televisions", "#ffc720" },
+        { "Projectors", "#97c95c" },
+        { "Monitors", "#f5564a" },
+        { "Automation", "#1db2f5" }
+    };
+
+    bool IsSmallScreen { get; set; }
+    DateTime Start { get; set; } = SelectedRangeStart;
+    DateTime End { get; set; } = SelectedRangeEnd;
+    List<Sale>? Sales { get; set; }
+    List<Sale>? SalesByOrderDate { get; set; }
+    IEnumerable<Sale>? SalesByOrderDateFiltered { get; set; }
+    List<SaleByCategory>? SalesByCategory { get; set; }
+    double? TotalSales { get; set; }
+    string OrderDate { get; set; } = "Month";
+    bool IsDataLoaded { get; set; }
+
+    protected override async Task OnInitializedAsync() {
+        IsDataLoaded = false;
+        Sales = await DataProvider.GetSalesAsync(DateOnly.FromDateTime(Min), DateOnly.FromDateTime(Max), disposalTokenSource.Token);
+        await LoadDataAsync();
+        IsDataLoaded = true;
+        await base.OnInitializedAsync();
+    }
+
+    void OnAddCardClick() => ToastService.ShowToast(new ToastOptions { Title = "Notification", Text = "Adding a new card is currently unavailable." });
+
+    void ExportData() => ToastService.ShowToast(new ToastOptions { Title = "Notification", Text = "Export is currently unavailable." });
+
+    async Task LoadDataAsync() {
+        IsDataLoaded = false;
+        await LoadSalesByCategory();
+        await LoadSalesByOrderDate();
+        IsDataLoaded = true;
+    }
+
+    async Task LoadSalesByCategory() {
+        SalesByCategory = await DataProvider.GetSalesByCategoryAsync(DateOnly.FromDateTime(Start), DateOnly.FromDateTime(End), disposalTokenSource.Token);
+        TotalSales = SalesByCategory!.Sum(s => s.Value);
+    }
+
+    async Task LoadSalesByOrderDate() {
+        SalesByOrderDate = await DataProvider.GetSalesByOrderDateAsync(OrderDate.ToLowerInvariant(), disposalTokenSource.Token);
+        SalesByOrderDate?.Sort((s1, s2) => DateTime.Compare(s1.Date!.Value, s2.Date!.Value));
+        FilterSalesByOrderDate();
+    }
+
+    void FilterSalesByOrderDate() {
+        SalesByOrderDateFiltered = SalesByOrderDate?.Where(s => s.Date >= Start && s.Date <= End);
+    }
+
+    RenderFragment CreateChartAreaSeries(Expression<Func<Sale, double?>> valueField) =>
+        @<DxChartAreaSeries ArgumentField="@(s => s.Date)" ValueField="@(valueField)"/>;
+
+    async Task OnValueChanged(RangeSelectorValueChangedEventArgs info) {
+        Start = (DateTime)info.CurrentRange[0];
+        End = (DateTime)info.CurrentRange[1];
+        await LoadSalesByCategory();
+        FilterSalesByOrderDate();
+    }
+
+    void PreparePointColor(ChartSeriesPointCustomizationSettings pointSettings) =>
+        pointSettings.PointAppearance.Color = GetColorByCategory((string)pointSettings.Point.Argument);
+
+    Color GetColorByCategory(string category) {
+        if(CategoryToColorMap.TryGetValue(category, out var color))
+            return ColorTranslator.FromHtml(color);
+        throw new Exception($"Unexpected value: {category}.");
+    }
+
+    async Task OnOrderDateChanged(string orderDate) {
+        OrderDate = orderDate;
+        await LoadSalesByOrderDate();
+    }
+
+    void IDisposable.Dispose() {
+        disposalTokenSource.Cancel();
+        disposalTokenSource.Dispose();
+    }
+}

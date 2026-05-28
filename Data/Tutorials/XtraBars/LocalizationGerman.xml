@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo>                                   
+<controls>
+<controlentry>
+		<control>
+			<name>checkBox1</name>
+			<windowcaption>German / English language</windowcaption>
+			<description>If checked, the XtraBars' UI is localized into German. Otherwise, the default language is used.</description>
+			<memberlist>BarLocalizer</memberlist>
+			<dtimage></dtimage>
+		</control>
+</controlentry>
+</controls>
+</totalinfo>                     

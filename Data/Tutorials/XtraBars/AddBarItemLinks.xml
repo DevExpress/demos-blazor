@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo>                                   
+<controls>
+<controlentry>
+		<control>
+			<name>button1</name>
+			<windowcaption>Add New ItemLink</windowcaption>
+			<description>Creates a new BarButtonItem with the specified settings (id, caption, etc.) and adds it to the bar manager's Items collection. The link that corresponds to the newly created item is displayed within the toolbar bar.</description>
+			<memberlist>Items, GetNewItemId</memberlist>
+			<dtimage></dtimage>
+		</control>
+</controlentry>
+<controlentry>
+		<control>
+			<name>button2</name>
+			<windowcaption>Delete Last Item</windowcaption>
+			<description>Deletes the last item within the bar manager's Items collection.</description>
+			<memberlist>BarManager.Items</memberlist>
+			<dtimage></dtimage>
+		</control>
+</controlentry>
+<controlentry>
+		<control>
+			<name>button3</name>
+			<windowcaption>Delete Last Link</windowcaption>
+			<description>Deletes the last item link that is displayed within the toolbar.</description>
+			<memberlist>Bar.ItemLinks</memberlist>
+			<dtimage></dtimage>
+		</control>
+</controlentry>
+</controls>
+</totalinfo>                     

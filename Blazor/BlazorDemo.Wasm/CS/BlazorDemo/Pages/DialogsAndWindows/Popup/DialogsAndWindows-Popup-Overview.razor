@@ -1,0 +1,19 @@
+﻿<DemoPageSectionComponent Id="DialogsAndWindows-Popup-Overview" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <div class="d-flex justify-content-center p-3">
+            <DxButton RenderStyle="ButtonRenderStyle.Secondary" Click="() => PopupVisible = true">CLICK TO SHOW A POP-UP WINDOW</DxButton>
+        </div>
+
+        <DxPopup
+            HeaderText="Popup"
+            @bind-Visible="@PopupVisible"
+            BodyText="@Constants.Text"
+            SizeMode="Params.SizeMode">
+        </DxPopup>
+    </ChildContentWithParameters>
+
+    @code {
+        bool PopupVisible { get; set; } = false;
+    }
+
+</DemoPageSectionComponent>

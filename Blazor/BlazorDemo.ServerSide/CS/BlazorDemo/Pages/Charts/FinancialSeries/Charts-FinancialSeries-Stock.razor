@@ -1,0 +1,60 @@
+﻿@page "/ChartStock"
+
+<DemoPageSectionComponent Id="Charts-FinancialSeries-Stock">
+    <DemoChildContent>
+        @inject IFinancialSeriesDataProvider FinancialSeriesDataProvider
+
+        <DxChart @ref="@chart"
+                 Data="@stockData"
+                 Width="100%">
+
+            <DxChartLegend Position="RelativePosition.Outside" />
+
+            <DxChartStockSeries OpenField="(StockDataPoint sdp) => sdp.Open"
+                                HighField="sdp => sdp.High"
+                                LowField="sdp => sdp.Low"
+                                CloseField="sdp => sdp.Close"
+                                ArgumentField="@(sdp => new DateTime(
+                                                sdp.DateTimeStamp.Year,
+                                                sdp.DateTimeStamp.Month,
+                                                sdp.DateTimeStamp.Day,
+                                                sdp.DateTimeStamp.Hour,
+                                                sdp.DateTimeStamp.Minute,
+                                                0) )"
+                                Name="Eco Supreme" />
+
+            <DxChartArgumentAxis WorkdaysOnly="showWorkdays" TickInterval="ChartAxisInterval.Days(1)" />
+            <DxChartTooltip Enabled="true">
+                @context.GetFinancialPoint().Render((financialPoint) =>
+                    @<div class="m-75">
+                        <div>Open: @($"{financialPoint.OpenValue: 0.0000}")</div>
+                        <div>Close: @($"{financialPoint.CloseValue: 0.0000}")</div>
+                        <div>High: @($"{financialPoint.HighValue: 0.0000}")</div>
+                        <div>Low: @($"{financialPoint.LowValue: 0.0000}")</div>
+                    </div>
+                )
+            </DxChartTooltip>
+
+        </DxChart>
+    </DemoChildContent>
+
+    <OptionsContent>
+        <OptionChartExportComponent ExportMethod="@ExportChart" />
+        <OptionCheckBox T="bool"
+                        @bind-Checked="showWorkdays"
+                        Label="Show Workdays Only" />
+    </OptionsContent>
+
+    @code {
+        IEnumerable<StockDataPoint> stockData;
+        DxChartBase chart;
+        bool showWorkdays = true;
+
+        async void ExportChart(ChartExportFormat format) {
+            await chart?.ExportAsync("StockChart", format);
+        }
+        protected override async Task OnInitializedAsync() {
+            stockData = await FinancialSeriesDataProvider.GenerateByDays();
+        }
+    }
+</DemoPageSectionComponent>

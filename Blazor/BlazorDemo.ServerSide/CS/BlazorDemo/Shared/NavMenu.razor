@@ -1,0 +1,327 @@
+﻿@using System.ComponentModel
+@using System.Runtime.CompilerServices
+
+@inject DemoConfiguration Configuration
+@inject NavigationManager NavigationManager
+
+@foreach(var group in VisibleGroups) {
+    if(!Configuration.IsSingleProduct) {
+        <div class="demo-group">
+            <svg class="demo-group-icon dxbl-image">
+                <use class="demo-group-icon-classic" href="@GetGroupIconUrl(group)"></use>
+                <use class="demo-group-icon-fluent" href="@GetGroupIconUrl(group, true)"></use>
+            </svg>
+            <h5 class="demo-group-title">
+                @if(SearchResult != null) {
+                    @(new MarkupString(SearchResult.GetHighlightedMarkup(group.Title)))
+                } else {
+                    @group.Title
+                }
+            </h5>
+        </div>
+    }
+
+    <DxTreeView @ref="@TreeViewRef"
+                Data="@TreeViewItems[group]"
+                CssClass="sidebar-tree"
+                UrlMatchMode="NavigationUrlMatchMode.Exact"
+                NodeExpandCollapseAction="TreeViewNodeExpandCollapseAction.NodeClick"
+                AllowSelectNodes="true"
+                TextWrapEnabled="true"
+                aria-label="@GetTreeViewAriaLabel(group)">
+        <DataMappings>
+            <DxTreeViewDataMapping  Children="Children"
+                                    Text="Text"
+                                    CssClass="CssClass"
+                                    NavigateUrl="NavigateUrl"
+                                    BadgeText="BadgeText"
+                                    Expanded="Expanded"
+                                    AllowSelection="AllowSelection"
+                                    Attributes="AdditionalAttributes" />
+        </DataMappings>
+        <NodeTextTemplate>
+            @if(SearchResult != null) {
+                var dataItem = (TreeViewDataItem)context.DataItem;
+                var title = dataItem.AdditionalAttributes["title"];
+
+                <span title="@title">@(new MarkupString(SearchResult.GetHighlightedMarkup(context.Text)))</span>
+            } else {
+                @context.Text
+            }
+        </NodeTextTemplate>
+    </DxTreeView>
+}
+
+@if(VisibleGroups.Count == 0 && SearchResult != null) {
+    <div class="search-no-results">No results found for <b>@SearchResult.RequestString</b>.</div>
+}
+
+@code {
+    const string ScrollToActiveNodeAttributeName = "data-required-visible-element-id";
+
+    string _activePage = null;
+    List<DemoItem> _expandedDemoItems;
+    DemoSearchResult _searchResult;
+
+    List<DxTreeView> TreeViews { get; } = new();
+    DxTreeView TreeViewRef { set => TreeViews.Add(value); }
+
+    string ActivePage => _activePage ??= NavigationManager.GetCurrentPageName().Split('?')[0];
+
+    List<DemoItem> ExpandedDemoItems => _expandedDemoItems ??= CalcExpandedDemoItems();
+
+    List<DemoGroup> VisibleGroups { get; } = new();
+    Dictionary<DemoGroup, List<TreeViewDataItem>> TreeViewItems { get; } = new();
+
+    [Parameter]
+    public DemoSearchResult SearchResult {
+        get { return _searchResult; }
+        set {
+            if(_searchResult != value) {
+                _searchResult = value;
+                ReloadData();
+            }
+        }
+    }
+
+    protected override void OnInitialized() {
+        NavigationManager.LocationChanged += OnLocationChanged;
+        base.OnInitialized();
+
+        ReloadData();
+    }
+
+    protected override void OnAfterRender(bool firstRender) {
+        UpdateSelection();
+        base.OnAfterRender(firstRender);
+    }
+
+    protected override void OnParametersSet() {
+        UpdateSelection();
+        base.OnParametersSet();
+    }
+
+    public void Dispose() {
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+
+    void OnLocationChanged(object sender, LocationChangedEventArgs args) {
+        _activePage = null;
+        _expandedDemoItems = null;
+
+        UpdateTreeViewItemsState();
+        UpdateSelection();
+
+        InvokeAsync(StateHasChanged);
+    }
+
+    void UpdateSelection() {
+        foreach(var treeView in TreeViews) {
+            treeView.ClearSelection();
+            treeView.SelectNode(n => IsSelectedNode(n, ActivePage));
+        }
+    }
+
+    bool IsSelectedNode(ITreeViewNodeInfo node, string currentUri) {
+        return IsSelectedNode(node.NavigateUrl, currentUri);
+    }
+    bool IsSelectedNode(string navigateUrl, string currentUrl) {
+        if(string.IsNullOrEmpty(navigateUrl)) return false;
+
+        return currentUrl.EndsWith($"/{navigateUrl}", StringComparison.OrdinalIgnoreCase) ||
+               (currentUrl == NavigationManager.BaseUri && navigateUrl == "./") ||
+               currentUrl.Equals(navigateUrl, StringComparison.OrdinalIgnoreCase) ||
+               currentUrl.EndsWith(navigateUrl.Split('#')[0], StringComparison.OrdinalIgnoreCase);
+    }
+
+
+    bool IsVisibleItem(DemoItemBase item) => SearchResult == null || SearchResult.ContainsInHierarchy(item);
+
+    void ReloadData() {
+        VisibleGroups.Clear();
+        TreeViewItems.Clear();
+        _expandedDemoItems = null;
+
+        VisibleGroups.AddRange(Configuration.Groups.Where(IsVisibleItem));
+
+        foreach(var group in VisibleGroups) {
+            var items = new List<TreeViewDataItem>();
+            FillDataItems(items, group);
+
+            TreeViewItems[group] = items;
+        }
+    }
+
+    void FillDataItems(List<TreeViewDataItem> items, DemoItemBase parentDemoItem) {
+        foreach(var childDemoItem in parentDemoItem.GetNavTreeChildren(Configuration.IsSiteMode).Where(i => IsVisibleItem(i))) {
+            var childItem = CreateTreeDataItem(childDemoItem);
+            items.Add(childItem);
+
+            FillDataItems(childItem.Children, childDemoItem);
+        }
+    }
+
+    TreeViewDataItem CreateTreeDataItem(DemoItem demoItem) {
+        var navigateUrl = GetItemNavigateUrl(demoItem);
+
+        var result = new TreeViewDataItem {
+            Text = demoItem.Title,
+            CssClass = GetItemCssClass(demoItem),
+            BadgeText = GetItemBadgeText(demoItem),
+            NavigateUrl = navigateUrl,
+            AllowSelection = !string.IsNullOrEmpty(navigateUrl),
+            Expanded = GetItemExpanded(demoItem),
+            DemoItem = demoItem,
+            AdditionalAttributes = new Dictionary<string, object> {
+                { "aria-label", demoItem.Title },
+                { "title", GetItemTooltip(demoItem) },
+                { ScrollToActiveNodeAttributeName, GetVisibleElementOid(demoItem) }
+            }
+        };
+
+        return result;
+    }
+
+    string GetItemNavigateUrl(DemoItem item) {
+        if(SearchResult != null && item is DemoPage pageItem && pageItem.PageSections.Length > 0 && !pageItem.PageSections.Any(si => IsVisibleItem(si)))
+            item = pageItem.PageSections[0];
+        return item.GetNavTreeUrl();
+    }
+    bool GetItemExpanded(DemoItem item) {
+        if(SearchResult != null || Configuration.IsSingleProduct)
+            return true;
+        return ExpandedDemoItems.Contains(item);
+    }
+    string GetItemTooltip(DemoItem item) {
+        if(SearchResult != null) {
+            var sources = SearchResult.GetRankSource(item);
+            if(sources != TextRankSource.None && !sources.Value.HasFlag(TextRankSource.Title))
+                return $"Found by: { string.Join(", ", GetSourcesTooltip(sources.Value)) }";
+        }
+        return null;
+    }
+    string GetVisibleElementOid(DemoItem item) {
+        if(string.IsNullOrWhiteSpace(ActivePage))
+            return null;
+        if(item.GetNavTreeUrl() == ActivePage)
+            return ActivePage;
+        var parentPage = item.ParentPage;
+        if(parentPage == null)
+            return null;
+        var parentPageUrl = parentPage.GetUrl();
+        if(parentPageUrl != ActivePage)
+            return null;
+        var firstVisibleSection = parentPage.PageSections.Where(IsVisibleItem).FirstOrDefault();
+        return item == firstVisibleSection? ActivePage : null;
+    }
+
+
+    void UpdateTreeViewItemsState() {
+        foreach(var items in TreeViewItems.Values)
+            UpdateTreeViewItemsState(items);
+    }
+    void UpdateTreeViewItemsState(List<TreeViewDataItem> items) {
+        foreach(var item in items) {
+            item.Expanded = GetItemExpanded(item.DemoItem);
+
+            var newVisibleElementOid = GetVisibleElementOid(item.DemoItem);
+            if((string)item.AdditionalAttributes[ScrollToActiveNodeAttributeName] != newVisibleElementOid) {
+                var newAttributes = new Dictionary<string, object>(item.AdditionalAttributes);
+                newAttributes[ScrollToActiveNodeAttributeName] = newVisibleElementOid;
+
+                item.AdditionalAttributes = newAttributes;
+            }
+
+            UpdateTreeViewItemsState(item.Children);
+        }
+    }
+
+    List<DemoItem> CalcExpandedDemoItems() {
+        var result = new List<DemoItem>();
+        var selectedItem = !string.IsNullOrEmpty(ActivePage) ? Configuration.FindDemoItemRecursively(i => IsSelectedNode(i.GetUrl(), ActivePage)) : null;
+        while(selectedItem != null) {
+            result.Add(selectedItem);
+            selectedItem = selectedItem.ParentPage;
+        }
+        return result;
+    }
+
+    string GetTreeViewAriaLabel(DemoGroup group) {
+        return !Configuration.IsSingleProduct && !string.IsNullOrEmpty(group.NavigationAriaLabel) ? group.NavigationAriaLabel : null;
+    }
+
+    static string GetGroupIconUrl(DemoGroup group, bool isFluent = false) {
+        if(string.IsNullOrEmpty(group.Icon))
+            return string.Empty;
+        var fluentPostfix = isFluent ? "-fluent" : string.Empty;
+        return StaticAssetUtils.GetImagePath($"icons/{group.Icon}{fluentPostfix}.svg");
+    }
+
+    static string GetItemCssClass(DemoItem item) {
+        return item.GetStatus() switch {
+            DemoItemStatus.Preview => "item-ctp",
+            DemoItemStatus.MaintenanceMode => "item-maintenance",
+            DemoItemStatus.New => "item-new",
+            DemoItemStatus.Updated => "item-upd",
+            DemoItemStatus.AI => "item-ai",
+            DemoItemStatus.Empty => string.Empty,
+            _ => throw new NotImplementedException()
+        };
+    }
+    static string GetItemBadgeText(DemoItem item) {
+        return item.GetStatus() switch {
+            DemoItemStatus.Preview => "CTP",
+            DemoItemStatus.MaintenanceMode => "Maintenance",
+            DemoItemStatus.New => "New",
+            DemoItemStatus.Updated => " ",
+            DemoItemStatus.AI => "AI",
+            DemoItemStatus.Empty => string.Empty,
+            _ => throw new NotImplementedException()
+        };
+    }
+    static IEnumerable<string> GetSourcesTooltip(TextRankSource sources) {
+        if(sources.HasFlag(TextRankSource.Url))
+            yield return "url";
+        if(sources.HasFlag(TextRankSource.Header))
+            yield return "header";
+        if(sources.HasFlag(TextRankSource.Keywords))
+            yield return "keywords";
+        if(sources.HasFlag(TextRankSource.Section))
+            yield return "sections";
+        if(sources.HasFlag(TextRankSource.ParentTitle))
+            yield return "parent title";
+    }
+
+    public class TreeViewDataItem : INotifyPropertyChanged {
+        public string Text { get; init; }
+        public string CssClass { get; init; }
+        public string NavigateUrl { get; init; }
+        public bool AllowSelection { get; init; }
+        public string BadgeText { get; init; }
+        public DemoItem DemoItem { get; init; }
+
+        public List<TreeViewDataItem> Children { get; } = new();
+
+        // mutable
+        bool _expanded;
+        Dictionary<string, object> _additionalAttributes = new();
+
+        public bool Expanded {
+            get => _expanded;
+            set => SetPropertyValue(ref _expanded, value);
+        }
+        public Dictionary<string, object> AdditionalAttributes {
+            get => _additionalAttributes;
+            set => SetPropertyValue(ref _additionalAttributes, value);
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        void SetPropertyValue<T>(ref T property, T value, [CallerMemberName] string propertyName = "") {
+            if(EqualityComparer<T>.Default.Equals(property, value))
+                return;
+            property = value;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+}

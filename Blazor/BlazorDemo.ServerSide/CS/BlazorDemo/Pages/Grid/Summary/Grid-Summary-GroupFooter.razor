@@ -1,0 +1,86 @@
+﻿@page "/Grid/Summary/GroupFooter"
+@layout DataProviderAccessArea<INwindDataProvider>
+
+<DemoPageSectionComponent Id="Grid-Summary-GroupFooter" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <div class="grid-container">
+            <DxGrid @ref="Grid"
+                    Data="@Data"
+                    ShowGroupPanel="true"
+                    GroupFooterDisplayMode="@CurrentDisplayMode"
+                    SizeMode="Params.SizeMode"
+                    ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                    TextWrapEnabled="false"
+                    VirtualScrollingEnabled="true">
+                <Columns>
+                    <DxGridDataColumn FieldName="OrderDate" GroupIndex="0" MinWidth="70" Width="10%" />
+                    <DxGridDataColumn FieldName="CompanyName" MinWidth="100" />
+                    <DxGridDataColumn FieldName="Country" Width="10%" />
+                    <DxGridDataColumn FieldName="UnitPrice" DisplayFormat="c" Width="10%" />
+                    <DxGridDataColumn FieldName="Quantity" Width="10%" />
+                    <DxGridDataColumn FieldName="Total"
+                                      UnboundType="GridUnboundColumnType.Decimal"
+                                      UnboundExpression="[UnitPrice] * [Quantity]"
+                                      DisplayFormat="c"
+                                      MinWidth="100"
+                                      Width="15%" />
+                </Columns>
+                <GroupSummary>
+                    <DxGridSummaryItem SummaryType="GridSummaryItemType.Count" FieldName="CompanyName" FooterColumnName="CompanyName" />
+                    <DxGridSummaryItem SummaryType="GridSummaryItemType.Sum" FieldName="Total" FooterColumnName="Total" />
+                </GroupSummary>
+                 <ToolbarTemplate>
+                    <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Contained" SizeMode="Params.SizeMode">
+                        <Items>
+                            <DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
+                                <Template Context="toolbar_item_context">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <label class="me-2" for="groupFooterDisplayModeInput">Group Footer Display Mode:</label>
+                                        <DxComboBox Data="@DisplayModes.Keys" Value="CurrentDisplayModeDisplayText" ValueChanged="@((string value) => ChangeDisplayMode(value))" InputId="groupFooterDisplayModeInput" />
+                                    </div>
+                                </Template>
+                            </DxToolbarItem>
+                        </Items>
+                    </DxToolbar>
+                </ToolbarTemplate>
+            </DxGrid>
+        </div>
+    </ChildContentWithParameters>
+    @code {
+        object Data { get; set; }
+        IGrid Grid { get; set; }
+
+        GridGroupFooterDisplayMode CurrentDisplayMode { get; set; } = GridGroupFooterDisplayMode.Always;
+        string CurrentDisplayModeDisplayText { get; set; } = "Always";
+
+        Dictionary<string, GridGroupFooterDisplayMode> DisplayModes { get; } = new Dictionary<string, GridGroupFooterDisplayMode>{
+            { "Auto", GridGroupFooterDisplayMode.Auto },
+            { "If Expanded", GridGroupFooterDisplayMode.IfExpanded },
+            { "Always", GridGroupFooterDisplayMode.Always }
+        };
+
+        void ChangeDisplayMode(string key)
+        {
+            CurrentDisplayModeDisplayText = key;
+            CurrentDisplayMode = DisplayModes[key];
+        }
+
+        protected override async Task OnInitializedAsync() {
+            var invoices = await NwindDataService.GetInvoicesAsync();
+            var customers = await NwindDataService.GetCustomersAsync();
+            Data = invoices.OrderBy(i => i.OrderDate).Join(customers, i => i.CustomerId, c => c.CustomerId, (i, c) => {
+                return new {
+                    OrderDate = i.OrderDate,
+                    CompanyName = c.CompanyName,
+                    City = i.City,
+                    Region = i.Region,
+                    Country = i.Country,
+                    UnitPrice = i.UnitPrice,
+                    Quantity = i.Quantity
+                };
+            });
+        }
+    }
+</DemoPageSectionComponent>

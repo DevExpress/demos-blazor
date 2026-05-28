@@ -1,0 +1,38 @@
+﻿@inherits LayoutComponentBase
+
+@inject NavigationManager NavigationManager
+
+@if (HttpContext is null) {
+    <p>Loading...</p>
+} else {
+    <DxStackLayout Orientation="Orientation.Vertical" CssClass="w-100">
+        <Items>
+            <DxStackLayoutItem Length="auto">
+                <Template>
+                    <div class="demo-title">
+                        <div class="demo-title-text">Blazor CRM Demo</div>
+                    </div>
+                </Template>
+            </DxStackLayoutItem>
+            <DxStackLayoutItem Length="1fr">
+                <Template>
+                    @Body
+                </Template>
+            </DxStackLayoutItem>
+        </Items>
+    </DxStackLayout>
+}
+
+@code {
+    [CascadingParameter]
+    private HttpContext? HttpContext { get; set; }
+
+    protected override void OnParametersSet() {
+        if (HttpContext is null) {
+            // If this code runs, we're currently rendering in interactive mode, so there is no HttpContext.
+            // The identity pages need to set cookies, so they require an HttpContext. To achieve this we
+            // must transition back from interactive mode to a server-rendered page.
+            NavigationManager.Refresh(forceReload: true);
+        }
+    }
+}

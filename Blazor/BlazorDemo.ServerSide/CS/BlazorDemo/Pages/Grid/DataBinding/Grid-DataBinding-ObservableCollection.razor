@@ -1,0 +1,70 @@
+﻿@page "/Grid/DataBinding/ObservableCollection"
+
+<DemoPageSectionComponent Id="Grid-DataBinding-ObservableCollection" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @using System.Collections.ObjectModel
+        @using BlazorDemo.Data.StockQuotes
+        @using System.ComponentModel
+        @inject IStockQuoteService StockQuoteService
+        @implements IDisposable
+
+        <div class="grid-container">
+            <DxGrid Data="GridData"
+                    CustomizeElement="Grid_CustomizeElement"
+                    SizeMode="Params.SizeMode"
+                    ColumnResizeMode="GridColumnResizeMode.NextColumn" TextWrapEnabled="false">
+                <Columns>
+                    <DxGridDataColumn FieldName="Ticker"/>
+                    <DxGridDataColumn FieldName="LastPrice" DisplayFormat="N2"/>
+                    <DxGridDataColumn FieldName="Change" DisplayFormat="N2"/>
+                    <DxGridDataColumn FieldName="PercentageChange" Caption="% Change" DisplayFormat="P2" SortIndex="0" SortOrder="GridColumnSortOrder.Descending"/>
+                    <DxGridDataColumn FieldName="LastUpdated" DisplayFormat="HH:mm:ss"/>
+                </Columns>
+            </DxGrid>
+        </div>
+
+        @code {
+            ObservableCollection<StockQuoteDisplayModel> GridData { get; set; }
+
+            protected override void OnInitialized() {
+                GridData = new ObservableCollection<StockQuoteDisplayModel>();
+                StockQuoteService.StockQuoteChanged += OnStockQuoteChanged;
+            }
+
+            void OnStockQuoteChanged(object sender, StockQuoteChangedEventArgs e) {
+                _ = InvokeAsync(() => ApplyStockChanges(e));
+            }
+
+            void ApplyStockChanges(StockQuoteChangedEventArgs e) {
+                var stockQuoteModel = GridData.FirstOrDefault(x => x.Ticker == e.Ticker);
+                var isNew = stockQuoteModel == null;
+                if(isNew) {
+                    stockQuoteModel = new StockQuoteDisplayModel { Ticker = e.Ticker };
+                }
+                stockQuoteModel.Change = e.Change;
+                stockQuoteModel.LastPrice = e.OpenPrice + e.Change;
+                stockQuoteModel.PercentageChange = e.Change / e.OpenPrice;
+                stockQuoteModel.LastUpdated = e.LastUpdate;
+                if(isNew) {
+                    GridData.Add(stockQuoteModel);
+                }
+            }
+
+            void Grid_CustomizeElement(GridCustomizeElementEventArgs e) {
+                if(e.ElementType != GridElementType.DataCell)
+                    return;
+
+                var stockQuoteModel = (StockQuoteDisplayModel)e.Grid.GetDataItem(e.VisibleIndex);
+                var fieldName = ((IGridDataColumn)e.Column).FieldName;
+                if(stockQuoteModel.Change != 0 && (fieldName == "Change" || fieldName == "PercentageChange")) {
+                    e.CssClass = stockQuoteModel.Change > 0 ? "change-up" : "change-down";
+                }
+            }
+
+            public void Dispose() {
+                StockQuoteService.StockQuoteChanged -= OnStockQuoteChanged;
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>
+

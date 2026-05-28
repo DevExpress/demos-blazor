@@ -1,0 +1,55 @@
+﻿@page "/ChartRangeBar"
+
+<DemoPageSectionComponent Id="Charts-RangeSeries-Bar">
+    <DemoChildContent>
+        @inject IWeatherSummaryDataProvider WeatherSummaryDataProvider
+
+        <DxChart @ref="@chart"
+                 Data="@weatherForecasts"
+                 Width="100%">
+            <DxChartTitle Text="Annual Temperature" />
+            <DxChartRangeBarSeries ValueField="@((DetailedWeatherSummary  i) => i.AverageTemperatureF)"
+                                   ArgumentField="@(i => new DateTime(2000, i.Date.Month, 1))"
+                                   Name="New York"
+                                   Filter="@((DetailedWeatherSummary  i) => i.City == "NEW YORK")" />
+            <DxChartRangeBarSeries ValueField="@((DetailedWeatherSummary  i) => i.AverageTemperatureF)"
+                                   ArgumentField="@(i => new DateTime(2000, i.Date.Month, 1))"
+                                   Name="Los Angeles"
+                                   Filter="@((DetailedWeatherSummary  i) => i.City == "LOS ANGELES")" />
+
+            <DxChartTooltip Enabled="true">
+                @context.GetRangePoint().Render((rangePoint) =>
+                    @<div class="m-75">
+                        <div>Max: @rangePoint.EndValue °F</div>
+                        <div>Min: @rangePoint.StartValue °F</div>
+                    </div>
+                )
+            </DxChartTooltip>
+            <DxChartLegend HorizontalAlignment="HorizontalAlignment.Center"
+                           VerticalAlignment="VerticalEdge.Bottom"
+                           Position="RelativePosition.Outside" />
+            <DxChartValueAxis>
+                <DxChartAxisTitle Text="Temperature, °F" />
+            </DxChartValueAxis>
+            <DxChartArgumentAxis>
+                <DxChartAxisLabel Format="ChartElementFormat.Month" />
+            </DxChartArgumentAxis>
+        </DxChart>
+     </DemoChildContent>
+
+    <OptionsContent>
+        <OptionChartExportComponent ExportMethod="@ExportChart"/>
+    </OptionsContent>
+
+    @code {
+        IEnumerable<DetailedWeatherSummary> weatherForecasts;
+        DxChartBase chart;
+
+        async void ExportChart(ChartExportFormat format) {
+            await chart?.ExportAsync("RangeBarChart", format);
+        }
+        protected override async Task OnInitializedAsync() {
+            weatherForecasts = await WeatherSummaryDataProvider.GetDataAsync();
+        }
+    }
+</DemoPageSectionComponent>

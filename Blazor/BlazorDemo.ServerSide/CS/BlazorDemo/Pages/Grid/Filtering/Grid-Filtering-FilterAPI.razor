@@ -1,0 +1,61 @@
+﻿@page "/Grid/Filtering/FilterAPI"
+@layout DataProviderAccessArea<INwindDataProvider>
+
+<DemoPageSectionComponent Id="Grid-Filtering-FilterAPI" VerticalAlignment="VerticalAlignment.Top" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @using DevExpress.Data.Filtering
+        @inject NwindDataService NwindDataService
+
+        <div class="grid-container">
+            <DxGrid @ref="Grid" Data="Products" SizeMode="Params.SizeMode" PageSize="15"
+                ColumnResizeMode="GridColumnResizeMode.NextColumn" TextWrapEnabled="false">
+                <Columns>
+                    <DxGridDataColumn FieldName="ProductName" MinWidth="100" />
+                    <DxGridDataColumn FieldName="CategoryId" Caption="Category" MinWidth="100">
+                        <EditSettings>
+                            <DxComboBoxSettings Data="Categories" ValueFieldName="CategoryId"
+                                TextFieldName="CategoryName" />
+                        </EditSettings>
+                    </DxGridDataColumn>
+                    <DxGridDataColumn FieldName="UnitPrice" DisplayFormat="c" Width="10%" />
+                    <DxGridDataColumn FieldName="UnitsInStock" Caption="Units in Stock" Width="10%" />
+                    <DxGridDataColumn FieldName="QuantityPerUnit" Caption="Quantity per Unit" Width="15%" MinWidth="80" />
+                    <DxGridDataColumn FieldName="Discontinued" Width="10%" MinWidth="90" />
+                </Columns>
+                <ToolbarTemplate>
+                    <div class="cw-480">
+                        <DxTagBox Data="Categories" Values="SelectedCategories"
+                            ValuesChanged="(IEnumerable<Category> values) => TagBox_ValuesChanged(values)"
+                            TextFieldName="CategoryName" NullText="Select category..."
+                            ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" aria-label="Select category" />
+                    </div>
+                </ToolbarTemplate>
+            </DxGrid>
+        </div>
+
+        @code {
+            IGrid Grid { get; set; }
+
+            IEnumerable<Product> Products { get; set; }
+            IEnumerable<Category> Categories { get; set; }
+
+            IEnumerable<Category> SelectedCategories { get; set; }
+
+            protected override async Task OnInitializedAsync()
+            {
+                Categories = await NwindDataService.GetCategoriesAsync();
+                Products = await NwindDataService.GetProductsAsync();
+            }
+
+            void TagBox_ValuesChanged(IEnumerable<Category> newSelectedCategories)
+            {
+                SelectedCategories = newSelectedCategories;
+                var filterCriteria = SelectedCategories.Count() > 0
+                ? new InOperator("CategoryId", SelectedCategories.Select(c => c.CategoryId))
+                : null;
+                Grid.SetFieldFilterCriteria("CategoryId", filterCriteria);
+            }
+        }
+
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

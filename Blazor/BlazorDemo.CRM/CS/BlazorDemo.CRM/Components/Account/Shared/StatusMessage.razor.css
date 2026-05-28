@@ -1,0 +1,19 @@
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+    .alert.alert-danger {
+        color: var(--dxds-color-content-danger-default-rest);
+        background-color: var(--dxds-color-surface-danger-subdued-rest);
+        border-color: var(--dxds-color-border-danger-default-rest);
+    }
+
+    .alert.alert-success {
+        color: var(--dxds-color-content-success-default-rest);
+        background-color: var(--dxds-color-surface-success-subdued-rest);
+        border-color: var(--dxds-color-border-success-default-rest);
+    }

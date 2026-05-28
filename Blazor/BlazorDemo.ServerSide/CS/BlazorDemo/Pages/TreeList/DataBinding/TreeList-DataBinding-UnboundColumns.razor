@@ -1,0 +1,50 @@
+@page "/TreeList/DataBinding/UnboundColumns"
+
+<DemoPageSectionComponent Id="TreeList-DataBinding-UnboundColumns" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject ISalesByRegionDataProvider SalesByRegionDataProvider
+
+        <DxTreeList Data="TreeListData"
+                    KeyFieldName="ID"
+                    ParentKeyFieldName="RegionID"
+                    ShowAllRows="true"
+                    ColumnResizeMode="TreeListColumnResizeMode.NextColumn"
+                    TextWrapEnabled="false"
+                    SizeMode="Params.SizeMode"
+                    CssClass="max-h-480"
+                    UnboundColumnData="TreeList_UnboundColumnData">
+            <Columns>
+                <DxTreeListDataColumn FieldName="Region" />
+                <DxTreeListDataColumn FieldName="AprilSales" DisplayFormat="c0" />
+                <DxTreeListDataColumn FieldName="MaySales" DisplayFormat="c0" />
+                <DxTreeListDataColumn FieldName="JuneSales" DisplayFormat="c0" />
+                <DxTreeListDataColumn FieldName="Q2Sales"
+                                      Caption="Q2 Sales"
+                                      DisplayFormat="c0"
+                                      UnboundType="TreeListUnboundColumnType.Decimal"
+                                      UnboundExpression="[AprilSales] + [MaySales] + [JuneSales]" />
+                <DxTreeListDataColumn FieldName="Q2YoYChange"
+                                      Caption="Q2 YoY Change (%)"
+                                      DisplayFormat="p0"
+                                      UnboundType="TreeListUnboundColumnType.Decimal" />
+            </Columns>
+        </DxTreeList>
+
+        @code {
+            object TreeListData { get; set; }
+
+            protected override void OnInitialized() {
+                TreeListData = SalesByRegionDataProvider.GenerateData();
+            }
+
+            void TreeList_UnboundColumnData(TreeListUnboundColumnDataEventArgs e) {
+                if(e.FieldName == "Q2YoYChange") {
+                    var sales = ((SalesByRegion) e.DataItem);
+                    var currentValue = (decimal)e.GetRowValue("Q2Sales");
+                    var prevValue = sales.MonthlySalesPrev[3] + sales.MonthlySalesPrev[4] + sales.MonthlySalesPrev[5];
+                    e.Value = (currentValue - prevValue) / currentValue;
+                }
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="H:\Work\XML Schemes\module-new.xsd">
+	<controls>
+		<controlentry>
+			<control>
+				<name>sbEmployees</name>
+				<windowcaption>Load Employees</windowcaption>
+				<description>Load or reload Employees.</description>
+				<memberlist/>
+				<dtimage/>
+			</control>
+		</controlentry>		
+		<controlentry>
+			<control>
+				<name>sbChangeAnyEmployee</name>
+				<windowcaption>Change Any Employee</windowcaption>
+				<description>Load any Employee and change the 'City' property.</description>
+				<memberlist/>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>sbCommit</name>
+				<windowcaption>Commit changes</windowcaption>
+				<description>Commit changes.</description>
+				<memberlist/>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>ceInTransactionMode</name>
+				<windowcaption>InTransaction mode</windowcaption>
+				<description>Enable or disable global InTransaction mode.</description>
+				<memberlist/>
+				<dtimage/>
+			</control>
+		</controlentry>
+	</controls>
+</totalinfo>

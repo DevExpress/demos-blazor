@@ -1,0 +1,61 @@
+﻿@page "/Grid/MasterDetail/RowPreview"
+@layout DataProviderAccessArea<INwindDataProvider>
+
+<DemoPageSectionComponent Id="Grid-MasterDetail-RowPreview" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <div class="grid-container">
+            <DxGrid Data="GridData"
+                    DetailRowDisplayMode="CurrentGridDetailRowDisplayMode"
+                    CustomizeElement="Grid_CustomizeElement"
+                    ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                    TextWrapEnabled="false"
+                    SizeMode="Params.SizeMode"
+                    ShowAllRows="true">
+                <Columns>
+                    <DxGridDataColumn FieldName="FirstName" />
+                    <DxGridDataColumn FieldName="LastName" />
+                    <DxGridDataColumn FieldName="Title" />
+                    <DxGridDataColumn FieldName="HireDate" />
+                </Columns>
+                <DetailRowTemplate>
+                    @{
+                        var employee = (Employee)context.DataItem;
+                        <text>@employee.Notes</text>
+                    }
+                </DetailRowTemplate>
+                <ToolbarTemplate>
+                    <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Contained">
+                        <Items>
+                            <DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
+                                <Template Context="toolbar_item_context">
+                                    <div class="d-flex flex-row align-items-center h-100">
+                                        <label class="me-2" for="detailRowDisplayModeInput">Detail Row Display Mode:</label>
+                                        <DxComboBox Data="@GridDetailRowDisplayModes" @bind-Value="@CurrentGridDetailRowDisplayMode" InputId="detailRowDisplayModeInput"/>
+                                    </div>
+                                </Template>
+                            </DxToolbarItem>
+                        </Items>
+                    </DxToolbar>
+                </ToolbarTemplate>
+            </DxGrid>
+        </div>
+
+        @code {
+            object GridData { get; set; }
+            IEnumerable<GridDetailRowDisplayMode> GridDetailRowDisplayModes { get; } = Enum.GetValues<GridDetailRowDisplayMode>();
+            GridDetailRowDisplayMode CurrentGridDetailRowDisplayMode = GridDetailRowDisplayMode.Always;
+
+            protected override async Task OnInitializedAsync() {
+                GridData = await NwindDataService.GetEmployeesAsync();
+            }
+
+            void Grid_CustomizeElement(GridCustomizeElementEventArgs e) {
+                if(e.ElementType == GridElementType.DetailCell) {
+                    e.CssClass = "p-2 opacity-75";
+                }
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

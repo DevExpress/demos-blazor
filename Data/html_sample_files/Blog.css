@@ -1,0 +1,149 @@
+/*
+Blog Style Overrides
+*/
+
+/*
+Blog Styles
+*/
+
+UL.BlogPostList
+{
+	margin: 20px 0 0 0;
+	padding: 0px;
+	list-style-type: none;
+}
+
+.BlogPostArea
+{
+	margin: 0 0 20px 0;
+	border: solid 0 #eee;
+	border-bottom-width: 1px;
+	background-image: url(../images/blogs.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	padding: 0 0 20px 70px;
+	min-height: 46px;
+}
+
+.BlogPostArea.External
+{
+    background-image: url(../images/external.png);
+}
+
+.BlogPostArea.None
+{
+    background-image: none;
+    padding-left: 0;
+}
+
+.BlogPostHeader
+{
+	font-size: 150%;
+	font-weight: normal;
+	padding: 0;
+	margin: 0 0 8px 0;
+}
+
+.BlogRating
+{
+	width: 80px;
+	height: 80px;
+	margin: 5px 10px 0 0;
+	background-color: #cccccc;
+	vertical-align: top;
+	text-align: center;
+	padding: 8px 2px 2px 2px; 
+	background-image: url(../images/Common/blog_comment_background.gif);
+	line-height: 20px;
+	color: #666666;
+}
+
+.BlogRating a:link, .BlogRating a:visited, .BlogRating a:active, .BlogRating a:hover
+{
+	color: #666666;
+	text-decoration: none;
+}
+
+.BlogPostContent
+{
+	font-size: 100%;
+}
+
+.BlogPostFooter
+{
+	margin: 8px 0 0 0;
+	color: #000;
+	font-size: 80%;
+}
+
+/*
+Blog List Columns
+*/
+
+.BlogBlogNameColumn
+{
+	width: 25%;
+}
+
+.BlogAuthorColumn
+{
+	width: 14%;
+}
+
+.BlogLastPostColumn
+{
+	width: 25%;
+}
+
+.BlogPostsColumn
+{
+	text-align: center;
+	width: 9%;
+}
+
+.BlogArticlesColumn
+{
+	text-align: center;
+	width: 9%;
+}
+
+.BlogCommentsColumn
+{
+	text-align: center;
+	width: 9%;
+}
+
+.BlogTrackbacksColumn
+{
+	text-align: center;
+	width: 9%;
+}
+
+/* Links */
+
+UL.BlogLinkCategoryLinkList
+{
+	padding: 0;
+	margin: 0 0 0 24px;
+	list-style-type: square;
+}
+
+UL.BlogLinkCategoryLinkList li
+{
+	padding-top: 4px;
+}
+
+UL.BlogLinkCategoryLinkList li a
+{
+	font-weight: bold;
+}
+
+.BlogLinkCategoryArea
+{
+	padding: 4px;
+}
+
+.BlogSubscriptionItem
+{
+	margin-bottom: 3px;
+}

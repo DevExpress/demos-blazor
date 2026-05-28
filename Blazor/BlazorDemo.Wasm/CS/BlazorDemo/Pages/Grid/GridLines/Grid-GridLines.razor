@@ -1,0 +1,86 @@
+﻿@page "/Grid/Gridlines"
+@layout DataProviderAccessArea<INwindDataProvider>
+
+<DemoPageSectionComponent Id="Grid-GridLines" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <div class="grid-container">
+            <DxGrid Data="@Data"
+                    GridlinesVisible="@GetGridlines()"
+                    ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                    TextWrapEnabled="false"
+                    ShowGroupPanel="true"
+                    ContextMenus="@GridContextMenus.All"
+                    VirtualScrollingEnabled="true"
+                    SizeMode="Params.SizeMode">
+                <ToolbarTemplate>
+                    <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Plain" SizeMode="Params.SizeMode">
+                        <Items>
+                            <DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
+                                <Template Context="toolbar_item_context">
+                                    <div class="d-flex flex-row align-items-center h-100 me-2">
+                                        <DxCheckBox @bind-Checked="ShowHLines">Horizontal Lines</DxCheckBox>
+                                    </div>
+                                </Template>
+                            </DxToolbarItem>
+                            <DxToolbarItem Alignment="ToolbarItemAlignment.Left">
+                                <Template Context="toolbar_item_context">
+                                    <div class="d-flex flex-row align-items-center h-100 me-2">
+                                        <DxCheckBox @bind-Checked="ShowVLines">Vertical Lines</DxCheckBox>
+                                    </div>
+                                </Template>
+                            </DxToolbarItem>
+                            <DxToolbarItem Alignment="ToolbarItemAlignment.Left">
+                                <Template Context="toolbar_item_context">
+                                    <div class="d-flex flex-row align-items-center h-100">
+                                        <DxCheckBox @bind-Checked="ShowOutside">Outside Border</DxCheckBox>
+                                    </div>
+                                </Template>
+                            </DxToolbarItem>
+                        </Items>
+                    </DxToolbar>
+                </ToolbarTemplate>
+                <Columns>
+                    <DxGridDataColumn FieldName="CompanyName" MinWidth="100" />
+                    <DxGridDataColumn FieldName="City" Width="10%" />
+                    <DxGridDataColumn FieldName="Region" Width="10%" />
+                    <DxGridDataColumn FieldName="Country" Width="10%" />
+                    <DxGridDataColumn FieldName="UnitPrice" DisplayFormat="c" Width="10%" />
+                    <DxGridDataColumn FieldName="Quantity" MinWidth="80" Width="10%" />
+                    <DxGridDataColumn FieldName="Total"
+                                      UnboundType="GridUnboundColumnType.Decimal"
+                                      UnboundExpression="[UnitPrice] * [Quantity]"
+                                      DisplayFormat="c"
+                                      MinWidth="100"
+                                      Width="15%" />
+                </Columns>
+            </DxGrid>
+        </div>
+
+        @code {
+            object Data { get; set; }
+            bool ShowHLines { get; set; } = true;
+            bool ShowVLines { get; set; } = true;
+            bool ShowOutside { get; set; } = true;
+
+            Gridlines GetGridlines() =>
+                (ShowHLines ? Gridlines.Horizontal : Gridlines.None) |
+                (ShowVLines ? Gridlines.Vertical : Gridlines.None) |
+                (ShowOutside ? Gridlines.Outside : Gridlines.None);
+
+            protected override async Task OnInitializedAsync() {
+                var invoices = await NwindDataService.GetInvoicesAsync();
+                var customers = await NwindDataService.GetCustomersAsync();
+                Data = invoices.OrderBy(i => i.OrderDate).Join(customers, i => i.CustomerId, c => c.CustomerId, (i, c) => new {
+                    CompanyName = c.CompanyName,
+                    City = i.City,
+                    Region = i.Region,
+                    Country = i.Country,
+                    UnitPrice = i.UnitPrice,
+                    Quantity = i.Quantity
+                });
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

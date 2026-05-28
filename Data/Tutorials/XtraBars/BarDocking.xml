@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo>                                   
+<controls>
+<controlentry>
+		<control>
+			<name>radioButton1</name>
+			<windowcaption>Top</windowcaption>
+			<description>Docks the bar control to the top of the form.</description>
+			<memberlist>Bar.DockStyle</memberlist>
+			<dtimage></dtimage>
+		</control>
+</controlentry>
+<controlentry>
+		<control>
+			<name>radioButton2</name>
+			<windowcaption>Bottom</windowcaption>
+			<description>Docks the bar control to the bottom of the form.</description>
+			<memberlist>Bar.DockStyle</memberlist>
+			<dtimage></dtimage>
+		</control>
+</controlentry>
+<controlentry>
+		<control>
+			<name>radioButton3</name>
+			<windowcaption>Left</windowcaption>
+			<description>Docks the bar control to the left side of the form.</description>
+			<memberlist>Bar.DockStyle</memberlist>
+			<dtimage></dtimage>
+		</control>
+</controlentry>
+<controlentry>
+		<control>
+			<name>radioButton4</name>
+			<windowcaption>Right</windowcaption>
+			<description>Docks the bar control to the right side of the form.</description>
+			<memberlist>Bar.DockStyle</memberlist>
+			<dtimage></dtimage>
+		</control>
+</controlentry>
+</controls>
+</totalinfo>                     

@@ -1,0 +1,25 @@
+﻿﻿<DemoPageSectionComponent Id="Editors-TagBox-EmptyDataAreaTemplate" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <DxTagBox Data="@DataItems"
+                  @bind-Values="@Items"
+                  CssClass="cw-480"
+                  NullText="Select an order..."
+                  SizeMode="Params.SizeMode"
+                  InputId="tbEmptyDataAreaTemplate">
+            <EmptyDataAreaTemplate>
+                @if (!context.IsDataLoading) {
+                    <div class="empty-data-area-template">
+                        <div class="d-flex flex-column">
+                            No orders found
+                        </div>
+                    </div>
+                }
+            </EmptyDataAreaTemplate>
+        </DxTagBox>
+    </ChildContentWithParameters>
+
+    @code {
+        IEnumerable<string> DataItems { get; set; }
+        IEnumerable<string> Items { get; set; }
+    }
+</DemoPageSectionComponent>

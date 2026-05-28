@@ -1,0 +1,32 @@
+﻿<DemoPageSectionComponent Id="FileManagement-Upload-MultiFileSelection">
+    @inject NavigationManager NavigationManager
+
+    <div class="upload-container">
+        <div class="@(SelectedFilesCount > 0 ? "d-none" : null)">
+            <span class="drop-file-icon mb-3"></span>
+            <span class="drop-file-label mb-3">Click the button below to start your upload</span>
+        </div>
+        <DxUpload Name="myFile"
+                  AllowMultiFileUpload="true"
+                  UploadUrl="@GetUploadUrl("api/Upload/Upload/")"
+                  SelectedFilesChanged="@SelectedFilesChanged"
+                  MaxFileSize="15000000">
+        </DxUpload>
+    </div>
+    <div class="upload-validation-text info-text">
+        You can upload multiple files, each up to 15 MB.
+    </div>
+
+    @code {
+        int SelectedFilesCount { get; set; }
+
+        protected void SelectedFilesChanged(IEnumerable<UploadFileInfo> files) {
+            SelectedFilesCount = files.ToList().Count;
+
+            InvokeAsync(StateHasChanged);
+        }
+        protected string GetUploadUrl(string url) {
+            return NavigationManager.ToAbsoluteUri(url).AbsoluteUri;
+        }
+    }
+</DemoPageSectionComponent>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDefaultItems>False</EnableDefaultItems>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GenerateRuntimeConfigDevFile>true</GenerateRuntimeConfigDevFile>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <IntermediateOutputPath>obj.WASM</IntermediateOutputPath>
+    <WasmBuildNative>true</WasmBuildNative>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Azure.AI.OpenAI" />
+    <PackageReference Include="Microsoft.Extensions.AI" />
+    <PackageReference Include="Microsoft.Extensions.AI.OpenAI" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" />
+    <PackageReference Include="System.Net.Http.Json" />
+    <PackageReference Include="System.Private.Uri" />
+    <PackageReference Include="System.Security.Permissions" />
+    <PackageReference Include="DevExtreme.AspNet.Data" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" PrivateAssets="all" />
+    <PackageReference Include="SkiaSharp.Views.Blazor" />
+    <PackageReference Include="SkiaSharp.HarfBuzz" />
+    <PackageReference Include="HarfBuzzSharp.NativeAssets.WebAssembly" />
+    <NativeFileReference Include="$(HarfBuzzSharpStaticLibraryPath)\2.0.23\*.a" />
+    <ProjectReference Include="..\BlazorDemo\BlazorDemo.Wasm.Core.csproj" />
+  </ItemGroup>
+<ItemGroup>
+    <PackageReference Include="DevExpress.AIIntegration.Blazor" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Blazor.PivotTable" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Pdf.SkiaRenderer" VersionOverride="26.1.2-beta-26148" />
+    
+    
+    
+    
+    
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="*.cs" />
+    <Compile Include="DataProviders\**\*.cs" />
+    <Content Include="*.json" />
+    <Compile Include="Services\*.cs" />
+	<EmbeddedResource Include="LinkerConfig.xml">
+    	<LogicalName>$(MSBuildProjectName).xml</LogicalName>
+	</EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup Condition="'$(DXTrimming)'=='true'">
+    <TrimmableAssembly Include="DevExpress.Data.v26.1" />
+    <TrimmerRootDescriptor Include="TrimmerRootDescriptor.xml" />
+  </ItemGroup>
+</Project>

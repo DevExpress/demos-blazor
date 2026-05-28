@@ -1,0 +1,56 @@
+﻿@page "/Scheduler/Templates/AppointmentTemplates"
+
+<DemoPageSectionComponent Id="Scheduler-Templates-AppointmentTemplates">
+    <DemoChildContent>
+    <DxScheduler @bind-StartDate="@StartDate" DataStorage="@DataStorage" AppointmentDragMode="@AppointmentDragMode" CssClass="demo-sc-size">
+        <DxSchedulerWorkWeekView ShowWorkTimeOnly="true">
+            <HorizontalAppointmentTemplate>
+                <div class="card shadow-sm p-1 bg-white text-dark w-100 horizontal-apt-container">
+                    @context.Appointment.Subject
+                </div>
+            </HorizontalAppointmentTemplate>
+            <VerticalAppointmentTemplate>
+                <div class="card h-100 d-flex flex-column shadow-sm bg-white h-100 vertical-apt-container">
+                    <div class="dxbl-scheduler-color-item w-100">
+                        <div class="dxbl-scheduler-color-item-icon @context.Status.CssClass w-100"></div>
+                    </div>
+                    <div class="card-body d-flex flex-column p-2">
+                        <div><span class="text-dark badge bg-light mb-1 apt-caption">@context.Status.Caption</span></div>
+                        <span class="text-dark ps-0 mb-1 apt-subject">@context.Appointment.Subject</span>
+                        <div class="mt-auto d-flex justify-content-between">
+                            <div>
+                                <span class="badge bg-light text-dark apt-time-container"><span class="dx-icon-time pe-1"></span>@context.Appointment.End.ToString("MMM dd HH:mm")</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </VerticalAppointmentTemplate>
+        </DxSchedulerWorkWeekView>
+    </DxScheduler>
+    </DemoChildContent>
+    <OptionsContent>
+        <OptionComboBox Label="Appointment Drag Mode:" Data="Enum.GetValues<SchedulerAppointmentDragMode>()" @bind-Value="@AppointmentDragMode"  />
+    </OptionsContent>
+
+    @code {
+        DateTime StartDate { get; set; } = DateTime.Today;
+        SchedulerAppointmentDragMode AppointmentDragMode { get; set; } = SchedulerAppointmentDragMode.Client;
+
+        DxSchedulerDataStorage DataStorage = new DxSchedulerDataStorage() {
+            AppointmentsSource = AppointmentCollection.GetAppointments(),
+            AppointmentMappings = new DxSchedulerAppointmentMappings() {
+                Id = "Id",
+                Type = "AppointmentType",
+                Start = "StartDate",
+                End = "EndDate",
+                Subject = "Caption",
+                AllDay = "AllDay",
+                Location = "Location",
+                Description = "Description",
+                LabelId = "Label",
+                StatusId = "Status",
+                RecurrenceInfo = "Recurrence"
+            }
+        };
+    }
+</DemoPageSectionComponent>

@@ -1,0 +1,58 @@
+﻿@using BlazorDemo.CRM.Models
+@using System.Globalization
+
+@namespace BlazorDemo.CRM.Components.ContactDetails
+
+@inherits DataPresenter<List<Models.Note>>
+
+<div class="h-100 w-100">
+    <EditForm Model="@Note" OnValidSubmit="@AddNoteAsync">
+        <DataAnnotationsValidator />
+        <div class="input-note">
+            <DxMemo @bind-Text="@Note!.Text" NullText="New note" Rows="5" ShowValidationIcon="true" />
+            <div class="add-button">
+                <DxButton Text="Add" SubmitFormOnClick="true" Enabled="@IsDataLoaded" />
+            </div>
+        </div>
+    </EditForm>
+    <hr />
+    <DxListBox TData="Note" TValue="Note" Data="@Data" CssClass="notes" SelectionMode="ListBoxSelectionMode.None" ReadOnly="true">
+        <ItemDisplayTemplate>
+            <div class="note">
+                <div class="note-header">
+                    <div class="note-title">
+                        @context.DataItem.Date?.ToString(CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern) - @context.DataItem.Manager
+                    </div>
+                    <div>
+                        <DxDropDownButton CssClass="@($"menu-button-{context.VisibleIndex}")"
+                                          IconCssClass="icon more-icon medium-icon"
+                                          RenderStyle="ButtonRenderStyle.Link"
+                                          DropDownToggleVisible="false">
+                            <Items>
+                                <DxDropDownButtonItem Text="Delete Item" Click="@(() => RemoveNote(context.VisibleIndex))" />
+                            </Items>
+                        </DxDropDownButton>
+                    </div>
+                </div>
+                <div class="note-text">@context.DataItem.Text</div>
+            </div>
+        </ItemDisplayTemplate>
+    </DxListBox>
+</div>
+
+@code {
+    [Parameter] public string? Manager { get; set; }
+
+    Note Note { get; set; } = new();
+
+    void RemoveNote(int index) => Data!.RemoveAt(index);
+
+    async Task AddNoteAsync() {
+        Note.Manager = Manager;
+        Note.Date = DateTime.Now;
+        var newData = new List<Note>(Data!);
+        newData.Add(Note);
+        await OnDataChangedAsync(newData);
+        Note = new Note();
+    }
+}

@@ -1,0 +1,228 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <TaskChecklist>
+    <Caption>Describe Conventions and explicit attributes</Caption>
+    <Checked>false</Checked>
+    <TaskID>233abfb1-b68d-4a8b-806d-d0e70ae4ea03</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Describe the Fluent API</Caption>
+    <Checked>true</Checked>
+    <TaskID>233abfb1-b68d-4a8b-806d-d0e70ae4ea03</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Add a note into the Service section about thread safety.</Caption>
+    <Checked>false</Checked>
+    <TaskID>233abfb1-b68d-4a8b-806d-d0e70ae4ea03</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>DPI-aware resize zones</Caption>
+    <Checked>true</Checked>
+    <TaskID>34ee21ea-3d75-427c-a491-aef3f51dc301</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>API to customize resize zones</Caption>
+    <Checked>false</Checked>
+    <TaskID>34ee21ea-3d75-427c-a491-aef3f51dc301</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Implement the feature in the Data Grid</Caption>
+    <Checked>true</Checked>
+    <TaskID>8c7ffaaa-7cac-4d2d-9a8a-7efdc46633e5</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Implement the feature in the Tree List</Caption>
+    <Checked>false</Checked>
+    <TaskID>8c7ffaaa-7cac-4d2d-9a8a-7efdc46633e5</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Data Grid group row expansion animation</Caption>
+    <Checked>true</Checked>
+    <TaskID>549010ad-57c7-4395-bf26-92292f8e8c63</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Office 2016 inspired animation when expanding AccordionControl elements</Caption>
+    <Checked>true</Checked>
+    <TaskID>549010ad-57c7-4395-bf26-92292f8e8c63</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Office 2016 inspired animation and shadows when displaying popup windows in Bars and Ribbon controls</Caption>
+    <Checked>true</Checked>
+    <TaskID>549010ad-57c7-4395-bf26-92292f8e8c63</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Animation when displaying page categories</Caption>
+    <Checked>true</Checked>
+    <TaskID>549010ad-57c7-4395-bf26-92292f8e8c63</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Office 2016 inspired animation when displaying the Ribbon's BackstageView</Caption>
+    <Checked>true</Checked>
+    <TaskID>549010ad-57c7-4395-bf26-92292f8e8c63</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Public API</Caption>
+    <Checked>true</Checked>
+    <TaskID>06e1c7a8-6c6a-4c8b-a547-ca4c053959ca</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Support design-time customization</Caption>
+    <Checked>false</Checked>
+    <TaskID>06e1c7a8-6c6a-4c8b-a547-ca4c053959ca</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Improve Filtering UI Context editor behavior</Caption>
+    <Checked>true</Checked>
+    <TaskID>315821a8-fcdd-45d7-872d-ccec171d4140</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Update design-time wizard</Caption>
+    <Checked>false</Checked>
+    <TaskID>315821a8-fcdd-45d7-872d-ccec171d4140</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>View Model enhancements</Caption>
+    <Checked>true</Checked>
+    <TaskID>315821a8-fcdd-45d7-872d-ccec171d4140</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Tile scrolling</Caption>
+    <Checked>false</Checked>
+    <TaskID>b268f134-3503-4388-beb1-9e996d129d25</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>API</Caption>
+    <Checked>true</Checked>
+    <TaskID>cad8224b-9bd1-4a10-b164-e21bec70faea</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Test scrolling performance</Caption>
+    <Checked>false</Checked>
+    <TaskID>cad8224b-9bd1-4a10-b164-e21bec70faea</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Group row visualization</Caption>
+    <Checked>true</Checked>
+    <TaskID>eae7eb62-b5ca-4a01-99cd-22ed6dd40a26</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Custom draw event</Caption>
+    <Checked>true</Checked>
+    <TaskID>eae7eb62-b5ca-4a01-99cd-22ed6dd40a26</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Stacked Step Area</Caption>
+    <Checked>true</Checked>
+    <TaskID>f07604c5-c7f6-4a12-8683-0b07a1d19a08</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Full Stacked Step Area</Caption>
+    <Checked>true</Checked>
+    <TaskID>f07604c5-c7f6-4a12-8683-0b07a1d19a08</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Radar Range Area</Caption>
+    <Checked>true</Checked>
+    <TaskID>f07604c5-c7f6-4a12-8683-0b07a1d19a08</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>API</Caption>
+    <Checked>true</Checked>
+    <TaskID>fd598cea-35d7-4862-8db5-70671e4f2bec</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Check painting in different themes</Caption>
+    <Checked>true</Checked>
+    <TaskID>fd598cea-35d7-4862-8db5-70671e4f2bec</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>DirectX11(Direct2D) Support</Caption>
+    <Checked>false</Checked>
+    <TaskID>352447b3-a10a-4f35-a99f-1a9ea89f63ce</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Web Map Service Support</Caption>
+    <Checked>true</Checked>
+    <TaskID>352447b3-a10a-4f35-a99f-1a9ea89f63ce</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Bing REST Services Support</Caption>
+    <Checked>false</Checked>
+    <TaskID>352447b3-a10a-4f35-a99f-1a9ea89f63ce</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Multiple Layout algorithms: Slice and Dice, Squarified and Striped</Caption>
+    <Checked>true</Checked>
+    <TaskID>00f37f59-8139-46d5-ad45-2053ec498f9d</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Ability to visualize flat and hierarchical data</Caption>
+    <Checked>true</Checked>
+    <TaskID>00f37f59-8139-46d5-ad45-2053ec498f9d</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Ability to color TreeMap items using one of the following algorithms: gradient, group gradient, palette or range</Caption>
+    <Checked>true</Checked>
+    <TaskID>00f37f59-8139-46d5-ad45-2053ec498f9d</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Configurable tooltips</Caption>
+    <Checked>true</Checked>
+    <TaskID>00f37f59-8139-46d5-ad45-2053ec498f9d</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Item highlights and selection</Caption>
+    <Checked>false</Checked>
+    <TaskID>00f37f59-8139-46d5-ad45-2053ec498f9d</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Appearance customization</Caption>
+    <Checked>true</Checked>
+    <TaskID>00f37f59-8139-46d5-ad45-2053ec498f9d</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Documentation</Caption>
+    <Checked>true</Checked>
+    <TaskID>8c7ffaaa-7cac-4d2d-9a8a-7efdc46633e5</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Collection editor</Caption>
+    <Checked>true</Checked>
+    <TaskID>06e1c7a8-6c6a-4c8b-a547-ca4c053959ca</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Paint holidays</Caption>
+    <Checked>true</Checked>
+    <TaskID>b268f134-3503-4388-beb1-9e996d129d25</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Custom draw event</Caption>
+    <Checked>true</Checked>
+    <TaskID>b268f134-3503-4388-beb1-9e996d129d25</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Demo</Caption>
+    <Checked>true</Checked>
+    <TaskID>cad8224b-9bd1-4a10-b164-e21bec70faea</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Blog post</Caption>
+    <Checked>true</Checked>
+    <TaskID>cad8224b-9bd1-4a10-b164-e21bec70faea</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Support for two captions</Caption>
+    <Checked>true</Checked>
+    <TaskID>eae7eb62-b5ca-4a01-99cd-22ed6dd40a26</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Ribbon UI support</Caption>
+    <Checked>true</Checked>
+    <TaskID>eae7eb62-b5ca-4a01-99cd-22ed6dd40a26</TaskID>
+  </TaskChecklist>
+  <TaskChecklist>
+    <Caption>Examples</Caption>
+    <Checked>true</Checked>
+    <TaskID>fd598cea-35d7-4862-8db5-70671e4f2bec</TaskID>
+  </TaskChecklist>
+</DocumentElement>

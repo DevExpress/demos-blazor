@@ -1,0 +1,50 @@
+.icon-explorer {
+    display: flex;
+    gap: 1rem;
+    height: 45rem;
+    width: 100%;
+}
+
+.icon-filters-container {
+    flex: 0 0 9rem;
+}
+
+::deep .icon-grid .dxbl-grid-top-panel,
+::deep .icon-grid .dxbl-grid-table th,
+::deep .icon-grid .dxbl-grid-table td {
+    padding: 0 !important;
+    border: none !important;
+}
+
+.icon-tags {
+    color: var(--dxds-color-content-neutral-subdued-rest, var(--bs-gray-700));
+}
+.theme-blazing-dark .icon-tags,
+.theme-default-dark .icon-tags {
+    color: var(--bs-gray-300);
+}
+
+.icon-group-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(66px, 1fr));
+    gap: 0.75rem;
+}
+
+/*BeginHide*/::deep /*EndHide*/ .icon-preview {
+    padding: 0.5rem;
+}
+
+.icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-size {
+    font-size: var(--dxds-font-size-caption-md, 0.8125rem);
+    line-height: var(--dxds-line-height-caption-md, 1rem);
+    font-weight: var(--dxds-font-weight-caption-default, 400);
+}

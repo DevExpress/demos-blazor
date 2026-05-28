@@ -1,0 +1,91 @@
+﻿@page "/Account/LoginWith2fa"
+@using System.ComponentModel.DataAnnotations
+@using Microsoft.AspNetCore.Identity
+@using BlazorDemo.CRM.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@inject IdentityRedirectManager RedirectManager
+@inject ILogger<LoginWith2fa> Logger
+
+<PageTitle>Two-factor authentication</PageTitle>
+<div class="main-content">
+    <div class="block-content card">
+        <StatusMessage Message="@message" />
+        <EditForm Model="Input" FormName="login-with-2fa" OnValidSubmit="OnValidSubmitAsync" method="post" Context="LoginWithFA">
+            <input type="hidden" name="ReturnUrl" value="@ReturnUrl" />
+            <input type="hidden" name="RememberMe" value="@RememberMe" />
+            <DataAnnotationsValidator />
+            <DxFormLayout CaptionPosition=@CaptionPosition.Vertical>
+                <DxFormLayoutItem ColSpanMd="12">
+                    <div class="title">
+                        <div class="title-header-text">Two-factor authentication</div>
+                        <div class="title-content-text-secondary">Your login is protected with an authenticator app. Enter your authenticator code below.</div>
+                    </div>
+                </DxFormLayoutItem>
+                <DxFormLayoutItem Caption="Authenticator code" ColSpanMd="12" BeginRow="true">
+                    <InteractiveServerMaskedInput Name="Input.TwoFactorCode" CssClass="large-input" Value="@Input.TwoFactorCode" Mask="000 000" />
+                    <ValidationMessage class="text-danger" For="() => Input.TwoFactorCode" />
+                </DxFormLayoutItem>
+                <DxFormLayoutItem ColSpanMd="12" BeginRow="true">
+                    <InteractiveServerCheckbox Name="Input.RememberMachine" InputId="rememberme" Value="@Input.RememberMachine" LabelText="Remember this machine"></InteractiveServerCheckbox>
+                </DxFormLayoutItem>
+                <DxFormLayoutItem ColSpanMd="12" BeginRow="true">
+                    <DxButton CssClass="w-100" SubmitFormOnClick="true" Text="Log in"></DxButton>
+                </DxFormLayoutItem>
+            </DxFormLayout>
+        </EditForm>
+        <div class="links-container">
+            <span>Having problems?</span><span>You can <a href="Account/LoginWithRecoveryCode?ReturnUrl=@ReturnUrl">log in with a recovery code</a></span>.
+        </div>
+    </div>
+</div>
+
+
+@code {
+    private string? message;
+    private ApplicationUser user = default!;
+
+    [SupplyParameterFromForm]
+    private InputModel Input { get; set; } = new();
+
+    [SupplyParameterFromQuery]
+    private string? ReturnUrl { get; set; }
+
+    [SupplyParameterFromQuery]
+    private bool RememberMe { get; set; }
+
+    protected override async Task OnInitializedAsync() {
+        // Ensure the user has gone through the username & password screen first
+        user = await SignInManager.GetTwoFactorAuthenticationUserAsync() ??
+            throw new InvalidOperationException("Unable to load two-factor authentication user.");
+    }
+
+    private async Task OnValidSubmitAsync() {
+        var authenticatorCode = Input.TwoFactorCode!.Replace(" ", string.Empty).Replace("-", string.Empty);
+        var result = await SignInManager.TwoFactorAuthenticatorSignInAsync(authenticatorCode, RememberMe, Input.RememberMachine);
+        var userId = await UserManager.GetUserIdAsync(user);
+
+        if(result.Succeeded) {
+            Logger.LogInformation("User with ID '{UserId}' logged in with 2fa.", userId);
+            RedirectManager.RedirectTo(ReturnUrl);
+        } else if(result.IsLockedOut) {
+            Logger.LogWarning("User with ID '{UserId}' account locked out.", userId);
+            RedirectManager.RedirectTo("Account/Lockout");
+        } else {
+            Logger.LogWarning("Invalid authenticator code entered for user with ID '{UserId}'.", userId);
+            message = "Error: Invalid authenticator code.";
+        }
+    }
+
+    private sealed class InputModel {
+        [Required]
+        [StringLength(7, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+        [DataType(DataType.Text)]
+        [Display(Name = "Authenticator code")]
+        public string? TwoFactorCode { get; set; }
+
+        [Display(Name = "Remember this machine")]
+        public bool RememberMachine { get; set; }
+    }
+}

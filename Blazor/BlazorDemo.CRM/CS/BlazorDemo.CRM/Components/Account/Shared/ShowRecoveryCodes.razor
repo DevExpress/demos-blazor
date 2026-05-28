@@ -1,0 +1,23 @@
+﻿<StatusMessage Message="@StatusMessage" />
+<div class="title">
+    <div class="title-content-text-secondary">Recovery codes</div>
+</div>
+<div class="manage-content">
+    <div>Put these codes in a safe place.</div>
+    <div>If you lose your device and don't have the recovery codes you will lose access to your account.</div>
+    <div class="codes">
+        @foreach(var recoveryCode in RecoveryCodes) {
+            <div>
+                <code class="recovery-code">@recoveryCode</code>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string[] RecoveryCodes { get; set; } = [];
+
+    [Parameter]
+    public string? StatusMessage { get; set; }
+}

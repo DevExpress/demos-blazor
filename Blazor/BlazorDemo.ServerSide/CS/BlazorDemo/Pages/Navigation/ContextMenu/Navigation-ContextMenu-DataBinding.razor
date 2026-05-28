@@ -1,0 +1,46 @@
+﻿@inject ICspNonceService NonceProvider
+<DemoPageSectionComponent Id="Navigation-ContextMenu-DataBinding" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <style nonce="@NonceProvider.Nonce">
+            div.context-menu-text-container {
+                @Formatting.GetStyleString()
+            }
+        </style>
+
+        <div class="demo-preventsel target-container context-menu-text-container" tabindex="0"
+            @oncontextmenu="@OnContextMenu"
+            @oncontextmenu:preventDefault
+            @onkeydown="@OnKeyDown">
+            @*BeginHide*@
+            <span class="d-inline-block text-center m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet metus vel nisi blandit tincidunt vel efficitur purus. Nunc nec turpis tempus, accumsan orci auctor, imperdiet mauris. Fusce id purus magna.</span>
+            @*EndHide*@
+        </div>
+        <DxContextMenu PositionTarget="#section-DataBinding .target-container" Data="@MenuItems" ItemClick="@ItemClick" SizeMode="Params.SizeMode" @ref="@ContextMenu">
+            <DataMappings>
+                <DxContextMenuDataMapping Children="Children"
+                                          Text="Text"
+                                          IconCssClass="IconCss"
+                                          BeginGroup="BeginGroup"
+                                          Enabled="Enabled" />
+            </DataMappings>
+        </DxContextMenu>
+
+        @code {
+            List<TextFormattingMenuItem> menuItems;
+            List<TextFormattingMenuItem> MenuItems => menuItems = menuItems ?? TextFormattingMenu.ContextMenuItems(Formatting);
+            DxContextMenu ContextMenu { get; set; }
+            TextFormatting Formatting { get; set; } = new TextFormatting();
+
+            void ItemClick(ContextMenuItemClickEventArgs args) {
+                ((TextFormattingMenuItem)args.ItemInfo.DataItem).Click();
+            }
+            async void OnContextMenu(MouseEventArgs args) {
+                await ContextMenu.ShowAsync(args);
+            }
+            async void OnKeyDown(KeyboardEventArgs args) {
+                if (args.Key == "F10" && args.ShiftKey)
+                    await ContextMenu.ShowAsync(ContextMenuPosition.Center);
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

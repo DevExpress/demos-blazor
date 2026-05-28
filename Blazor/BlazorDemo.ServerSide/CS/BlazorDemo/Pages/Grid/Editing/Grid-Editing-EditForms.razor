@@ -1,0 +1,147 @@
+﻿@page "/Grid/EditData/EditForms"
+@layout DataProviderAccessArea<INwindDataProvider, IWorldcitiesDataProvider>
+
+<DemoPageSectionComponent Id="Grid-Editing-EditForms" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+        @inject WorldcitiesDataService WorldcitiesDataService
+        @inject ICspNonceService NonceProvider
+
+        <style nonce="@NonceProvider.Nonce">
+            @@media (min-width: 899.98px) {
+                .pw-800 {
+                    max-width: 800px !important;
+                    width: 800px !important;
+                }
+            }
+        </style>
+
+        <div class="grid-container">
+            <DxGrid @ref="Grid"
+                    Data="DataSource"
+                    KeyFieldName="SupplierId"
+                    ValidationEnabled="false"
+                    CustomizeEditModel="Grid_CustomizeEditModel"
+                    EditModelSaving="Grid_EditModelSaving"
+                    DataItemDeleting="Grid_DataItemDeleting"
+                    PopupEditFormCssClass="pw-800"
+                    EditMode="@CurrentEditMode"
+                    ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                    TextWrapEnabled="false"
+                    ShowAllRows="true"
+                    SizeMode="Params.SizeMode"
+                    HighlightRowOnHover="true">
+                <Columns>
+                    <DxGridCommandColumn Width="110px" />
+                    <DxGridDataColumn FieldName="CompanyName" />
+                    <DxGridDataColumn FieldName="ContactName" />
+                    <DxGridDataColumn FieldName="ContactTitle" />
+                    <DxGridDataColumn FieldName="Phone" Width="10%" />
+                    <DxGridDataColumn FieldName="Country" Width="10%" />
+                    <DxGridDataColumn FieldName="City" Width="10%" />
+                </Columns>
+                <EditFormTemplate Context="EditFormContext">
+                    @{
+                        var supplier = (Supplier)EditFormContext.EditModel;
+                    }
+                    <DxFormLayout CssClass="w-100">
+                        <DxFormLayoutItem Caption="Company Name:" ColSpanMd="6">
+                            @EditFormContext.GetEditor("CompanyName")
+                        </DxFormLayoutItem>
+                        <DxFormLayoutItem Caption="Contact Name:" ColSpanMd="6">
+                            @EditFormContext.GetEditor("ContactName")
+                        </DxFormLayoutItem>
+                        <DxFormLayoutItem Caption="Contact Title:" ColSpanMd="6">
+                            @EditFormContext.GetEditor("ContactTitle")
+                        </DxFormLayoutItem>
+                        <DxFormLayoutItem Caption="Phone:" ColSpanMd="6">
+                            @EditFormContext.GetEditor("Phone")
+                        </DxFormLayoutItem>
+                        <DxFormLayoutItem Caption="Country:" ColSpanMd="6">
+                            <DxComboBox Data="@Countries"
+                                        NullText="Select Country..."
+                                        SearchMode="@ListSearchMode.AutoSearch"
+                                        SearchFilterCondition="@ListSearchFilterCondition.Contains"
+                                        TextFieldName="CountryName"
+                                        ValueFieldName="CountryName"
+                                        Value="@supplier.Country"
+                                        ValueChanged="(string newCellValue) => {
+                                                            supplier.Country = newCellValue;
+                                                            supplier.City = null;
+                                                      }">
+                            </DxComboBox>
+                        </DxFormLayoutItem>
+                        <DxFormLayoutItem Caption="City:" ColSpanMd="6">
+                            @{
+                                var countryId = Countries.Where(c => c.CountryName == supplier.Country).FirstOrDefault()?.CountryId;
+                                var cities = Cities.Where(x => x.CountryId == countryId);
+                            }
+                            <DxComboBox Data="@cities"
+                                        NullText="Select City..."
+                                        SearchMode="@ListSearchMode.AutoSearch"
+                                        SearchFilterCondition="@ListSearchFilterCondition.Contains"
+                                        @bind-Value="@supplier.City"
+                                        TextFieldName="CityName"
+                                        ValueFieldName="CityName">
+                            </DxComboBox>
+                        </DxFormLayoutItem>
+                    </DxFormLayout>
+                </EditFormTemplate>
+                <ToolbarTemplate>
+                    <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Plain" SizeMode="Params.SizeMode">
+                        <Items>
+                            <DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
+                                <Template Context="toolbar_item_context">
+                                    <div class="d-flex flex-row align-items-center h-100">
+                                        <DxCheckBox Checked="UsePopupEditForm" CheckedChanged="new Func<bool, Task>(UsePopupEditForm_CheckedChanged)">Use Popup Edit Form</DxCheckBox>
+                                    </div>
+                                </Template>
+                            </DxToolbarItem>
+                        </Items>
+                    </DxToolbar>
+                </ToolbarTemplate>
+            </DxGrid>
+        </div>
+    </ChildContentWithParameters>
+
+    @code {
+        IEnumerable<Supplier> DataSource { get; set; }
+        IEnumerable<Country> Countries { get; set; }
+        IEnumerable<City> Cities { get; set; }
+        IGrid Grid { get; set; }
+        bool UsePopupEditForm { get; set; }
+        GridEditMode CurrentEditMode { get { return UsePopupEditForm ? GridEditMode.PopupEditForm : GridEditMode.EditForm; } }
+
+        async Task UsePopupEditForm_CheckedChanged(bool value) {
+            UsePopupEditForm = value;
+            await Grid.CancelEditAsync();
+        }
+
+        protected override async Task OnInitializedAsync() {
+            DataSource = await NwindDataService.GetSuppliersEditableAsync();
+            Countries = await WorldcitiesDataService.GetCountriesAsync();
+            Cities = await WorldcitiesDataService.GetCitiesAsync();
+        }
+        void Grid_CustomizeEditModel(GridCustomizeEditModelEventArgs e) {
+            if(e.IsNew) {
+                var newSupplier = (Supplier)e.EditModel;
+                newSupplier.CompanyName = "DevExpress";
+                newSupplier.ContactName = "John Doe";
+            }
+        }
+        async Task Grid_EditModelSaving(GridEditModelSavingEventArgs e) {
+            if(e.IsNew)
+                await NwindDataService.InsertSupplierAsync((Supplier)e.EditModel);
+            else
+                await NwindDataService.UpdateSupplierAsync((Supplier)e.DataItem, (Supplier)e.EditModel);
+            await UpdateDataAsync();
+        }
+        async Task Grid_DataItemDeleting(GridDataItemDeletingEventArgs e) {
+            await NwindDataService.RemoveSupplierAsync((Supplier)e.DataItem);
+            await UpdateDataAsync();
+        }
+        async Task UpdateDataAsync() {
+            DataSource = await NwindDataService.GetSuppliersEditableAsync();
+        }
+    }
+</DemoPageSectionComponent>

@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Identity
+@using BlazorDemo.CRM.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject IdentityRedirectManager RedirectManager
+
+@if(externalLogins.Length == 0) {
+    <div class="info-message">
+        <span>See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a> to enable external login.</span>
+    </div>
+} else {
+    <form class="external-logins" action="Account/PerformExternalLogin" method="post">
+        <AntiforgeryToken />
+        <input type="hidden" name="ReturnUrl" value="@ReturnUrl" />
+        @foreach(var provider in externalLogins) {
+            <DxButton SubmitFormOnClick="true" name="Provider" value="@provider.Name" IconCssClass="@("icon-external-provider icon-" + provider.Name.ToLower())" Text="@provider.DisplayName" RenderStyle="ButtonRenderStyle.Secondary" CssClass="w-100"></DxButton>
+        }
+    </form>
+}
+
+@code {
+    private AuthenticationScheme[] externalLogins = [];
+
+    [SupplyParameterFromQuery]
+    private string? ReturnUrl { get; set; }
+
+    protected override async Task OnInitializedAsync() {
+        externalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToArray();
+    }
+}

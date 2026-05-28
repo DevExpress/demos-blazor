@@ -1,0 +1,29 @@
+﻿<DemoPageSectionComponent Id="Editors-ComboBox-ValueFieldProperty" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <label for="cbValueField" class="demo-text cw-480 mb-1">
+            Employee
+        </label>
+        <DxComboBox Data="@Data"
+                    TextFieldName="@nameof(Employee.Text)"
+                    ValueFieldName="@nameof(Employee.EmployeeId)"
+                    CssClass="cw-480"
+                    SizeMode="Params.SizeMode"
+                    @bind-Value="@Value"
+                    InputId="cbValueField"/>
+        <p class="demo-text cw-480 mt-3">
+            Selected employee ID: <b>@(Value.ToString())</b>
+        </p>
+    </ChildContentWithParameters>
+
+    @code {
+        IEnumerable<Employee> Data { get; set; }
+        int? Value { get; set; }
+
+        protected override async Task OnInitializedAsync() {
+            Data = await NwindDataService.GetEmployeesAsync();
+            Value = Data.FirstOrDefault()?.EmployeeId;
+        }
+    }
+</DemoPageSectionComponent>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="22.1.0.0" Ref="0" ControlType="DevExpress.XtraScheduler.Reporting.XtraSchedulerReport, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="MonthlyStyle2Columns" PageWidth="850" PageHeight="1100" Version="22.1">
+  <Views>
+    <Item1 SchedulerViewType="DevExpress.XtraScheduler.Reporting.ReportMonthView, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Ref="1" VisibleWeekDayColumnCount="2">
+      <Appearance Ref="2" />
+    </Item1>
+  </Views>
+  <Bands>
+    <Item1 Ref="3" ControlType="DetailBand" Name="Detail" PageBreak="AfterBand" HeightF="875" TextAlignment="TopLeft" Padding="0,0,0,0,100">
+      <Controls>
+        <Item1 Ref="5" ControlType="DevExpress.XtraScheduler.Reporting.VerticalResourceHeaders, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="verticalResourceHeaders1" TimeCells="#Ref-4" View="#Ref-1" SizeF="25,725" LocationFloat="0,150">
+          <Corners Ref="6" Top="25" />
+          <Options Ref="7" />
+          <PrintColorSchemas Ref="8" />
+        </Item1>
+        <Item2 Ref="9" ControlType="DevExpress.XtraScheduler.Reporting.DayOfWeekHeaders, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="dayOfWeekHeaders1" TimeCells="#Ref-4" View="#Ref-1" SizeF="625,25" LocationFloat="25,150">
+          <PrintColorSchemas Ref="10" />
+        </Item2>
+        <Item3 Ref="11" ControlType="DevExpress.XtraScheduler.Reporting.TimeIntervalInfo, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="timeIntervalInfo1" TimeCells="#Ref-4" View="#Ref-1" PrintInColumn="Odd" SizeF="233,92" LocationFloat="25,33">
+          <PrintColorSchemas Ref="12" />
+        </Item3>
+        <Item4 Ref="13" ControlType="DevExpress.XtraScheduler.Reporting.CalendarControl, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="calendarControl1" TimeCells="#Ref-4" PrintInColumn="Even" View="#Ref-1" SizeF="358,133" LocationFloat="283,8">
+          <PrintColorSchemas Ref="14" />
+        </Item4>
+        <Item5 Ref="4" ControlType="DevExpress.XtraScheduler.Reporting.HorizontalWeek, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="horizontalWeek1" View="#Ref-1" SizeF="625,693" LocationFloat="25,175">
+          <AppointmentDisplayOptions Ref="15" />
+          <PrintColorSchemas Ref="16" />
+        </Item5>
+      </Controls>
+    </Item1>
+  </Bands>
+</XtraReportsLayoutSerializer>

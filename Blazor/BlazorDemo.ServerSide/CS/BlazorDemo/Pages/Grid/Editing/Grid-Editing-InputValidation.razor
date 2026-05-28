@@ -1,0 +1,144 @@
+﻿@page "/Grid/EditData/InputValidation"
+@layout DataProviderAccessArea<INwindDataProvider>
+
+<DemoPageSectionComponent Id="Grid-Editing-InputValidation" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+        @inject ICspNonceService NonceProvider
+
+        <style nonce="@NonceProvider.Nonce">
+            @@media (min-width: 899.98px) {
+                .pw-800 {
+                    max-width: 800px !important;
+                    width: 800px !important;
+                }
+            }
+        </style>
+
+        <DxGrid @ref="Grid" Data="DataSource" PageSize="12" KeyFieldName="EmployeeId"
+            CustomizeDataRowEditor="Grid_CustomizeDataRowEditor" CustomizeEditModel="Grid_CustomizeEditModel" EditModelSaving="Grid_EditModelSaving"
+            DataItemDeleting="Grid_DataItemDeleting" PopupEditFormCssClass="pw-800" EditMode="EditMode"
+            ColumnResizeMode="GridColumnResizeMode.NextColumn" TextWrapEnabled="false" SizeMode="Params.SizeMode"
+            HighlightRowOnHover="true" ValidationEnabled="EnableValidation">
+            <Columns>
+                <DxGridCommandColumn Width="110px" />
+                <DxGridDataColumn FieldName="FirstName" MinWidth="80" />
+                <DxGridDataColumn FieldName="LastName" MinWidth="80" />
+                <DxGridDataColumn FieldName="Title" MinWidth="100" />
+                <DxGridDataColumn FieldName="TitleOfCourtesy" Caption="Courtesy Title" MinWidth="120" />
+                <DxGridDataColumn FieldName="BirthDate" Width="10%" MinWidth="80" />
+                <DxGridDataColumn FieldName="HireDate" Width="10%" MinWidth="80" />
+            </Columns>
+            <EditFormTemplate Context="EditFormContext">
+                <DxFormLayout CssClass="w-100">
+                    <DxFormLayoutItem Caption="First Name:" ColSpanMd="6">
+                        @EditFormContext.GetEditor("FirstName")
+                    </DxFormLayoutItem>
+                    <DxFormLayoutItem Caption="Last Name:" ColSpanMd="6">
+                        @EditFormContext.GetEditor("LastName")
+                    </DxFormLayoutItem>
+                    <DxFormLayoutItem Caption="Title:" ColSpanMd="6">
+                        @EditFormContext.GetEditor("Title")
+                    </DxFormLayoutItem>
+                    <DxFormLayoutItem Caption="Title of Courtesy:" ColSpanMd="6">
+                        @EditFormContext.GetEditor("TitleOfCourtesy")
+                    </DxFormLayoutItem>
+                    <DxFormLayoutItem Caption="Birth Date:" ColSpanMd="6">
+                        @EditFormContext.GetEditor("BirthDate")
+                    </DxFormLayoutItem>
+                    <DxFormLayoutItem Caption="Hire Date:" ColSpanMd="6">
+                        @EditFormContext.GetEditor("HireDate")
+                    </DxFormLayoutItem>
+                </DxFormLayout>
+            </EditFormTemplate>
+            <ToolbarTemplate>
+                <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Plain" SizeMode="Params.SizeMode">
+                    <Items>
+                        <DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
+                            <Template Context="toolbar_item_context">
+                                <div class="d-flex flex-row align-items-center h-100">
+                                    <label class="me-2" for="editModeInput">Edit Mode:</label>
+                                    <DxComboBox Data="GridEditModeItems" TextFieldName="Name"
+                                        @bind-Value="EditModeItem" InputId="editModeInput" />
+                                </div>
+                            </Template>
+                        </DxToolbarItem>
+                        <DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
+                            <Template Context="toolbar_item_context">
+                                <div class="d-flex flex-row align-items-center me-2">
+                                    <DxCheckBox Checked="EnableValidation" CheckedChanged="new Func<bool, Task>(EnableValidation_CheckedChanged)">Enable Validation</DxCheckBox>
+                                </div>
+                            </Template>
+                        </DxToolbarItem>
+                        <DxToolbarItem>
+                            <Template Context="toolbar_item_context">
+                                <div class="d-flex flex-row align-items-center">
+                                    <DxCheckBox Checked="ShowValidationSuccessState" Enabled="EnableValidation" CheckedChanged="new Func<bool, Task>(ShowValidationSuccessState_CheckedChanged)">Show Validation Success State</DxCheckBox>
+                                </div>
+                            </Template>
+                        </DxToolbarItem>
+                    </Items>
+                </DxToolbar>
+            </ToolbarTemplate>
+        </DxGrid>
+    </ChildContentWithParameters>
+
+    @code {
+        IGrid Grid { get; set; }
+        IEnumerable<EditableEmployee> DataSource { get; set; }
+
+        GridEditModeItem EditModeItem { get; set; }
+        IEnumerable<GridEditModeItem> GridEditModeItems { get; } = Enum.GetValues<GridEditMode>().Select(e => GridEditModeItem.Create(e)).ToList();
+        GridEditMode EditMode => EditModeItem?.Mode ?? GridEditMode.EditForm;
+
+        bool EnableValidation { get; set; } = true;
+        bool ShowValidationSuccessState { get; set; }
+
+        protected override async Task OnInitializedAsync() {
+            await base.OnInitializedAsync();
+            DataSource = await NwindDataService.GetEmployeesEditableAsync();
+            EditModeItem = GridEditModeItems.First();
+        }
+        async Task EnableValidation_CheckedChanged(bool value) {
+            EnableValidation = value;
+            await Grid.CancelEditAsync();
+        }
+        async Task ShowValidationSuccessState_CheckedChanged(bool value) {
+            ShowValidationSuccessState = value;
+            await Grid.CancelEditAsync();
+        }
+        void Grid_CustomizeDataRowEditor(GridCustomizeDataRowEditorEventArgs e) {
+            if (e.EditSettings is ITextEditSettings settings) {
+                settings.ShowValidationIcon = true;
+                settings.ShowValidationSuccessState = ShowValidationSuccessState;
+            }
+        }
+        void Grid_CustomizeEditModel(GridCustomizeEditModelEventArgs e) {
+            if(e.IsNew) {
+                var newEmployee = (EditableEmployee)e.EditModel;
+                newEmployee.FirstName = "John";
+                newEmployee.LastName = "Doe";
+            }
+        }
+        async Task Grid_EditModelSaving(GridEditModelSavingEventArgs e) {
+            var editableEmployee = (EditableEmployee)e.EditModel;
+
+            if (e.IsNew)
+                await NwindDataService.InsertEmployeeAsync(editableEmployee);
+            else
+                await NwindDataService.UpdateEmployeeAsync((EditableEmployee)e.DataItem, editableEmployee);
+            await UpdateDataAsync();
+        }
+        async Task Grid_DataItemDeleting(GridDataItemDeletingEventArgs e) {
+            await NwindDataService.RemoveEmployeeAsync((EditableEmployee)e.DataItem);
+            await UpdateDataAsync();
+        }
+        async Task UpdateDataAsync() {
+            DataSource = await NwindDataService.GetEmployeesEditableAsync();
+        }
+        record GridEditModeItem(string Name, GridEditMode Mode) {
+            public static GridEditModeItem Create(GridEditMode mode) => new
+            (SplitTextHelper.SplitPascalCaseString(mode.ToString()), mode);
+        }
+    }
+</DemoPageSectionComponent>

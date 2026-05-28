@@ -1,0 +1,406 @@
+﻿<XtraSerializer version="1.0" application="View">
+  <property name="Name">advBandedGridView1</property>
+  <property name="GroupFormat">{0}: {1} {2}</property>
+  <property name="OptionsDetail" isnull="true" iskey="true">
+    <property name="ShowDetailTabs">false</property>
+  </property>
+  <property name="HorzScrollVisibility">Auto</property>
+  <property name="FixedLineWidth">2</property>
+  <property name="RowHeight">-1</property>
+  <property name="OptionsNavigation" isnull="true" iskey="true">
+    <property name="AutoMoveRowFocus">false</property>
+    <property name="UseTabKey">true</property>
+    <property name="EnterMoveNextColumn">false</property>
+    <property name="UseAdvVertNavigation">true</property>
+    <property name="AutoFocusNewRow">false</property>
+    <property name="UseAdvHorzNavigation">true</property>
+  </property>
+  <property name="NewItemRowText" />
+  <property name="BorderStyle">Default</property>
+  <property name="HorzScrollStep">3</property>
+  <property name="ViewCaption" />
+  <property name="ActiveFilterEnabled">true</property>
+  <property name="CustomizationFormBounds">@1,Height=0@1,X=0@1,Y=0@1,Width=0</property>
+  <property name="DetailTabHeaderLocation">Top</property>
+  <property name="ColumnPanelRowHeight">-1</property>
+  <property name="ChildGridLevelName" />
+  <property name="VertScrollVisibility">Auto</property>
+  <property name="FooterPanelHeight">-1</property>
+  <property name="GroupRowHeight">-1</property>
+  <property name="OptionsView" isnull="true" iskey="true">
+    <property name="ShowGroupedColumns">true</property>
+    <property name="AllowCellMerge">false</property>
+    <property name="RowAutoHeight">false</property>
+  </property>
+  <property name="GroupPanelText">Drag a column header here to group by that column</property>
+  <property name="VertScrollTipFieldName" />
+  <property name="ScrollStyle">LiveVertScroll, LiveHorzScroll</property>
+  <property name="BestFitMaxRowCount">-1</property>
+  <property name="IndicatorWidth">12</property>
+  <property name="ShowButtonMode">ShowForFocusedCell</property>
+  <property name="DetailHeight">160</property>
+  <property name="BandPanelRowHeight">-1</property>
+  <property name="FocusRectStyle">CellFocus</property>
+  <property name="PreviewLineCount">-1</property>
+  <property name="RowSeparatorHeight">1</property>
+  <property name="PreviewFieldName">Description</property>
+  <property name="MinBandPanelRowCount">1</property>
+  <property name="SynchronizeClones">true</property>
+  <property name="OptionsBehavior" isnull="true" iskey="true">
+    <property name="KeepGroupExpandedOnSorting">false</property>
+  </property>
+  <property name="GroupFooterShowMode">VisibleIfExpanded</property>
+  <property name="Columns" iskey="true" value="12">
+    <property name="Item1" isnull="true" iskey="true">
+      <property name="FieldName">Trademark</property>
+      <property name="ImageIndex">2</property>
+      <property name="Fixed">None</property>
+      <property name="MinWidth">20</property>
+      <property name="ImageAlignment">Near</property>
+      <property name="Width">297</property>
+      <property name="SortIndex">-1</property>
+      <property name="ColumnEditName" />
+      <property name="Name">colTrademark</property>
+      <property name="UnboundType">Bound</property>
+      <property name="OptionsFilter" isnull="true" iskey="true">
+        <property name="AllowFilter">false</property>
+      </property>
+      <property name="AutoFillDown">false</property>
+      <property name="ToolTip" />
+      <property name="VisibleIndex">0</property>
+      <property name="ShowButtonMode">Default</property>
+      <property name="RowCount">1</property>
+      <property name="Visible">true</property>
+      <property name="Caption">Trademark</property>
+      <property name="RowIndex">0</property>
+      <property name="SummaryItem" isnull="true" iskey="true">
+        <property name="DisplayFormat" />
+        <property name="SummaryType">Count</property>
+        <property name="Tag" isnull="true" />
+        <property name="FieldName">Trademark</property>
+      </property>
+    </property>
+    <property name="Item2" isnull="true" iskey="true">
+      <property name="FieldName">Model</property>
+      <property name="ImageIndex">-1</property>
+      <property name="Fixed">None</property>
+      <property name="MinWidth">20</property>
+      <property name="ImageAlignment">Near</property>
+      <property name="Width">203</property>
+      <property name="SortIndex">-1</property>
+      <property name="ColumnEditName" />
+      <property name="Name">colModel</property>
+      <property name="UnboundType">Bound</property>
+      <property name="OptionsFilter" isnull="true" iskey="true">
+        <property name="AllowFilter">false</property>
+      </property>
+      <property name="AutoFillDown">false</property>
+      <property name="ToolTip" />
+      <property name="VisibleIndex">2</property>
+      <property name="ShowButtonMode">Default</property>
+      <property name="RowCount">1</property>
+      <property name="Visible">true</property>
+      <property name="Caption">Model</property>
+      <property name="RowIndex">1</property>
+    </property>
+    <property name="Item3" isnull="true" iskey="true">
+      <property name="FieldName">Category</property>
+      <property name="ImageIndex">-1</property>
+      <property name="Fixed">None</property>
+      <property name="MinWidth">20</property>
+      <property name="ImageAlignment">Near</property>
+      <property name="Width">94</property>
+      <property name="SortIndex">-1</property>
+      <property name="ColumnEditName">repositoryItemImageComboBox1</property>
+      <property name="Name">colCategory</property>
+      <property name="UnboundType">Bound</property>
+      <property name="AutoFillDown">false</property>
+      <property name="ToolTip" />
+      <property name="VisibleIndex">1</property>
+      <property name="ShowButtonMode">Default</property>
+      <property name="RowCount">1</property>
+      <property name="Visible">true</property>
+      <property name="Caption">Category</property>
+      <property name="RowIndex">1</property>
+    </property>
+    <property name="Item4" isnull="true" iskey="true">
+      <property name="FieldName">Price</property>
+      <property name="ImageIndex">-1</property>
+      <property name="Fixed">None</property>
+      <property name="MinWidth">20</property>
+      <property name="ImageAlignment">Near</property>
+      <property name="Width">94</property>
+      <property name="SortIndex">-1</property>
+      <property name="ColumnEditName">repositoryItemCalcEdit1</property>
+      <property name="Name">colPrice</property>
+      <property name="UnboundType">Bound</property>
+      <property name="OptionsFilter" isnull="true" iskey="true">
+        <property name="AllowFilter">false</property>
+      </property>
+      <property name="AutoFillDown">false</property>
+      <property name="ToolTip" />
+      <property name="VisibleIndex">3</property>
+      <property name="DisplayFormat" isnull="true" iskey="true">
+        <property name="FormatString">$#,0.00</property>
+        <property name="FormatType">Numeric</property>
+      </property>
+      <property name="ShowButtonMode">Default</property>
+      <property name="RowCount">1</property>
+      <property name="Visible">true</property>
+      <property name="Caption">Price</property>
+      <property name="RowIndex">2</property>
+    </property>
+    <property name="Item5" isnull="true" iskey="true">
+      <property name="FieldName">Delivery Date</property>
+      <property name="ImageIndex">-1</property>
+      <property name="Fixed">None</property>
+      <property name="MinWidth">20</property>
+      <property name="ImageAlignment">Near</property>
+      <property name="Width">98</property>
+      <property name="SortIndex">-1</property>
+      <property name="ColumnEditName" />
+      <property name="Name">colDeliveryDate</property>
+      <property name="UnboundType">Bound</property>
+      <property name="OptionsFilter" isnull="true" iskey="true">
+        <property name="AllowFilter">false</property>
+      </property>
+      <property name="AutoFillDown">false</property>
+      <property name="ToolTip" />
+      <property name="VisibleIndex">4</property>
+      <property name="ShowButtonMode">Default</property>
+      <property name="RowCount">1</property>
+      <property name="Visible">true</property>
+      <property name="Caption">Delivery Date</property>
+      <property name="RowIndex">2</property>
+    </property>
+    <property name="Item6" isnull="true" iskey="true">
+      <property name="FieldName">Is In Stock</property>
+      <property name="ImageIndex">-1</property>
+      <property name="Fixed">None</property>
+      <property name="MinWidth">20</property>
+      <property name="ImageAlignment">Near</property>
+      <property name="Width">105</property>
+      <property name="SortIndex">-1</property>
+      <property name="ColumnEditName" />
+      <property name="Name">colIsInStock</property>
+      <property name="UnboundType">Bound</property>
+      <property name="OptionsFilter" isnull="true" iskey="true">
+        <property name="AllowFilter">false</property>
+      </property>
+      <property name="AutoFillDown">false</property>
+      <property name="ToolTip" />
+      <property name="VisibleIndex">5</property>
+      <property name="ShowButtonMode">Default</property>
+      <property name="RowCount">1</property>
+      <property name="Visible">true</property>
+      <property name="Caption">In Stock?</property>
+      <property name="RowIndex">2</property>
+    </property>
+    <property name="Item7" isnull="true" iskey="true">
+      <property name="FieldName">Picture</property>
+      <property name="ImageIndex">1</property>
+      <property name="Fixed">None</property>
+      <property name="MinWidth">20</property>
+      <property name="ImageAlignment">Near</property>
+      <property name="Width">117</property>
+      <property name="SortIndex">-1</property>
+      <property name="ColumnEditName">repositoryItemPictureEdit1</property>
+      <property name="Name">colIcon</property>
+      <property name="UnboundType">Bound</property>
+      <property name="OptionsFilter" isnull="true" iskey="true">
+        <property name="AllowFilter">false</property>
+      </property>
+      <property name="AutoFillDown">true</property>
+      <property name="OptionsColumn" isnull="true" iskey="true">
+        <property name="AllowSort">False</property>
+        <property name="AllowGroup">False</property>
+      </property>
+      <property name="ToolTip" />
+      <property name="VisibleIndex">11</property>
+      <property name="ShowButtonMode">Default</property>
+      <property name="RowCount">3</property>
+      <property name="Visible">true</property>
+      <property name="Caption">Icon</property>
+      <property name="RowIndex">0</property>
+    </property>
+    <property name="Item8" isnull="true" iskey="true">
+      <property name="FieldName">HP</property>
+      <property name="ImageIndex">-1</property>
+      <property name="Fixed">None</property>
+      <property name="MinWidth">20</property>
+      <property name="ImageAlignment">Near</property>
+      <property name="Width">88</property>
+      <property name="SortIndex">-1</property>
+      <property name="ColumnEditName" />
+      <property name="Name">colHP</property>
+      <property name="UnboundType">Bound</property>
+      <property name="OptionsFilter" isnull="true" iskey="true">
+        <property name="AllowFilter">false</property>
+      </property>
+      <property name="AutoFillDown">false</property>
+      <property name="ToolTip" />
+      <property name="VisibleIndex">6</property>
+      <property name="ShowButtonMode">Default</property>
+      <property name="RowCount">1</property>
+      <property name="Visible">true</property>
+      <property name="Caption">HP</property>
+      <property name="RowIndex">0</property>
+    </property>
+    <property name="Item9" isnull="true" iskey="true">
+      <property name="FieldName">Cyl</property>
+      <property name="ImageIndex">-1</property>
+      <property name="Fixed">None</property>
+      <property name="MinWidth">20</property>
+      <property name="ImageAlignment">Near</property>
+      <property name="Width">138</property>
+      <property name="SortIndex">-1</property>
+      <property name="ColumnEditName">repositoryItemSpinEdit1</property>
+      <property name="Name">colCyl</property>
+      <property name="UnboundType">Bound</property>
+      <property name="AutoFillDown">false</property>
+      <property name="ToolTip" />
+      <property name="VisibleIndex">7</property>
+      <property name="ShowButtonMode">Default</property>
+      <property name="RowCount">1</property>
+      <property name="Visible">true</property>
+      <property name="Caption">Cyl</property>
+      <property name="RowIndex">0</property>
+    </property>
+    <property name="Item10" isnull="true" iskey="true">
+      <property name="FieldName">Liter</property>
+      <property name="ImageIndex">-1</property>
+      <property name="Fixed">None</property>
+      <property name="MinWidth">20</property>
+      <property name="ImageAlignment">Near</property>
+      <property name="Width">88</property>
+      <property name="SortIndex">-1</property>
+      <property name="ColumnEditName" />
+      <property name="Name">colLiter</property>
+      <property name="UnboundType">Bound</property>
+      <property name="OptionsFilter" isnull="true" iskey="true">
+        <property name="AllowFilter">false</property>
+      </property>
+      <property name="AutoFillDown">false</property>
+      <property name="ToolTip" />
+      <property name="VisibleIndex">8</property>
+      <property name="DisplayFormat" isnull="true" iskey="true">
+        <property name="FormatString">#.### Liters</property>
+        <property name="FormatType">Numeric</property>
+      </property>
+      <property name="ShowButtonMode">Default</property>
+      <property name="RowCount">1</property>
+      <property name="Visible">true</property>
+      <property name="Caption">Capacity</property>
+      <property name="RowIndex">1</property>
+    </property>
+    <property name="Item11" isnull="true" iskey="true">
+      <property name="FieldName">Transmiss Speed Count</property>
+      <property name="ImageIndex">-1</property>
+      <property name="Fixed">None</property>
+      <property name="MinWidth">20</property>
+      <property name="ImageAlignment">Near</property>
+      <property name="Width">138</property>
+      <property name="SortIndex">-1</property>
+      <property name="ColumnEditName">repositoryItemSpinEdit1</property>
+      <property name="Name">colTransmissSpeedCount</property>
+      <property name="UnboundType">Bound</property>
+      <property name="AutoFillDown">false</property>
+      <property name="ToolTip" />
+      <property name="VisibleIndex">9</property>
+      <property name="ShowButtonMode">Default</property>
+      <property name="RowCount">1</property>
+      <property name="Visible">true</property>
+      <property name="Caption"># of Gears</property>
+      <property name="RowIndex">1</property>
+      <property name="SummaryItem" isnull="true" iskey="true">
+        <property name="DisplayFormat">AVR={0:#.##}</property>
+        <property name="SummaryType">Average</property>
+        <property name="Tag" isnull="true" />
+        <property name="FieldName">Transmiss Speed Count</property>
+      </property>
+    </property>
+    <property name="Item12" isnull="true" iskey="true">
+      <property name="FieldName">Transmiss Automatic</property>
+      <property name="ImageIndex">-1</property>
+      <property name="Fixed">None</property>
+      <property name="MinWidth">20</property>
+      <property name="ImageAlignment">Near</property>
+      <property name="Width">226</property>
+      <property name="SortIndex">-1</property>
+      <property name="ColumnEditName">repositoryItemRadioGroup1</property>
+      <property name="Name">colTransmissAutomatic</property>
+      <property name="UnboundType">Bound</property>
+      <property name="AutoFillDown">false</property>
+      <property name="ToolTip" />
+      <property name="VisibleIndex">10</property>
+      <property name="ShowButtonMode">Default</property>
+      <property name="RowCount">1</property>
+      <property name="Visible">true</property>
+      <property name="Caption">Automatic Transmission</property>
+      <property name="RowIndex">2</property>
+    </property>
+  </property>
+  <property name="Bands" iskey="true" value="3">
+    <property name="Item1" isnull="true" iskey="true">
+      <property name="Caption">Main</property>
+      <property name="Width">297</property>
+      <property name="MinWidth">10</property>
+      <property name="ImageAlignment">Near</property>
+      <property name="ImageIndex">-1</property>
+      <property name="Columns" iskey="true" value="6">
+        <property name="Item1" iskey="true" value="colPrice" />
+        <property name="Item2" iskey="true" value="colCategory" />
+        <property name="Item3" iskey="true" value="colDeliveryDate" />
+        <property name="Item4" iskey="true" value="colTrademark" />
+        <property name="Item5" iskey="true" value="colModel" />
+        <property name="Item6" iskey="true" value="colIsInStock" />
+      </property>
+      <property name="ToolTip" />
+      <property name="AutoFillDown">true</property>
+      <property name="Visible">true</property>
+      <property name="Children" iskey="true" value="0" />
+      <property name="Name">gridBand1</property>
+      <property name="RowCount">1</property>
+      <property name="Fixed">None</property>
+    </property>
+    <property name="Item2" isnull="true" iskey="true">
+      <property name="Caption">Performance Attributes</property>
+      <property name="Width">226</property>
+      <property name="MinWidth">10</property>
+      <property name="ImageAlignment">Near</property>
+      <property name="ImageIndex">0</property>
+      <property name="Columns" iskey="true" value="5">
+        <property name="Item1" iskey="true" value="colHP" />
+        <property name="Item2" iskey="true" value="colCyl" />
+        <property name="Item3" iskey="true" value="colLiter" />
+        <property name="Item4" iskey="true" value="colTransmissSpeedCount" />
+        <property name="Item5" iskey="true" value="colTransmissAutomatic" />
+      </property>
+      <property name="ToolTip" />
+      <property name="AutoFillDown">true</property>
+      <property name="Visible">true</property>
+      <property name="Children" iskey="true" value="0" />
+      <property name="Name">gridBand2</property>
+      <property name="RowCount">1</property>
+      <property name="Fixed">None</property>
+    </property>
+    <property name="Item3" isnull="true" iskey="true">
+      <property name="Caption">Picture</property>
+      <property name="Width">117</property>
+      <property name="MinWidth">10</property>
+      <property name="ImageAlignment">Near</property>
+      <property name="ImageIndex">-1</property>
+      <property name="Columns" iskey="true" value="1">
+        <property name="Item1" iskey="true" value="colIcon" />
+      </property>
+      <property name="ToolTip" />
+      <property name="AutoFillDown">true</property>
+      <property name="Visible">true</property>
+      <property name="Children" iskey="true" value="0" />
+      <property name="Name">gridBand3</property>
+      <property name="RowCount">1</property>
+      <property name="Fixed">None</property>
+    </property>
+  </property>
+  <property name="GroupSummary" iskey="true" value="0" />
+</XtraSerializer>

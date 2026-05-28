@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <EnableDefaultItems>False</EnableDefaultItems>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <StaticWebAssetProjectMode>Default</StaticWebAssetProjectMode>
+    <RootNamespace>BlazorDemo.CRM.Client</RootNamespace>
+    <WasmBuildNative>true</WasmBuildNative>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Azure.AI.OpenAI" />
+    <PackageReference Include="DevExtreme.AspNet.Data" />
+    <PackageReference Include="Markdig" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" />
+    <PackageReference Include="Microsoft.Extensions.AI" />
+    <PackageReference Include="Microsoft.Extensions.AI.OpenAI" />
+    <PackageReference Include="System.Drawing.Common" />
+    <PackageReference Include="SkiaSharp.Views.Blazor" />
+    <PackageReference Include="SkiaSharp.HarfBuzz" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.AIIntegration.Blazor" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.AIIntegration.OpenAI" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Drawing.Skia" VersionOverride="26.1.2-beta-26148" />
+    
+    
+    
+	  
+    
+    
+    
+    
+    
+    
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="**\*.cs" Exclude="obj\**\*.cs" />
+    <Content Include="Components\**\*.razor" />
+    <Content Include="Components\**\*.css" />
+  </ItemGroup>
+</Project>

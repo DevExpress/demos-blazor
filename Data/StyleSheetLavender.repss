@@ -1,0 +1,41 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:ObjectStorage id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.8.4.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName id="ref-4">DevExpress.XtraReports, Version=1.8.4.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4</Type_X_AssemblyName>
+<Type_X_TypeName id="ref-5">DevExpress.XtraReports.UI.XRControlStyleSheet</Type_X_TypeName>
+<FileName id="ref-6"></FileName>
+<StyleCount>2</StyleCount>
+<StyleName0 id="ref-7">EvenStyle</StyleName0>
+<Style0_X_Font id="ref-8">Tahoma, 8.25pt</Style0_X_Font>
+<Style0_X_ForeColor id="ref-9">ControlText</Style0_X_ForeColor>
+<Style0_X_BackColor id="ref-10">239, 243, 250</Style0_X_BackColor>
+<Style0_X_BorderColor id="ref-11">199, 209, 228</Style0_X_BorderColor>
+<Style0_X_Borders xsi:type="a2:BorderSide" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D3.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Left, Right, Bottom</Style0_X_Borders>
+<Style0_X_TextAlignment xsi:type="a2:TextAlignment" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D3.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">MiddleLeft</Style0_X_TextAlignment>
+<Style0_X_BorderWidth>1</Style0_X_BorderWidth>
+<Style0_X_StyleUsing_X_UseFont>true</Style0_X_StyleUsing_X_UseFont>
+<Style0_X_StyleUsing_X_UseForeColor>true</Style0_X_StyleUsing_X_UseForeColor>
+<Style0_X_StyleUsing_X_UseBackColor>true</Style0_X_StyleUsing_X_UseBackColor>
+<Style0_X_StyleUsing_X_UseBorderColor>true</Style0_X_StyleUsing_X_UseBorderColor>
+<Style0_X_StyleUsing_X_UseBorders>true</Style0_X_StyleUsing_X_UseBorders>
+<Style0_X_StyleUsing_X_UseBorderWidth>true</Style0_X_StyleUsing_X_UseBorderWidth>
+<Style0_X_StyleUsing_X_UseTextAlignment>false</Style0_X_StyleUsing_X_UseTextAlignment>
+<StyleName1 id="ref-12">OddStyle</StyleName1>
+<Style1_X_Font id="ref-13">Tahoma, 8.25pt</Style1_X_Font>
+<Style1_X_ForeColor href="#ref-9"/>
+<Style1_X_BackColor id="ref-14">Transparent</Style1_X_BackColor>
+<Style1_X_BorderColor id="ref-15">199, 209, 228</Style1_X_BorderColor>
+<Style1_X_Borders xsi:type="a2:BorderSide" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D3.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Left, Right, Bottom</Style1_X_Borders>
+<Style1_X_TextAlignment xsi:type="a2:TextAlignment" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D3.0.3.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">MiddleLeft</Style1_X_TextAlignment>
+<Style1_X_BorderWidth>1</Style1_X_BorderWidth>
+<Style1_X_StyleUsing_X_UseFont>true</Style1_X_StyleUsing_X_UseFont>
+<Style1_X_StyleUsing_X_UseForeColor>true</Style1_X_StyleUsing_X_UseForeColor>
+<Style1_X_StyleUsing_X_UseBackColor>true</Style1_X_StyleUsing_X_UseBackColor>
+<Style1_X_StyleUsing_X_UseBorderColor>true</Style1_X_StyleUsing_X_UseBorderColor>
+<Style1_X_StyleUsing_X_UseBorders>true</Style1_X_StyleUsing_X_UseBorders>
+<Style1_X_StyleUsing_X_UseBorderWidth>true</Style1_X_StyleUsing_X_UseBorderWidth>
+<Style1_X_StyleUsing_X_UseTextAlignment>false</Style1_X_StyleUsing_X_UseTextAlignment>
+<ItemCount>0</ItemCount>
+</a1:ObjectStorage>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

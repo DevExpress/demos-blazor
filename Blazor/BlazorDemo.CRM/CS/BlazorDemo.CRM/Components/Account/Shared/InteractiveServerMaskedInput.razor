@@ -1,0 +1,12 @@
+﻿@rendermode InteractiveServer
+
+<DxMaskedInput name="@Name" @rendermode="InteractiveServer" CssClass="@CssClass" @bind-Value="Value" Mask="@Mask" @attributes=Attributes />
+
+@code {
+    [Parameter] public string? Name { get; set; }
+    [Parameter] public string? Mask { get; set; }
+    [Parameter] public string? Value { get; set; }
+    [Parameter] public string? CssClass { get; set; }
+    [Parameter] public bool Password { get; set; }
+    [Parameter(CaptureUnmatchedValues = true)] public Dictionary<string, object>? Attributes { get; set; }
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="H:\Work\XML Schemes\module-new.xsd">
+	<controls>
+		<controlentry>
+			<control>
+				<name>simpleButton1</name>
+				<windowcaption>Add Page to Default Category</windowcaption>
+				<description>Creates a new ribbon page, adds it to the Ribbon Control's default category and selects the page.</description>
+				<memberlist>ribbonControl.Pages.Add(), ribbonControl.SelectedPage</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>simpleButton2</name>
+				<windowcaption>Add Category</windowcaption>
+				<description>Creates a new page category and adds it to the Ribbon Control's PageCategory collection.</description>
+				<memberlist>ribbonControl.PageCategories.Add(), ribbonControl.SelectedPage</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>simpleButton3</name>
+				<windowcaption>Remove Selected Category</windowcaption>
+				<description>Deletes the active page category. The Default Page Category cannot be removed.</description>
+				<memberlist>ribbonControl.PageCategories.Remove()</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>simpleButton4</name>
+				<windowcaption>Add Page to Selected Category</windowcaption>
+				<description>Creates a new page, adds it to the active page category and select the page.</description>
+				<memberlist>category.Pages.Add()</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>simpleButton5</name>
+				<windowcaption>Remove Selected Page</windowcaption>
+				<description>Deletes the selected page from the active category.</description>
+				<memberlist>category.Pages.Remove()</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>checkEdit1</name>
+				<windowcaption>Align Categories to the Right</windowcaption>
+				<description>If checked, the Page Categories are aligned to the right.</description>
+				<memberlist>ribbonControl.PageCategoryAlignment</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>checkEdit2</name>
+				<windowcaption>Show Categories</windowcaption>
+				<description>Unckeck this check box to hide categories. In this instance, the Ribbon Control displays only the Default Page Category.</description>
+				<memberlist>category.Visible</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+	</controls>
+</totalinfo>

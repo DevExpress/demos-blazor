@@ -1,0 +1,75 @@
+.main-content {
+    display: flex;
+    height: 100%;
+}
+
+.manage-layout {
+    flex-grow: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 0.625rem;
+}
+
+    .title .title-header-text {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        font-weight: 600;
+        letter-spacing: 0;
+    }
+
+    .title .title-content-text {
+        font-size: 1.5em;
+        line-height: 2rem;
+        font-weight: 400;
+        letter-spacing: 0;
+    }
+
+::deep .tab-icon {
+    width: 1rem;
+    height: 1rem;
+    min-width: 1rem;
+    min-height: 1rem;
+    background-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    background-position: center center;
+    background-color: currentColor;
+}
+
+::deep .icon-profile {
+    -webkit-mask-image: url("images/account/manage-profile.svg");
+    mask-image: url("images/account/manage-profile.svg");
+}
+
+::deep .icon-email {
+    -webkit-mask-image: url("images/account/manage-email.svg");
+    mask-image: url("images/account/manage-email.svg");
+}
+
+::deep .icon-two-factor {
+    -webkit-mask-image: url("images/account/manage-two-factor.svg");
+    mask-image: url("images/account/manage-two-factor.svg");
+}
+
+::deep .icon-password {
+    -webkit-mask-image: url("images/account/manage-password.svg");
+    mask-image: url("images/account/manage-password.svg");
+}
+
+::deep .icon-personal {
+    -webkit-mask-image: url("images/account/manage-personal.svg");
+    mask-image: url("images/account/manage-personal.svg");
+}
+
+::deep .icon-external {
+    -webkit-mask-image: url("images/account/user.svg");
+    mask-image: url("images/account/user.svg");
+}

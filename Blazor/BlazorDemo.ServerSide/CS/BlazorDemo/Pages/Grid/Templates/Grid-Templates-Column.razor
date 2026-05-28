@@ -1,0 +1,50 @@
+﻿@page "/Grid/Templates/Column"
+@layout DataProviderAccessArea<INwindDataProvider>
+
+<DemoPageSectionComponent Id="Grid-Templates-Column" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <DxGrid Data="@Data" SizeMode="Params.SizeMode" ColumnResizeMode="GridColumnResizeMode.NextColumn" TextWrapEnabled="false">
+            <Columns>
+                <DxGridDataColumn FieldName="FirstName" MinWidth="80" />
+                <DxGridDataColumn FieldName="LastName" MinWidth="80" />
+                <DxGridDataColumn FieldName="Title" MinWidth="100" />
+                <DxGridDataColumn FieldName="BirthDate" Width="10%" MinWidth="80" />
+                <DxGridDataColumn FieldName="HireDate" Width="10%" MinWidth="80" />
+                <DxGridDataColumn FieldName="EmployeeId" AllowSort="false" Width="90px" MinWidth="100" TextAlignment="GridTextAlignment.Center">
+                    <CellDisplayTemplate><button class="btn btn-link grid-btn-link" @onclick="() => ShowDetails((int)context.Value)">More Info</button></CellDisplayTemplate>
+                    <HeaderCaptionTemplate><span title="Click a link below to show more information about an employee">Details</span></HeaderCaptionTemplate>
+                </DxGridDataColumn>
+            </Columns>
+        </DxGrid>
+        <DxPopup @bind-Visible="@PopupVisible"
+                 HeaderText="@PopupHeaderText"
+                 HorizontalAlignment="HorizontalAlignment.Center"
+                 VerticalAlignment="VerticalAlignment.Center">
+            @PopupContent
+        </DxPopup>
+
+        @code {
+            IEnumerable<Employee> Data { get; set; }
+            Employee CurrentEmployee { get; set; }
+            bool PopupVisible {
+                get { return CurrentEmployee != null; }
+                set { if(!value) CurrentEmployee = null; }
+            }
+            string PopupHeaderText {
+                get { return CurrentEmployee != null ? CurrentEmployee.FirstName + " " + CurrentEmployee.LastName : ""; }
+            }
+            string PopupContent {
+                get { return CurrentEmployee != null ? CurrentEmployee.Notes : ""; }
+            }
+
+            protected override async Task OnInitializedAsync() {
+                Data = await NwindDataService.GetEmployeesAsync();
+            }
+            public void ShowDetails(int employeeId) {
+                CurrentEmployee = Data.FirstOrDefault(e => e.EmployeeId == employeeId);
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

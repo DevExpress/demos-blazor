@@ -1,0 +1,8 @@
+/*BeginHide*/ ::deep /*EndHide*/ .file-system-icon-folder,
+/*BeginHide*/ ::deep /*EndHide*/ .file-system-icon-file
+{
+    min-width: 1rem;
+    min-height: 1rem;
+    background-size: contain;
+    background-position: center center;
+}

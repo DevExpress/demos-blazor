@@ -1,0 +1,6 @@
+.document-format-combobox, .document-format-combobox > div > .dxbl-text-edit {
+    min-width: 175px !important;
+}
+.paragraph-left-indent-spinedit {
+    min-width: 100px !important;
+}

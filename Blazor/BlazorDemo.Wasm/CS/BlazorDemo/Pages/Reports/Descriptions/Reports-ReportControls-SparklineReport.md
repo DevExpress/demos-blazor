@@ -1,0 +1,3 @@
+DevExpress Reporting allows you to use the Sparkline control with conditional markers in reports. In this demo report, the table contains sparklines that display monthly payment statistics for each customer. The blue and red markers in this demo specify the lowest and highest values.
+
+<a href="https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XRSparkline" target="_blank">See Documentation</a>

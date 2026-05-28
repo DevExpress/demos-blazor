@@ -1,0 +1,34 @@
+﻿<DemoPageSectionComponent Id="Editors-ListBox-MultiColumn" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <DxListBox Data="@Data"
+                   @bind-Value="@Value"
+                   SizeMode="Params.SizeMode"
+                   CssClass="cw-400 chi-220"
+                   aria-label="Employees">
+                   <Columns>
+                        <DxListEditorColumn FieldName="@nameof(Employee.EmployeeId)"
+                                            Caption="Id"
+                                            Width="50px" />
+                        <DxListEditorColumn FieldName="@nameof(Employee.FirstName)"
+                                            Caption="Name" />
+                        <DxListEditorColumn FieldName="@nameof(Employee.LastName)"
+                                            Caption="Surname" />
+                    </Columns>
+        </DxListBox>
+        <p class="demo-text cw-400 mt-2">
+            Selected item: <b>@Value?.Text</b>
+        </p>
+    </ChildContentWithParameters>
+
+    @code {
+        IEnumerable<Employee> Data { get; set; }
+        Employee Value { get; set; }
+
+        protected override async Task OnInitializedAsync() {
+            Data = await NwindDataService.GetEmployeesAsync();
+            Value = Data.FirstOrDefault();
+        }
+    }
+</DemoPageSectionComponent>

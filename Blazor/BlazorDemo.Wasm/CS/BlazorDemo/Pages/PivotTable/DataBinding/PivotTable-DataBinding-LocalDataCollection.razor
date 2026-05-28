@@ -1,0 +1,75 @@
+﻿@page "/PivotTable/DataBinding/LocalDataCollection"
+
+<DemoPageSectionComponent Id="PivotTable-DataBinding-LocalDataCollection" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject ISalesDataProvider SaleDataProvider
+        <div class="pivot-container">
+            @if(PivotData == null) {
+                <div class="pivot-loading-panel-container">
+                    <div class="d-flex flex-column">
+                        <DxLoadingPanel Visible="true"
+                                        SizeMode="Params.SizeMode"
+                                        Text="Data Loading..."
+                                        IndicatorAreaVisible="false"
+                                        IndicatorAnimationType="@WaitIndicatorAnimationType.Spin"></DxLoadingPanel>
+                    </div>
+                </div>
+            } else {
+                <DxPivotTable
+                    Data="@PivotData"
+                    VirtualScrollingEnabled="true"
+                    SizeMode="Params.SizeMode"
+                    FilterHeaderAreaDisplayMode="PivotTableFilterHeaderAreaDisplayMode.Never">
+                    <Fields>
+                        <DxPivotTableField Field="Product.Name"
+                                           Area="@PivotTableArea.Row"
+                                           Caption="Product Name"/>
+                        <DxPivotTableField Field="Order.SalesPerson.Name"
+                                           Area="@PivotTableArea.Row"
+                                           Caption = "Sales Person Name"/>
+                        <DxPivotTableField Field="Order.Date"
+                                           GroupInterval="@PivotTableGroupInterval.DateYear"
+                                           Caption="Year"
+                                           Area="@PivotTableArea.Column"/>
+                        <DxPivotTableField Field="Order.Date"
+                                           GroupInterval="@PivotTableGroupInterval.DateQuarter"
+                                           Caption="Quarter"
+                                           Area="@PivotTableArea.Column" >
+                            <ValueTemplate>
+                                <span>@($"Q{context.Text}")</span>
+                            </ValueTemplate>
+                        </DxPivotTableField>
+                        <DxPivotTableField Field="Order.Date"
+                                           GroupInterval="@PivotTableGroupInterval.DateMonth"
+                                           Caption="Month"
+                                           Area="@PivotTableArea.Column" />
+                        <DxPivotTableField Field="Quantity"
+                                           Area="@PivotTableArea.Data" />
+                        <DxPivotTableField Field="UnitPrice"
+                                           Area="@PivotTableArea.Data" />
+                    </Fields>
+                </DxPivotTable>
+            }
+        </div>
+    </ChildContentWithParameters>
+    <OptionsContent>
+        <OptionButton Text="Refresh" OnClick="Refresh_BtnClick" />
+    </OptionsContent>
+    @code {
+        object PivotData { get; set; }
+        int RecordsCount = 100_000;
+
+        protected override async Task OnInitializedAsync() {
+            await GenerateData();
+        }
+
+        async Task Refresh_BtnClick() {
+            PivotData = null;
+            await GenerateData();
+        }
+
+        async Task GenerateData() {
+            PivotData = await SaleDataProvider.GetDataAsync(RecordsCount);
+        }
+    }
+</DemoPageSectionComponent>

@@ -1,0 +1,1342 @@
+<Holidays>
+<Holiday Date="04/25/2012 00:00:00" DisplayName="Anzac Day" Location="Australia" />
+<Holiday Date="04/25/2013 00:00:00" DisplayName="Anzac Day" Location="Australia" />
+<Holiday Date="04/25/2014 00:00:00" DisplayName="Anzac Day" Location="Australia" />
+<Holiday Date="04/25/2015 00:00:00" DisplayName="Anzac Day" Location="Australia" />
+<Holiday Date="04/25/2016 00:00:00" DisplayName="Anzac Day" Location="Australia" />
+<Holiday Date="04/25/2017 00:00:00" DisplayName="Anzac Day" Location="Australia" />
+<Holiday Date="04/25/2018 00:00:00" DisplayName="Anzac Day" Location="Australia" />
+<Holiday Date="04/25/2019 00:00:00" DisplayName="Anzac Day" Location="Australia" />
+<Holiday Date="04/25/2020 00:00:00" DisplayName="Anzac Day" Location="Australia" />
+<Holiday Date="04/25/2021 00:00:00" DisplayName="Anzac Day" Location="Australia" />
+<Holiday Date="04/25/2022 00:00:00" DisplayName="Anzac Day" Location="Australia" />
+<Holiday Date="01/26/2012 00:00:00" DisplayName="Australia Day" Location="Australia" />
+<Holiday Date="01/26/2013 00:00:00" DisplayName="Australia Day" Location="Australia" />
+<Holiday Date="01/26/2014 00:00:00" DisplayName="Australia Day" Location="Australia" />
+<Holiday Date="01/26/2015 00:00:00" DisplayName="Australia Day" Location="Australia" />
+<Holiday Date="01/26/2016 00:00:00" DisplayName="Australia Day" Location="Australia" />
+<Holiday Date="01/26/2017 00:00:00" DisplayName="Australia Day" Location="Australia" />
+<Holiday Date="01/26/2018 00:00:00" DisplayName="Australia Day" Location="Australia" />
+<Holiday Date="01/26/2019 00:00:00" DisplayName="Australia Day" Location="Australia" />
+<Holiday Date="01/26/2020 00:00:00" DisplayName="Australia Day" Location="Australia" />
+<Holiday Date="01/26/2021 00:00:00" DisplayName="Australia Day" Location="Australia" />
+<Holiday Date="01/26/2022 00:00:00" DisplayName="Australia Day" Location="Australia" />
+<Holiday Date="12/26/2012 00:00:00" DisplayName="Boxing Day" Location="Australia" />
+<Holiday Date="12/26/2013 00:00:00" DisplayName="Boxing Day" Location="Australia" />
+<Holiday Date="12/26/2014 00:00:00" DisplayName="Boxing Day" Location="Australia" />
+<Holiday Date="12/26/2015 00:00:00" DisplayName="Boxing Day" Location="Australia" />
+<Holiday Date="12/26/2016 00:00:00" DisplayName="Boxing Day" Location="Australia" />
+<Holiday Date="12/26/2017 00:00:00" DisplayName="Boxing Day" Location="Australia" />
+<Holiday Date="12/26/2018 00:00:00" DisplayName="Boxing Day" Location="Australia" />
+<Holiday Date="12/26/2019 00:00:00" DisplayName="Boxing Day" Location="Australia" />
+<Holiday Date="12/26/2020 00:00:00" DisplayName="Boxing Day" Location="Australia" />
+<Holiday Date="12/26/2021 00:00:00" DisplayName="Boxing Day" Location="Australia" />
+<Holiday Date="12/26/2022 00:00:00" DisplayName="Boxing Day" Location="Australia" />
+<Holiday Date="12/25/2012 00:00:00" DisplayName="Christmas Day" Location="Australia" />
+<Holiday Date="12/25/2013 00:00:00" DisplayName="Christmas Day" Location="Australia" />
+<Holiday Date="12/25/2014 00:00:00" DisplayName="Christmas Day" Location="Australia" />
+<Holiday Date="12/25/2015 00:00:00" DisplayName="Christmas Day" Location="Australia" />
+<Holiday Date="12/25/2016 00:00:00" DisplayName="Christmas Day" Location="Australia" />
+<Holiday Date="12/25/2017 00:00:00" DisplayName="Christmas Day" Location="Australia" />
+<Holiday Date="12/25/2018 00:00:00" DisplayName="Christmas Day" Location="Australia" />
+<Holiday Date="12/25/2019 00:00:00" DisplayName="Christmas Day" Location="Australia" />
+<Holiday Date="12/25/2020 00:00:00" DisplayName="Christmas Day" Location="Australia" />
+<Holiday Date="12/25/2021 00:00:00" DisplayName="Christmas Day" Location="Australia" />
+<Holiday Date="12/25/2022 00:00:00" DisplayName="Christmas Day" Location="Australia" />
+<Holiday Date="04/09/2012 00:00:00" DisplayName="Easter Monday" Location="Australia" />
+<Holiday Date="04/01/2013 00:00:00" DisplayName="Easter Monday" Location="Australia" />
+<Holiday Date="04/21/2014 00:00:00" DisplayName="Easter Monday" Location="Australia" />
+<Holiday Date="04/06/2015 00:00:00" DisplayName="Easter Monday" Location="Australia" />
+<Holiday Date="03/28/2016 00:00:00" DisplayName="Easter Monday" Location="Australia" />
+<Holiday Date="04/17/2017 00:00:00" DisplayName="Easter Monday" Location="Australia" />
+<Holiday Date="04/02/2018 00:00:00" DisplayName="Easter Monday" Location="Australia" />
+<Holiday Date="04/22/2019 00:00:00" DisplayName="Easter Monday" Location="Australia" />
+<Holiday Date="04/13/2020 00:00:00" DisplayName="Easter Monday" Location="Australia" />
+<Holiday Date="04/05/2021 00:00:00" DisplayName="Easter Monday" Location="Australia" />
+<Holiday Date="04/18/2022 00:00:00" DisplayName="Easter Monday" Location="Australia" />
+<Holiday Date="04/06/2012 00:00:00" DisplayName="Good Friday" Location="Australia" />
+<Holiday Date="03/29/2013 00:00:00" DisplayName="Good Friday" Location="Australia" />
+<Holiday Date="04/18/2014 00:00:00" DisplayName="Good Friday" Location="Australia" />
+<Holiday Date="04/03/2015 00:00:00" DisplayName="Good Friday" Location="Australia" />
+<Holiday Date="03/25/2016 00:00:00" DisplayName="Good Friday" Location="Australia" />
+<Holiday Date="04/14/2017 00:00:00" DisplayName="Good Friday" Location="Australia" />
+<Holiday Date="03/30/2018 00:00:00" DisplayName="Good Friday" Location="Australia" />
+<Holiday Date="04/19/2019 00:00:00" DisplayName="Good Friday" Location="Australia" />
+<Holiday Date="04/10/2020 00:00:00" DisplayName="Good Friday" Location="Australia" />
+<Holiday Date="10/01/2012 00:00:00" DisplayName="Labour Day" Location="Australia" />
+<Holiday Date="10/07/2013 00:00:00" DisplayName="Labour Day" Location="Australia" />
+<Holiday Date="10/06/2014 00:00:00" DisplayName="Labour Day" Location="Australia" />
+<Holiday Date="10/05/2015 00:00:00" DisplayName="Labour Day" Location="Australia" />
+<Holiday Date="10/03/2016 00:00:00" DisplayName="Labour Day" Location="Australia" />
+<Holiday Date="10/02/2017 00:00:00" DisplayName="Labour Day" Location="Australia" />
+<Holiday Date="10/01/2018 00:00:00" DisplayName="Labour Day" Location="Australia" />
+<Holiday Date="10/07/2019 00:00:00" DisplayName="Labour Day" Location="Australia" />
+<Holiday Date="10/05/2020 00:00:00" DisplayName="Labour Day" Location="Australia" />
+<Holiday Date="10/04/2021 00:00:00" DisplayName="Labour Day" Location="Australia" />
+<Holiday Date="10/03/2022 00:00:00" DisplayName="Labour Day" Location="Australia" />
+<Holiday Date="05/13/2012 00:00:00" DisplayName="Mother's Day" Location="Australia" />
+<Holiday Date="05/12/2013 00:00:00" DisplayName="Mother's Day" Location="Australia" />
+<Holiday Date="05/11/2014 00:00:00" DisplayName="Mother's Day" Location="Australia" />
+<Holiday Date="05/10/2015 00:00:00" DisplayName="Mother's Day" Location="Australia" />
+<Holiday Date="05/08/2016 00:00:00" DisplayName="Mother's Day" Location="Australia" />
+<Holiday Date="05/14/2017 00:00:00" DisplayName="Mother's Day" Location="Australia" />
+<Holiday Date="05/13/2018 00:00:00" DisplayName="Mother's Day" Location="Australia" />
+<Holiday Date="05/12/2019 00:00:00" DisplayName="Mother's Day" Location="Australia" />
+<Holiday Date="05/10/2020 00:00:00" DisplayName="Mother's Day" Location="Australia" />
+<Holiday Date="05/09/2021 00:00:00" DisplayName="Mother's Day" Location="Australia" />
+<Holiday Date="05/08/2022 00:00:00" DisplayName="Mother's Day" Location="Australia" />
+<Holiday Date="01/01/2012 00:00:00" DisplayName="New Year's Day" Location="Australia" />
+<Holiday Date="01/01/2013 00:00:00" DisplayName="New Year's Day" Location="Australia" />
+<Holiday Date="01/01/2014 00:00:00" DisplayName="New Year's Day" Location="Australia" />
+<Holiday Date="01/01/2015 00:00:00" DisplayName="New Year's Day" Location="Australia" />
+<Holiday Date="01/01/2016 00:00:00" DisplayName="New Year's Day" Location="Australia" />
+<Holiday Date="01/01/2017 00:00:00" DisplayName="New Year's Day" Location="Australia" />
+<Holiday Date="01/01/2018 00:00:00" DisplayName="New Year's Day" Location="Australia" />
+<Holiday Date="01/01/2019 00:00:00" DisplayName="New Year's Day" Location="Australia" />
+<Holiday Date="01/01/2020 00:00:00" DisplayName="New Year's Day" Location="Australia" />
+<Holiday Date="01/01/2021 00:00:00" DisplayName="New Year's Day" Location="Australia" />
+<Holiday Date="01/01/2022 00:00:00" DisplayName="New Year's Day" Location="Australia" />
+<Holiday Date="06/11/2012 00:00:00" DisplayName="Queen's Birthday" Location="Australia" />
+<Holiday Date="06/10/2013 00:00:00" DisplayName="Queen's Birthday" Location="Australia" />
+<Holiday Date="06/09/2014 00:00:00" DisplayName="Queen's Birthday" Location="Australia" />
+<Holiday Date="06/08/2015 00:00:00" DisplayName="Queen's Birthday" Location="Australia" />
+<Holiday Date="06/13/2016 00:00:00" DisplayName="Queen's Birthday" Location="Australia" />
+<Holiday Date="06/12/2017 00:00:00" DisplayName="Queen's Birthday" Location="Australia" />
+<Holiday Date="06/11/2018 00:00:00" DisplayName="Queen's Birthday" Location="Australia" />
+<Holiday Date="06/10/2019 00:00:00" DisplayName="Queen's Birthday" Location="Australia" />
+<Holiday Date="06/08/2020 00:00:00" DisplayName="Queen's Birthday" Location="Australia" />
+<Holiday Date="06/14/2021 00:00:00" DisplayName="Queen's Birthday" Location="Australia" />
+<Holiday Date="06/13/2022 00:00:00" DisplayName="Queen's Birthday" Location="Australia" />
+<Holiday Date="09/02/2012 00:00:00" DisplayName="Father's Day" Location="Australia" />
+<Holiday Date="09/01/2013 00:00:00" DisplayName="Father's Day" Location="Australia" />
+<Holiday Date="09/07/2014 00:00:00" DisplayName="Father's Day" Location="Australia" />
+<Holiday Date="09/06/2015 00:00:00" DisplayName="Father's Day" Location="Australia" />
+<Holiday Date="09/04/2016 00:00:00" DisplayName="Father's Day" Location="Australia" />
+<Holiday Date="09/03/2017 00:00:00" DisplayName="Father's Day" Location="Australia" />
+<Holiday Date="09/02/2018 00:00:00" DisplayName="Father's Day" Location="Australia" />
+<Holiday Date="09/01/2019 00:00:00" DisplayName="Father's Day" Location="Australia" />
+<Holiday Date="09/06/2020 00:00:00" DisplayName="Father's Day" Location="Australia" />
+<Holiday Date="09/05/2021 00:00:00" DisplayName="Father's Day" Location="Australia" />
+<Holiday Date="09/04/2022 00:00:00" DisplayName="Father's Day" Location="Australia" />
+<Holiday Date="01/02/2012 00:00:00" DisplayName="New Year's Day (Observed)" Location="Australia" />
+<Holiday Date="01/02/2017 00:00:00" DisplayName="New Year's Day (Observed)" Location="Australia" />
+<Holiday Date="01/03/2022 00:00:00" DisplayName="New Year's Day (Observed)" Location="Australia" />
+<Holiday Date="01/28/2013 00:00:00" DisplayName="Australia Day (Observed)" Location="Australia" />
+<Holiday Date="01/27/2014 00:00:00" DisplayName="Australia Day (Observed)" Location="Australia" />
+<Holiday Date="01/28/2019 00:00:00" DisplayName="Australia Day (Observed)" Location="Australia" />
+<Holiday Date="01/27/2020 00:00:00" DisplayName="Australia Day (Observed)" Location="Australia" />
+<Holiday Date="04/08/2012 00:00:00" DisplayName="Easter Day" Location="Australia" />
+<Holiday Date="03/31/2013 00:00:00" DisplayName="Easter Day" Location="Australia" />
+<Holiday Date="04/20/2014 00:00:00" DisplayName="Easter Day" Location="Australia" />
+<Holiday Date="04/05/2015 00:00:00" DisplayName="Easter Day" Location="Australia" />
+<Holiday Date="03/27/2016 00:00:00" DisplayName="Easter Day" Location="Australia" />
+<Holiday Date="04/16/2017 00:00:00" DisplayName="Easter Day" Location="Australia" />
+<Holiday Date="04/01/2018 00:00:00" DisplayName="Easter Day" Location="Australia" />
+<Holiday Date="04/21/2019 00:00:00" DisplayName="Easter Day" Location="Australia" />
+<Holiday Date="04/12/2020 00:00:00" DisplayName="Easter Day" Location="Australia" />
+<Holiday Date="04/04/2021 00:00:00" DisplayName="Easter Day" Location="Australia" />
+<Holiday Date="04/17/2022 00:00:00" DisplayName="Easter Day" Location="Australia" />
+<Holiday Date="04/27/2015 00:00:00" DisplayName="Anzac Day (Observed)" Location="Australia" />
+<Holiday Date="04/27/2020 00:00:00" DisplayName="Anzac Day (Observed)" Location="Australia" />
+<Holiday Date="04/26/2021 00:00:00" DisplayName="Anzac Day (Observed)" Location="Australia" />
+<Holiday Date="12/26/2016 00:00:00" DisplayName="Christmas Bank Holiday" Location="Australia" />
+<Holiday Date="12/24/2021 00:00:00" DisplayName="Christmas Bank Holiday" Location="Australia" />
+<Holiday Date="12/26/2022 00:00:00" DisplayName="Christmas Bank Holiday" Location="Australia" />
+<Holiday Date="12/28/2015 00:00:00" DisplayName="Boxing Day Bank Holiday" Location="Australia" />
+<Holiday Date="12/27/2016 00:00:00" DisplayName="Boxing Day Bank Holiday" Location="Australia" />
+<Holiday Date="12/28/2020 00:00:00" DisplayName="Boxing Day Bank Holiday" Location="Australia" />
+<Holiday Date="12/31/2012 00:00:00" DisplayName="New Year's Eve" Location="Australia" />
+<Holiday Date="12/31/2013 00:00:00" DisplayName="New Year's Eve" Location="Australia" />
+<Holiday Date="12/31/2014 00:00:00" DisplayName="New Year's Eve" Location="Australia" />
+<Holiday Date="12/31/2015 00:00:00" DisplayName="New Year's Eve" Location="Australia" />
+<Holiday Date="12/31/2016 00:00:00" DisplayName="New Year's Eve" Location="Australia" />
+<Holiday Date="12/31/2017 00:00:00" DisplayName="New Year's Eve" Location="Australia" />
+<Holiday Date="12/31/2018 00:00:00" DisplayName="New Year's Eve" Location="Australia" />
+<Holiday Date="12/31/2019 00:00:00" DisplayName="New Year's Eve" Location="Australia" />
+<Holiday Date="12/31/2020 00:00:00" DisplayName="New Year's Eve" Location="Australia" />
+<Holiday Date="12/31/2021 00:00:00" DisplayName="New Year's Eve" Location="Australia" />
+<Holiday Date="12/31/2022 00:00:00" DisplayName="New Year's Eve" Location="Australia" />
+<Holiday Date="02/20/2012 00:00:00" DisplayName="Carnival (1st Day)" Location="Brazil" />
+<Holiday Date="02/11/2013 00:00:00" DisplayName="Carnival (1st Day)" Location="Brazil" />
+<Holiday Date="03/03/2014 00:00:00" DisplayName="Carnival (1st Day)" Location="Brazil" />
+<Holiday Date="02/16/2015 00:00:00" DisplayName="Carnival (1st Day)" Location="Brazil" />
+<Holiday Date="02/08/2016 00:00:00" DisplayName="Carnival (1st Day)" Location="Brazil" />
+<Holiday Date="02/27/2017 00:00:00" DisplayName="Carnival (1st Day)" Location="Brazil" />
+<Holiday Date="02/12/2018 00:00:00" DisplayName="Carnival (1st Day)" Location="Brazil" />
+<Holiday Date="03/04/2019 00:00:00" DisplayName="Carnival (1st Day)" Location="Brazil" />
+<Holiday Date="02/24/2020 00:00:00" DisplayName="Carnival (1st Day)" Location="Brazil" />
+<Holiday Date="02/15/2021 00:00:00" DisplayName="Carnival (1st Day)" Location="Brazil" />
+<Holiday Date="02/28/2022 00:00:00" DisplayName="Carnival (1st Day)" Location="Brazil" />
+<Holiday Date="02/21/2012 00:00:00" DisplayName="Carnival (2nd Day)" Location="Brazil" />
+<Holiday Date="02/12/2013 00:00:00" DisplayName="Carnival (2nd Day)" Location="Brazil" />
+<Holiday Date="03/04/2014 00:00:00" DisplayName="Carnival (2nd Day)" Location="Brazil" />
+<Holiday Date="02/17/2015 00:00:00" DisplayName="Carnival (2nd Day)" Location="Brazil" />
+<Holiday Date="02/09/2016 00:00:00" DisplayName="Carnival (2nd Day)" Location="Brazil" />
+<Holiday Date="02/28/2017 00:00:00" DisplayName="Carnival (2nd Day)" Location="Brazil" />
+<Holiday Date="02/13/2018 00:00:00" DisplayName="Carnival (2nd Day)" Location="Brazil" />
+<Holiday Date="03/05/2019 00:00:00" DisplayName="Carnival (2nd Day)" Location="Brazil" />
+<Holiday Date="02/25/2020 00:00:00" DisplayName="Carnival (2nd Day)" Location="Brazil" />
+<Holiday Date="02/16/2021 00:00:00" DisplayName="Carnival (2nd Day)" Location="Brazil" />
+<Holiday Date="03/01/2022 00:00:00" DisplayName="Carnival (2nd Day)" Location="Brazil" />
+<Holiday Date="12/25/2012 00:00:00" DisplayName="Christmas Day" Location="Brazil" />
+<Holiday Date="12/25/2013 00:00:00" DisplayName="Christmas Day" Location="Brazil" />
+<Holiday Date="12/25/2014 00:00:00" DisplayName="Christmas Day" Location="Brazil" />
+<Holiday Date="12/25/2015 00:00:00" DisplayName="Christmas Day" Location="Brazil" />
+<Holiday Date="12/25/2016 00:00:00" DisplayName="Christmas Day" Location="Brazil" />
+<Holiday Date="12/25/2017 00:00:00" DisplayName="Christmas Day" Location="Brazil" />
+<Holiday Date="12/25/2018 00:00:00" DisplayName="Christmas Day" Location="Brazil" />
+<Holiday Date="12/25/2019 00:00:00" DisplayName="Christmas Day" Location="Brazil" />
+<Holiday Date="12/25/2020 00:00:00" DisplayName="Christmas Day" Location="Brazil" />
+<Holiday Date="12/25/2021 00:00:00" DisplayName="Christmas Day" Location="Brazil" />
+<Holiday Date="12/25/2022 00:00:00" DisplayName="Christmas Day" Location="Brazil" />
+<Holiday Date="12/24/2012 00:00:00" DisplayName="Christmas Eve" Location="Brazil" />
+<Holiday Date="12/24/2013 00:00:00" DisplayName="Christmas Eve" Location="Brazil" />
+<Holiday Date="12/24/2014 00:00:00" DisplayName="Christmas Eve" Location="Brazil" />
+<Holiday Date="12/24/2015 00:00:00" DisplayName="Christmas Eve" Location="Brazil" />
+<Holiday Date="12/24/2016 00:00:00" DisplayName="Christmas Eve" Location="Brazil" />
+<Holiday Date="12/24/2017 00:00:00" DisplayName="Christmas Eve" Location="Brazil" />
+<Holiday Date="12/24/2018 00:00:00" DisplayName="Christmas Eve" Location="Brazil" />
+<Holiday Date="12/24/2019 00:00:00" DisplayName="Christmas Eve" Location="Brazil" />
+<Holiday Date="12/24/2020 00:00:00" DisplayName="Christmas Eve" Location="Brazil" />
+<Holiday Date="12/24/2021 00:00:00" DisplayName="Christmas Eve" Location="Brazil" />
+<Holiday Date="12/24/2022 00:00:00" DisplayName="Christmas Eve" Location="Brazil" />
+<Holiday Date="06/07/2012 00:00:00" DisplayName="Corpus Christi" Location="Brazil" />
+<Holiday Date="05/30/2013 00:00:00" DisplayName="Corpus Christi" Location="Brazil" />
+<Holiday Date="06/19/2014 00:00:00" DisplayName="Corpus Christi" Location="Brazil" />
+<Holiday Date="06/04/2015 00:00:00" DisplayName="Corpus Christi" Location="Brazil" />
+<Holiday Date="05/26/2016 00:00:00" DisplayName="Corpus Christi" Location="Brazil" />
+<Holiday Date="06/15/2017 00:00:00" DisplayName="Corpus Christi" Location="Brazil" />
+<Holiday Date="05/31/2018 00:00:00" DisplayName="Corpus Christi" Location="Brazil" />
+<Holiday Date="06/20/2019 00:00:00" DisplayName="Corpus Christi" Location="Brazil" />
+<Holiday Date="06/11/2020 00:00:00" DisplayName="Corpus Christi" Location="Brazil" />
+<Holiday Date="06/03/2021 00:00:00" DisplayName="Corpus Christi" Location="Brazil" />
+<Holiday Date="06/16/2022 00:00:00" DisplayName="Corpus Christi" Location="Brazil" />
+<Holiday Date="04/08/2012 00:00:00" DisplayName="Easter Day" Location="Brazil" />
+<Holiday Date="03/31/2013 00:00:00" DisplayName="Easter Day" Location="Brazil" />
+<Holiday Date="04/20/2014 00:00:00" DisplayName="Easter Day" Location="Brazil" />
+<Holiday Date="04/05/2015 00:00:00" DisplayName="Easter Day" Location="Brazil" />
+<Holiday Date="03/27/2016 00:00:00" DisplayName="Easter Day" Location="Brazil" />
+<Holiday Date="04/16/2017 00:00:00" DisplayName="Easter Day" Location="Brazil" />
+<Holiday Date="04/01/2018 00:00:00" DisplayName="Easter Day" Location="Brazil" />
+<Holiday Date="04/21/2019 00:00:00" DisplayName="Easter Day" Location="Brazil" />
+<Holiday Date="04/12/2020 00:00:00" DisplayName="Easter Day" Location="Brazil" />
+<Holiday Date="04/04/2021 00:00:00" DisplayName="Easter Day" Location="Brazil" />
+<Holiday Date="04/17/2022 00:00:00" DisplayName="Easter Day" Location="Brazil" />
+<Holiday Date="11/02/2012 00:00:00" DisplayName="All Souls' Day" Location="Brazil" />
+<Holiday Date="11/02/2013 00:00:00" DisplayName="All Souls' Day" Location="Brazil" />
+<Holiday Date="11/02/2014 00:00:00" DisplayName="All Souls' Day" Location="Brazil" />
+<Holiday Date="11/02/2015 00:00:00" DisplayName="All Souls' Day" Location="Brazil" />
+<Holiday Date="11/02/2016 00:00:00" DisplayName="All Souls' Day" Location="Brazil" />
+<Holiday Date="11/02/2017 00:00:00" DisplayName="All Souls' Day" Location="Brazil" />
+<Holiday Date="11/02/2018 00:00:00" DisplayName="All Souls' Day" Location="Brazil" />
+<Holiday Date="11/02/2019 00:00:00" DisplayName="All Souls' Day" Location="Brazil" />
+<Holiday Date="11/02/2020 00:00:00" DisplayName="All Souls' Day" Location="Brazil" />
+<Holiday Date="11/02/2021 00:00:00" DisplayName="All Souls' Day" Location="Brazil" />
+<Holiday Date="11/02/2022 00:00:00" DisplayName="All Souls' Day" Location="Brazil" />
+<Holiday Date="04/06/2012 00:00:00" DisplayName="Good Friday" Location="Brazil" />
+<Holiday Date="03/29/2013 00:00:00" DisplayName="Good Friday" Location="Brazil" />
+<Holiday Date="04/18/2014 00:00:00" DisplayName="Good Friday" Location="Brazil" />
+<Holiday Date="04/03/2015 00:00:00" DisplayName="Good Friday" Location="Brazil" />
+<Holiday Date="03/25/2016 00:00:00" DisplayName="Good Friday" Location="Brazil" />
+<Holiday Date="04/14/2017 00:00:00" DisplayName="Good Friday" Location="Brazil" />
+<Holiday Date="03/30/2018 00:00:00" DisplayName="Good Friday" Location="Brazil" />
+<Holiday Date="04/19/2019 00:00:00" DisplayName="Good Friday" Location="Brazil" />
+<Holiday Date="04/10/2020 00:00:00" DisplayName="Good Friday" Location="Brazil" />
+<Holiday Date="04/02/2021 00:00:00" DisplayName="Good Friday" Location="Brazil" />
+<Holiday Date="04/15/2022 00:00:00" DisplayName="Good Friday" Location="Brazil" />
+<Holiday Date="09/07/2012 00:00:00" DisplayName="Independence Day" Location="Brazil" />
+<Holiday Date="09/07/2013 00:00:00" DisplayName="Independence Day" Location="Brazil" />
+<Holiday Date="09/07/2014 00:00:00" DisplayName="Independence Day" Location="Brazil" />
+<Holiday Date="09/07/2015 00:00:00" DisplayName="Independence Day" Location="Brazil" />
+<Holiday Date="09/07/2016 00:00:00" DisplayName="Independence Day" Location="Brazil" />
+<Holiday Date="09/07/2017 00:00:00" DisplayName="Independence Day" Location="Brazil" />
+<Holiday Date="09/07/2018 00:00:00" DisplayName="Independence Day" Location="Brazil" />
+<Holiday Date="09/07/2019 00:00:00" DisplayName="Independence Day" Location="Brazil" />
+<Holiday Date="09/07/2020 00:00:00" DisplayName="Independence Day" Location="Brazil" />
+<Holiday Date="09/07/2021 00:00:00" DisplayName="Independence Day" Location="Brazil" />
+<Holiday Date="09/07/2022 00:00:00" DisplayName="Independence Day" Location="Brazil" />
+<Holiday Date="05/01/2012 00:00:00" DisplayName="Labor Day" Location="Brazil" />
+<Holiday Date="05/01/2013 00:00:00" DisplayName="Labor Day" Location="Brazil" />
+<Holiday Date="05/01/2014 00:00:00" DisplayName="Labor Day" Location="Brazil" />
+<Holiday Date="05/01/2015 00:00:00" DisplayName="Labor Day" Location="Brazil" />
+<Holiday Date="05/01/2016 00:00:00" DisplayName="Labor Day" Location="Brazil" />
+<Holiday Date="05/01/2017 00:00:00" DisplayName="Labor Day" Location="Brazil" />
+<Holiday Date="05/01/2018 00:00:00" DisplayName="Labor Day" Location="Brazil" />
+<Holiday Date="05/01/2019 00:00:00" DisplayName="Labor Day" Location="Brazil" />
+<Holiday Date="05/01/2020 00:00:00" DisplayName="Labor Day" Location="Brazil" />
+<Holiday Date="05/01/2021 00:00:00" DisplayName="Labor Day" Location="Brazil" />
+<Holiday Date="05/01/2022 00:00:00" DisplayName="Labor Day" Location="Brazil" />
+<Holiday Date="01/01/2012 00:00:00" DisplayName="New Year's Day" Location="Brazil" />
+<Holiday Date="01/01/2013 00:00:00" DisplayName="New Year's Day" Location="Brazil" />
+<Holiday Date="01/01/2014 00:00:00" DisplayName="New Year's Day" Location="Brazil" />
+<Holiday Date="01/01/2015 00:00:00" DisplayName="New Year's Day" Location="Brazil" />
+<Holiday Date="01/01/2016 00:00:00" DisplayName="New Year's Day" Location="Brazil" />
+<Holiday Date="01/01/2017 00:00:00" DisplayName="New Year's Day" Location="Brazil" />
+<Holiday Date="01/01/2018 00:00:00" DisplayName="New Year's Day" Location="Brazil" />
+<Holiday Date="01/01/2019 00:00:00" DisplayName="New Year's Day" Location="Brazil" />
+<Holiday Date="01/01/2020 00:00:00" DisplayName="New Year's Day" Location="Brazil" />
+<Holiday Date="01/01/2021 00:00:00" DisplayName="New Year's Day" Location="Brazil" />
+<Holiday Date="01/01/2022 00:00:00" DisplayName="New Year's Day" Location="Brazil" />
+<Holiday Date="12/31/2012 00:00:00" DisplayName="New Year's Eve" Location="Brazil" />
+<Holiday Date="12/31/2013 00:00:00" DisplayName="New Year's Eve" Location="Brazil" />
+<Holiday Date="12/31/2014 00:00:00" DisplayName="New Year's Eve" Location="Brazil" />
+<Holiday Date="12/31/2015 00:00:00" DisplayName="New Year's Eve" Location="Brazil" />
+<Holiday Date="12/31/2016 00:00:00" DisplayName="New Year's Eve" Location="Brazil" />
+<Holiday Date="12/31/2017 00:00:00" DisplayName="New Year's Eve" Location="Brazil" />
+<Holiday Date="12/31/2018 00:00:00" DisplayName="New Year's Eve" Location="Brazil" />
+<Holiday Date="12/31/2019 00:00:00" DisplayName="New Year's Eve" Location="Brazil" />
+<Holiday Date="12/31/2020 00:00:00" DisplayName="New Year's Eve" Location="Brazil" />
+<Holiday Date="12/31/2021 00:00:00" DisplayName="New Year's Eve" Location="Brazil" />
+<Holiday Date="12/31/2022 00:00:00" DisplayName="New Year's Eve" Location="Brazil" />
+<Holiday Date="10/12/2012 00:00:00" DisplayName="Our Lady of Aparecida" Location="Brazil" />
+<Holiday Date="10/12/2013 00:00:00" DisplayName="Our Lady of Aparecida" Location="Brazil" />
+<Holiday Date="10/12/2014 00:00:00" DisplayName="Our Lady of Aparecida" Location="Brazil" />
+<Holiday Date="10/12/2015 00:00:00" DisplayName="Our Lady of Aparecida" Location="Brazil" />
+<Holiday Date="10/12/2016 00:00:00" DisplayName="Our Lady of Aparecida" Location="Brazil" />
+<Holiday Date="10/12/2017 00:00:00" DisplayName="Our Lady of Aparecida" Location="Brazil" />
+<Holiday Date="10/12/2018 00:00:00" DisplayName="Our Lady of Aparecida" Location="Brazil" />
+<Holiday Date="10/12/2019 00:00:00" DisplayName="Our Lady of Aparecida" Location="Brazil" />
+<Holiday Date="10/12/2020 00:00:00" DisplayName="Our Lady of Aparecida" Location="Brazil" />
+<Holiday Date="10/12/2021 00:00:00" DisplayName="Our Lady of Aparecida" Location="Brazil" />
+<Holiday Date="10/12/2022 00:00:00" DisplayName="Our Lady of Aparecida" Location="Brazil" />
+<Holiday Date="11/15/2012 00:00:00" DisplayName="Republic Day" Location="Brazil" />
+<Holiday Date="11/15/2013 00:00:00" DisplayName="Republic Day" Location="Brazil" />
+<Holiday Date="11/15/2014 00:00:00" DisplayName="Republic Day" Location="Brazil" />
+<Holiday Date="11/15/2015 00:00:00" DisplayName="Republic Day" Location="Brazil" />
+<Holiday Date="11/15/2016 00:00:00" DisplayName="Republic Day" Location="Brazil" />
+<Holiday Date="11/15/2017 00:00:00" DisplayName="Republic Day" Location="Brazil" />
+<Holiday Date="11/15/2018 00:00:00" DisplayName="Republic Day" Location="Brazil" />
+<Holiday Date="11/15/2019 00:00:00" DisplayName="Republic Day" Location="Brazil" />
+<Holiday Date="11/15/2020 00:00:00" DisplayName="Republic Day" Location="Brazil" />
+<Holiday Date="11/15/2021 00:00:00" DisplayName="Republic Day" Location="Brazil" />
+<Holiday Date="11/15/2022 00:00:00" DisplayName="Republic Day" Location="Brazil" />
+<Holiday Date="04/21/2012 00:00:00" DisplayName="Tiradentes Day" Location="Brazil" />
+<Holiday Date="04/21/2013 00:00:00" DisplayName="Tiradentes Day" Location="Brazil" />
+<Holiday Date="04/21/2014 00:00:00" DisplayName="Tiradentes Day" Location="Brazil" />
+<Holiday Date="04/21/2015 00:00:00" DisplayName="Tiradentes Day" Location="Brazil" />
+<Holiday Date="04/21/2016 00:00:00" DisplayName="Tiradentes Day" Location="Brazil" />
+<Holiday Date="04/21/2017 00:00:00" DisplayName="Tiradentes Day" Location="Brazil" />
+<Holiday Date="04/21/2018 00:00:00" DisplayName="Tiradentes Day" Location="Brazil" />
+<Holiday Date="04/21/2019 00:00:00" DisplayName="Tiradentes Day" Location="Brazil" />
+<Holiday Date="04/21/2020 00:00:00" DisplayName="Tiradentes Day" Location="Brazil" />
+<Holiday Date="04/21/2021 00:00:00" DisplayName="Tiradentes Day" Location="Brazil" />
+<Holiday Date="04/21/2022 00:00:00" DisplayName="Tiradentes Day" Location="Brazil" />
+<Holiday Date="02/22/2012 00:00:00" DisplayName="Ash Wednesday" Location="Brazil" />
+<Holiday Date="02/13/2013 00:00:00" DisplayName="Ash Wednesday" Location="Brazil" />
+<Holiday Date="03/05/2014 00:00:00" DisplayName="Ash Wednesday" Location="Brazil" />
+<Holiday Date="02/18/2015 00:00:00" DisplayName="Ash Wednesday" Location="Brazil" />
+<Holiday Date="02/10/2016 00:00:00" DisplayName="Ash Wednesday" Location="Brazil" />
+<Holiday Date="03/01/2017 00:00:00" DisplayName="Ash Wednesday" Location="Brazil" />
+<Holiday Date="02/14/2018 00:00:00" DisplayName="Ash Wednesday" Location="Brazil" />
+<Holiday Date="03/06/2019 00:00:00" DisplayName="Ash Wednesday" Location="Brazil" />
+<Holiday Date="02/26/2020 00:00:00" DisplayName="Ash Wednesday" Location="Brazil" />
+<Holiday Date="02/17/2021 00:00:00" DisplayName="Ash Wednesday" Location="Brazil" />
+<Holiday Date="03/02/2022 00:00:00" DisplayName="Ash Wednesday" Location="Brazil" />
+<Holiday Date="08/15/2012 00:00:00" DisplayName="Independence Day" Location="India" />
+<Holiday Date="08/15/2013 00:00:00" DisplayName="Independence Day" Location="India" />
+<Holiday Date="08/15/2014 00:00:00" DisplayName="Independence Day" Location="India" />
+<Holiday Date="08/15/2015 00:00:00" DisplayName="Independence Day" Location="India" />
+<Holiday Date="08/15/2016 00:00:00" DisplayName="Independence Day" Location="India" />
+<Holiday Date="08/15/2017 00:00:00" DisplayName="Independence Day" Location="India" />
+<Holiday Date="08/15/2018 00:00:00" DisplayName="Independence Day" Location="India" />
+<Holiday Date="08/15/2019 00:00:00" DisplayName="Independence Day" Location="India" />
+<Holiday Date="08/15/2020 00:00:00" DisplayName="Independence Day" Location="India" />
+<Holiday Date="08/15/2021 00:00:00" DisplayName="Independence Day" Location="India" />
+<Holiday Date="08/15/2022 00:00:00" DisplayName="Independence Day" Location="India" />
+<Holiday Date="01/26/2012 00:00:00" DisplayName="Republic Day" Location="India" />
+<Holiday Date="01/26/2013 00:00:00" DisplayName="Republic Day" Location="India" />
+<Holiday Date="01/26/2014 00:00:00" DisplayName="Republic Day" Location="India" />
+<Holiday Date="01/26/2015 00:00:00" DisplayName="Republic Day" Location="India" />
+<Holiday Date="01/26/2016 00:00:00" DisplayName="Republic Day" Location="India" />
+<Holiday Date="01/26/2017 00:00:00" DisplayName="Republic Day" Location="India" />
+<Holiday Date="01/26/2018 00:00:00" DisplayName="Republic Day" Location="India" />
+<Holiday Date="01/26/2019 00:00:00" DisplayName="Republic Day" Location="India" />
+<Holiday Date="01/26/2020 00:00:00" DisplayName="Republic Day" Location="India" />
+<Holiday Date="01/26/2021 00:00:00" DisplayName="Republic Day" Location="India" />
+<Holiday Date="01/26/2022 00:00:00" DisplayName="Republic Day" Location="India" />
+<Holiday Date="10/02/2012 00:00:00" DisplayName="Gandhi Jayanti" Location="India" />
+<Holiday Date="10/02/2013 00:00:00" DisplayName="Gandhi Jayanti" Location="India" />
+<Holiday Date="10/02/2014 00:00:00" DisplayName="Gandhi Jayanti" Location="India" />
+<Holiday Date="10/02/2015 00:00:00" DisplayName="Gandhi Jayanti" Location="India" />
+<Holiday Date="10/02/2016 00:00:00" DisplayName="Gandhi Jayanti" Location="India" />
+<Holiday Date="10/02/2017 00:00:00" DisplayName="Gandhi Jayanti" Location="India" />
+<Holiday Date="10/02/2018 00:00:00" DisplayName="Gandhi Jayanti" Location="India" />
+<Holiday Date="10/02/2019 00:00:00" DisplayName="Gandhi Jayanti" Location="India" />
+<Holiday Date="10/02/2020 00:00:00" DisplayName="Gandhi Jayanti" Location="India" />
+<Holiday Date="10/02/2021 00:00:00" DisplayName="Gandhi Jayanti" Location="India" />
+<Holiday Date="10/02/2022 00:00:00" DisplayName="Gandhi Jayanti" Location="India" />
+<Holiday Date="09/22/2012 00:00:00" DisplayName="Autumnal Equinox Day" Location="Japan" />
+<Holiday Date="09/23/2013 00:00:00" DisplayName="Autumnal Equinox Day" Location="Japan" />
+<Holiday Date="09/23/2014 00:00:00" DisplayName="Autumnal Equinox Day" Location="Japan" />
+<Holiday Date="09/23/2015 00:00:00" DisplayName="Autumnal Equinox Day" Location="Japan" />
+<Holiday Date="09/22/2016 00:00:00" DisplayName="Autumnal Equinox Day" Location="Japan" />
+<Holiday Date="09/23/2017 00:00:00" DisplayName="Autumnal Equinox Day" Location="Japan" />
+<Holiday Date="09/23/2018 00:00:00" DisplayName="Autumnal Equinox Day" Location="Japan" />
+<Holiday Date="09/23/2019 00:00:00" DisplayName="Autumnal Equinox Day" Location="Japan" />
+<Holiday Date="09/22/2020 00:00:00" DisplayName="Autumnal Equinox Day" Location="Japan" />
+<Holiday Date="09/23/2021 00:00:00" DisplayName="Autumnal Equinox Day" Location="Japan" />
+<Holiday Date="09/23/2022 00:00:00" DisplayName="Autumnal Equinox Day" Location="Japan" />
+<Holiday Date="05/05/2012 00:00:00" DisplayName="Children's Day" Location="Japan" />
+<Holiday Date="05/05/2013 00:00:00" DisplayName="Children's Day" Location="Japan" />
+<Holiday Date="05/05/2014 00:00:00" DisplayName="Children's Day" Location="Japan" />
+<Holiday Date="05/05/2015 00:00:00" DisplayName="Children's Day" Location="Japan" />
+<Holiday Date="05/05/2016 00:00:00" DisplayName="Children's Day" Location="Japan" />
+<Holiday Date="05/05/2017 00:00:00" DisplayName="Children's Day" Location="Japan" />
+<Holiday Date="05/05/2018 00:00:00" DisplayName="Children's Day" Location="Japan" />
+<Holiday Date="05/05/2019 00:00:00" DisplayName="Children's Day" Location="Japan" />
+<Holiday Date="05/05/2020 00:00:00" DisplayName="Children's Day" Location="Japan" />
+<Holiday Date="05/05/2021 00:00:00" DisplayName="Children's Day" Location="Japan" />
+<Holiday Date="05/05/2022 00:00:00" DisplayName="Children's Day" Location="Japan" />
+<Holiday Date="01/09/2012 00:00:00" DisplayName="Coming of Age Day" Location="Japan" />
+<Holiday Date="01/14/2013 00:00:00" DisplayName="Coming of Age Day" Location="Japan" />
+<Holiday Date="01/13/2014 00:00:00" DisplayName="Coming of Age Day" Location="Japan" />
+<Holiday Date="01/12/2015 00:00:00" DisplayName="Coming of Age Day" Location="Japan" />
+<Holiday Date="01/11/2016 00:00:00" DisplayName="Coming of Age Day" Location="Japan" />
+<Holiday Date="01/09/2017 00:00:00" DisplayName="Coming of Age Day" Location="Japan" />
+<Holiday Date="01/08/2018 00:00:00" DisplayName="Coming of Age Day" Location="Japan" />
+<Holiday Date="01/14/2019 00:00:00" DisplayName="Coming of Age Day" Location="Japan" />
+<Holiday Date="01/13/2020 00:00:00" DisplayName="Coming of Age Day" Location="Japan" />
+<Holiday Date="01/11/2021 00:00:00" DisplayName="Coming of Age Day" Location="Japan" />
+<Holiday Date="01/10/2022 00:00:00" DisplayName="Coming of Age Day" Location="Japan" />
+<Holiday Date="05/03/2012 00:00:00" DisplayName="Constitution Day" Location="Japan" />
+<Holiday Date="05/03/2013 00:00:00" DisplayName="Constitution Day" Location="Japan" />
+<Holiday Date="05/03/2014 00:00:00" DisplayName="Constitution Day" Location="Japan" />
+<Holiday Date="05/03/2015 00:00:00" DisplayName="Constitution Day" Location="Japan" />
+<Holiday Date="05/03/2016 00:00:00" DisplayName="Constitution Day" Location="Japan" />
+<Holiday Date="05/03/2017 00:00:00" DisplayName="Constitution Day" Location="Japan" />
+<Holiday Date="05/03/2018 00:00:00" DisplayName="Constitution Day" Location="Japan" />
+<Holiday Date="05/03/2019 00:00:00" DisplayName="Constitution Day" Location="Japan" />
+<Holiday Date="05/03/2020 00:00:00" DisplayName="Constitution Day" Location="Japan" />
+<Holiday Date="05/03/2021 00:00:00" DisplayName="Constitution Day" Location="Japan" />
+<Holiday Date="05/03/2022 00:00:00" DisplayName="Constitution Day" Location="Japan" />
+<Holiday Date="11/03/2012 00:00:00" DisplayName="Culture Day" Location="Japan" />
+<Holiday Date="11/03/2013 00:00:00" DisplayName="Culture Day" Location="Japan" />
+<Holiday Date="11/03/2014 00:00:00" DisplayName="Culture Day" Location="Japan" />
+<Holiday Date="11/03/2015 00:00:00" DisplayName="Culture Day" Location="Japan" />
+<Holiday Date="11/03/2016 00:00:00" DisplayName="Culture Day" Location="Japan" />
+<Holiday Date="11/03/2017 00:00:00" DisplayName="Culture Day" Location="Japan" />
+<Holiday Date="11/03/2018 00:00:00" DisplayName="Culture Day" Location="Japan" />
+<Holiday Date="11/03/2019 00:00:00" DisplayName="Culture Day" Location="Japan" />
+<Holiday Date="11/03/2020 00:00:00" DisplayName="Culture Day" Location="Japan" />
+<Holiday Date="11/03/2021 00:00:00" DisplayName="Culture Day" Location="Japan" />
+<Holiday Date="11/03/2022 00:00:00" DisplayName="Culture Day" Location="Japan" />
+<Holiday Date="12/23/2012 00:00:00" DisplayName="Emperor's Birthday" Location="Japan" />
+<Holiday Date="12/23/2013 00:00:00" DisplayName="Emperor's Birthday" Location="Japan" />
+<Holiday Date="12/23/2014 00:00:00" DisplayName="Emperor's Birthday" Location="Japan" />
+<Holiday Date="12/23/2015 00:00:00" DisplayName="Emperor's Birthday" Location="Japan" />
+<Holiday Date="12/23/2016 00:00:00" DisplayName="Emperor's Birthday" Location="Japan" />
+<Holiday Date="12/23/2017 00:00:00" DisplayName="Emperor's Birthday" Location="Japan" />
+<Holiday Date="12/23/2018 00:00:00" DisplayName="Emperor's Birthday" Location="Japan" />
+<Holiday Date="12/23/2019 00:00:00" DisplayName="Emperor's Birthday" Location="Japan" />
+<Holiday Date="12/23/2020 00:00:00" DisplayName="Emperor's Birthday" Location="Japan" />
+<Holiday Date="12/23/2021 00:00:00" DisplayName="Emperor's Birthday" Location="Japan" />
+<Holiday Date="12/23/2022 00:00:00" DisplayName="Emperor's Birthday" Location="Japan" />
+<Holiday Date="12/24/2012 00:00:00" DisplayName="Emperor's Birthday (Observed)" Location="Japan" />
+<Holiday Date="12/24/2018 00:00:00" DisplayName="Emperor's Birthday (Observed)" Location="Japan" />
+<Holiday Date="05/04/2012 00:00:00" DisplayName="Greenery Day" Location="Japan" />
+<Holiday Date="05/04/2013 00:00:00" DisplayName="Greenery Day" Location="Japan" />
+<Holiday Date="05/04/2014 00:00:00" DisplayName="Greenery Day" Location="Japan" />
+<Holiday Date="05/04/2015 00:00:00" DisplayName="Greenery Day" Location="Japan" />
+<Holiday Date="05/04/2016 00:00:00" DisplayName="Greenery Day" Location="Japan" />
+<Holiday Date="05/04/2017 00:00:00" DisplayName="Greenery Day" Location="Japan" />
+<Holiday Date="05/04/2018 00:00:00" DisplayName="Greenery Day" Location="Japan" />
+<Holiday Date="05/04/2019 00:00:00" DisplayName="Greenery Day" Location="Japan" />
+<Holiday Date="05/04/2020 00:00:00" DisplayName="Greenery Day" Location="Japan" />
+<Holiday Date="05/04/2021 00:00:00" DisplayName="Greenery Day" Location="Japan" />
+<Holiday Date="05/04/2022 00:00:00" DisplayName="Greenery Day" Location="Japan" />
+<Holiday Date="05/06/2014 00:00:00" DisplayName="Greenery Day (Observed)" Location="Japan" />
+<Holiday Date="10/08/2012 00:00:00" DisplayName="Health Sport's Day" Location="Japan" />
+<Holiday Date="10/14/2013 00:00:00" DisplayName="Health Sport's Day" Location="Japan" />
+<Holiday Date="10/13/2014 00:00:00" DisplayName="Health Sport's Day" Location="Japan" />
+<Holiday Date="10/12/2015 00:00:00" DisplayName="Health Sport's Day" Location="Japan" />
+<Holiday Date="10/10/2016 00:00:00" DisplayName="Health Sport's Day" Location="Japan" />
+<Holiday Date="10/09/2017 00:00:00" DisplayName="Health Sport's Day" Location="Japan" />
+<Holiday Date="10/08/2018 00:00:00" DisplayName="Health Sport's Day" Location="Japan" />
+<Holiday Date="10/14/2019 00:00:00" DisplayName="Health Sport's Day" Location="Japan" />
+<Holiday Date="10/12/2020 00:00:00" DisplayName="Health Sport's Day" Location="Japan" />
+<Holiday Date="10/11/2021 00:00:00" DisplayName="Health Sport's Day" Location="Japan" />
+<Holiday Date="10/10/2022 00:00:00" DisplayName="Health Sport's Day" Location="Japan" />
+<Holiday Date="11/23/2012 00:00:00" DisplayName="Labor Thanksgiving Day" Location="Japan" />
+<Holiday Date="11/23/2013 00:00:00" DisplayName="Labor Thanksgiving Day" Location="Japan" />
+<Holiday Date="11/23/2014 00:00:00" DisplayName="Labor Thanksgiving Day" Location="Japan" />
+<Holiday Date="11/23/2015 00:00:00" DisplayName="Labor Thanksgiving Day" Location="Japan" />
+<Holiday Date="11/23/2016 00:00:00" DisplayName="Labor Thanksgiving Day" Location="Japan" />
+<Holiday Date="11/23/2017 00:00:00" DisplayName="Labor Thanksgiving Day" Location="Japan" />
+<Holiday Date="11/23/2018 00:00:00" DisplayName="Labor Thanksgiving Day" Location="Japan" />
+<Holiday Date="11/23/2019 00:00:00" DisplayName="Labor Thanksgiving Day" Location="Japan" />
+<Holiday Date="11/23/2020 00:00:00" DisplayName="Labor Thanksgiving Day" Location="Japan" />
+<Holiday Date="11/23/2021 00:00:00" DisplayName="Labor Thanksgiving Day" Location="Japan" />
+<Holiday Date="11/23/2022 00:00:00" DisplayName="Labor Thanksgiving Day" Location="Japan" />
+<Holiday Date="07/16/2012 00:00:00" DisplayName="Marine Day" Location="Japan" />
+<Holiday Date="07/15/2013 00:00:00" DisplayName="Marine Day" Location="Japan" />
+<Holiday Date="07/21/2014 00:00:00" DisplayName="Marine Day" Location="Japan" />
+<Holiday Date="07/20/2015 00:00:00" DisplayName="Marine Day" Location="Japan" />
+<Holiday Date="07/18/2016 00:00:00" DisplayName="Marine Day" Location="Japan" />
+<Holiday Date="07/17/2017 00:00:00" DisplayName="Marine Day" Location="Japan" />
+<Holiday Date="07/16/2018 00:00:00" DisplayName="Marine Day" Location="Japan" />
+<Holiday Date="07/15/2019 00:00:00" DisplayName="Marine Day" Location="Japan" />
+<Holiday Date="07/20/2020 00:00:00" DisplayName="Marine Day" Location="Japan" />
+<Holiday Date="07/19/2021 00:00:00" DisplayName="Marine Day" Location="Japan" />
+<Holiday Date="07/18/2022 00:00:00" DisplayName="Marine Day" Location="Japan" />
+<Holiday Date="02/11/2012 00:00:00" DisplayName="National Foundation Day" Location="Japan" />
+<Holiday Date="02/11/2013 00:00:00" DisplayName="National Foundation Day" Location="Japan" />
+<Holiday Date="02/11/2014 00:00:00" DisplayName="National Foundation Day" Location="Japan" />
+<Holiday Date="02/11/2015 00:00:00" DisplayName="National Foundation Day" Location="Japan" />
+<Holiday Date="02/11/2016 00:00:00" DisplayName="National Foundation Day" Location="Japan" />
+<Holiday Date="02/11/2017 00:00:00" DisplayName="National Foundation Day" Location="Japan" />
+<Holiday Date="02/11/2018 00:00:00" DisplayName="National Foundation Day" Location="Japan" />
+<Holiday Date="02/11/2019 00:00:00" DisplayName="National Foundation Day" Location="Japan" />
+<Holiday Date="02/11/2020 00:00:00" DisplayName="National Foundation Day" Location="Japan" />
+<Holiday Date="02/11/2021 00:00:00" DisplayName="National Foundation Day" Location="Japan" />
+<Holiday Date="02/11/2022 00:00:00" DisplayName="National Foundation Day" Location="Japan" />
+<Holiday Date="02/12/2018 00:00:00" DisplayName="National Foundation Day (Observed)" Location="Japan" />
+<Holiday Date="01/01/2012 00:00:00" DisplayName="New Year's Day" Location="Japan" />
+<Holiday Date="01/01/2013 00:00:00" DisplayName="New Year's Day" Location="Japan" />
+<Holiday Date="01/01/2014 00:00:00" DisplayName="New Year's Day" Location="Japan" />
+<Holiday Date="01/01/2015 00:00:00" DisplayName="New Year's Day" Location="Japan" />
+<Holiday Date="01/01/2016 00:00:00" DisplayName="New Year's Day" Location="Japan" />
+<Holiday Date="01/01/2017 00:00:00" DisplayName="New Year's Day" Location="Japan" />
+<Holiday Date="01/01/2018 00:00:00" DisplayName="New Year's Day" Location="Japan" />
+<Holiday Date="01/01/2019 00:00:00" DisplayName="New Year's Day" Location="Japan" />
+<Holiday Date="01/01/2020 00:00:00" DisplayName="New Year's Day" Location="Japan" />
+<Holiday Date="01/01/2021 00:00:00" DisplayName="New Year's Day" Location="Japan" />
+<Holiday Date="01/01/2022 00:00:00" DisplayName="New Year's Day" Location="Japan" />
+<Holiday Date="09/17/2012 00:00:00" DisplayName="Respect for the Aged Day" Location="Japan" />
+<Holiday Date="09/16/2013 00:00:00" DisplayName="Respect for the Aged Day" Location="Japan" />
+<Holiday Date="09/15/2014 00:00:00" DisplayName="Respect for the Aged Day" Location="Japan" />
+<Holiday Date="09/21/2015 00:00:00" DisplayName="Respect for the Aged Day" Location="Japan" />
+<Holiday Date="09/19/2016 00:00:00" DisplayName="Respect for the Aged Day" Location="Japan" />
+<Holiday Date="09/18/2017 00:00:00" DisplayName="Respect for the Aged Day" Location="Japan" />
+<Holiday Date="09/17/2018 00:00:00" DisplayName="Respect for the Aged Day" Location="Japan" />
+<Holiday Date="09/16/2019 00:00:00" DisplayName="Respect for the Aged Day" Location="Japan" />
+<Holiday Date="09/21/2020 00:00:00" DisplayName="Respect for the Aged Day" Location="Japan" />
+<Holiday Date="09/20/2021 00:00:00" DisplayName="Respect for the Aged Day" Location="Japan" />
+<Holiday Date="09/19/2022 00:00:00" DisplayName="Respect for the Aged Day" Location="Japan" />
+<Holiday Date="03/20/2012 00:00:00" DisplayName="Vernal Equinox Day" Location="Japan" />
+<Holiday Date="03/20/2013 00:00:00" DisplayName="Vernal Equinox Day" Location="Japan" />
+<Holiday Date="03/21/2014 00:00:00" DisplayName="Vernal Equinox Day" Location="Japan" />
+<Holiday Date="03/21/2015 00:00:00" DisplayName="Vernal Equinox Day" Location="Japan" />
+<Holiday Date="03/20/2016 00:00:00" DisplayName="Vernal Equinox Day" Location="Japan" />
+<Holiday Date="03/20/2017 00:00:00" DisplayName="Vernal Equinox Day" Location="Japan" />
+<Holiday Date="03/21/2018 00:00:00" DisplayName="Vernal Equinox Day" Location="Japan" />
+<Holiday Date="03/21/2019 00:00:00" DisplayName="Vernal Equinox Day" Location="Japan" />
+<Holiday Date="03/20/2020 00:00:00" DisplayName="Vernal Equinox Day" Location="Japan" />
+<Holiday Date="03/20/2021 00:00:00" DisplayName="Vernal Equinox Day" Location="Japan" />
+<Holiday Date="03/21/2022 00:00:00" DisplayName="Vernal Equinox Day" Location="Japan" />
+<Holiday Date="03/21/2016 00:00:00" DisplayName="Vernal Equinox Day (Observed)" Location="Japan" />
+<Holiday Date="11/24/2014 00:00:00" DisplayName="Labor Thanksgiving Day (Observed)" Location="Japan" />
+<Holiday Date="05/06/2015 00:00:00" DisplayName="Constitution Day (Observed)" Location="Japan" />
+<Holiday Date="05/06/2020 00:00:00" DisplayName="Constitution Day (Observed)" Location="Japan" />
+<Holiday Date="01/02/2012 00:00:00" DisplayName="New Year's Day (Observed)" Location="Japan" />
+<Holiday Date="01/02/2017 00:00:00" DisplayName="New Year's Day (Observed)" Location="Japan" />
+<Holiday Date="04/29/2012 00:00:00" DisplayName="Showa Day" Location="Japan" />
+<Holiday Date="04/29/2013 00:00:00" DisplayName="Showa Day" Location="Japan" />
+<Holiday Date="04/29/2014 00:00:00" DisplayName="Showa Day" Location="Japan" />
+<Holiday Date="04/29/2015 00:00:00" DisplayName="Showa Day" Location="Japan" />
+<Holiday Date="04/29/2016 00:00:00" DisplayName="Showa Day" Location="Japan" />
+<Holiday Date="04/29/2017 00:00:00" DisplayName="Showa Day" Location="Japan" />
+<Holiday Date="04/29/2018 00:00:00" DisplayName="Showa Day" Location="Japan" />
+<Holiday Date="04/29/2019 00:00:00" DisplayName="Showa Day" Location="Japan" />
+<Holiday Date="04/29/2020 00:00:00" DisplayName="Showa Day" Location="Japan" />
+<Holiday Date="04/29/2021 00:00:00" DisplayName="Showa Day" Location="Japan" />
+<Holiday Date="04/29/2022 00:00:00" DisplayName="Showa Day" Location="Japan" />
+<Holiday Date="04/30/2012 00:00:00" DisplayName="Showa Day (Observed)" Location="Japan" />
+<Holiday Date="04/30/2018 00:00:00" DisplayName="Showa Day (Observed)" Location="Japan" />
+<Holiday Date="05/06/2013 00:00:00" DisplayName="Children's Day (Observed)" Location="Japan" />
+<Holiday Date="05/06/2019 00:00:00" DisplayName="Children's Day (Observed)" Location="Japan" />
+<Holiday Date="11/04/2013 00:00:00" DisplayName="Culture Day (Observed)" Location="Japan" />
+<Holiday Date="11/04/2019 00:00:00" DisplayName="Culture Day (Observed)" Location="Japan" />
+<Holiday Date="09/24/2018 00:00:00" DisplayName="Autumnal Equinox (Observed)" Location="Japan" />
+<Holiday Date="09/22/2015 00:00:00" DisplayName="People's Day" Location="Japan" />
+<Holiday Date="12/31/2012 00:00:00" DisplayName="New Year's Eve" Location="Japan" />
+<Holiday Date="12/31/2013 00:00:00" DisplayName="New Year's Eve" Location="Japan" />
+<Holiday Date="12/31/2014 00:00:00" DisplayName="New Year's Eve" Location="Japan" />
+<Holiday Date="12/31/2015 00:00:00" DisplayName="New Year's Eve" Location="Japan" />
+<Holiday Date="12/31/2016 00:00:00" DisplayName="New Year's Eve" Location="Japan" />
+<Holiday Date="12/31/2017 00:00:00" DisplayName="New Year's Eve" Location="Japan" />
+<Holiday Date="12/31/2018 00:00:00" DisplayName="New Year's Eve" Location="Japan" />
+<Holiday Date="12/31/2019 00:00:00" DisplayName="New Year's Eve" Location="Japan" />
+<Holiday Date="12/31/2020 00:00:00" DisplayName="New Year's Eve" Location="Japan" />
+<Holiday Date="12/31/2021 00:00:00" DisplayName="New Year's Eve" Location="Japan" />
+<Holiday Date="12/31/2022 00:00:00" DisplayName="New Year's Eve" Location="Japan" />
+<Holiday Date="01/07/2012 00:00:00" DisplayName="Christmas" Location="Russia" />
+<Holiday Date="01/07/2013 00:00:00" DisplayName="Christmas" Location="Russia" />
+<Holiday Date="01/07/2014 00:00:00" DisplayName="Christmas" Location="Russia" />
+<Holiday Date="01/07/2015 00:00:00" DisplayName="Christmas" Location="Russia" />
+<Holiday Date="01/07/2016 00:00:00" DisplayName="Christmas" Location="Russia" />
+<Holiday Date="01/07/2017 00:00:00" DisplayName="Christmas" Location="Russia" />
+<Holiday Date="01/07/2018 00:00:00" DisplayName="Christmas" Location="Russia" />
+<Holiday Date="01/07/2019 00:00:00" DisplayName="Christmas" Location="Russia" />
+<Holiday Date="01/07/2020 00:00:00" DisplayName="Christmas" Location="Russia" />
+<Holiday Date="01/07/2021 00:00:00" DisplayName="Christmas" Location="Russia" />
+<Holiday Date="01/07/2022 00:00:00" DisplayName="Christmas" Location="Russia" />
+<Holiday Date="03/08/2012 00:00:00" DisplayName="International Women's Day" Location="Russia" />
+<Holiday Date="03/08/2013 00:00:00" DisplayName="International Women's Day" Location="Russia" />
+<Holiday Date="03/08/2014 00:00:00" DisplayName="International Women's Day" Location="Russia" />
+<Holiday Date="03/08/2015 00:00:00" DisplayName="International Women's Day" Location="Russia" />
+<Holiday Date="03/08/2016 00:00:00" DisplayName="International Women's Day" Location="Russia" />
+<Holiday Date="03/08/2017 00:00:00" DisplayName="International Women's Day" Location="Russia" />
+<Holiday Date="03/08/2018 00:00:00" DisplayName="International Women's Day" Location="Russia" />
+<Holiday Date="03/08/2019 00:00:00" DisplayName="International Women's Day" Location="Russia" />
+<Holiday Date="03/08/2020 00:00:00" DisplayName="International Women's Day" Location="Russia" />
+<Holiday Date="03/08/2021 00:00:00" DisplayName="International Women's Day" Location="Russia" />
+<Holiday Date="03/08/2022 00:00:00" DisplayName="International Women's Day" Location="Russia" />
+<Holiday Date="01/01/2012 00:00:00" DisplayName="New Year's Day" Location="Russia" />
+<Holiday Date="01/01/2013 00:00:00" DisplayName="New Year's Day" Location="Russia" />
+<Holiday Date="01/01/2014 00:00:00" DisplayName="New Year's Day" Location="Russia" />
+<Holiday Date="01/01/2015 00:00:00" DisplayName="New Year's Day" Location="Russia" />
+<Holiday Date="01/01/2016 00:00:00" DisplayName="New Year's Day" Location="Russia" />
+<Holiday Date="01/01/2017 00:00:00" DisplayName="New Year's Day" Location="Russia" />
+<Holiday Date="01/01/2018 00:00:00" DisplayName="New Year's Day" Location="Russia" />
+<Holiday Date="01/01/2019 00:00:00" DisplayName="New Year's Day" Location="Russia" />
+<Holiday Date="01/01/2020 00:00:00" DisplayName="New Year's Day" Location="Russia" />
+<Holiday Date="01/01/2021 00:00:00" DisplayName="New Year's Day" Location="Russia" />
+<Holiday Date="01/01/2022 00:00:00" DisplayName="New Year's Day" Location="Russia" />
+<Holiday Date="01/02/2012 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/02/2013 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/02/2014 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/02/2015 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/02/2016 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/02/2017 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/02/2018 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/02/2019 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/02/2020 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/02/2021 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/02/2022 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="05/01/2012 00:00:00" DisplayName="Spring and Labor Day" Location="Russia" />
+<Holiday Date="05/01/2013 00:00:00" DisplayName="Spring and Labor Day" Location="Russia" />
+<Holiday Date="05/01/2014 00:00:00" DisplayName="Spring and Labor Day" Location="Russia" />
+<Holiday Date="05/01/2015 00:00:00" DisplayName="Spring and Labor Day" Location="Russia" />
+<Holiday Date="05/01/2016 00:00:00" DisplayName="Spring and Labor Day" Location="Russia" />
+<Holiday Date="05/01/2017 00:00:00" DisplayName="Spring and Labor Day" Location="Russia" />
+<Holiday Date="05/01/2018 00:00:00" DisplayName="Spring and Labor Day" Location="Russia" />
+<Holiday Date="05/01/2019 00:00:00" DisplayName="Spring and Labor Day" Location="Russia" />
+<Holiday Date="05/01/2020 00:00:00" DisplayName="Spring and Labor Day" Location="Russia" />
+<Holiday Date="05/01/2021 00:00:00" DisplayName="Spring and Labor Day" Location="Russia" />
+<Holiday Date="05/01/2022 00:00:00" DisplayName="Spring and Labor Day" Location="Russia" />
+<Holiday Date="05/09/2012 00:00:00" DisplayName="Victory Day" Location="Russia" />
+<Holiday Date="05/09/2013 00:00:00" DisplayName="Victory Day" Location="Russia" />
+<Holiday Date="05/09/2014 00:00:00" DisplayName="Victory Day" Location="Russia" />
+<Holiday Date="05/09/2015 00:00:00" DisplayName="Victory Day" Location="Russia" />
+<Holiday Date="05/09/2016 00:00:00" DisplayName="Victory Day" Location="Russia" />
+<Holiday Date="05/09/2017 00:00:00" DisplayName="Victory Day" Location="Russia" />
+<Holiday Date="05/09/2018 00:00:00" DisplayName="Victory Day" Location="Russia" />
+<Holiday Date="05/09/2019 00:00:00" DisplayName="Victory Day" Location="Russia" />
+<Holiday Date="05/09/2020 00:00:00" DisplayName="Victory Day" Location="Russia" />
+<Holiday Date="05/09/2021 00:00:00" DisplayName="Victory Day" Location="Russia" />
+<Holiday Date="05/09/2022 00:00:00" DisplayName="Victory Day" Location="Russia" />
+<Holiday Date="06/12/2012 00:00:00" DisplayName="Russia Day" Location="Russia" />
+<Holiday Date="06/12/2013 00:00:00" DisplayName="Russia Day" Location="Russia" />
+<Holiday Date="06/12/2014 00:00:00" DisplayName="Russia Day" Location="Russia" />
+<Holiday Date="06/12/2015 00:00:00" DisplayName="Russia Day" Location="Russia" />
+<Holiday Date="06/12/2016 00:00:00" DisplayName="Russia Day" Location="Russia" />
+<Holiday Date="06/12/2017 00:00:00" DisplayName="Russia Day" Location="Russia" />
+<Holiday Date="06/12/2018 00:00:00" DisplayName="Russia Day" Location="Russia" />
+<Holiday Date="06/12/2019 00:00:00" DisplayName="Russia Day" Location="Russia" />
+<Holiday Date="06/12/2020 00:00:00" DisplayName="Russia Day" Location="Russia" />
+<Holiday Date="06/12/2021 00:00:00" DisplayName="Russia Day" Location="Russia" />
+<Holiday Date="06/12/2022 00:00:00" DisplayName="Russia Day" Location="Russia" />
+<Holiday Date="02/23/2012 00:00:00" DisplayName="Motherland Defender's Day" Location="Russia" />
+<Holiday Date="02/23/2013 00:00:00" DisplayName="Motherland Defender's Day" Location="Russia" />
+<Holiday Date="02/23/2014 00:00:00" DisplayName="Motherland Defender's Day" Location="Russia" />
+<Holiday Date="02/23/2015 00:00:00" DisplayName="Motherland Defender's Day" Location="Russia" />
+<Holiday Date="02/23/2016 00:00:00" DisplayName="Motherland Defender's Day" Location="Russia" />
+<Holiday Date="02/23/2017 00:00:00" DisplayName="Motherland Defender's Day" Location="Russia" />
+<Holiday Date="02/23/2018 00:00:00" DisplayName="Motherland Defender's Day" Location="Russia" />
+<Holiday Date="02/23/2019 00:00:00" DisplayName="Motherland Defender's Day" Location="Russia" />
+<Holiday Date="02/23/2020 00:00:00" DisplayName="Motherland Defender's Day" Location="Russia" />
+<Holiday Date="02/23/2021 00:00:00" DisplayName="Motherland Defender's Day" Location="Russia" />
+<Holiday Date="02/23/2022 00:00:00" DisplayName="Motherland Defender's Day" Location="Russia" />
+<Holiday Date="11/04/2012 00:00:00" DisplayName="Day of the National Unity" Location="Russia" />
+<Holiday Date="11/04/2013 00:00:00" DisplayName="Day of the National Unity" Location="Russia" />
+<Holiday Date="11/04/2014 00:00:00" DisplayName="Day of the National Unity" Location="Russia" />
+<Holiday Date="11/04/2015 00:00:00" DisplayName="Day of the National Unity" Location="Russia" />
+<Holiday Date="11/04/2016 00:00:00" DisplayName="Day of the National Unity" Location="Russia" />
+<Holiday Date="11/04/2017 00:00:00" DisplayName="Day of the National Unity" Location="Russia" />
+<Holiday Date="11/04/2018 00:00:00" DisplayName="Day of the National Unity" Location="Russia" />
+<Holiday Date="11/04/2019 00:00:00" DisplayName="Day of the National Unity" Location="Russia" />
+<Holiday Date="11/04/2020 00:00:00" DisplayName="Day of the National Unity" Location="Russia" />
+<Holiday Date="11/04/2021 00:00:00" DisplayName="Day of the National Unity" Location="Russia" />
+<Holiday Date="11/04/2022 00:00:00" DisplayName="Day of the National Unity" Location="Russia" />
+<Holiday Date="01/04/2012 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/04/2013 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/04/2014 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/04/2015 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/04/2016 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/04/2017 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/04/2018 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/04/2019 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/04/2020 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/04/2021 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/04/2022 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/05/2012 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/05/2013 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/05/2014 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/05/2015 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/05/2016 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/05/2017 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/05/2018 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/05/2019 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/05/2020 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/05/2021 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/05/2022 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/03/2012 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/03/2013 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/03/2014 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/03/2015 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/03/2016 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/03/2017 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/03/2018 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/03/2019 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/03/2020 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/03/2021 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/03/2022 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/08/2012 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/08/2013 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/08/2014 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/08/2015 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/08/2016 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/08/2017 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/08/2018 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/08/2019 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/08/2020 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/08/2021 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/08/2022 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/09/2012 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/09/2013 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/09/2014 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/09/2015 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/09/2016 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/09/2017 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/09/2018 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/09/2019 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/09/2020 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/09/2021 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/09/2022 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/10/2012 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/10/2013 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/10/2014 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/10/2015 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/10/2016 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/10/2017 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/10/2018 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/10/2019 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/10/2020 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/10/2021 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/10/2022 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="02/25/2013 00:00:00" DisplayName="Motherland Defender's Day (Observed)" Location="Russia" />
+<Holiday Date="02/24/2014 00:00:00" DisplayName="Motherland Defender's Day (Observed)" Location="Russia" />
+<Holiday Date="02/25/2019 00:00:00" DisplayName="Motherland Defender's Day (Observed)" Location="Russia" />
+<Holiday Date="02/24/2020 00:00:00" DisplayName="Motherland Defender's Day (Observed)" Location="Russia" />
+<Holiday Date="03/10/2014 00:00:00" DisplayName="International Women's Day (Observed)" Location="Russia" />
+<Holiday Date="03/09/2015 00:00:00" DisplayName="International Women's Day (Observed)" Location="Russia" />
+<Holiday Date="03/09/2020 00:00:00" DisplayName="International Women's Day (Observed)" Location="Russia" />
+<Holiday Date="04/15/2012 00:00:00" DisplayName="Easter Day" Location="Russia" />
+<Holiday Date="05/05/2013 00:00:00" DisplayName="Easter Day" Location="Russia" />
+<Holiday Date="04/20/2014 00:00:00" DisplayName="Easter Day" Location="Russia" />
+<Holiday Date="04/12/2015 00:00:00" DisplayName="Easter Day" Location="Russia" />
+<Holiday Date="05/01/2016 00:00:00" DisplayName="Easter Day" Location="Russia" />
+<Holiday Date="04/16/2017 00:00:00" DisplayName="Easter Day" Location="Russia" />
+<Holiday Date="04/08/2018 00:00:00" DisplayName="Easter Day" Location="Russia" />
+<Holiday Date="04/28/2019 00:00:00" DisplayName="Easter Day" Location="Russia" />
+<Holiday Date="04/19/2020 00:00:00" DisplayName="Easter Day" Location="Russia" />
+<Holiday Date="05/02/2021 00:00:00" DisplayName="Easter Day" Location="Russia" />
+<Holiday Date="04/24/2022 00:00:00" DisplayName="Easter Day" Location="Russia" />
+<Holiday Date="05/02/2016 00:00:00" DisplayName="Spring and Labor Day (Observed)" Location="Russia" />
+<Holiday Date="05/03/2021 00:00:00" DisplayName="Spring and Labor Day (Observed)" Location="Russia" />
+<Holiday Date="05/02/2022 00:00:00" DisplayName="Spring and Labor Day (Observed)" Location="Russia" />
+<Holiday Date="05/11/2015 00:00:00" DisplayName="Victory Day (Observed)" Location="Russia" />
+<Holiday Date="05/11/2020 00:00:00" DisplayName="Victory Day (Observed)" Location="Russia" />
+<Holiday Date="05/10/2021 00:00:00" DisplayName="Victory Day (Observed)" Location="Russia" />
+<Holiday Date="06/13/2016 00:00:00" DisplayName="Russia Day (Observed)" Location="Russia" />
+<Holiday Date="06/14/2021 00:00:00" DisplayName="Russia Day (Observed)" Location="Russia" />
+<Holiday Date="06/13/2022 00:00:00" DisplayName="Russia Day (Observed)" Location="Russia" />
+<Holiday Date="11/05/2012 00:00:00" DisplayName="Day of the National Unity (Observed)" Location="Russia" />
+<Holiday Date="11/06/2017 00:00:00" DisplayName="Day of the National Unity (Observed)" Location="Russia" />
+<Holiday Date="11/05/2018 00:00:00" DisplayName="Day of the National Unity (Observed)" Location="Russia" />
+<Holiday Date="12/31/2012 00:00:00" DisplayName="New Year's Eve" Location="Russia" />
+<Holiday Date="12/31/2013 00:00:00" DisplayName="New Year's Eve" Location="Russia" />
+<Holiday Date="12/31/2014 00:00:00" DisplayName="New Year's Eve" Location="Russia" />
+<Holiday Date="12/31/2015 00:00:00" DisplayName="New Year's Eve" Location="Russia" />
+<Holiday Date="12/31/2016 00:00:00" DisplayName="New Year's Eve" Location="Russia" />
+<Holiday Date="12/31/2017 00:00:00" DisplayName="New Year's Eve" Location="Russia" />
+<Holiday Date="12/31/2018 00:00:00" DisplayName="New Year's Eve" Location="Russia" />
+<Holiday Date="12/31/2019 00:00:00" DisplayName="New Year's Eve" Location="Russia" />
+<Holiday Date="12/31/2020 00:00:00" DisplayName="New Year's Eve" Location="Russia" />
+<Holiday Date="12/31/2021 00:00:00" DisplayName="New Year's Eve" Location="Russia" />
+<Holiday Date="12/31/2022 00:00:00" DisplayName="New Year's Eve" Location="Russia" />
+<Holiday Date="01/06/2012 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/06/2013 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/06/2014 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/06/2015 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/06/2016 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/06/2017 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/06/2018 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/06/2019 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/06/2020 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/06/2021 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="01/06/2022 00:00:00" DisplayName="New Year's Holiday Week" Location="Russia" />
+<Holiday Date="06/16/2012 00:00:00" DisplayName="Eid al Isra' Wal Mi'raj" Location="United Arab Emirates" />
+<Holiday Date="06/05/2013 00:00:00" DisplayName="Eid al Isra' Wal Mi'raj" Location="United Arab Emirates" />
+<Holiday Date="05/26/2014 00:00:00" DisplayName="Eid al Isra' Wal Mi'raj" Location="United Arab Emirates" />
+<Holiday Date="05/15/2015 00:00:00" DisplayName="Eid al Isra' Wal Mi'raj" Location="United Arab Emirates" />
+<Holiday Date="05/04/2016 00:00:00" DisplayName="Eid al Isra' Wal Mi'raj" Location="United Arab Emirates" />
+<Holiday Date="04/23/2017 00:00:00" DisplayName="Eid al Isra' Wal Mi'raj" Location="United Arab Emirates" />
+<Holiday Date="04/12/2018 00:00:00" DisplayName="Eid al Isra' Wal Mi'raj" Location="United Arab Emirates" />
+<Holiday Date="04/02/2019 00:00:00" DisplayName="Eid al Isra' Wal Mi'raj" Location="United Arab Emirates" />
+<Holiday Date="03/21/2020 00:00:00" DisplayName="Eid al Isra' Wal Mi'raj" Location="United Arab Emirates" />
+<Holiday Date="03/10/2021 00:00:00" DisplayName="Eid al Isra' Wal Mi'raj" Location="United Arab Emirates" />
+<Holiday Date="02/28/2022 00:00:00" DisplayName="Eid al Isra' Wal Mi'raj" Location="United Arab Emirates" />
+<Holiday Date="10/25/2012 00:00:00" DisplayName="Eid al Adha" Location="United Arab Emirates" />
+<Holiday Date="10/14/2013 00:00:00" DisplayName="Eid al Adha" Location="United Arab Emirates" />
+<Holiday Date="10/04/2014 00:00:00" DisplayName="Eid al Adha" Location="United Arab Emirates" />
+<Holiday Date="09/23/2015 00:00:00" DisplayName="Eid al Adha" Location="United Arab Emirates" />
+<Holiday Date="09/12/2016 00:00:00" DisplayName="Eid al Adha" Location="United Arab Emirates" />
+<Holiday Date="09/01/2017 00:00:00" DisplayName="Eid al Adha" Location="United Arab Emirates" />
+<Holiday Date="08/21/2018 00:00:00" DisplayName="Eid al Adha" Location="United Arab Emirates" />
+<Holiday Date="08/11/2019 00:00:00" DisplayName="Eid al Adha" Location="United Arab Emirates" />
+<Holiday Date="07/30/2020 00:00:00" DisplayName="Eid al Adha" Location="United Arab Emirates" />
+<Holiday Date="07/19/2021 00:00:00" DisplayName="Eid al Adha" Location="United Arab Emirates" />
+<Holiday Date="07/09/2022 00:00:00" DisplayName="Eid al Adha" Location="United Arab Emirates" />
+<Holiday Date="10/26/2012 00:00:00" DisplayName="Eid al Adha (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="10/15/2013 00:00:00" DisplayName="Eid al Adha (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="10/05/2014 00:00:00" DisplayName="Eid al Adha (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="09/24/2015 00:00:00" DisplayName="Eid al Adha (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="09/13/2016 00:00:00" DisplayName="Eid al Adha (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="09/02/2017 00:00:00" DisplayName="Eid al Adha (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="08/22/2018 00:00:00" DisplayName="Eid al Adha (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="08/12/2019 00:00:00" DisplayName="Eid al Adha (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="07/31/2020 00:00:00" DisplayName="Eid al Adha (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="07/20/2021 00:00:00" DisplayName="Eid al Adha (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="07/10/2022 00:00:00" DisplayName="Eid al Adha (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="10/27/2012 00:00:00" DisplayName="Eid al Adha (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="10/16/2013 00:00:00" DisplayName="Eid al Adha (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="10/06/2014 00:00:00" DisplayName="Eid al Adha (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="09/25/2015 00:00:00" DisplayName="Eid al Adha (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="09/14/2016 00:00:00" DisplayName="Eid al Adha (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="09/03/2017 00:00:00" DisplayName="Eid al Adha (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="08/23/2018 00:00:00" DisplayName="Eid al Adha (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="08/13/2019 00:00:00" DisplayName="Eid al Adha (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="08/01/2020 00:00:00" DisplayName="Eid al Adha (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="07/21/2021 00:00:00" DisplayName="Eid al Adha (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="07/11/2022 00:00:00" DisplayName="Eid al Adha (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="08/18/2012 00:00:00" DisplayName="Eid al Fitr" Location="United Arab Emirates" />
+<Holiday Date="08/07/2013 00:00:00" DisplayName="Eid al Fitr" Location="United Arab Emirates" />
+<Holiday Date="07/28/2014 00:00:00" DisplayName="Eid al Fitr" Location="United Arab Emirates" />
+<Holiday Date="07/17/2015 00:00:00" DisplayName="Eid al Fitr" Location="United Arab Emirates" />
+<Holiday Date="07/06/2016 00:00:00" DisplayName="Eid al Fitr" Location="United Arab Emirates" />
+<Holiday Date="06/25/2017 00:00:00" DisplayName="Eid al Fitr" Location="United Arab Emirates" />
+<Holiday Date="06/14/2018 00:00:00" DisplayName="Eid al Fitr" Location="United Arab Emirates" />
+<Holiday Date="06/04/2019 00:00:00" DisplayName="Eid al Fitr" Location="United Arab Emirates" />
+<Holiday Date="05/23/2020 00:00:00" DisplayName="Eid al Fitr" Location="United Arab Emirates" />
+<Holiday Date="05/12/2021 00:00:00" DisplayName="Eid al Fitr" Location="United Arab Emirates" />
+<Holiday Date="05/02/2022 00:00:00" DisplayName="Eid al Fitr" Location="United Arab Emirates" />
+<Holiday Date="08/19/2012 00:00:00" DisplayName="Eid al Fitr (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="08/08/2013 00:00:00" DisplayName="Eid al Fitr (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="07/29/2014 00:00:00" DisplayName="Eid al Fitr (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="07/18/2015 00:00:00" DisplayName="Eid al Fitr (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="07/07/2016 00:00:00" DisplayName="Eid al Fitr (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="06/26/2017 00:00:00" DisplayName="Eid al Fitr (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="06/15/2018 00:00:00" DisplayName="Eid al Fitr (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="06/05/2019 00:00:00" DisplayName="Eid al Fitr (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="05/24/2020 00:00:00" DisplayName="Eid al Fitr (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="05/13/2021 00:00:00" DisplayName="Eid al Fitr (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="05/03/2022 00:00:00" DisplayName="Eid al Fitr (2nd Day)" Location="United Arab Emirates" />
+<Holiday Date="08/20/2012 00:00:00" DisplayName="Eid al Fitr (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="08/09/2013 00:00:00" DisplayName="Eid al Fitr (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="07/30/2014 00:00:00" DisplayName="Eid al Fitr (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="07/19/2015 00:00:00" DisplayName="Eid al Fitr (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="07/08/2016 00:00:00" DisplayName="Eid al Fitr (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="06/27/2017 00:00:00" DisplayName="Eid al Fitr (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="06/16/2018 00:00:00" DisplayName="Eid al Fitr (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="06/06/2019 00:00:00" DisplayName="Eid al Fitr (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="05/25/2020 00:00:00" DisplayName="Eid al Fitr (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="05/14/2021 00:00:00" DisplayName="Eid al Fitr (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="05/04/2022 00:00:00" DisplayName="Eid al Fitr (3rd Day)" Location="United Arab Emirates" />
+<Holiday Date="11/14/2012 00:00:00" DisplayName="Hijri New Year" Location="United Arab Emirates" />
+<Holiday Date="11/04/2013 00:00:00" DisplayName="Hijri New Year" Location="United Arab Emirates" />
+<Holiday Date="10/24/2014 00:00:00" DisplayName="Hijri New Year" Location="United Arab Emirates" />
+<Holiday Date="10/14/2015 00:00:00" DisplayName="Hijri New Year" Location="United Arab Emirates" />
+<Holiday Date="10/02/2016 00:00:00" DisplayName="Hijri New Year" Location="United Arab Emirates" />
+<Holiday Date="09/21/2017 00:00:00" DisplayName="Hijri New Year" Location="United Arab Emirates" />
+<Holiday Date="09/11/2018 00:00:00" DisplayName="Hijri New Year" Location="United Arab Emirates" />
+<Holiday Date="08/31/2019 00:00:00" DisplayName="Hijri New Year" Location="United Arab Emirates" />
+<Holiday Date="08/19/2020 00:00:00" DisplayName="Hijri New Year" Location="United Arab Emirates" />
+<Holiday Date="08/09/2021 00:00:00" DisplayName="Hijri New Year" Location="United Arab Emirates" />
+<Holiday Date="07/29/2022 00:00:00" DisplayName="Hijri New Year" Location="United Arab Emirates" />
+<Holiday Date="12/02/2012 00:00:00" DisplayName="National Day" Location="United Arab Emirates" />
+<Holiday Date="12/02/2013 00:00:00" DisplayName="National Day" Location="United Arab Emirates" />
+<Holiday Date="12/02/2014 00:00:00" DisplayName="National Day" Location="United Arab Emirates" />
+<Holiday Date="12/02/2015 00:00:00" DisplayName="National Day" Location="United Arab Emirates" />
+<Holiday Date="12/02/2016 00:00:00" DisplayName="National Day" Location="United Arab Emirates" />
+<Holiday Date="12/02/2017 00:00:00" DisplayName="National Day" Location="United Arab Emirates" />
+<Holiday Date="12/02/2018 00:00:00" DisplayName="National Day" Location="United Arab Emirates" />
+<Holiday Date="12/02/2019 00:00:00" DisplayName="National Day" Location="United Arab Emirates" />
+<Holiday Date="12/02/2020 00:00:00" DisplayName="National Day" Location="United Arab Emirates" />
+<Holiday Date="12/02/2021 00:00:00" DisplayName="National Day" Location="United Arab Emirates" />
+<Holiday Date="12/02/2022 00:00:00" DisplayName="National Day" Location="United Arab Emirates" />
+<Holiday Date="01/01/2012 00:00:00" DisplayName="New Year's Day" Location="United Arab Emirates" />
+<Holiday Date="01/01/2013 00:00:00" DisplayName="New Year's Day" Location="United Arab Emirates" />
+<Holiday Date="01/01/2014 00:00:00" DisplayName="New Year's Day" Location="United Arab Emirates" />
+<Holiday Date="01/01/2015 00:00:00" DisplayName="New Year's Day" Location="United Arab Emirates" />
+<Holiday Date="01/01/2016 00:00:00" DisplayName="New Year's Day" Location="United Arab Emirates" />
+<Holiday Date="01/01/2017 00:00:00" DisplayName="New Year's Day" Location="United Arab Emirates" />
+<Holiday Date="01/01/2018 00:00:00" DisplayName="New Year's Day" Location="United Arab Emirates" />
+<Holiday Date="01/01/2019 00:00:00" DisplayName="New Year's Day" Location="United Arab Emirates" />
+<Holiday Date="01/01/2020 00:00:00" DisplayName="New Year's Day" Location="United Arab Emirates" />
+<Holiday Date="01/01/2021 00:00:00" DisplayName="New Year's Day" Location="United Arab Emirates" />
+<Holiday Date="01/01/2022 00:00:00" DisplayName="New Year's Day" Location="United Arab Emirates" />
+<Holiday Date="02/04/2012 00:00:00" DisplayName="Prophet Mohammed's Birthday" Location="United Arab Emirates" />
+<Holiday Date="01/23/2013 00:00:00" DisplayName="Prophet Mohammed's Birthday" Location="United Arab Emirates" />
+<Holiday Date="01/13/2014 00:00:00" DisplayName="Prophet Mohammed's Birthday" Location="United Arab Emirates" />
+<Holiday Date="01/02/2015 00:00:00" DisplayName="Prophet Mohammed's Birthday" Location="United Arab Emirates" />
+<Holiday Date="12/23/2015 00:00:00" DisplayName="Prophet Mohammed's Birthday" Location="United Arab Emirates" />
+<Holiday Date="12/11/2016 00:00:00" DisplayName="Prophet Mohammed's Birthday" Location="United Arab Emirates" />
+<Holiday Date="11/30/2017 00:00:00" DisplayName="Prophet Mohammed's Birthday" Location="United Arab Emirates" />
+<Holiday Date="11/20/2018 00:00:00" DisplayName="Prophet Mohammed's Birthday" Location="United Arab Emirates" />
+<Holiday Date="11/09/2019 00:00:00" DisplayName="Prophet Mohammed's Birthday" Location="United Arab Emirates" />
+<Holiday Date="10/28/2020 00:00:00" DisplayName="Prophet Mohammed's Birthday" Location="United Arab Emirates" />
+<Holiday Date="10/18/2021 00:00:00" DisplayName="Prophet Mohammed's Birthday" Location="United Arab Emirates" />
+<Holiday Date="10/24/2012 00:00:00" DisplayName="Arafat" Location="United Arab Emirates" />
+<Holiday Date="10/13/2013 00:00:00" DisplayName="Arafat" Location="United Arab Emirates" />
+<Holiday Date="10/03/2014 00:00:00" DisplayName="Arafat" Location="United Arab Emirates" />
+<Holiday Date="09/22/2015 00:00:00" DisplayName="Arafat" Location="United Arab Emirates" />
+<Holiday Date="09/11/2016 00:00:00" DisplayName="Arafat" Location="United Arab Emirates" />
+<Holiday Date="08/31/2017 00:00:00" DisplayName="Arafat" Location="United Arab Emirates" />
+<Holiday Date="08/20/2018 00:00:00" DisplayName="Arafat" Location="United Arab Emirates" />
+<Holiday Date="08/10/2019 00:00:00" DisplayName="Arafat" Location="United Arab Emirates" />
+<Holiday Date="07/29/2020 00:00:00" DisplayName="Arafat" Location="United Arab Emirates" />
+<Holiday Date="07/18/2021 00:00:00" DisplayName="Arafat" Location="United Arab Emirates" />
+<Holiday Date="07/08/2022 00:00:00" DisplayName="Arafat" Location="United Arab Emirates" />
+<Holiday Date="07/12/2012 00:00:00" DisplayName="Battle of the Boyne (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="07/12/2013 00:00:00" DisplayName="Battle of the Boyne (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="07/12/2014 00:00:00" DisplayName="Battle of the Boyne (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="07/12/2015 00:00:00" DisplayName="Battle of the Boyne (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="07/12/2016 00:00:00" DisplayName="Battle of the Boyne (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="07/12/2017 00:00:00" DisplayName="Battle of the Boyne (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="07/12/2018 00:00:00" DisplayName="Battle of the Boyne (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="07/12/2019 00:00:00" DisplayName="Battle of the Boyne (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="07/12/2020 00:00:00" DisplayName="Battle of the Boyne (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="07/12/2021 00:00:00" DisplayName="Battle of the Boyne (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="07/12/2022 00:00:00" DisplayName="Battle of the Boyne (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="12/26/2012 00:00:00" DisplayName="Boxing Day" Location="United Kingdom" />
+<Holiday Date="12/26/2013 00:00:00" DisplayName="Boxing Day" Location="United Kingdom" />
+<Holiday Date="12/26/2014 00:00:00" DisplayName="Boxing Day" Location="United Kingdom" />
+<Holiday Date="12/26/2015 00:00:00" DisplayName="Boxing Day" Location="United Kingdom" />
+<Holiday Date="12/26/2016 00:00:00" DisplayName="Boxing Day" Location="United Kingdom" />
+<Holiday Date="12/26/2017 00:00:00" DisplayName="Boxing Day" Location="United Kingdom" />
+<Holiday Date="12/26/2018 00:00:00" DisplayName="Boxing Day" Location="United Kingdom" />
+<Holiday Date="12/26/2019 00:00:00" DisplayName="Boxing Day" Location="United Kingdom" />
+<Holiday Date="12/26/2020 00:00:00" DisplayName="Boxing Day" Location="United Kingdom" />
+<Holiday Date="12/26/2021 00:00:00" DisplayName="Boxing Day" Location="United Kingdom" />
+<Holiday Date="12/26/2022 00:00:00" DisplayName="Boxing Day" Location="United Kingdom" />
+<Holiday Date="12/25/2012 00:00:00" DisplayName="Christmas Day" Location="United Kingdom" />
+<Holiday Date="12/25/2013 00:00:00" DisplayName="Christmas Day" Location="United Kingdom" />
+<Holiday Date="12/25/2014 00:00:00" DisplayName="Christmas Day" Location="United Kingdom" />
+<Holiday Date="12/25/2015 00:00:00" DisplayName="Christmas Day" Location="United Kingdom" />
+<Holiday Date="12/25/2016 00:00:00" DisplayName="Christmas Day" Location="United Kingdom" />
+<Holiday Date="12/25/2017 00:00:00" DisplayName="Christmas Day" Location="United Kingdom" />
+<Holiday Date="12/25/2018 00:00:00" DisplayName="Christmas Day" Location="United Kingdom" />
+<Holiday Date="12/25/2019 00:00:00" DisplayName="Christmas Day" Location="United Kingdom" />
+<Holiday Date="12/25/2020 00:00:00" DisplayName="Christmas Day" Location="United Kingdom" />
+<Holiday Date="12/25/2021 00:00:00" DisplayName="Christmas Day" Location="United Kingdom" />
+<Holiday Date="12/25/2022 00:00:00" DisplayName="Christmas Day" Location="United Kingdom" />
+<Holiday Date="04/08/2012 00:00:00" DisplayName="Easter Day" Location="United Kingdom" />
+<Holiday Date="03/31/2013 00:00:00" DisplayName="Easter Day" Location="United Kingdom" />
+<Holiday Date="04/20/2014 00:00:00" DisplayName="Easter Day" Location="United Kingdom" />
+<Holiday Date="04/05/2015 00:00:00" DisplayName="Easter Day" Location="United Kingdom" />
+<Holiday Date="03/27/2016 00:00:00" DisplayName="Easter Day" Location="United Kingdom" />
+<Holiday Date="04/16/2017 00:00:00" DisplayName="Easter Day" Location="United Kingdom" />
+<Holiday Date="04/01/2018 00:00:00" DisplayName="Easter Day" Location="United Kingdom" />
+<Holiday Date="04/21/2019 00:00:00" DisplayName="Easter Day" Location="United Kingdom" />
+<Holiday Date="04/12/2020 00:00:00" DisplayName="Easter Day" Location="United Kingdom" />
+<Holiday Date="04/04/2021 00:00:00" DisplayName="Easter Day" Location="United Kingdom" />
+<Holiday Date="04/17/2022 00:00:00" DisplayName="Easter Day" Location="United Kingdom" />
+<Holiday Date="04/09/2012 00:00:00" DisplayName="Easter Monday" Location="United Kingdom" />
+<Holiday Date="04/01/2013 00:00:00" DisplayName="Easter Monday" Location="United Kingdom" />
+<Holiday Date="04/21/2014 00:00:00" DisplayName="Easter Monday" Location="United Kingdom" />
+<Holiday Date="04/06/2015 00:00:00" DisplayName="Easter Monday" Location="United Kingdom" />
+<Holiday Date="03/28/2016 00:00:00" DisplayName="Easter Monday" Location="United Kingdom" />
+<Holiday Date="04/17/2017 00:00:00" DisplayName="Easter Monday" Location="United Kingdom" />
+<Holiday Date="04/02/2018 00:00:00" DisplayName="Easter Monday" Location="United Kingdom" />
+<Holiday Date="04/22/2019 00:00:00" DisplayName="Easter Monday" Location="United Kingdom" />
+<Holiday Date="04/13/2020 00:00:00" DisplayName="Easter Monday" Location="United Kingdom" />
+<Holiday Date="04/05/2021 00:00:00" DisplayName="Easter Monday" Location="United Kingdom" />
+<Holiday Date="04/18/2022 00:00:00" DisplayName="Easter Monday" Location="United Kingdom" />
+<Holiday Date="04/06/2012 00:00:00" DisplayName="Good Friday" Location="United Kingdom" />
+<Holiday Date="03/29/2013 00:00:00" DisplayName="Good Friday" Location="United Kingdom" />
+<Holiday Date="04/18/2014 00:00:00" DisplayName="Good Friday" Location="United Kingdom" />
+<Holiday Date="04/03/2015 00:00:00" DisplayName="Good Friday" Location="United Kingdom" />
+<Holiday Date="03/25/2016 00:00:00" DisplayName="Good Friday" Location="United Kingdom" />
+<Holiday Date="04/14/2017 00:00:00" DisplayName="Good Friday" Location="United Kingdom" />
+<Holiday Date="03/30/2018 00:00:00" DisplayName="Good Friday" Location="United Kingdom" />
+<Holiday Date="04/19/2019 00:00:00" DisplayName="Good Friday" Location="United Kingdom" />
+<Holiday Date="04/10/2020 00:00:00" DisplayName="Good Friday" Location="United Kingdom" />
+<Holiday Date="04/02/2021 00:00:00" DisplayName="Good Friday" Location="United Kingdom" />
+<Holiday Date="04/15/2022 00:00:00" DisplayName="Good Friday" Location="United Kingdom" />
+<Holiday Date="08/27/2012 00:00:00" DisplayName="Late Summer Holiday" Location="United Kingdom" />
+<Holiday Date="08/26/2013 00:00:00" DisplayName="Late Summer Holiday" Location="United Kingdom" />
+<Holiday Date="08/25/2014 00:00:00" DisplayName="Late Summer Holiday" Location="United Kingdom" />
+<Holiday Date="08/31/2015 00:00:00" DisplayName="Late Summer Holiday" Location="United Kingdom" />
+<Holiday Date="08/29/2016 00:00:00" DisplayName="Late Summer Holiday" Location="United Kingdom" />
+<Holiday Date="08/28/2017 00:00:00" DisplayName="Late Summer Holiday" Location="United Kingdom" />
+<Holiday Date="08/27/2018 00:00:00" DisplayName="Late Summer Holiday" Location="United Kingdom" />
+<Holiday Date="08/26/2019 00:00:00" DisplayName="Late Summer Holiday" Location="United Kingdom" />
+<Holiday Date="08/31/2020 00:00:00" DisplayName="Late Summer Holiday" Location="United Kingdom" />
+<Holiday Date="08/30/2021 00:00:00" DisplayName="Late Summer Holiday" Location="United Kingdom" />
+<Holiday Date="08/29/2022 00:00:00" DisplayName="Late Summer Holiday" Location="United Kingdom" />
+<Holiday Date="05/07/2012 00:00:00" DisplayName="May Day Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/06/2013 00:00:00" DisplayName="May Day Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/05/2014 00:00:00" DisplayName="May Day Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/04/2015 00:00:00" DisplayName="May Day Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/02/2016 00:00:00" DisplayName="May Day Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/01/2017 00:00:00" DisplayName="May Day Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/07/2018 00:00:00" DisplayName="May Day Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/06/2019 00:00:00" DisplayName="May Day Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/04/2020 00:00:00" DisplayName="May Day Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/03/2021 00:00:00" DisplayName="May Day Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/02/2022 00:00:00" DisplayName="May Day Bank Holiday" Location="United Kingdom" />
+<Holiday Date="01/01/2012 00:00:00" DisplayName="New Year's Day" Location="United Kingdom" />
+<Holiday Date="01/01/2013 00:00:00" DisplayName="New Year's Day" Location="United Kingdom" />
+<Holiday Date="01/01/2014 00:00:00" DisplayName="New Year's Day" Location="United Kingdom" />
+<Holiday Date="01/01/2015 00:00:00" DisplayName="New Year's Day" Location="United Kingdom" />
+<Holiday Date="01/01/2016 00:00:00" DisplayName="New Year's Day" Location="United Kingdom" />
+<Holiday Date="01/01/2017 00:00:00" DisplayName="New Year's Day" Location="United Kingdom" />
+<Holiday Date="01/01/2018 00:00:00" DisplayName="New Year's Day" Location="United Kingdom" />
+<Holiday Date="01/01/2019 00:00:00" DisplayName="New Year's Day" Location="United Kingdom" />
+<Holiday Date="01/01/2020 00:00:00" DisplayName="New Year's Day" Location="United Kingdom" />
+<Holiday Date="01/01/2021 00:00:00" DisplayName="New Year's Day" Location="United Kingdom" />
+<Holiday Date="01/01/2022 00:00:00" DisplayName="New Year's Day" Location="United Kingdom" />
+<Holiday Date="06/04/2012 00:00:00" DisplayName="Spring Bank Holiday" Location="United Kingdom" />
+<Holiday Date="06/05/2012 00:00:00" DisplayName="Spring Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/27/2013 00:00:00" DisplayName="Spring Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/26/2014 00:00:00" DisplayName="Spring Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/25/2015 00:00:00" DisplayName="Spring Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/30/2016 00:00:00" DisplayName="Spring Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/29/2017 00:00:00" DisplayName="Spring Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/28/2018 00:00:00" DisplayName="Spring Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/27/2019 00:00:00" DisplayName="Spring Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/25/2020 00:00:00" DisplayName="Spring Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/31/2021 00:00:00" DisplayName="Spring Bank Holiday" Location="United Kingdom" />
+<Holiday Date="05/30/2022 00:00:00" DisplayName="Spring Bank Holiday" Location="United Kingdom" />
+<Holiday Date="03/17/2012 00:00:00" DisplayName="St. Patrick's Day (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="03/17/2013 00:00:00" DisplayName="St. Patrick's Day (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="03/17/2014 00:00:00" DisplayName="St. Patrick's Day (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="03/17/2015 00:00:00" DisplayName="St. Patrick's Day (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="03/17/2016 00:00:00" DisplayName="St. Patrick's Day (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="03/17/2017 00:00:00" DisplayName="St. Patrick's Day (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="03/17/2018 00:00:00" DisplayName="St. Patrick's Day (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="03/17/2019 00:00:00" DisplayName="St. Patrick's Day (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="03/17/2020 00:00:00" DisplayName="St. Patrick's Day (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="03/17/2021 00:00:00" DisplayName="St. Patrick's Day (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="03/17/2022 00:00:00" DisplayName="St. Patrick's Day (N. Ireland)" Location="United Kingdom" />
+<Holiday Date="07/14/2014 00:00:00" DisplayName="Battle of the Boyne (N. Ireland) (Observed)" Location="United Kingdom" />
+<Holiday Date="07/13/2015 00:00:00" DisplayName="Battle of the Boyne (N. Ireland) (Observed)" Location="United Kingdom" />
+<Holiday Date="07/13/2020 00:00:00" DisplayName="Battle of the Boyne (N. Ireland) (Observed)" Location="United Kingdom" />
+<Holiday Date="12/28/2015 00:00:00" DisplayName="Boxing Day Bank Holiday" Location="United Kingdom" />
+<Holiday Date="12/27/2016 00:00:00" DisplayName="Boxing Day Bank Holiday" Location="United Kingdom" />
+<Holiday Date="12/28/2020 00:00:00" DisplayName="Boxing Day Bank Holiday" Location="United Kingdom" />
+<Holiday Date="12/26/2016 00:00:00" DisplayName="Christmas Bank Holiday" Location="United Kingdom" />
+<Holiday Date="12/24/2021 00:00:00" DisplayName="Christmas Bank Holiday" Location="United Kingdom" />
+<Holiday Date="12/26/2022 00:00:00" DisplayName="Christmas Bank Holiday" Location="United Kingdom" />
+<Holiday Date="01/02/2012 00:00:00" DisplayName="New Year's Day (Observed)" Location="United Kingdom" />
+<Holiday Date="01/02/2017 00:00:00" DisplayName="New Year's Day (Observed)" Location="United Kingdom" />
+<Holiday Date="01/03/2022 00:00:00" DisplayName="New Year's Day (Observed)" Location="United Kingdom" />
+<Holiday Date="01/02/2012 00:00:00" DisplayName="New Year's Day (2nd Day) (Scotland)" Location="United Kingdom" />
+<Holiday Date="01/02/2013 00:00:00" DisplayName="New Year's Day (2nd Day) (Scotland)" Location="United Kingdom" />
+<Holiday Date="01/02/2014 00:00:00" DisplayName="New Year's Day (2nd Day) (Scotland)" Location="United Kingdom" />
+<Holiday Date="01/02/2015 00:00:00" DisplayName="New Year's Day (2nd Day) (Scotland)" Location="United Kingdom" />
+<Holiday Date="01/02/2016 00:00:00" DisplayName="New Year's Day (2nd Day) (Scotland)" Location="United Kingdom" />
+<Holiday Date="01/02/2017 00:00:00" DisplayName="New Year's Day (2nd Day) (Scotland)" Location="United Kingdom" />
+<Holiday Date="01/02/2018 00:00:00" DisplayName="New Year's Day (2nd Day) (Scotland)" Location="United Kingdom" />
+<Holiday Date="01/02/2019 00:00:00" DisplayName="New Year's Day (2nd Day) (Scotland)" Location="United Kingdom" />
+<Holiday Date="01/02/2020 00:00:00" DisplayName="New Year's Day (2nd Day) (Scotland)" Location="United Kingdom" />
+<Holiday Date="01/02/2021 00:00:00" DisplayName="New Year's Day (2nd Day) (Scotland)" Location="United Kingdom" />
+<Holiday Date="01/02/2022 00:00:00" DisplayName="New Year's Day (2nd Day) (Scotland)" Location="United Kingdom" />
+<Holiday Date="01/03/2012 00:00:00" DisplayName="New Year's Day (2nd Day) (Scotland) (Observed)" Location="United Kingdom" />
+<Holiday Date="01/04/2016 00:00:00" DisplayName="New Year's Day (2nd Day) (Scotland) (Observed)" Location="United Kingdom" />
+<Holiday Date="01/03/2017 00:00:00" DisplayName="New Year's Day (2nd Day) (Scotland) (Observed)" Location="United Kingdom" />
+<Holiday Date="01/04/2022 00:00:00" DisplayName="New Year's Day (2nd Day) (Scotland) (Observed)" Location="United Kingdom" />
+<Holiday Date="03/19/2012 00:00:00" DisplayName="St. Patrick's Day (N. Ireland) (Observed)" Location="United Kingdom" />
+<Holiday Date="03/18/2013 00:00:00" DisplayName="St. Patrick's Day (N. Ireland) (Observed)" Location="United Kingdom" />
+<Holiday Date="03/19/2018 00:00:00" DisplayName="St. Patrick's Day (N. Ireland) (Observed)" Location="United Kingdom" />
+<Holiday Date="03/18/2019 00:00:00" DisplayName="St. Patrick's Day (N. Ireland) (Observed)" Location="United Kingdom" />
+<Holiday Date="11/30/2012 00:00:00" DisplayName="St. Andrew's Day (Scotland)" Location="United Kingdom" />
+<Holiday Date="11/30/2013 00:00:00" DisplayName="St. Andrew's Day (Scotland)" Location="United Kingdom" />
+<Holiday Date="11/30/2014 00:00:00" DisplayName="St. Andrew's Day (Scotland)" Location="United Kingdom" />
+<Holiday Date="11/30/2015 00:00:00" DisplayName="St. Andrew's Day (Scotland)" Location="United Kingdom" />
+<Holiday Date="11/30/2016 00:00:00" DisplayName="St. Andrew's Day (Scotland)" Location="United Kingdom" />
+<Holiday Date="11/30/2017 00:00:00" DisplayName="St. Andrew's Day (Scotland)" Location="United Kingdom" />
+<Holiday Date="11/30/2018 00:00:00" DisplayName="St. Andrew's Day (Scotland)" Location="United Kingdom" />
+<Holiday Date="11/30/2019 00:00:00" DisplayName="St. Andrew's Day (Scotland)" Location="United Kingdom" />
+<Holiday Date="11/30/2020 00:00:00" DisplayName="St. Andrew's Day (Scotland)" Location="United Kingdom" />
+<Holiday Date="11/30/2021 00:00:00" DisplayName="St. Andrew's Day (Scotland)" Location="United Kingdom" />
+<Holiday Date="11/30/2022 00:00:00" DisplayName="St. Andrew's Day (Scotland)" Location="United Kingdom" />
+<Holiday Date="12/02/2013 00:00:00" DisplayName="St. Andrew's Day (Scotland) (Observed)" Location="United Kingdom" />
+<Holiday Date="12/01/2014 00:00:00" DisplayName="St. Andrew's Day (Scotland) (Observed)" Location="United Kingdom" />
+<Holiday Date="12/02/2019 00:00:00" DisplayName="St. Andrew's Day (Scotland) (Observed)" Location="United Kingdom" />
+<Holiday Date="12/25/2012 00:00:00" DisplayName="Christmas Day" Location="United States" />
+<Holiday Date="12/25/2013 00:00:00" DisplayName="Christmas Day" Location="United States" />
+<Holiday Date="12/25/2014 00:00:00" DisplayName="Christmas Day" Location="United States" />
+<Holiday Date="12/25/2015 00:00:00" DisplayName="Christmas Day" Location="United States" />
+<Holiday Date="12/25/2016 00:00:00" DisplayName="Christmas Day" Location="United States" />
+<Holiday Date="12/25/2017 00:00:00" DisplayName="Christmas Day" Location="United States" />
+<Holiday Date="12/25/2018 00:00:00" DisplayName="Christmas Day" Location="United States" />
+<Holiday Date="12/25/2019 00:00:00" DisplayName="Christmas Day" Location="United States" />
+<Holiday Date="12/25/2020 00:00:00" DisplayName="Christmas Day" Location="United States" />
+<Holiday Date="12/25/2021 00:00:00" DisplayName="Christmas Day" Location="United States" />
+<Holiday Date="12/25/2022 00:00:00" DisplayName="Christmas Day" Location="United States" />
+<Holiday Date="12/24/2012 00:00:00" DisplayName="Christmas Eve" Location="United States" />
+<Holiday Date="12/24/2013 00:00:00" DisplayName="Christmas Eve" Location="United States" />
+<Holiday Date="12/24/2014 00:00:00" DisplayName="Christmas Eve" Location="United States" />
+<Holiday Date="12/24/2015 00:00:00" DisplayName="Christmas Eve" Location="United States" />
+<Holiday Date="12/24/2016 00:00:00" DisplayName="Christmas Eve" Location="United States" />
+<Holiday Date="12/24/2017 00:00:00" DisplayName="Christmas Eve" Location="United States" />
+<Holiday Date="12/24/2018 00:00:00" DisplayName="Christmas Eve" Location="United States" />
+<Holiday Date="12/24/2019 00:00:00" DisplayName="Christmas Eve" Location="United States" />
+<Holiday Date="12/24/2020 00:00:00" DisplayName="Christmas Eve" Location="United States" />
+<Holiday Date="12/24/2021 00:00:00" DisplayName="Christmas Eve" Location="United States" />
+<Holiday Date="12/24/2022 00:00:00" DisplayName="Christmas Eve" Location="United States" />
+<Holiday Date="10/08/2012 00:00:00" DisplayName="Columbus Day" Location="United States" />
+<Holiday Date="10/14/2013 00:00:00" DisplayName="Columbus Day" Location="United States" />
+<Holiday Date="10/13/2014 00:00:00" DisplayName="Columbus Day" Location="United States" />
+<Holiday Date="10/12/2015 00:00:00" DisplayName="Columbus Day" Location="United States" />
+<Holiday Date="10/10/2016 00:00:00" DisplayName="Columbus Day" Location="United States" />
+<Holiday Date="10/09/2017 00:00:00" DisplayName="Columbus Day" Location="United States" />
+<Holiday Date="10/08/2018 00:00:00" DisplayName="Columbus Day" Location="United States" />
+<Holiday Date="10/14/2019 00:00:00" DisplayName="Columbus Day" Location="United States" />
+<Holiday Date="10/12/2020 00:00:00" DisplayName="Columbus Day" Location="United States" />
+<Holiday Date="10/11/2021 00:00:00" DisplayName="Columbus Day" Location="United States" />
+<Holiday Date="10/10/2022 00:00:00" DisplayName="Columbus Day" Location="United States" />
+<Holiday Date="04/08/2012 00:00:00" DisplayName="Easter Day" Location="United States" />
+<Holiday Date="03/31/2013 00:00:00" DisplayName="Easter Day" Location="United States" />
+<Holiday Date="04/20/2014 00:00:00" DisplayName="Easter Day" Location="United States" />
+<Holiday Date="04/05/2015 00:00:00" DisplayName="Easter Day" Location="United States" />
+<Holiday Date="03/27/2016 00:00:00" DisplayName="Easter Day" Location="United States" />
+<Holiday Date="04/16/2017 00:00:00" DisplayName="Easter Day" Location="United States" />
+<Holiday Date="04/01/2018 00:00:00" DisplayName="Easter Day" Location="United States" />
+<Holiday Date="04/21/2019 00:00:00" DisplayName="Easter Day" Location="United States" />
+<Holiday Date="04/12/2020 00:00:00" DisplayName="Easter Day" Location="United States" />
+<Holiday Date="04/04/2021 00:00:00" DisplayName="Easter Day" Location="United States" />
+<Holiday Date="04/17/2022 00:00:00" DisplayName="Easter Day" Location="United States" />
+<Holiday Date="11/06/2012 00:00:00" DisplayName="Election Day" Location="United States" />
+<Holiday Date="11/05/2013 00:00:00" DisplayName="Election Day" Location="United States" />
+<Holiday Date="11/04/2014 00:00:00" DisplayName="Election Day" Location="United States" />
+<Holiday Date="11/03/2015 00:00:00" DisplayName="Election Day" Location="United States" />
+<Holiday Date="11/01/2016 00:00:00" DisplayName="Election Day" Location="United States" />
+<Holiday Date="11/07/2017 00:00:00" DisplayName="Election Day" Location="United States" />
+<Holiday Date="11/06/2018 00:00:00" DisplayName="Election Day" Location="United States" />
+<Holiday Date="11/05/2019 00:00:00" DisplayName="Election Day" Location="United States" />
+<Holiday Date="11/03/2020 00:00:00" DisplayName="Election Day" Location="United States" />
+<Holiday Date="11/02/2021 00:00:00" DisplayName="Election Day" Location="United States" />
+<Holiday Date="11/01/2022 00:00:00" DisplayName="Election Day" Location="United States" />
+<Holiday Date="06/17/2012 00:00:00" DisplayName="Father's Day" Location="United States" />
+<Holiday Date="06/16/2013 00:00:00" DisplayName="Father's Day" Location="United States" />
+<Holiday Date="06/15/2014 00:00:00" DisplayName="Father's Day" Location="United States" />
+<Holiday Date="06/21/2015 00:00:00" DisplayName="Father's Day" Location="United States" />
+<Holiday Date="06/19/2016 00:00:00" DisplayName="Father's Day" Location="United States" />
+<Holiday Date="06/18/2017 00:00:00" DisplayName="Father's Day" Location="United States" />
+<Holiday Date="06/17/2018 00:00:00" DisplayName="Father's Day" Location="United States" />
+<Holiday Date="06/16/2019 00:00:00" DisplayName="Father's Day" Location="United States" />
+<Holiday Date="06/21/2020 00:00:00" DisplayName="Father's Day" Location="United States" />
+<Holiday Date="06/20/2021 00:00:00" DisplayName="Father's Day" Location="United States" />
+<Holiday Date="06/19/2022 00:00:00" DisplayName="Father's Day" Location="United States" />
+<Holiday Date="02/02/2012 00:00:00" DisplayName="Groundhog Day" Location="United States" />
+<Holiday Date="02/02/2013 00:00:00" DisplayName="Groundhog Day" Location="United States" />
+<Holiday Date="02/02/2014 00:00:00" DisplayName="Groundhog Day" Location="United States" />
+<Holiday Date="02/02/2015 00:00:00" DisplayName="Groundhog Day" Location="United States" />
+<Holiday Date="02/02/2016 00:00:00" DisplayName="Groundhog Day" Location="United States" />
+<Holiday Date="02/02/2017 00:00:00" DisplayName="Groundhog Day" Location="United States" />
+<Holiday Date="02/02/2018 00:00:00" DisplayName="Groundhog Day" Location="United States" />
+<Holiday Date="02/02/2019 00:00:00" DisplayName="Groundhog Day" Location="United States" />
+<Holiday Date="02/02/2020 00:00:00" DisplayName="Groundhog Day" Location="United States" />
+<Holiday Date="02/02/2021 00:00:00" DisplayName="Groundhog Day" Location="United States" />
+<Holiday Date="02/02/2022 00:00:00" DisplayName="Groundhog Day" Location="United States" />
+<Holiday Date="10/31/2012 00:00:00" DisplayName="Halloween" Location="United States" />
+<Holiday Date="10/31/2013 00:00:00" DisplayName="Halloween" Location="United States" />
+<Holiday Date="10/31/2014 00:00:00" DisplayName="Halloween" Location="United States" />
+<Holiday Date="10/31/2015 00:00:00" DisplayName="Halloween" Location="United States" />
+<Holiday Date="10/31/2016 00:00:00" DisplayName="Halloween" Location="United States" />
+<Holiday Date="10/31/2017 00:00:00" DisplayName="Halloween" Location="United States" />
+<Holiday Date="10/31/2018 00:00:00" DisplayName="Halloween" Location="United States" />
+<Holiday Date="10/31/2019 00:00:00" DisplayName="Halloween" Location="United States" />
+<Holiday Date="10/31/2020 00:00:00" DisplayName="Halloween" Location="United States" />
+<Holiday Date="10/31/2021 00:00:00" DisplayName="Halloween" Location="United States" />
+<Holiday Date="10/31/2022 00:00:00" DisplayName="Halloween" Location="United States" />
+<Holiday Date="07/04/2012 00:00:00" DisplayName="Independence Day" Location="United States" />
+<Holiday Date="07/04/2013 00:00:00" DisplayName="Independence Day" Location="United States" />
+<Holiday Date="07/04/2014 00:00:00" DisplayName="Independence Day" Location="United States" />
+<Holiday Date="07/04/2015 00:00:00" DisplayName="Independence Day" Location="United States" />
+<Holiday Date="07/04/2016 00:00:00" DisplayName="Independence Day" Location="United States" />
+<Holiday Date="07/04/2017 00:00:00" DisplayName="Independence Day" Location="United States" />
+<Holiday Date="07/04/2018 00:00:00" DisplayName="Independence Day" Location="United States" />
+<Holiday Date="07/04/2019 00:00:00" DisplayName="Independence Day" Location="United States" />
+<Holiday Date="07/04/2020 00:00:00" DisplayName="Independence Day" Location="United States" />
+<Holiday Date="07/04/2021 00:00:00" DisplayName="Independence Day" Location="United States" />
+<Holiday Date="07/04/2022 00:00:00" DisplayName="Independence Day" Location="United States" />
+<Holiday Date="09/03/2012 00:00:00" DisplayName="Labor Day" Location="United States" />
+<Holiday Date="09/02/2013 00:00:00" DisplayName="Labor Day" Location="United States" />
+<Holiday Date="09/01/2014 00:00:00" DisplayName="Labor Day" Location="United States" />
+<Holiday Date="09/07/2015 00:00:00" DisplayName="Labor Day" Location="United States" />
+<Holiday Date="09/05/2016 00:00:00" DisplayName="Labor Day" Location="United States" />
+<Holiday Date="09/04/2017 00:00:00" DisplayName="Labor Day" Location="United States" />
+<Holiday Date="09/03/2018 00:00:00" DisplayName="Labor Day" Location="United States" />
+<Holiday Date="09/02/2019 00:00:00" DisplayName="Labor Day" Location="United States" />
+<Holiday Date="09/07/2020 00:00:00" DisplayName="Labor Day" Location="United States" />
+<Holiday Date="09/06/2021 00:00:00" DisplayName="Labor Day" Location="United States" />
+<Holiday Date="09/05/2022 00:00:00" DisplayName="Labor Day" Location="United States" />
+<Holiday Date="01/16/2012 00:00:00" DisplayName="Martin Luther King Day" Location="United States" />
+<Holiday Date="01/21/2013 00:00:00" DisplayName="Martin Luther King Day" Location="United States" />
+<Holiday Date="01/20/2014 00:00:00" DisplayName="Martin Luther King Day" Location="United States" />
+<Holiday Date="01/19/2015 00:00:00" DisplayName="Martin Luther King Day" Location="United States" />
+<Holiday Date="01/18/2016 00:00:00" DisplayName="Martin Luther King Day" Location="United States" />
+<Holiday Date="01/16/2017 00:00:00" DisplayName="Martin Luther King Day" Location="United States" />
+<Holiday Date="01/15/2018 00:00:00" DisplayName="Martin Luther King Day" Location="United States" />
+<Holiday Date="01/21/2019 00:00:00" DisplayName="Martin Luther King Day" Location="United States" />
+<Holiday Date="01/20/2020 00:00:00" DisplayName="Martin Luther King Day" Location="United States" />
+<Holiday Date="01/18/2021 00:00:00" DisplayName="Martin Luther King Day" Location="United States" />
+<Holiday Date="01/17/2022 00:00:00" DisplayName="Martin Luther King Day" Location="United States" />
+<Holiday Date="05/28/2012 00:00:00" DisplayName="Memorial Day" Location="United States" />
+<Holiday Date="05/27/2013 00:00:00" DisplayName="Memorial Day" Location="United States" />
+<Holiday Date="05/26/2014 00:00:00" DisplayName="Memorial Day" Location="United States" />
+<Holiday Date="05/25/2015 00:00:00" DisplayName="Memorial Day" Location="United States" />
+<Holiday Date="05/30/2016 00:00:00" DisplayName="Memorial Day" Location="United States" />
+<Holiday Date="05/29/2017 00:00:00" DisplayName="Memorial Day" Location="United States" />
+<Holiday Date="05/28/2018 00:00:00" DisplayName="Memorial Day" Location="United States" />
+<Holiday Date="05/27/2019 00:00:00" DisplayName="Memorial Day" Location="United States" />
+<Holiday Date="05/25/2020 00:00:00" DisplayName="Memorial Day" Location="United States" />
+<Holiday Date="05/31/2021 00:00:00" DisplayName="Memorial Day" Location="United States" />
+<Holiday Date="05/30/2022 00:00:00" DisplayName="Memorial Day" Location="United States" />
+<Holiday Date="05/13/2012 00:00:00" DisplayName="Mother's Day" Location="United States" />
+<Holiday Date="05/12/2013 00:00:00" DisplayName="Mother's Day" Location="United States" />
+<Holiday Date="05/11/2014 00:00:00" DisplayName="Mother's Day" Location="United States" />
+<Holiday Date="05/10/2015 00:00:00" DisplayName="Mother's Day" Location="United States" />
+<Holiday Date="05/08/2016 00:00:00" DisplayName="Mother's Day" Location="United States" />
+<Holiday Date="05/14/2017 00:00:00" DisplayName="Mother's Day" Location="United States" />
+<Holiday Date="05/13/2018 00:00:00" DisplayName="Mother's Day" Location="United States" />
+<Holiday Date="05/12/2019 00:00:00" DisplayName="Mother's Day" Location="United States" />
+<Holiday Date="05/10/2020 00:00:00" DisplayName="Mother's Day" Location="United States" />
+<Holiday Date="05/09/2021 00:00:00" DisplayName="Mother's Day" Location="United States" />
+<Holiday Date="05/08/2022 00:00:00" DisplayName="Mother's Day" Location="United States" />
+<Holiday Date="01/01/2012 00:00:00" DisplayName="New Year's Day" Location="United States" />
+<Holiday Date="01/01/2013 00:00:00" DisplayName="New Year's Day" Location="United States" />
+<Holiday Date="01/01/2014 00:00:00" DisplayName="New Year's Day" Location="United States" />
+<Holiday Date="01/01/2015 00:00:00" DisplayName="New Year's Day" Location="United States" />
+<Holiday Date="01/01/2016 00:00:00" DisplayName="New Year's Day" Location="United States" />
+<Holiday Date="01/01/2017 00:00:00" DisplayName="New Year's Day" Location="United States" />
+<Holiday Date="01/01/2018 00:00:00" DisplayName="New Year's Day" Location="United States" />
+<Holiday Date="01/01/2019 00:00:00" DisplayName="New Year's Day" Location="United States" />
+<Holiday Date="01/01/2020 00:00:00" DisplayName="New Year's Day" Location="United States" />
+<Holiday Date="01/01/2021 00:00:00" DisplayName="New Year's Day" Location="United States" />
+<Holiday Date="01/01/2022 00:00:00" DisplayName="New Year's Day" Location="United States" />
+<Holiday Date="12/31/2012 00:00:00" DisplayName="New Year's Eve" Location="United States" />
+<Holiday Date="12/31/2013 00:00:00" DisplayName="New Year's Eve" Location="United States" />
+<Holiday Date="12/31/2014 00:00:00" DisplayName="New Year's Eve" Location="United States" />
+<Holiday Date="12/31/2015 00:00:00" DisplayName="New Year's Eve" Location="United States" />
+<Holiday Date="12/31/2016 00:00:00" DisplayName="New Year's Eve" Location="United States" />
+<Holiday Date="12/31/2017 00:00:00" DisplayName="New Year's Eve" Location="United States" />
+<Holiday Date="12/31/2018 00:00:00" DisplayName="New Year's Eve" Location="United States" />
+<Holiday Date="12/31/2019 00:00:00" DisplayName="New Year's Eve" Location="United States" />
+<Holiday Date="12/31/2020 00:00:00" DisplayName="New Year's Eve" Location="United States" />
+<Holiday Date="12/31/2021 00:00:00" DisplayName="New Year's Eve" Location="United States" />
+<Holiday Date="12/31/2022 00:00:00" DisplayName="New Year's Eve" Location="United States" />
+<Holiday Date="03/17/2012 00:00:00" DisplayName="St. Patrick's Day" Location="United States" />
+<Holiday Date="03/17/2013 00:00:00" DisplayName="St. Patrick's Day" Location="United States" />
+<Holiday Date="03/17/2014 00:00:00" DisplayName="St. Patrick's Day" Location="United States" />
+<Holiday Date="03/17/2015 00:00:00" DisplayName="St. Patrick's Day" Location="United States" />
+<Holiday Date="03/17/2016 00:00:00" DisplayName="St. Patrick's Day" Location="United States" />
+<Holiday Date="03/17/2017 00:00:00" DisplayName="St. Patrick's Day" Location="United States" />
+<Holiday Date="03/17/2018 00:00:00" DisplayName="St. Patrick's Day" Location="United States" />
+<Holiday Date="03/17/2019 00:00:00" DisplayName="St. Patrick's Day" Location="United States" />
+<Holiday Date="03/17/2020 00:00:00" DisplayName="St. Patrick's Day" Location="United States" />
+<Holiday Date="03/17/2021 00:00:00" DisplayName="St. Patrick's Day" Location="United States" />
+<Holiday Date="03/17/2022 00:00:00" DisplayName="St. Patrick's Day" Location="United States" />
+<Holiday Date="04/16/2012 00:00:00" DisplayName="Tax Day" Location="United States" />
+<Holiday Date="04/15/2013 00:00:00" DisplayName="Tax Day" Location="United States" />
+<Holiday Date="04/15/2014 00:00:00" DisplayName="Tax Day" Location="United States" />
+<Holiday Date="04/15/2015 00:00:00" DisplayName="Tax Day" Location="United States" />
+<Holiday Date="04/15/2016 00:00:00" DisplayName="Tax Day" Location="United States" />
+<Holiday Date="04/17/2017 00:00:00" DisplayName="Tax Day" Location="United States" />
+<Holiday Date="04/16/2018 00:00:00" DisplayName="Tax Day" Location="United States" />
+<Holiday Date="04/15/2019 00:00:00" DisplayName="Tax Day" Location="United States" />
+<Holiday Date="04/15/2020 00:00:00" DisplayName="Tax Day" Location="United States" />
+<Holiday Date="04/15/2021 00:00:00" DisplayName="Tax Day" Location="United States" />
+<Holiday Date="04/15/2022 00:00:00" DisplayName="Tax Day" Location="United States" />
+<Holiday Date="11/22/2012 00:00:00" DisplayName="Thanksgiving Day" Location="United States" />
+<Holiday Date="11/28/2013 00:00:00" DisplayName="Thanksgiving Day" Location="United States" />
+<Holiday Date="11/27/2014 00:00:00" DisplayName="Thanksgiving Day" Location="United States" />
+<Holiday Date="11/26/2015 00:00:00" DisplayName="Thanksgiving Day" Location="United States" />
+<Holiday Date="11/24/2016 00:00:00" DisplayName="Thanksgiving Day" Location="United States" />
+<Holiday Date="11/23/2017 00:00:00" DisplayName="Thanksgiving Day" Location="United States" />
+<Holiday Date="11/22/2018 00:00:00" DisplayName="Thanksgiving Day" Location="United States" />
+<Holiday Date="11/28/2019 00:00:00" DisplayName="Thanksgiving Day" Location="United States" />
+<Holiday Date="11/26/2020 00:00:00" DisplayName="Thanksgiving Day" Location="United States" />
+<Holiday Date="11/25/2021 00:00:00" DisplayName="Thanksgiving Day" Location="United States" />
+<Holiday Date="11/24/2022 00:00:00" DisplayName="Thanksgiving Day" Location="United States" />
+<Holiday Date="02/14/2012 00:00:00" DisplayName="Valentine's Day" Location="United States" />
+<Holiday Date="02/14/2013 00:00:00" DisplayName="Valentine's Day" Location="United States" />
+<Holiday Date="02/14/2014 00:00:00" DisplayName="Valentine's Day" Location="United States" />
+<Holiday Date="02/14/2015 00:00:00" DisplayName="Valentine's Day" Location="United States" />
+<Holiday Date="02/14/2016 00:00:00" DisplayName="Valentine's Day" Location="United States" />
+<Holiday Date="02/14/2017 00:00:00" DisplayName="Valentine's Day" Location="United States" />
+<Holiday Date="02/14/2018 00:00:00" DisplayName="Valentine's Day" Location="United States" />
+<Holiday Date="02/14/2019 00:00:00" DisplayName="Valentine's Day" Location="United States" />
+<Holiday Date="02/14/2020 00:00:00" DisplayName="Valentine's Day" Location="United States" />
+<Holiday Date="02/14/2021 00:00:00" DisplayName="Valentine's Day" Location="United States" />
+<Holiday Date="02/14/2022 00:00:00" DisplayName="Valentine's Day" Location="United States" />
+<Holiday Date="11/11/2012 00:00:00" DisplayName="Veteran's Day" Location="United States" />
+<Holiday Date="11/11/2013 00:00:00" DisplayName="Veteran's Day" Location="United States" />
+<Holiday Date="11/11/2014 00:00:00" DisplayName="Veteran's Day" Location="United States" />
+<Holiday Date="11/11/2015 00:00:00" DisplayName="Veteran's Day" Location="United States" />
+<Holiday Date="11/11/2016 00:00:00" DisplayName="Veteran's Day" Location="United States" />
+<Holiday Date="11/11/2017 00:00:00" DisplayName="Veteran's Day" Location="United States" />
+<Holiday Date="11/11/2018 00:00:00" DisplayName="Veteran's Day" Location="United States" />
+<Holiday Date="11/11/2019 00:00:00" DisplayName="Veteran's Day" Location="United States" />
+<Holiday Date="11/11/2020 00:00:00" DisplayName="Veteran's Day" Location="United States" />
+<Holiday Date="11/11/2021 00:00:00" DisplayName="Veteran's Day" Location="United States" />
+<Holiday Date="11/11/2022 00:00:00" DisplayName="Veteran's Day" Location="United States" />
+<Holiday Date="04/25/2012 00:00:00" DisplayName="Administrative Professionals Day" Location="United States" />
+<Holiday Date="04/24/2013 00:00:00" DisplayName="Administrative Professionals Day" Location="United States" />
+<Holiday Date="04/23/2014 00:00:00" DisplayName="Administrative Professionals Day" Location="United States" />
+<Holiday Date="04/22/2015 00:00:00" DisplayName="Administrative Professionals Day" Location="United States" />
+<Holiday Date="04/27/2016 00:00:00" DisplayName="Administrative Professionals Day" Location="United States" />
+<Holiday Date="04/26/2017 00:00:00" DisplayName="Administrative Professionals Day" Location="United States" />
+<Holiday Date="04/25/2018 00:00:00" DisplayName="Administrative Professionals Day" Location="United States" />
+<Holiday Date="04/24/2019 00:00:00" DisplayName="Administrative Professionals Day" Location="United States" />
+<Holiday Date="04/22/2020 00:00:00" DisplayName="Administrative Professionals Day" Location="United States" />
+<Holiday Date="04/21/2021 00:00:00" DisplayName="Administrative Professionals Day" Location="United States" />
+<Holiday Date="04/27/2022 00:00:00" DisplayName="Administrative Professionals Day" Location="United States" />
+<Holiday Date="02/20/2012 00:00:00" DisplayName="Presidents' Day" Location="United States" />
+<Holiday Date="02/18/2013 00:00:00" DisplayName="Presidents' Day" Location="United States" />
+<Holiday Date="02/17/2014 00:00:00" DisplayName="Presidents' Day" Location="United States" />
+<Holiday Date="02/16/2015 00:00:00" DisplayName="Presidents' Day" Location="United States" />
+<Holiday Date="02/15/2016 00:00:00" DisplayName="Presidents' Day" Location="United States" />
+<Holiday Date="02/20/2017 00:00:00" DisplayName="Presidents' Day" Location="United States" />
+<Holiday Date="02/19/2018 00:00:00" DisplayName="Presidents' Day" Location="United States" />
+<Holiday Date="02/18/2019 00:00:00" DisplayName="Presidents' Day" Location="United States" />
+<Holiday Date="02/17/2020 00:00:00" DisplayName="Presidents' Day" Location="United States" />
+<Holiday Date="02/15/2021 00:00:00" DisplayName="Presidents' Day" Location="United States" />
+<Holiday Date="02/21/2022 00:00:00" DisplayName="Presidents' Day" Location="United States" />
+<Holiday Date="01/02/2012 00:00:00" DisplayName="New Year's Day (Observed)" Location="United States" />
+<Holiday Date="01/02/2017 00:00:00" DisplayName="New Year's Day (Observed)" Location="United States" />
+<Holiday Date="01/03/2022 00:00:00" DisplayName="New Year's Day (Observed)" Location="United States" />
+<Holiday Date="07/03/2015 00:00:00" DisplayName="Independence Day (Observed)" Location="United States" />
+<Holiday Date="07/03/2020 00:00:00" DisplayName="Independence Day (Observed)" Location="United States" />
+<Holiday Date="07/05/2021 00:00:00" DisplayName="Independence Day (Observed)" Location="United States" />
+<Holiday Date="11/12/2012 00:00:00" DisplayName="Veteran's Day (Observed)" Location="United States" />
+<Holiday Date="11/10/2017 00:00:00" DisplayName="Veteran's Day (Observed)" Location="United States" />
+<Holiday Date="11/12/2018 00:00:00" DisplayName="Veteran's Day (Observed)" Location="United States" />
+<Holiday Date="11/23/2012 00:00:00" DisplayName="Day After Thanksgiving Day" Location="United States" />
+<Holiday Date="11/29/2013 00:00:00" DisplayName="Day After Thanksgiving Day" Location="United States" />
+<Holiday Date="11/28/2014 00:00:00" DisplayName="Day After Thanksgiving Day" Location="United States" />
+<Holiday Date="11/27/2015 00:00:00" DisplayName="Day After Thanksgiving Day" Location="United States" />
+<Holiday Date="11/25/2016 00:00:00" DisplayName="Day After Thanksgiving Day" Location="United States" />
+<Holiday Date="11/24/2017 00:00:00" DisplayName="Day After Thanksgiving Day" Location="United States" />
+<Holiday Date="11/23/2018 00:00:00" DisplayName="Day After Thanksgiving Day" Location="United States" />
+<Holiday Date="11/29/2019 00:00:00" DisplayName="Day After Thanksgiving Day" Location="United States" />
+<Holiday Date="11/27/2020 00:00:00" DisplayName="Day After Thanksgiving Day" Location="United States" />
+<Holiday Date="11/26/2021 00:00:00" DisplayName="Day After Thanksgiving Day" Location="United States" />
+<Holiday Date="12/26/2016 00:00:00" DisplayName="Christmas Holiday (Observed)" Location="United States" />
+<Holiday Date="12/24/2021 00:00:00" DisplayName="Christmas Holiday (Observed)" Location="United States" />
+<Holiday Date="12/26/2022 00:00:00" DisplayName="Christmas Holiday (Observed)" Location="United States" />
+</Holidays>

@@ -1,0 +1,28 @@
+::deep .icon-detail-layout {
+    --dxbl-fl-caption-color: var(--dxds-color-content-neutral-default-rest, var(--bs-body-color));
+    --dxbl-fl-caption-font-weight: var(--dxds-font-weight-caption-strong, 500);
+}
+
+::deep .icon-detail-layout.icon-code {
+    --dxbl-fl-item-spacing-y: 1rem;
+}
+
+::deep .icon-preview {
+    height: 100%;
+    aspect-ratio: 1;
+}
+
+::deep :has(> * > .icon-detail) {
+    flex-flow: row nowrap !important;
+    --dxbl-fl-caption-padding-x: var(--dxbl-fl-caption-padding-x-m) !important;
+    --dxbl-fl-caption-padding-top: var(--dxbl-fl-caption-padding-y-m) !important;
+    --dxbl-fl-caption-padding-bottom: var(--dxbl-fl-caption-padding-y-m) !important;
+}
+
+::deep :has(> .icon-detail) {
+    align-self: center !important;
+}
+
+::deep .icon-id {
+    color: var(--bs-code-color, #D63384) !important;
+}

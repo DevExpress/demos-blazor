@@ -1,0 +1,180 @@
+﻿@using BlazorDemo.CRM.Models
+
+@namespace BlazorDemo.CRM.Client.Components.ContactList
+
+@inherits DataPresenter<ContactDetail>
+
+@inject IToastNotificationService ToastService
+@inject NavigationManager NavigationManager
+
+<div>
+    <EditForm EditContext="editContext" OnValidSubmit="@OnSaveClick">
+        <ChildContent Context="EditFormContext">
+            <DataAnnotationsValidator />
+            <DxFormLayout CaptionPosition="CaptionPosition.Vertical">
+                <DxFormLayoutItem ColSpanSm="6" CssClass="m-auto">
+                    @if(Data?.Image != null) {
+                        <div class="user-avatar">
+                            <img src="@($"data:image/png;base64,{Convert.ToBase64String(Data!.Image)}")" alt="@Data!.Name" />
+                        </div>
+                    }
+                </DxFormLayoutItem>
+                <DxFormLayoutGroup Decoration="FormLayoutGroupDecoration.None" ColSpanSm="6">
+                    <DxFormLayoutItem Caption="Company" ColSpanLg="12" CaptionCssClass="caption">
+                        <div class="contact-item">
+                            @if(EditMode) {
+                                <DxTextBox @bind-Text="@EditModel.Company" CssClass="w-100" />
+                            } else {
+                                @Data?.Company
+                            }
+                        </div>
+                    </DxFormLayoutItem>
+                    <DxFormLayoutItem Caption="Position" ColSpanLg="12" CaptionCssClass="caption" BeginRow="true">
+                        <div class="contact-item">
+                            @if(EditMode) {
+                                <DxTextBox @bind-Text="@EditModel.Position" CssClass="w-100" />
+                            } else {
+                                @Data?.Position
+                            }
+                        </div>
+                    </DxFormLayoutItem>
+                    <DxFormLayoutItem Caption="Assigned to" ColSpanLg="12" CaptionCssClass="caption" BeginRow="true">
+                        <div class="contact-item">
+                            @if(EditMode) {
+                                <DxTextBox @bind-Text="@EditModel.Manager" CssClass="w-100" />
+                            } else {
+                                @Data?.Manager
+                            }
+                        </div>
+                    </DxFormLayoutItem>
+                </DxFormLayoutGroup>
+                <DxFormLayoutItem ColSpanSm="12">
+                    <Template Context="PhoneContext">
+                        <div class="contact-item">
+                            <span class="call-icon label-icon"></span>
+                            @if(EditMode) {
+                                <DxMaskedInput @bind-Value="@EditModel.Phone" Mask="(000) 000-0000" CssClass="w-100">
+                                    <DxTextMaskProperties InvalidInputNotificationText="You must enter a valid phone number.'{0}' does not match US/Canada phone format."/>
+                                </DxMaskedInput>
+                            } else {
+                                <span>@Data?.Phone</span>
+                            }
+                        </div>
+                    </Template>
+                </DxFormLayoutItem>
+                <DxFormLayoutItem ColSpanSm="12">
+                    <Template Context="EmailContext">
+                        <div class="contact-item">
+                            <span class="mail-icon label-icon"></span>
+                            @if(EditMode) {
+                                <DxMaskedInput @bind-Value="@EditModel.Email"
+                                               Mask="@(@"(\w|[.-])+@(\w|-)+\.(\w|-){2,4}")"
+                                               MaskMode="MaskMode.RegEx"
+                                               CssClass="w-100">
+                                    <DxRegExMaskProperties InvalidInputNotificationText="You must enter a valid email address." />
+                                </DxMaskedInput>
+                            } else {
+                                <a href="@($"mailto:{Data?.Email}")">@Data?.Email</a>
+                            }
+                        </div>
+                    </Template>
+                </DxFormLayoutItem>
+                <DxFormLayoutItem ColSpanSm="12">
+                    <ValidationSummary class="text-danger" />
+                </DxFormLayoutItem>
+                <DxFormLayoutItem ColSpanLg="12">
+                    <hr class="separator" />
+                </DxFormLayoutItem>
+                <DxFormLayoutItem ColSpanLg="12">
+                    <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Contained">
+                        <DxToolbarItem Text="Actions" RenderStyle="ButtonRenderStyle.None">
+                            <Items>
+                                <DxToolbarItem Text="Call" Click="OnActionClick" />
+                                <DxToolbarItem Text="Send Fax" Click="OnActionClick" />
+                                <DxToolbarItem Text="Send Email" Click="OnActionClick" />
+                                <DxToolbarItem Text="Schedule a Meeting" Click="OnActionClick" />
+                            </Items>
+                        </DxToolbarItem>
+                        <DxToolbarItem Text="Edit"
+                                       IconCssClass="icon medium-icon edit-icon"
+                                       Alignment="ToolbarItemAlignment.Right"
+                                       RenderStyle="ButtonRenderStyle.Secondary"
+                                       RenderStyleMode="ToolbarItemRenderStyleMode.Contained"
+                                       Click="@OnEditClick"
+                                       Visible="@(!EditMode)" />
+                        <DxToolbarItem Text="Details"
+                                       Alignment="ToolbarItemAlignment.Right"
+                                       RenderStyle="ButtonRenderStyle.Secondary"
+                                       NavigateUrl="@(NavigationManager.GetUriWithQueryParameters("ContactDetails", new Dictionary<string, object?> { ["id"] = Data?.Id }))"
+                                       Visible="@(!EditMode)"
+                                       BeginGroup="true" />
+                        <DxToolbarItem Text="Save"
+                                       Alignment="ToolbarItemAlignment.Right"
+                                       RenderStyle="ButtonRenderStyle.Secondary"
+                                       SubmitFormOnClick="true"
+                                       Visible="@EditMode"
+                                       BeginGroup="true" />
+                        <DxToolbarItem Text="Cancel"
+                                       Alignment="ToolbarItemAlignment.Right"
+                                       RenderStyle="ButtonRenderStyle.Secondary"
+                                       Click="@OnCancelClick"
+                                       Visible="@EditMode"
+                                       BeginGroup="true" />
+                    </DxToolbar>
+                </DxFormLayoutItem>
+                <DxFormLayoutItem ColSpanLg="12">
+                    <hr class="separator" />
+                </DxFormLayoutItem>
+            </DxFormLayout>
+        </ChildContent>
+    </EditForm>
+</div>
+
+@code {
+    EditContext? editContext;
+
+    ContactDetail EditModel { get; } = new();
+    bool EditMode { get; set; }
+
+    protected override void OnInitialized() {
+        editContext = new(EditModel);
+        base.OnInitialized();
+    }
+
+    protected override void OnParametersSet() {
+        if(EditMode && EditModel.Id != Data?.Id) {
+            EditMode = false;
+            editContext = new(EditModel);
+        }
+        base.OnParametersSet();
+    }
+
+    void OnActionClick(ToolbarItemClickEventArgs item) {
+        string message = item.Info.Text switch {
+            "Call" => "Call initiated successfully.",
+            "Send Fax" => "Fax sent successfully.",
+            "Send Email" => "Email sent successfully.",
+            "Schedule a Meeting" => "Meeting scheduled successfully.",
+            _ => "Action not recognized."
+        };
+
+        ToastService.ShowToast(new ToastOptions { Title = "Notification", Text = message });
+    }
+
+    async Task OnSaveClick() {
+        EditMode = false;
+        Data!.Copy(EditModel);
+        await OnDataChangedAsync(Data!);
+    }
+
+    void OnEditClick() {
+        EditMode = true;
+        EditModel.Copy(Data!);
+    }
+
+    void OnCancelClick() {
+        EditMode = false;
+        EditModel.Copy(Data!, name => editContext!.NotifyFieldChanged(editContext.Field(name)));
+        editContext = new(EditModel);
+    }
+}

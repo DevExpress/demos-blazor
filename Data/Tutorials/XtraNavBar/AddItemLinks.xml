@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="H:\Work\XML Schemes\module-new.xsd">
+	<controls>
+		<controlentry>
+			<control>
+				<name>button1</name>
+				<windowcaption>Add New ItemLink to the Active Group</windowcaption>
+				<description>Creates a new nav bar item with the specified image and caption and adds it to the navbar control's Items collection. The link which corresponds to the new item is added to the active group's ItemLinks collection.</description>
+				<memberlist>NavBarControl.Items, NavBarGroup.ItemLinks.Add</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>button2</name>
+				<windowcaption>Delete Selected ItemLink from the Active Group</windowcaption>
+				<description>Deletes the selected link.</description>
+				<memberlist>NavBarGroup.SelectedLink</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>button3</name>
+				<windowcaption>Delete Item for the Selected Link</windowcaption>
+				<description>Deletes the navbar item which the selected link corresponds to. In this instance, all the links that correspond to the deleted item are removed.</description>
+				<memberlist>NavBarItemLink.Item</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+	</controls>
+</totalinfo>

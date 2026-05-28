@@ -1,0 +1,221 @@
+﻿@using BlazorDemo.CRM.Models
+
+@namespace BlazorDemo.CRM.Components.ContactDetails
+
+@inherits DataPresenter<ContactDetail>
+
+@inject IToastNotificationService ToastService
+
+<div class="contact-form">
+    <EditForm EditContext="@editContext" OnValidSubmit="@OnSaveClick">
+        <ChildContent Context="editFormContext">
+            <DataAnnotationsValidator />
+            <DxToolbar CssClass="toolbar" Title="Details" ItemRenderStyleMode="ToolbarRenderStyleMode.Plain">
+                <DxToolbarItem Alignment="ToolbarItemAlignment.Right" Text="Edit" IconCssClass="icon medium-icon edit-icon" Visible="@(!EditMode)" Enabled="@IsDataLoaded" Click="@OnEditClick" />
+                <DxToolbarItem Alignment="ToolbarItemAlignment.Right" Text="Save" SubmitFormOnClick="true" Visible="@EditMode" />
+                <DxToolbarItem Alignment="ToolbarItemAlignment.Right" Text="Cancel" Visible="@EditMode" Click="@OnCancelClick" />
+            </DxToolbar>
+            <DxFormLayout CaptionPosition="CaptionPosition.Vertical">
+                <DxFormLayoutItem CssClass="user-avatar-item" ColSpanSm="6" ColSpanXs="12">
+                    @if(Data?.Image != null) {
+                        <div class="user-avatar">
+                            <img src="@($"data:image/png;base64,{Convert.ToBase64String(Data!.Image)}")" alt="@Data!.Name" />
+                        </div>
+                    }
+                </DxFormLayoutItem>
+                <DxFormLayoutGroup Decoration="FormLayoutGroupDecoration.None" ColSpanSm="6">
+                    <DxFormLayoutItem Caption="Status" ColSpanXs="12" CaptionCssClass="caption">
+                        <div class="contact-item">
+                            @if(EditMode) {
+                                <DxComboBox @bind-Value="@EditModel.Status" Data="@Statuses" CssClass="w-100"/>
+                            } else {
+                                <EmployeeStatus Value="@Data?.Status" />
+                            }
+                        </div>
+                    </DxFormLayoutItem>
+                    <DxFormLayoutItem Caption="First Name" ColSpanXs="12" CaptionCssClass="caption">
+                        <div class="contact-item">
+                            @if(EditMode) {
+                                <DxTextBox @bind-Text="@EditModel.FirstName" CssClass="w-100" />
+                            } else {
+                                @Data?.FirstName
+                            }
+                        </div>
+                    </DxFormLayoutItem>
+                    <DxFormLayoutItem Caption="Last Name" ColSpanXs="12" CaptionCssClass="caption">
+                        <div class="contact-item">
+                            @if(EditMode) {
+                                <DxTextBox @bind-Text="@EditModel.LastName" CssClass="w-100" />
+                            } else {
+                                @Data?.LastName
+                            }
+                        </div>
+                    </DxFormLayoutItem>
+                </DxFormLayoutGroup>
+                <DxFormLayoutGroup Decoration="FormLayoutGroupDecoration.None" ColSpanXs="12">
+                    <DxFormLayoutItem Caption="Position" BeginRow="true" ColSpanXs="6" CaptionCssClass="caption">
+                        <div class="contact-item">
+                            @if(EditMode) {
+                                <DxTextBox @bind-Text="@EditModel.Position" CssClass="w-100" />
+                            } else {
+                                @Data?.Position
+                            }
+                        </div>
+                    </DxFormLayoutItem>
+                    <DxFormLayoutItem Caption="Company" ColSpanXs="6" CaptionCssClass="caption">
+                        <div class="contact-item">
+                            @if(EditMode) {
+                                <DxTextBox @bind-Text="@EditModel.Company" CssClass="w-100" />
+                            } else {
+                                @Data?.Company
+                            }
+                        </div>
+                    </DxFormLayoutItem>
+                </DxFormLayoutGroup>
+                <DxFormLayoutItem BeginRow="true" ColSpanXs="12">
+                    <hr class="separator" />
+                </DxFormLayoutItem>
+                <DxFormLayoutItem BeginRow="true" ColSpanXs="12">
+                    <div class="caption contacts-caption">Contacts</div>
+                </DxFormLayoutItem>
+                <DxFormLayoutItem Caption="Address" ColSpanSm="12" CaptionCssClass="caption">
+                    <div class="contact-item">
+                        @if(EditMode) {
+                            <DxTextBox @bind-Text="@EditModel.Address" CssClass="w-100" />
+                        } else {
+                            @Data?.Address
+                        }
+                    </div>
+                </DxFormLayoutItem>
+                <DxFormLayoutItem BeginRow="true" Caption="City" ColSpanSm="6" CaptionCssClass="caption">
+                    <div class="contact-item">
+                        @if(EditMode) {
+                            <DxTextBox @bind-Text="@EditModel.City" CssClass="w-100" />
+                        } else {
+                            @Data?.City
+                        }
+                    </div>
+                </DxFormLayoutItem>
+                <DxFormLayoutItem Caption="State" ColSpanSm="3" ColSpanXs="6" CaptionCssClass="caption">
+                    <div class="contact-item">
+                        @if(EditMode) {
+                            <DxComboBox @bind-Value="@EditModel.StateShort" Data="@States" CssClass="w-100" />
+                        } else {
+                            @Data?.StateShort
+                        }
+                    </div>
+                </DxFormLayoutItem>
+                <DxFormLayoutItem Caption="Zip Code" ColSpanSm="3" ColSpanXs="6" CaptionCssClass="caption">
+                    <div class="contact-item">
+                        @if(EditMode) {
+                            <DxMaskedInput @bind-Value="@EditModel.ZipCode" Mask="00000" CssClass="w-100" />
+                        } else {
+                            @Data?.ZipCode
+                        }
+                    </div>
+                </DxFormLayoutItem>
+                <DxFormLayoutItem BeginRow="true" Caption="Phone" ColSpanSm="6" CaptionCssClass="caption">
+                    <DxStackLayout Orientation="Orientation.Vertical" ItemSpacing="1em">
+                        <Items>
+                            <DxStackLayoutItem>
+                                <Template>
+                                    <div class="contact-item">
+                                        @if(EditMode) {
+                                            <DxMaskedInput @bind-Value="@EditModel.Phone" Mask="(000) 000-0000" CssClass="w-100">
+                                                <DxTextMaskProperties InvalidInputNotificationText="You must enter a valid phone number.'{0}' does not match US/Canada phone format."/>
+                                            </DxMaskedInput>
+                                        } else {
+                                            <span>@Data?.Phone</span>
+                                        }
+                                    </div>
+                                </Template>
+                            </DxStackLayoutItem>
+                            <DxStackLayoutItem>
+                                <Template>
+                                    <DxButton Text="Call"
+                                              Visible="@(!EditMode)"
+                                              RenderStyle="ButtonRenderStyle.Primary"
+                                              RenderStyleMode="ButtonRenderStyleMode.Outline"
+                                              Click="ShowCallingToast"
+                                              IconCssClass="call-icon icon medium-icon" />
+                                </Template>
+                            </DxStackLayoutItem>
+                        </Items>
+                    </DxStackLayout>
+                </DxFormLayoutItem>
+                <DxFormLayoutItem Caption="Email" ColSpanSm="6" CaptionCssClass="caption">
+                    <DxStackLayout Orientation="Orientation.Vertical" ItemSpacing="1em">
+                        <Items>
+                            <DxStackLayoutItem>
+                                <Template>
+                                    <div class="contact-item">
+                                        @if (EditMode) {
+                                            <DxMaskedInput @bind-Value="@EditModel.Email"
+                                                           Mask="@(@"(\w|[.-])+@(\w|-)+\.(\w|-){2,4}")"
+                                                           MaskMode="MaskMode.RegEx"
+                                                           CssClass="w-100">
+                                                <DxRegExMaskProperties InvalidInputNotificationText="You must enter a valid email address." />
+                                            </DxMaskedInput>
+                                        } else {
+                                            @Data?.Email
+                                        }
+                                    </div>
+                                </Template>
+                            </DxStackLayoutItem>
+                            <DxStackLayoutItem>
+                                <Template>
+                                    <DxButton Text="Send Email"
+                                              Visible="@(!EditMode)"
+                                              RenderStyle="ButtonRenderStyle.Primary"
+                                              RenderStyleMode="ButtonRenderStyleMode.Outline"
+                                              Click="ShowMailingToast"
+                                              IconCssClass="mail-icon icon medium-icon" />
+                                </Template>
+                            </DxStackLayoutItem>
+                        </Items>
+                    </DxStackLayout>
+                </DxFormLayoutItem>
+                <DxFormLayoutItem ColSpanSm="12">
+                    <ValidationSummary class="text-danger" />
+                </DxFormLayoutItem>
+            </DxFormLayout>
+        </ChildContent>
+    </EditForm>
+</div>
+
+@code {
+    EditContext? editContext;
+
+    ContactDetail EditModel { get; } = new();
+    bool EditMode { get; set; }
+    string[] Statuses { get; } = ["Salaried", "Commission", "Terminated"];
+    string[] States { get; } = ["AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"];
+
+    protected override void OnInitialized() {
+        editContext = new(EditModel);
+        base.OnInitialized();
+    }
+
+    async Task OnSaveClick() {
+        EditMode = false;
+        Data!.Copy(EditModel);
+        await OnDataChangedAsync(Data!);
+    }
+
+    void OnEditClick() {
+        EditMode = true;
+        EditModel.Copy(Data!);
+    }
+
+    void OnCancelClick() {
+        EditMode = false;
+        EditModel.Copy(Data!, name => editContext!.NotifyFieldChanged(editContext.Field(name)));
+        editContext = new(EditModel);
+    }
+
+    void ShowCallingToast() =>
+        ToastService.ShowToast(new ToastOptions { Title = "Notification", Text = "Call initiated successfully." });
+
+    void ShowMailingToast() =>
+        ToastService.ShowToast(new ToastOptions { Title = "Notification", Text = "Email sent successfully." });
+}

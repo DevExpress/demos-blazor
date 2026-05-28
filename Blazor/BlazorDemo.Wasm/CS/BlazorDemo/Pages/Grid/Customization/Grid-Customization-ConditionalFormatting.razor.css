@@ -1,0 +1,18 @@
+/*BeginHide*/ ::deep /*EndHide*/.dxbl-grid {
+    height: 522px;
+}
+
+/*BeginHide*/ ::deep /*EndHide*/.highlighted-item > td {
+    background-color: var(--bs-danger-border-subtle)
+}
+
+/*BeginHide*/ ::deep /*EndHide*/.highlighted-item > td:first-child {
+    background-color: transparent;
+}
+/*BeginHide*/ ::deep /*EndHide*/.fw-800 {
+    font-weight: 800;
+}
+/*BeginHide*/ .grid-container {
+    display: contents;
+}
+/*EndHide*/

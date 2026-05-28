@@ -1,0 +1,21 @@
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 0.625rem;
+}
+
+    .title .title-content-text-secondary {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+    }
+
+.manage-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+    .manage-content .codes {
+        margin: 0.625rem 0 0.625rem 0;
+    }

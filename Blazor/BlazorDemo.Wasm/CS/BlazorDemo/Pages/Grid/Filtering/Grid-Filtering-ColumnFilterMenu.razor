@@ -1,0 +1,100 @@
+﻿@page "/Grid/Filtering/ColumnFilterMenu"
+@layout DataProviderAccessArea<INwindDataProvider>
+@using DevExpress.Data.Filtering;
+@using static BlazorDemo.Pages.Grid.Filtering.Grid_Filtering_ColumnFilterMenu_CustomRange;
+
+<DemoPageSectionComponent Id="Grid-Filtering-ColumnFilterMenu" VerticalAlignment="VerticalAlignment.Top" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <div class="grid-container">
+            <DxGrid Data="GridData"
+                FilterMenuButtonDisplayMode="@CurrentFilterMenuButtonDisplayMode"
+                SizeMode="Params.SizeMode"            
+                ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                TextWrapEnabled="false"
+                VirtualScrollingEnabled="true">
+                <Columns>
+                    <DxGridDataColumn FieldName="OrderDate" Width="140px" />
+                    <DxGridDataColumn FieldName="ProductName" MinWidth="100" />
+                    <DxGridDataColumn FieldName="CategoryId" Caption="Category" Width="130px">
+                        <EditSettings>
+                            <DxComboBoxSettings Data="Categories" ValueFieldName="CategoryId" TextFieldName="CategoryName" />
+                        </EditSettings>
+                    </DxGridDataColumn>
+                    <DxGridDataColumn FieldName="UnitPrice" DisplayFormat="c2" Width="140px" />
+                    <DxGridDataColumn FieldName="Quantity" Width="110px" />
+                    <DxGridDataColumn FieldName="Discount" DisplayFormat="p0" Width="110px" />
+                    <DxGridDataColumn FieldName="Total"
+                                      UnboundType="GridUnboundColumnType.Decimal"
+                                      UnboundExpression="[UnitPrice] * [Quantity] * (1 - [Discount])"
+                                      DisplayFormat="c2"
+                                      Width="110px">
+                        <FilterMenuTemplate>
+                            <Grid_Filtering_ColumnFilterMenu_CustomRange FilterContext="context" Items="TotalPriceIntervals" />
+                        </FilterMenuTemplate>
+                    </DxGridDataColumn>
+                    <DxGridDataColumn FieldName="Shipped"
+                                      UnboundType="GridUnboundColumnType.Boolean"
+                                      UnboundExpression="[ShippedDate] <> Null"
+                                      Width="100px" />
+                </Columns>
+                <ToolbarTemplate>
+                    <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Contained" SizeMode="Params.SizeMode">
+                        <Items>
+                            <DxToolbarItem Alignment="ToolbarItemAlignment.Left">
+                                <Template Context="toolbar_item_context">
+                                    <div class="d-flex flex-row align-items-center h-100">
+                                        <label class="me-2" for="filterMenuButtonDisplayModeInput">Display Filter Menu Buttons:</label>
+                                        <DxComboBox Data="@FilterMenuButtonDisplayModes.Keys"
+                                                    ValueChanged="@((string value) => FilterMenuButtonDisplayMode(value))"
+                                                    Value="@CurrentFilterMenuButtonDisplayModeText" InputId="filterMenuButtonDisplayModeInput" />
+                                    </div>
+                                </Template>
+                            </DxToolbarItem>
+                        </Items>
+                    </DxToolbar>
+                </ToolbarTemplate>
+            </DxGrid>
+        </div>
+
+        @code {
+            static IReadOnlyList<CustomRangeFilterItem> TotalPriceIntervals { get; } = CustomRangeFilterItem.CreateIntervals("Total", 100, 10, true, "{0:c}");
+
+            Dictionary<string, GridFilterMenuButtonDisplayMode> FilterMenuButtonDisplayModes { get; } = new Dictionary<string, GridFilterMenuButtonDisplayMode> {
+                { "Always", GridFilterMenuButtonDisplayMode.Always },
+                { "Never", GridFilterMenuButtonDisplayMode.Never },
+                { "On Hover", GridFilterMenuButtonDisplayMode.VisibleOnHover }
+            };
+
+            GridFilterMenuButtonDisplayMode CurrentFilterMenuButtonDisplayMode = GridFilterMenuButtonDisplayMode.Always;
+            string CurrentFilterMenuButtonDisplayModeText { get; set; } = "Always";
+
+            object GridData { get; set; }
+            IReadOnlyList<Category> Categories { get; set; }
+
+            protected override async Task OnInitializedAsync() {
+                Categories = (await NwindDataService.GetCategoriesAsync()).ToList();
+
+                var invoices = await NwindDataService.GetInvoicesAsync();
+                var products = await NwindDataService.GetProductsAsync();
+                GridData = invoices.Join(products, i => i.ProductId, p => p.ProductId, (i, p) => {
+                    return new {
+                        ProductName = i.ProductName,
+                        CategoryId = p.CategoryId,
+                        OrderDate = i.OrderDate,
+                        UnitPrice = i.UnitPrice,
+                        Quantity = i.Quantity,
+                        Discount = i.Discount,
+                        ShippedDate = i.ShippedDate
+                    };
+                });
+            }
+
+            void FilterMenuButtonDisplayMode(string key) {
+                CurrentFilterMenuButtonDisplayModeText = key;
+                CurrentFilterMenuButtonDisplayMode = FilterMenuButtonDisplayModes[key];
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

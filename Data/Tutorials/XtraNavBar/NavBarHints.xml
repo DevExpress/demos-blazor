@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="H:\Work\XML Schemes\module-new.xsd">
+	<controls>
+		<controlentry>
+			<control>
+				<name>ceGroupHint</name>
+				<windowcaption>Show Group Hint</windowcaption>
+				<description>If checked, group hints are displayed.</description>
+				<memberlist>NavBarControl.GetHint, ShowGroupHint</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>ceLinkHint</name>
+				<windowcaption>Show Link Hint</windowcaption>
+				<description>If checked, group hints are displayed.</description>
+				<memberlist>NavBarControl.GetHint, ShowLinkHint</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>seInterval</name>
+				<windowcaption>Show Hint Interval</windowcaption>
+				<description>Specifies the time interval after the mouse pointer stops over an element (link, group) and before its hint is displayed.</description>
+				<memberlist>ShowHintInterval</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>ceCustomHint</name>
+				<windowcaption>Custom Hint</windowcaption>
+				<description>If checked, custom hints are displayed for navbar groups and links. For this purpose, the GetHint event is handled.</description>
+				<memberlist>NavBarControl.GetHint</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+	</controls>
+</totalinfo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="H:\Work\XML Schemes\module-new.xsd">
+	<controls>
+		<controlentry>
+			<control>
+				<name>simpleButton1</name>
+				<windowcaption>Prev Page</windowcaption>
+				<description>Switches to the previous page.</description>
+				<memberlist>XPPageSelector.CurrentPage</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>simpleButton2</name>
+				<windowcaption>Next Page</windowcaption>
+				<description>Switches to the next page.</description>
+				<memberlist>XPPageSelector.CurrentPage</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+	</controls>
+</totalinfo>

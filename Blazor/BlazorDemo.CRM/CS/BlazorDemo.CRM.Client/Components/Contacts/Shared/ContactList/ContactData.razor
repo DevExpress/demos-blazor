@@ -1,0 +1,72 @@
+﻿@using BlazorDemo.CRM.Models
+@using System.Globalization
+
+@namespace BlazorDemo.CRM.Client.Components.ContactList
+
+<div>
+    <div class="contact-data">
+        <DxAccordion AnimationType="LayoutAnimationType.Slide">
+            <Items>
+                <DxAccordionItem Expanded="true" Text="Opportunities" CssClass="accordion-item">
+                    <ContentTemplate Context="OpportunitiesContext">
+                        <DxListBox TData="Opportunity" TValue="string" Data="Opportunities" CssClass="list-box" SelectionMode="ListBoxSelectionMode.None" ReadOnly="true">
+                            <ItemTemplate Context="opportunity">
+                                <DxStackLayout Orientation="Orientation.Vertical" CssClass="opportunity">
+                                    <Items>
+                                        <DxStackLayoutItem>
+                                            <Template>
+                                                <span class="title">@opportunity.Name</span>
+                                            </Template>
+                                        </DxStackLayoutItem>
+                                        <DxStackLayoutItem>
+                                            <Template>
+                                                @opportunity.Total.ToString("C", CultureInfo.GetCultureInfo("en-US"))
+                                            </Template>
+                                        </DxStackLayoutItem>
+                                    </Items>
+                                </DxStackLayout>
+                            </ItemTemplate>
+                        </DxListBox>
+                    </ContentTemplate>
+                </DxAccordionItem>
+                <DxAccordionItem Expanded="false" Text="Activities" CssClass="accordion-item">
+                    <ContentTemplate Context="ActivitiesContext">
+                        <DxListBox TData="Activity" TValue="string" Data="Activities" CssClass="list-box" SelectionMode="ListBoxSelectionMode.None" ReadOnly="true">
+                            <ItemTemplate Context="activity">
+                                <DxGridLayout CssClass="activity">
+                                    <Columns>
+                                        <DxGridLayoutColumn Width="3fr" />
+                                        <DxGridLayoutColumn Width="2fr" />
+                                    </Columns>
+                                    <Items>
+                                        <DxGridLayoutItem Column="0" CssClass="grid-item name">
+                                            <Template>
+                                                <span>@activity.Name</span>
+                                            </Template>
+                                        </DxGridLayoutItem>
+                                        <DxGridLayoutItem Column="1" CssClass="grid-item info">
+                                            <Template>
+                                                <div>
+                                                    <div>@activity.Date?.ToString(CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern)</div>
+                                                    <div>@activity.Manager</div>
+                                                </div>
+                                            </Template>
+                                        </DxGridLayoutItem>
+                                    </Items>
+                                </DxGridLayout>
+                            </ItemTemplate>
+                        </DxListBox>
+                    </ContentTemplate>
+                </DxAccordionItem>
+            </Items>
+        </DxAccordion>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public List<Opportunity>? Opportunities { get; set; }
+
+    [Parameter]
+    public List<Activity>? Activities { get; set; }
+}

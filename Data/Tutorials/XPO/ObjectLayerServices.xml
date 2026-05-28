@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="H:\Work\XML Schemes\module-new.xsd">
+	<controls>
+		<controlentry>
+			<control>
+				<name>sbEmployees</name>
+				<windowcaption>Load Employees</windowcaption>
+				<description>Load Employees Through WCF Service.</description>
+				<memberlist/>
+				<dtimage/>
+			</control>
+		</controlentry>		
+		<controlentry>
+			<control>
+				<name>sbStartService</name>
+				<windowcaption>Create Service</windowcaption>
+				<description>Create ISerializableObjectLayer WCF Service and corresponding WCF Client.</description>
+				<memberlist/>
+				<dtimage/>
+			</control>
+		</controlentry>
+	</controls>
+</totalinfo>

@@ -1,0 +1,10 @@
+﻿@rendermode InteractiveServer
+
+<DxCheckBox name="@Name" InputId="@InputId" @bind-Checked="Value">@LabelText</DxCheckBox>
+
+@code {
+    [Parameter] public bool Value { get; set; }
+    [Parameter] public string? InputId { get; set; }
+    [Parameter] public string? Name { get; set; }
+    [Parameter] public string? LabelText { get; set; }
+}

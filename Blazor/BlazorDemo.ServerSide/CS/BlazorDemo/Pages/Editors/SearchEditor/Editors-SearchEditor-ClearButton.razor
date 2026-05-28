@@ -1,0 +1,28 @@
+﻿<DemoPageSectionComponent Id="Editors-SearchEditor-ClearButton" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <DxSearchBox @bind-Text="@Value"
+                     ClearButtonDisplayMode="@ClearButtonDisplayMode"
+                     NullText="@NullText"
+                     SizeMode="Params.SizeMode"
+                     CssClass="cw-320"
+                     aria-label="Search" />
+        <p class="demo-text cw-320 mt-3">
+            Search text: <b>@Value</b>
+        </p>
+    </ChildContentWithParameters>
+
+    <OptionsContent>
+        <OptionComboBox CssClass="ow-150"
+                        Data="Enum.GetValues<DataEditorClearButtonDisplayMode>()"
+                        @bind-Value="ClearButtonDisplayMode"
+                        Label="Clear Button Display Mode:" />
+        <OptionTextBox Label="Null Text:"
+                       @bind-Text="@NullText"/>
+    </OptionsContent>
+
+    @code {
+        string Value { get; set; }
+        string NullText { get; set; } = "Search for orders...";
+        DataEditorClearButtonDisplayMode ClearButtonDisplayMode { get; set; } = DataEditorClearButtonDisplayMode.Auto;
+    }
+</DemoPageSectionComponent>

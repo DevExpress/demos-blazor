@@ -1,0 +1,1 @@
+This demo illustrates the skinable DevExpress counterparts for standard SaveFile, OpenFile and FileBrowser dialogs. Choose a desired skin from the Ribbon gallery and click a button to invoke a skinned dialog.

@@ -1,0 +1,43 @@
+﻿<DemoPageSectionComponent Id="Editors-ListBox-ValueFieldProperty" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <div class="d-flex flex-wrap cw-800">
+            <DxListBox Data="@Data"
+                       TextFieldName="@nameof(Employee.Text)"
+                       ValueFieldName="@nameof(Employee.EmployeeId)"
+                       SelectionMode="ListBoxSelectionMode.Multiple"
+                       CssClass="w-auto mt-1 me-1 flex-grow-1 chi-220 flex-basis-240"
+                       SizeMode="Params.SizeMode"
+                       @bind-Values="@Values"
+                       aria-label="Employees">
+            </DxListBox>
+            <div class="demo-part card mt-1 me-1 flex-grow-1 max-h-220 flex-basis-240">
+                <div class="demo-part-header card-header bg-transparent text-body border-bottom-0">
+                    Selected Values:
+                </div>
+                <div class="demo-part-body card-body p-0 pb-2 overflow-auto">
+                    <ul class="list-group list-group-flush bg-transparent border-0">
+                        @if(Values != null) {
+                            @foreach(var item in Values) {
+                                <li class="list-group-item bg-transparent text-body py-1 border-0">
+                                    @item
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </ChildContentWithParameters>
+
+    @code {
+        IEnumerable<Employee> Data { get; set; }
+        IEnumerable<int> Values { get; set; }
+
+        protected override async Task OnInitializedAsync() {
+            Data = await NwindDataService.GetEmployeesAsync();
+            Values = Data.Take(2).Select(e => e.EmployeeId);
+        }
+    }
+</DemoPageSectionComponent>

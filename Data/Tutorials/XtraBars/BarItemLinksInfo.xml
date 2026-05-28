@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo>                                   
+<controls>
+<controlentry>
+		<control>
+			<name>button1</name>
+			<windowcaption>Info</windowcaption>
+			<description>Displays the information on items and links that are displayed within bar controls.</description>
+			<memberlist></memberlist>
+			<dtimage></dtimage>
+		</control>
+</controlentry>
+</controls>
+</totalinfo>                     

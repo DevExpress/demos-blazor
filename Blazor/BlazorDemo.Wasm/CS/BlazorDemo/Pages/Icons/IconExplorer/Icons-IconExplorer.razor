@@ -1,0 +1,118 @@
+﻿@page "/IconExplorer"
+@using DevExpress.Blazor.Internal
+@using GridRenderHelper = DevExpress.Blazor.Grid.Internal.GridRenderHelper;
+
+@inject IDemoIconDataProvider IconDataProvider
+
+<DemoPageSectionComponent Id="Icons-IconExplorer" ShowCode="false">
+    <DemoChildContent>
+        <div class="icon-explorer">
+            <div class="icon-filters-container">
+                <IconFilters FiltersChanged="OnFiltersChanged" />
+            </div>
+            <DxGrid @ref="grid"
+                    Data="iconGroups"
+                    CssClass="icon-grid border-0"
+                    CustomizeElement="OnGridCustomizeElement"
+                    SearchBoxInputDelay="250"
+                    SearchBoxNullText="Search icons"
+                    ShowSearchBox="true"
+                    VirtualScrollingEnabled="true">
+                <Columns>
+                    <DxGridDataColumn FieldName="NameWithTags">
+                        <CellDisplayTemplate Context="cellContext">
+                            @{ var iconGroup = (DemoIconGroup)cellContext.DataItem; }
+                            <div class="mt-4 mb-2">
+                                <h4 class="mb-1">@GridRenderHelper.GetHighlightedTextFragment(cellContext.DataColumn, iconGroup.Name)</h4>
+                                <div class="icon-tags">@GridRenderHelper.GetHighlightedTextFragment(cellContext.DataColumn, iconGroup.Tags)</div>
+                            </div>
+                            <div class="icon-group-icons">
+                                @foreach(DemoIcon icon in iconGroup.Icons) {
+                                    <button class="@icon.IconPreviewCssClass" @onclick="_ => ShowIconsDetails(icon)">
+                                        <div class="icon-wrapper">
+                                            <DxImage Source="@ImageSource.Create(icon.Uri, null)"/>
+                                        </div>
+                                        <div class="icon-size">@icon.Size</div>
+                                    </button>
+                                }
+                            </div>
+                        </CellDisplayTemplate>
+                    </DxGridDataColumn>
+                </Columns>
+                <EmptyDataAreaTemplate>
+                    No icons match your search.
+                </EmptyDataAreaTemplate>
+            </DxGrid>
+            <DxPopup Visible="popupVisible"
+                     VisibleChanged="@(v => popupVisible = v)"
+                     MinWidth="25rem"
+                     MaxWidth="35rem"
+                     HeaderText="@popupIcon?.Name">
+                <BodyContentTemplate>
+                    <IconDetail Icon="popupIcon"/>
+                </BodyContentTemplate>
+            </DxPopup>
+        </div>
+    </DemoChildContent>
+</DemoPageSectionComponent>
+
+@code {
+    DemoIcon[] providerIcons;
+    Dictionary<string, DemoIconMetadata> providerMetadata;
+
+    bool popupVisible;
+    DemoIcon popupIcon;
+    FilterValues filterValues = new();
+    DemoIconGroup[] iconGroups = [];
+
+    @* todo [kk] ask grid to make a public method for highlighting *@
+    DxGrid grid;
+    GridRenderHelper renderHelper;
+    GridRenderHelper GridRenderHelper => renderHelper ??= new GridRenderHelper(grid);
+
+    protected override async Task OnInitializedAsync() {
+        providerIcons = IconDataProvider.GetIcons();
+        providerMetadata = await IconDataProvider.GetIconMetadata();
+        RefreshIcons();
+    }
+
+    void OnFiltersChanged(FilterValues value) {
+        filterValues = value;
+        RefreshIcons();
+    }
+
+    void RefreshIcons() {
+        iconGroups = providerIcons
+            .Where(filterValues.Matches)
+            .GroupBy(i => i.Name)
+            .Select(x =>
+                new DemoIconGroup(x.Key, x.ToArray(), providerMetadata.GetValueOrDefault(x.Key)))
+            .ToArray();
+    }
+
+    void OnGridCustomizeElement(GridCustomizeElementEventArgs e) {
+        switch(e.ElementType) {
+            case GridElementType.SearchBoxContainer:
+                e.CssClass = "w-100 p-0";
+                break;
+            case GridElementType.HeaderRow:
+                e.CssClass = "d-none";
+                break;
+        }
+    }
+
+    void ShowIconsDetails(DemoIcon icon) {
+        popupIcon = icon;
+        popupVisible = true;
+    }
+
+    record DemoIconGroup(string Name, DemoIcon[] Icons, DemoIconMetadata Metadata) {
+        const string Separator = ", ";
+
+        string nameWithTags;
+        string tags;
+
+        public string NameWithTags => nameWithTags ??= string.Join(Separator, Name, Tags);
+        public string Tags => tags ??= string.Join(Separator, Metadata?.Tags ?? []);
+    }
+}

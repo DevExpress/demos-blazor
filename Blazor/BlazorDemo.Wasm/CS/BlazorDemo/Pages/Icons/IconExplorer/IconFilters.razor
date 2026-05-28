@@ -1,0 +1,77 @@
+﻿@using DevExpress.Images.Blazor.Internal
+
+<DxFormLayout CaptionPosition="CaptionPosition.Vertical">
+    <DxFormLayoutItem Caption="Set" ColSpanXs="12">
+        <DxRadioGroup Items="@sets"
+                      Value="filterValues.IconSet"
+                      ValueChanged="(IconSet x) => OnSetToggle(x)">
+            <ItemTemplate Context="radioContext">@GetSetText(radioContext)</ItemTemplate>
+        </DxRadioGroup>
+    </DxFormLayoutItem>
+    <DxFormLayoutItem Caption="Style" ColSpanXs="12">
+        @RenderCheckboxGroup(styles, filterValues.IconStyles, OnToggle, GetEnumText)
+    </DxFormLayoutItem>
+    <DxFormLayoutItem Caption="Color" ColSpanXs="12">
+        @RenderCheckboxGroup(colors, filterValues.IconColors, OnToggle, GetEnumText)
+    </DxFormLayoutItem>
+    <DxFormLayoutItem Caption="Size" ColSpanXs="12">
+        @RenderCheckboxGroup(collapsed ? alwaysVisibleSizes : sizes, filterValues.IconSizes, OnToggle, DemoIcon.SizeToText)
+        <DxButton CssClass="px-1"
+                  RenderStyle="ButtonRenderStyle.Link"
+                  Text="@(collapsed ? "Show more" : "Show less")"
+                  Click="_ => collapsed = !collapsed" />
+    </DxFormLayoutItem>
+    <DxFormLayoutItem ColSpanXs="12">
+        <DxButton CssClass="w-100 mt-1"
+                  Enabled="filterValues.HasActiveFilters"
+                  RenderStyle="ButtonRenderStyle.Secondary"
+                  Text="Clear filters"
+                  Click="OnClearFilters"/>
+    </DxFormLayoutItem>
+</DxFormLayout>
+
+@code {
+    [Parameter] public EventCallback<FilterValues> FiltersChanged { get; set; }
+
+    RenderFragment RenderCheckboxGroup<T>(IEnumerable<T> values, ICollection<T> filter, Func<T, bool, ICollection<T>, Task> onToggle, Func<T, string> getEnumText) where T: Enum =>
+        @<text>
+             @foreach(T value in values) {
+                 <DxCheckBox Checked="filter.Contains(value)"
+                             CheckedChanged="(bool isChecked) => onToggle(value, isChecked, filter)">
+                     @getEnumText(value)
+                 </DxCheckBox>
+             }
+         </text>;
+
+    static string GetSetText(IconSet set) => set == IconSet.Auto ? "All" : GetEnumText(set);
+    static string GetEnumText<T>(T value) where T : Enum => SplitTextHelper.SplitPascalCaseString(value.ToString());
+
+    readonly IconSet[] sets = Enum.GetValues<IconSet>();
+    readonly IconStyle[] styles = Enum.GetValues<IconStyle>().Where(x => x != IconStyle.Auto).ToArray();
+    readonly IconColor[] colors = Enum.GetValues<IconColor>().Where(x => x != IconColor.Auto).Reverse().ToArray();
+    readonly IconSize[] sizes = Enum.GetValues<IconSize>().Where(x => x != IconSize.Auto).ToArray();
+    readonly IconSize[] alwaysVisibleSizes = [IconSize.Size16, IconSize.Size20, IconSize.Size24];
+
+    bool collapsed = true;
+    FilterValues filterValues = new();
+
+    Task OnSetToggle(IconSet set) {
+        filterValues.IconSet = set;
+        return RaiseFiltersChanged();
+    }
+
+    Task OnToggle<T>(T value, bool isChecked, ICollection<T> filter) {
+        if(isChecked)
+            filter.Add(value);
+        else
+            filter.Remove(value);
+        return RaiseFiltersChanged();
+    }
+
+    Task OnClearFilters() {
+        filterValues = new();
+        return RaiseFiltersChanged();
+    }
+
+    Task RaiseFiltersChanged() => FiltersChanged.InvokeAsync(filterValues);
+}

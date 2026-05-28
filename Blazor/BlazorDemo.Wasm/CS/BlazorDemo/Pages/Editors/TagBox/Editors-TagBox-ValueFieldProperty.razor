@@ -1,0 +1,45 @@
+﻿@using System.Text
+
+<DemoPageSectionComponent Id="Editors-TagBox-ValueFieldProperty" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <label for="tbValueField" class="demo-text cw-480 mb-1">
+            Employees
+        </label>
+        <DxTagBox Data="@Data"
+                  TextFieldName="@nameof(Employee.Text)"
+                  ValueFieldName="@nameof(Employee.EmployeeId)"
+                  SizeMode="Params.SizeMode"
+                  CssClass="cw-480"
+                  @bind-Values="Values"
+                  ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                  InputId="tbValueField" />
+        <p class="demo-text cw-480 mt-3">
+            Selected values: ( @GetSelectedValuesDescription() )
+        </p>
+    </ChildContentWithParameters>
+
+    @code {
+        IEnumerable<Employee> Data { get; set; }
+        IEnumerable<int> Values { get; set; }
+
+        protected override async Task OnInitializedAsync() {
+            Data = await NwindDataService.GetEmployeesAsync();
+            Values = Data.Take(2).Select(e => e.EmployeeId);
+        }
+
+        string GetSelectedValuesDescription() {
+            if(Values == null) return "null";
+            StringBuilder stringBuilder = new StringBuilder();
+            var values = new List<int>(Values);
+            for(int i = 0; i < values.Count; i++) {
+                if(i >= 0 && i < values.Count - 1)
+                    stringBuilder.Append($"{values[i]}, ");
+                else
+                    stringBuilder.Append(values[i]);
+            }
+            return stringBuilder.ToString();
+        }
+    }
+</DemoPageSectionComponent>

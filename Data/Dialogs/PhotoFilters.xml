@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Filters xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <Filter>
+    <Description>All photo types</Description>
+    <Expression>*.jpg;*.png;*.bmp;*.jpeg</Expression>
+	<IsEnable>true</IsEnable>
+ </Filter>
+ <Filter>
+    <Description>JPG</Description>
+    <Expression>*.jpg</Expression>
+	<IsEnable>true</IsEnable>
+ </Filter>
+ <Filter>
+    <Description>PNG</Description>
+    <Expression>*.png</Expression>
+	<IsEnable>true</IsEnable>
+ </Filter>
+ <Filter>
+    <Description>BMP</Description>
+    <Expression>*.bmp</Expression>
+	<IsEnable>true</IsEnable>
+ </Filter>
+ <Filter>
+    <Description>JPEG</Description>
+    <Expression>*.jpeg</Expression>
+	<IsEnable>true</IsEnable>
+ </Filter>
+</Filters>

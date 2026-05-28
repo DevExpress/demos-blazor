@@ -1,0 +1,92 @@
+﻿@namespace BlazorDemo.CRM.Components.Scheduler
+@using BlazorDemo.CRM.Models
+
+<div class="settings-root">
+    <DxTabs CssClass="tabs-root">
+        <DxTabPage Text="Calendar">
+            <DxStackLayout Orientation="Orientation.Vertical" ItemSpacing="1em" CssClass="calendar-root">
+                <Items>
+                    <DxStackLayoutItem Length="fit-content">
+                        <Template>
+                            <DxStackLayout Orientation="Orientation.Horizontal" ItemSpacing="1em" CssClass="w-100">
+                                <Items>
+                                    <DxStackLayoutItem>
+                                        <Template>
+                                            <DxButton Text="Create event"
+                                                      RenderStyle="ButtonRenderStyle.Primary"
+                                                      CssClass="w-100"
+                                                      Click="@OnCreateEvent"/>
+                                        </Template>
+                                    </DxStackLayoutItem>
+                                </Items>
+                            </DxStackLayout>
+                        </Template>
+                    </DxStackLayoutItem>
+                    <DxStackLayoutItem>
+                        <Template>
+                            <DxCalendar CssClass="w-100"
+                                        T="DateTime"
+                                        ShowClearButton="false"
+                                        SelectedDate="@SelectedDate"
+                                        SelectedDateChanged="@SelectedDateChanged"/>
+                        </Template>
+                    </DxStackLayoutItem>
+                    <DxStackLayoutItem>
+                        <Template>
+                            <DxTreeView CheckMode="TreeViewCheckMode.Multiple"
+                                        AnimationType="LayoutAnimationType.Slide"
+                                        CheckedChanged="@OnVisibleResourcesChanged"
+                                        NodeExpandCollapseAction="TreeViewNodeExpandCollapseAction.NodeClick"
+                                        CheckNodeByClick="true"
+                                        CssClass="w-100">
+                                <Nodes>
+                                    @{
+                                        var visibleResources = VisibleResources;
+                                    }
+                                    @foreach(var group in Resources.GetResourceGroups()) {
+                                        <DxTreeViewNode Text="@group.Name" AllowCheck="false" Expanded="true">
+                                            <Nodes>
+                                                @foreach(var resource in Resources.GetResources().Where(r => r.GroupId == group.Id)) {
+                                                    <DxTreeViewNode Text="@resource.Name" Checked="@(visibleResources?.Contains(resource))"/>
+                                                }
+                                            </Nodes>
+                                        </DxTreeViewNode>
+                                    }
+                                </Nodes>
+                            </DxTreeView>
+                        </Template>
+                    </DxStackLayoutItem>
+                </Items>
+            </DxStackLayout>
+        </DxTabPage>
+        <DxTabPage Text="AI Insights" CssClass="tabs-ai">
+            <SchedulerAIChat/>
+        </DxTabPage>
+    </DxTabs>
+</div>
+
+@code {
+
+    [Parameter]
+    public DateTime SelectedDate { get; set; } = DateTime.Today;
+
+    [Parameter]
+    public EventCallback<DateTime> SelectedDateChanged { get; set; }
+
+    [Parameter]
+    public IEnumerable<Resource>? VisibleResources { get; set; }
+
+    [Parameter]
+    public EventCallback<IEnumerable<Resource>?> VisibleResourcesChanged { get; set; }
+
+    [Parameter]
+    public EventCallback OnCreateEvent { get; set; }
+
+    async Task OnVisibleResourcesChanged(TreeViewCheckedChangedEventArgs args) {
+        if(args.Reason == TreeViewNodeCheckedStateChangeReason.UserAction) {
+            VisibleResources = args.CheckedItems.Select(i => Resources.GetResources().First(r => r.Name == i.Text));
+            if(VisibleResourcesChanged.HasDelegate)
+                await VisibleResourcesChanged.InvokeAsync(VisibleResources);
+        }
+    }
+}

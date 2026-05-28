@@ -1,0 +1,58 @@
+﻿@inject NwindDataService NwindDataService
+<DemoPageSectionComponent Id="Layout-Tabs-TabsPosition" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @if (Employees == null) {
+            <p>
+                <em>Loading...</em>
+            </p>
+        } else {
+            <div class="w-100 chi-220 max-h-300">
+                <DxTabs TabsPosition="@Position" RenderMode="TabsRenderMode.AllTabs" SizeMode="Params.SizeMode" ScrollMode="@ScrollMode">
+                    @foreach (var employee in Employees) {
+                        <DxTabPage Text="@(employee.FirstName + ' ' + employee.LastName)">
+                            <div class="h-100 d-flex demo-employee-card">
+                                <div class="flex-shrink-0 pe-3">
+                                    <img src="@(StaticAssetUtils.GetEmployeeImagePath(employee.EmployeeId))" width="125" alt="@(employee.FullName + " photo")"/>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h5>@employee.Title @employee.FirstName @employee.LastName</h5>
+                                    <p>
+                                        <b>Birthday:</b> @employee.BirthDate?.ToShortDateString()
+                                    </p>
+                                </div>
+                            </div>
+                        </DxTabPage>
+                    }
+                </DxTabs>
+            </div>
+        }
+    </ChildContentWithParameters>
+    <OptionsContent>
+        <OptionComboBox Label="Tab Position:"
+                        Data="@Positions"
+                        @bind-Value="Position">
+        </OptionComboBox>
+        <OptionComboBox Label="Scroll Mode:"
+                        Data="@RestrictedScrollModes"
+                        @bind-Value="ScrollMode">
+        </OptionComboBox>
+    </OptionsContent>
+
+    @code {
+        /*BeginHide*/
+        IEnumerable<TabsScrollMode> ScrollModes { get; } = Enum.GetValues<TabsScrollMode>();
+        IEnumerable<TabsScrollMode> RestrictedScrollModes => Position == TabsPosition.Left || Position == TabsPosition.Right
+        ? ScrollModes.Where(mode => mode != TabsScrollMode.NoScroll)
+        : ScrollModes;
+        TabsScrollMode ScrollMode { get; set; } = TabsScrollMode.Auto;
+        IEnumerable<TabsPosition> Positions { get; } = Enum.GetValues<TabsPosition>();
+        TabsPosition Position { get; set; } = TabsPosition.Top;
+        /*EndHide*/
+        IEnumerable<Employee> Employees;
+
+        protected override async Task OnInitializedAsync() {
+            Employees = await NwindDataService.GetEmployeesAsync();
+        }
+    }
+
+</DemoPageSectionComponent>

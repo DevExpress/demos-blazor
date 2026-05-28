@@ -1,0 +1,40 @@
+/*BeginHide*/::deep /*EndHide*/ .dxbl-menu > .dxbl-menu-item-list .dxbl-menu-item.notoggle {
+    display: none;
+}
+/*BeginHide*/ ::deep /*EndHide*/ .dxbs-menu > .dxbl-menu-item-list .dx-menu-item.search-menu-item {
+    display: none;
+}
+/*BeginHide*/ ::deep /*EndHide*/ .dxbs-menu > .dxbl-menu-item-list .dxbl-menu-items-separator {
+    display: none;
+}
+/*BeginHide*/ ::deep /*EndHide*/ .dxbl-menu-item-tmpl {
+    display: flex;
+    align-items: center;
+}
+
+/*BeginHide*/ ::deep /*EndHide*/ .dxbl-menu-item .search {
+    width: 160px;
+}
+
+.card.overview-navigation {
+    border-radius: var(--dxds-border-radius-40, var(--bs-card-border-radius));
+}
+
+.overview-navigation > .card-header {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+.overview-navigation > .card-body:last-child {
+    flex-wrap: nowrap;
+}
+
+.dxbl-menu-item-tmpl > .search {
+    position: relative;
+}
+
+@media (max-width: 599.98px) {
+    .overview-navigation > .card-body:last-child > :first-child {
+        display: none;
+    }
+}

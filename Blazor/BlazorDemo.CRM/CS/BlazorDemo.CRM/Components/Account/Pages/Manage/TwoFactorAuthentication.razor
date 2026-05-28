@@ -1,0 +1,107 @@
+﻿@page "/Account/Manage/TwoFactorAuthentication"
+
+@using Microsoft.AspNetCore.Http.Features
+@using Microsoft.AspNetCore.Identity
+@using BlazorDemo.CRM.Data
+
+@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+@inject IdentityUserAccessor UserAccessor
+@inject IdentityRedirectManager RedirectManager
+
+<PageTitle>Two-factor authentication (2FA)</PageTitle>
+
+<StatusMessage />
+<div class="block-content">
+    @if(canTrack) {
+        if(is2faEnabled) {
+            if(recoveryCodesLeft == 0) {
+                <div class="alert alert-danger">
+                    <strong>You have no recovery codes left.</strong>
+                    <p>You must <a href="Account/Manage/GenerateRecoveryCodes">generate a new set of recovery codes</a> before you can log in with a recovery code.</p>
+                </div>
+            } else if(recoveryCodesLeft == 1) {
+                <div class="alert alert-danger">
+                    <strong>You have 1 recovery code left.</strong>
+                    <p>You can <a href="Account/Manage/GenerateRecoveryCodes">generate a new set of recovery codes</a>.</p>
+                </div>
+            } else if(recoveryCodesLeft <= 3) {
+                <div class="alert alert-warning">
+                    <strong>You have @recoveryCodesLeft recovery codes left.</strong>
+                    <p>You should <a href="Account/Manage/GenerateRecoveryCodes">generate a new set of recovery codes</a>.</p>
+                </div>
+            }
+
+            if(isMachineRemembered) {
+                <form style="display: inline-block" @formname="forget-browser" @onsubmit="OnSubmitForgetBrowserAsync" method="post">
+                    <AntiforgeryToken />
+                    <button type="submit" class="btn btn-primary">Forget this browser</button>
+                </form>
+            }
+            <div class="title title-secondary">
+                <div class="title-content-text-secondary">
+                    Two-factor authenticator (2FA)
+                </div>
+            </div>
+            <div class="button-group">
+                <NavLink href="Account/Manage/Disable2fa" class="button-link">
+                    <DxButton Text="Disable 2FA" RenderStyle="ButtonRenderStyle.Secondary" CssClass="w-100"></DxButton>
+                </NavLink>
+                <NavLink href="Account/Manage/GenerateRecoveryCodes" class="button-link">
+                    <DxButton Text="Reset recovery codes" RenderStyle="ButtonRenderStyle.Secondary" CssClass="w-100"></DxButton>
+                </NavLink>
+            </div>
+        }
+
+        <div class="title title-secondary">
+            <div class="title-content-text-secondary">Authenticator app</div>
+        </div>
+        @if(!hasAuthenticator) {
+            <NavLink href="Account/Manage/EnableAuthenticator" class="button-link">
+                <DxButton Text="Add authenticator app" CssClass="w-100"></DxButton>
+            </NavLink>
+        } else {
+            <div class="button-group">
+                <NavLink href="Account/Manage/EnableAuthenticator" class="button-link">
+                    <DxButton Text="Set up authenticator app" RenderStyle="ButtonRenderStyle.Secondary" CssClass="w-100"></DxButton>
+                </NavLink>
+                <NavLink href="Account/Manage/ResetAuthenticator" class="button-link">
+                    <DxButton Text="Reset authenticator app" RenderStyle="ButtonRenderStyle.Secondary" CssClass="w-100"></DxButton>
+                </NavLink>
+            </div>
+        }
+    } else {
+        <div class="alert alert-danger">
+            <strong>Privacy and cookie policy have not been accepted.</strong>
+            <p>You must accept the policy before you can enable two factor authentication.</p>
+        </div>
+    }
+</div>
+
+@code {
+    private bool canTrack;
+    private bool hasAuthenticator;
+    private int recoveryCodesLeft;
+    private bool is2faEnabled;
+    private bool isMachineRemembered;
+
+    [CascadingParameter]
+    private HttpContext HttpContext { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync() {
+        var user = await UserAccessor.GetRequiredUserAsync(HttpContext);
+        canTrack = HttpContext.Features.Get<ITrackingConsentFeature>()?.CanTrack ?? true;
+        hasAuthenticator = await UserManager.GetAuthenticatorKeyAsync(user) is not null;
+        is2faEnabled = await UserManager.GetTwoFactorEnabledAsync(user);
+        isMachineRemembered = await SignInManager.IsTwoFactorClientRememberedAsync(user);
+        recoveryCodesLeft = await UserManager.CountRecoveryCodesAsync(user);
+    }
+
+    private async Task OnSubmitForgetBrowserAsync() {
+        await SignInManager.ForgetTwoFactorClientAsync();
+
+        RedirectManager.RedirectToCurrentPageWithStatus(
+            "The current browser has been forgotten. When you login again from this browser you will be prompted for your 2fa code.",
+            HttpContext);
+    }
+}

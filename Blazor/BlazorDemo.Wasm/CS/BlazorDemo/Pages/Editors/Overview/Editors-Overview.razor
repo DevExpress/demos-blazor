@@ -1,0 +1,22 @@
+﻿@page "/Editors"
+
+<DemoPageSectionComponent Id="Editors-Overview" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @if(IsRegisterFormActive) {
+            <Editors_Overview_Register GotoLoginForm="@GotoLoginForm" SizeMode="@Params.SizeMode" />
+        } else {
+            <Editors_Overview_Login GotoRegistrationForm="@GotoRegistrationForm" SizeMode="@Params.SizeMode" />
+        }
+    </ChildContentWithParameters>
+
+    @code {
+        bool IsRegisterFormActive { get; set; } = true;
+
+        void GotoLoginForm() {
+            IsRegisterFormActive = false;
+        }
+        void GotoRegistrationForm() {
+            IsRegisterFormActive = true;
+        }
+    }
+</DemoPageSectionComponent>

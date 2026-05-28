@@ -1,0 +1,24 @@
+﻿<DemoPageSectionComponent Id="Editors-Memo-CustomSize" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <label for="memoCustomSize" class="demo-text cw-320 mb-1">
+            Description
+        </label>
+        <DxMemo @bind-Text="TextValue"
+                SizeMode="Params.SizeMode"
+                Rows="8"
+                MaxRows="12"
+                Columns="50"
+                CssClass="cw-320"
+                InputId="memoCustomSize" />
+    </ChildContentWithParameters>
+
+    @code {
+        string TextValue { get; set; } = "Prepare 2020 Marketing Plan: " +
+            "We need to double revenues in 2020 and our marketing " +
+            "strategy is going to be key here. " +
+            "R&D is improving existing products and creating new " +
+            "products so we can deliver great AV equipment to our customers. " +
+            "Robert, please make certain to create a PowerPoint presentation " +
+            "for the members of the executive team.";
+    }
+</DemoPageSectionComponent>

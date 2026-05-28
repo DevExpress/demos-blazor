@@ -1,0 +1,34 @@
+﻿<DemoPageSectionComponent Id="FileManagement-FileInput-UploadModes">
+    <div class="upload-container">
+        <div class="@(SelectedFilesCount > 0 ? "d-none" : null)">
+            <span class="drop-file-icon mb-3"></span>
+            <span class="drop-file-label mb-3">Click the button below to start your upload</span>
+        </div>
+        <DxFileInput
+                  UploadMode="@UploadMode.OnButtonClick"
+                  AllowMultiFileUpload="true"
+                  MaxFileSize="15000000"
+                  SelectedFilesChanged="@SelectedFilesChanged"
+                  FilesUploading="OnFilesUploading">
+        </DxFileInput>
+    </div>
+    <div class="upload-validation-text info-text">
+        You can upload multiple files, each up to 15 MB.
+    </div>
+
+    @code {
+        int SelectedFilesCount { get; set; }
+
+        protected void SelectedFilesChanged(IEnumerable<UploadFileInfo> files) {
+            SelectedFilesCount = files.ToList().Count;
+            InvokeAsync(StateHasChanged);
+        }
+
+        protected async Task OnFilesUploading(FilesUploadingEventArgs args) {
+            foreach (var file in args.Files) {
+                using var stream = new System.IO.MemoryStream();
+                await file.OpenReadStream(file.Size).CopyToAsync(stream);
+            }
+        }
+    }
+</DemoPageSectionComponent>

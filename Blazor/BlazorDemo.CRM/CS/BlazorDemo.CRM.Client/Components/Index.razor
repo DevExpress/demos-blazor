@@ -1,0 +1,12 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.Authorization
+
+@attribute [Authorize]
+
+@inject NavigationManager NavigationManager
+
+@code {
+    protected override void OnInitialized() {
+        NavigationManager.NavigateTo("ContactList");
+    }
+}

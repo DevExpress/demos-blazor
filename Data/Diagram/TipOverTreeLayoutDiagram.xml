@@ -1,0 +1,27 @@
+﻿<XtraSerializer version="16.2.0.0">
+  <Items>
+    <Item1 ItemKind="DiagramRoot" PageSize="768,1079" Theme="Linear" SelectedStencils="BasicShapes, ArrowShapes">
+      <Children>
+        <Item1 Position="134,24" Size="140,75" FontSize="14" ThemeStyleId="Variant3" Content="CEO" ItemKind="DiagramShape" />
+        <Item2 Position="224,119" Size="140,75" FontSize="14" ThemeStyleId="Variant2" Content="Sales Manager" ItemKind="DiagramShape" />
+        <Item3 Position="224,499" Size="140,75" FontSize="14" ThemeStyleId="Variant2" Content="HR Manager" ItemKind="DiagramShape" />
+        <Item4 Position="314,214" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Chief Accountant" ItemKind="DiagramShape" />
+        <Item5 Position="314,689" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Team Leader" ItemKind="DiagramShape" />
+        <Item6 Position="404,784" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Programmer" ItemKind="DiagramShape" />
+        <Item7 FontSize="14" Points="204,156.5" ItemKind="DiagramConnector" BeginItem="0" EndItem="1" BeginPoint="204,99" EndPoint="224,156.5" />
+        <Item8 FontSize="14" Points="204,489 294,489" ItemKind="DiagramConnector" BeginItem="0" EndItem="2" BeginPoint="204,99" EndPoint="294,499" />
+        <Item9 FontSize="14" Points="384,821.5" ItemKind="DiagramConnector" BeginItem="4" EndItem="5" BeginPoint="384,764" EndPoint="404,821.5" />
+        <Item10 FontSize="14" Points="294,251.5" ItemKind="DiagramConnector" BeginItem="1" EndItem="3" BeginPoint="294,194" EndPoint="314,251.5" />
+        <Item11 Position="224,594" Size="140,75" FontSize="14" ThemeStyleId="Variant2" Content="Production Manager" ItemKind="DiagramShape" />
+        <Item12 FontSize="14" Points="204,584 294,584" ItemKind="DiagramConnector" BeginItem="0" EndItem="10" BeginPoint="204,99" EndPoint="294,594" />
+        <Item13 FontSize="14" Points="294,726.5" ItemKind="DiagramConnector" BeginItem="10" EndItem="4" BeginPoint="294,669" EndPoint="314,726.5" />
+        <Item14 Position="404,309" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Accountants" ItemKind="DiagramShape" />
+        <Item15 Position="404,879" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Programmer" ItemKind="DiagramShape" />
+        <Item16 FontSize="14" Points="384,346.5" ItemKind="DiagramConnector" BeginItem="3" EndItem="13" BeginPoint="384,289" EndPoint="404,346.5" />
+        <Item17 FontSize="14" Points="384,869 474,869" ItemKind="DiagramConnector" BeginItem="4" EndItem="14" BeginPoint="384,764" EndPoint="474,879" />
+        <Item18 Position="494,404" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Trainees" ItemKind="DiagramShape" />
+        <Item19 FontSize="14" Points="474,441.5" ItemKind="DiagramConnector" BeginItem="13" EndItem="17" BeginPoint="474,384" EndPoint="494,441.5" />
+      </Children>
+    </Item1>
+  </Items>
+</XtraSerializer>

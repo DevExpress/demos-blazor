@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfBillionares xmlns:MyNs="http://www.someXmlNamespace/namespace1">
+  <Billionares>
+    <Name>Carlos Slim Helu &amp; family</Name>
+    <Residence>Mexico</Residence>
+    <NetWorth>53.5</NetWorth>
+    <Age>70</Age>
+    <Rank>1</Rank>
+    <AgeCategory>70 - 80 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>William Gates III</Name>
+    <Residence>United States</Residence>
+    <NetWorth>53</NetWorth>
+    <Age>54</Age>
+    <Rank>2</Rank>
+    <AgeCategory>50 - 60 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Warren Buffett</Name>
+    <Residence>United States</Residence>
+    <NetWorth>47</NetWorth>
+    <Age>79</Age>
+    <Rank>3</Rank>
+    <AgeCategory>70 - 80 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Mukesh Ambani</Name>
+    <Residence>India</Residence>
+    <NetWorth>29</NetWorth>
+    <Age>52</Age>
+    <Rank>4</Rank>
+    <AgeCategory>50 - 60 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Lakshmi Mittal</Name>
+    <Residence>United Kingdom</Residence>
+    <NetWorth>28.7</NetWorth>
+    <Age>59</Age>
+    <Rank>5</Rank>
+    <AgeCategory>50 - 60 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Lawrence Ellison</Name>
+    <Residence>United States</Residence>
+    <NetWorth>28</NetWorth>
+    <Age>65</Age>
+    <Rank>6</Rank>
+    <AgeCategory>60 - 70 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Bernard Arnault</Name>
+    <Residence>France</Residence>
+    <NetWorth>27.5</NetWorth>
+    <Age>61</Age>
+    <Rank>7</Rank>
+    <AgeCategory>60 - 70 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Eike Batista</Name>
+    <Residence>Brazil</Residence>
+    <NetWorth>27</NetWorth>
+    <Age>53</Age>
+    <Rank>8</Rank>
+    <AgeCategory>50 - 60 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Amancio Ortega</Name>
+    <Residence>Spain</Residence>
+    <NetWorth>25</NetWorth>
+    <Age>74</Age>
+    <Rank>9</Rank>
+    <AgeCategory>70 - 80 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Karl Albrecht</Name>
+    <Residence>Germany</Residence>
+    <NetWorth>23.5</NetWorth>
+    <Age>90</Age>
+    <Rank>10</Rank>
+    <AgeCategory>More than 80 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Ingvar Kamprad &amp; family</Name>
+    <Residence>Switzerland</Residence>
+    <NetWorth>23</NetWorth>
+    <Age>83</Age>
+    <Rank>11</Rank>
+    <AgeCategory>More than 80 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Christy Walton &amp; family</Name>
+    <Residence>United States</Residence>
+    <NetWorth>22.5</NetWorth>
+    <Age>55</Age>
+    <Rank>12</Rank>
+    <AgeCategory>50 - 60 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Stefan Persson</Name>
+    <Residence>Sweden</Residence>
+    <NetWorth>22.4</NetWorth>
+    <Age>62</Age>
+    <Rank>13</Rank>
+    <AgeCategory>60 - 70 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Li Ka-shing</Name>
+    <Residence>Hong Kong</Residence>
+    <NetWorth>21</NetWorth>
+    <Age>81</Age>
+    <Rank>14</Rank>
+    <AgeCategory>More than 80 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Jim Walton</Name>
+    <Residence>United States</Residence>
+    <NetWorth>20.7</NetWorth>
+    <Age>62</Age>
+    <Rank>15</Rank>
+    <AgeCategory>60 - 70 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Alice Walton</Name>
+    <Residence>United States</Residence>
+    <NetWorth>20.6</NetWorth>
+    <Age>60</Age>
+    <Rank>16</Rank>
+    <AgeCategory>60 - 70 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Liliane Bettencourt</Name>
+    <Residence>France</Residence>
+    <NetWorth>20</NetWorth>
+    <Age>87</Age>
+    <Rank>17</Rank>
+    <AgeCategory>More than 80 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>S. Robson Walton</Name>
+    <Residence>United States</Residence>
+    <NetWorth>19.8</NetWorth>
+    <Age>66</Age>
+    <Rank>18</Rank>
+    <AgeCategory>60 - 70 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Prince Alwaleed Bin Talal Alsaud</Name>
+    <Residence>Saudi Arabia</Residence>
+    <NetWorth>19.4</NetWorth>
+    <Age>55</Age>
+    <Rank>19</Rank>
+    <AgeCategory>50 - 60 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>David Thomson &amp; family</Name>
+    <Residence>Canada</Residence>
+    <NetWorth>19</NetWorth>
+    <Age>52</Age>
+    <Rank>20</Rank>
+    <AgeCategory>50 - 60 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Michael Otto &amp; family</Name>
+    <Residence>Germany</Residence>
+    <NetWorth>18.7</NetWorth>
+    <Age>66</Age>
+    <Rank>21</Rank>
+    <AgeCategory>60 - 70 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Lee Shau Kee</Name>
+    <Residence>Hong Kong</Residence>
+    <NetWorth>18.5</NetWorth>
+    <Age>82</Age>
+    <Rank>22</Rank>
+    <AgeCategory>More than 80 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Michael Bloomberg</Name>
+    <Residence>United States</Residence>
+    <NetWorth>18</NetWorth>
+    <Age>68</Age>
+    <Rank>23</Rank>
+    <AgeCategory>60 - 70 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Larry Page</Name>
+    <Residence>United States</Residence>
+    <NetWorth>17.5</NetWorth>
+    <Age>37</Age>
+    <Rank>24</Rank>
+    <AgeCategory>30 - 40 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>David Koch</Name>
+    <Residence>United States</Residence>
+    <NetWorth>17.5</NetWorth>
+    <Age>69</Age>
+    <Rank>24</Rank>
+    <AgeCategory>60 - 70 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Charles Koch</Name>
+    <Residence>United States</Residence>
+    <NetWorth>17.5</NetWorth>
+    <Age>74</Age>
+    <Rank>24</Rank>
+    <AgeCategory>70 - 80 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Sergey Brin</Name>
+    <Residence>United States</Residence>
+    <NetWorth>17.5</NetWorth>
+    <Age>36</Age>
+    <Rank>24</Rank>
+    <AgeCategory>30 - 40 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Walter Kwok Ping-sheung &amp; Family </Name>
+    <Residence>Hong Kong</Residence>
+    <NetWorth>17</NetWorth>
+    <Age>65</Age>
+    <Rank>28</Rank>
+    <AgeCategory>60 - 70 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Michele Ferrero &amp; family</Name>
+    <Residence>Monaco</Residence>
+    <NetWorth>17</NetWorth>
+    <Age>83</Age>
+    <Rank>28</Rank>
+    <AgeCategory>More than 80 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Azim Premji</Name>
+    <Residence>India</Residence>
+    <NetWorth>17</NetWorth>
+    <Age>64</Age>
+    <Rank>28</Rank>
+    <AgeCategory>60 - 70 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Theo Albrecht</Name>
+    <Residence>Germany</Residence>
+    <NetWorth>16.7</NetWorth>
+    <Age>88</Age>
+    <Rank>31</Rank>
+    <AgeCategory>More than 80 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Robert Kuok</Name>
+    <Residence>Hong Kong</Residence>
+    <NetWorth>14.5</NetWorth>
+    <Age>86</Age>
+    <Rank>33</Rank>
+    <AgeCategory>More than 80 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Steven Ballmer</Name>
+    <Residence>United States</Residence>
+    <NetWorth>14.5</NetWorth>
+    <Age>54</Age>
+    <Rank>33</Rank>
+    <AgeCategory>50 - 60 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>George Soros</Name>
+    <Residence>United States</Residence>
+    <NetWorth>14</NetWorth>
+    <Age>79</Age>
+    <Rank>35</Rank>
+    <AgeCategory>70 - 80 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Anil Ambani</Name>
+    <Residence>India</Residence>
+    <NetWorth>13.7</NetWorth>
+    <Age>50</Age>
+    <Rank>36</Rank>
+    <AgeCategory>50 - 60 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Paul Allen</Name>
+    <Residence>United States</Residence>
+    <NetWorth>13.5</NetWorth>
+    <Age>57</Age>
+    <Rank>37</Rank>
+    <AgeCategory>50 - 60 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Michael Dell</Name>
+    <Residence>United States</Residence>
+    <NetWorth>13.5</NetWorth>
+    <Age>45</Age>
+    <Rank>37</Rank>
+    <AgeCategory>40 - 50 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Shashi &amp; Ravi Ruia</Name>
+    <Residence>India</Residence>
+    <NetWorth>13</NetWorth>
+    <Age>66</Age>
+    <Rank>40</Rank>
+    <AgeCategory>60 - 70 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Birgit Rausing &amp; family</Name>
+    <Residence>Switzerland</Residence>
+    <NetWorth>13</NetWorth>
+    <Age>86</Age>
+    <Rank>40</Rank>
+    <AgeCategory>More than 80 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Jeffrey Bezos</Name>
+    <Residence>United States</Residence>
+    <NetWorth>12.3</NetWorth>
+    <Age>46</Age>
+    <Rank>43</Rank>
+    <AgeCategory>40 - 50 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Savitri Jindal</Name>
+    <Residence>India</Residence>
+    <NetWorth>12.2</NetWorth>
+    <Age>60</Age>
+    <Rank>44</Rank>
+    <AgeCategory>60 - 70 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>John Paulson</Name>
+    <Residence>United States</Residence>
+    <NetWorth>12</NetWorth>
+    <Age>54</Age>
+    <Rank>45</Rank>
+    <AgeCategory>50 - 60 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Donald Bren</Name>
+    <Residence>United States</Residence>
+    <NetWorth>12</NetWorth>
+    <Age>77</Age>
+    <Rank>45</Rank>
+    <AgeCategory>70 - 80 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Gerald Cavendish Grosvenor &amp; family</Name>
+    <Residence>United Kingdom</Residence>
+    <NetWorth>12</NetWorth>
+    <Age>58</Age>
+    <Rank>45</Rank>
+    <AgeCategory>50 - 60 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Abigail Johnson</Name>
+    <Residence>United States</Residence>
+    <NetWorth>11.5</NetWorth>
+    <Age>48</Age>
+    <Rank>48</Rank>
+    <AgeCategory>40 - 50 years</AgeCategory>
+  </Billionares>
+  <Billionares>
+    <Name>Jorge Paulo Lemann</Name>
+    <Residence>Brazil</Residence>
+    <NetWorth>11.5</NetWorth>
+    <Age>70</Age>
+    <Rank>48</Rank>
+    <AgeCategory>70 - 80 years</AgeCategory>
+  </Billionares>
+</ArrayOfBillionares>

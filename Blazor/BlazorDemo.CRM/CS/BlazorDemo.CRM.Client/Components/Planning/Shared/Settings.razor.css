@@ -1,0 +1,23 @@
+.settings-root {
+    width: 25em;
+    height: 100%;
+}
+
+::deep .tabs-root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+::deep .dxbl-tabs-content-panel {
+    flex: 1 1 auto;
+    overflow: auto;
+}
+
+::deep .calendar-root {
+    margin-top: 1.5rem;
+}
+
+::deep .w-100 {
+    width: 100%;
+}

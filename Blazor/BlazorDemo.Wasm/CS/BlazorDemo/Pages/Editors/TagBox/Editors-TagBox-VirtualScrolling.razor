@@ -1,0 +1,27 @@
+﻿<DemoPageSectionComponent Id="Editors-TagBox-VirtualScrolling" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject WorldcitiesDataService WorldcitiesDataService
+
+        <label for="tbVirtualScrolling" class="demo-text cw-480 mb-1">
+            Cities
+        </label>
+        <DxTagBox Data="@Data"
+                  ListRenderMode="ListRenderMode.Virtual"
+                  @bind-Values="@Values"
+                  TextFieldName="@nameof(City.CityName)"
+                  ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                  SizeMode="Params.SizeMode"
+                  CssClass="cw-480"
+                  InputId="tbVirtualScrolling" />
+    </ChildContentWithParameters>
+
+    @code {
+        IEnumerable<City> Data { get; set; }
+        IEnumerable<City> Values { get; set; }
+
+        protected override async Task OnInitializedAsync() {
+            Data = await WorldcitiesDataService.GetCitiesAsync();
+            Values = new List<City>() { Data.FirstOrDefault() };
+        }
+    }
+</DemoPageSectionComponent>

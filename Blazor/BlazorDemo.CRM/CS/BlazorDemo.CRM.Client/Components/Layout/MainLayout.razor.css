@@ -1,0 +1,113 @@
+.page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: var(--CRM-header-padding);
+    box-shadow: 0 0.125rem 0.25rem 0 #00000024, 0 0 0.125rem 0 #0000001F;
+    z-index: 103;
+    background-color: var(--dxds-color-surface-neutral-default-rest);
+}
+
+.header .header-content {
+    display: flex;
+}
+
+.main {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.main .main-content {
+    height: 100%;
+}
+
+.toolbar .title {
+    color: var(--dxds-color-content-neutral-default-rest);
+    font-family: var(--dxds-font-family-sans-serif);
+    font-weight: 400;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin: 0 0.5rem;
+    height: 100%;
+}
+
+.avatar-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.avatar-item .avatar-label {
+    padding: 0.5rem;
+}
+
+.small-size .toolbar .title {
+    font-size: var(--dxds-font-size-base-lg);
+    line-height: var(--dxds-line-height-base-lg);
+}
+
+.medium-size .toolbar .title {
+    font-size: var(--dxds-font-size-title-md);
+    line-height: var(--dxds-line-height-title-md);
+}
+
+.large-size .toolbar .title {
+    font-size: var(--dxds-font-size-title-lg);
+    line-height: var(--dxds-line-height-title-lg);
+}
+
+.content {
+    margin: 0 auto;
+}
+
+.main-content .module-content {
+    padding: var(--CRM-module-content-padding);
+}
+
+.module-content {
+    height: 100%;
+    overflow: auto;
+}
+
+::deep .main-menu {
+    width: 19rem;
+}
+
+::deep .main-menu [role="treeitem"][aria-level="1"] {
+    font-weight: 500;
+}
+
+::deep .main-menu-drawer {
+    --dxbl-drawer-panel-body-padding-x: 1.5rem;
+    --dxbl-drawer-panel-body-padding-y: 1.5rem;
+}
+
+::deep .search-textbox {
+    margin: auto 0;
+}
+
+::deep .toolbar .search-textbox-item {
+    max-width: 12.5rem;
+}
+
+::deep .crm-icon {
+    mask-image: url("images/icons/person.svg");
+}
+
+::deep .planning-icon {
+    mask-image: url("images/icons/calendar.svg");
+}
+
+::deep .analytics-icon {
+    mask-image: url("images/icons/data-histogram.svg");
+}
+
+::deep .hamburger-icon {
+    mask-image: url("images/icons/navigation.svg");
+}
+
+

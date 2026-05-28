@@ -1,0 +1,25 @@
+.status {
+    font-size: 0.9em;
+}
+
+    .status::before {
+        content: " ";
+        display: inline-block;
+        width: 0.6em;
+        height: 0.6em;
+        margin-right: 0.3rem;
+        border-radius: 50%;
+        background-color: currentColor;
+    }
+
+.status.status-salaried {
+    color: var(--dxds-color-content-success-default-rest);
+}
+
+.status.status-commission {
+    color: var(--dxds-color-content-info-default-rest);
+}
+
+.status.status-terminated {
+    color: var(--dxds-color-content-danger-default-rest);
+}

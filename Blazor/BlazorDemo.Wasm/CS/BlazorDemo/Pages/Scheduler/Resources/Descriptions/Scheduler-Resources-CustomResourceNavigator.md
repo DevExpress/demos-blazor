@@ -1,0 +1,5 @@
+This demo illustrates how to replace the built-in **Resource Navigator** with a custom tree-like navigator.
+
+The **Resource Navigator** allows users to control resources that the Scheduler displays. The [VisibleResourcesDataSource](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxScheduler.VisibleResourcesDataSource) property contains a collection of currently visible resources.
+
+In this demo, the [ResourceNavigatorVisible](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxScheduler.ResourceNavigatorVisible) property is set to `false` to hide the built-in **Resource Navigator**. You can use the [DxTreeView](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxTreeView) component with check boxes in node templates instead. When you change a check box's selection state, the [VisibleResourcesDataSource](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxScheduler.VisibleResourcesDataSource) collection is updated accordingly.

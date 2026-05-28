@@ -1,0 +1,37 @@
+﻿<DemoPageSectionComponent Id="Editors-SpinEdit-OnInputBinding" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <label for="seInputBinding" class="demo-text cw-320 mb-1">
+            Year
+        </label>
+        <DxSpinEdit @bind-Value="@Year"
+                    BindValueMode="@BindValueMode"
+                    InputDelay="@InputDelay"
+                    NullText="Type a value..."
+                    SizeMode="@Params.SizeMode"
+                    CssClass="cw-320"
+                    InputId="seInputBinding" />
+        <p class="demo-text cw-320 mt-3">
+            The entered value is: <b>@Year</b>
+        </p>
+    </ChildContentWithParameters>
+
+    <OptionsContent>
+        <OptionComboBox CssClass="ow-150"
+                        Data="Enum.GetValues<BindValueMode>()"
+                        @bind-Value="BindValueMode"
+                        Label="Bind Value Mode:" />
+        <OptionSpinEdit CssClass="ow-150"
+                        MinValue="100"
+                        MaxValue="1000"
+                        Increment="100"
+                        Enabled="@BindDelayEnabled"
+                        Label="Input Delay:"
+                        @bind-Value="InputDelay" />
+    </OptionsContent>
+    @code {
+        int? Year { get; set; } = DateTime.Now.Year;
+        int? InputDelay { get; set; } = 500;
+        BindValueMode BindValueMode { get; set; } = BindValueMode.OnInput;
+        bool BindDelayEnabled { get { return BindValueMode == BindValueMode.OnDelayedInput; } }
+    }
+</DemoPageSectionComponent>

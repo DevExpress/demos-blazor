@@ -1,0 +1,41 @@
+/*BeginHide*/::deep /*EndHide*/.dx-demo-label {
+    font-size: inherit;
+}
+/*BeginHide*/::deep /*EndHide*/.dx-demo-label.dx-demo-small {
+    font-size: 0.75rem;
+}
+/*BeginHide*/::deep /*EndHide*/.dx-demo-label.dx-demo-large {
+    font-size: 1rem;
+}
+/*BeginHide*/::deep/*EndHide*/ .dx-demo-select-all-checkbox {
+    margin-bottom: 0.25rem;
+}
+.dx-demo-price-list-content {
+    padding-left: 2rem;
+}
+.dx-demo-row {
+    display: flex;
+    justify-content: space-between;
+}
+.dx-demo-row + .dx-demo-row {
+    margin-top: 0.25rem;
+}
+.dx-demo-total {
+    margin-top: 0.5rem;
+}
+.dx-demo-total-value {
+    text-align: right;
+}
+.dx-demo-text-strikethrough {
+    text-decoration: line-through;
+}
+/*BeginHide*/
+.theme-fluent-light .dx-demo-row + .dx-demo-row,
+.theme-fluent-dark .dx-demo-row + .dx-demo-row {
+    margin-top: 0;
+}
+.theme-fluent-light .dx-demo-select-all-checkbox,
+.theme-fluent-dark .dx-demo-select-all-checkbox {
+    margin-bottom: 0;
+}
+/*EndHide*/

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDefaultItems>False</EnableDefaultItems>
+    <OutputType>Library</OutputType>
+    <ImplicitUsings>enabled</ImplicitUsings>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.JSInterop" />
+    <PackageReference Include="System.Drawing.Common" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
+  </ItemGroup>
+  <ItemGroup Condition="!Exists('..\..\..\..\Reporting\CS\DevExpress.DemoReports\DevExpress.DemoReports.NetCore.csproj')">
+    <PackageReference Include="DevExpress.Reporting.Demos" VersionOverride="26.1.2-beta-26148" />
+  </ItemGroup>
+  <ItemGroup Condition="Exists('..\..\..\..\Reporting\CS\DevExpress.DemoReports\DevExpress.DemoReports.NetCore.csproj')">
+    <ProjectReference Include="..\..\..\..\Reporting\CS\DevExpress.DemoReports\DevExpress.DemoReports.NetCore.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Services\PdfSignatureOptionsProviderAsync.cs" />
+    <Compile Include="Services\ReportingFontLoader.cs" />
+    <Compile Include="Services\ReportingCookieHelper.cs" />
+    <Compile Include="Services\ReportFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Signatures\John_Smith.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Signatures\certificate.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

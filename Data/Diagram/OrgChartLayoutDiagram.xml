@@ -1,0 +1,43 @@
+﻿<XtraSerializer version="19.2.0.0">
+  <Items>
+    <Item1 ItemKind="DiagramRoot" PageSize="900,600" Theme="Linear" SelectedStencils="BasicShapes, ArrowShapes" OrgChartLayoutTreeLevelCount="3" TreeLayoutConnectorsRouting="CalculatePointIndex" TipOverTreeLayoutConnectorsRouting="CalculatePointIndex">
+      <Children>
+        <Item1 Position="581,24" Size="140,75" FontSize="14" ThemeStyleId="Variant3" Content="CEO" ItemKind="DiagramShape" />
+        <Item2 Position="266,139" Size="140,75" FontSize="14" ThemeStyleId="Variant2" Content="Sales Manager" ItemKind="DiagramShape" />
+        <Item3 Position="446,139" Size="140,75" FontSize="14" ThemeStyleId="Variant2" Content="HR Manager" ItemKind="DiagramShape" />
+        <Item4 Position="266,254" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Chief Accountant" ItemKind="DiagramShape" />
+        <Item5 Position="896,254" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Team Leader" ItemKind="DiagramShape" />
+        <Item6 Position="446,369" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Programmer" ItemKind="DiagramShape" />
+        <Item7 FontSize="14" BeginItemPointIndex="2" EndItemPointIndex="0" Points="651,122 336,122" ItemKind="DiagramConnector" BeginItem="0" EndItem="1" BeginPoint="335,61.5" EndPoint="295,176.5" />
+        <Item8 FontSize="14" BeginItemPointIndex="2" EndItemPointIndex="0" Points="651,122 516,122" ItemKind="DiagramConnector" BeginItem="0" EndItem="2" BeginPoint="405,99" EndPoint="405,139" />
+        <Item9 FontSize="14" BeginItemPointIndex="2" EndItemPointIndex="0" Points="966,352 516,352" ItemKind="DiagramConnector" BeginItem="4" EndItem="5" BeginPoint="585,329" EndPoint="565,406.5" />
+        <Item10 FontSize="14" BeginItemPointIndex="2" EndItemPointIndex="0" Points="(Empty)" ItemKind="DiagramConnector" BeginItem="1" EndItem="3" BeginPoint="225,214" EndPoint="225,254" />
+        <Item11 Position="896,139" Size="140,75" FontSize="14" ThemeStyleId="Variant2" Content="Production Manager" ItemKind="DiagramShape" />
+        <Item12 FontSize="14" BeginItemPointIndex="2" EndItemPointIndex="0" Points="651,122 966,122" ItemKind="DiagramConnector" BeginItem="0" EndItem="10" BeginPoint="475,61.5" EndPoint="515,176.5" />
+        <Item13 FontSize="14" BeginItemPointIndex="2" EndItemPointIndex="0" Points="(Empty)" ItemKind="DiagramConnector" BeginItem="10" EndItem="4" BeginPoint="585,214" EndPoint="585,254" />
+        <Item14 Position="266,369" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Accountants" ItemKind="DiagramShape" />
+        <Item15 Position="626,369" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Programmer" ItemKind="DiagramShape" />
+        <Item16 FontSize="14" BeginItemPointIndex="2" EndItemPointIndex="0" Points="(Empty)" ItemKind="DiagramConnector" BeginItem="3" EndItem="13" BeginPoint="225,329" EndPoint="225,369" />
+        <Item17 FontSize="14" BeginItemPointIndex="2" EndItemPointIndex="0" Points="966,352 696,352" ItemKind="DiagramConnector" BeginItem="4" EndItem="14" BeginPoint="585,329" EndPoint="605,406.5" />
+        <Item18 Position="376,484" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Trainees" ItemKind="DiagramShape" />
+        <Item19 FontSize="14" BeginItemPointIndex="2" EndItemPointIndex="0" Points="336,467 446,467" ItemKind="DiagramConnector" BeginItem="13" EndItem="17" BeginPoint="225,444" EndPoint="225,484" />
+        <Item20 Position="806,369" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Programmer" ItemKind="DiagramShape" />
+        <Item21 Position="986,369" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Programmer" ItemKind="DiagramShape" />
+        <Item22 Position="1166,369" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Programmer" ItemKind="DiagramShape" />
+        <Item23 Position="1346,369" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Programmer" ItemKind="DiagramShape" />
+        <Item24 BeginItemPointIndex="2" EndItemPointIndex="0" Points="966,352 876,352" ItemKind="DiagramConnector" BeginItem="4" EndItem="19" BeginPoint="585,329" EndPoint="870,369" />
+        <Item25 BeginItemPointIndex="2" EndItemPointIndex="0" Points="966,352 1056,352" ItemKind="DiagramConnector" BeginItem="4" EndItem="20" BeginPoint="585,329" EndPoint="1050,406.5" />
+        <Item26 BeginItemPointIndex="2" EndItemPointIndex="0" Points="966,352 1236,352" ItemKind="DiagramConnector" BeginItem="4" EndItem="21" BeginPoint="585,254" EndPoint="1250,406.5" />
+        <Item27 BeginItemPointIndex="2" EndItemPointIndex="0" Points="966,352 1416,352" ItemKind="DiagramConnector" BeginItem="4" EndItem="22" BeginPoint="585,254" EndPoint="1450,387.5" />
+        <Item28 Position="376,599" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Trainees" ItemKind="DiagramShape" />
+        <Item29 Position="376,714" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Trainees" ItemKind="DiagramShape" />
+        <Item30 Position="376,829" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Trainees" ItemKind="DiagramShape" />
+        <Item31 Position="376,944" Size="140,75" FontSize="14" ThemeStyleId="Variant1" Content="Trainees" ItemKind="DiagramShape" />
+        <Item32 BeginItemPointIndex="2" EndItemPointIndex="0" Points="336,582 446,582" ItemKind="DiagramConnector" BeginItem="13" EndItem="27" BeginPoint="336,369" EndPoint="400,637.5" />
+        <Item33 BeginItemPointIndex="2" EndItemPointIndex="0" Points="336,697 446,697" ItemKind="DiagramConnector" BeginItem="13" EndItem="28" BeginPoint="336,444" EndPoint="470,750" />
+        <Item34 BeginItemPointIndex="2" EndItemPointIndex="0" Points="336,812 446,812" ItemKind="DiagramConnector" BeginItem="13" EndItem="29" BeginPoint="336,369" EndPoint="400,937.5" />
+        <Item35 BeginItemPointIndex="2" EndItemPointIndex="0" Points="336,927 446,927" ItemKind="DiagramConnector" BeginItem="13" EndItem="30" BeginPoint="336,444" EndPoint="446,1000" />
+      </Children>
+    </Item1>
+  </Items>
+</XtraSerializer>

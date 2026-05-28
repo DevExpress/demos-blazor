@@ -1,0 +1,53 @@
+﻿@using BlazorDemo.CRM.Models
+
+@namespace BlazorDemo.CRM.Components.ContactDetails
+
+@inherits DataPresenter<List<WorkTask>>
+
+<div>
+    <DxGrid Data="@Data"
+            CssClass="tasks"
+            ShowAllRows="true"
+            FocusedRowEnabled="true"
+            TextWrapEnabled="false"
+            AllowDragRows="true"
+            ColumnResizeMode="GridColumnResizeMode.NextColumn"
+            SelectedDataItemsChanged="@OnSelectedDataItemsChagned"
+            SelectedDataItems="@SelectedTasks?.ToList()"
+            ItemsDropped="@(async e => await OnItemsDropped(e))"
+            HighlightRowOnHover="true">
+        <Columns>
+            <DxGridSelectionColumn Width="50px" />
+            <DxGridDataColumn Caption="Subject" FieldName="Text" Width="50%" />
+            <DxGridDataColumn Caption="Due Date" FieldName="Date" />
+            <DxGridDataColumn Caption="Assigned To" FieldName="Manager" />
+        </Columns>
+    </DxGrid>
+</div>
+
+@code {
+    [Parameter]
+    public EventCallback<IEnumerable<WorkTask>> SelectedTasksChanged { get; set; }
+    [Parameter]
+    public IEnumerable<WorkTask>? SelectedTasks { get; set; }
+
+    async Task OnSelectedDataItemsChagned(IReadOnlyList<object> items) {
+        SelectedTasks = items.Cast<WorkTask>();
+        if(SelectedTasksChanged.HasDelegate)
+            await SelectedTasksChanged.InvokeAsync(SelectedTasks);
+    }
+
+    async Task OnItemsDropped(GridItemsDroppedEventArgs evt) {
+        var newData = new List<WorkTask>(Data!);
+        foreach (WorkTask droppedItem in evt.DroppedItems) {
+            newData.Remove(droppedItem);
+            var targetItem = (WorkTask)evt.TargetItem;
+            var index = targetItem != null
+                ? newData.IndexOf(targetItem) + (evt.DropPosition == GridItemDropPosition.After ? 1 : 0)
+                : newData.Count;
+            newData.Insert(index, droppedItem);
+        }
+        await OnDataChangedAsync(newData);
+        await InvokeAsync(StateHasChanged);
+    }
+}

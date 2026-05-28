@@ -1,0 +1,128 @@
+﻿@namespace BlazorDemo.CRM.Components.Scheduler
+@using BlazorDemo.CRM.Client.Tools
+@using BlazorDemo.CRM.Models
+@using DevExpress.AIIntegration.Tools
+
+@inject AIToolsContextContainer AIToolsContextContainer
+@implements IDisposable
+
+<div class="h-100">
+    <DxScheduler @ref=scheduler
+                 @bind-ActiveViewType="@viewType"
+                 StartDate="@StartDate"
+                 StartDateChanged="@StartDateChanged"
+                 DataStorage="@DataStorage"
+                 VisibleResourcesDataSource="VisibleResources"
+                 AllowCreateAppointment="true"
+                 ResourceNavigatorVisible="false"
+                 AppointmentFormShowing="@(() => appointmentFormVisible = true)"
+                 AppointmentFormClosing="@(() => appointmentFormVisible = false)"
+                 CssClass="scheduler">
+        <Views>
+            <DxSchedulerDayView DayCount="1"></DxSchedulerDayView>
+            <DxSchedulerWorkWeekView/>
+            <DxSchedulerMonthView MonthCount="1"/>
+            <DxSchedulerTimelineView Duration="@TimeSpan.FromHours(48)" CellMinWidth="80">
+                <Scales>
+                    <DxSchedulerTimeScale Unit="@SchedulerTimeScaleUnit.Day" UnitCount="1"></DxSchedulerTimeScale>
+                    <DxSchedulerTimeScale Unit="@SchedulerTimeScaleUnit.Hour" UnitCount="2"></DxSchedulerTimeScale>
+                </Scales>
+            </DxSchedulerTimelineView>
+        </Views>
+    </DxScheduler>
+</div>
+
+@code {
+    DxScheduler? scheduler;
+    bool appointmentFormVisible;
+    SchedulerViewType viewType = SchedulerViewType.WorkWeek;
+    AIToolsContext? context;
+
+    [Parameter]
+    public List<WorkTaskDetail>? Data { get; set; }
+
+    [Parameter]
+    public DateTime StartDate { get; set; } = DateTime.Today;
+
+    [Parameter]
+    public EventCallback<DateTime> StartDateChanged { get; set; }
+
+    [Parameter]
+    public IEnumerable<Resource>? VisibleResources { get; set; }
+
+    DxSchedulerDataStorage? DataStorage { get; set; }
+
+    public override Task SetParametersAsync(ParameterView parameters) {
+        if(parameters.TryGetValue(nameof(Data), out List<WorkTaskDetail>? data) && data != null && data != Data)
+            DataStorage = CreateDataStorage(data);
+        return base.SetParametersAsync(parameters);
+    }
+
+    protected override void OnAfterRender(bool firstRender) {
+        if(firstRender) {
+            var toolsCollection = new SchedulerTools();
+
+            context = new AIToolsContextBuilder()
+                      .WithToolTarget(scheduler, "Displays resource schedules and appointments.")
+                      .WithToolTarget(appointmentFormVisible, "Indicates whether the appointment form is currently visible.")
+                      .WithToolTarget(UpdateStartDate, "Updates the component-level start date.")
+                      .WithToolMethods(
+                          SchedulerTools.GetCurrentTime,
+                          toolsCollection.GetAppointments,
+                          toolsCollection.CreateAppointment,
+                          toolsCollection.GetSchedulerStartDate,
+                          toolsCollection.SchedulerViewUpdate)
+                      .Build();
+
+            AIToolsContextContainer.Add(context);
+        }
+        base.OnAfterRender(firstRender);
+    }
+
+    DxSchedulerDataStorage CreateDataStorage(List<WorkTaskDetail> data) {
+        return new DxSchedulerDataStorage() {
+            AppointmentsSource = Appointments.Create(data),
+            AppointmentMappings = new DxSchedulerAppointmentMappings() {
+                Type = "AppointmentType",
+                Start = "StartDate",
+                End = "EndDate",
+                Subject = "Caption",
+                ResourceId = "ResourceId",
+                StatusId = "Status",
+                LabelId = "LabelId",
+                Location = "Location",
+                Description = "Description"
+            },
+            ResourcesSource = Resources.GetResources(),
+            ResourceMappings = new DxSchedulerResourceMappings() {
+                Id = "Id",
+                Caption = "Name",
+                BackgroundCssClass = "BackgroundCss",
+                TextCssClass = "TextCss"
+            },
+            AppointmentStatusSource = Statuses.GetStatuses(),
+            AppointmentStatusMappings = new DxSchedulerAppointmentStatusMappings() {
+                Id = "Id",
+                Caption = "Caption",
+                Color = "Color"
+            }
+        };
+    }
+
+    public async Task CreateAppointmentAsync() {
+        var timeOfDay = DateTime.Now.TimeOfDay;
+        var startDate = StartDate.Add(timeOfDay);
+        var appointment = await scheduler!.CreateAppointmentAsync(startDate, startDate.AddMinutes(30), false, null);
+        await scheduler!.ShowAppointmentEditFormAsync(false, appointment);
+    }
+
+    async Task UpdateStartDate(DateTime newStartDate) {
+        StartDate = newStartDate;
+        await StartDateChanged.InvokeAsync(newStartDate);
+    }
+
+    public void Dispose() {
+        AIToolsContextContainer.Remove(context);
+        context?.Dispose();
+    }
+}

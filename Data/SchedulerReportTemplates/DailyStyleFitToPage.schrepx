@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="22.1.0.0" Ref="0" ControlType="DevExpress.XtraScheduler.Reporting.XtraSchedulerReport, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="DailyStyleFitToPage" Margins="55, 100, 100, 100" PageWidth="850" PageHeight="1100" Version="22.1">
+  <Views>
+    <Item1 SchedulerViewType="DevExpress.XtraScheduler.Reporting.ReportDayView, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Ref="1">
+      <Appearance Ref="2">
+        <AllDayAreaToday Ref="3" />
+        <SelectedAllDayAreaToday Ref="4" />
+        <TimeRulerCurrentHourCell Ref="5" />
+      </Appearance>
+    </Item1>
+  </Views>
+  <Bands>
+    <Item1 Ref="6" ControlType="DetailBand" Name="Detail" PageBreak="AfterBand" HeightF="899" TextAlignment="TopLeft" Padding="0,0,0,0,100">
+      <Controls>
+        <Item1 Ref="7" ControlType="DevExpress.XtraScheduler.Reporting.HorizontalResourceHeaders, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="horizontalResourceHeaders1" View="#Ref-1" SizeF="549.9999,25" LocationFloat="93.00003,157">
+          <Options Ref="8" />
+          <PrintColorSchemas Ref="9" />
+        </Item1>
+        <Item2 Ref="11" ControlType="DevExpress.XtraScheduler.Reporting.CalendarControl, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="calendarControl1" TimeCells="#Ref-10" View="#Ref-1" SizeF="350,142" LocationFloat="283,8">
+          <PrintColorSchemas Ref="12" />
+        </Item2>
+        <Item3 Ref="10" ControlType="DevExpress.XtraScheduler.Reporting.DayViewTimeCells, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="dayViewTimeCells1" HorizontalHeaders="#Ref-13" VisibleTimeSnapMode="false" View="#Ref-1" SizeF="549.9999,692" LocationFloat="93.00003,207">
+          <AppointmentDisplayOptions Ref="14" ShowShadows="false">
+            <ColumnPadding Ref="15" />
+          </AppointmentDisplayOptions>
+          <ExtraCells Ref="16" />
+          <PrintColorSchemas Ref="17" />
+        </Item3>
+        <Item4 Ref="13" ControlType="DevExpress.XtraScheduler.Reporting.HorizontalDateHeaders, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="horizontalDateHeaders1" HorizontalHeaders="#Ref-7" View="#Ref-1" SizeF="550,25" LocationFloat="93,182">
+          <PrintColorSchemas Ref="18" />
+        </Item4>
+        <Item5 Ref="19" ControlType="DevExpress.XtraScheduler.Reporting.DayViewTimeRuler, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="dayViewTimeRuler1" TimeCells="#Ref-10" View="#Ref-1" SizeF="50,742" LocationFloat="43.00003,157">
+          <TimeRuler Ref="20" />
+          <Corners Ref="21" Top="50" />
+          <PrintColorSchemas Ref="22" />
+        </Item5>
+        <Item6 Ref="23" ControlType="DevExpress.XtraScheduler.Reporting.TimeIntervalInfo, DevExpress.XtraScheduler.v22.1.Reporting, Version=22.1.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4" Name="timeIntervalInfo1" TimeCells="#Ref-10" View="#Ref-1" SizeF="242,100" LocationFloat="17,8">
+          <PrintColorSchemas Ref="24" />
+        </Item6>
+      </Controls>
+    </Item1>
+    <Item2 Ref="25" ControlType="TopMarginBand" Name="topMarginBand1" />
+    <Item3 Ref="26" ControlType="BottomMarginBand" Name="bottomMarginBand1" />
+  </Bands>
+</XtraReportsLayoutSerializer>

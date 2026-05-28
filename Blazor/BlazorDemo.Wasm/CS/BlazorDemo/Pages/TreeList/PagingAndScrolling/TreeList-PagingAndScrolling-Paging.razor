@@ -1,0 +1,100 @@
+﻿@page "/TreeList/PagingAndScrolling/Paging"
+
+<DemoPageSectionComponent Id="TreeList-PagingAndScrolling-Paging" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject IEmployeeTaskDataProvider EmployeeTaskDataProvider
+
+        <div class="treelist-container">
+            <DxTreeList @ref="TreeList"
+                    Data="Data"
+                    KeyFieldName="Id"
+                    ParentKeyFieldName="ParentId"
+                    ColumnResizeMode="TreeListColumnResizeMode.NextColumn"
+                    TextWrapEnabled="false"
+                    PageSize="10"
+                    PagerPosition="@CurrentPagerPosition"
+                    PageSizeSelectorVisible="@PageSizeSelectorVisible"
+                    PageSizeSelectorItems="@(new int[] { 10, 20, 50 })"
+                    PageSizeSelectorAllRowsItemVisible="true"
+                    PagerNavigationMode="@CurrentPagerNavigationMode"
+                    PagerSummaryVisible="@PagerSummaryVisible"
+                    PagerSwitchToInputBoxButtonCount="10"
+                    PagerVisibleNumericButtonCount="10"
+                    SizeMode="Params.SizeMode">
+                <Columns>
+                <DxTreeListDataColumn FieldName="Name" Caption="Task" SortOrder="TreeListColumnSortOrder.Ascending" />
+                <DxTreeListDataColumn FieldName="EmployeeName" Caption="Assigned To" TextAlignment="TreeListTextAlignment.Left" Width="200px"/>
+                <DxTreeListDataColumn FieldName="StartDate" Width="100px"/>
+                <DxTreeListDataColumn FieldName="DueDate" Width="100px"/>
+                <DxTreeListDataColumn FieldName="Priority" Width="100px" CaptionAlignment="TreeListTextAlignment.Center" TextAlignment="TreeListTextAlignment.Center">
+                    <CellDisplayTemplate>
+                        @{
+                            var displayText = EmployeeTask.EmployeeTaskPriorityToString((EmployeeTask)context.DataItem);
+                        }
+                        <span title="@displayText priority">@displayText</span>
+                    </CellDisplayTemplate>
+                </DxTreeListDataColumn>
+                <DxTreeListDataColumn Caption="Progress" FieldName="Status" Width="100px" CaptionAlignment="TreeListTextAlignment.Center" TextAlignment="TreeListTextAlignment.Center">
+                    <CellDisplayTemplate>
+                        <span>@EmployeeTask.EmployeeTaskStatusToString((EmployeeTask)context.DataItem)</span>
+                    </CellDisplayTemplate>
+                </DxTreeListDataColumn>
+            </Columns>
+                <ToolbarTemplate>
+                <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Plain" SizeMode="Params.SizeMode">
+                    <Items>
+                        <DxToolbarItem Alignment="ToolbarItemAlignment.Left">
+                            <Template Context="toolbar_item_context">
+                                <div class="ms-2 me-2">
+                                    <DxCheckBox @bind-Checked="PageSizeSelectorVisible">Page Size Selector</DxCheckBox>
+                                </div>
+                            </Template>
+                        </DxToolbarItem>
+                        <DxToolbarItem Alignment="ToolbarItemAlignment.Left">
+                            <Template Context="toolbar_item_context">
+                                <div class="ms-2 me-2">
+                                    <DxCheckBox @bind-Checked="PagerSummaryVisible">Summary</DxCheckBox>
+                                </div>
+                            </Template>
+                        </DxToolbarItem>
+                        <DxToolbarItem Alignment="ToolbarItemAlignment.Left">
+                            <Template Context="toolbar_item_context">
+                                <div class="d-flex flex-row align-items-center ms-2 me-2">
+                                    <div id="pager-navigation-mode-label" class="me-2">Navigation Controls:</div>
+                                    <DxComboBox @bind-Value="CurrentPagerNavigationMode"
+                                                Data="@(Enum.GetValues<PagerNavigationMode>())"
+                                                aria-labelledby="pager-navigation-mode-label" />
+                                </div>
+                            </Template>
+                        </DxToolbarItem>
+                        <DxToolbarItem Alignment="ToolbarItemAlignment.Left">
+                            <Template Context="toolbar_item_context">
+                                <div class="d-flex flex-row align-items-center ms-2 me-2">
+                                    <div id="pager-position-label" class="me-2">Position:</div>
+                                    <DxComboBox @bind-Value="CurrentPagerPosition"
+                                                Data="@(Enum.GetValues<TreeListPagerPosition>())"
+                                                aria-labelledby="pager-position-label" />
+                                </div>
+                            </Template>
+                        </DxToolbarItem>
+                    </Items>
+                </DxToolbar>
+            </ToolbarTemplate>
+            </DxTreeList>
+        </div>
+        @code {
+            ITreeList TreeList { get; set; }
+            object Data { get; set; }
+
+            TreeListPagerPosition CurrentPagerPosition { get; set; } = TreeListPagerPosition.Bottom;
+            bool PageSizeSelectorVisible { get; set; } = true;
+            PagerNavigationMode CurrentPagerNavigationMode { get; set; } = PagerNavigationMode.NumericButtons;
+            bool PagerSummaryVisible { get; set; } = true;
+
+            protected override void OnInitialized () {
+                Data = EmployeeTaskDataProvider.GenerateData();
+            }
+        }
+
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

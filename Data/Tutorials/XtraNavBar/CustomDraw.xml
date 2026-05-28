@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="H:\Work\XML Schemes\module-new.xsd">
+	<controls>
+		<controlentry>
+			<control>
+				<name>checkBox1</name>
+				<windowcaption>Custom Draw Background</windowcaption>
+				<description>If checked, the navbar's background is custom painted.</description>
+				<memberlist>CustomDrawBackground</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>checkBox2</name>
+				<windowcaption>Custom Draw Group Caption</windowcaption>
+				<description>If checked, the group captions are custom painted.</description>
+				<memberlist>CustomDrawGroupCaption</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>checkBox3</name>
+				<windowcaption>Custom Draw Group Client Background</windowcaption>
+				<description>If checked, the client area of groups is custom painted.</description>
+				<memberlist>CustomDrawGroupClientBackground</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>checkBox4</name>
+				<windowcaption>Custom Draw Group Client Foreground</windowcaption>
+				<description>If checked, the client area's foreground of groups is custom painted.</description>
+				<memberlist>CustomDrawGroupClientForeground</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>checkBox5</name>
+				<windowcaption>Custom Draw Link</windowcaption>
+				<description>If checked, the item links are custom painted.</description>
+				<memberlist>CustomDrawLink</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>checkBox6</name>
+				<windowcaption>Calc Group Client Height</windowcaption>
+				<description>If checked, the "Details" group is painted with the custom height.</description>
+				<memberlist>CalcGroupClientHeight</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+	</controls>
+</totalinfo>

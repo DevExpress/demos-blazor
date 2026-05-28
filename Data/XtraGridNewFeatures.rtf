@@ -1,0 +1,129 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033\deflangfe1033\deftab708{\fonttbl{\f0\fswiss\fprq2\fcharset204 Tahoma;}{\f1\fswiss\fprq2\fcharset0 Tahoma;}{\f2\froman\fprq2\fcharset2 Symbol;}{\f3\fswiss\fprq2\fcharset204 Calibri;}{\f4\froman\fprq2\fcharset204{\*\fname Times New Roman;}Times New Roman CYR;}{\f5\fnil\fprq2\fcharset2 Wingdings;}{\f6\fnil\fcharset2 Symbol;}}
+{\*\generator Msftedit 5.41.21.2508;}\viewkind4\uc1\pard\nowidctlpar\li270\sb100\sa120\lang1049\f0\fs22 Below is the version history of the XtraGrid control since version v2006 vol 1. Only the main features and major functionality changes are listed below.\par
+\b\par
+VERSION 20\lang1033\f1 11\lang1049\f0  vol \lang1033\f1 1\lang1049\b0\f0\par
+\pard\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134\f2\fs20\'b7\tab\lang1033\f1 Multiple Column Summaries - You can now calculate multiple summaries for a single column and show them all at the same time in the grid's footer. It is possible to add multiple summaries for a column in code, or allow an end-user to add summaries using a context menu.\lang1049\f0\par
+\f2\'b7\tab\lang1033\f1 Expressions for Unbound Columns in Server Mode - Unbound grid columns can be populated in server mode with data obtained from expressions.\lang1049\f0\par
+\f2\'b7\tab\lang1033\f1 Group Intervals for DateTime Columns in Server Mode - We have added support for group intervals for date-time columns in server mode. You can now change group intervals using a single property setting in server mode in the same way as you already can do in regular binding mode.\par
+\lang1049\f2\'b7\tab\lang1033\f1 New Scroll Mode - Fix Group Rows - Using this new scroll mode, the top row for the visible group will always be shown as you scroll through the grouped data. Additionally, a dedicated icon is displayed in the top group row to indicate that the grouped data is only partially displayed.\par
+\lang1049\f2\'b7\tab\lang1033\f1 Incremental Search Support in Column Filter Dropdowns - Whether you choose to use regular or checked filter dropdowns for your columns, you can now use the incremental search feature to locate values in the dropdown lists.\par
+\lang1049\f2\'b7\tab\lang1033\f1 Built-in context menu for bands - This menu contains general commands that are used to work with a banded View.\par
+\lang1049\f0\par
+\pard\nowidctlpar\li270\sb100\sa120\b\fs22 VERSION 20\lang1033\f1 10\lang1049\f0  vol \lang1033\f1 2\lang1049\b0\f0\par
+\pard\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134\f2\fs20\'b7\tab\lang1033\f1 Find Panel - \lang1049\f0 deliver\lang1033\f1 s\lang1049\f0  an easy and straightforward way for end-users to locate information within the \lang1033\f1 Grid \lang1049\f0 control.\lang1033\f1  Press CTRL+F to show the Find Panel.\lang1049\f0\par
+\f2\'b7\tab\f0 Instant Feedback(tm) UI\line With our new Instant Feedback binding mode, you'll no longer experience any UI freezing. Data operations will be performed asynchronously, in a background thread and both the Grid Control and your application will be always highly responsive.\lang1033\f1\tab\lang1049\f0\par
+\f2\'b7\tab\f0 Search LookUp Editor\line This new editor combines lookup functionality with our new Find feature. Like the GridLookUpEdit control, the Search LookUp Editor embeds a grid control in the dropdown, and provides numerous grid customization features. The built-in Find box allows you to quickly locate data.\fs22\par
+\pard\nowidctlpar\li270\sb100\sa120\par
+\b VERSION 20\lang1033\f1 10\lang1049\f0  vol \lang1033\f1 1\lang1049\b0\f0\par
+\pard\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134\f2\fs20\'b7\tab\f0 New Column Drag-and-Drop Indication Style\line A column's current drag-and-drop position is now indicated using arrow glyphs. The arrow glyphs can be changed via skin elements.\par
+\f2\'b7\tab\f0 Checked Filter Dropdown List Improvement\line Now, by default, the filter dropdown list, represented as a checked list, displays all the values that are available for filtering. The previous default constraint that limited the number of available filter values has been removed. Still, you can set it back if required.\par
+\f2\'b7\tab\f0 AdvancedBandedGridView  - Column resizing mechanism improved\line Columns are now resized accurately, without affecting the size of neighboring columns.\fs22\par
+\pard\nowidctlpar\li270\sb100\sa120\par
+\b VERSION 2009 vol 2\b0\par
+\pard\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134\f2\fs20\'b7\tab\f0 Setting the Group Interval for Date-Time Columns by End-Users at Runtime - A new menu command is available when data is grouped by date-time columns. It allows an end-user to dynamically set the group interval for the date-time columns at runtime without additional code from your part.\par
+\f2\'b7\tab\f0 Defining Group Summaries by End-Users at Runtime - At runtime, end-users can specify group summaries to be calculated by right-clicking a grouping column's header and selecting the Group Summary Editor menu. The editor invoked allows group summaries to be easily customized. Just select the field and the summary type to be calculated.\f2\par
+\'b7\tab\f0 Ability to use string expressions to specify criteria for unbound columns and format conditions.\par
+\pard\nowidctlpar\li270\sb100\sa120\fs22\par
+\b VERSION 2009 vol 1\b0\par
+\pard\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134\f2\fs20\'b7\tab\f0 Windows Vista Style Filtering for Date-Time Columns -\f3\fs22  \f0\fs20 For date-time columns, you can easily filter data using a handy filter dropdown, which now contains an embedded calendar. In addition, the filter dropdown also contains check boxes that allow selecting commonly used date intervals: Today, Yesterday, Earlier this Week, etc.\par
+\f2\'b7\tab\f0 Sorting by Summary - End-User Capabilities - In group mode, summaries can be calculated against groups of rows. Now, an end-user can sort group rows according to group summary values via context menus. To invoke this menu, right-click on a grouping column's header. When sorting a grouping column this way, a special glyph is displayed within its header.\f2\par
+\'b7\tab\f0 Captions for Grid Views - You can enable captions for the grid control and detail Views, to display captions or any custom descriptive information to end-users. In addition, you can customize the font settings, alignment and foreground color for the caption\rquote s text.\par
+\f2\'b7\tab\f0 Printing and Exporting Only Selected Rows.\par
+\f2\'b7\tab\f0 Advanced Incremental Filtering in Lookup Editors - If text editing is enabled in a GridLookUpEdit control, an end-user can search for rows by typing text in the edit box. The new PopupFilterMode property specifies how the search is performed. By default, the control searches for the rows that contain the entered text at any position in the row's value. You can also force the control to search for the rows whose values begin with the entered text.\par
+\f2\'b7\tab\f0 In Grid Views, a column's settings have been extended by introducing the maximum width property. Assume that the auto-width feature is enabled for a Grid View. Increasing the grid's width proportionally resizes all the columns. If you want to retain a narrow width for columns with little content, you can now specify their maximum width.\par
+\f2\'b7\tab\f0 With this version, copying cells to the clipboard also copies column captions to the clipboard, allowing easy identification of cell data.\par
+\pard\nowidctlpar\fi-270\li1080\sb100\sa120\tx1134\f2\'b7\tab\f0 When an end-user navigates through grid cells using the TAB key, all row cells are processed sequentially. However, in specific situations, when entering values, you may need to skip some cells. To do this, you can use the new TabStop option to prevent cells from being focused by the TAB key. This will allow your end-users to navigate only through predefined columns, while skipping others using the TAB key.\par
+\f2\'b7\tab\f0 By default, the grid displays detail data compactly, without extra indents. However, with the new DetailVerticalIndent property, you can implement your own settings for vertical detail padding.\par
+\f2\'b7\tab\f0 When the grid is bound to a data source, columns are created for all fields in the data source. By default, the Caption properties of columns are set to empty strings. In this instance, the grid automatically generates human-readable column captions from field names, and displays them in column headers. For instance, if a field name is "CustomerName", the caption will be "Customer Name".\par
+\f2\'b7\tab\f0 You can now enable automatic summary calculation for columns, displaying TimeSpan values. No additional code is required.\par
+\f2\par
+\b\f0 Miscellaneous\par
+\pard\nowidctlpar\fi-270\li1080\sb120\tx1134\b0\f2\'b7\tab\f0 Added the OptionsColumn.AllowShowHide property that allows columns to be hidden even if the AllowMove property is set to false\par
+\f2\'b7\tab\f0 Added the ability to identify the original exception inside the InvalidValue event\par
+\f2\'b7\tab\f0 Added the OptionsCustomization.AllowQuickHideColumns property, to disable column hiding by dragging\par
+\f2\'b7\tab\f0 Added a SetFocusedRowCellValue overload that accepts a field name as a parameter\par
+\f2\'b7\tab\f0 Added the AllowBandResizing and AllowBandMoving properties\par
+\f2\'b7\tab\f0 Added the RowClick and RowCellClick events\par
+\f2\'b7\tab\f0 Added the AddVisible methods to create visible columns\par
+\f2\'b7\tab\f0 Added the ShowGroupExpandCollapseButton property to hide group expand buttons\par
+\f2\'b7\tab\f0 Added the GridView.GetFocusedDataSourceRowIndex method\par
+\f2\'b7\tab\f0 Added the ColumnPositionChanged event \par
+\f2\'b7\tab\f0 Added the ColumnView.OptionsBehavior.AllowDeleteRows and AllowAddRows options, to disable the embedded navigator\rquote s Append and Delete buttons\par
+\f2\'b7\tab\f0 Added EditorShowMode.MouseDownFocused mode, where an in-place editor is shown after two clicks on a cell\par
+\f2\'b7\tab\f0 Apply appearance settings supplied via the RowStyle event when the XtraGrid is being printed\par
+\f2\'b7\tab\f0 A\f4  \f0 Bands' MinWidth in BandedGridView are taken into account when columns are resized\par
+\f2\'b7\tab\f0 Changed the column auto-scroll delay interval that is used before drag-and-drop is initiated\par
+\f2\'b7\tab\f0 Column header context menu - added the "Hide column" command\par
+\f2\'b7\tab\f0 Custom display text supplied via the CustomColumnDisplayText event is used for incremental search\par
+\f2\'b7\tab\f0 Designer \endash  Fields are sorted in alphabetical order\par
+\f2\'b7\tab\f0 Dragging a column header outside of a control will always indicate 'X' \par
+\f2\'b7\tab\f0 Design-time - Repository item list is now sorted\par
+\f2\'b7\tab\f0 Export to XLS \endash  Added the RepositoryItem.ExportMode property, that specifies whether values of a particular column are exported as display text or edit value\par
+\f2\'b7\tab\f0 Filter MRU list in filter panel \endash  Items can be removed from the list by pressing DELETE\par
+\f2\'b7\tab\f0 Focus the last visible record when PAGE DOWN is pressed\par
+\f2\'b7\tab\f0 GridLookupEdit - Access to the DataSource and DataMember properties via Smart Tags in the Designer\par
+\f2\'b7\tab\f0 GridView.CalcHitInfo now allows you to detect a detail tab under the mouse pointer\par
+\f2\'b7\tab\f0 Hide the footer cell beneath the indicator\par
+\f2\'b7\tab\f0 Hints over footer cells\par
+\f2\'b7\tab\f0 Filter Custom Dialog form \endash  Editors are painted in a different color\par
+\f2\'b7\tab\f0 Made the CardView.CardCaptionFormat property ('Record N \{0\}') localizable\par
+\f2\'b7\tab\f0 New Item Row is saved when clicking the empty grid area\par
+\f2\'b7\tab\f0 Option UseAdvVertNavigation is applied to the New Item Row and Auto Filter Row\par
+\f2\'b7\tab\f0 Printing - Allow printing (exporting) only selected rows and their details\par
+\f2\'b7\tab\f0 Printing \endash  Added the GridView.PrintRow event to insert custom page breaks via the PrintingSystem.InsertPageBreak method\par
+\f2\'b7\tab\f0 RowCellStyle event \endash  Added the CellValue event parameter\par
+\f2\'b7\tab\f0 Save/restore the FormatConditions property when the layout is saved/restored\par
+\f2\'b7\tab\f0 Save/restore the GroupSummarySortInfo property with the layout \par
+\f2\'b7\tab\f0 Support for using the word wrap and text trimming features together\par
+\f2\'b7\tab\f0 The (Show All) item in the For CheckedList filter dropdowns selects all columns instead of clearing the filter for the column\par
+\f2\'b7\tab\f0 Values of the summaries applied by end-users via context menus are formatted according to the Column.DisplayFormat\par
+\pard\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134\f2\par
+\par
+\pard\nowidctlpar\li270\sb100\sa120\b\f0\fs22 VERSION 2008 vol 2\b0\par
+\pard\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134\f2\fs20\'b7\tab\f0 HTML formatting - allows you to provide a custom appearance for individual column and band captions using HTML formatting. With this feature, you can use HTML tags when specifying captions. The following tags are supported: br (new line), color, size, b (bold), i (italic), u (underline).\par
+\f2\'b7\tab\f0 Server Mode Performance Improvement - Now, by default, when a grid operates in server mode, a focused row and selection are not restored after sorting, grouping or filtering. This allows you to significantly improve application performance by avoiding additional requests to the server. However, if you need to preserve a focused row and selection, set the grid control's AllowRestoreSelectionAndFocusedRow property to 'True'.\f2\par
+\'b7\tab\f0 We've added the Contains comparison operator used in filter conditions. Three built-in comparison operators are now available. They include the following: Contains, Like, Equals.\par
+\pard\nowidctlpar\li270\sb100\sa120\b\fs22\par
+VERSION 2008 vol 1\b0\par
+\pard\nowidctlpar\li284\sb100\sa100\f5\fs24\'fc\fs20\tab\b\f0 Layout View Features\par
+\pard\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134\b0\f2\'b7\tab\f0 Runtime layout customization - This feature allows end-users to easily customize the field layout in cards at runtime, using drag-and-drop\par
+\f2\'b7\tab\f0 New layout elements - Tabbed interface, static labels, separators and icons in fields and groups.\par
+\f2\'b7\tab\f0 Stretching Cards to View - Cards can be horizontally or vertically stretched to\~completely fill the View's width or height, allowing you to emulate detail entry forms.\par
+\pard\nowidctlpar\li284\sb100\sa100\f5\fs24\'fc\fs20\tab\b\f0 Other Enhancements\par
+\pard\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134\b0\f2\'b7\tab\f0 Filter Drop-Down List with Check Boxes - The grid control now supports checked filter drop-down lists, which allow your end-users to filter columns against multiple values on the fly.\par
+\f2\'b7\tab\f0 LINQ Server mode - Server mode supported by our grid controls that allows you to efficiently work with large amounts of data. Previously, server mode was supported only for XPO datasources out of the box. Now, any LINQ query provider is also supported.\par
+\f2\'b7\tab\f0 New CheckedComboBoxEdit control can be used in-place within the grid, for representing and editing a set of Boolean options or bit fields in a popup window.\par
+\pard\nowidctlpar\li270\sb100\sa120\fs22\par
+\b VERSION 2007 vol 3\b0\par
+\pard\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134\f2\fs20\'b7\tab\f0 Layout View - a new data representation format, that allows data records to be displayed as cards, supporting advanced field layout capabilities. Multiple card layouts are also supported.\par
+\f2\'b7\tab\f0 Displaying RTF data in cells.\f2\par
+\'b7\tab\f0 Animation - Support for animated GIF files when using the ImageEdit and PictureEdit controls for in-place editing.\par
+\pard\nowidctlpar\li270\sb100\sa120\b\fs22\par
+VERSION 2007 vol 2\b0\par
+\pard\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134\f2\fs20\'b7\tab\f0 Data editing in \b Server Mode\b0 .\par
+\pard\nowidctlpar\li270\sb100\sa120\b\fs22\par
+VERSION 2007 vol 1\b0\par
+\pard\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134\f2\fs20\'b7\tab\b\f0 Server Mode\b0  - New data binding mode tailored to work with large datasets, consisting of more than 50,000 records (however, the specific amount of data depends on your circumstances). In server mode, the GridControl and GridLookUpEdit controls load data in small portions, optimizing memory usage and data transmission. In addition, all data-aware operations initiated by end-users via the grid control (sorting, grouping and filtering data, calculating summaries) are performed on the server side. All of this ensures quick access to data, and eliminates various problems related to loading large volumes of data and processing it on the client side.\par
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134 The XtraGrid control supports the IDXDataErrorInfo interface. If a data source implements this interface, the grid control bound to this data source will display error icons within cells. Multiple error icon types are supported.\f4\fs24  \f0\fs20\par
+\pard\nowidctlpar\li270\sb100\sa120\b\fs22\par
+VERSION 2006 vol 3\b0\par
+\pard\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134\f2\fs20\'b7\tab\f0 Filtering data using a standalone FilterControl - The filtering functionality has been extended to allow the XtraGrid control to be filtered using a standalone FilterControl. In this instance an end-user can filter data right on the form, without the need to invoke the grid's embedded Filter Editor via the Filter Panel. \par
+\pard\nowidctlpar\li270\sb100\sa120\fs22\par
+\b VERSION 2006 vol 2\b0\par
+\pard\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134\f2\fs20\'b7\tab\f0 Filter Editor - This embedded control provides advanced capabilities to create complex filter criteria for the grid control. Also, if you apply a filter to the grid in some other way, the Filter Editor will parse the criteria and present them in a well-structured form - as individual filter conditions combined by logical operators. \par
+\f2\'b7\tab\f0 Better Support for the XtraPrinting Library. We have re-designed the XtraGrid Suite to better support the XtraPrinting Library. Now, the content of the XtraGrid control can be correctly exported to all formats supported by the XtraPrinting Library, including PDF.\par
+\pard\nowidctlpar\li270\sb100\sa120\fs22\par
+\b VERSION 2006 vol 1\par
+\pard\nowidctlpar\li284\sb100\sa100\b0\f5\fs24\'fc\fs20\tab\b\f0 New Controls\par
+\pard\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134\b0\f2\'b7\tab\f0 The GridLookUpEdit control - a successor to the LookUpEdit editor - provides lookup functionality using an embedded XtraGrid control. The control can be used standalone or in-place. The main benefit of the GridLookUpEdit control is in the ability to use the advanced features of the embedded XtraGrid control to represent data. \par
+\pard\nowidctlpar\li284\sb100\sa100\f5\fs24\'fc\tab\b\f0\fs20 All Views Specifics\par
+\pard\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134\b0\f2\'b7\tab\f0 Controlling a row's visibility - The ColumnView.CustomRowFilter event allows you to control a row's visibility within a View, regardless of the View's filter.\par
+\f2\'b7\tab\f0 Browsing data without immediate editor activation - Set the ColumnViewOptionsBehavior.EditorShowMode property to EditorShowMode.Click to activate this browsing mode. An editor is not invoked on the first click within a cell, but is activated on a subsequent click. \par
+\f2\'b7\tab\f0 Full support for scrolling using the Mouse Wheel - An end-user can press a mouse wheel over a View and then move the pointer in the direction he/she wants to scroll. The View's contents will scrolled automatically. \par
+\f2\'b7\tab\f0 Support for glyphs with alpha-channels - It's possible to assign images with alpha-channels to column and band headers and in card captions. The look of a grid's elements will be much smoother when using such images. Use the ImageCollection component instead of the standard System.Windows.Forms.ImageList, to store images with transparency.\par
+\pard\nowidctlpar\li284\sb100\sa100\f5\fs24\'fc\fs20\tab\b\f0 GridView (and Descendants) Specifics\par
+\pard\nowidctlpar\fi-360\li1134\sb100\sa120\tx1134\b0\f2\'b7\tab\f0 Cell Selection (supported in grid and banded grid Views) - In this selection mode, end-users are able to select individual cells and blocks of cells (compared with standard multi-selection mode, when only entire rows can be selected). \par
+\f2\'b7\tab\f0 Filter Buttons as Smart Tags - The GridOptionsView.HeaderFilterButtonShowMode property allows you to specify how filter buttons are displayed: as regular buttons or as smart tags that are only made visible when a column header is hovered over.\par
+\f2\'b7\tab\f0 Support for translucent colors for focused and selected rows.\f5\fs24\par
+}
+ 

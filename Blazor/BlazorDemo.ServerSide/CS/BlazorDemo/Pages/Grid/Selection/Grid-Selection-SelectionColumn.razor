@@ -1,0 +1,64 @@
+﻿@page "/Grid/Selection/SelectionColumn"
+@layout DataProviderAccessArea<INwindDataProvider>
+
+<DemoPageSectionComponent Id="Grid-Selection-SelectionColumn" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <div class="grid-container">
+            <DxGrid Data="Products"
+                    KeyFieldName="ProductId"
+                    PageSize="20"
+                    @bind-SelectedDataItems="SelectedDataItems"
+                    ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                    TextWrapEnabled="false"
+                    SizeMode="Params.SizeMode"
+                    SelectAllCheckboxMode="CurrentSelectAllCheckboxMode"
+                    HighlightRowOnHover="true">
+                <Columns>
+                    <DxGridSelectionColumn Width="104px" />
+                    <DxGridDataColumn FieldName="ProductName" MinWidth="100" />
+                    <DxGridDataColumn FieldName="CategoryId" Caption="Category" MinWidth="100">
+                        <EditSettings>
+                            <DxComboBoxSettings Data="Categories" ValueFieldName="CategoryId" TextFieldName="CategoryName" />
+                        </EditSettings>
+                    </DxGridDataColumn>
+                    <DxGridDataColumn FieldName="UnitPrice" DisplayFormat="c" Width="10%" />
+                    <DxGridDataColumn FieldName="UnitsInStock" Caption="Units in Stock" Width="10%" />
+                    <DxGridDataColumn FieldName="QuantityPerUnit" Caption="Quantity per Unit" Width="15%" MinWidth="80" />
+                    <DxGridDataColumn FieldName="Discontinued" Width="10%" MinWidth="90" />
+                </Columns>
+                <ToolbarTemplate>
+                    <DxToolbar ItemRenderStyleMode="ToolbarRenderStyleMode.Contained" SizeMode="Params.SizeMode">
+                        <Items>
+                            <DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
+                                <Template Context="toolbar_item_context">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <label class="me-2" for="selectAllCheckboxModeInput">Select All Checkbox Mode:</label>
+                                        <DxComboBox Data="@SelectAllCheckboxModes"
+                                            @bind-Value="@CurrentSelectAllCheckboxMode" InputId="selectAllCheckboxModeInput" />
+                                    </div>
+                                </Template>
+                            </DxToolbarItem>
+                        </Items>
+                    </DxToolbar>
+                </ToolbarTemplate>
+            </DxGrid>
+            <p class="demo-text w-100 mt-2">The number of selected products: <b>@(SelectedDataItems.Count())</b></p>
+        </div>
+
+        @code {
+            IEnumerable<Product> Products { get; set; }
+            IReadOnlyList<Category> Categories { get; set; }
+            IReadOnlyList<object> SelectedDataItems { get; set; }
+            IEnumerable<GridSelectAllCheckboxMode> SelectAllCheckboxModes { get; } = Enum.GetValues<GridSelectAllCheckboxMode>();
+            GridSelectAllCheckboxMode CurrentSelectAllCheckboxMode { get; set; }
+
+            protected override async Task OnInitializedAsync() {
+                Categories = (await NwindDataService.GetCategoriesAsync()).ToList();
+                Products = await NwindDataService.GetProductsAsync();
+                SelectedDataItems = Products.Where(x => x.UnitPrice > 30).ToList();
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

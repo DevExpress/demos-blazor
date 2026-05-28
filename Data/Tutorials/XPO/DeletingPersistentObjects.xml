@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="H:\Work\XML Schemes\module-new.xsd">
+	<controls>
+		<controlentry>
+			<control>
+				<name>sbDeleteSelected</name>
+				<windowcaption>Delete Record</windowcaption>
+				<description>Deletes a persistent object that corresponds to the focused grid row. XPO does not physically delete the record in the underlying data store. Instead, it marks the record as deleted.</description>
+				<memberlist>UnitOfWork.Delete, CommitChanges()</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>gridControl1</name>
+				<windowcaption>XtraGrid</windowcaption>
+				<description>The RowStyle event is handled to provide custom appearance settings of rows that correspond to persistent objects marked as deleted.</description>
+				<memberlist>FocusedRowChanged, RowStyle</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>sbRestore</name>
+				<windowcaption>Restore</windowcaption>
+				<description>Restores deleted object (record).</description>
+				<memberlist>UnitOfWork.Delete, CommitChanges()</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>sbImmediateDelete</name>
+				<windowcaption>Delete</windowcaption>
+				<description>Immediately deletes a persistent object that corresponds to the focused grid row. The record in the underlying data store is immediately deleted after the object has been deleted.</description>
+				<memberlist>UnitOfWork.Delete, CommitChanges()</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>sbImmediateDelete</name>
+				<windowcaption>Delete</windowcaption>
+				<description>Immediately deletes a persistent object that corresponds to the focused grid row. The record in the underlying data store is immediately deleted after the object has been deleted.</description>
+				<memberlist>UnitOfWork.Delete, CommitChanges()</memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>sbAddNew</name>
+				<windowcaption>Add New Record</windowcaption>
+				<description>Creates a new persistent object (record) with default settings and reloads the collection to reflect the changes.</description>
+				<memberlist></memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+	</controls>
+</totalinfo>

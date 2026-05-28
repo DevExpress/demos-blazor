@@ -1,0 +1,54 @@
+.main-content {
+    display: flex;
+    height: 100%;
+}
+
+.block-content {
+    border-radius: 0.5rem;
+    flex-grow: 0;
+    margin: auto;
+    max-width: 30rem;
+    padding: 1.5rem;
+    width: auto;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 0.625rem;
+}
+
+    .title .title-header-text {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        font-weight: 600;
+        letter-spacing: 0;
+    }
+
+    .title .title-content-text {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 400;
+        letter-spacing: 0;
+    }
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow-wrap: break-word;
+    background-color: var(--dxds-color-surface-neutral-default-rest);
+    background-clip: border-box;
+    border: var(--dxds-border-radius-10) solid var(--dxds-color-border-neutral-default-rest);
+    border-radius: 0.25rem;
+}
+
+::deep .w-100 {
+    width: 100%;
+}
+
+::deep .text-danger {
+    color: var(--dxds-color-surface-danger-default-rest);
+}

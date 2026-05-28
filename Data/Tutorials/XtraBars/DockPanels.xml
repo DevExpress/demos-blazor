@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo>                                   
+<controls>
+<controlentry>
+		<control>
+			<name>sbAutoHide</name>
+			<windowcaption>AutoHide Root Panels</windowcaption>
+			<description>Enables the Auto-Hide feature for the root panels.</description>
+			<memberlist>RootPanels, DockPanel.Visibility</memberlist>
+			<dtimage></dtimage>
+		</control>
+</controlentry>
+<controlentry>
+		<control>
+			<name>sbAddPanel</name>
+			<windowcaption>Add Panel To:</windowcaption>
+			<description>Creates a new dock panel and docks it to the form using the specified docking style. Use the combo box to select the docking style.</description>
+			<memberlist>AddPanel</memberlist>
+			<dtimage></dtimage>
+		</control>
+</controlentry>
+</controls>
+</totalinfo>                     

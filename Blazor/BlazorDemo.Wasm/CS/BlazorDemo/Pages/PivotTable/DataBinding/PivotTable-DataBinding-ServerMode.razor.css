@@ -1,0 +1,8 @@
+.pivot-container {
+    width: 100%;
+    height: 522px;
+}
+/*BeginHide*/ ::deep /*EndHide*/.dxbl-pivot-table {
+    width: 100%;
+    height: 100%;
+}

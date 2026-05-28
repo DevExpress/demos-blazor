@@ -1,0 +1,32 @@
+/*BeginHide*/::deep .treelist-toolbar-new,
+    ::deep .treelist-toolbar-delete,
+    ::deep .treelist-toolbar-save,
+    ::deep .treelist-toolbar-cancel {
+    background-size: contain;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    background-position: center center;
+}/*EndHide*/
+
+/*BeginHide*/::deep /*EndHide*/.treelist-modified-cell {
+    background-color: color-mix(in srgb, rgb(var(--bs-primary-rgb)) 15%, white) !important;
+}
+/*BeginHide*/ .treelist-container {
+    display: contents;
+}
+
+::deep .grid-delete-btn:hover,
+::deep .grid-new-btn:hover {
+    color: var(--dxds-color-surface-warning-default-rest);
+}
+::deep .grid-delete-btn,
+::deep .grid-new-btn {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
+    &.dxbl-sm {
+        padding-top: 0.1rem;
+        padding-bottom: 0.1rem;
+    }
+}
+/*EndHide*/

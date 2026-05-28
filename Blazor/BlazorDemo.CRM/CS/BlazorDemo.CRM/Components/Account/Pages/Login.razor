@@ -1,0 +1,106 @@
+﻿@page "/Account/Login"
+
+@using System.ComponentModel.DataAnnotations
+@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Identity
+@using BlazorDemo.CRM.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject ILogger<Login> Logger
+@inject NavigationManager NavigationManager
+@inject IdentityRedirectManager RedirectManager
+
+<PageTitle>Log in</PageTitle>
+
+<div class="block-content card">
+    <StatusMessage Message="@errorMessage" />
+    <EditForm Model="@Input" method="post" OnValidSubmit="LoginUser" FormName="login" Context="Login">
+        <DataAnnotationsValidator />
+        <DxFormLayout CaptionPosition=@CaptionPosition.Vertical>
+            <DxFormLayoutItem ColSpanMd="12">
+                <div class="title">
+                    <div class="title-text">Log in</div>
+                </div>
+            </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Email" ColSpanMd="12" BeginRow="true">
+                <InteractiveServerTextBox Name="Input.Email" type="email" Value="@Input.Email" />
+                <ValidationMessage class="text-danger" For="() => Input.Email" />
+            </DxFormLayoutItem>
+            <DxFormLayoutItem Caption="Password" ColSpanMd="12" BeginRow="true">
+                <InteractiveServerTextBox Name="Input.Password" Value="@Input.Password" Password="true" NullText="This demo doesn't require a password" />
+                <ValidationMessage class="text-danger" For="() => Input.Password" />
+            </DxFormLayoutItem>
+            <DxFormLayoutItem ColSpanMd="12" BeginRow="true">
+                <InteractiveServerCheckbox Name="Input.RememberMe" InputId="rememberme" Value="@Input.RememberMe" LabelText="Remember me?"/>
+            </DxFormLayoutItem>
+            <DxFormLayoutItem ColSpanMd="12" BeginRow="true">
+                <DxButton CssClass="w-100" SubmitFormOnClick="true" Text="Login"></DxButton>
+            </DxFormLayoutItem>
+        </DxFormLayout>
+    </EditForm>
+    <div class="or">
+        <div class="or-line"></div>
+        <div class="or-text">or</div>
+        <div class="or-line"></div>
+    </div>
+    <ExternalLoginPicker />
+    <div class="links-container">
+        <span>Do not have a Account?</span><a href="@(NavigationManager.GetUriWithQueryParameters("Account/Register", new Dictionary<string, object?> { ["ReturnUrl"] = ReturnUrl }))">Register</a>
+    </div>
+    <div class="links-container">
+        <a href="Account/ResendEmailConfirmation">Resend email confirmation</a>
+        <div class="dot"></div>
+        <a href="Account/ForgotPassword">Forgot your password?</a>
+    </div>
+</div>
+
+@code {
+    private string? errorMessage;
+
+    [CascadingParameter]
+    private HttpContext HttpContext { get; set; } = default!;
+
+    [SupplyParameterFromForm]
+    private InputModel Input { get; set; } = new();
+
+    [SupplyParameterFromQuery]
+    private string? ReturnUrl { get; set; }
+
+    public async Task LoginUser() {
+        // This doesn't count login failures towards account lockout
+        // To enable password failures to trigger account lockout, set lockoutOnFailure: true
+        var result = await SignInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+        if(result.Succeeded) {
+            Logger.LogInformation("User logged in.");
+            RedirectManager.RedirectTo(ReturnUrl);
+        } else if(result.RequiresTwoFactor) {
+            RedirectManager.RedirectTo(
+                "Account/LoginWith2fa",
+                new() { ["returnUrl"] = ReturnUrl, ["rememberMe"] = Input.RememberMe });
+        } else if(result.IsLockedOut) {
+            Logger.LogWarning("User account locked out.");
+            RedirectManager.RedirectTo("Account/Lockout");
+        } else {
+            errorMessage = "Error: Invalid login attempt.";
+        }
+    }
+
+    protected override void OnInitialized() {
+        Input.Email = DemoData.UserEmail;
+        Input.Password = DemoData.UserPassword;
+        base.OnInitialized();
+    }
+
+    private sealed class InputModel {
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; } = "";
+
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; } = "";
+
+        [Display(Name = "Remember me?")]
+        public bool RememberMe { get; set; }
+    }
+}

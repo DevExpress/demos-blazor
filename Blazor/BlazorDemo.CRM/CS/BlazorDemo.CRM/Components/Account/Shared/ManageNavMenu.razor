@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using BlazorDemo.CRM.Data
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+<DxTabs @bind-ActiveTabIndex="ActiveTabIndex">
+    <DxTab TabIconCssClass="tab-icon icon-profile" Text="Profile" Click="@(() => NavigationManager.NavigateTo("Account/Manage"))"/>
+    <DxTab TabIconCssClass="tab-icon icon-email" Text="Email" Click="@(() => NavigationManager.NavigateTo("Account/Manage/Email"))"/>
+    <DxTab TabIconCssClass="tab-icon icon-password" Text="Password" Click="@(() => NavigationManager.NavigateTo("Account/Manage/ChangePassword"))"/>
+    @if(hasExternalLogins) {
+        <DxTab TabIconCssClass="tab-icon icon-external" Text="External logins" Click="@(() => NavigationManager.NavigateTo("Account/Manage/ExternalLogins"))"/>
+    }
+    <DxTab TabIconCssClass="tab-icon icon-two-factor" Text="Two-factor authentication" Click="@(() => NavigationManager.NavigateTo("Account/Manage/TwoFactorAuthentication"))"/>
+    <DxTab TabIconCssClass="tab-icon icon-personal" Text="Personal Data" Click="@(() => NavigationManager.NavigateTo("Account/Manage/PersonalData"))"/>
+</DxTabs>
+
+@code {
+    private bool hasExternalLogins;
+
+    int ActiveTabIndex { get; set; } = 0;
+
+    protected override async Task OnInitializedAsync() {
+        hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
+        if(NavigationManager.Uri.Contains("Account/Manage/Email")) ActiveTabIndex = 1;
+        if(NavigationManager.Uri.Contains("Account/Manage/ChangePassword")) ActiveTabIndex = 2;
+        if(NavigationManager.Uri.Contains("Account/Manage/ExternalLogins")) ActiveTabIndex = 3;
+        if(NavigationManager.Uri.Contains("Account/Manage/TwoFactorAuthentication")) ActiveTabIndex = hasExternalLogins ? 4 : 3;
+        if(NavigationManager.Uri.Contains("Account/Manage/PersonalData")) ActiveTabIndex = hasExternalLogins ? 5 : 4;
+    }
+}

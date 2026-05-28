@@ -1,0 +1,47 @@
+﻿@inject NwindDataService NwindDataService
+<DemoPageSectionComponent Id="Navigation-Accordion-Overview" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <div class="cw-480 demo-preventsel">
+            <DxAccordion ExpandMode="ExpandMode"
+                         ExpandCollapseAction="ExpandCollapseAction"
+                         SizeMode="Params.SizeMode"
+                         AnimationType="LayoutAnimationType.Slide">
+                <Items>
+                    @foreach(var (employee, i) in Items) {
+                        <DxAccordionItem Text=@($"{employee.FirstName} {employee.LastName}") Expanded=@(i == 0)>
+                            <ContentTemplate>
+                                <div class="py-3 px-3" tabindex="0">
+                                    <EmployeeCard EmployeeInfo="@employee"/>
+                                </div>
+                            </ContentTemplate>
+                        </DxAccordionItem>
+                    }
+                </Items>
+            </DxAccordion>
+        </div>
+    </ChildContentWithParameters>
+    <OptionsContent>
+        <OptionComboBox Label="Expand Mode:"
+                        Data="@(Enum.GetValues<AccordionExpandMode>())"
+                        @bind-Value="ExpandMode">
+        </OptionComboBox>
+        <OptionComboBox Label="Expand Collapse Action:"
+                        Data="@(Enum.GetValues<AccordionExpandCollapseAction>())"
+                        @bind-Value="ExpandCollapseAction">
+        </OptionComboBox>
+    </OptionsContent>
+
+    @code {
+        IEnumerable<Employee> DataSource;
+        IEnumerable<(Employee, int)> Items;
+        AccordionExpandMode ExpandMode { get; set; } = AccordionExpandMode.SingleOrNone;
+        AccordionExpandCollapseAction ExpandCollapseAction { get; set; } = AccordionExpandCollapseAction.HeaderClick;
+
+        protected override async Task OnInitializedAsync() {
+            DataSource = await NwindDataService.GetEmployeesAsync();
+            Items = DataSource.Select((item, index) => (item, index));
+            await base.OnInitializedAsync();
+        }
+    }
+
+</DemoPageSectionComponent>

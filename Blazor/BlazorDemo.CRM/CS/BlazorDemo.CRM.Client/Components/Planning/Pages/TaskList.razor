@@ -1,0 +1,164 @@
+﻿@page "/TaskList"
+
+@using BlazorDemo.CRM.Models
+@using BlazorDemo.CRM.Services.DataProviders
+@using Microsoft.AspNetCore.Authorization
+
+@implements IDisposable
+@attribute [Authorize]
+
+@inject TasksDataProvider DataProvider
+
+<div class="content-root">
+    <div class="card toolbar">
+        <DxToolbar Title="Tasks" ItemRenderStyleMode="ToolbarRenderStyleMode.Plain">
+            <DxToolbarItem Text="Add Task" Click="OnAddTaskClick" Alignment="ToolbarItemAlignment.Right" IconCssClass="add-icon icon medium-icon" />
+            <DxToolbarItem Tooltip="Column Chooser" Alignment="ToolbarItemAlignment.Right" Click="OnColumnChooserItemClick" IconCssClass="column-chooser-icon icon medium-icon" />
+            <DxToolbarItem Text="Export" Alignment="ToolbarItemAlignment.Right" IconCssClass="export-icon icon medium-icon">
+                <Items>
+                    <DxToolbarItem Text="Export all data to Excel" Click="ExportAllDataToExcel" />
+                    <DxToolbarItem Text="Export selected rows to Excel" Click="ExportSelectedRowsToExcel" />
+                    <DxToolbarItem Text="Export all data to CSV" Click="ExportAllDataToCsv" />
+                    <DxToolbarItem Text="Export selected rows to CSV" Click="ExportSelectedRowsDataToCsv" />
+                    <DxToolbarItem Text="Export all data to PDF" Click="ExportAllDataToPdf" />
+                    <DxToolbarItem Text="Export selected rows to PDF" Click="ExportSelectedRowsDataToPdf" />
+                </Items>
+            </DxToolbarItem>
+            <DxToolbarItem Alignment="ToolbarItemAlignment.Right" CssClass="search-textbox-item" Tooltip="Search">
+                <Template Context="SearchContext">
+                    <div class="custom-item">
+                        <DxSearchBox CssClass="search-textbox"
+                                     NullText="Search"
+                                     BindValueMode="BindValueMode.OnInput"
+                                     ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                                     @bind-Text=SearchText />
+                    </div>
+                </Template>
+            </DxToolbarItem>
+            <DxToolbarItem Tooltip="Refresh" BeginGroup="true" Click="@LoadGridDataAsync" Alignment="ToolbarItemAlignment.Right" IconCssClass="refresh-icon icon medium-icon" />
+        </DxToolbar>
+    </div>
+    <div class="task-list-root">
+        <DxLoadingPanel Visible="@(!IsDataLoaded)"
+                        IsContentBlocked="true"
+                        IsContentVisible="false"
+                        IndicatorVisible="true"
+                        IndicatorAreaVisible="true"
+                        ZIndex="101"
+                        Text="Loading..."
+                        CssClass="h-100">
+            <DxGrid @ref="Grid"
+                    Data="Data"
+                    CssClass="task-list"
+                    SearchText="@SearchText"
+                    EditMode="GridEditMode.EditRow"
+                    ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                    FilterMenuButtonDisplayMode="GridFilterMenuButtonDisplayMode.Always"
+                    TextWrapEnabled="false"
+                    FocusedRowEnabled="true"
+                    ShowAllRows="true"
+                    VirtualScrollingEnabled="true"
+                    HighlightRowOnHover="true"
+                    EditNewRowPosition="GridEditNewRowPosition.LastRow"
+                    EditModelSaving="OnEditModelSaving"
+                    CustomizeEditModel="OnCustomizeEditModel">
+                <Columns>
+                    <DxGridSelectionColumn Width="1.5em" />
+                    <DxGridDataColumn FieldName="Text" Caption="Subject" Width="30%" MinWidth="80" />
+                    <DxGridDataColumn FieldName="Company" Width="15%" MinWidth="50" />
+                    <DxGridDataColumn FieldName="Priority" Width="10%" MinWidth="40">
+                        <CellDisplayTemplate>
+                            <span class="status @GetPriorityCss(context.Value?.ToString())">@context.Value</span>
+                        </CellDisplayTemplate>
+                        <EditSettings>
+                            <DxComboBoxSettings Data="@Priorities" />
+                        </EditSettings>
+                    </DxGridDataColumn>
+                    <DxGridDataColumn FieldName="StartDate" Caption="Start Date" DisplayFormat="d" Width="10%" MinWidth="50" />
+                    <DxGridDataColumn FieldName="DueDate" Caption="Due Date" DisplayFormat="d" Width="10%" MinWidth="50" SortIndex="0" />
+                    <DxGridDataColumn FieldName="Owner" Width="10%" MinWidth="50" />
+                    <DxGridDataColumn FieldName="Status" Width="10%" MinWidth="50">
+                        <CellDisplayTemplate>
+                            <span class="status @GetStatusCss(context.Value?.ToString())">@context.Value</span>
+                        </CellDisplayTemplate>
+                        <EditSettings>
+                            <DxComboBoxSettings Data="@Statuses" />
+                        </EditSettings>
+                    </DxGridDataColumn>
+                    <DxGridCommandColumn Width="6em" DeleteButtonVisible="false" />
+                </Columns>
+            </DxGrid>
+        </DxLoadingPanel>
+    </div>
+</div>
+
+@code {
+    CancellationTokenSource disposalTokenSource = new CancellationTokenSource();
+
+    List<WorkTaskDetail>? Data { get; set; }
+    bool IsDataLoaded { get; set; }
+    IGrid? Grid { get; set; }
+    string? SearchText { get; set; }
+
+    string[] Statuses { get; } = new[] { "Completed", "Open", "In Progress", "Deferred" };
+    string[] Priorities { get; } = new[] { "High", "Normal", "Low" };
+
+    protected override async Task OnInitializedAsync() {
+        await LoadGridDataAsync();
+        await base.OnInitializedAsync();
+    }
+
+    async Task LoadGridDataAsync() {
+        IsDataLoaded = false;
+        Data = (await DataProvider.GetAsync(disposalTokenSource.Token))?.Where(x => x.Priority != null).ToList();
+        IsDataLoaded = true;
+    }
+
+    Task OnAddTaskClick() => Grid!.StartEditNewRowAsync();
+    void OnColumnChooserItemClick(ToolbarItemClickEventArgs e) => Grid!.ShowColumnChooser();
+
+    Task ExportAllDataToExcel() => Grid!.ExportToXlsxAsync("Tasks");
+    Task ExportSelectedRowsToExcel() => Grid!.ExportToXlsxAsync("Selected Tasks", new GridXlExportOptions { ExportSelectedRowsOnly = true });
+    Task ExportAllDataToCsv() => Grid!.ExportToCsvAsync("Tasks");
+    Task ExportSelectedRowsDataToCsv() => Grid!.ExportToCsvAsync("Selected Tasks", new GridCsvExportOptions { ExportSelectedRowsOnly = true });
+    Task ExportAllDataToPdf() => Grid!.ExportToPdfAsync("Tasks");
+    Task ExportSelectedRowsDataToPdf() => Grid!.ExportToPdfAsync("Selected Tasks", new GridPdfExportOptions { ExportSelectedRowsOnly = true });
+
+    void OnCustomizeEditModel(GridCustomizeEditModelEventArgs e) {
+        if(e.IsNew) {
+            var model = (WorkTaskDetail)e.EditModel;
+            model.StartDate = DateTime.Today;
+            model.DueDate = DateTime.Today.AddDays(1);
+            model.Status = "Open";
+            model.Priority = "Normal";
+        }
+    }
+
+    void OnEditModelSaving(GridEditModelSavingEventArgs e) {
+        if(e.IsNew) {
+            var editModel = (WorkTaskDetail)e.EditModel;
+            Data!.Add(editModel);
+        } else
+            e.CopyChangesToDataItem();
+        Grid?.Reload();
+    }
+
+    string GetStatusCss(string? value) => value switch {
+        "Completed" => "status-completed",
+        "Open" => "status-open",
+        "In Progress" => "status-inprogress",
+        "Deferred" => "status-deferred",
+        _ => string.Empty
+    };
+    string GetPriorityCss(string? value) => value switch {
+        "High" => "priority-high",
+        "Normal" => "priority-normal",
+        "Low" => "priority-low",
+        _ => string.Empty
+    };
+
+    void IDisposable.Dispose() {
+        disposalTokenSource.Cancel();
+        disposalTokenSource.Dispose();
+    }
+}

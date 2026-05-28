@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDefaultItems>False</EnableDefaultItems>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GenerateRuntimeConfigDevFile>true</GenerateRuntimeConfigDevFile>
+    <UserSecretsId>eb274127-1fcd-4ba5-9952-497c7df007d0</UserSecretsId>
+    <RollForward>Major</RollForward>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE;SERVER_BLAZOR</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE;SERVER_BLAZOR</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='VisualTests|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE;SERVER_BLAZOR</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Azure.AI.OpenAI" />
+    <PackageReference Include="Azure.Identity" />
+	<PackageReference Include="Microsoft.Agents.AI.Workflows" />
+    <PackageReference Include="Microsoft.Extensions.AI" />
+    <PackageReference Include="Microsoft.Extensions.AI.OpenAI" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
+    <PackageReference Include="Microsoft.Identity.Client" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.AIIntegration.AspNetCore.Reporting" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.AIIntegration.Blazor.Reporting.Viewer" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Blazor.PdfViewer" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Blazor.Reporting.JSBasedControls" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.AspNetCore.Reporting" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Reporting.Demos" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Drawing.Skia" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.AIIntegration.Blazor" VersionOverride="26.1.2-beta-26148" />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <ProjectReference Include="..\BlazorDemo.Reporting.Core\BlazorDemo.Reporting.Core.csproj" />
+    <ProjectReference Include="..\BlazorDemo\BlazorDemo.ServerSide.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\NwindController*.cs" />
+    <Compile Include="Controllers\Upload*Controller.cs" />
+    <Compile Include="Controllers\ReportingControllers.cs" />
+    <Compile Include="Controllers\VehiclesController.cs" />
+    <Compile Include="DataProviders\**\*.cs" />
+    <Compile Include="Controllers\EmployeeTaskController.cs" />
+    <Compile Include="HostingStartupBase.cs" />
+    <Compile Include="Startup.Reporting.cs" />
+    <Compile Include="Services\*.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Startup.ServerSide.cs" />
+    <Compile Include="Utils\*.cs" />
+    <Content Include="Pages\*.razor" />
+    <Content Include="Pages\*.cshtml" />
+    <Content Include="*.json" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FileSystemData\**\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <DotnetPublishFiles Include="wwwroot/**;*.json">
+      <DestinationRelativePath>%(RelativeDir)%(Filename)%(Extension)</DestinationRelativePath>
+    </DotnetPublishFiles>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,10 @@
+.tooltip-text-header {
+    margin-right: auto;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.demo-sc-apt-content {
+    color: var(--dxbl-scheduler-appointment-subject-color);
+}

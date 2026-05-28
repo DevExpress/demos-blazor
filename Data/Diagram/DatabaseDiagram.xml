@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Northwind" >
+  <Tables>
+    <TableDefinition Name="Category" PositionX="924" PositionY="800">
+      <Columns>
+        <ColumnDefinition TableName="Category" Name="CategoryID" IsPrimaryKey="true" />
+        <ColumnDefinition TableName="Category" Name="CategoryName" />
+        <ColumnDefinition TableName="Category" Name="Description" />
+        <ColumnDefinition TableName="Category" Name="Picture" />
+        <ColumnDefinition TableName="Category" Name="Icon25" />
+        <ColumnDefinition TableName="Category" Name="Icon17" />
+        <ColumnDefinition TableName="Category" Name="Products" />
+      </Columns>
+    </TableDefinition>
+    <TableDefinition Name="CategoryProduct" PositionX="1274" PositionY="24">
+      <Columns>
+        <ColumnDefinition TableName="CategoryProduct" Name="ProductID" />
+        <ColumnDefinition TableName="CategoryProduct" Name="SupplierID" />
+        <ColumnDefinition TableName="CategoryProduct" Name="ProductName" />
+        <ColumnDefinition TableName="CategoryProduct" Name="CategoryName" />
+        <ColumnDefinition TableName="CategoryProduct" Name="Picture" />
+        <ColumnDefinition TableName="CategoryProduct" Name="Description" />
+      </Columns>
+    </TableDefinition>
+    <TableDefinition Name="Customer" PositionX="24" PositionY="674">
+      <Columns>
+        <ColumnDefinition TableName="Customer" Name="CustomerID" IsPrimaryKey="true" />
+        <ColumnDefinition TableName="Customer" Name="CompanyName" />
+        <ColumnDefinition TableName="Customer" Name="ContactName" />
+        <ColumnDefinition TableName="Customer" Name="ContactTitle" />
+        <ColumnDefinition TableName="Customer" Name="Address" />
+        <ColumnDefinition TableName="Customer" Name="City" />
+        <ColumnDefinition TableName="Customer" Name="Region" />
+        <ColumnDefinition TableName="Customer" Name="PostalCode" />
+        <ColumnDefinition TableName="Customer" Name="Country" />
+        <ColumnDefinition TableName="Customer" Name="Phone" />
+        <ColumnDefinition TableName="Customer" Name="Fax" />
+        <ColumnDefinition TableName="Customer" Name="Employees" />
+        <ColumnDefinition TableName="Customer" Name="Orders" />
+      </Columns>
+    </TableDefinition>
+    <TableDefinition Name="Employee" PositionX="624" PositionY="324">
+      <Columns>
+        <ColumnDefinition TableName="Employee" Name="EmployeeID" IsPrimaryKey="true" />
+        <ColumnDefinition TableName="Employee" Name="LastName" />
+        <ColumnDefinition TableName="Employee" Name="FirstName" />
+        <ColumnDefinition TableName="Employee" Name="Title" />
+        <ColumnDefinition TableName="Employee" Name="TitleOfCourtesy" />
+        <ColumnDefinition TableName="Employee" Name="BirthDate" />
+        <ColumnDefinition TableName="Employee" Name="HireDate" />
+        <ColumnDefinition TableName="Employee" Name="Address" />
+        <ColumnDefinition TableName="Employee" Name="City" />
+        <ColumnDefinition TableName="Employee" Name="Region" />
+        <ColumnDefinition TableName="Employee" Name="PostalCode" />
+        <ColumnDefinition TableName="Employee" Name="Country" />
+        <ColumnDefinition TableName="Employee" Name="HomePhone" />
+        <ColumnDefinition TableName="Employee" Name="Extension" />
+        <ColumnDefinition TableName="Employee" Name="Photo" />
+        <ColumnDefinition TableName="Employee" Name="Notes" />
+        <ColumnDefinition TableName="Employee" Name="ReportsTo" />
+        <ColumnDefinition TableName="Employee" Name="Email" />
+        <ColumnDefinition TableName="Employee" Name="GroupName" />
+        <ColumnDefinition TableName="Employee" Name="FullName" />
+        <ColumnDefinition TableName="Employee" Name="Customers" />
+        <ColumnDefinition TableName="Employee" Name="Orders" />
+        <ColumnDefinition TableName="Employee" Name="Employees" />
+        <ColumnDefinition TableName="Employee" Name="SubEmployee" />
+        <ColumnDefinition TableName="Employee" Name="PageHeader" />
+        <ColumnDefinition TableName="Employee" Name="PageContent" />
+        <ColumnDefinition TableName="Employee" Name="ChartSource" />
+      </Columns>
+    </TableDefinition>
+    <TableDefinition Name="Order" PositionX="24" PositionY="24">
+      <Columns>
+        <ColumnDefinition TableName="Order" Name="OrderID" IsPrimaryKey="true" />
+        <ColumnDefinition TableName="Order" Name="CustomerID" />
+        <ColumnDefinition TableName="Order" Name="EmployeeID" />
+        <ColumnDefinition TableName="Order" Name="OrderDate" />
+        <ColumnDefinition TableName="Order" Name="RequiredDate" />
+        <ColumnDefinition TableName="Order" Name="ShippedDate" />
+        <ColumnDefinition TableName="Order" Name="ShipVia" />
+        <ColumnDefinition TableName="Order" Name="Freight" />
+        <ColumnDefinition TableName="Order" Name="ShipName" />
+        <ColumnDefinition TableName="Order" Name="ShipAddress" />
+        <ColumnDefinition TableName="Order" Name="ShipCity" />
+        <ColumnDefinition TableName="Order" Name="ShipRegion" />
+        <ColumnDefinition TableName="Order" Name="ShipPostalCode" />
+        <ColumnDefinition TableName="Order" Name="ShipCountry" />
+        <ColumnDefinition TableName="Order" Name="Employee" />
+        <ColumnDefinition TableName="Order" Name="Customer" />
+        <ColumnDefinition TableName="Order" Name="OrderDetails" />
+      </Columns>
+    </TableDefinition>
+    <TableDefinition Name="OrderDetail" PositionX="624" PositionY="24">
+      <Columns>
+        <ColumnDefinition TableName="OrderDetail" Name="OrderID" />
+        <ColumnDefinition TableName="OrderDetail" Name="ProductID" />
+        <ColumnDefinition TableName="OrderDetail" Name="UnitPrice" />
+        <ColumnDefinition TableName="OrderDetail" Name="Quantity" />
+        <ColumnDefinition TableName="OrderDetail" Name="Discount" />
+      </Columns>
+    </TableDefinition>
+    <TableDefinition Name="Product" PositionX="924" PositionY="24">
+      <Columns>
+        <ColumnDefinition TableName="Product" Name="ProductID" IsPrimaryKey="true" />
+        <ColumnDefinition TableName="Product" Name="ProductName" />
+        <ColumnDefinition TableName="Product" Name="SupplierID" />
+        <ColumnDefinition TableName="Product" Name="CategoryID" />
+        <ColumnDefinition TableName="Product" Name="QuantityPerUnit" />
+        <ColumnDefinition TableName="Product" Name="UnitPrice" />
+        <ColumnDefinition TableName="Product" Name="UnitsInStock" />
+        <ColumnDefinition TableName="Product" Name="UnitsOnOrder" />
+        <ColumnDefinition TableName="Product" Name="ReorderLevel" />
+        <ColumnDefinition TableName="Product" Name="Discontinued" />
+        <ColumnDefinition TableName="Product" Name="EAN13" />
+        <ColumnDefinition TableName="Product" Name="Category" />
+        <ColumnDefinition TableName="Product" Name="OrderDetails" />
+      </Columns>
+    </TableDefinition>
+    <TableDefinition Name="Region" PositionX="324" PositionY="524">
+      <Columns>
+        <ColumnDefinition TableName="Region" Name="RegionID" IsPrimaryKey="true" />
+        <ColumnDefinition TableName="Region" Name="RegionDescription" />
+      </Columns>
+    </TableDefinition>
+    <TableDefinition Name="Shipper" PositionX="324" PositionY="174">
+      <Columns>
+        <ColumnDefinition TableName="Shipper" Name="ShipperID" IsPrimaryKey="true" />
+        <ColumnDefinition TableName="Shipper" Name="CompanyName" />
+        <ColumnDefinition TableName="Shipper" Name="Phone" />
+      </Columns>
+    </TableDefinition>
+    <TableDefinition Name="Supplier" PositionX="1274" PositionY="524">
+      <Columns>
+        <ColumnDefinition TableName="Supplier" Name="SupplierID" IsPrimaryKey="true" />
+        <ColumnDefinition TableName="Supplier" Name="CompanyName" />
+        <ColumnDefinition TableName="Supplier" Name="ContactName" />
+        <ColumnDefinition TableName="Supplier" Name="ContactTitle" />
+        <ColumnDefinition TableName="Supplier" Name="Address" />
+        <ColumnDefinition TableName="Supplier" Name="City" />
+        <ColumnDefinition TableName="Supplier" Name="Region" />
+        <ColumnDefinition TableName="Supplier" Name="PostalCode" />
+        <ColumnDefinition TableName="Supplier" Name="Country" />
+        <ColumnDefinition TableName="Supplier" Name="Phone" />
+        <ColumnDefinition TableName="Supplier" Name="Fax" />
+        <ColumnDefinition TableName="Supplier" Name="HomePage" />
+      </Columns>
+    </TableDefinition>
+    <TableDefinition Name="Territory" PositionX="324" PositionY="924">
+      <Columns>
+        <ColumnDefinition TableName="Territory" Name="TerritoryID" IsPrimaryKey="true" />
+        <ColumnDefinition TableName="Territory" Name="TerritoryDescription" />
+        <ColumnDefinition TableName="Territory" Name="RegionID" />
+      </Columns>
+    </TableDefinition>
+  </Tables>
+  <Connections>
+    <ConnectionDefinition From="Order.EmployeeID" To="Employee.EmployeeID" FromRelation="Many" ToRelation="One" />
+	<ConnectionDefinition From="Order.CustomerID" To="Customer.CustomerID" FromRelation="Many" ToRelation="One" />
+    <ConnectionDefinition From="Order.OrderID" To="OrderDetail.OrderID" FromRelation="One" ToRelation="Many" />
+    <ConnectionDefinition From="Order.ShipRegion" To="Region.RegionID" FromRelation="One" ToRelation="One" />
+    <ConnectionDefinition From="Order.ShipVia" To="Shipper.ShipperID" FromRelation="Many" ToRelation="One" />
+    <ConnectionDefinition From="OrderDetail.ProductID" To="Product.ProductID" FromRelation="Many" ToRelation="One" />
+    <ConnectionDefinition From="Employee.EmployeeID" To="Employee.ReportsTo" FromRelation="One" ToRelation="Many" />
+    <ConnectionDefinition From="Product.CategoryID" To="Category.CategoryID" FromRelation="Many" ToRelation="One" />
+    <ConnectionDefinition From="Product.SupplierID" To="Supplier.SupplierID" FromRelation="Many" ToRelation="One" />
+    <ConnectionDefinition From="Territory.RegionID" To="Region.RegionID" FromRelation="Many" ToRelation="One" />
+    <ConnectionDefinition From="Product.ProductID" To="CategoryProduct.ProductID" FromRelation="One" ToRelation="Many" />
+    <ConnectionDefinition From="CategoryProduct.SupplierID" To="Supplier.SupplierID" FromRelation="One" ToRelation="Many" />
+  </Connections>
+</Database>

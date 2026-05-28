@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"></xsd:import>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="type" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="mimetype" type="xsd:string"></xsd:attribute>
+              <xsd:attribute ref="xml:space"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"></xsd:attribute>
+              <xsd:attribute name="name" type="xsd:string"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"></xsd:element>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"></xsd:attribute>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"></xsd:attribute>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"></xsd:attribute>
+              <xsd:attribute ref="xml:space"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"></xsd:element>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"></xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="xrTableCell108.Text" xml:space="preserve">
+    <value>Named after the resemblance of the central finder pattern to an Aztec pyramid, Aztec Code has the potential to use less space than other matrix barcodes because it does not require a surrounding blank "quiet zone". Aztec codes are widely used for transport ticketing.</value>
+  </data>
+  <data name="xrTableCell66.Text" xml:space="preserve">
+    <value>Micro QR Code displays a position detection pattern in a single corner, compared to three corners in regular QR Codes. This code type also requires a smaller margin. These configuration adjustments allow you to print the code in more compact areas.</value>
+  </data>
+  <data name="xrTableCell102.Text" xml:space="preserve">
+    <value>GS1 QR Code is based on the QR Code barcode standard and allows you to encode GS1 system application identifiers (AI) into two-dimensional barcodes.  It was designed specifically for the exchange of advanced package information such as lot number, product ID and quantity. GS1 QR Code inherits the character set and size specifications from QR Code.</value>
+  </data>
+  <data name="xrTableCell99.Text" xml:space="preserve">
+    <value>The EPC QR code is a special type of QR code that the European Payments Council (EPC) has standardized for the convenience of electronic payments in the Single Euro Payments Area (SEPA). Users can scan this code with their mobile banking apps and initiate SEPA credit transfers. The QR code contains encoded payment details such as IBAN, amount and beneficiary information, reducing errors and manual entry. This simplifies payment processing, improves accuracy and overall service quality.
+The EPC QR Code also introduces built-in support for Austrian Payment Services.</value>
+  </data>
+  <data name="qrCodeGenerator2.Logo" xml:space="preserve">
+    <value>77u/PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAyNiAyNyIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJMYXllcl8xIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxNTAgMjciPg0KICA8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiM0QTRBNEE7fQoJLnN0MXtmaWxsOiNGNzgxMTk7fQo8L3N0eWxlPg0KICA8Zz4NCiAgICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMjYiIGhlaWdodD0iMjciIHN0eWxlPSJzdHJva2U6cmdiKDAsIDAsIDApO2ZpbGwtcnVsZTpub256ZXJvO3BhaW50LW9yZGVyOnN0cm9rZTt2ZWN0b3ItZWZmZWN0Om5vbi1zY2FsaW5nLXN0cm9rZTtzdHJva2Utd2lkdGg6MHB4O2ZpbGw6cmdiKDIzNSwgMjM1LCAyMzUpIiAvPg0KICAgIDxwYXRoIGQ9Ik0gMS43NjEgMjIgQyAxLjEzOSAyMi44IDAuNjIyIDIzLjUgMC4yMDcgMjQuMSBDIDAuMTA0IDI0LjIgMCAyNC43IDAgMjUuMSBMIDAgMjUuNiBDIDAgMjYuNCAwLjYyMiAyNyAxLjU1NCAyNyBMIDI0LjQ0NiAyNyBDIDI1LjI3NSAyNyAyNiAyNi40IDI2IDI1LjUgTCAyNiA4LjUgQyAxMy4zNjMgMTAuNyA1LjgwMSAxNy4yIDEuNzYxIDIyIFoiIGNsYXNzPSJzdDAiIC8+DQogICAgPHBhdGggZD0iTSAyNC40NCAwIEwgMS41NiAwIEMgMC42MjQgMCAwIDAuNiAwIDEuNSBMIDAgMTQuNyBDIDQuNTc2IDEwLjEgMTIuNTg0IDUuMSAyNC45NiAzLjcgQyAyNS4yNzIgMy43IDI2IDMuNSAyNiAyLjcgTCAyNiAxLjUgQyAyNiAwLjYgMjUuMzc2IDAgMjQuNDQgMCBaIiBjbGFzcz0ic3QxIiAvPg0KICA8L2c+DQo8L3N2Zz4=</value>
+  </data>
+  <data name="xrTableCell105.Text" xml:space="preserve">
+    <value>QR (Quick Response) code is a popular two-dimensional matrix barcode that consists of black modules arranged in a square pattern on the white background. The information encoded may be text, URL or other data. This barcode type has a wide area of application including both commercial tracking applications and convenience-oriented applications aimed at mobile phone users.</value>
+  </data>
+  <data name="xrTableCell96.Text" xml:space="preserve">
+    <value>The Serial Shipping Container Code (SSCC) is the GS1 identification key used to identify the logistics unit. It is an 18-digit number that consists of an extension digit, a GS1 company prefix, a serial reference, and a check digit. The SSCC is encoded in a GS1-128 barcode.
+The SSCC allows you to track a logistic unit individually to support order and delivery tracking and automated
+receipt of goods.</value>
+  </data>
+  <data name="xrTableCell93.Text" xml:space="preserve">
+    <value>Deutsche Post Identcode symbology, also referred to as Deutsche Post AG IdentCode, German Postal 2 of 5 IdentCode, Deutsche Frachtpost IdentCode, or Deutsche Post AG (DHL), is used by German Post (Deutsche Post AG).
+The barcode contains a tracking number that identifies the customer (sender) and the mail item. The value to encode should consist of 2 digits for distribution center ID, 3 digits for customer ID, and 6 digits for mailing number.</value>
+  </data>
+  <data name="xrTableCell90.Text" xml:space="preserve">
+    <value>The Deutsche Post Leitcode symbology, or German Postal 2 of 5 LeitCode, LeitCode, or CodeLeitcode, is used by Deutsche Post AG (Deutsche Frachtpost).
+This barcode identifies the destination. The value to encode consists of 5 digits for Postal Code (Postleitzahl, PLZ), 3 digits for Street ID/number, 3 digits for House number, and 2 digits for Product code.</value>
+  </data>
+  <data name="xrTableCell84.Text" xml:space="preserve">
+    <value>Pharmacode, also known as Pharmaceutical Binary code, is a barcode standard used for in-house inventory control and security verification in the pharmaceutical industry.
+One-Track is a one-dimensional (1D) symbology used in the packaging of pharmaceutical products.</value>
+  </data>
+  <data name="xrTableCell87.Text" xml:space="preserve">
+    <value>Pharmacode, also known as Pharmaceutical Binary code, is a barcode standard used for in-house inventory control and security verification in the pharmaceutical industry.
+Two-Track is a one-dimensional (1D) symbology used in the packaging of pharmaceutical products. Two-Track uses the vertical positioning of half bars together with full bars to encode data.</value>
+  </data>
+  <data name="xrTableCell78.Text" xml:space="preserve">
+    <value>GS1 DataBar bar code is based on a family of symbols most commonly seen in the GS1 DataBar Coupon. 
+In addition to encoding Application Identifier (01) GTIN, GS1 DataBar Expanded and GS1 DataBar Expanded Stacked can encode additional GS1 Application Identifiers (such as sell-by date, weight, and lot number). Each symbol has a capacity of up to 74 characters. These attributes can help in controlling shrinkage, optimizing product replenishment, and improving the traceability of a product at the point of sale.
+This demo illustrates the Expanded Stacked and Truncated varieties of the GS1 DataBar bar code.</value>
+  </data>
+  <data name="xrTableCell75.Text" xml:space="preserve">
+    <value>This bar code is used to mark packaging materials that contain products labeled with a UPC or EAN product identification number. This bar code provides a GS1 implementation of an Interleaved 2 of 5 bar code for encoding a Global Trade Item Number (an identifier for trade items developed by GS1). 
+This bar code always uses a total of 14 digits. The thick black border around the symbol (the Bearer Bar) is intended to enhance the bar code reading reliability.</value>
+  </data>
+  <data name="xrTableCell72.Text" xml:space="preserve">
+    <value>GS1 DataMatrix uses a special start combination to differentiate the GS1 DataMatrix symbol from the other Data Matrix ECC 200 symbols. This is achieved by using the Function 1 Symbol Character (FNC1) in the first position of the data encoded. It enables scanners to process the information according to the GS1 System Rules.</value>
+  </data>
+  <data name="xrTableCell69.Text" xml:space="preserve">
+    <value>The Intelligent Mail Barcode (IM barcode) is a 65-bar code for use on mail in the United States. This barcode is intended to provide greater information and functionality than its predecessors POSTNET and PLANET. Intelligent Mail barcode has also been referred to as One Code Solution and 4-State Customer Barcode abbreviated 4CB, 4-CB or USPS4CB.</value>
+  </data>
+  <data name="xrTableCell81.Text" xml:space="preserve">
+    <value>The Intelligent Mail Package Barcode (IMPB) was developed for the use on mail in the United States. Barcodes of this symbology are used only for packages as opposed to Intelligent Mail barcodes, which are used for postcards, letters, and flats. The Intelligent Mail Package Barcode is capable of encoding package tracking information required for more efficient sorting and delivering of packages with the capability of piece-level tracking.</value>
+  </data>
+  <data name="xrBarCode22.Text" xml:space="preserve">
+    <value>Data Matrix code is a two-dimensional matrix barcode consisting of black and white "cells" arranged in a rectangular pattern. The information to be encoded can be text or raw data. Every Data Matrix is composed of two solid adjacent borders in an "L" shape (called the "finder pattern") and two other borders consisting of alternating dark and light "cells" or modules (called the "timing pattern"). Within these borders are rows and columns of cells that encode information. The finder pattern is used to locate and orient the symbol while the timing pattern provides a count of the number of rows and columns in the symbol.</value>
+  </data>
+  <data name="xrTableCell63.Text" xml:space="preserve">
+    <value>Data Matrix code is a two-dimensional matrix barcode consisting of black and white "cells" arranged in a rectangular pattern. The information to be encoded can be text or raw data. Every Data Matrix is composed of two solid adjacent borders in an "L" shape (called the "finder pattern") and two other borders consisting of alternating dark and light "cells" or modules (called the "timing pattern"). Within these borders are rows and columns of cells that encode information. The finder pattern is used to locate and orient the symbol while the timing pattern provides a count of the number of rows and columns in the symbol.
+(NOTE: This text is encoded by the barcode on the left)</value>
+  </data>
+  <data name="xrBarCode21.Text" xml:space="preserve">
+    <value>PDF417 (Portable Data File) is a stacked linear two-dimensional barcode used in a variety of applications: primarily transport, postal, identification card and inventory management. It was invented by Ynjiun Wang at Symbol Technologies in 1991, and has spawned an Open Source decoder project together with an Open Source encoder. The PDF417 barcode is also called a symbol barcode and usually consists of 3 to 90 rows, each of which is like a small linear bar code.</value>
+  </data>
+  <data name="xrTableCell60.Text" xml:space="preserve">
+    <value>PDF417 (Portable Data File) is a stacked linear two-dimensional barcode used in a variety of applications: primarily transport, postal, identification card and inventory management. It was invented by Ynjiun Wang at Symbol Technologies in 1991, and has spawned an Open Source decoder project together with an Open Source encoder. The PDF417 barcode is also called a symbol barcode and usually consists of 3 to 90 rows, each of which is like a small linear bar code.
+(NOTE: This text is encoded by the barcode on the left)</value>
+  </data>
+  <data name="xrTableCell6.Text" xml:space="preserve">
+    <value>Codabar was developed in 1972 by Pitney Bowes, Inc. It is a discrete, self-checking symbology that may encode 16 different characters, plus an additional 4 start/stop characters. This symbology is used by U.S. blood banks, photo labs, and on FedEx airbills.</value>
+  </data>
+  <data name="xrTableCell9.Text" xml:space="preserve">
+    <value>Code 11, also known as USD-8, was developed as a high-density numeric-only symbology. It is used primarily in labeling telecommunications equipment. The symbology is discrete and is able to encode the numbers 0 through 9, the dash symbol (-), and start/stop characters.</value>
+  </data>
+  <data name="xrTableCell12.Text" xml:space="preserve">
+    <value>Code 128 is a very effective, high-density symbology which permits the encoding of alphanumeric data. The symbology includes a checksum digit for verification, and the barcode may also be verified character-by-character verifying the parity of each data byte. This symbology has been widely implemented in many applications where a relatively large amount of data must be encoded in a relatively small amount of space. It's specific structure also allows numeric data to be encoded at, effectively, double-density.</value>
+  </data>
+  <data name="xrTableCell15.Text" xml:space="preserve">
+    <value>UCC/EAN-128 was developed to provide a worldwide format and standard for exchanging common data between companies. While other barcodes simply encode data with no respect for what the data represents, UCC/EAN-128 encodes data and encodes what that data represents.</value>
+  </data>
+  <data name="xrTableCell24.Text" xml:space="preserve">
+    <value>Code 39, the first alpha-numeric symbology to be developed, is still widely used-especially in non-retail environments. It is the standard bar code used by the United States Department of Defense, and is also used by the Health Industry Bar Code Council (HIBCC). Code 39 is also known as "3 of 9 Code" and "USD-3".</value>
+  </data>
+  <data name="xrTableCell27.Text" xml:space="preserve">
+    <value>It is possible, using Code 39's "Full ASCII Mode" to encode all 128 ASCII characters. This is accomplished by using the $, /, %, and + symbols as "shift" characters. Those characters combined with the single character that follows indicate which Full ASCII character is to be used.</value>
+  </data>
+  <data name="xrTableCell30.Text" xml:space="preserve">
+    <value>Code 93 was designed to complement and improve upon Code 39. Code 93 is similar in that it, like Code 39, can represent the full ASCII character set by using combinations of 2 characters. It differs in that Code 93 is a continuous symbology and produces denser code. It also encodes 47 characters compared to Code 39's 43 characters.</value>
+  </data>
+  <data name="xrTableCell33.Text" xml:space="preserve">
+    <value>It is possible, using Code 93's "Full ASCII Mode" to encode all 128 ASCII characters. This is accomplished by using the ($), (/), (%), and (+) symbols as "shift" characters. Those characters combined with the single character that follows indicate which Full ASCII character is to be used.</value>
+  </data>
+  <data name="xrTableCell36.Text" xml:space="preserve">
+    <value>Standard 2 of 5 is a low-density numeric symbology that has been with us since the 1960s. It has been used in the photofinishing and warehouse sorting industries, as well as sequentially numbering airline tickets.</value>
+  </data>
+  <data name="xrTableCell39.Text" xml:space="preserve">
+    <value>Matrix 2 of 5 is a linear 1D barcode. Matrix 2 of 5 is self-checking numeric-only barcode. Unlike Interleaved 2 of 5, all of the information is encoded in the bars; the spaces are of fixed width and used only to separate the bars. Matrix 2 of 5 is used primarily for warehouse sorting, photo finishing, and airline ticket marking.</value>
+  </data>
+  <data name="xrTableCell45.Text" xml:space="preserve">
+    <value>MSI was developed by the MSI Data Corporation, based on the original Plessey Code. MSI, also known as Modified Plessey, is used primarily to mark retail shelves for inventory control. MSI is a continuous, non-self-checking symbology. While the length of an MSI barcode can be of any length, a given application usually implements a fixed-length code.</value>
+  </data>
+  <data name="xrTableCell48.Text" xml:space="preserve">
+    <value>The "UPC-A barcode" is by far the most common and well-known symbology, at least in the United States. An UPC-A barcode is the barcode you will find on virtually every consumer good on the shelves of your local supermarket, as well as books, magazines, and newspapers. It is commonly called simply a "UPC barcode" or "UPC Symbol."</value>
+  </data>
+  <data name="xrTableCell51.Text" xml:space="preserve">
+    <value>UPC-E is a variation of UPC-A which allows for a more compact barcode by eliminating "extra" zeros. Since the resulting UPC-E barcode is about half the size as an UPC-A barcode, UPC-E is generally used on products with very small packaging where a full UPC-A barcode couldn't reasonably fit.</value>
+  </data>
+  <data name="xrTableCell54.Text" xml:space="preserve">
+    <value>2-digit supplemental barcodes should only be used with magazines, newspapers and other such periodicals. The 2-digit supplement represent the issue number of the magazine. This is useful so that the product code itself (contained in the main barcode) is constant for the magazine such that each issue of the magazine doesn't have to have its own unique barcode. Nevertheless, the 2-digit supplement can be used to track which issue of the magazine is being sold, perhaps for sales analysis or restocking purposes.</value>
+  </data>
+  <data name="xrPictureBox4.ImageSource" xml:space="preserve">
+    <value>77u/PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgd2lkdGg9IjE1MHB4IiBoZWlnaHQ9IjMwcHgiIHZpZXdCb3g9IjAgMCAxNTAgMzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbD0ibm9uZSI+DQogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNTAiIGhlaWdodD0iMzAiIGZpbGw9IiNFNUU1RTUiIC8+DQogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNTAiIGhlaWdodD0iMzAiIGZpbGw9IndoaXRlIiAvPg0KICA8cGF0aCBkPSJNMi45NjI5NSAyNS4wNzMxSDI2LjE2MTVWNS4xNjY0OEgyLjk2Mjk1VjI1LjA3MzFaIiBmaWxsPSJ3aGl0ZSIgLz4NCiAgPHBhdGggZD0iTTM3LjYzNTIgMjAuMzY3MkMzNy4yMTIyIDIwLjM2NzIgMzYuNzQ2NyAyMC4zNjcyIDM2LjQyOTggMjAuMzAyVjguNjE0MjlDMzYuNzY4IDguNTUwNzkgMzcuMjU0MiA4LjQ4NTMzIDM3LjkwOTUgOC40ODUzM0M0MC44MDY5IDguNDg1MzMgNDIuNjA0NCAxMC4zNDk4IDQyLjYwNDQgMTQuMTIzMkM0Mi42MDQ0IDE4LjUwMzEgNDAuNjE2NSAyMC4zODkgMzcuNjM1MiAyMC4zNjcyVjIwLjM2NzJaTTM3LjUyOTUgNS45NjkzMkMzNS45NDM1IDUuOTY5MzIgMzQuNDYzNCA2LjEwMDA2IDMzLjMyMDggNi4zMTcwMlYyMi43MDhDMzQuMTQ1NiAyMi44MTc4IDM1LjM1MTEgMjIuOTI2NiAzNi44NTI5IDIyLjkyNjZDMzkuNjg1OCAyMi45MjY2IDQxLjk0OTMgMjIuMjUzMSA0My40Mjk2IDIwLjg4ODRDNDQuNjc2OSAxOS43Mzc3IDQ1Ljg4MjMgMTcuNjU3NiA0NS44ODIzIDE0LjA3ODFDNDUuODgyMyAxMS4wNjQzIDQ0Ljk3MzIgOS4wMDQ1MSA0My40Mjk2IDcuNzA0ODdDNDIuMDc2NCA2LjU1NTk2IDQwLjIzNTcgNS45NjkzMiAzNy41Mjk1IDUuOTY5MzIiIGZpbGw9IiMzOTM1MzYiIC8+DQogIDxwYXRoIGQ9Ik01MC40Mzc3IDE1LjQ2NjFDNTAuNTIyMiAxNC4yNzM5IDUxLjE1NyAxMi42Njk1IDUyLjY1ODMgMTIuNjY5NUM1NC4yMDIgMTIuNjY5NSA1NC42ODg5IDE0LjIwODYgNTQuNjY3NiAxNS40NjYxSDUwLjQzNzdaTTUyLjg0ODQgMTAuNDM2N0M0OS40MDIyIDEwLjQzNjcgNDcuNDU2IDEzLjQyOTYgNDcuNDU2IDE2Ljg5ODFDNDcuNDU2IDIwLjY0ODEgNDkuNTI4NSAyMi45OTA5IDUzLjE2NjQgMjIuOTkwOUM1NC42MjU3IDIyLjk5MDkgNTUuOTk5NSAyMi43MjkyIDU2Ljk3MjggMjIuMjk4Mkw1Ni41Mjg0IDIwLjA4NUM1NS43MjQ5IDIwLjM2NzIgNTQuODE1OCAyMC41ODQyIDUzLjY1MjggMjAuNTg0MkM1MS45NjA4IDIwLjU4NDIgNTAuNTIyMiAxOS43NjA3IDUwLjQzNzcgMTcuNzAwMUg1Ny40Nzk1QzU3LjU0MzcgMTcuMzU0IDU3LjU2NDkgMTYuODk4MSA1Ny41NjQ5IDE2LjQyMThDNTcuNTY0OSAxMi41MTc4IDU1LjcwMzcgMTAuNDM2NyA1Mi44NDg0IDEwLjQzNjciIGZpbGw9IiMzOTM1MzYiIC8+DQogIDxwYXRoIGQ9Ik02Ni4zMDQ3IDEwLjY5NjRMNjQuODI1MiAxNi41NTA0QzY0LjU3MDQgMTcuNjE0MSA2NC4zNTkgMTguNTg5OCA2NC4xNjg0IDE5LjYyODlINjQuMTA2MkM2My45MTYgMTguNTg5OCA2My43MDM3IDE3LjU5MjMgNjMuNDQ5OSAxNi41NTA0TDYxLjkwNjIgMTAuNjk2NEg1OC41NDM3TDYyLjQ5ODggMjIuNzc0M0g2NS41MjI1TDY5LjU0MDcgMTAuNjk2NEg2Ni4zMDQ3IiBmaWxsPSIjMzkzNTM2IiAvPg0KICA8cGF0aCBkPSJNNC41NjMwNyAyMS42NjczQzMuOTY5NTEgMjIuNDIzNiAzLjUyODE1IDIzLjA5MzcgMy4xOTE5MyAyMy43MjE3QzMuMTA4NzkgMjMuODc0IDIuOTYyOTUgMjQuMzI3OSAyLjk2Mjk1IDI0LjYzMDlWMjUuMDczMUMyLjk2Mjk1IDI1LjgyNjEgMy41NjQyMyAyNi40NDQyIDQuMzAwNzIgMjYuNDQ0MkgyNC44MjQ4QzI1LjU2MDYgMjYuNDQ0MiAyNi4xNjE1IDI1LjgyNjEgMjYuMTYxNSAyNS4wNzMxVjguODgxNjhDMTQuOTE0MiAxMC45MTQ5IDguMDk3NzcgMTcuMTU5NiA0LjU2MzA3IDIxLjY2NzNaIiBmaWxsPSIjMzkzNTM2IiAvPg0KICA8cGF0aCBkPSJNNzQuNDczMSAxNS40NDQ0SDc5Ljc4MzdWMTIuODIxOEg3NC40NzMxVjguNzg4OTJIODAuMTAwOFY2LjEwMDA1SDcxLjM0NDJWMjIuNzc0M0g4MC40Mzg1VjIwLjA4NUg3NC40NzMxVjE1LjQ0NDQiIGZpbGw9IiNGNDcyMTYiIC8+DQogIDxwYXRoIGQ9Ik05Mi4yNjU3IDEwLjY5NjRIODguOTQ0N0w4Ny44ODY0IDEyLjg2NDNDODcuNTkwMSAxMy40OTM2IDg3LjMxNyAxNC4xNDQ2IDg3LjAyMTIgMTQuNzkzN0g4Ni45Nzc4Qzg2LjY4MSAxNC4xODg1IDg2LjQwODQgMTMuNTU3NSA4Ni4wNjkxIDEyLjg4Nkw4NC45NDkxIDEwLjY5NjRIODEuNDgxNUw4NC45Njk5IDE2LjY2MDJMODEuMzk1MSAyMi43NzQzSDg0LjczNThMODUuODM2NSAyMC40MzI1Qzg2LjEzMTggMTkuODAyNiA4Ni40Mjg2IDE5LjE3MyA4Ni43MDM3IDE4LjUyNDVIODYuNzQ3MUM4Ny4wNDM0IDE5LjE3MyA4Ny4zMTcgMTkuODAyNiA4Ny42MzM2IDIwLjQzMjVMODguNzk2IDIyLjc3NDNIOTIuMzA4MUw4OC43NTUxIDE2LjUyODlMOTIuMjY1NyAxMC42OTY0WiIgZmlsbD0iI0Y0NzIxNiIgLz4NCiAgPHBhdGggZD0iTTk5LjEwMjcgMjAuNDk1OEM5OC4wNDQ5IDIwLjQ5NTggOTcuMDA4NCAxOS42NTIzIDk3LjAwODQgMTcuODk1NVYxNS42Mzk2Qzk3LjAwODQgMTQuMTg4NSA5Ny45NjA1IDEzLjAxNjIgOTkuMTY2NCAxMy4wMTYyQzEwMC43MDkgMTMuMDE2MiAxMDEuNTEzIDE0LjU3ODEgMTAxLjUxMyAxNi43MjU0QzEwMS41MTMgMTguODkyOCAxMDAuNjg4IDIwLjQ5NTggOTkuMTAyNyAyMC40OTU4Wk0xMDAuMjAyIDEwLjQzNjdDOTguNjc4NSAxMC40MzY3IDk3LjQ3MzYgMTEuMTA5MyA5Ni43MTI2IDEyLjM0NDFIOTYuNjY5MUw5Ni41MjE1IDEwLjY5NjRIOTMuNzkzMUM5My44MzYxIDExLjgwMjQgOTMuODc5IDEzLjA4MDkgOTMuODc5IDE0LjY0MzhWMjcuNjEwMUg5Ny4wMDg0VjIxLjYwMzRIOTcuMDUxNEM5Ny41NTggMjIuNDA0MSA5OC41NTMxIDIzLjAxMjYgOTkuODQxIDIzLjAxMjZDMTAyLjIzMSAyMy4wMTI2IDEwNC42ODQgMjEuMDYxNSAxMDQuNjg0IDE2LjYxNTNDMTA0LjY4NCAxMi45MDg0IDEwMi43ODIgMTAuNDM2NyAxMDAuMjAyIDEwLjQzNjciIGZpbGw9IiNGNDcyMTYiIC8+DQogIDxwYXRoIGQ9Ik0xMDkuNzA1IDEyLjgwMDZIMTA5LjYxOEwxMDkuNDkzIDEwLjY5NjRIMTA2LjgwNkMxMDYuODQ5IDExLjc3OTQgMTA2Ljg5MSAxMi45NzM3IDEwNi44OTEgMTQuNDY5M1YyMi43NzQzSDExMC4wMjJWMTYuNTI4OUMxMTAuMDIyIDE0LjQ2OTMgMTExLjA5OCAxMy40OTM2IDExMi41MTYgMTMuNDkzNkMxMTIuODM1IDEzLjQ5MzYgMTEzLjA4OCAxMy41MTUgMTEzLjMyMSAxMy41NTc1VjEwLjUwMUMxMTMuMTA5IDEwLjQ1NzQgMTEyLjkxNyAxMC40MzY3IDExMi42MjIgMTAuNDM2N0MxMTEuNTIyIDEwLjQzNjcgMTEwLjI1NSAxMS4yMzc3IDEwOS43MDUgMTIuODAwNloiIGZpbGw9IiNGNDcyMTYiIC8+DQogIDxwYXRoIGQ9Ik0xMTcuNDA1IDE1LjQ2NjFDMTE3LjQ5MSAxNC4yNzM5IDExOC4xMjUgMTIuNjY5NSAxMTkuNjI2IDEyLjY2OTVDMTIxLjE3IDEyLjY2OTUgMTIxLjY1NyAxNC4yMDg2IDEyMS42MzYgMTUuNDY2MUgxMTcuNDA1Wk0xMTkuODE2IDEwLjQzNjdDMTE2LjM2OSAxMC40MzY3IDExNC40MjQgMTMuNDI5NiAxMTQuNDI0IDE2Ljg5ODFDMTE0LjQyNCAyMC42NDgxIDExNi40OTUgMjIuOTkwOSAxMjAuMTM0IDIyLjk5MDlDMTIxLjU5MyAyMi45OTA5IDEyMi45NjcgMjIuNzI5MiAxMjMuOTQxIDIyLjI5ODJMMTIzLjQ5NyAyMC4wODVDMTIyLjY5MyAyMC4zNjcyIDEyMS43ODQgMjAuNTg0MiAxMjAuNjIxIDIwLjU4NDJDMTE4LjkyOSAyMC41ODQyIDExNy40OTEgMTkuNzYwNyAxMTcuNDA1IDE3LjcwMDFIMTI0LjQ0OEMxMjQuNTExIDE3LjM1NCAxMjQuNTMzIDE2Ljg5ODEgMTI0LjUzMyAxNi40MjE4QzEyNC41MzMgMTIuNTE3OCAxMjIuNjcgMTAuNDM2NyAxMTkuODE2IDEwLjQzNjciIGZpbGw9IiNGNDcyMTYiIC8+DQogIDxwYXRoIGQ9Ik0xMzEuMDMxIDE1LjQ4OTNDMTI5LjY3OCAxNC45MDI4IDEyOS4yMzQgMTQuNTU1MyAxMjkuMjM0IDEzLjg4NDlDMTI5LjIzNCAxMy4yMzI4IDEyOS43NDEgMTIuNzM1MyAxMzAuNjkxIDEyLjczNTNDMTMxLjU4IDEyLjczNTMgMTMyLjQwNiAxMy4wODA5IDEzMi45MTMgMTMuMzYzMUwxMzMuNTA2IDExLjEwOTNDMTMyLjgyOSAxMC43NDAxIDEzMS43OTQgMTAuNDM2NyAxMzAuNTg4IDEwLjQzNjdDMTI3Ljk2NCAxMC40MzY3IDEyNi4yNzQgMTIuMDgzNiAxMjYuMjc0IDE0LjI1MTdDMTI2LjI3NCAxNS41NzU5IDEyNy4wNzUgMTYuODU0IDEyOS4yNzYgMTcuNzY0NEMxMzAuNTY2IDE4LjMyODEgMTMwLjk2NyAxOC43MTgzIDEzMC45NjcgMTkuNDU1NEMxMzAuOTY3IDIwLjE5NDggMTMwLjQ0MSAyMC42NzEyIDEyOS4zMzggMjAuNjcxMkMxMjguMzY3IDIwLjY3MTIgMTI3LjIwMiAyMC4yMzY3IDEyNi41OSAxOS44NjcyTDEyNS45OTggMjIuMTg3OEMxMjYuNzc5IDIyLjY2NjkgMTI4LjAzIDIyLjk5MDkgMTI5LjMxOCAyMi45OTA5QzEzMi4yNTkgMjIuOTkwOSAxMzMuOTQ5IDIxLjQ3MTkgMTMzLjk0OSAxOS4xNzNDMTMzLjk0OSAxNy41MDU3IDEzMy4wMTkgMTYuMzMyOCAxMzEuMDMxIDE1LjQ4OTNaIiBmaWxsPSIjRjQ3MjE2IiAvPg0KICA8cGF0aCBkPSJNMTQwLjQwNSAxNS40ODkzQzEzOS4wNTEgMTQuOTAyOCAxMzguNjA5IDE0LjU1NTMgMTM4LjYwOSAxMy44ODQ5QzEzOC42MDkgMTMuMjMyOCAxMzkuMTE2IDEyLjczNTMgMTQwLjA2NyAxMi43MzUzQzE0MC45NTQgMTIuNzM1MyAxNDEuNzgxIDEzLjA4MDkgMTQyLjI4NyAxMy4zNjMxTDE0Mi44OCAxMS4xMDkzQzE0Mi4yMDMgMTAuNzQwMSAxNDEuMTY3IDEwLjQzNjcgMTM5Ljk2MyAxMC40MzY3QzEzNy4zMzggMTAuNDM2NyAxMzUuNjQ3IDEyLjA4MzYgMTM1LjY0NyAxNC4yNTE3QzEzNS42NDcgMTUuNTc1OSAxMzYuNDQ5IDE2Ljg1NCAxMzguNjUgMTcuNzY0NEMxMzkuOTM5IDE4LjMyODEgMTQwLjM0MSAxOC43MTgzIDE0MC4zNDEgMTkuNDU1NEMxNDAuMzQxIDIwLjE5NDggMTM5LjgxNCAyMC42NzEyIDEzOC43MTMgMjAuNjcxMkMxMzcuNzQxIDIwLjY3MTIgMTM2LjU3NiAyMC4yMzY3IDEzNS45NjQgMTkuODY3MkwxMzUuMzcyIDIyLjE4NzhDMTM2LjE1MyAyMi42NjY5IDEzNy40MDQgMjIuOTkwOSAxMzguNjkyIDIyLjk5MDlDMTQxLjYzMiAyMi45OTA5IDE0My4zMjMgMjEuNDcxOSAxNDMuMzIzIDE5LjE3M0MxNDMuMzIzIDE3LjUwNTcgMTQyLjM5NCAxNi4zMzI4IDE0MC40MDUgMTUuNDg5MyIgZmlsbD0iI0Y0NzIxNiIgLz4NCiAgPHBhdGggZD0iTTI0LjgyNDggMi42NTg1OEg0LjMwMDcyQzMuNTY0MjMgMi42NTg1OCAyLjk2Mjk1IDMuMjc1NDkgMi45NjI5NSA0LjAzMlYxNi42NDY1QzcuMDI1MDYgMTIuMjY2NiAxNC4yNTU0IDcuNDgxNTcgMjUuMjc5NyA2LjE3NzE2QzI1LjU3MjEgNi4xNDM1NCAyNi4xNjE1IDYuMDA0MSAyNi4xNjE1IDUuMTY2NDhWNC4wMzJDMjYuMTYxNSAzLjI3NTQ5IDI1LjU2MDYgMi42NTg1OCAyNC44MjQ4IDIuNjU4NTgiIGZpbGw9IiNGNDcyMTYiIC8+DQogIDxwYXRoIGQ9Ik0xNDYuMDM3IDkuNzY1NzdIMTQ1LjczOVY5LjEyNjk0SDE0NS45ODZDMTQ2LjI2MyA5LjEyNjk0IDE0Ni40MDEgOS4yMzE3NSAxNDYuNDAxIDkuNDQxNjJDMTQ2LjQwMSA5LjUzOTM0IDE0Ni4zNjggOS42MTc2MiAxNDYuMzAzIDkuNjc2OTZDMTQ2LjIzOCA5LjczNjEgMTQ2LjE0OSA5Ljc2NTc3IDE0Ni4wMzcgOS43NjU3N1pNMTQ2LjMzNCA5Ljk4ODFWOS45Nzg1OEMxNDYuNjggOS44ODk5OCAxNDYuODUzIDkuNjk0NzkgMTQ2Ljg1MyA5LjM5MTk1QzE0Ni44NTMgOS4xOTc3MiAxNDYuNzgzIDkuMDQ2MDMgMTQ2LjY0MSA4LjkzNjY2QzE0Ni40OTkgOC44MjY4OSAxNDYuMjkzIDguNzcyMSAxNDYuMDIzIDguNzcyMUgxNDUuMzE5VjEwLjk4MTRIMTQ1LjczOVYxMC4wOTQ1SDE0NS45MjNDMTQ2LjA1NiAxMC4wOTQ1IDE0Ni4xNiAxMC4yMDQxIDE0Ni4yMzUgMTAuNDIzMkwxNDYuNDI5IDEwLjk4MTRIMTQ2LjkyOUwxNDYuNjcxIDEwLjM1MjRDMTQ2LjU4NyAxMC4xNDU3IDE0Ni40NzQgMTAuMDI0MyAxNDYuMzM0IDkuOTg4MSIgZmlsbD0iI0Y0NzIxNiIgLz4NCiAgPHBhdGggZD0iTTE0Ny4wOTQgMTAuOTcyOUMxNDYuODA4IDExLjI2MjQgMTQ2LjQ2IDExLjQwNzQgMTQ2LjA1IDExLjQwNzRDMTQ1LjYzNyAxMS40MDc0IDE0NS4yODcgMTEuMjY0MiAxNDUuMDAxIDEwLjk3OEMxNDQuNzE1IDEwLjY5MTYgMTQ0LjU3MiAxMC4zMzI1IDE0NC41NzIgOS45MDA0NkMxNDQuNTcyIDkuNDc2MjEgMTQ0LjcxMiA5LjExOTA1IDE0NC45OTMgOC44Mjg2N0MxNDUuMjc0IDguNTM4NzQgMTQ1LjYyNiA4LjM5MzU4IDE0Ni4wNSA4LjM5MzU4QzE0Ni40NjggOC4zOTM1OCAxNDYuODE3IDguNTM3NTMgMTQ3LjEgOC44MjU1M0MxNDcuMzgzIDkuMTEzMTIgMTQ3LjUyNCA5LjQ3MTUgMTQ3LjUyNCA5LjkwMDQ2QzE0Ny41MjQgMTAuMzI2MyAxNDcuMzgyIDEwLjY4MzcgMTQ3LjA5NCAxMC45NzI5VjEwLjk3MjlaTTE0Ny4zMDIgOC42Mzk2QzE0Ni45NjcgOC4zMDgzMSAxNDYuNTU0IDguMTQyOTUgMTQ2LjA2IDguMTQyOTVDMTQ1LjU2IDguMTQyOTUgMTQ1LjE0IDguMzEzNjggMTQ0LjgwMSA4LjY1NTI1QzE0NC40NjIgOC45OTY0MSAxNDQuMjkyIDkuNDEzMTIgMTQ0LjI5MiA5LjkwNTIyQzE0NC4yOTIgMTAuNDExNiAxNDQuNDYgMTAuODI4OSAxNDQuNzk1IDExLjE1NzZDMTQ1LjEyOSAxMS40ODY1IDE0NS41NDYgMTEuNjUwOSAxNDYuMDQ1IDExLjY1MDlDMTQ2LjUzNiAxMS42NTA5IDE0Ni45NTIgMTEuNDgxMiAxNDcuMjkzIDExLjE0MjRDMTQ3LjYzNCAxMC44MDMzIDE0Ny44MDQgMTAuMzg2MiAxNDcuODA0IDkuODkwNzlDMTQ3LjgwNCA5LjM4ODAxIDE0Ny42MzcgOC45NzA2OSAxNDcuMzAyIDguNjM5NiIgZmlsbD0iI0Y0NzIxNiIgLz4NCjwvc3ZnPg==</value>
+  </data>
+</root>

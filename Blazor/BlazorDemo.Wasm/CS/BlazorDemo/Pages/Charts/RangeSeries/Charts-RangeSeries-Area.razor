@@ -1,0 +1,45 @@
+﻿@page "/ChartRangeArea"
+
+<DemoPageSectionComponent Id="Charts-RangeSeries-Area">
+    <DemoChildContent>
+        @inject IWeatherSummaryDataProvider WeatherSummaryDataProvider
+
+        <DxChart @ref="@chart"
+                 Data="@weatherForecasts"
+                 Width="100%">
+            <DxChartTitle Text="Annual Temperature in Hilo, Hawaii" />
+            <DxChartRangeAreaSeries StartValueField="(DetailedWeatherSummary  i) => i.MinTemperatureF"
+                                    EndValueField="i=>i.MaxTemperatureF"
+                                    ArgumentField="i => new DateTime(2000, i.Date.Month, 1)"
+                                    Name="Temperature, °F"
+                                    Filter="@((DetailedWeatherSummary  i) => i.City == "HILO")">
+                <DxChartSeriesLabel Visible="true"
+                                    ValueFormat="@(ChartElementFormat.FromLdmlString("0# °F"))" />
+                <DxChartSeriesPoint Visible="true" />
+            </DxChartRangeAreaSeries>
+            <DxChartValueAxis>
+                <DxChartAxisTitle Text="Temperature, °F" />
+            </DxChartValueAxis>
+            <DxChartLegend Visible="false" />
+            <DxChartArgumentAxis SideMarginsEnabled="false">
+                <DxChartAxisLabel Format="ChartElementFormat.Month" />
+            </DxChartArgumentAxis>
+        </DxChart>
+    </DemoChildContent>
+
+    <OptionsContent>
+        <OptionChartExportComponent ExportMethod="@ExportChart"/>
+    </OptionsContent>
+
+    @code {
+        IEnumerable<DetailedWeatherSummary> weatherForecasts;
+        DxChartBase chart;
+
+        async void ExportChart(ChartExportFormat format) {
+            await chart?.ExportAsync("RangeAreaChart", format);
+        }
+        protected override async Task OnInitializedAsync() {
+            weatherForecasts = await WeatherSummaryDataProvider.GetDataAsync(true);
+        }
+    }
+</DemoPageSectionComponent>

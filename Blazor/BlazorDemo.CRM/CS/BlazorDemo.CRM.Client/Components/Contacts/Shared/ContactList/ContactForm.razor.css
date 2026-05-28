@@ -1,0 +1,75 @@
+.user-avatar {
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    border: 0.0625rem solid var(--dxds-color-border-neutral-default-rest);
+    border-radius: 50%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.small-size .user-avatar {
+    width: 8.75rem;
+    height: 8.75rem;
+}
+
+.medium-size .user-avatar {
+    width: 10rem;
+    height: 10rem;
+}
+
+.large-size .user-avatar {
+    width: 11.25rem;
+    height: 11.25rem;
+}
+
+.user-avatar img {
+    max-width: 100%;
+}
+
+::deep .label-icon {
+    margin-right: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    display: block;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    background-color: currentColor;
+}
+
+::deep .edit-icon {
+    mask-image: url("images/icons/edit.svg");
+}
+
+::deep .contact-item {
+    height: 2em;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+::deep .caption {
+    font-weight: 600;
+}
+
+a {
+    color: var(--dxds-color-content-primary-default-rest);
+    text-decoration: underline;
+}
+
+::deep .w-100 {
+    width: 100%;
+}
+
+.separator {
+    margin: 0;
+    color: inherit;
+    border: 0;
+    border-top: var(--dxds-spacing-10) solid;
+    opacity: var(--dxds-opacity-25);
+}
+
+::deep .text-danger {
+    color: var(--dxds-color-surface-danger-default-rest);
+}

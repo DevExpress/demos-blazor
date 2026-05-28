@@ -1,0 +1,10 @@
+/*BeginHide*/::deep /*EndHide*/ .dxbl-grid {
+    height: 522px;
+}
+/*BeginHide*/::deep /*EndHide*/ .btn-column-chooser {
+    width: 16px;
+    height: 16px;
+    -webkit-mask-image: url("images/icons/column-chooser.svg");
+    mask-image: url("images/icons/column-chooser.svg");
+    background-color: currentColor;
+}

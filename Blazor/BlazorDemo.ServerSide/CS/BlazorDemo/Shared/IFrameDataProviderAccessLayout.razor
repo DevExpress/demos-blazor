@@ -1,0 +1,10 @@
+﻿@inherits LayoutComponentBase
+@inject DemoThemeService Themes
+@typeparam T
+<DataProviderAccessAreaContainer DataProviders="@GetDataProviders()">
+    <div class="@($"iframe-theme-wrapper theme-{Themes.ActiveTheme.Name}")">
+        <main class="content" aria-labelledby="iframe-main-heading">
+            @Body
+        </main>
+    </div>
+</DataProviderAccessAreaContainer>

@@ -1,0 +1,13 @@
+{
+  "name": "demo-dependencies",
+  "private": true,
+  "dependencies": {
+    "@devexpress/icon-metadata": "1.0.0",
+    "@highlightjs/cdn-assets": "11.5.0",
+    "highlightjs-cshtml-razor": "2.2.0",
+    "clipboard": "2.0.6"
+  },
+  "scripts": {
+    "postinstall": "node -e \"fs.copyFileSync('./node_modules/@devexpress/icon-metadata/dist/metadata.json', './DataSources/IconMetadata.json')\""
+  }
+}

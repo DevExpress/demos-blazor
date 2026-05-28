@@ -1,0 +1,69 @@
+﻿@using System.Globalization
+@using BlazorDemo.CRM.Models
+
+@namespace BlazorDemo.CRM.Components.ContactDetails
+
+@inherits DataPresenter<List<Activity>>
+
+@inject IDialogService DialogService
+
+<div class="w-100 h-100">
+    <DxListBox TData="Activity" TValue="Activity" Data="@Data" ReadOnly="true" CssClass="activities">
+        <ItemDisplayTemplate>
+            <DxGridLayout CssClass="activity">
+                <Columns>
+                    <DxGridLayoutColumn Width="2fr" />
+                    <DxGridLayoutColumn Width="1fr" />
+                    <DxGridLayoutColumn Width="auto" />
+                </Columns>
+                <Items>
+                    <DxGridLayoutItem Column="0" CssClass="grid-item name">
+                        <Template>
+                            <span>@context.DataItem.Name</span>
+                        </Template>
+                    </DxGridLayoutItem>
+                    <DxGridLayoutItem Column="1" CssClass="grid-item info">
+                        <Template>
+                            <span>@context.DataItem.Date?.ToString(CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern) by @context.DataItem.Manager</span>
+                        </Template>
+                    </DxGridLayoutItem>
+                    <DxGridLayoutItem Column="2" CssClass="grid-item">
+                        <Template>
+                            <DxDropDownButton CssClass="@($"menu-button-{context.VisibleIndex}")"
+                                              IconCssClass="icon more-icon medium-icon"
+                                              RenderStyle="ButtonRenderStyle.Link"
+                                              DropDownToggleVisible="false">
+                                <Items>
+                                    <DxDropDownButtonItem Text="View Details" Click="@(async () => await ShowDetailsAsync(context.VisibleIndex))" />
+                                    <DxDropDownButtonItem Text="Delete Record" Click="@(async () => await DeleteRecordAsync(context.VisibleIndex))" />
+                                </Items>
+                            </DxDropDownButton>
+                        </Template>
+                    </DxGridLayoutItem>
+                </Items>
+            </DxGridLayout>
+        </ItemDisplayTemplate>
+    </DxListBox>
+</div>
+
+@code {
+    async Task DeleteRecordAsync(int index) {
+        var newData = new List<Activity>(Data!);
+        newData.RemoveAt(index);
+        await OnDataChangedAsync(newData);
+    }
+
+    async Task ShowDetailsAsync(int index) {
+        if(index < 0 || index >= Data!.Count)
+            return;
+
+        var activity = Data[index];
+        await DialogService.AlertAsync(new MessageBoxOptions {
+            Title = "Details",
+            Text = $"{activity.Name} on {activity.Date?.ToString(CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern)} by {activity.Manager}",
+            OkButtonText = "OK",
+            RenderStyle = MessageBoxRenderStyle.Primary,
+            ShowCloseButton = true
+        });
+    }
+}

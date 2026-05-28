@@ -1,0 +1,24 @@
+﻿<DemoPageSectionComponent Id="Editors-ComboBox-EmptyDataAreaTemplate" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <DxComboBox Data="@DataItems"
+                    @bind-Value="@Item"
+                    CssClass="cw-480"
+                    NullText="Select an order..."
+                    SizeMode="Params.SizeMode">
+            <EmptyDataAreaTemplate>
+                @if (!context.IsDataLoading) {
+                    <div class="empty-data-area-template">
+                        <div class="d-flex flex-column">
+                            No orders found
+                        </div>
+                    </div>
+                }
+            </EmptyDataAreaTemplate>
+        </DxComboBox>
+    </ChildContentWithParameters>
+
+    @code {
+        IEnumerable<string> DataItems { get; set; }
+        string Item { get; set; }
+    }
+</DemoPageSectionComponent>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="H:\Work\XML Schemes\module-new.xsd">
+	<controls>
+		<controlentry>
+			<control>
+				<name>sbAddContact</name>
+				<windowcaption>Add Contact</windowcaption>
+				<description>Invokes the 'New Contact' dialog which allows you to customize a new contact. Note the contact can be added to the database if the fields marked with an asterisk are filled.</description>
+				<memberlist></memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>sbRemoveContact</name>
+				<windowcaption>Remove Contact</windowcaption>
+				<description>Removed the selected contact.</description>
+				<memberlist></memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>gridControl1</name>
+				<windowcaption>DXErrorProvider Implementation</windowcaption>
+				<description>The 'Contact' persistent class implements the IDXDataErrorInfo interface to support error notifications. The validation logic is implemented in the GetPropertyError method. The error provided is initialized when the 'New Contact' dialog is shown. Its initialization is implemented in the InitErrorProvider() method.</description>
+				<memberlist></memberlist>
+				<dtimage/>
+			</control>
+		</controlentry>
+	</controls>
+</totalinfo>

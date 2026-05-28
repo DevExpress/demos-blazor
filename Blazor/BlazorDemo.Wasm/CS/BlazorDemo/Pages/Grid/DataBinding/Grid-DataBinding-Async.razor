@@ -1,0 +1,41 @@
+﻿@page "/Grid/DataBinding/Async"
+@layout DataProviderAccessArea<INwindDataProvider>
+
+<DemoPageSectionComponent Id="Grid-DataBinding-Async" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <div class="grid-container">
+            <DxGrid Data="@Data" SizeMode="Params.SizeMode" ShowAllRows="true" ColumnResizeMode="GridColumnResizeMode.NextColumn" TextWrapEnabled="false">
+                <Columns>
+                    <DxGridDataColumn FieldName="CompanyName" />
+                    <DxGridDataColumn FieldName="ContactName" />
+                    <DxGridDataColumn FieldName="ContactTitle" />
+                    <DxGridDataColumn FieldName="Country" Width="10%" />
+                    <DxGridDataColumn FieldName="City" Width="10%" />
+                    <DxGridDataColumn FieldName="Address" />
+                    <DxGridDataColumn FieldName="Phone" Width="10%" />
+                </Columns>
+            </DxGrid>
+        </div>
+
+        @code {
+            object Data { get; set; }
+
+            protected override async Task OnInitializedAsync() {
+                var suppliers = await NwindDataService.GetSuppliersAsync();
+                Data = suppliers.Select(s => {
+                    return new {
+                        CompanyName = s.CompanyName,
+                        ContactName = s.ContactName,
+                        ContactTitle = s.ContactTitle,
+                        Country = s.Country,
+                        City = s.City,
+                        Address = s.Address,
+                        Phone = s.Phone
+                    };
+                });
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

@@ -1,0 +1,9 @@
+﻿@layout MainLayout
+@typeparam T
+@inherits LayoutComponentBase
+<DataProviderAccessAreaContainer DataProviders="@GetDataProviders()">
+    <DemoPageComponent>
+        @Body
+    </DemoPageComponent>
+</DataProviderAccessAreaContainer>
+

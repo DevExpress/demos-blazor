@@ -1,0 +1,49 @@
+﻿<DemoPageSectionComponent Id="Editors-ListBox-MultipleSelection" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <div class="d-flex flex-wrap cw-800">
+            <DxListBox Data="@Data"
+                       TextFieldName="@nameof(Employee.Text)"
+                       SelectionMode="ListBoxSelectionMode.Multiple"
+                       ShowCheckboxes="@ShowCheckboxes"
+                       ShowSelectAllCheckbox="@ShowSelectAllCheckbox"
+                       SizeMode="Params.SizeMode"
+                       CssClass="w-auto mt-1 me-1 flex-grow-1 chi-220 flex-basis-240"
+                       @bind-Values="@Values"
+                       aria-label="Employees">
+            </DxListBox>
+            <div class="demo-part card mt-1 me-1 flex-grow-1 max-h-220 flex-basis-240">
+                <div class="demo-part-header card-header bg-transparent text-body border-bottom-0">
+                    Selected Items:
+                </div>
+                <div class="demo-part-body card-body p-0 pb-2 overflow-auto">
+                    <ul class="list-group list-group-flush bg-transparent border-0">
+                        @foreach(var item in Values) {
+                            <li class="list-group-item bg-transparent text-body py-1 border-0">
+                                @item.Text
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </ChildContentWithParameters>
+
+    <OptionsContent>
+        <OptionCheckBox @bind-Checked="@ShowCheckboxes" Label="Show Checkboxes"/>
+        <OptionCheckBox  Enabled="@ShowCheckboxes" @bind-Checked="@ShowSelectAllCheckbox" Label="Show Select All Checkbox"/>
+    </OptionsContent>
+
+    @code {
+        bool ShowCheckboxes { get; set; } = true;
+        bool ShowSelectAllCheckbox { get; set; } = true;
+        IEnumerable<Employee> Data { get; set; }
+        IEnumerable<Employee> Values { get; set; }
+
+        protected override async Task OnInitializedAsync() {
+            Data = await NwindDataService.GetEmployeesAsync();
+            Values = Data.Take(2);
+        }
+    }
+</DemoPageSectionComponent>

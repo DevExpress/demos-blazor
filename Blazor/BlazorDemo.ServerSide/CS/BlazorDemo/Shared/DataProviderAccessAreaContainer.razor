@@ -1,0 +1,34 @@
+﻿@inject ICspNonceService NonceProvider
+
+@if (_ready)
+{
+    @ChildContent
+}
+else if(_notSupported)
+{
+    <div class="online-only-warning card">
+        <img src="_content/BlazorDemo/images/information.svg" alt="Information" />
+        <p class="info-caption">To try this demo, please navigate to the <a href="@_onlineDemoUrl">online demo page</a>.</p>
+        <p class="info-description">This demo is only accessible online because it uses a large data source that is hosted on a DevExpress internal database server.</p>
+    </div>
+}
+else
+{
+    <style nonce="@NonceProvider.Nonce">
+        .progress > .progress-bar {
+            @($"width: {_progress}%;")
+        }
+    </style>
+
+    <div class="demo-description">
+        <div class="data-provider-area">
+            <p>Required data source is being prepared...</p>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped" role="progressbar"
+                 aria-valuenow="@_progress"
+                 aria-valuemin="0"
+                 aria-valuemax="100"></div>
+        </div>
+    </div>
+}

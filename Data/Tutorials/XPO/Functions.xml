@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<totalinfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="H:\Work\XML Schemes\module-new.xsd">
+	<controls>
+		<controlentry>
+			<control>
+				<name>gclGetYearGroup</name>
+				<windowcaption>Grouping by birth year</windowcaption>
+				<description>Grouping by birth year, using persistent alias for function GetYear()</description>
+				<memberlist/>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>gclMathematic</name>
+				<windowcaption>Using mathematical functions</windowcaption>
+				<description>Using mathematical functions in XPView</description>
+				<memberlist/>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>gclStrings</name>
+				<windowcaption>Using string functions</windowcaption>
+				<description>Using string functions in XPView</description>
+				<memberlist/>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>gclCustomInMemory</name>
+				<windowcaption>Using custom functions</windowcaption>
+				<description>Using custom functions</description>
+				<memberlist/>
+				<dtimage/>
+			</control>
+		</controlentry>
+		<controlentry>
+			<control>
+				<name>gclCustomQuery</name>
+				<windowcaption>Using custom functions</windowcaption>
+				<description>Using custom functions</description>
+				<memberlist/>
+				<dtimage/>
+			</control>
+		</controlentry>
+	</controls>
+
+</totalinfo>

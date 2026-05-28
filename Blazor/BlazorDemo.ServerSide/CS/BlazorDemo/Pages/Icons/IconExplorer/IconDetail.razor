@@ -1,0 +1,112 @@
+﻿@using DevExpress.Blazor.Internal
+
+@implements IAsyncDisposable
+
+@inject IToastNotificationService ToastService
+@inject IJSRuntime JS
+
+<div>
+    <DxGridLayout>
+        <Rows>
+            <DxGridLayoutRow Areas="icon details" Height="min-content" />
+            <DxGridLayoutRow Areas="code code" />
+        </Rows>
+        <Columns>
+            <DxGridLayoutColumn Width="min-content" />
+            <DxGridLayoutColumn />
+        </Columns>
+        <Items>
+            <DxGridLayoutItem Area="icon" CssClass="@Icon.IconPreviewCssClass">
+                <Template>
+                    <DxImage Source="@ImageSource.Create(Icon.Uri, null)"/>
+                </Template>
+            </DxGridLayoutItem>
+            <DxGridLayoutItem Area="details">
+                <Template>
+                    <DxFormLayout CssClass="icon-detail-layout px-4">
+                        <DxFormLayoutItem Caption="Set:" ColSpanMd="12">
+                            <span class="icon-detail">@Icon.Set</span>
+                        </DxFormLayoutItem>
+                        <DxFormLayoutItem Caption="Style:" ColSpanMd="12">
+                            <span class="icon-detail">@Icon.Style</span>
+                        </DxFormLayoutItem>
+                        <DxFormLayoutItem Caption="Color:" ColSpanMd="12">
+                            <span class="icon-detail">@Icon.Color</span>
+                        </DxFormLayoutItem>
+                        <DxFormLayoutItem Caption="Size:" ColSpanMd="12">
+                            <span class="icon-detail">@Icon.Size</span>
+                        </DxFormLayoutItem>
+                    </DxFormLayout>
+                </Template>
+            </DxGridLayoutItem>
+            <DxGridLayoutItem Area="code">
+                <Template>
+                    <DxFormLayout CssClass="icon-detail-layout icon-code pt-3">
+                        <DxFormLayoutItem Caption="Adaptive ID:" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12">
+                            <DxTextBox InputId="adaptive-api-input" InputCssClass="icon-id" ReadOnly="true" Text="@Icon.AdaptiveApi">
+                                <Buttons>
+                                    <DxEditorButton data-copy-from="adaptive-api-input" Id="adaptive-api-button" IconCssClass="editor-icon menu-icon-copy" Tooltip="Copy"/>
+                                </Buttons>
+                            </DxTextBox>
+                        </DxFormLayoutItem>
+                        <DxFormLayoutItem Caption="Static ID:" CaptionPosition="CaptionPosition.Vertical" ColSpanMd="12">
+                            <DxTextBox InputId="static-api-input" InputCssClass="icon-id" ReadOnly="true" Text="@Icon.StaticApi">
+                                <Buttons>
+                                    <DxEditorButton data-copy-from="static-api-input" Id="static-api-button" IconCssClass="editor-icon menu-icon-copy" Tooltip="Copy" />
+                                </Buttons>
+                            </DxTextBox>
+                        </DxFormLayoutItem>
+                    </DxFormLayout>
+                </Template>
+            </DxGridLayoutItem>
+        </Items>
+    </DxGridLayout>
+</div>
+<DxToastProvider MaxToastCount="2" StickToViewport="true" ShowCloseButton="true" />
+
+@code {
+    [Parameter]
+    public DemoIcon Icon { get; set; }
+
+    IJSObjectReference? module;
+    DotNetObjectReference<IconDetail>? dotNetRef;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender) {
+        if(firstRender) {
+            module = await JS.InvokeAsync<IJSObjectReference>("import",
+                "./_content/BlazorDemo/Pages/Icons/IconExplorer/IconDetail.razor.js");
+            dotNetRef = DotNetObjectReference.Create(this);
+            await module!.InvokeVoidAsync("init", dotNetRef);
+        }
+    }
+
+    [JSInvokable]
+    public void OnCopySuccess() {
+        ToastService.ShowToast(new ToastOptions {
+            RenderStyle = ToastRenderStyle.Info,
+            Title = "Notification",
+            Text = "The icon identifier has been copied to the clipboard."
+        });
+    }
+
+    [JSInvokable]
+    public void OnCopyError() {
+        ToastService.ShowToast(new ToastOptions {
+            RenderStyle = ToastRenderStyle.Warning,
+            Title = "Notification",
+            Text = "Failed to copy the icon identifier to the clipboard."
+        });
+    }
+
+    async ValueTask IAsyncDisposable.DisposeAsync() {
+        if(module != null) {
+            try {
+                await module.InvokeVoidAsync("dispose");
+                await module.DisposeAsync();
+            }
+            catch(JSDisconnectedException) {
+            }
+        }
+        dotNetRef?.Dispose();
+    }
+}

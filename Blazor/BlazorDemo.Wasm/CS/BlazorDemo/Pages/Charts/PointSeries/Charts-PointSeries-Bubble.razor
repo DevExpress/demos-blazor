@@ -1,0 +1,96 @@
+﻿@page "/ChartBubbleSeries"
+
+@using System.Text.RegularExpressions
+@using System.Drawing;
+
+<DemoPageSectionComponent Id="Charts-PointSeries-Bubble">
+    <DemoChildContent>
+        @inject IPopulationCorrelationDataProvider PopulationCorrelation
+        <DxChart @ref="@chart"
+                 Data="@chartsData"
+                 Width="100%"
+                 Height="500px">
+            <DxChartTitle Text="Correlation between Total Population and Population with Age over 60" />
+
+            <DxChartBubbleSeries Name="Europe"
+                                 T="PopulationCorrelationDataPoint"
+                                 TArgument="double"
+                                 TValue="double"
+                                 TSize="double"
+                                 ArgumentField="pc => pc.TotalPopulation"
+                                 ValueField="pc => pc.Older60Population"
+                                 SizeField="pc => pc.Older60Population / pc.TotalPopulation"
+                                 Filter='pc => pc.Region == "Europe"' />
+            <DxChartBubbleSeries Name="Africa"
+                                 T="PopulationCorrelationDataPoint"
+                                 TArgument="double"
+                                 TValue="double"
+                                 TSize="double"
+                                 ArgumentField="pc => pc.TotalPopulation"
+                                 ValueField="pc => pc.Older60Population"
+                                 SizeField="pc => pc.Older60Population / pc.TotalPopulation"
+                                 Filter='pc => pc.Region == "Africa"' />
+            <DxChartBubbleSeries Name="Asia"
+                                 T="PopulationCorrelationDataPoint"
+                                 TArgument="double"
+                                 TValue="double"
+                                 TSize="double"
+                                 ArgumentField="pc => pc.TotalPopulation"
+                                 ValueField="pc => pc.Older60Population"
+                                 SizeField="pc => pc.Older60Population / pc.TotalPopulation"
+                                 Filter='pc => pc.Region == "Asia"' />
+            <DxChartBubbleSeries Name="North America"
+                                 T="PopulationCorrelationDataPoint"
+                                 TArgument="double"
+                                 TValue="double"
+                                 TSize="double"
+                                 ArgumentField="pc => pc.TotalPopulation"
+                                 ValueField="pc => pc.Older60Population"
+                                 SizeField="pc => pc.Older60Population / pc.TotalPopulation"
+                                 Filter='pc => pc.Region == "North America"' />
+
+
+            <DxChartLegend Position="RelativePosition.Outside"
+                           VerticalAlignment="VerticalEdge.Bottom"
+                           HorizontalAlignment="HorizontalAlignment.Center"
+                           Orientation="Orientation.Horizontal" />
+
+            <DxChartArgumentAxis>
+                <DxChartAxisTitle Text="Total population" />
+                <DxChartAxisLabel Format='ChartElementFormat.FromLdmlString("#0M")' />
+            </DxChartArgumentAxis>
+
+            <DxChartValueAxis EndOnTick="false" SideMarginsEnabled="false">
+                <DxChartAxisTitle Text="Population with Age over 60" />
+                <DxChartAxisLabel Format='ChartElementFormat.FromLdmlString("#0M")' />
+                <DxChartAxisRange StartValue = "-3" EndValue = "50"/>
+            </DxChartValueAxis>
+
+            <DxChartTooltip Enabled="true">
+                @context.GetBubblePoint().Render((bubblePoint) =>
+                    @<div class="m-75">
+                        <div> @(((PopulationCorrelationDataPoint)bubblePoint.DataItems.First()).Country)</div>
+                        <div>Total Population: @($"{bubblePoint.Argument: 0.00M}")</div>
+                        <div>Population with Age over 60: @($"{bubblePoint.Value: 0.00M} ({Math.Round(((double)bubblePoint.Size)*100)}%)")</div>
+                    </div>
+                )
+            </DxChartTooltip>
+        </DxChart>
+    </DemoChildContent>
+
+    <OptionsContent>
+        <OptionChartExportComponent ExportMethod="@ExportChart" />
+    </OptionsContent>
+
+    @code {
+        IEnumerable<PopulationCorrelationDataPoint> chartsData;
+        DxChartBase chart;
+
+        async void ExportChart(ChartExportFormat format) {
+            await chart?.ExportAsync("BubbleChart", format);
+        }
+        protected override async Task OnInitializedAsync() {
+            chartsData = await PopulationCorrelation.GetData();
+        }
+    }   
+</DemoPageSectionComponent>

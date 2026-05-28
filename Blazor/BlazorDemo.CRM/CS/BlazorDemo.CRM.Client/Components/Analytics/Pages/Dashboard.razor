@@ -1,0 +1,335 @@
+﻿@page "/Dashboard"
+
+@using System.Globalization
+@using BlazorDemo.CRM.Client.Services
+@using BlazorDemo.CRM.Client.Tools
+@using BlazorDemo.CRM.Models
+@using BlazorDemo.CRM.Services.DataProviders
+@using BlazorDemo.CRM.Components.Dashboard
+@using DevExpress.AIIntegration.Tools
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.Extensions.AI
+
+@implements IDisposable
+
+@attribute [Authorize]
+
+@inject AnalyticDataProvider DataProvider
+@inject IToastNotificationService ToastService
+@inject AIToolsContextContainer AIToolsContextContainer
+
+<DxLayoutBreakpoint MaxWidth="1400" IsActiveChanged="OnScreenSizeChanged"/>
+<DxLayoutBreakpoint MinWidth="1400" MaxWidth="2000" @bind-IsActive="@IsMediumScreen"/>
+<DxLayoutBreakpoint MinWidth="2000" @bind-IsActive="@IsLargeScreen"/>
+
+<div class="content-root">
+    <div class="card toolbar">
+        <DxToolbar Title="Dashboard" CssClass="toolbar" ItemRenderStyleMode="ToolbarRenderStyleMode.Plain">
+            <Items>
+                <DxToolbarItem Checked="@(DateRange == DateRange.Week)" Click="@(async _ => await SetDateRangeAsync(DateRange.Week))" Text="Week" />
+                <DxToolbarItem Checked="@(DateRange == DateRange.TwoWeeks)" Click="@(async _ => await SetDateRangeAsync(DateRange.TwoWeeks))" Text="2 Weeks" />
+                <DxToolbarItem Checked="@(DateRange == DateRange.Month)" Click="@(async _ => await SetDateRangeAsync(DateRange.Month))" Text="Month" />
+                <DxToolbarItem Checked="@(DateRange == DateRange.Year)" Click="@(async _ => await SetDateRangeAsync(DateRange.Year))" Text="Year" />
+                <DxToolbarItem Checked="@(DateRange == DateRange.All)" Click="@(async _ => await SetDateRangeAsync(DateRange.All))" Text="All" />
+                <DxToolbarItem Text="Add Card" Click="OnAddCardClick" Alignment="ToolbarItemAlignment.Right" IconCssClass="add-icon icon medium-icon" />
+                <DxToolbarItem Alignment="ToolbarItemAlignment.Right" Click="@ExportData" Tooltip="Export" Enabled="@IsDataLoaded" IconCssClass="export-icon icon medium-icon" />
+                <DxToolbarItem Alignment="ToolbarItemAlignment.Right" Click="@LoadDataAsync" Tooltip="Reload Data" IconCssClass="refresh-icon icon medium-icon" />
+                <DxToolbarItem Alignment="ToolbarItemAlignment.Right" Click="@OnAIChatClick" Tooltip="@AIChatTooltip" Text="AI Insights" IconCssClass="ai-chat-icon icon medium-icon"/>
+            </Items>
+        </DxToolbar>
+    </div>
+    <div class="@DashboardCssClass()">
+        <DxLoadingPanel Visible="@(!IsDataLoaded)"
+                        IsContentBlocked="true"
+                        IsContentVisible="false"
+                        IndicatorVisible="true"
+                        IndicatorAreaVisible="true"
+                        Text="Loading..."
+                        CssClass="dashboard-loading-panel">
+            <DxDrawer CssClass="@DrawerCssClass()"
+                      @bind-IsOpen="IsAIChatPanelOpen"
+                      Position="DrawerPosition.Right"
+                      CloseOnEscape="true"
+                      ApplyBackgroundShading="false"
+                      PanelWidth="@GetAIChatPanelWidth()"
+                      OpenCssClass="dashboard-drawer-opened">
+                <BodyTemplate>
+                    @if(IsDataLoaded) {
+                        <div class="chat-container">
+                            <DxAIChat Initialized="OnChatInitialized"
+                                      IncludeFunctionCallInfo="true"
+                                      UseStreaming="true"
+                                      CssClass="chat"
+                                      ResponseContentFormat="ResponseContentFormat.Markdown"
+                                      ShowHeader="true"
+                                      ChatResponseProviderServiceKey="@ChatResponseProviderServiceKeys.Dashboard"
+                                      HeaderText="AI Data Insights">
+                                <MessageContentTemplate>
+                                    <div class="chat-content">@MarkdownRenderer.ToSafeHtml(context.Content)</div>
+                                </MessageContentTemplate>
+                                <PromptSuggestions>
+                                    <DxAIChatPromptSuggestion SendOnClick="true" Title="Trends" Text="Identify sales trends" PromptMessage="Review my sales data and tell me about recent trends or any anomalies." />
+                                    <DxAIChatPromptSuggestion SendOnClick="true" Title="Predictions" Text="Predict which deals are at risk of closing" PromptMessage="Predict which deals are at risk of closing" />
+                                </PromptSuggestions>
+                            </DxAIChat>
+                        </div>
+                    }
+                </BodyTemplate>
+                <TargetContent>
+                    @if(IsDataLoaded) {
+                        <DxGridLayout CssClass="dashboard-grid" RowSpacing="1rem" ColumnSpacing="1rem">
+                            <Rows>
+                                @if(IsLargeScreen) {
+                                    <DxGridLayoutRow Areas="item1 item2 item3 item4" Height="auto"/>
+                                    <DxGridLayoutRow Areas="item5 item5 item5 item5" Height="auto"/>
+                                    <DxGridLayoutRow Areas="item5 item5 item5 item5" Height="auto"/>
+                                    <DxGridLayoutRow Areas="item6 item6 item7 item7" Height="auto"/>
+                                } else if(IsMediumScreen) {
+                                    <DxGridLayoutRow Areas="item1 item2" Height="auto"/>
+                                    <DxGridLayoutRow Areas="item3 item4" Height="auto"/>
+                                    <DxGridLayoutRow Areas="item5 item5" Height="auto"/>
+                                    <DxGridLayoutRow Areas="item6 item7" Height="auto"/>
+                                } else {
+                                    <DxGridLayoutRow Areas="item1" Height="auto"/>
+                                    <DxGridLayoutRow Areas="item2" Height="auto"/>
+                                    <DxGridLayoutRow Areas="item3" Height="auto"/>
+                                    <DxGridLayoutRow Areas="item4" Height="auto"/>
+                                    <DxGridLayoutRow Areas="item5" Height="auto"/>
+                                    <DxGridLayoutRow Areas="item6" Height="auto"/>
+                                    <DxGridLayoutRow Areas="item7" Height="1fr"/>
+                                }
+                            </Rows>
+                            <Columns>
+                                @if(IsLargeScreen) {
+                                    <DxGridLayoutColumn/>
+                                    <DxGridLayoutColumn/>
+                                    <DxGridLayoutColumn/>
+                                    <DxGridLayoutColumn/>
+                                } else if(IsMediumScreen) {
+                                    <DxGridLayoutColumn/>
+                                    <DxGridLayoutColumn/>
+                                } else {
+                                    <DxGridLayoutColumn/>
+                                }
+                            </Columns>
+                            <Items>
+                                <DxGridLayoutItem Area="item1">
+                                    <Template>
+                                        <Ticker Title="Opportunities" Total="@OpportunitiesTotal" Value="0.203" LabelIconCss="data-trending-icon"/>
+                                    </Template>
+                                </DxGridLayoutItem>
+                                <DxGridLayoutItem Area="item2">
+                                    <Template>
+                                        <Ticker Title="Revenue Total" Total="@RevenueTotal" Value="-0.147" LabelIconCss="data-area-icon"/>
+                                    </Template>
+                                </DxGridLayoutItem>
+                                <DxGridLayoutItem Area="item3">
+                                    <Template>
+                                        <Ticker Title="Conversion" Total="@AnalyticsDashboardDataHelper.Conversion" Value="-0.023" LabelIconCss="data-usage-icon"/>
+                                    </Template>
+                                </DxGridLayoutItem>
+                                <DxGridLayoutItem Area="item4">
+                                    <Template>
+                                        <Ticker Title="Leads" Total="@AnalyticsDashboardDataHelper.LeadsCount" Value="0.085" LabelIconCss="data-pie-icon"/>
+                                    </Template>
+                                </DxGridLayoutItem>
+                                <DxGridLayoutItem CssClass="card" Area="item5">
+                                    <Template>
+                                        <div class="title">Revenue</div>
+                                        <DxChart Data="@Sales">
+                                            <DxChartSplineAreaSeries T="Sale"
+                                                                     TArgument="DateTime"
+                                                                     TValue="double"
+                                                                     ArgumentField="s => s.Date!.Value"
+                                                                     ValueField="s => s.Total!.Value"
+                                                                     Name="Revenue"
+                                                                     HoverMode="ChartContinuousSeriesHoverMode.None">
+                                            </DxChartSplineAreaSeries>
+                                            @foreach(var annotation in ChartAnnotationsProvider.ChartAnnotations) {
+                                                <DxChartAnnotation Argument="annotation.Date"
+                                                                   Series="Revenue"
+                                                                   Text="@annotation.Text"
+                                                                   TooltipText="@annotation.TooltipText"
+                                                                   VerticalOffset="@annotation.VerticalOffset"/>
+                                            }
+                                            <DxChartLegend Visible="false"/>
+                                        </DxChart>
+                                    </Template>
+                                </DxGridLayoutItem>
+                                <DxGridLayoutItem CssClass="card" Area="item6">
+                                    <Template>
+                                        <div class="title">Revenue Analysis</div>
+                                        <DxGrid Data="@SalesByLocation"
+                                                ShowAllRows="true"
+                                                TextWrapEnabled="false"
+                                                ColumnResizeMode="GridColumnResizeMode.NextColumn"
+                                                HighlightRowOnHover="true">
+                                            <Columns>
+                                                <DxGridDataColumn Caption="State" FieldName="StateName"/>
+                                                <DxGridDataColumn Caption="Sales"
+                                                                  FieldName="Total"
+                                                                  TextAlignment="GridTextAlignment.Left">
+                                                    <CellDisplayTemplate Context="cellContext">
+                                                        @(((SaleByLocation)cellContext.DataItem).Total!.Value.ToString("C", CultureInfo.GetCultureInfo("en-US")))
+                                                    </CellDisplayTemplate>
+                                                </DxGridDataColumn>
+                                                <DxGridDataColumn Caption="% Sold"
+                                                                  FieldName="Percentage"
+                                                                  DisplayFormat="P0"
+                                                                  TextAlignment="GridTextAlignment.Left">
+                                                </DxGridDataColumn>
+                                                <DxGridDataColumn FieldName="Percentage">
+                                                    <CellDisplayTemplate Context="cellContext">
+                                                        <DxProgressBar MaxValue="1"
+                                                                       Size="100%"
+                                                                       ShowLabel="false"
+                                                                       Value="@(((SaleByLocation)cellContext.DataItem).Percentage!.Value)"/>
+                                                    </CellDisplayTemplate>
+                                                </DxGridDataColumn>
+                                            </Columns>
+                                        </DxGrid>
+                                    </Template>
+                                </DxGridLayoutItem>
+                                <DxGridLayoutItem CssClass="card" Area="item7">
+                                    <Template>
+                                        <div class="title">Revenue Snapshot (All Products)</div>
+                                        <DxPieChart Data="@SalesByCategory" InnerDiameter="0.5" T="SaleByCategory">
+                                            <DxPieChartSeries T="SaleByCategory"
+                                                              TArgument="string"
+                                                              TValue="double"
+                                                              ValueField="s => s.Value!.Value"
+                                                              ArgumentField="s => s.Name"
+                                                              SummaryMethod="Enumerable.Sum">
+                                                <DxChartSeriesLabel Visible="true"
+                                                                    Position="RelativePosition.Outside"
+                                                                    ValueFormat="ChartElementFormat.Thousands(1)">
+                                                    <DxChartSeriesLabelConnector Visible="true"/>
+                                                </DxChartSeriesLabel>
+                                            </DxPieChartSeries>
+                                            <DxChartLegend
+                                                HorizontalAlignment="@(IsLargeScreen ? HorizontalAlignment.Right : HorizontalAlignment.Center)"
+                                                VerticalAlignment="@(IsLargeScreen ? VerticalEdge.Top : VerticalEdge.Bottom)"
+                                                Position="RelativePosition.Outside"
+                                                Orientation="@(IsLargeScreen ? Orientation.Vertical : Orientation.Horizontal)"/>
+                                        </DxPieChart>
+                                    </Template>
+                                </DxGridLayoutItem>
+                            </Items>
+                        </DxGridLayout>
+                    } else {
+                        <div class="placeholder"></div>
+                    }
+                </TargetContent>
+            </DxDrawer>
+        </DxLoadingPanel>
+    </div>
+</div>
+
+@code {
+    CancellationTokenSource disposalTokenSource = new CancellationTokenSource();
+    AIToolsContext context;
+
+    [CascadingParameter(Name = "ParentSizeMode")]
+    SizeMode SizeMode { get; set; }
+    DateRange DateRange { get; set; } = DateRange.All;
+    (DateOnly, DateOnly) Interval =>
+        DateRange switch {
+            DateRange.Week => (new(2020, 1, 24), new(2020, 1, 31)),
+            DateRange.TwoWeeks => (new(2020, 1, 14), new(2020, 1, 31)),
+            DateRange.Month => (new(2020, 1, 1), new(2020, 2, 1)),
+            DateRange.Year => (new(2020, 1, 1), new(2021, 1, 1)),
+            _ => (new(2018, 1, 1), new(2022, 1, 1))
+        };
+
+    ChartAnnotationsProvider ChartAnnotationsProvider;
+
+    IEnumerable<Sale>? Sales { get; set; }
+    IEnumerable<SaleByLocation>? SalesByLocation { get; set; }
+    IEnumerable<SaleByCategory>? SalesByCategory { get; set; }
+    string? OpportunitiesTotal { get; set; }
+    string? RevenueTotal { get; set; }
+
+    bool IsDataLoaded { get; set; }
+    bool IsSmallScreen { get; set; }
+    bool IsMediumScreen { get; set; }
+    bool IsLargeScreen { get; set; }
+    bool IsAIChatPanelOpen { get; set; } = true;
+    string AIChatTooltip => IsAIChatPanelOpen ? "Hide AI Insights" : "Show AI Insights";
+
+    protected override async Task OnInitializedAsync() {
+        ChartAnnotationsProvider = new(() => InvokeAsync(StateHasChanged));
+        var toolsCollection = new DashboardTools();
+
+        context = new AIToolsContextBuilder()
+                  .WithToolTarget(ChartAnnotationsProvider, "Fetches chart annotations from the backend.")
+                  .WithToolTarget(DataProvider, "Retrieves sales and analytics data for the dashboard.")
+                  .WithToolMethods(
+                      toolsCollection.GetSales,
+                      toolsCollection.GetSalesByCategory,
+                      toolsCollection.GetRevenueTotal,
+                      toolsCollection.GetOpportunitiesTotal,
+                      toolsCollection.GetSalesByLocation,
+                      toolsCollection.AddChartAnnotations)
+                  .Build();
+
+        AIToolsContextContainer.Add(context);
+        await LoadDataAsync();
+        await base.OnInitializedAsync();
+    }
+
+    void OnChatInitialized(IAIChat chat) {
+        var (start, end) = Interval;
+        var prompt = AIChatPrompts.GetDashboardChatPrompt(start, end);
+        chat.LoadMessages([new(ChatRole.System, prompt)]);
+    }
+
+    void OnAddCardClick() => ToastService.ShowToast(new ToastOptions { Title = "Notification", Text = "Adding a new card is currently unavailable." });
+
+    void ExportData() => ToastService.ShowToast(new ToastOptions { Title = "Notification", Text = "Export is currently unavailable." });
+
+    async Task LoadDataAsync() {
+        IsDataLoaded = false;
+
+        var (start, end) = Interval;
+
+        var model = new AnalyticsDashboardFunctionModel(DataProvider, start, end, disposalTokenSource.Token);
+        SalesByCategory = await AnalyticsDashboardDataHelper.GetSalesByCategory(model);
+        Sales = await AnalyticsDashboardDataHelper.GetSales(model);
+        SalesByLocation = await AnalyticsDashboardDataHelper.GetSalesByLocation(model);
+        OpportunitiesTotal = await AnalyticsDashboardDataHelper.GetOpportunitiesTotal(model);
+        RevenueTotal = AnalyticsDashboardDataHelper.TotalAsCurrency(SalesByCategory);
+
+        IsDataLoaded = true;
+    }
+
+    void OnScreenSizeChanged(bool isSmallScreen) {
+        IsSmallScreen = isSmallScreen;
+        IsAIChatPanelOpen = !IsSmallScreen;
+    }
+
+    void OnAIChatClick() => IsAIChatPanelOpen = !IsAIChatPanelOpen;
+
+    string GetAIChatPanelWidth() {
+        if(IsSmallScreen)
+            return "100%";
+        else
+            return SizeMode switch {
+                SizeMode.Small => "20.25rem",
+                SizeMode.Large => "27rem",
+                _ => "23.625rem"
+            };
+    }
+
+    string DrawerCssClass() => $"dashboard-drawer {(IsSmallScreen ? "dashboard-drawer-small" : string.Empty)}";
+    string DashboardCssClass() => $"dashboard {(IsAIChatPanelOpen ? "no-overflow" : string.Empty)}";
+
+    async Task SetDateRangeAsync(DateRange dateRange) {
+        DateRange = dateRange;
+        await LoadDataAsync();
+    }
+
+    void IDisposable.Dispose() {
+        disposalTokenSource.Cancel();
+        disposalTokenSource.Dispose();
+    }
+}

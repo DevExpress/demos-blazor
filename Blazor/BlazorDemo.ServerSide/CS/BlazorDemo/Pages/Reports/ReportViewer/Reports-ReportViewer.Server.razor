@@ -1,0 +1,13 @@
+﻿@page "/ReportViewer"
+@page "/ReportViewer/{ReportName?}"
+@page "/ReportViewer/{CategoryName?}/{ReportName?}"
+@page "/ReportViewer/{ParentCategoryName?}/{CategoryName?}/{ReportName?}"
+
+@using BlazorDemo.Pages.Reports.ReportViewer
+<Reports_ReportViewer_Content_Server ReportName="@ReportName" CategoryName="@CategoryName" ParentCategoryName="@ParentCategoryName"></Reports_ReportViewer_Content_Server>
+
+@code{
+    [Parameter] public string ReportName { get; set; }
+    [Parameter] public string CategoryName { get; set; }
+    [Parameter] public string ParentCategoryName { get; set; }
+}

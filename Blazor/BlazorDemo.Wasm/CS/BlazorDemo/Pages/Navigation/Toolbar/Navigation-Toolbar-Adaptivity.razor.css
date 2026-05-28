@@ -1,0 +1,5 @@
+@media (max-width:400px) {
+    /*BeginHide*/::deep /*EndHide*/.dxbl-toolbar .dxbl-toolbar-title {
+        display: none!important;
+    }
+}

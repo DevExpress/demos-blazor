@@ -1,0 +1,31 @@
+﻿<XtraSerializer version="16.1.0.0">
+  <Items>
+    <Item1 ItemKind="DiagramRoot" PageSize="900,700" Theme="Parallel" SelectedStencils="BasicFlowchartShapes, BasicShapes, ArrowShapes">
+      <Children>
+        <Item1 Position="360,128" Size="180,60" Shape="BasicFlowchartShapes.Process" Content="Find the process that is consuming the memory" ItemKind="DiagramShape" />
+        <Item2 Position="360,48" Size="180,60" Shape="BasicFlowchartShapes.StartEnd" Content="Troubleshoot a memory leak" ItemKind="DiagramShape" />
+        <Item3 Position="360,208" Size="180,100" Shape="BasicFlowchartShapes.Decision" Content="Memory consumption type" ItemKind="DiagramShape" />
+        <Item4 Position="360,338" Size="180,100" Shape="BasicFlowchartShapes.Decision" Content="Predominant object size" ItemKind="DiagramShape" />
+        <Item5 Position="140,408" Size="180,100" Shape="BasicFlowchartShapes.Decision" Content="Are the objects rooted?" ItemKind="DiagramShape" />
+        <Item6 Position="580,408" Size="180,100" Shape="BasicFlowchartShapes.Decision" Content="Are the objects rooted?" ItemKind="DiagramShape" />
+        <Item7 Position="30,598" Size="180,60" Shape="BasicFlowchartShapes.StartEnd" Content="Locate the roots" ItemKind="DiagramShape" />
+        <Item8 Position="250,508" Size="180,60" Content="Check if objects require finalization" ItemKind="DiagramShape" />
+        <Item9 Position="250,598" Size="180,60" Shape="BasicFlowchartShapes.StartEnd" Content="Check if the Finalizer thread is blocked" ItemKind="DiagramShape" />
+        <Item10 Position="470,598" Size="180,60" Shape="BasicFlowchartShapes.StartEnd" Content="Locate the roots" ItemKind="DiagramShape" />
+        <Item11 Position="690,598" Size="180,60" Shape="BasicFlowchartShapes.StartEnd" Content="Check if the memory has been reclaimed" ItemKind="DiagramShape" />
+        <Item12 Position="140,288" Size="180,60" Shape="BasicFlowchartShapes.Process" Content="Use LeakDiag or a similar tool to continue troubleshooting" ItemKind="DiagramShape" />
+        <Item13 BeginItemPointIndex="2" EndItemPointIndex="0" Points="(Empty)" ItemKind="DiagramConnector" BeginItem="1" EndItem="0" BeginPoint="450,108" EndPoint="450,128" />
+        <Item14 BeginItemPointIndex="2" EndItemPointIndex="0" Points="(Empty)" ItemKind="DiagramConnector" BeginItem="0" EndItem="2" BeginPoint="450,188" EndPoint="450,208" />
+        <Item15 BeginItemPointIndex="3" EndItemPointIndex="0" Points="230,258" ItemKind="DiagramConnector" BeginItem="2" EndItem="11" BeginPoint="360,258" EndPoint="230,288" />
+        <Item16 BeginItemPointIndex="2" EndItemPointIndex="0" Points="(Empty)" ItemKind="DiagramConnector" BeginItem="2" EndItem="3" BeginPoint="450,308" EndPoint="450,338" />
+        <Item17 BeginItemPointIndex="3" EndItemPointIndex="0" Points="230,388" ItemKind="DiagramConnector" BeginItem="3" EndItem="4" BeginPoint="360,388" EndPoint="230,408" />
+        <Item18 BeginItemPointIndex="1" EndItemPointIndex="0" Points="670,388" ItemKind="DiagramConnector" BeginItem="3" EndItem="5" BeginPoint="540,388" EndPoint="670,408" />
+        <Item19 BeginItemPointIndex="3" EndItemPointIndex="0" Points="560,458" ItemKind="DiagramConnector" BeginItem="5" EndItem="9" BeginPoint="580,458" EndPoint="560,598" />
+        <Item20 BeginItemPointIndex="1" EndItemPointIndex="0" Points="780,458" ItemKind="DiagramConnector" BeginItem="5" EndItem="10" BeginPoint="760,458" EndPoint="780,598" />
+        <Item21 BeginItemPointIndex="1" EndItemPointIndex="0" Points="340,458" ItemKind="DiagramConnector" BeginItem="4" EndItem="7" BeginPoint="320,458" EndPoint="340,508" />
+        <Item22 BeginItemPointIndex="2" EndItemPointIndex="0" Points="(Empty)" ItemKind="DiagramConnector" BeginItem="7" EndItem="8" BeginPoint="340,568" EndPoint="340,598" />
+        <Item23 BeginItemPointIndex="3" EndItemPointIndex="0" Points="120,458" ItemKind="DiagramConnector" BeginItem="4" EndItem="6" BeginPoint="140,458" EndPoint="120,598" />
+      </Children>
+    </Item1>
+  </Items>
+</XtraSerializer>

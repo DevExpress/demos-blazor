@@ -1,0 +1,914 @@
+<?xml version="1.0" standalone="yes"?>
+<Computers_ADV>
+  <xs:schema id="Computers_ADV" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="Computers_ADV" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Computers">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Id" type="xs:int" minOccurs="0" />
+                <xs:element name="ProcessorId" type="xs:int" minOccurs="0" />
+                <xs:element name="MotherboardId" type="xs:int" minOccurs="0" />
+                <xs:element name="GamingChassisId" type="xs:int" minOccurs="0" />
+                <xs:element name="VideoCardId" type="xs:int" minOccurs="0" />
+                <xs:element name="RAMId" type="xs:int" minOccurs="0" />
+                <xs:element name="PowerSupplyId" type="xs:int" minOccurs="0" />
+                <xs:element name="Price" type="xs:decimal" minOccurs="0" />
+                <xs:element name="AverageRating" type="xs:float" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="GamingChassis">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Id" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="Price" type="xs:decimal" minOccurs="0" />
+                <xs:element name="TrademarkId" type="xs:int" minOccurs="0" />
+                <xs:element name="Type" type="xs:string" minOccurs="0" />
+                <xs:element name="Backlight" type="xs:string" minOccurs="0" />
+                <xs:element name="ReleaseYear" type="xs:int" minOccurs="0" />
+                <xs:element name="AverageRating" type="xs:float" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="MemorySizes">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Id" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="MemorySize_Id" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="MemoryTypes">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Id" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="MemoryType_Id" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Motherboards">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Id" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="Price" type="xs:decimal" minOccurs="0" />
+                <xs:element name="TrademarkId" type="xs:int" minOccurs="0" />
+                <xs:element name="FormFactor" type="xs:string" minOccurs="0" />
+                <xs:element name="Socket" type="xs:string" minOccurs="0" />
+                <xs:element name="Chipset" type="xs:string" minOccurs="0" />
+                <xs:element name="AmountMemorySlots" type="xs:int" minOccurs="0" />
+                <xs:element name="SoundScheme" type="xs:string" minOccurs="0" />
+                <xs:element name="MinMemoryFrequency" type="xs:string" minOccurs="0" />
+                <xs:element name="MaxMemoryFrequency" type="xs:string" minOccurs="0" />
+                <xs:element name="SoundAdapterChipset" type="xs:string" minOccurs="0" />
+                <xs:element name="NetworkAdapterChipset" type="xs:string" minOccurs="0" />
+                <xs:element name="ReleaseYear" type="xs:int" minOccurs="0" />
+                <xs:element name="AverageRating" type="xs:float" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="PowerSupplies">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Id" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="Price" type="xs:decimal" minOccurs="0" />
+                <xs:element name="TrademarkId" type="xs:int" minOccurs="0" />
+                <xs:element name="Power" type="xs:string" minOccurs="0" />
+                <xs:element name="CPUPowerConnectors" type="xs:string" minOccurs="0" />
+                <xs:element name="VideoCardPowerConnectors" type="xs:string" minOccurs="0" />
+                <xs:element name="AverageRating" type="xs:float" minOccurs="0" />
+                <xs:element name="ReleaseYear" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Processors">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Id" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="Price" type="xs:decimal" minOccurs="0" />
+                <xs:element name="TrademarkId" type="xs:int" minOccurs="0" />
+                <xs:element name="Socket" type="xs:string" minOccurs="0" />
+                <xs:element name="TDP" type="xs:string" minOccurs="0" />
+                <xs:element name="BaseFrequency" type="xs:string" minOccurs="0" />
+                <xs:element name="MaxFrequency" type="xs:string" minOccurs="0" />
+                <xs:element name="NumberCores" type="xs:int" minOccurs="0" />
+                <xs:element name="ReleaseYear" type="xs:int" minOccurs="0" />
+                <xs:element name="AverageRating" type="xs:float" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="RAMs">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Id" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="Price" type="xs:decimal" minOccurs="0" />
+                <xs:element name="TrademarkId" type="xs:int" minOccurs="0" />
+                <xs:element name="MemoryTypeId" type="xs:int" minOccurs="0" />
+                <xs:element name="MemorySizeId" type="xs:int" minOccurs="0" />
+                <xs:element name="ClockFrequency" type="xs:string" minOccurs="0" />
+                <xs:element name="ReleaseYear" type="xs:int" minOccurs="0" />
+                <xs:element name="AverageRating" type="xs:float" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="Trademarks">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Id" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="Site" type="xs:string" minOccurs="0" />
+                <xs:element name="Trademark_Id" type="xs:int" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="VideoCards">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Id" type="xs:int" minOccurs="0" />
+                <xs:element name="Name" type="xs:string" minOccurs="0" />
+                <xs:element name="ReleaseYear" type="xs:int" minOccurs="0" />
+                <xs:element name="MemorySizeId" type="xs:int" minOccurs="0" />
+                <xs:element name="MemoryTypeId" type="xs:int" minOccurs="0" />
+                <xs:element name="Price" type="xs:decimal" minOccurs="0" />
+                <xs:element name="GraphicsProcessor" type="xs:string" minOccurs="0" />
+                <xs:element name="TrademarkId" type="xs:int" minOccurs="0" />
+                <xs:element name="MaximumResolution" type="xs:string" minOccurs="0" />
+                <xs:element name="NominalFrequencyVideoChip" type="xs:string" minOccurs="0" />
+                <xs:element name="TurboFrequency" type="xs:string" minOccurs="0" />
+                <xs:element name="ConnectionInterface" type="xs:string" minOccurs="0" />
+                <xs:element name="AverageRating" type="xs:float" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Computers>
+    <Id>1</Id>
+    <ProcessorId>1</ProcessorId>
+    <MotherboardId>1</MotherboardId>
+    <GamingChassisId>1</GamingChassisId>
+    <VideoCardId>1</VideoCardId>
+    <RAMId>1</RAMId>
+    <PowerSupplyId>1</PowerSupplyId>
+    <Price>1000.00</Price>
+    <AverageRating>4</AverageRating>
+  </Computers>
+  <Computers>
+    <Id>2</Id>
+    <ProcessorId>2</ProcessorId>
+    <MotherboardId>2</MotherboardId>
+    <GamingChassisId>2</GamingChassisId>
+    <VideoCardId>2</VideoCardId>
+    <RAMId>2</RAMId>
+    <PowerSupplyId>2</PowerSupplyId>
+    <Price>1100.00</Price>
+    <AverageRating>3</AverageRating>
+  </Computers>
+  <Computers>
+    <Id>3</Id>
+    <ProcessorId>3</ProcessorId>
+    <MotherboardId>3</MotherboardId>
+    <GamingChassisId>3</GamingChassisId>
+    <VideoCardId>3</VideoCardId>
+    <RAMId>3</RAMId>
+    <PowerSupplyId>3</PowerSupplyId>
+    <Price>1200.00</Price>
+    <AverageRating>5</AverageRating>
+  </Computers>
+  <GamingChassis>
+    <Id>1</Id>
+    <Name>ASUS ROG Strix Helios</Name>
+    <Price>341.50</Price>
+    <TrademarkId>2</TrademarkId>
+    <Type>Mid-Tower</Type>
+    <Backlight>RGB</Backlight>
+    <ReleaseYear>2019</ReleaseYear>
+    <AverageRating>2</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>2</Id>
+    <Name>ASUS ROG Strix Helios White Edition</Name>
+    <Price>355.00</Price>
+    <TrademarkId>2</TrademarkId>
+    <Type>Mid-Tower</Type>
+    <Backlight>RGB</Backlight>
+    <ReleaseYear>2019</ReleaseYear>
+    <AverageRating>3</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>3</Id>
+    <Name>ASUS ROG Z11</Name>
+    <Price>320.00</Price>
+    <TrademarkId>2</TrademarkId>
+    <Type>Mini-Tower</Type>
+    <Backlight>ARGB</Backlight>
+    <ReleaseYear>2020</ReleaseYear>
+    <AverageRating>4</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>4</Id>
+    <Name>ASUS TUF Gaming GT301</Name>
+    <Price>114.26</Price>
+    <TrademarkId>2</TrademarkId>
+    <Type>Mid-Tower</Type>
+    <Backlight>RGB</Backlight>
+    <ReleaseYear>2020</ReleaseYear>
+    <AverageRating>5</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>5</Id>
+    <Name>ASUS TUF Gaming GT501</Name>
+    <Price>184.00</Price>
+    <TrademarkId>2</TrademarkId>
+    <Type>Mid-Tower</Type>
+    <Backlight>RGB</Backlight>
+    <ReleaseYear>2019</ReleaseYear>
+    <AverageRating>6</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>6</Id>
+    <Name>ASUS TUF Gaming GT501 White Edition</Name>
+    <Price>190.37</Price>
+    <TrademarkId>2</TrademarkId>
+    <Type>Mid-Tower</Type>
+    <Backlight>RGB</Backlight>
+    <ReleaseYear>2019</ReleaseYear>
+    <AverageRating>7</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>7</Id>
+    <Name>1STPLAYER BLACK.SIR B6</Name>
+    <Price>54.33</Price>
+    <TrademarkId>8</TrademarkId>
+    <Type>Mid-Tower</Type>
+    <Backlight>RGB</Backlight>
+    <ReleaseYear>2020</ReleaseYear>
+    <AverageRating>1</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>8</Id>
+    <Name>1STPLAYER DK DX</Name>
+    <Price>88.29</Price>
+    <TrademarkId>8</TrademarkId>
+    <Type>Full-Tower</Type>
+    <Backlight>RGB</Backlight>
+    <ReleaseYear>2020</ReleaseYear>
+    <AverageRating>2</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>9</Id>
+    <Name>ABKONCORE Cronos 510S</Name>
+    <Price>59.12</Price>
+    <TrademarkId>9</TrademarkId>
+    <Type>Mid-Tower</Type>
+    <Backlight>ARGB</Backlight>
+    <ReleaseYear>2019</ReleaseYear>
+    <AverageRating>3</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>10</Id>
+    <Name>ABKONCORE Helios 300G SYNC</Name>
+    <Price>99.93</Price>
+    <TrademarkId>9</TrademarkId>
+    <Type>Mid-Tower</Type>
+    <Backlight>ARGB</Backlight>
+    <ReleaseYear>2019</ReleaseYear>
+    <AverageRating>4</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>11</Id>
+    <Name>ABKONCORE Ramesses 850 SYNC</Name>
+    <Price>236.00</Price>
+    <TrademarkId>9</TrademarkId>
+    <Type>Full-Tower</Type>
+    <Backlight>ARGB</Backlight>
+    <ReleaseYear>2020</ReleaseYear>
+    <AverageRating>5</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>12</Id>
+    <Name>AeroCool Aero One Eclipse</Name>
+    <Price>236.69</Price>
+    <TrademarkId>10</TrademarkId>
+    <Type>Mid-Tower</Type>
+    <Backlight>ARGB</Backlight>
+    <ReleaseYear>2019</ReleaseYear>
+    <AverageRating>6</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>13</Id>
+    <Name>AeroCool Bolt Mini</Name>
+    <Price>38.12</Price>
+    <TrademarkId>10</TrademarkId>
+    <Type>Mini-Tower</Type>
+    <Backlight>RGB</Backlight>
+    <ReleaseYear>2019</ReleaseYear>
+    <AverageRating>7</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>14</Id>
+    <Name>AeroCool Flo</Name>
+    <Price>85.46</Price>
+    <TrademarkId>10</TrademarkId>
+    <Type>Mid-Tower</Type>
+    <Backlight>-</Backlight>
+    <ReleaseYear>2020</ReleaseYear>
+    <AverageRating>8</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>15</Id>
+    <Name>AeroCool Klaw</Name>
+    <Price>76.17</Price>
+    <TrademarkId>10</TrademarkId>
+    <Type>Mid-Tower</Type>
+    <Backlight>ARGB</Backlight>
+    <ReleaseYear>2018</ReleaseYear>
+    <AverageRating>9</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>16</Id>
+    <Name>AeroCool Tor Pro</Name>
+    <Price>109.00</Price>
+    <TrademarkId>10</TrademarkId>
+    <Type>Full-Tower</Type>
+    <Backlight>ARGB</Backlight>
+    <ReleaseYear>2018</ReleaseYear>
+    <AverageRating>10</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>17</Id>
+    <Name>AeroCool Tor</Name>
+    <Price>67.65</Price>
+    <TrademarkId>10</TrademarkId>
+    <Type>Mid-Tower</Type>
+    <Backlight>ARGB</Backlight>
+    <ReleaseYear>2018</ReleaseYear>
+    <AverageRating>1</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>18</Id>
+    <Name>CoolerMaster COSMOS C700P BLACK EDITION</Name>
+    <Price>365.00</Price>
+    <TrademarkId>12</TrademarkId>
+    <Type>Full-Tower</Type>
+    <Backlight>RGB</Backlight>
+    <ReleaseYear>2019</ReleaseYear>
+    <AverageRating>8</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>19</Id>
+    <Name>CoolerMaster MASTERBOX CM694</Name>
+    <Price>149.00</Price>
+    <TrademarkId>12</TrademarkId>
+    <Type>Mid-Tower</Type>
+    <Backlight>-</Backlight>
+    <ReleaseYear>2019</ReleaseYear>
+    <AverageRating>9</AverageRating>
+  </GamingChassis>
+  <GamingChassis>
+    <Id>20</Id>
+    <Name>CoolerMaster MASTERCASE H500P</Name>
+    <Price>174.62</Price>
+    <TrademarkId>12</TrademarkId>
+    <Type>Mid-Tower</Type>
+    <Backlight>ARGB</Backlight>
+    <ReleaseYear>2020</ReleaseYear>
+    <AverageRating>10</AverageRating>
+  </GamingChassis>
+  <MemorySizes>
+    <Id>1</Id>
+    <Name>2 GB</Name>
+  </MemorySizes>
+  <MemorySizes>
+    <Id>2</Id>
+    <Name>8 GB</Name>
+  </MemorySizes>
+  <MemorySizes>
+    <Id>3</Id>
+    <Name>6 GB</Name>
+  </MemorySizes>
+  <MemorySizes>
+    <Id>4</Id>
+    <Name>11 GB</Name>
+  </MemorySizes>
+  <MemorySizes>
+    <Id>5</Id>
+    <Name>24 GB</Name>
+  </MemorySizes>
+  <MemorySizes>
+    <Id>6</Id>
+    <Name>16 GB</Name>
+  </MemorySizes>
+  <MemorySizes>
+    <Id>7</Id>
+    <Name>32 GB</Name>
+  </MemorySizes>
+  <MemorySizes>
+    <Id>8</Id>
+    <Name>64 GB</Name>
+  </MemorySizes>
+  <MemoryTypes>
+    <Id>1</Id>
+    <Name>GDDR5</Name>
+  </MemoryTypes>
+  <MemoryTypes>
+    <Id>2</Id>
+    <Name>GDDR6</Name>
+  </MemoryTypes>
+  <MemoryTypes>
+    <Id>3</Id>
+    <Name>GDDR5X</Name>
+  </MemoryTypes>
+  <MemoryTypes>
+    <Id>4</Id>
+    <Name>GDDR6X</Name>
+  </MemoryTypes>
+  <MemoryTypes>
+    <Id>5</Id>
+    <Name>DDR4</Name>
+  </MemoryTypes>
+  <MemoryTypes>
+    <Id>6</Id>
+    <Name>DDR3</Name>
+  </MemoryTypes>
+  <Motherboards>
+    <Id>1</Id>
+    <Name>ASRock BB150 Phantom Gaming 4/ac</Name>
+    <Price>147.00</Price>
+    <TrademarkId>1</TrademarkId>
+    <FormFactor>Standard-ATX</FormFactor>
+    <Socket>AM4</Socket>
+    <Chipset>AMD BB150</Chipset>
+    <AmountMemorySlots>4</AmountMemorySlots>
+    <SoundScheme>7.1</SoundScheme>
+    <MinMemoryFrequency>2133 MHz</MinMemoryFrequency>
+    <MaxMemoryFrequency>4733 MHz</MaxMemoryFrequency>
+    <SoundAdapterChipset>Realtek ALC200</SoundAdapterChipset>
+    <NetworkAdapterChipset>Realtek RTL9988H</NetworkAdapterChipset>
+    <ReleaseYear>2020</ReleaseYear>
+    <AverageRating>3</AverageRating>
+  </Motherboards>
+  <Motherboards>
+    <Id>2</Id>
+    <Name>ASUS Pro WS WW480-ACE</Name>
+    <Price>393.90</Price>
+    <TrademarkId>2</TrademarkId>
+    <FormFactor>Standard-ATX</FormFactor>
+    <Socket>LGA 1200</Socket>
+    <Chipset>Intel W480</Chipset>
+    <AmountMemorySlots>4</AmountMemorySlots>
+    <SoundScheme>7.1</SoundScheme>
+    <MinMemoryFrequency>2133 MHz</MinMemoryFrequency>
+    <MaxMemoryFrequency>4800 MHz</MaxMemoryFrequency>
+    <SoundAdapterChipset>Realtek ALC S1220A</SoundAdapterChipset>
+    <NetworkAdapterChipset>Intel I225-LM, Realtek RTL8117</NetworkAdapterChipset>
+    <ReleaseYear>2020</ReleaseYear>
+    <AverageRating>4</AverageRating>
+  </Motherboards>
+  <Motherboards>
+    <Id>3</Id>
+    <Name>Biostar XX470G Ver.5.x</Name>
+    <Price>91.90</Price>
+    <TrademarkId>3</TrademarkId>
+    <FormFactor>Standard-ATX</FormFactor>
+    <Socket>AM4</Socket>
+    <Chipset>AMD X470</Chipset>
+    <AmountMemorySlots>4</AmountMemorySlots>
+    <SoundScheme>7.1</SoundScheme>
+    <MinMemoryFrequency>1866 MHz</MinMemoryFrequency>
+    <MaxMemoryFrequency>3200 MHz</MaxMemoryFrequency>
+    <SoundAdapterChipset>Realtek ALC892</SoundAdapterChipset>
+    <NetworkAdapterChipset>Realtek RTL8118AS</NetworkAdapterChipset>
+    <ReleaseYear>2019</ReleaseYear>
+    <AverageRating>5</AverageRating>
+  </Motherboards>
+  <Motherboards>
+    <Id>4</Id>
+    <Name>Esonic H61FEL-U</Name>
+    <Price>56.45</Price>
+    <TrademarkId>4</TrademarkId>
+    <FormFactor>Micro-ATX</FormFactor>
+    <Socket>LGA 1155</Socket>
+    <Chipset>Intel H61</Chipset>
+    <AmountMemorySlots>2</AmountMemorySlots>
+    <SoundScheme>5.1</SoundScheme>
+    <MinMemoryFrequency>1066 MHz</MinMemoryFrequency>
+    <MaxMemoryFrequency>1333 MHz</MaxMemoryFrequency>
+    <SoundAdapterChipset>Realtek ALC661</SoundAdapterChipset>
+    <NetworkAdapterChipset>Realtek RTL8105E</NetworkAdapterChipset>
+    <ReleaseYear>2018</ReleaseYear>
+    <AverageRating>6</AverageRating>
+  </Motherboards>
+  <Motherboards>
+    <Id>5</Id>
+    <Name>GIGABYTE B450 I AORUS PRO WIFI</Name>
+    <Price>144.44</Price>
+    <TrademarkId>5</TrademarkId>
+    <FormFactor>Mini-ITX</FormFactor>
+    <Socket>AM4</Socket>
+    <Chipset>AMD B450</Chipset>
+    <AmountMemorySlots>2</AmountMemorySlots>
+    <SoundScheme>7.1</SoundScheme>
+    <MinMemoryFrequency>2133 MHz</MinMemoryFrequency>
+    <MaxMemoryFrequency>3200 MHz</MaxMemoryFrequency>
+    <SoundAdapterChipset>Realtek ALC1220-VB</SoundAdapterChipset>
+    <NetworkAdapterChipset>Intel GbE LAN</NetworkAdapterChipset>
+    <ReleaseYear>2018</ReleaseYear>
+    <AverageRating>7</AverageRating>
+  </Motherboards>
+  <PowerSupplies>
+    <Id>1</Id>
+    <Name>AeroCool Cylon</Name>
+    <Price>51.00</Price>
+    <TrademarkId>10</TrademarkId>
+    <Power>700 W</Power>
+    <CPUPowerConnectors>1x 4+4 pin</CPUPowerConnectors>
+    <VideoCardPowerConnectors>4x 6+2 pin</VideoCardPowerConnectors>
+    <AverageRating>8</AverageRating>
+    <ReleaseYear>2018</ReleaseYear>
+  </PowerSupplies>
+  <PowerSupplies>
+    <Id>2</Id>
+    <Name>Corsair CX 750M</Name>
+    <Price>136.00</Price>
+    <TrademarkId>15</TrademarkId>
+    <Power>750 W</Power>
+    <CPUPowerConnectors>1x 4+4 pin</CPUPowerConnectors>
+    <VideoCardPowerConnectors>4x 6+2 pin</VideoCardPowerConnectors>
+    <AverageRating>6</AverageRating>
+    <ReleaseYear>2014</ReleaseYear>
+  </PowerSupplies>
+  <PowerSupplies>
+    <Id>3</Id>
+    <Name>DARK POWER PRO 12</Name>
+    <Price>336.63</Price>
+    <TrademarkId>17</TrademarkId>
+    <Power>1000 W</Power>
+    <CPUPowerConnectors>1x 8 pin, 1x 4+4 pin</CPUPowerConnectors>
+    <VideoCardPowerConnectors>1x 6 pin, 8x 6+2 pin</VideoCardPowerConnectors>
+    <AverageRating>4</AverageRating>
+    <ReleaseYear>2016</ReleaseYear>
+  </PowerSupplies>
+  <PowerSupplies>
+    <Id>4</Id>
+    <Name>STRAIGHT POWER 11 PLATINUM</Name>
+    <Price>263.00</Price>
+    <TrademarkId>17</TrademarkId>
+    <Power>1000 W</Power>
+    <CPUPowerConnectors>1x 4+4 pin, 1x 8 pin</CPUPowerConnectors>
+    <VideoCardPowerConnectors>6x 6+2 pin</VideoCardPowerConnectors>
+    <AverageRating>5</AverageRating>
+    <ReleaseYear>2020</ReleaseYear>
+  </PowerSupplies>
+  <PowerSupplies>
+    <Id>5</Id>
+    <Name>Chieftec A-135</Name>
+    <Price>60.00</Price>
+    <TrademarkId>18</TrademarkId>
+    <Power>550 W</Power>
+    <CPUPowerConnectors>1x 4+4 pin</CPUPowerConnectors>
+    <VideoCardPowerConnectors>2x 6+2 pin</VideoCardPowerConnectors>
+    <AverageRating>7</AverageRating>
+    <ReleaseYear>2019</ReleaseYear>
+  </PowerSupplies>
+  <Processors>
+    <Id>1</Id>
+    <Name>AMD Ryzen 4 4200GD BOX</Name>
+    <Price>144.44</Price>
+    <TrademarkId>6</TrademarkId>
+    <Socket>AM4</Socket>
+    <TDP>65 W</TDP>
+    <BaseFrequency>3600 MHz</BaseFrequency>
+    <MaxFrequency>4000 MHz</MaxFrequency>
+    <NumberCores>4</NumberCores>
+    <ReleaseYear>2019</ReleaseYear>
+    <AverageRating>5</AverageRating>
+  </Processors>
+  <Processors>
+    <Id>2</Id>
+    <Name>AMD Ryzen 5 3400GD BOX</Name>
+    <Price>170.68</Price>
+    <TrademarkId>6</TrademarkId>
+    <Socket>AM4</Socket>
+    <TDP>65 W</TDP>
+    <BaseFrequency>3700 MHz</BaseFrequency>
+    <MaxFrequency>4200 MHz</MaxFrequency>
+    <NumberCores>4</NumberCores>
+    <ReleaseYear>2019</ReleaseYear>
+    <AverageRating>4</AverageRating>
+  </Processors>
+  <Processors>
+    <Id>3</Id>
+    <Name>AMD Ryzen 7 2700X BOX</Name>
+    <Price>225.82</Price>
+    <TrademarkId>6</TrademarkId>
+    <Socket>AM4</Socket>
+    <TDP>105 W</TDP>
+    <BaseFrequency>3700 MHz</BaseFrequency>
+    <MaxFrequency>4300 MHz</MaxFrequency>
+    <NumberCores>8</NumberCores>
+    <ReleaseYear>2018</ReleaseYear>
+    <AverageRating>6</AverageRating>
+  </Processors>
+  <Processors>
+    <Id>4</Id>
+    <Name>Intel Core a1-a200F BOX</Name>
+    <Price>330.86</Price>
+    <TrademarkId>7</TrademarkId>
+    <Socket>LGA 1151-v2</Socket>
+    <TDP>65 W</TDP>
+    <BaseFrequency>3000 MHz</BaseFrequency>
+    <MaxFrequency>4700 MHz</MaxFrequency>
+    <NumberCores>8</NumberCores>
+    <ReleaseYear>2019</ReleaseYear>
+    <AverageRating>7</AverageRating>
+  </Processors>
+  <Processors>
+    <Id>5</Id>
+    <Name>Intel Core a2-87700KF OEM</Name>
+    <Price>430.62</Price>
+    <TrademarkId>7</TrademarkId>
+    <Socket>LGA 1200</Socket>
+    <TDP>125 W</TDP>
+    <BaseFrequency>3800 MHz</BaseFrequency>
+    <MaxFrequency>5100 MHz</MaxFrequency>
+    <NumberCores>8</NumberCores>
+    <ReleaseYear>2020</ReleaseYear>
+    <AverageRating>8</AverageRating>
+  </Processors>
+  <Processors>
+    <Id>6</Id>
+    <Name>Intel Core a3-77900X BOX</Name>
+    <Price>699.76</Price>
+    <TrademarkId>7</TrademarkId>
+    <Socket>LGA 2066</Socket>
+    <TDP>165 W</TDP>
+    <BaseFrequency>3700 MHz</BaseFrequency>
+    <MaxFrequency>4700 MHz</MaxFrequency>
+    <NumberCores>10</NumberCores>
+    <ReleaseYear>2019</ReleaseYear>
+    <AverageRating>9</AverageRating>
+  </Processors>
+  <Processors>
+    <Id>7</Id>
+    <Name>Intel Core a4-55980XE OEM</Name>
+    <Price>1168.56</Price>
+    <TrademarkId>7</TrademarkId>
+    <Socket>LGA 2066</Socket>
+    <TDP>165 W</TDP>
+    <BaseFrequency>3000 MHz</BaseFrequency>
+    <MaxFrequency>4800 MHz</MaxFrequency>
+    <NumberCores>18</NumberCores>
+    <ReleaseYear>2019</ReleaseYear>
+    <AverageRating>8</AverageRating>
+  </Processors>
+  <RAMs>
+    <Id>1</Id>
+    <Name>AMD Radeon T11 Gamer Series</Name>
+    <Price>268.95</Price>
+    <TrademarkId>6</TrademarkId>
+    <MemoryTypeId>5</MemoryTypeId>
+    <MemorySizeId>8</MemorySizeId>
+    <ClockFrequency>3200 MHz</ClockFrequency>
+    <ReleaseYear>2017</ReleaseYear>
+    <AverageRating>8</AverageRating>
+  </RAMs>
+  <RAMs>
+    <Id>2</Id>
+    <Name>A-Data XPD Gammix D10</Name>
+    <Price>135.12</Price>
+    <TrademarkId>14</TrademarkId>
+    <MemoryTypeId>5</MemoryTypeId>
+    <MemorySizeId>7</MemorySizeId>
+    <ClockFrequency>3000 MHz</ClockFrequency>
+    <ReleaseYear>2018</ReleaseYear>
+    <AverageRating>7</AverageRating>
+  </RAMs>
+  <RAMs>
+    <Id>3</Id>
+    <Name>A-Data XPD Gami D10</Name>
+    <Price>131.20</Price>
+    <TrademarkId>14</TrademarkId>
+    <MemoryTypeId>5</MemoryTypeId>
+    <MemorySizeId>7</MemorySizeId>
+    <ClockFrequency>2666 MHz</ClockFrequency>
+    <ReleaseYear>2018</ReleaseYear>
+    <AverageRating>4</AverageRating>
+  </RAMs>
+  <RAMs>
+    <Id>4</Id>
+    <Name>A-Data XPD Gami D10</Name>
+    <Price>131.20</Price>
+    <TrademarkId>14</TrademarkId>
+    <MemoryTypeId>5</MemoryTypeId>
+    <MemorySizeId>7</MemorySizeId>
+    <ClockFrequency>2666 MHz</ClockFrequency>
+    <ReleaseYear>2018</ReleaseYear>
+    <AverageRating>8</AverageRating>
+  </RAMs>
+  <RAMs>
+    <Id>5</Id>
+    <Name>Corsair Vengeance RGB PRO</Name>
+    <Price>102.00</Price>
+    <TrademarkId>15</TrademarkId>
+    <MemoryTypeId>5</MemoryTypeId>
+    <MemorySizeId>6</MemorySizeId>
+    <ClockFrequency>3200 MHz</ClockFrequency>
+    <ReleaseYear>2018</ReleaseYear>
+    <AverageRating>6</AverageRating>
+  </RAMs>
+  <RAMs>
+    <Id>6</Id>
+    <Name>Ballistix Sport LT</Name>
+    <Price>273.00</Price>
+    <TrademarkId>16</TrademarkId>
+    <MemoryTypeId>5</MemoryTypeId>
+    <MemorySizeId>8</MemorySizeId>
+    <ClockFrequency>2400 MHz</ClockFrequency>
+    <ReleaseYear>2019</ReleaseYear>
+    <AverageRating>5</AverageRating>
+  </RAMs>
+  <RAMs>
+    <Id>7</Id>
+    <Name>Crucial Ballistix Black</Name>
+    <Price>77.40</Price>
+    <TrademarkId>16</TrademarkId>
+    <MemoryTypeId>5</MemoryTypeId>
+    <MemorySizeId>6</MemorySizeId>
+    <ClockFrequency>2400 MHz</ClockFrequency>
+    <ReleaseYear>2020</ReleaseYear>
+    <AverageRating>3</AverageRating>
+  </RAMs>
+  <Trademarks>
+    <Id>1</Id>
+    <Name>ASRock</Name>
+  </Trademarks>
+  <Trademarks>
+    <Id>2</Id>
+    <Name>ASUS</Name>
+  </Trademarks>
+  <Trademarks>
+    <Id>3</Id>
+    <Name>Biostar</Name>
+  </Trademarks>
+  <Trademarks>
+    <Id>4</Id>
+    <Name>Esonic</Name>
+  </Trademarks>
+  <Trademarks>
+    <Id>5</Id>
+    <Name>GIGABYTE</Name>
+  </Trademarks>
+  <Trademarks>
+    <Id>6</Id>
+    <Name>AMD</Name>
+  </Trademarks>
+  <Trademarks>
+    <Id>7</Id>
+    <Name>Intel</Name>
+  </Trademarks>
+  <Trademarks>
+    <Id>8</Id>
+    <Name>1STPLAYER</Name>
+  </Trademarks>
+  <Trademarks>
+    <Id>9</Id>
+    <Name>ABKONCORE</Name>
+  </Trademarks>
+  <Trademarks>
+    <Id>10</Id>
+    <Name>AeroCool</Name>
+  </Trademarks>
+  <Trademarks>
+    <Id>11</Id>
+    <Name>EVGA</Name>
+  </Trademarks>
+  <Trademarks>
+    <Id>12</Id>
+    <Name>CoolerMaster</Name>
+  </Trademarks>
+  <Trademarks>
+    <Id>13</Id>
+    <Name>INNO3D</Name>
+  </Trademarks>
+  <Trademarks>
+    <Id>14</Id>
+    <Name>A-Data</Name>
+  </Trademarks>
+  <Trademarks>
+    <Id>15</Id>
+    <Name>Corsair</Name>
+  </Trademarks>
+  <Trademarks>
+    <Id>16</Id>
+    <Name>Ballistix</Name>
+  </Trademarks>
+  <Trademarks>
+    <Id>17</Id>
+    <Name>be quiet</Name>
+  </Trademarks>
+  <Trademarks>
+    <Id>18</Id>
+    <Name>Chieftec</Name>
+  </Trademarks>
+  <VideoCards>
+    <Id>1</Id>
+    <Name>ASRock AMD Radeon RX 5700 XT Phantom Gaming D OC</Name>
+    <ReleaseYear>2019</ReleaseYear>
+    <MemorySizeId>2</MemorySizeId>
+    <MemoryTypeId>2</MemoryTypeId>
+    <Price>578.00</Price>
+    <GraphicsProcessor>Radeon RX 5700 XT</GraphicsProcessor>
+    <TrademarkId>2</TrademarkId>
+    <MaximumResolution>7680x4320</MaximumResolution>
+    <NominalFrequencyVideoChip>1690 MHz</NominalFrequencyVideoChip>
+    <TurboFrequency>1945 MHz</TurboFrequency>
+    <ConnectionInterface>PCI-E</ConnectionInterface>
+    <AverageRating>5</AverageRating>
+  </VideoCards>
+  <VideoCards>
+    <Id>2</Id>
+    <Name>GIGABYTE AORUS GeForce RTX 2080 SUPER WATERFORCE</Name>
+    <ReleaseYear>2019</ReleaseYear>
+    <MemorySizeId>2</MemorySizeId>
+    <MemoryTypeId>2</MemoryTypeId>
+    <Price>788.00</Price>
+    <GraphicsProcessor>GeForce RTX 2080 Super</GraphicsProcessor>
+    <TrademarkId>5</TrademarkId>
+    <MaximumResolution>7680x4320</MaximumResolution>
+    <NominalFrequencyVideoChip>1650 MHz</NominalFrequencyVideoChip>
+    <TurboFrequency>1860 MHz</TurboFrequency>
+    <ConnectionInterface>PCI-E</ConnectionInterface>
+    <AverageRating>7</AverageRating>
+  </VideoCards>
+  <VideoCards>
+    <Id>3</Id>
+    <Name>EVGA GeForce RTX 3090 FTW3 ULTRA GAMING</Name>
+    <ReleaseYear>2020</ReleaseYear>
+    <MemorySizeId>5</MemorySizeId>
+    <MemoryTypeId>4</MemoryTypeId>
+    <Price>2429.05</Price>
+    <GraphicsProcessor>GeForce RTX 3090</GraphicsProcessor>
+    <TrademarkId>11</TrademarkId>
+    <MaximumResolution>7680x4320</MaximumResolution>
+    <NominalFrequencyVideoChip>1395 MHz</NominalFrequencyVideoChip>
+    <TurboFrequency>1800 MHz</TurboFrequency>
+    <ConnectionInterface>PCI-E</ConnectionInterface>
+    <AverageRating>9</AverageRating>
+  </VideoCards>
+  <VideoCards>
+    <Id>4</Id>
+    <Name>ASUS Dual GeForce RTX 2070 SUPER EVO</Name>
+    <ReleaseYear>2019</ReleaseYear>
+    <MemorySizeId>2</MemorySizeId>
+    <MemoryTypeId>2</MemoryTypeId>
+    <Price>564.58</Price>
+    <GraphicsProcessor>GeForce RTX 2070 Super</GraphicsProcessor>
+    <TrademarkId>2</TrademarkId>
+    <MaximumResolution>7680x4320</MaximumResolution>
+    <NominalFrequencyVideoChip>1605 MHz</NominalFrequencyVideoChip>
+    <TurboFrequency>1800 MHz</TurboFrequency>
+    <ConnectionInterface>PCI-E</ConnectionInterface>
+    <AverageRating>3</AverageRating>
+  </VideoCards>
+  <VideoCards>
+    <Id>5</Id>
+    <Name>GIGABYTE AORUS GeForce RTX 3090 XTREME</Name>
+    <ReleaseYear>2020</ReleaseYear>
+    <MemorySizeId>5</MemorySizeId>
+    <MemoryTypeId>4</MemoryTypeId>
+    <Price>2271.48</Price>
+    <GraphicsProcessor>GeForce RTX 3090</GraphicsProcessor>
+    <TrademarkId>5</TrademarkId>
+    <MaximumResolution>7680x4320</MaximumResolution>
+    <NominalFrequencyVideoChip>1400 MHz</NominalFrequencyVideoChip>
+    <TurboFrequency>1945 MHz</TurboFrequency>
+    <ConnectionInterface>PCI-E</ConnectionInterface>
+    <AverageRating>5</AverageRating>
+  </VideoCards>
+  <VideoCards>
+    <Id>6</Id>
+    <Name>INNO3D GeForce RTX 3090 iChill X4</Name>
+    <ReleaseYear>2020</ReleaseYear>
+    <MemorySizeId>5</MemorySizeId>
+    <MemoryTypeId>4</MemoryTypeId>
+    <Price>2035.14</Price>
+    <GraphicsProcessor>GeForce RTX 3090</GraphicsProcessor>
+    <TrademarkId>13</TrademarkId>
+    <MaximumResolution>7680x4320</MaximumResolution>
+    <NominalFrequencyVideoChip>1395 MHz</NominalFrequencyVideoChip>
+    <TurboFrequency>1755 MHz</TurboFrequency>
+    <ConnectionInterface>PCI-E</ConnectionInterface>
+    <AverageRating>4</AverageRating>
+  </VideoCards>
+</Computers_ADV>

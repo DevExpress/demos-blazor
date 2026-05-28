@@ -1,0 +1,29 @@
+﻿<DemoPageSectionComponent Id="Editors-ComboBox-AllowUserInput" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <label for="cbUserInput" class="demo-text cw-480 mb-1">
+            City Name
+        </label>
+        <DxComboBox Data="@Cities"
+                    AllowUserInput="true"
+                    NullText="Select City ..."
+                    @bind-Value="@Value"
+                    @bind-Text="@Text"
+                    SizeMode="Params.SizeMode"
+                    CssClass="cw-480"
+                    InputId="cbUserInput"/>
+        <p class="demo-text cw-480 mt-3">
+            Value: <b>@GetSelectedValueDescription()</b>, text: <b>@Text</b>
+        </p>
+    </ChildContentWithParameters>
+
+    @code {
+        string Text { get; set; } = "New York";
+        string Value { get; set; }
+
+        IEnumerable<string> Cities = new List<string>() { "London", "Berlin", "Paris", };
+
+        string GetSelectedValueDescription() {
+            return string.IsNullOrEmpty(Value) ? "null" : Value;
+        }
+    }
+</DemoPageSectionComponent>

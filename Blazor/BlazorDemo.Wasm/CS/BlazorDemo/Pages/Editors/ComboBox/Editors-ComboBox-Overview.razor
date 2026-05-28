@@ -1,0 +1,45 @@
+﻿<DemoPageSectionComponent Id="Editors-ComboBox-Overview" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        @inject NwindDataService NwindDataService
+
+        <label for="cbOverview" class="demo-text cw-480 mb-1">
+            Employee
+        </label>
+        <DxComboBox Data="@Data"
+                    TextFieldName="@nameof(Employee.Text)"
+                    @bind-Value="@SelectedEmployee"
+                    SizeMode="@Params.SizeMode"
+                    CssClass="cw-480"
+                    InputId="cbOverview"/>
+        <p class="demo-text cw-480 mt-3">
+            @GetSelectedItemDescription()
+        </p>
+    </ChildContentWithParameters>
+
+    @code {
+        IEnumerable<Employee> Data { get; set; }
+        Employee SelectedEmployee { get; set; }
+
+        protected override async Task OnInitializedAsync() {
+            Data = await NwindDataService.GetEmployeesAsync();
+            SelectedEmployee = Data.FirstOrDefault();
+        }
+
+        RenderFragment GetSelectedItemDescription() {
+            if(SelectedEmployee != null) {
+                return @<text>
+                    Selected Item: (
+                        @GetFieldDescription(nameof(Employee.FirstName), SelectedEmployee.FirstName),
+                        @GetFieldDescription(nameof(Employee.LastName), SelectedEmployee.LastName),
+                        @GetFieldDescription(nameof(Employee.City), SelectedEmployee.City)
+                    )
+                </text>;
+            }
+            return @<text>Selected Item: <b>null</b></text>;
+        }
+
+        RenderFragment GetFieldDescription(string fieldName, object value) {
+            return @<text>@fieldName: <b>@value</b></text>;
+        }
+    }
+</DemoPageSectionComponent>
