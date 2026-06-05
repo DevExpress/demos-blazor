@@ -76,7 +76,7 @@ namespace DevExpress.Web.Demos {
 				attributes[am.Groups[1].Value] = am.Groups[2].Value;
 			}
 			if(!attributes.ContainsKey("href"))
-				attributes["href"] = "http://help.devexpress.com/";
+				attributes["href"] = "https://help.devexpress.com/";
 #pragma warning disable DX0025 // not a path (and no traversal here)
 			return string.Format("<a href=\"{0}\" class=\"{1}\">{2}</a>", attributes["href"], "helplink", match.Groups[2].Value);
 #pragma warning restore DX0025

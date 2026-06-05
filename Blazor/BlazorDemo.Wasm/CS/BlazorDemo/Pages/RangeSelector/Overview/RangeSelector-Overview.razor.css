@@ -1,0 +1,8 @@
+.range-btns {
+    margin-top: 1rem;
+    display: flex;
+}
+
+.range-btns-item {
+    margin-right: 1rem;
+}

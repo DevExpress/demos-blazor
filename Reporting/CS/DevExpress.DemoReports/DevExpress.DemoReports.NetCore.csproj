@@ -49,7 +49,7 @@
     <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.Reporting.Core" Version="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Reporting.Core" Version="26.1.2-beta-26156" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnchorVertical\Report.cs">

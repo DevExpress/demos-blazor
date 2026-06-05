@@ -1,9 +1,9 @@
-DevExpress Blazor Chart components allow you transform data to its most appropriate, concise and readable visual representation. DevExpress Charts for Blazor ships with a variety of 2D chart types - from a Blazor Area/Bar Chart to Blazor Donut and Financial-related Charts.
+DevExpress Blazor Chart components allow you to transform data to its most appropriate, concise, and readable visual representation. DevExpress Charts for Blazor ships with a variety of 2D chart types - from a Blazor Area/Bar Chart to Blazor Donut and Financial-related Charts.
 
 ## Key Features and Capabilities
 
 * 25 Chart types (series)
-* Axes customization (ticks, rotation, position, scale breaks)
+* Axes customization (range, ticks, rotation, position, scale breaks)
 * Configurable data labels
 * Descriptive elements (titles, legend, annotations, tooltips)
 * Axis strips and error bars

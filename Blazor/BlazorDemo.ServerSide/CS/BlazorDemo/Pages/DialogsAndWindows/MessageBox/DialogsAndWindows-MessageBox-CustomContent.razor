@@ -1,0 +1,30 @@
+﻿<DemoPageSectionComponent Id="DialogsAndWindows-MessageBox-CustomContent" ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <div class="d-flex flex-column align-items-center justify-content-center p-3">
+            <DxButton RenderStyle="ButtonRenderStyle.Secondary" Click="() => MessageBoxVisible = true">CLICK TO SHOW A MESSAGE BOX</DxButton>
+        </div>
+
+        <DxMessageBox @bind-Visible="MessageBoxVisible"
+                      Title="Update Available!"
+                      SizeMode="@Params.SizeMode"
+                      RenderStyle="MessageBoxRenderStyle.Info">
+            <p>Version <b>@CurrentDemoVersion</b> is ready for download.</p>
+            <p>
+                Explore the latest features and bug fixes in our 
+                <a href="https://www.devexpress.com/subscriptions/whats-new/" target="_blank">Release Notes</a>.
+            </p>   
+        </DxMessageBox>
+    </ChildContentWithParameters>
+
+    @code {
+        /*BeginHide*/
+        [Inject] IDemoVersion DemoVersion { get; set; }
+        /*EndHide*/
+
+        bool MessageBoxVisible { get; set; } = false;
+
+        /*BeginHide*/
+        public string CurrentDemoVersion => DemoVersion.Version.Substring(0, DemoVersion.Version.LastIndexOf('.'));
+        /*EndHide*/
+    }
+</DemoPageSectionComponent>

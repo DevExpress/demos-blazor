@@ -148,7 +148,7 @@ namespace XtraReportsDemos.CustomDraw {
             this.xrPictureBox4.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("svg", resources.GetString("xrPictureBox4.ImageSource"));
             this.xrPictureBox4.LocationFloat = new DevExpress.Utils.PointFloat(246.875F, 34.375F);
             this.xrPictureBox4.Name = "xrPictureBox4";
-            this.xrPictureBox4.NavigateUrl = "http://www.devexpress.com/Products/NET/Reporting/";
+            this.xrPictureBox4.NavigateUrl = "https://www.devexpress.com/Products/NET/Reporting/";
             this.xrPictureBox4.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.xrPictureBox4.SizeF = new System.Drawing.SizeF(156.25F, 31.25F);
             this.xrPictureBox4.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;

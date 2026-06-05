@@ -6,8 +6,12 @@
         @inject ICspNonceService NonceProvider
 
         <style nonce="@NonceProvider.Nonce">
-            .parent-region-row { /*BeginHide*/--custom-row-color: var(--dxds-color-surface-neutral-subdued-rest, color-mix(in srgb, var(--bs-gray-300), transparent 50%)); /*EndHide*/
+            .parent-region-row { /*BeginHide*/
+                --custom-row-color: var(--dxds-color-surface-neutral-subdued-rest, color-mix(in srgb, var(--bs-gray-300), transparent 50%)); /*EndHide*/
+                /* DevExpress and Bootstrap Themes */
                 background-color: var(--custom-row-color);
+                /* Fluent Themes */
+                --dxbl-grid-row-bg: var(--custom-row-color);
             }
             td.loss-threshold {
                 background-color: rgba(245, 198, 203, 0.5);

@@ -9,7 +9,7 @@ public record DemoIcon(IconKey Key) {
     public string Name => Key.Id.ToString();
     public string Uri => IconUri.GetIconUri(Key);
     public string AdaptiveApi => $"{nameof(Icon)}.{Key.Id}";
-    public string StaticApi => $"{nameof(IconStatic)}.{Key.Set}.{Key.Style}.{Key.Color}.{Key.Size}.{Key.Id}";
+    public string StaticApi => $"{nameof(IconStatic)}.{Key.Id}.{Key.Set}.{Key.Style}.{Key.Color}.{Key.Size}";
 
     public string Size => SizeToText(Key.Size);
     public string Color => Key.Color.ToString();

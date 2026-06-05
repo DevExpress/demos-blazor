@@ -231,7 +231,7 @@
         {
           "Id": "AI-RichEdit",
           "Url": "AI/AIIntegrationRichEdit",
-          "Description": "A Rich Text Editor extension that extends the editor's context menu with AI-powered text processing commands.",
+          "Description": "A Rich Text Editor extension that extends the editor context menu with AI-powered text processing commands.",
           "DocUrl": "405193",
           "Keywords": "DxRichEdit, text editor, rich format, ai, summarize text, proofread text, grammar check, spell check, rewrite text",
           "Title": "Rich Text Editor",
@@ -402,7 +402,7 @@
               "Url": "AIPoweredExtensions/AIReportDesigner",
               "Title": "Report Designer",
               "IsAI": true,
-              "Keywords": "DxReportViewer, reports, reporting tool, devexpress reports, report designer, reportdesigner, ai extensions, report preview, report viewer, document viewer, reportviewer, documentviewer, demo, example, ai",
+              "Keywords": "DxReportViewer, reports, reporting tool, devexpress reports, report designer, reportdesigner, ai extensions, report preview, report viewer, document viewer, reportviewer, documentviewer, ai",
               "AdditionalCodeFiles": [
                 {
                   "Title": "Startup.cs",
@@ -428,7 +428,7 @@
               "Id": "Overview",
               "Url": "Grid",
               "Title": "Overview",
-              "Keywords": "data grid, datagrid, grid, data, data management, grid table, data shaping, table",
+              "Keywords": "data grid, datagrid, grid, data, data management, grid table, data shaping, table, tabular format",
               "Description": "A component that displays data in a tabular format and allows users to edit, shape, and print/export data.",
               "DocUrl": "403143",
               "AdditionalCodeFiles": [
@@ -6555,6 +6555,7 @@
                   "Id": "ZoomAndPan",
                   "Title": "Zoom and Pan",
                   "DocUrl": "405057",
+                  "IsUpdated": true,
                   "AdditionalCodeFiles": [
                     {
                       "Title": "DatePricePoint.cs",
@@ -6573,6 +6574,7 @@
                   "Id": "ZoomArea",
                   "Title": "Zoom Selected Area",
                   "DocUrl": "405057",
+                  "IsUpdated": true,
                   "AdditionalCodeFiles": [
                     {
                       "Title": "BirthLife.cs",
@@ -6996,6 +6998,7 @@
               "Url": "RangeSelectorOverview",
               "Keywords": "RangeSelector, range, interval, scale, predefined interval, chart integration",
               "DocUrl": "DevExpress.Blazor.DxRangeSelector#bind-to-data",
+              "IsUpdated": true,
               "AdditionalCodeFiles": [
                 {
                   "Title": "ZoomingData.cs",
@@ -8300,7 +8303,7 @@
             },
             {
               "Id": "Customization",
-              "Title": "Customize Appearance"
+              "Title": "Styles & Themes"
             },
             {
               "Id": "Options",
@@ -8309,7 +8312,13 @@
             {
               "Id": "DialogService",
               "Title": "Dialog Service",
-              "DocUrl": "DevExpress.Blazor.IDialogService"
+              "DocUrl": "DevExpress.Blazor.IDialogService",
+              "IsUpdated": true
+            },
+            {
+              "Id": "CustomContent",
+              "Title": "Customization",
+              "IsNew": true
             }
           ]
         },
@@ -8430,7 +8439,7 @@
             },
             {
               "Id": "Customization",
-              "Title": "Customization",
+              "Title": "Styles & Themes",
               "DocUrl": "DevExpress.Blazor.DxToast#toast-appearance",
               "AdditionalCodeFiles": [
                 {

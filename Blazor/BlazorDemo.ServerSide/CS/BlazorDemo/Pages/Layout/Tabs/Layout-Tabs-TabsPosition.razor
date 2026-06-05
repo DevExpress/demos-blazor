@@ -15,7 +15,7 @@
                                     <img src="@(StaticAssetUtils.GetEmployeeImagePath(employee.EmployeeId))" width="125" alt="@(employee.FullName + " photo")"/>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <h5>@employee.Title @employee.FirstName @employee.LastName</h5>
+                                    <div class="h5">@employee.Title @employee.FirstName @employee.LastName</div>
                                     <p>
                                         <b>Birthday:</b> @employee.BirthDate?.ToShortDateString()
                                     </p>

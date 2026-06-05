@@ -14,7 +14,7 @@
                               SizeMode="Params.SizeMode"
                               FilterHeaderAreaDisplayMode="PivotTableFilterHeaderAreaDisplayMode.Never">
                     <Fields>
-                        <DxPivotTableField Field="@nameof(Sale.StoreName)" Caption="Store" Area="PivotTableArea.Row"/>
+                        <DxPivotTableField Field="@nameof(Sale.StoreName)" Caption="Store" Area="PivotTableArea.Row" AllowedAreas="PivotTableAllowedAreas.Row"/>
                         <DxPivotTableField Field="@nameof(Sale.Year)" Caption="Year" Area="PivotTableArea.Column"/>
                         <DxPivotTableField Field="@nameof(Sale.Quarter)" Caption="Quarter" Area="PivotTableArea.Column">
                             <ValueTemplate>

@@ -50,7 +50,7 @@
                                 <p class="card-link-container">
                                     <DxButton RenderStyle="ButtonRenderStyle.Link" Click="@(() => ShowDetails(home.Features))" Text="...More details"></DxButton>
                                 </p>
-                                <h5 class="text-center card-price">@string.Format("{0:C}", home.Price)</h5>
+                                <div class="text-center card-price h5">@string.Format("{0:C}", home.Price)</div>
                             </Template>
                         </DxGridLayoutItem>
                     }

@@ -1,8 +1,33 @@
-﻿<DemoPageSectionComponent Id="Charts-Zooming-ZoomAndPan">
+<DemoPageSectionComponent Id="Charts-Zooming-ZoomAndPan">
     <DemoChildContent>
+        <DxToolbar CssClass="w-100 chart-toolbar" ItemRenderStyleMode="ToolbarRenderStyleMode.Plain">
+            <DxToolbarItem Alignment="ToolbarItemAlignment.Right"
+                           IconCssClass="chart-icon chart-icon-caret-left"
+                           Click="@PanLeft"
+                           Tooltip="Pan Left" />
+            <DxToolbarItem Alignment="ToolbarItemAlignment.Right"
+                           IconCssClass="chart-icon chart-icon-caret-right"
+                           Click="@PanRight"
+                           Tooltip="Pan Right" />
+            <DxToolbarItem BeginGroup="true"
+                           Alignment="ToolbarItemAlignment.Right"
+                           IconCssClass="chart-icon chart-icon-zoom-in"
+                           Click="@ZoomIn"
+                           Tooltip="Zoom In" />
+            <DxToolbarItem Alignment="ToolbarItemAlignment.Right"
+                           IconCssClass="chart-icon chart-icon-zoom-out"
+                           Click="@ZoomOut"
+                           Tooltip="Zoom Out" />
+            <DxToolbarItem Alignment="ToolbarItemAlignment.Right"
+                           IconCssClass="chart-icon chart-icon-arrow-reset"
+                           Click="@ResetZoom"
+                           Tooltip="Reset Zoom" />
+        </DxToolbar>
+
         <DxChart @ref="@chart"
                  T="DatePricePoint"
                  Data="@UsdJpyData"
+                 VisualRangeChanged="@OnVisualRangeChanged"
                  Width="100%">
 
             <DxChartLegend Position="RelativePosition.Inside"
@@ -42,30 +67,149 @@
             </DxChartTooltip>
 
         </DxChart>
-
-        <div class="chart-reset-btn">
-            <DxButton Text="Reset Zoom" Click="@SetArgumentAxisVisualRange" />
-        </div>
     </DemoChildContent>
 
     <OptionsContent>
-        <OptionChartExportComponent ExportMethod="@ExportChart"/>
+        <OptionChartExportComponent ExportMethod="@ExportChart" />
     </OptionsContent>
 
     @code {
+        const double PanStepFraction = 0.25;
+        const double ZoomFactor = 0.75;
+        const int MinVisibleSpanDays = 7;
+
         IEnumerable<DatePricePoint> UsdJpyData;
         DxChart<DatePricePoint> chart;
         @inject ICurrencyExchangeDataProvider UsdJpyDataProvider
-        DateTime startDate = new DateTime(2020, 01, 01);
-        DateTime endDate = new DateTime(2021, 01, 29);
+
+        readonly DateTime startDate = new DateTime(2020, 01, 01);
+        readonly DateTime endDate = new DateTime(2021, 01, 29);
+
+        DateTime dataMinDate;
+        DateTime dataMaxDate;
+        DateTime currentVisualStart;
+        DateTime currentVisualEnd;
 
         async void ExportChart(ChartExportFormat format) {
             await chart?.ExportAsync("ZoomAndPanChart", format);
         }
+
         protected override async Task OnInitializedAsync() {
             UsdJpyData = await UsdJpyDataProvider.GetDataAsync();
+            currentVisualStart = startDate;
+            currentVisualEnd = endDate;
+
+            var dataPoints = UsdJpyData as IList<DatePricePoint> ?? UsdJpyData.ToList();
+            if (dataPoints.Count > 0) {
+                dataMinDate = dataPoints.Min(d => d.DateTimeStamp);
+                dataMaxDate = dataPoints.Max(d => d.DateTimeStamp);
+            }
+            else {
+                dataMinDate = startDate;
+                dataMaxDate = endDate;
+            }
         }
-        public void SetArgumentAxisVisualRange() {
+
+        void OnVisualRangeChanged(ChartVisualRangeChangedEventArgs args) {
+            if (args.IsArgumentAxis && args.CurrentRange is { Count: 2 }) {
+                currentVisualStart = (DateTime)args.CurrentRange[0];
+                currentVisualEnd = (DateTime)args.CurrentRange[1];
+            }
+        }
+
+        void PanLeft() {
+            if (chart is null)
+                return;
+
+            var visibleTicks = (currentVisualEnd - currentVisualStart).Ticks;
+            var shiftTicks = (long)(visibleTicks * PanStepFraction);
+
+            var newStart = currentVisualStart.AddTicks(-shiftTicks);
+            var newEnd = currentVisualEnd.AddTicks(-shiftTicks);
+
+            if (newStart < dataMinDate) {
+                newEnd = newEnd.AddTicks((dataMinDate - newStart).Ticks);
+                newStart = dataMinDate;
+            }
+
+            chart.SetArgumentAxisVisualRange([newStart, newEnd]);
+        }
+
+        void PanRight() {
+            if (chart is null)
+                return;
+
+            var visibleTicks = (currentVisualEnd - currentVisualStart).Ticks;
+            var shiftTicks = (long)(visibleTicks * PanStepFraction);
+
+            var newStart = currentVisualStart.AddTicks(shiftTicks);
+            var newEnd = currentVisualEnd.AddTicks(shiftTicks);
+
+            if (newEnd > dataMaxDate) {
+                newStart = newStart.AddTicks(-(newEnd - dataMaxDate).Ticks);
+                newEnd = dataMaxDate;
+            }
+
+            chart.SetArgumentAxisVisualRange([newStart, newEnd]);
+        }
+
+        void ZoomIn() {
+            if (chart is null)
+                return;
+
+            var visibleTicks = (currentVisualEnd - currentVisualStart).Ticks;
+            var minTicks = TimeSpan.FromDays(MinVisibleSpanDays).Ticks;
+            if (visibleTicks <= minTicks)
+                return;
+
+            var zoomedTicks = (long)(visibleTicks * ZoomFactor);
+            if (zoomedTicks < minTicks)
+                zoomedTicks = minTicks;
+
+            var center = currentVisualStart.AddTicks(visibleTicks / 2);
+            var newStart = center.AddTicks(-zoomedTicks / 2);
+            var newEnd = center.AddTicks(zoomedTicks / 2);
+
+            if (newStart < dataMinDate) newStart = dataMinDate;
+            if (newEnd > dataMaxDate) newEnd = dataMaxDate;
+
+            chart.SetArgumentAxisVisualRange([newStart, newEnd]);
+        }
+
+        void ZoomOut() {
+            if (chart is null)
+                return;
+
+            var visibleTicks = (currentVisualEnd - currentVisualStart).Ticks;
+            var totalTicks = (dataMaxDate - dataMinDate).Ticks;
+            if (visibleTicks >= totalTicks)
+                return;
+
+            var zoomedTicks = (long)(visibleTicks / ZoomFactor);
+            if (zoomedTicks > totalTicks)
+                zoomedTicks = totalTicks;
+
+            var center = currentVisualStart.AddTicks(visibleTicks / 2);
+            var newStart = center.AddTicks(-zoomedTicks / 2);
+            var newEnd = center.AddTicks(zoomedTicks / 2);
+
+            if (newStart < dataMinDate) {
+                newEnd = newEnd.AddTicks((dataMinDate - newStart).Ticks);
+                newStart = dataMinDate;
+            }
+            if (newEnd > dataMaxDate) {
+                newStart = newStart.AddTicks(-(newEnd - dataMaxDate).Ticks);
+                newEnd = dataMaxDate;
+            }
+            if (newStart < dataMinDate) newStart = dataMinDate;
+
+            chart.SetArgumentAxisVisualRange([newStart, newEnd]);
+        }
+
+        void ResetZoom() {
+            if (chart is null)
+                return;
+
             chart.SetArgumentAxisVisualRange([startDate, endDate]);
         }
     }

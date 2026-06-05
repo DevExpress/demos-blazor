@@ -450,7 +450,7 @@ namespace XtraReportsDemos.RollPaper {
             this.xrPictureBox3.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("svg", resources.GetString("xrPictureBox3.ImageSource"));
             this.xrPictureBox3.LocationFloat = new DevExpress.Utils.PointFloat(68.6275F, 10F);
             this.xrPictureBox3.Name = "xrPictureBox3";
-            this.xrPictureBox3.NavigateUrl = "http://www.devexpress.com/Products/NET/Reporting/";
+            this.xrPictureBox3.NavigateUrl = "https://www.devexpress.com/Products/NET/Reporting/";
             this.xrPictureBox3.SizeF = new System.Drawing.SizeF(165.625F, 30.20833F);
             this.xrPictureBox3.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
             this.xrPictureBox3.UseImageResolution = false;

@@ -29,11 +29,11 @@ This CRM demo leverages multiple DevExpress Blazor components to create user exp
 * AI scheduling assistant that can check availability and create appointments through natural language queries. 
 * Theme and UI density mode switcher. 
 
-Refer to the following help topic for additional information: [Demos - Blazor CRM Demo](https://docs.devexpress.com/Blazor/401058/demos#sample-blazor-applications).
+Refer to the following help topic for additional information: [Demos - Blazor CRM Demo](https://docs.devexpress.com/Blazor/401058/demos#blazor-crm-demo).
 
 ## Prerequisites 
 
-Refer to the following DevExpress Blazor help topic for information on system requirements (v{26.1}): [Prerequisites](https://docs.devexpress.com/Blazor/401055/prerequisites). 
+Refer to the following DevExpress Blazor help topic for information on system requirements (v26.1): [Prerequisites](https://docs.devexpress.com/Blazor/401055/prerequisites). 
 
 ## Run Demos Locally 
 
@@ -42,15 +42,17 @@ Refer to the following DevExpress Blazor help topic for information on system re
     ```cli 
     # HTTPS
     git clone https://github.com/DevExpress/demos-blazor.git 
+    ```
+    ```cli
     # SSH
     git clone git@github.com:DevExpress/demos-blazor.git 
-    ``` 
+    ```
 
 2. Open one of the following solutions in your IDE: 
 
-    * _Blazor/BlazorDemo.CRM/CS/BlazorDemo.CRM.sln_
-    * _Blazor/BlazorDemo.ServerSide/CS/BlazorDemo.ServerSide.sln_
-    * _Blazor/BlazorDemo.WASM/CS/BlazorDemo.WASM.sln_
+    * [Blazor/BlazorDemo.CRM/CS/BlazorDemo.CRM.sln](https://github.com/DevExpress/demos-blazor/tree/main/Blazor/BlazorDemo.CRM/CS)
+    * [Blazor/BlazorDemo.ServerSide/CS/BlazorDemo.ServerSide.sln](https://github.com/DevExpress/demos-blazor/tree/main/Blazor/BlazorDemo.ServerSide/CS)
+    * [Blazor/BlazorDemo.WASM/CS/BlazorDemo.WASM.sln](https://github.com/DevExpress/demos-blazor/tree/main/Blazor/BlazorDemo.Wasm/CS)
 
 3. _Only for the BlazorDemo.Wasm demo_, ensure that the _BlazorDemo.Wasm.ServerSide_ project is set as the solution’s startup project. 
 4. Run the application in a [supported browser](https://docs.devexpress.com/Blazor/401588/supported-browsers). 

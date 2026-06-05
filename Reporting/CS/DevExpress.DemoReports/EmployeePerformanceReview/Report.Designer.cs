@@ -2383,7 +2383,7 @@ namespace XtraReportsDemos.EmployeePerformanceReview {
             this.xrPictureBox3.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("svg", resources.GetString("xrPictureBox3.ImageSource"));
             this.xrPictureBox3.LocationFloat = new DevExpress.Utils.PointFloat(239.06F, 20F);
             this.xrPictureBox3.Name = "xrPictureBox3";
-            this.xrPictureBox3.NavigateUrl = "http://www.devexpress.com/Products/NET/Reporting/";
+            this.xrPictureBox3.NavigateUrl = "https://www.devexpress.com/Products/NET/Reporting/";
             this.xrPictureBox3.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.xrPictureBox3.SizeF = new System.Drawing.SizeF(156.25F, 31.25F);
             this.xrPictureBox3.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;

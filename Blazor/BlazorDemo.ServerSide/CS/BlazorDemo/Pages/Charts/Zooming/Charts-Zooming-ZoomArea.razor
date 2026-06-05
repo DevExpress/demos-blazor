@@ -1,30 +1,56 @@
-﻿<DemoPageSectionComponent Id="Charts-Zooming-ZoomArea">
+<DemoPageSectionComponent Id="Charts-Zooming-ZoomArea">
     <DemoChildContent>
         @inject IChartBirthLifeDataProvider ChartBirthLifeDataProvider
+
+        <DxToolbar CssClass="w-100 chart-toolbar" ItemRenderStyleMode="ToolbarRenderStyleMode.Plain">
+            <DxToolbarItem Alignment="ToolbarItemAlignment.Right"
+                           IconCssClass="chart-icon chart-icon-caret-left"
+                           Click="@PanLeft"
+                           Tooltip="Pan Left" />
+            <DxToolbarItem Alignment="ToolbarItemAlignment.Right"
+                           IconCssClass="chart-icon chart-icon-caret-right"
+                           Click="@PanRight"
+                           Tooltip="Pan Right" />
+            <DxToolbarItem BeginGroup="true"
+                           Alignment="ToolbarItemAlignment.Right"
+                           IconCssClass="chart-icon chart-icon-zoom-in"
+                           Click="@ZoomIn"
+                           Tooltip="Zoom In" />
+            <DxToolbarItem Alignment="ToolbarItemAlignment.Right"
+                           IconCssClass="chart-icon chart-icon-zoom-out"
+                           Click="@ZoomOut"
+                           Tooltip="Zoom Out" />
+            <DxToolbarItem Alignment="ToolbarItemAlignment.Right"
+                           IconCssClass="chart-icon chart-icon-arrow-reset"
+                           Click="@ResetZoom"
+                           Tooltip="Reset Zoom" />
+        </DxToolbar>
+
         <DxChart @ref="@chart"
                  Data="@DataSource"
+                 VisualRangeChanged="@OnVisualRangeChanged"
                  Width="100%">
-            <DxChartTitle Text="Life Expectancy vs. Birth Rate"/>
+            <DxChartTitle Text="Life Expectancy vs. Birth Rate" />
             <DxChartLegend Position="RelativePosition.Inside"
                            VerticalAlignment="VerticalEdge.Top"
-                           HorizontalAlignment="HorizontalAlignment.Right"/>
+                           HorizontalAlignment="HorizontalAlignment.Right" />
             <DxChartScatterSeries ArgumentField="@((BirthLife i) => i.LifeExp)"
                                   ValueField="@((BirthLife i) => i.BirthRate)"
                                   Filter="@((BirthLife i) => i.Year == 1970)"
                                   Name="1970">
-                <DxChartSeriesPoint Size="8"/>
+                <DxChartSeriesPoint Size="8" />
             </DxChartScatterSeries>
             <DxChartScatterSeries ArgumentField="@((BirthLife i) => i.LifeExp)"
                                   ValueField="@((BirthLife i) => i.BirthRate)"
                                   Filter="@((BirthLife i) => i.Year == 2010)"
                                   Name="2010">
-                <DxChartSeriesPoint Size="8"/>
+                <DxChartSeriesPoint Size="8" />
             </DxChartScatterSeries>
             <DxChartArgumentAxis>
-                <DxChartAxisTitle Text="Life Expectancy"/>
+                <DxChartAxisTitle Text="Life Expectancy" />
             </DxChartArgumentAxis>
             <DxChartValueAxis>
-                <DxChartAxisTitle Text="Birth Rate"/>
+                <DxChartAxisTitle Text="Birth Rate" />
             </DxChartValueAxis>
             <DxChartTooltip Enabled="true">
                 <div class="chart-tooltip">
@@ -35,26 +61,145 @@
                                        ValueAxisZoomAndPanMode="ChartAxisZoomAndPanMode.Both"
                                        AllowDragToZoom="true"
                                        AllowMouseWheel="true"
-                                       PanKey="ChartEventPanKey.Shift"/>
+                                       PanKey="ChartEventPanKey.Shift" />
         </DxChart>
-
-        <div class="chart-reset-btn">
-            <DxButton Text="Reset Zoom" Click="@ResetVisualRange"/>
-        </div>
     </DemoChildContent>
 
     @code {
+        const double PanStepFraction = 0.25;
+        const double ZoomFactor = 0.75;
+        const double MinZoomSpanFraction = 0.05;
+
         IEnumerable<BirthLife> DataSource = Enumerable.Empty<BirthLife>();
         DxChart<BirthLife> chart;
 
+        double argumentDataMin, argumentDataMax;
+        double valueDataMin, valueDataMax;
+        double currentArgumentStart, currentArgumentEnd;
+        double currentValueStart, currentValueEnd;
+
         protected override void OnInitialized() {
             DataSource = ChartBirthLifeDataProvider.GenerateData();
+            argumentDataMin = DataSource.Min(d => d.LifeExp);
+            argumentDataMax = DataSource.Max(d => d.LifeExp);
+            valueDataMin = DataSource.Min(d => d.BirthRate);
+            valueDataMax = DataSource.Max(d => d.BirthRate);
+            currentArgumentStart = argumentDataMin;
+            currentArgumentEnd = argumentDataMax;
+            currentValueStart = valueDataMin;
+            currentValueEnd = valueDataMax;
         }
 
-        public void ResetVisualRange() {
+        void OnVisualRangeChanged(ChartVisualRangeChangedEventArgs args) {
+            if (args.CurrentRange is not { Count: 2 })
+                return;
+
+            if (args.IsArgumentAxis) {
+                currentArgumentStart = Convert.ToDouble(args.CurrentRange[0]);
+                currentArgumentEnd = Convert.ToDouble(args.CurrentRange[1]);
+            }
+            else {
+                currentValueStart = Convert.ToDouble(args.CurrentRange[0]);
+                currentValueEnd = Convert.ToDouble(args.CurrentRange[1]);
+            }
+        }
+
+        void ApplyArgumentRange(double newStart, double newEnd) {
+            if (newStart < argumentDataMin) {
+                newEnd += argumentDataMin - newStart;
+                newStart = argumentDataMin;
+            }
+            if (newEnd > argumentDataMax) {
+                newStart -= newEnd - argumentDataMax;
+                newEnd = argumentDataMax;
+            }
+            if (newStart < argumentDataMin)
+                newStart = argumentDataMin;
+
+            chart.SetArgumentAxisVisualRange([newStart, newEnd]);
+        }
+
+        void ApplyValueRange(double newStart, double newEnd) {
+            if (newStart < valueDataMin) {
+                newEnd += valueDataMin - newStart;
+                newStart = valueDataMin;
+            }
+            if (newEnd > valueDataMax) {
+                newStart -= newEnd - valueDataMax;
+                newEnd = valueDataMax;
+            }
+            if (newStart < valueDataMin)
+                newStart = valueDataMin;
+
+            chart.SetValueAxisVisualRange([newStart, newEnd]);
+        }
+
+        void PanLeft() {
+            if (chart is null)
+                return;
+
+            var visibleSpan = currentArgumentEnd - currentArgumentStart;
+            var shift = visibleSpan * PanStepFraction;
+
+            ApplyArgumentRange(currentArgumentStart - shift, currentArgumentEnd - shift);
+        }
+
+        void PanRight() {
+            if (chart is null)
+                return;
+
+            var visibleSpan = currentArgumentEnd - currentArgumentStart;
+            var shift = visibleSpan * PanStepFraction;
+
+            ApplyArgumentRange(currentArgumentStart + shift, currentArgumentEnd + shift);
+        }
+
+        void ZoomIn() {
+            if (chart is null)
+                return;
+
+            var argumentSpan = currentArgumentEnd - currentArgumentStart;
+            var valueSpan = currentValueEnd - currentValueStart;
+            var minArgumentSpan = (argumentDataMax - argumentDataMin) * MinZoomSpanFraction;
+            var minValueSpan = (valueDataMax - valueDataMin) * MinZoomSpanFraction;
+            if (argumentSpan <= minArgumentSpan && valueSpan <= minValueSpan)
+                return;
+
+            var argumentZoomed = Math.Max(argumentSpan * ZoomFactor, minArgumentSpan);
+            var valueZoomed = Math.Max(valueSpan * ZoomFactor, minValueSpan);
+            var argumentCenter = currentArgumentStart + argumentSpan / 2;
+            var valueCenter = currentValueStart + valueSpan / 2;
+
+            ApplyArgumentRange(argumentCenter - argumentZoomed / 2, argumentCenter + argumentZoomed / 2);
+            ApplyValueRange(valueCenter - valueZoomed / 2, valueCenter + valueZoomed / 2);
+        }
+
+        void ZoomOut() {
+            if (chart is null)
+                return;
+
+            var argumentSpan = currentArgumentEnd - currentArgumentStart;
+            var valueSpan = currentValueEnd - currentValueStart;
+            var argumentTotal = argumentDataMax - argumentDataMin;
+            var valueTotal = valueDataMax - valueDataMin;
+            if (argumentSpan >= argumentTotal && valueSpan >= valueTotal)
+                return;
+
+            var argumentZoomed = Math.Min(argumentSpan / ZoomFactor, argumentTotal);
+            var valueZoomed = Math.Min(valueSpan / ZoomFactor, valueTotal);
+            var argumentCenter = currentArgumentStart + argumentSpan / 2;
+            var valueCenter = currentValueStart + valueSpan / 2;
+
+            ApplyArgumentRange(argumentCenter - argumentZoomed / 2, argumentCenter + argumentZoomed / 2);
+            ApplyValueRange(valueCenter - valueZoomed / 2, valueCenter + valueZoomed / 2);
+        }
+
+        void ResetZoom() {
+            if (chart is null)
+                return;
+
             chart.ResetVisualRange();
         }
-
     }
 
 </DemoPageSectionComponent>

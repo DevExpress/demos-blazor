@@ -12,14 +12,23 @@
         private bool? Result { get; set; } = null;
 
         private async Task OpenConfirmDialogAsync() {
-            Result = await DialogService.ConfirmAsync(new MessageBoxOptions() {
-                Text = "Are you sure you want to delete this record?",
-                OkButtonText = "Yes",
-                CancelButtonText = "No",
-                ShowIcon=false,
-                ShowCloseButton=false,
-                RenderStyle = MessageBoxRenderStyle.Danger,
-            });
+            Result = await DialogService.ConfirmAsync(
+                new MessageBoxOptions() {
+                    Title = "Confirm Deletion",
+                    OkButtonText = "Delete",
+                    CancelButtonText = "Cancel",
+                    RenderStyle = MessageBoxRenderStyle.Danger
+                },
+                @<div>
+                    <p>The following files will be permanently deleted:</p>
+                    <ul>
+                        <li>report_2025.pdf</li>
+                        <li>invoice_march.xlsx</li>
+                        <li>backup_data.zip</li>
+                    </ul>
+                    <p>This action cannot be undone.</p>
+                </div>
+            );
         }
     }
 </DemoPageSectionComponent>

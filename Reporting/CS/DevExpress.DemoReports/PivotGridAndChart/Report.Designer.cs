@@ -300,7 +300,7 @@ namespace XtraReportsDemos.PivotGridAndChart {
             this.xpbDevExpress.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("svg", resources.GetString("xpbDevExpress.ImageSource"));
             this.xpbDevExpress.LocationFloat = new DevExpress.Utils.PointFloat(382.875F, 43.875F);
             this.xpbDevExpress.Name = "xpbDevExpress";
-            this.xpbDevExpress.NavigateUrl = "http://www.devexpress.com/Products/NET/Reporting/";
+            this.xpbDevExpress.NavigateUrl = "https://www.devexpress.com/Products/NET/Reporting/";
             this.xpbDevExpress.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.xpbDevExpress.SizeF = new System.Drawing.SizeF(156.25F, 31.25F);
             this.xpbDevExpress.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;

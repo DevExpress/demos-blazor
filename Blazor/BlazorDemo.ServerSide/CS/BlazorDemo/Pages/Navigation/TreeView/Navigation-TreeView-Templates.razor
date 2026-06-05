@@ -14,10 +14,10 @@
                 var dataItem = (ComponentSet)context.DataItem;
             }
             @if(!context.IsLeaf) {
-                <h4 class="my-0 p-2 d-flex align-items-center">
+                <div class="my-0 p-2 d-flex align-items-center h4">
                     <span class="treeview-expand-btn @(context.Expanded ? "expanded" : "collapsed")" />
                     <span class="ms-3 flex-grow-1">@dataItem.Title</span>
-                </h4>
+                </div>
             } else {
                 <div class="d-flex p-2">
                     <div class="flex-shrink-0 me-3">
@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="flex-grow-1">
-                        <h5 class="mt-0">@dataItem.Title</h5>
+                        <div class="mt-0 h5">@dataItem.Title</div>
                         @dataItem.Description
                     </div>
                 </div>

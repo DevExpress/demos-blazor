@@ -1,0 +1,1 @@
+Use the [ChildContent](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxMessageBox.ChildContent) property to display custom Razor markup in the Message Box body instead of [plain text](xref:DevExpress.Blazor.DxMessageBox.Text).

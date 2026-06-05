@@ -6815,7 +6815,7 @@ You can disable the access key auto generation by setting the <helplink href="ht
         ]]>
       </BannerText>
       <BannerImageUrl>~/Content/VideoBanner.png</BannerImageUrl>
-      <BannerUrl>http://go.devexpress.com/DevExpress_AspDemos_ASPxScheduler_Video.aspx</BannerUrl>
+      <BannerUrl>https://go.devexpress.com/DevExpress_AspDemos_ASPxScheduler_Video.aspx</BannerUrl>
       <BannerHeaderUrl>https://www.devexpress.com/products/net/controls/asp/scheduler/</BannerHeaderUrl>
     </Intro>
 

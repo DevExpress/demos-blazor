@@ -792,7 +792,7 @@ namespace XtraReportsDemos.BarCodes {
             qrCodeGenerator1.FrameOptions = rectangleQRFrameOptions1;
             qrCodeGenerator1.Version = DevExpress.XtraPrinting.BarCode.QRCodeVersion.Version2;
             this.xrBarCode23.Symbology = qrCodeGenerator1;
-            this.xrBarCode23.Text = "URL:http://www.devexpress.com";
+            this.xrBarCode23.Text = "URL:https://www.devexpress.com";
             // 
             // xrBarCode36
             // 
@@ -811,7 +811,7 @@ namespace XtraReportsDemos.BarCodes {
             qrCodeGenerator2.Logo = new DevExpress.XtraPrinting.Drawing.ImageSource("svg", resources.GetString("qrCodeGenerator2.Logo"));
             qrCodeGenerator2.Version = DevExpress.XtraPrinting.BarCode.QRCodeVersion.Version1;
             this.xrBarCode36.Symbology = qrCodeGenerator2;
-            this.xrBarCode36.Text = "URL:http://www.devexpress.com";
+            this.xrBarCode36.Text = "URL:https://www.devexpress.com";
             // 
             // xrTableCell105
             // 
@@ -3060,7 +3060,7 @@ namespace XtraReportsDemos.BarCodes {
             this.xrPictureBox4.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("svg", resources.GetString("xrPictureBox4.ImageSource"));
             this.xrPictureBox4.LocationFloat = new DevExpress.Utils.PointFloat(249F, 22F);
             this.xrPictureBox4.Name = "xrPictureBox4";
-            this.xrPictureBox4.NavigateUrl = "http://www.devexpress.com/Products/NET/Reporting/";
+            this.xrPictureBox4.NavigateUrl = "https://www.devexpress.com/Products/NET/Reporting/";
             this.xrPictureBox4.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.xrPictureBox4.SizeF = new System.Drawing.SizeF(156.25F, 31.25F);
             this.xrPictureBox4.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;

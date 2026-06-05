@@ -57,7 +57,7 @@
     <PaymentAmount>350.88</PaymentAmount>
     <Description>This is a description for John Doe.
 Notice the Auto Preview Feature..</Description>
-    <HyperLink>http://www.devexpress.com</HyperLink>
+    <HyperLink>https://www.devexpress.com</HyperLink>
     <Copies>1</Copies>
     <Time>1899-12-30T01:00:09.0000000</Time>
     <Percent>25</Percent>
@@ -81,7 +81,7 @@ Notice the Auto Preview Feature..</Description>
     <PaymentAmount>200</PaymentAmount>
     <Description>This is a description for Sam Hill.
 Notice the Auto Preview Feature.</Description>
-    <HyperLink>http://www.devexpress.com</HyperLink>
+    <HyperLink>https://www.devexpress.com</HyperLink>
     <Copies>2</Copies>
     <Percent>30</Percent>
     <Color>-256</Color>

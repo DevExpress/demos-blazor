@@ -32,14 +32,14 @@
     <PackageReference Include="Microsoft.Identity.Client" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.AIIntegration.AspNetCore.Reporting" VersionOverride="26.1.2-beta-26148" />
-    <PackageReference Include="DevExpress.AIIntegration.Blazor.Reporting.Viewer" VersionOverride="26.1.2-beta-26148" />
-    <PackageReference Include="DevExpress.Blazor.PdfViewer" VersionOverride="26.1.2-beta-26148" />
-    <PackageReference Include="DevExpress.Blazor.Reporting.JSBasedControls" VersionOverride="26.1.2-beta-26148" />
-    <PackageReference Include="DevExpress.AspNetCore.Reporting" VersionOverride="26.1.2-beta-26148" />
-    <PackageReference Include="DevExpress.Reporting.Demos" VersionOverride="26.1.2-beta-26148" />
-    <PackageReference Include="DevExpress.Drawing.Skia" VersionOverride="26.1.2-beta-26148" />
-    <PackageReference Include="DevExpress.AIIntegration.Blazor" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.AIIntegration.AspNetCore.Reporting" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.AIIntegration.Blazor.Reporting.Viewer" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.Blazor.PdfViewer" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.Blazor.Reporting.JSBasedControls" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.AspNetCore.Reporting" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.Reporting.Demos" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.Drawing.Skia" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.AIIntegration.Blazor" VersionOverride="26.1.2-beta-26156" />
     
     
     

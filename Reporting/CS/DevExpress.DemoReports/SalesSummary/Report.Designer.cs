@@ -402,7 +402,7 @@ namespace XtraReportsDemos.SalesSummary {
             this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("svg", resources.GetString("xrPictureBox1.ImageSource"));
             this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(382.3333F, 38.3333F);
             this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.NavigateUrl = "http://www.devexpress.com/Products/NET/Reporting/";
+            this.xrPictureBox1.NavigateUrl = "https://www.devexpress.com/Products/NET/Reporting/";
             this.xrPictureBox1.SizeF = new System.Drawing.SizeF(156.25F, 31.25F);
             this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
             this.xrPictureBox1.UseImageResolution = false;

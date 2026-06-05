@@ -1,6 +1,7 @@
-You can use the following API members to customize the appearance of the Toolbar's root-level items:
+The [Toolbar](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbar) supports predefined item styles. Assign a [ButtonRenderStyle](https://docs.devexpress.com/Blazor/DevExpress.Blazor.ButtonRenderStyle) value to each data item and use the [ItemRenderStyleMode](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbar.ItemRenderStyleMode) property to control how those styles are applied across all Toolbar items:
 
-*   [DxToolbar.ItemRenderStyleMode](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbar.ItemRenderStyleMode) — Specifies how to apply render style to all Toolbar items.
-*   [DxToolbar.SizeMode](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbar.SizeMode) — Specifies the size of the Toolbar and its inner components.
-*   [DxToolbarItem.RenderStyle](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbarItem.RenderStyle) — Specifies processed item render style.
-*   [DxToolbarItem.RenderStyleMode](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbarItem.RenderStyleMode) — Specifies how to apply the render style to the processed item (this property overrides the common [ItemRenderStyleMode](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbar.ItemRenderStyleMode) property value).
+- [DxToolbar.ItemRenderStyleMode](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbar.ItemRenderStyleMode): Specifies how to apply render style to all Toolbar items.
+- [DxToolbarItem.RenderStyle](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbarItem.RenderStyle): Specifies the item render style.
+- [DxToolbarItem.RenderStyleMode](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbarItem.RenderStyleMode): Specifies how to apply the render style to an individual item. Overrides the common [ItemRenderStyleMode](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbar.ItemRenderStyleMode) value.
+- [DxToolbarDataMapping.RenderStyle](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbarDataMapping.RenderStyle): Maps a data source field to the item render style.
+- [DxToolbarDataMapping.BeginGroup](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbarDataMapping.BeginGroup): Maps a data source field that indicates whether a separator is displayed before the item.

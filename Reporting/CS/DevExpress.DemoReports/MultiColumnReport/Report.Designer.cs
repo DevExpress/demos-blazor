@@ -147,7 +147,7 @@ namespace XtraReportsDemos.MultiColumnReport {
             this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("svg", resources.GetString("xrPictureBox1.ImageSource"));
             this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(254F, 13F);
             this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.NavigateUrl = "http://www.devexpress.com/Products/NET/Reporting/";
+            this.xrPictureBox1.NavigateUrl = "https://www.devexpress.com/Products/NET/Reporting/";
             this.xrPictureBox1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.xrPictureBox1.SizeF = new System.Drawing.SizeF(165.625F, 30.20833F);
             this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;

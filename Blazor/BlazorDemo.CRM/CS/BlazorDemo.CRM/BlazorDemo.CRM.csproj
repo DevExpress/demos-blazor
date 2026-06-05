@@ -26,9 +26,9 @@
     <ProjectReference Include="..\BlazorDemo.CRM.Client\BlazorDemo.CRM.Client.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.AIIntegration" VersionOverride="26.1.2-beta-26148" />
-    <PackageReference Include="DevExpress.Blazor" VersionOverride="26.1.2-beta-26148" />
-    <PackageReference Include="DevExpress.Drawing.Skia" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.AIIntegration" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.Blazor" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.Drawing.Skia" VersionOverride="26.1.2-beta-26156" />
     
     
     

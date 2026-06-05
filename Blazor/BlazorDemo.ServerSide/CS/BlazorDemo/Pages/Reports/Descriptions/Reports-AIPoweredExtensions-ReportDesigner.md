@@ -5,7 +5,7 @@ This demo incorporates the following AI-powered functionality into the DevExpres
 
 - **AI Prompt-to-Report** option in our [Report Wizard](https://docs.devexpress.com/XtraReports/400946/web-reporting/end-user-report-designer-for-web/wizards/report-wizard-fullscreen)
 
-    Select **New via Wizard** command from the [Main Menu](https://docs.devexpress.com/XtraReports/17643/web-reporting/end-user-report-designer-for-web/interface-elements/main-menu). In the wizard, select **AI Prompt-to-Report**. This option allows you to describe a report you wish to build (with or without a data source). A generic prompt template and a few predefined prompts are included.
+    Select **New via Wizard** command from the [Main Menu](https://docs.devexpress.com/XtraReports/17643/web-reporting/end-user-report-designer-for-web/interface-elements/main-menu). In the wizard, select **AI Prompt-to-Report**. This option allows you to describe a report you wish to build (with or without a data source). Predefined prompts are included.
 
     [Documentation](https://docs.devexpress.com/XtraReports/405485/ai-powered-functionality/web-reporting/prompt-to-report-in-web-report-designer)
 
@@ -21,9 +21,9 @@ This demo incorporates the following AI-powered functionality into the DevExpres
 
     [Documentation](https://docs.devexpress.com/XtraReports/405401/ai-powered-functionality/web-reporting/localization-in-web-report-designer)
 
-- **AI-powered Prompt-to-Expression Generator**
+- **AI-powered Expression Generation**
 
-    Our [Filter Editor](https://docs.devexpress.com/XtraReports/113888/web-reporting/end-user-report-designer-for-web/interface-elements/filter-editor) and [Expression Editor](https://docs.devexpress.com/XtraReports/114059/web-reporting/end-user-report-designer-for-web/interface-elements/expression-editor) display an AI button that invokes the **Prompt-to-Expression Generator**. Enter an expression prompt in natural language and click **Generate**. You can edit the generated expression in the Generator window and apply it when ready.
+    Our [Filter Editor](https://docs.devexpress.com/XtraReports/113888/web-reporting/end-user-report-designer-for-web/interface-elements/filter-editor) and [Expression Editor](https://docs.devexpress.com/XtraReports/114059/web-reporting/end-user-report-designer-for-web/interface-elements/expression-editor) include a **Prompt-to-Expression** field. Enter a natural-language prompt, then click **Send** to generate an expression.
 
     [Documentation](https://docs.devexpress.com/XtraReports/405465/ai-powered-functionality/web-reporting/prompt-to-expression-in-web-report-designer)
 

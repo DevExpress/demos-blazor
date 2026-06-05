@@ -331,7 +331,7 @@ namespace XtraReportsDemos.TableReport {
             this.pictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("svg", resources.GetString("pictureBox1.ImageSource"));
             this.pictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 30F);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.NavigateUrl = "http://www.devexpress.com/Products/NET/Reporting/";
+            this.pictureBox1.NavigateUrl = "https://www.devexpress.com/Products/NET/Reporting/";
             this.pictureBox1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 96F);
             this.pictureBox1.SizeF = new System.Drawing.SizeF(149.9592F, 37.66764F);
             this.pictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
