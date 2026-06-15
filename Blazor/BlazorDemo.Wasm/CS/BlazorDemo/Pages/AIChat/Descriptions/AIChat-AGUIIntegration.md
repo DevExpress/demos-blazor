@@ -1,0 +1,1 @@
+This demo integrates the DevExpress Blazor AI Chat Control with an external agent server through the AG-UI protocol. Ask for current weather in any city. The AI Chat Control communicates with a self-hosted Weather Agent to obtain data. The Chat Control renders the response using a custom message template.

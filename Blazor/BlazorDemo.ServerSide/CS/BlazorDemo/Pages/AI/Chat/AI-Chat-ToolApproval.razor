@@ -1,0 +1,181 @@
+@using Microsoft.Extensions.AI
+@using DevExpress.AIIntegration.Blazor.Chat
+@using DevExpress.Blazor.Internal
+@using BlazorDemo.Services
+
+<DemoPageSectionComponent Id="AIChat-ToolApproval"
+                          ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <DxToastProvider Name="@ToolApprovalAIFunctions.ToolApprovalProviderName"
+                         MaxToastCount="3"
+                         HorizontalAlignment="HorizontalAlignment.Center"
+                         VerticalAlignment="VerticalEdge.Bottom" />
+
+        <div class="tool-approval-demo-container">
+            <DxAIChat HeaderText="AI Assistant"
+                      ShowHeader="true"
+                      ChatResponseProviderServiceKey="@ChatClientKeys.ToolApproval"
+                      Initialized="OnChatInitialized"
+                      ResponseReceived="OnResponseReceived"
+                      UseStreaming="true"
+                      CssClass="demo-chat"
+                      SizeMode="Params.SizeMode">
+                <PromptSuggestions>
+                    <DxAIChatPromptSuggestion Title="Update inactive accounts"
+                                              Text="Move inactive Texas accounts to the Tier 2 service level."
+                                              PromptMessage="Update all of our inactive accounts in Texas to Tier 2 status."
+                                              SendOnClick="true" />
+                    <DxAIChatPromptSuggestion Title="Nudge late payers"
+                                              Text="Send a friendly reminder to everyone with an unpaid invoice."
+                                              PromptMessage="Follow up on all invoices that are more than 30 days overdue."
+                                              SendOnClick="true" />
+                    <DxAIChatPromptSuggestion Title="Archive past orders"
+                                              Text="Move orders placed before 2020 into long-term storage."
+                                              PromptMessage="Tidy up the order history by archiving everything from before 2020."
+                                              SendOnClick="true" />
+                </PromptSuggestions>
+                <MessageContentTemplate>
+                    @{
+                        if(!string.IsNullOrEmpty(context.Text)) {
+                            <div class="tool-approval-text">@context.Text</div>
+                        }
+
+                        ToolApprovalRequestBatch requestBatch = null;
+                        foreach (var content in context.Contents) {
+                            var request = content as ToolApprovalRequestContent;
+                            if (request == null || !requestToModelMap.TryGetValue(request.RequestId, out requestBatch))
+                                continue;
+
+                            var toolCall = request.ToolCall as FunctionCallContent;
+
+                            bool isResolved = requestBatch.IsRequestResolved(request.RequestId);
+                            bool isRejected = requestBatch.IsRequestRejected(request.RequestId);
+                            string titleCss = $"tool-approval-title{(isResolved ? (isRejected ? " is-rejected" : " is-approved") : "")}";
+
+                            <div class="tool-approval-card">
+                                <div class="@titleCss">
+                                    @if(isResolved) {
+                                        <DxImage CssClass="tool-approval-icon tool-approval-default-icon" Source="ImageSource.Create(isRejected ? Icon.CloseCircle : Icon.CheckmarkCircle, null)" />
+                                    }
+                                    <span>@GetToolCallTitle(toolCall)</span>
+                                </div>
+                                <div class="tool-approval-args">
+                                    @foreach(var row in GetToolCallRows(toolCall)) {
+                                        <div class="tool-approval-arg">
+                                            <span class="tool-approval-arg-key">@row.Key</span>
+                                            <span class="tool-approval-arg-value">@row.Value</span>
+                                        </div>
+                                    }
+                                </div>
+                                @if(!isResolved) {
+                                    <div class="tool-approval-actions">
+                                        <DxButton Text="Approve" RenderStyle="ButtonRenderStyle.Primary" Click="() => Approve(request.RequestId, requestBatch)" />
+                                        <DxButton Text="Reject" RenderStyle="ButtonRenderStyle.Secondary" Click="() => Reject(request.RequestId, requestBatch)" />
+                                    </div>
+                                }
+                            </div>
+                        }
+
+                        var pendingRequestsCount = requestBatch?.CountPendingRequests() ?? -1;
+                        if (pendingRequestsCount > 0) {
+                            <div class="tool-approval-batch-status">
+                                Waiting for @pendingRequestsCount more decision(s) before sending...
+                            </div>
+                        }
+                    }
+                </MessageContentTemplate>
+            </DxAIChat>
+        </div>
+        @code {
+            IAIChat chat;
+            Dictionary<string, ToolApprovalRequestBatch> requestToModelMap = new();
+
+            /*BeginHide*/
+            const string SystemPrompt =
+@"You are an AI assistant for a CRM demo system. The following data is currently in the system:
+    - CRM Accounts: 8 inactive accounts in Texas at the Tier 1 service level.
+    - Overdue Invoices: 4 clients with unpaid invoices. Total outstanding balance: $321.00.
+    - Order History: 1,234 orders placed between 1999 and 2019 (before 2020). Archive destination: Secure archive vault.
+
+When calling tools, always use these exact values:
+    - UpdateAccountTier: accountCount=8 for inactive Texas accounts.
+    - SendBulkEmail: clientCount=4, totalBalance=""$321.00"" for overdue invoice reminders.
+    - ArchiveOrders: recordCount=1234, startYear=1999, destination=""Secure archive vault"" for pre-2020 orders.";
+
+            void OnChatInitialized(IAIChat chat) {
+                this.chat = chat;
+                chat.LoadMessages([new(ChatRole.System, SystemPrompt)]);
+            }
+            /*EndHide*/
+
+            void OnResponseReceived(ResponseReceivedEventArgs args) {
+                foreach(var message in args.Messages) {
+                    var requests = message.Contents.OfType<ToolApprovalRequestContent>().ToList();
+
+                    if(requests.Count > 0) {
+                        var requestBatch = new ToolApprovalRequestBatch(requests);
+                        requests.ForEach(r => requestToModelMap[r.RequestId] = requestBatch);
+
+                        message.Visible = true;
+                    }
+                }
+            }
+
+            async Task Approve(string requestId, ToolApprovalRequestBatch requestBatch) {
+                requestBatch.ApproveRequest(requestId);
+                await TrySendBatchResponsesAsync(requestBatch);
+            }
+
+            async Task Reject(string requestId, ToolApprovalRequestBatch requestBatch) {
+                requestBatch.RejectRequest(requestId);
+                await TrySendBatchResponsesAsync(requestBatch);
+            }
+
+            async Task TrySendBatchResponsesAsync(ToolApprovalRequestBatch requestBatch) {
+                if (requestBatch.CountPendingRequests() != 0) return;
+
+                await chat!.SendMessageAsync(requestBatch.GenerateResponses());
+            }
+
+            static string Arg(FunctionCallContent? fc, string key) =>
+                fc?.Arguments?.TryGetValue(key, out var v) == true ? v?.ToString() ?? "" : "";
+
+            static string GetToolCallTitle(FunctionCallContent? fc) =>
+                fc?.Name switch {
+                    "UpdateAccountTier" => $"Bulk update {Arg(fc, "accountCount")} accounts",
+                    "SendBulkEmail"     => $"Send payment reminders to {Arg(fc, "clientCount")} clients",
+                    "ArchiveOrders"     => "Tidy up order history",
+                    _                   => fc?.Name ?? "Tool Call"
+                };
+
+            static IEnumerable<(string Key, string Value)> GetToolCallRows(FunctionCallContent? fc) {
+                switch(fc?.Name) {
+                    case "UpdateAccountTier":
+                        bool isActive = bool.TryParse(Arg(fc, "isActive"), out var a) && a;
+                        yield return ("State:", Arg(fc, "state"));
+                        yield return ("Filter:", isActive ? "Active accounts" : "Inactive accounts");
+                        yield return ("Service level:", Arg(fc, "newTier"));
+                        break;
+                    case "SendBulkEmail":
+                        yield return ("Template:", Arg(fc, "template"));
+                        yield return ("Total balance:", Arg(fc, "totalBalance"));
+                        break;
+                    case "ArchiveOrders":
+                        string recCount = int.TryParse(Arg(fc, "recordCount"), out var rc)
+                            ? $"{rc:N0} Orders"
+                            : $"{Arg(fc, "recordCount")} Orders";
+                        yield return ("Date Range:", $"{Arg(fc, "startYear")}–{Arg(fc, "year")}");
+                        yield return ("Record Count:", recCount);
+                        yield return ("Destination:", Arg(fc, "destination"));
+                        break;
+                    default:
+                        if(fc?.Arguments is not null) {
+                            foreach(var arg in fc.Arguments)
+                                yield return (arg.Key, arg.Value?.ToString() ?? "");
+                        }
+                        break;
+                }
+            }
+        }
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

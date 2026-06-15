@@ -1,0 +1,108 @@
+@if(WeatherData != null) {
+    <div class="weather-widget">
+        <!-- Current Weather Block -->
+        <div class="current-weather-card">
+            <div class="cw-header">
+                <span class="cw-title">Current weather</span>
+                <span class="cw-time">@DateTime.Now.ToString("h:mm tt")</span>
+            </div>
+
+            <div class="cw-main">
+                <div class="cw-icon">
+                    @GetWeatherEmoji(WeatherData.Icon)
+                </div>
+                <div class="cw-temp">
+                    <span class="cw-temp-value">@Math.Round(WeatherData.Temperature)</span><span class="cw-temp-unit">°C</span>
+                </div>
+                <div class="cw-condition">
+                    <span class="cw-desc">@(string.IsNullOrEmpty(WeatherData.Description) ? string.Empty : char.ToUpper(WeatherData.Description[0]) + WeatherData.Description.Substring(1))</span>
+                    <span class="cw-feels">Feels like @Math.Round(WeatherData.FeelsLike)°</span>
+                </div>
+            </div>
+
+            <div class="cw-details">
+                <div class="cw-detail">
+                    <span class="cw-detail-label">Wind</span>
+                    <span class="cw-detail-value">@Math.Round(WeatherData.WindSpeed, 1) m/s</span>
+                </div>
+                <div class="cw-detail">
+                    <span class="cw-detail-label">Humidity</span>
+                    <span class="cw-detail-value">@WeatherData.Humidity%</span>
+                </div>
+                <div class="cw-detail">
+                    <span class="cw-detail-label">Pressure</span>
+                    <span class="cw-detail-value">@WeatherData.Pressure mb</span>
+                </div>
+                <div class="cw-detail">
+                    <span class="cw-detail-label">Sunrise</span>
+                    <span class="cw-detail-value">@WeatherData.Sunrise.ToLocalTime().ToString("h:mm tt")</span>
+                </div>
+                <div class="cw-detail">
+                    <span class="cw-detail-label">Sunset</span>
+                    <span class="cw-detail-value">@WeatherData.Sunset.ToLocalTime().ToString("h:mm tt")</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weekly Forecast Block -->
+        @if(WeatherData.FiveDayForecast?.Count > 0) {
+            <div>
+                <div class="forecast-row">
+                    @{ var days = WeatherData.FiveDayForecast.GetRange(0, Math.Min(5, WeatherData.FiveDayForecast.Count)); }
+                    @for(int i = 0; i < days.Count; i++) {
+                        var day = days[i];
+                        var isToday = day.Date.Date == DateTime.Today;
+                        <div class="fc-day-card @(isToday ? "fc-day-selected" : "")">
+                            <div class="fc-day-header">
+                                <span class="fc-day-num">@day.Date.Day</span>
+                                <span class="fc-day-name">@GetDayLabel(day.Date)</span>
+                            </div>
+                            <div class="fc-day-body">
+                                <div class="fc-day-icon">
+                                    @GetWeatherEmoji(day.Icon)
+                                </div>
+                                <div class="fc-day-temps">
+                                    <span class="fc-temp-high">@Math.Round(day.MaxTemp)°</span>
+                                    <span class="fc-temp-low">@Math.Round(day.MinTemp)°</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    [Parameter] public WeatherWidgetData WeatherData { get; set; }
+
+    private string GetDayLabel(DateTime date) {
+        if(date.Date == DateTime.Today)
+            return "Today";
+        if(date.Date == DateTime.Today.AddDays(-1))
+            return "Yesterday";
+        return date.ToString("ddd");
+    }
+
+    private string GetWeatherEmoji(string iconCode) {
+        if(string.IsNullOrEmpty(iconCode))
+            return "🌤️";
+
+        return iconCode switch {
+            "01d" => "☀️",
+            "01n" => "🌙",
+            "02d" => "🌤️",
+            "02n" => "☁️",
+            "03d" or "03n" => "☁️",
+            "04d" or "04n" => "☁️",
+            "09d" or "09n" => "🌧️",
+            "10d" => "🌦️",
+            "10n" => "🌧️",
+            "11d" or "11n" => "⛈️",
+            "13d" or "13n" => "❄️",
+            "50d" or "50n" => "🌫️",
+            _ => "🌤️"
+        };
+    }
+}

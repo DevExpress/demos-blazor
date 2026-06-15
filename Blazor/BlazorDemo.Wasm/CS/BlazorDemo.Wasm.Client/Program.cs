@@ -6,6 +6,7 @@ using BlazorDemo.Configuration;
 using BlazorDemo.DataProviders;
 using BlazorDemo.DataProviders.Implementation;
 using BlazorDemo.Services;
+using BlazorDemo.Agents;
 using BlazorDemo.Wasm.DataProviders.Implementation;
 using BlazorDemo.Wasm.DataProviders.TransportInfrastructure;
 using DevExpress.Blazor.DocumentMetadata;
@@ -19,7 +20,7 @@ namespace BlazorDemo.Wasm {
 
             var services = builder.Services;
 
-            var azureOpenAIEndpoint = "https://public-api.devexpress.com/demo-openai";
+            var azureOpenAIEndpoint = "https://api.devexpress.com/demo-openai";
             var azureOpenAIKey = "DEMO";
             var deploymentName = "demo";
 

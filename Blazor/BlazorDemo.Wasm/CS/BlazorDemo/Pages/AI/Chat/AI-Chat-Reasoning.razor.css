@@ -1,0 +1,68 @@
+.reasoning-demo-container {
+    width: 100%;
+}
+/*BeginHide*/ ::deep /*EndHide*/ .demo-chat {
+    width: 100%;
+    height: 600px;
+}
+.reasoning-accordion {
+    margin-bottom: 8px;
+    border: 1px solid var(--dxds-color-border-neutral-default-rest, var(--bs-border-color));
+    border-radius: var(--dxds-border-radius-40, var(--bs-border-radius));
+    overflow: hidden;
+}
+.reasoning-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.reasoning-header-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.reasoning-text {
+    padding: 8px 12px;
+    margin: 0;
+}
+.reasoning-answer-text /*BeginHide*/ ::deep /*EndHide*/ h1,
+.reasoning-answer-text /*BeginHide*/ ::deep /*EndHide*/ h2,
+.reasoning-answer-text /*BeginHide*/ ::deep /*EndHide*/ h3,
+.reasoning-answer-text /*BeginHide*/ ::deep /*EndHide*/ h4,
+.reasoning-answer-text /*BeginHide*/ ::deep /*EndHide*/ h5,
+.reasoning-answer-text /*BeginHide*/ ::deep /*EndHide*/ h6,
+.reasoning-text /*BeginHide*/ ::deep /*EndHide*/ h1,
+.reasoning-text /*BeginHide*/ ::deep /*EndHide*/ h2,
+.reasoning-text /*BeginHide*/ ::deep /*EndHide*/ h3,
+.reasoning-text /*BeginHide*/ ::deep /*EndHide*/ h4,
+.reasoning-text /*BeginHide*/ ::deep /*EndHide*/ h5,
+.reasoning-text /*BeginHide*/ ::deep /*EndHide*/ h6 {
+    font-size: 1em;
+    font-weight: 700;
+    margin: 0.5em 0 0.25em;
+    line-height: 1.4;
+}
+.reasoning-answer-text /*BeginHide*/ ::deep /*EndHide*/ p,
+.reasoning-text /*BeginHide*/ ::deep /*EndHide*/ p {
+    margin: 0 0 0.5em;
+}
+.reasoning-answer-text /*BeginHide*/ ::deep /*EndHide*/ p:last-child,
+.reasoning-answer-text /*BeginHide*/ ::deep /*EndHide*/ ul:last-child,
+.reasoning-answer-text /*BeginHide*/ ::deep /*EndHide*/ ol:last-child,
+.reasoning-text /*BeginHide*/ ::deep /*EndHide*/ p:last-child,
+.reasoning-text /*BeginHide*/ ::deep /*EndHide*/ ul:last-child,
+.reasoning-text /*BeginHide*/ ::deep /*EndHide*/ ol:last-child {
+    margin-bottom: 0;
+}
+.reasoning-answer-text /*BeginHide*/ ::deep /*EndHide*/ ul,
+.reasoning-answer-text /*BeginHide*/ ::deep /*EndHide*/ ol,
+.reasoning-text /*BeginHide*/ ::deep /*EndHide*/ ul,
+.reasoning-text /*BeginHide*/ ::deep /*EndHide*/ ol {
+    margin: 0 0 0.5em;
+    padding-left: 1.5em;
+}
+.reasoning-answer-text /*BeginHide*/ ::deep /*EndHide*/ li,
+.reasoning-text /*BeginHide*/ ::deep /*EndHide*/ li {
+    margin-bottom: 0.2em;
+}

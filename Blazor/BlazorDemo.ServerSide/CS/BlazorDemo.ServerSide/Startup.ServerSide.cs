@@ -38,6 +38,7 @@ namespace BlazorDemo.ServerSide {
 
             services.AddScoped<IAIExceptionHandler, AIExceptionHandler>();
             services.AddDevExpressAI();
+            services.AddAGUI();
             services.AddSingleton<IDemoVersion, DemoVersion>(x => {
                 string customVersion = Configuration.GetValue<string>("dxversion");
                 if(!string.IsNullOrEmpty(customVersion))

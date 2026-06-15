@@ -1,0 +1,24 @@
+.chat-demo-container {
+    width: 100%;
+}
+
+/*BeginHide*/::deep /*EndHide*/ .demo-chat {
+    width: 100%;
+    height: 640px;
+}
+
+/*BeginHide*/::deep /*EndHide*/ .demo-chat .demo-chat-ui-description {
+    text-align: center;
+    max-width: 620px;
+    line-height: 1.6;
+}
+
+/*BeginHide*/::deep /*EndHide*/ .demo-chat .demo-chat-ui-icon {
+    font-size: 36px;
+}
+
+/*BeginHide*/::deep /*EndHide*/ .demo-chat .demo-chat-ui-title {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 8px;
+}

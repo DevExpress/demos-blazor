@@ -1,0 +1,41 @@
+@using DevExpress.AIIntegration.Blazor.Chat
+@using System.Text.Json
+@using Markdig
+
+<div>
+    @{
+        var weatherData = GetWeatherFromFunctionCalls(Message.FunctionCalls);
+        if(weatherData != null) {
+            <div class="weather-widget-container">
+                <AI_Chat_AGUIWeatherWidgetComponent WeatherData="@weatherData"/>
+            </div>
+        }
+
+        if(!string.IsNullOrWhiteSpace(Message.Text)) {
+            <div>@Message.Text</div>
+        }
+    }
+</div>
+
+@code {
+    [Parameter] public BlazorChatMessage Message { get; set; } = default!;
+
+    private static readonly JsonSerializerOptions JsonOptions = new() { PropertyNameCaseInsensitive = true };
+
+    WeatherWidgetData GetWeatherFromFunctionCalls(List<AIChatFunctionCall> functionCalls) {
+        if(functionCalls == null || functionCalls.Count == 0)
+            return null;
+        var weatherCall = functionCalls.Find(fc => fc.Request?.Name == "GetWeather" && fc.Result?.Result != null);
+        if(weatherCall == null)
+            return null;
+        try {
+            var json = weatherCall.Result.Result.ToString();
+            if(string.IsNullOrWhiteSpace(json))
+                return null;
+            var data = JsonSerializer.Deserialize<WeatherWidgetData>(json, JsonOptions);
+            return data?.CityName != null ? data : null;
+        } catch {
+            return null;
+        }
+    }
+}

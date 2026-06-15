@@ -8,20 +8,6 @@
                            Orientation="IsSmallScreen ? Orientation.Vertical : Orientation.Horizontal"
                            ItemSpacing="12px">
                 <Items>
-                    @if(!IsSmallScreen) {
-                        <DxStackLayoutItem Length="2fr">
-                            <Template>
-                                <div class="d-flex flex-column">
-                                    <div class="fw-bold mb-3">Source Text:</div>
-                                    <DxMemo @bind-Text="SampleText"
-                                            Rows="14"
-                                            ResizeMode="MemoResizeMode.Auto"
-                                            SizeMode="Params.SizeMode"
-                                            aria-label="Source Text"/>
-                                </div>
-                            </Template>
-                        </DxStackLayoutItem>
-                    }
                     <DxStackLayoutItem Length="@(IsSmallScreen ? "1fr" : "3fr")">
                         <Template>
                             <div class="d-flex flex-column">
@@ -100,20 +86,18 @@
                             </div>
                         </Template>
                     </DxStackLayoutItem>
-                    @if(IsSmallScreen) {
-                        <DxStackLayoutItem>
-                            <Template>
-                                <div class="d-flex flex-column">
-                                    <div class="fw-bold mb-3">Source Text:</div>
-                                    <DxMemo @bind-Text="SampleText"
-                                            Rows="14"
-                                            ResizeMode="MemoResizeMode.Auto"
-                                            SizeMode="Params.SizeMode"
-                                            aria-label="Source Text"/>
-                                </div>
-                            </Template>
-                        </DxStackLayoutItem>
-                    }
+                    <DxStackLayoutItem Length="2fr">
+                        <Template>
+                            <div class="d-flex flex-column">
+                                <div class="fw-bold mb-3">Source Text:</div>
+                                <DxMemo @bind-Text="SampleText"
+                                        Rows="14"
+                                        ResizeMode="MemoResizeMode.Auto"
+                                        SizeMode="Params.SizeMode"
+                                        aria-label="Source Text"/>
+                            </div>
+                        </Template>
+                    </DxStackLayoutItem>
                 </Items>
             </DxStackLayout>
         </div>

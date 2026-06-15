@@ -5,7 +5,7 @@ The DevExpress Blazor [Pivot Table](https://docs.devexpress.com/Blazor/405245/pi
 * Built-in high-performance data engine
 * [Data sorting support](https://docs.devexpress.com/Blazor/405367/components/pivottable/filter-data#sort-data)
 * [Data filters](https://docs.devexpress.com/Blazor/405367/components/pivottable/filter-data#filter-data)
-* DateTime, numeric, alphabetic, and custom [group intervals](https://docs.devexpress.com/Blazor/405367/components/pivottable/filter-data?v=25.1#group-data)
+* DateTime, numeric, alphabetic, and custom [group intervals](https://docs.devexpress.com/Blazor/405367/components/pivottable/filter-data#group-data)
 * Configurable [totals and grand totals](https://docs.devexpress.com/Blazor/405459/components/pivottable/pivot-table-basics#totals-grand-totals)
 * [Field customization in the UI](https://docs.devexpress.com/Blazor/405459/components/pivottable/pivot-table-basics#field-customization-in-the-ui)
 * Built-in scroll bar and sticky Header/Row Value region

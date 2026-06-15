@@ -24,7 +24,7 @@
         bool MessageBoxVisible { get; set; } = false;
 
         /*BeginHide*/
-        public string CurrentDemoVersion => DemoVersion.Version.Substring(0, DemoVersion.Version.LastIndexOf('.'));
+        public string CurrentDemoVersion => string.Join(".", DemoVersion.Version.Split('.').Take(2));
         /*EndHide*/
     }
 </DemoPageSectionComponent>

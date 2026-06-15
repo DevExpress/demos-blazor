@@ -28,6 +28,7 @@
     <PackageReference Include="DevExtreme.AspNet.Data" />
     <PackageReference Include="System.Reactive" />
 	<PackageReference Include="Microsoft.Agents.AI.Workflows" />
+    <PackageReference Include="Microsoft.Agents.AI.AGUI" />
     <PackageReference Include="Microsoft.Extensions.AI" />
     <PackageReference Include="Azure.AI.OpenAI" />
     <PackageReference Include="Microsoft.Extensions.AI.OpenAI" />
@@ -38,15 +39,16 @@
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.Blazor.PdfViewer" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.Images.Blazor" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.Blazor.Reporting.JSBasedControls" VersionOverride="26.1.2-beta-26156" />
-	  <PackageReference Include="DevExpress.AspNetCore.Reporting" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.Reporting.Demos" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.Blazor.PivotTable" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.Drawing.Skia" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.AIIntegration.Blazor.Reporting.Viewer" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.AIIntegration.Blazor" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.Blazor.PdfViewer" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.Images.Blazor" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.Blazor.Reporting.JSBasedControls" VersionOverride="26.1.3" />
+	  <PackageReference Include="DevExpress.AspNetCore.Reporting" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.Reporting.Demos" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.Blazor.PivotTable" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.Drawing.Skia" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.AIIntegration.Agents" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.AIIntegration.Blazor.Reporting.Viewer" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.AIIntegration.Blazor" VersionOverride="26.1.3" />
     
     
     
@@ -292,6 +294,7 @@
       <EmbeddedResource Include="Data\**\*.*" />
       <EmbeddedResource Include="DataProviders\**\*.*" />
       <EmbeddedResource Include="Services\**\*.*" />
+      <EmbeddedResource Include="Agents\**\*.*" />
       <EmbeddedResource Include="wwwroot\css\*.css" />
       <EmbeddedResource Include="wwwroot\css\dx\*.css" />
       <EmbeddedResource Include="wwwroot\css\fluent\*.css" />

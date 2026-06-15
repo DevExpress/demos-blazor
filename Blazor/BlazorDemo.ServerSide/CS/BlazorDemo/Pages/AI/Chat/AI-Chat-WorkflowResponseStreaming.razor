@@ -1,0 +1,44 @@
+@using DevExpress.AIIntegration.Blazor.Chat
+
+<DemoPageSectionComponent Id="AIChat-WorkflowResponseStreaming"
+                          ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <div class="chat-demo-container">
+            <DxAIChat HeaderText="AI Assistant"
+                      ShowHeader="true"
+                      ResponseContentFormat="ResponseContentFormat.Markdown"
+                      ChatResponseProviderServiceKey="@ChatClientKeys.WorkflowResponseStreaming"
+                      CssClass="demo-chat"
+                      IncludeFunctionCallInfo="true"
+                      UseStreaming="true"
+                      SizeMode="Params.SizeMode">
+                <EmptyMessageAreaTemplate>
+                    <div class="demo-chat-ui-description">
+                        <div class="demo-chat-ui-icon">&#x1F3AD;</div>
+                        <div class="demo-chat-ui-title">Workflow Response Streaming</div>
+                        <div>
+                            This demo implements the same Shakespearean Poet pipeline and uses a custom workflow
+                            provider implementation (WorkflowResponseProvider).
+                            This provider streams events in real time. Enter <strong>2 or 3 keywords</strong> to get
+                            started.
+                        </div>
+                    </div>
+                </EmptyMessageAreaTemplate>
+                <PromptSuggestions>
+                    <DxAIChatPromptSuggestion Title="Moon, whisper, ocean"
+                                              Text="Tranquil & Mystical"
+                                              PromptMessage="moon, whisper, ocean"
+                                              SendOnClick="true"/>
+                    <DxAIChatPromptSuggestion Title="Fire, dream, shadow"
+                                              Text="Heroic & Hopeful"
+                                              PromptMessage="fire, dream, shadow"
+                                              SendOnClick="true"/>
+                    <DxAIChatPromptSuggestion Title="Rose, thunder, silence"
+                                              Text="Romantic & Contemplative"
+                                              PromptMessage="rose, thunder, silence"
+                                              SendOnClick="true"/>
+                </PromptSuggestions>
+            </DxAIChat>
+        </div>
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

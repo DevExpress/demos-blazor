@@ -1,0 +1,45 @@
+@using DevExpress.AIIntegration.Blazor.Chat
+
+<DemoPageSectionComponent Id="AIChat-AGUIIntegration"
+                          ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <div class="chat-demo-container">
+            <DxAIChat HeaderText="AI Assistant"
+                      ShowHeader="true"
+                      ChatResponseProviderServiceKey="@ChatClientKeys.AGUIWeather"
+                      CssClass="demo-chat"
+                      ResponseContentFormat="ResponseContentFormat.PlainText"
+                      SizeMode="Params.SizeMode"
+                      UseStreaming="false">
+                <EmptyMessageAreaTemplate>
+                    <div class="demo-chat-ui-description">
+                        <div class="demo-chat-ui-icon">&#x1F324;&#xFE0F;</div>
+                        <div class="demo-chat-ui-title">AG-UI Weather Agent</div>
+                        <div>
+                            Ask about the weather in any city. Pick a suggestion below or enter your own prompt.
+                            The chat control queries a self-hosted <strong>Weather Agent</strong>.
+                            <strong>AG-UI protocol</strong> is used for communication.
+                        </div>
+                    </div>
+                </EmptyMessageAreaTemplate>
+                <PromptSuggestions>
+                    <DxAIChatPromptSuggestion Title="Weather in London"
+                                              Text="Check the weather in the UK capital"
+                                              PromptMessage="What's the weather in London?"
+                                              SendOnClick="true"/>
+                    <DxAIChatPromptSuggestion Title="Weather in Tokyo"
+                                              Text="Check the weather in Japan's capital"
+                                              PromptMessage="How's the weather looking in Tokyo?"
+                                              SendOnClick="true"/>
+                    <DxAIChatPromptSuggestion Title="Weather in New York"
+                                              Text="Check the weather in New York (the Big Apple)"
+                                              PromptMessage="Tell me about the weather in New York."
+                                              SendOnClick="true"/>
+                </PromptSuggestions>
+                <MessageContentTemplate>
+                    <AI_Chat_AGUIWeatherMessageContentTemplate Message="@context"/>
+                </MessageContentTemplate>
+            </DxAIChat>
+        </div>
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>

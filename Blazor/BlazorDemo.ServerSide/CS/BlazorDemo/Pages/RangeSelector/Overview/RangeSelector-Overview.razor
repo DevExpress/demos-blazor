@@ -35,14 +35,30 @@
                 <label for="minSpinEdit" class="demo-text cw-320 mb-1">
                     Min Value:
                 </label>
-                <DxSpinEdit Value="StartValue" T="double" ValueChanged="OnSpinEditStartValueChanged" InputId="minSpinEdit" CssClass="cw-320" Increment="10" MinValue="10" MaxValue="650" />
+                <DxSpinEdit Value="StartValue" 
+                            T="double" 
+                            ValueChanged="OnSpinEditStartValueChanged" 
+                            InputId="minSpinEdit" 
+                            CssClass="cw-320" 
+                            Increment="10" 
+                            MinValue="10" 
+                            MaxValue="650"
+                            BindValueMode="BindValueMode.OnInput" />
             </div>
 
             <div>
                 <label for="maxSpinEdit" class="demo-text cw-320 mb-1">
                     Max Value:
                 </label>
-                <DxSpinEdit Value="EndValue" T="double" ValueChanged="OnSpinEditEndValueChanged" InputId="maxSpinEdit" CssClass="cw-320" Increment="10" MinValue="10" MaxValue="650" />
+                <DxSpinEdit Value="EndValue" 
+                            T="double" 
+                            ValueChanged="OnSpinEditEndValueChanged" 
+                            InputId="maxSpinEdit" 
+                            CssClass="cw-320" 
+                            Increment="10" 
+                            MinValue="10" 
+                            MaxValue="650"
+                            BindValueMode="BindValueMode.OnInput" />
             </div>
         </div>
     </DemoChildContent>

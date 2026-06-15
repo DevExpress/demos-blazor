@@ -225,6 +225,190 @@
                   "Path": "Pages\\CodeSnippets\\AIIntegrationWithGridFunctions.Startup.cs"
                 }
               ]
+            },
+            {
+              "Id": "ToolApproval",
+              "Title": "Tool Approval",
+              "IsNew": true,
+              "DocUrl": "DevExpress.AIIntegration.Blazor.Chat.DxAIChat",
+              "AdditionalCodeFiles": [
+                {
+                  "Title": "Razor",
+                  "Path": "Pages\\AI\\Chat\\AI-Chat-ToolApproval.razor"
+                },
+                {
+                  "Title": "CSS",
+                  "Path": "Pages\\AI\\Chat\\AI-Chat-ToolApproval.razor.css"
+                },
+                {
+                  "Title": "ToolApprovalAIFunctions.cs",
+                  "Path": "Services\\ToolApprovalAIFunctions.cs"
+                },
+                {
+                  "Title": "Startup.cs",
+                  "Path": "Pages\\CodeSnippets\\AIIntegrationWithToolApproval.Startup.cs"
+                }
+              ]
+            },
+            {
+              "Id": "Reasoning",
+              "Title": "Reasoning Visualization",
+              "IsNew": true,
+              "DocUrl": "DevExpress.AIIntegration.Blazor.Chat.DxAIChat",
+              "AdditionalCodeFiles": [
+                {
+                  "Title": "Razor",
+                  "Path": "Pages\\AI\\Chat\\AI-Chat-Reasoning.razor"
+                },
+                {
+                  "Title": "CSS",
+                  "Path": "Pages\\AI\\Chat\\AI-Chat-Reasoning.razor.css"
+                },
+                {
+                  "Title": "Startup.cs",
+                  "Path": "Pages\\CodeSnippets\\AIIntegrationWithReasoning.Startup.cs"
+                }
+              ]
+            },
+            {
+              "Id": "WorkflowAsAgent",
+              "IsNew": true,
+              "Title": "Workflow as Agent",
+              "DocUrl": "DevExpress.AIIntegration.Blazor.Chat.DxAIChat",
+              "AdditionalCodeFiles": [
+                {
+                  "Title": "Razor",
+                  "Path": "Pages\\AI\\Chat\\AI-Chat-WorkflowAsAgent.razor"
+                },
+                {
+                  "Title": "CSS",
+                  "Path": "Pages\\AI\\Chat\\AI-Chat-WorkflowAsAgent.razor.css"
+                },
+                {
+                  "Title": "WorkflowFactory",
+                  "Path": "Agents\\AgentFactory.cs"
+                },
+                {
+                  "Title": "DictionaryTool",
+                  "Path": "Agents\\Shakespearean\\ShakespeareanTools.cs"
+                },
+                {
+                  "Title": "Startup.cs",
+                  "Path": "Pages\\CodeSnippets\\AIIntegrationWithWorkflowAsAgent.Startup.cs"
+                }
+              ]
+            },
+            {
+              "Id": "WorkflowResponseStreaming",
+              "IsNew": true,
+              "Title": "Workflow Response Streaming",
+              "DocUrl": "DevExpress.AIIntegration.Blazor.Chat.DxAIChat",
+              "AdditionalCodeFiles": [
+                {
+                  "Title": "Razor",
+                  "Path": "Pages\\AI\\Chat\\AI-Chat-WorkflowResponseStreaming.razor"
+                },
+                {
+                  "Title": "CSS",
+                  "Path": "Pages\\AI\\Chat\\AI-Chat-WorkflowResponseStreaming.razor.css"
+                },
+                {
+                  "Title": "WorkflowProvider",
+                  "Path": "Agents\\WorkflowInfra\\WorkflowResponseProvider.cs"
+                },
+                {
+                  "Title": "WorkflowEventContent",
+                  "Path": "Agents\\WorkflowInfra\\WorkflowEventContent.cs"
+                },
+                {
+                  "Title": "WorkflowFactory",
+                  "Path": "Agents\\AgentFactory.cs"
+                },
+                {
+                  "Title": "Startup.cs",
+                  "Path": "Pages\\CodeSnippets\\AIIntegrationWithWorkflowResponseStreaming.Startup.cs"
+                }
+              ]
+            },
+            {
+              "Id": "WorkflowWithExecutors",
+              "IsNew": true,
+              "Title": "Workflow with Execution Steps",
+              "DocUrl": "DevExpress.AIIntegration.Blazor.Chat.DxAIChat",
+              "AdditionalCodeFiles": [
+                {
+                  "Title": "Razor",
+                  "Path": "Pages\\AI\\Chat\\AI-Chat-WorkflowWithExecutors.razor"
+                },
+                {
+                  "Title": "CSS",
+                  "Path": "Pages\\AI\\Chat\\AI-Chat-WorkflowWithExecutors.razor.css"
+                },
+                {
+                  "Title": "WorkflowProvider",
+                  "Path": "Agents\\WorkflowInfra\\WorkflowResponseProvider.cs"
+                },
+                {
+                  "Title": "WorkflowEventContent",
+                  "Path": "Agents\\WorkflowInfra\\WorkflowEventContent.cs"
+                },
+                {
+                  "Title": "WorkflowFactory",
+                  "Path": "Agents\\AgentFactory.cs"
+                },
+                {
+                  "Title": "TextProcessingExecutors",
+                  "Path": "Agents\\TextProcessing\\TextProcessingExecutors.cs"
+                },
+                {
+                  "Title": "Startup.cs",
+                  "Path": "Pages\\CodeSnippets\\AIIntegrationWithWorkflowWithExecutors.Startup.cs"
+                }
+              ]
+            },
+            {
+              "Id": "AGUIIntegration",
+              "IsNew": true,
+              "Title": "AG-UI Integration",
+              "DocUrl": "DevExpress.AIIntegration.Blazor.Chat.DxAIChat",
+              "AdditionalCodeFiles": [
+                {
+                  "Title": "Razor",
+                  "Path": "Pages\\AI\\Chat\\AI-Chat-AGUIIntegration.razor"
+                },
+                {
+                  "Title": "CSS",
+                  "Path": "Pages\\AI\\Chat\\AI-Chat-AGUIIntegration.razor.css"
+                },
+                {
+                  "Title": "WeatherMessageContentTemplate.razor",
+                  "Path": "Pages\\AI\\Chat\\AI-Chat-AGUIWeatherMessageContentTemplate.razor"
+                },
+                {
+                  "Title": "WeatherWidgetComponent.razor",
+                  "Path": "Pages\\AI\\Chat\\AI-Chat-AGUIWeatherWidgetComponent.razor"
+                },
+                {
+                  "Title": "WeatherService.cs",
+                  "Path": "Services\\WeatherService.cs"
+                },
+                {
+                  "Title": "WeatherAgentTools.cs",
+                  "Path": "Agents\\Weather\\WeatherAgentTools.cs"
+                },
+                {
+                  "Title": "WeatherWidgetData.cs",
+                  "Path": "Data\\WeatherWidgetData.cs"
+                },
+                {
+                  "Title": "AgentFactory.cs",
+                  "Path": "Agents\\AgentFactory.cs"
+                },
+                {
+                  "Title": "Startup.cs",
+                  "Path": "Pages\\CodeSnippets\\AIIntegrationWithAGUIIntegration.Startup.cs"
+                }
+              ]
             }
           ]
         },

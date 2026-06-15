@@ -31,6 +31,10 @@ This CRM demo leverages multiple DevExpress Blazor components to create user exp
 
 Refer to the following help topic for additional information: [Demos - Blazor CRM Demo](https://docs.devexpress.com/Blazor/401058/demos#blazor-crm-demo).
 
+### DevExpress Reports
+
+[DevExpress Reports](https://www.devexpress.com/subscriptions/reporting/) – our award-winning .NET reporting platform – allows you and your end users to build, view, print, and export fully formatted documents with ease. Refer to the following repository for additional information: [DevExpress Reports Demos](https://github.com/DevExpress/demos-reports).
+
 ## Prerequisites 
 
 Refer to the following DevExpress Blazor help topic for information on system requirements (v26.1): [Prerequisites](https://docs.devexpress.com/Blazor/401055/prerequisites). 
@@ -69,4 +73,14 @@ Refer to the following DevExpress Blazor help topic for information on system re
 * [Examples](https://github.com/DevExpress-Examples?q=blazor&type=all&language=&sort=) 
 * [Videos](https://www.youtube.com/playlist?list=PL8h4jt35t1wiA7rjbbJQ0sYpsSghc7XYJ) 
 * [Support Center](https://supportcenter.devexpress.com/ask)
+
+## Related Products
+
+### DevExpress BI Dashboard
  
+[DevExpress Dashboard](https://www.devexpress.com/products/net/dashboard/) allows you and your end users to create interactive, data-driven dashboards. Our Dashboards ship with a Dashboard Designer, Dashboard Viewer, and 15+ data visualization widgets — charts, grids, pivots, gauges, maps, and more. Refer to the following repository for additional information: [DevExpress BI Dashboard Demos](https://github.com/DevExpress/demos-dashboard).
+
+
+### Office & PDF File API
+
+[DevExpress Office & PDF File API](https://www.devexpress.com/products/net/office-file-api/) library allows you to generate, edit, and convert documents (DOCx, XLSx, PDF, PPTx) without Microsoft Office or Adobe Acrobat dependencies. Refer to the following repository for additional information: [DevExpress Office & PDF File API Demos](https://github.com/DevExpress/demos-office-and-pdf-file-api).

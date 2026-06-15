@@ -1,0 +1,1 @@
+This demo executes a two-step Shakespearean Poet pipeline and uses a custom response provider implementation (WorkflowResponseProvider). This provider delivers intermediate workflow events in real time. As the pipeline progresses, agents at each workflow step produce their output, and the DevExpress Blazor AI Chat Control displays results immediately.

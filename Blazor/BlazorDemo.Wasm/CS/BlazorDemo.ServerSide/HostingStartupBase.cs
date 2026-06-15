@@ -1,7 +1,10 @@
 using System.Net.Http;
+using BlazorDemo.Data;
 using BlazorDemo.DataProviders;
 using BlazorDemo.DataProviders.Implementation;
 using BlazorDemo.Services;
+using Microsoft.Agents.AI;
+using Microsoft.Agents.AI.Hosting.AGUI.AspNetCore;
 using BlazorDemo.Wasm.Server.DataProviders;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -51,6 +54,7 @@ namespace BlazorDemo.ServerSide {
                 app.UseAuthorization();
 
                 app.UseEndpoints(endpoints => {
+                    endpoints.MapAGUI($"api/{AIChatResourcesEndpoints.WeatherAgentEndpoint}", endpoints.ServiceProvider.GetRequiredKeyedService<AIAgent>(ChatClientKeys.WeatherAgent));
                     endpoints.MapControllers();
 
                     endpoints.MapFallbackToPage("/_Host");

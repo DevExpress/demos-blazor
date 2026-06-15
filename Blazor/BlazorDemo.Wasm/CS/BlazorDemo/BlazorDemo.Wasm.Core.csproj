@@ -24,20 +24,22 @@
     <ProjectReference Include="..\BlazorDemo.Reporting.Core\BlazorDemo.Reporting.Core.csproj" />
     <PackageReference Include="System.Numerics.Tensors" />
     <PackageReference Include="Azure.AI.OpenAI" />
-	<PackageReference Include="Microsoft.Agents.AI.Workflows" />
+	  <PackageReference Include="Microsoft.Agents.AI.Workflows" />
+    <PackageReference Include="Microsoft.Agents.AI.AGUI" />
     <PackageReference Include="Microsoft.Extensions.AI" />
     <PackageReference Include="Microsoft.Extensions.AI.OpenAI" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.Blazor.PdfViewer" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.Blazor.Reporting.JSBasedControls.WebAssembly" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.AIIntegration.Blazor.Reporting.Viewer" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.Images.Blazor" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.Reporting.Demos" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.Blazor.PivotTable" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.AIIntegration.Blazor" VersionOverride="26.1.2-beta-26156" />
-    
+    <PackageReference Include="DevExpress.Blazor.PdfViewer" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.Blazor.Reporting.JSBasedControls.WebAssembly" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.AIIntegration.Blazor.Reporting.Viewer" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.Images.Blazor" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.Reporting.Demos" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.Blazor.PivotTable" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.AIIntegration.Agents" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.AIIntegration.Blazor" VersionOverride="26.1.3" />
 	  
+    
     
     
     
@@ -80,6 +82,10 @@
     <Compile Include="Services\DemoThemes.cs" />
     <Compile Include="Services\GridAIFunctions.cs" />
     <Compile Include="Services\ChatClientKeys.cs" />
+    <Compile Include="Services\ToolApprovalRequestBatch.cs" />
+    <Compile Include="Agents\**\*.cs" />
+    <Compile Include="Services\ToolApprovalAIFunctions.cs" />
+    <Compile Include="Services\WeatherService*.cs" />
     <Compile Include="Services\DemoThemeService.cs" />
     <Compile Include="Services\IAIExceptionHandler.cs" />
     <Compile Include="Services\IBarGaugeTemperatureMeasurerService.cs" />

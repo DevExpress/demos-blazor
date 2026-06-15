@@ -1,0 +1,41 @@
+@using DevExpress.AIIntegration.Blazor.Chat
+
+<DemoPageSectionComponent Id="AIChat-WorkflowWithExecutors"
+                          ShowSizeMode="true">
+    <ChildContentWithParameters Context="Params">
+        <div class="chat-demo-container">
+            <DxAIChat HeaderText="AI Assistant"
+                      ShowHeader="true"
+                      ChatResponseProviderServiceKey="@ChatClientKeys.WorkflowWithExecutors"
+                      CssClass="demo-chat"
+                      SizeMode="Params.SizeMode">
+                <EmptyMessageAreaTemplate>
+                    <div class="demo-chat-ui-description">
+                        <div class="demo-chat-ui-icon">&#x1F504;</div>
+                        <div class="demo-chat-ui-title">Workflow with Execution Steps</div>
+                        <div>
+                            Enter any text and start a two-step transformation workflow: <strong>Uppercase</strong>
+                            &rarr; <strong>Reverse</strong>.
+                            Our custom response provider (<em>WorkflowResponseProvider</em>) streams operation progress
+                            to the chat control in real time.
+                        </div>
+                    </div>
+                </EmptyMessageAreaTemplate>
+                <PromptSuggestions>
+                    <DxAIChatPromptSuggestion Title="Hello, World!"
+                                              Text="Classic Greeting"
+                                              PromptMessage="Hello, World!"
+                                              SendOnClick="true"/>
+                    <DxAIChatPromptSuggestion Title="DevExpress WinForms"
+                                              Text="Product Name"
+                                              PromptMessage="DevExpress WinForms"
+                                              SendOnClick="true"/>
+                    <DxAIChatPromptSuggestion Title="Workflow streaming rocks!"
+                                              Text="Enthusiastic Message"
+                                              PromptMessage="Workflow streaming rocks!"
+                                              SendOnClick="true"/>
+                </PromptSuggestions>
+            </DxAIChat>
+        </div>
+    </ChildContentWithParameters>
+</DemoPageSectionComponent>
