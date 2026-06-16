@@ -39,6 +39,9 @@ Refer to the following help topic for additional information: [Demos - Blazor CR
 
 Refer to the following DevExpress Blazor help topic for information on system requirements (v26.1): [Prerequisites](https://docs.devexpress.com/Blazor/401055/prerequisites). 
 
+> Note: AI services used for this demo have been rate limited. As such, you may experience performance-related delays when exploring the capabilities of DevExpress AI-powered Extensions.
+> When connected to your own AI model/service without rate limits, DevExpress AI-powered Extensions will perform seamlessly, without artificial delays.
+
 ## Run Demos Locally 
 
 1. Clone the current repository: 

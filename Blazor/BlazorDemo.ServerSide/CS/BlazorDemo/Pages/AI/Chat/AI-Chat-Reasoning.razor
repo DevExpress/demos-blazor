@@ -19,15 +19,15 @@
                     <DxAIChatPromptSuggestion Title="Water jug problem"
                                               Text="Classic logic puzzle"
                                               PromptMessage="You have a 3-gallon jug and a 5-gallon jug. How can you measure exactly 4 gallons of water? Explain each step."
-                                              SendOnClick="true" />
+                                              SendOnClick="true"/>
                     <DxAIChatPromptSuggestion Title="Probability puzzle"
                                               Text="Math reasoning"
                                               PromptMessage="A bag contains 3 red balls and 5 blue balls. You draw 2 balls without replacement. What is the probability that both balls are the same color? Show your work step by step."
-                                              SendOnClick="true" />
+                                              SendOnClick="true"/>
                     <DxAIChatPromptSuggestion Title="Knights and knaves"
                                               Text="Logical deduction"
                                               PromptMessage="On an island, every person is either a knight (always tells the truth) or a knave (always lies). You meet two people, A and B. A says 'At least one of us is a knave.' What are A and B?"
-                                              SendOnClick="true" />
+                                              SendOnClick="true"/>
                 </PromptSuggestions>
                 <MessageContentTemplate>
                     @{
@@ -41,28 +41,28 @@
                     }
                     @if(reasoningItems.Count > 0) {
                         <div class="reasoning-accordion">
-                        <DxAccordion RootItemExpandButtonDisplayMode="AccordionExpandButtonDisplayMode.None">
-                            <Items>
-                                <DxAccordionItem Expanded="true">
-                                    <HeaderTextTemplate Context="accordionItem">
-                                        <div class="reasoning-header">
-                                            <span class="reasoning-header-left">
-                                                @if(GetAccordionText(context) is string accordionText) {
-                                                    @accordionText
-                                                } else {
-                                                    <DxWaitIndicator Visible="true" />
-                                                    <span>Thinking...</span>
-                                                }
-                                            </span>
-                                            <DxImage Source="@(accordionItem.Expanded ? BlazorIcons.ChevronUp : BlazorIcons.ChevronDown)" />
-                                        </div>
-                                    </HeaderTextTemplate>
-                                    <ContentTemplate Context="_">
-                                        <div class="reasoning-text">@(new MarkupString(Markdig.Markdown.ToHtml(reasoningText).Trim()))</div>
-                                    </ContentTemplate>
-                                </DxAccordionItem>
-                            </Items>
-                        </DxAccordion>
+                            <DxAccordion RootItemExpandButtonDisplayMode="AccordionExpandButtonDisplayMode.None">
+                                <Items>
+                                    <DxAccordionItem Expanded="true">
+                                        <HeaderTextTemplate Context="accordionItem">
+                                            <div class="reasoning-header">
+                                                <span class="reasoning-header-left">
+                                                    @if(GetAccordionText(context) is string accordionText) {
+                                                        @accordionText
+                                                    } else {
+                                                        <DxWaitIndicator Visible="true"/>
+                                                        <span>Thinking...</span>
+                                                    }
+                                                </span>
+                                                <DxImage Source="@(accordionItem.Expanded ? BlazorIcons.ChevronUp : BlazorIcons.ChevronDown)"/>
+                                            </div>
+                                        </HeaderTextTemplate>
+                                        <ContentTemplate Context="_">
+                                            <div class="reasoning-text">@(new MarkupString(Markdig.Markdown.ToHtml(reasoningText).Trim()))</div>
+                                        </ContentTemplate>
+                                    </DxAccordionItem>
+                                </Items>
+                            </DxAccordion>
                         </div>
                     }
                     @if(!string.IsNullOrEmpty(context.Text)) {
@@ -71,41 +71,37 @@
                 </MessageContentTemplate>
             </DxAIChat>
         </div>
+
+        @code {
+            /*BeginHide*/
+            const string SystemPrompt = "Always reason through every question before giving your final answer, regardless of how simple it seems. " + "Format all responses using standard Markdown only. " + "Do not use LaTeX, KaTeX, MathJax, or any other mathematical markup. " + "Express mathematical content in plain text or Markdown (e.g., use C(3,2) instead of \\binom{3}{2}).";
+
+            void OnChatInitialized(IAIChat chat) {
+                chat.LoadMessages([new(ChatRole.System, SystemPrompt)]);
+            }
+            /*EndHide*/
+
+            Dictionary<BlazorChatMessage, (DateTime Start, TimeSpan? Duration)> reasoningState = new();
+
+            void EnsureReasoningStarted(BlazorChatMessage msg) {
+                reasoningState.TryAdd(msg, (DateTime.UtcNow, null));
+            }
+
+            string? GetAccordionText(BlazorChatMessage msg) {
+                if(reasoningState.TryGetValue(msg, out var state) && state.Duration.HasValue)
+                    return $"Thought for {(int)state.Duration.Value.TotalSeconds}s";
+                return null;
+            }
+
+            void EnsureReasoningStopped(BlazorChatMessage msg) {
+                if(reasoningState.TryGetValue(msg, out var state) && state.Duration == null)
+                    reasoningState[msg] = (state.Start, DateTime.UtcNow - state.Start);
+            }
+
+            void OnResponseReceived(ResponseReceivedEventArgs e) {
+                foreach(var msg in e.Messages)
+                    EnsureReasoningStopped(msg);
+            }
+        }
     </ChildContentWithParameters>
 </DemoPageSectionComponent>
-
-@code {
-    /*BeginHide*/
-    const string SystemPrompt =
-        "Always reason through every question before giving your final answer, regardless of how simple it seems. " +
-        "Format all responses using standard Markdown only. " +
-        "Do not use LaTeX, KaTeX, MathJax, or any other mathematical markup. " +
-        "Express mathematical content in plain text or Markdown (e.g., use C(3,2) instead of \\binom{3}{2}).";
-
-    void OnChatInitialized(IAIChat chat) {
-        chat.LoadMessages([new(ChatRole.System, SystemPrompt)]);
-    }
-    /*EndHide*/
-
-    Dictionary<BlazorChatMessage, (DateTime Start, TimeSpan? Duration)> reasoningState = new();
-
-    void EnsureReasoningStarted(BlazorChatMessage msg) {
-        reasoningState.TryAdd(msg, (DateTime.UtcNow, null));
-    }
-
-    string? GetAccordionText(BlazorChatMessage msg) {
-        if(reasoningState.TryGetValue(msg, out var state) && state.Duration.HasValue)
-            return $"Thought for {(int)state.Duration.Value.TotalSeconds}s";
-        return null;
-    }
-
-    void EnsureReasoningStopped(BlazorChatMessage msg) {
-        if(reasoningState.TryGetValue(msg, out var state) && state.Duration == null)
-            reasoningState[msg] = (state.Start, DateTime.UtcNow - state.Start);
-    }
-
-    void OnResponseReceived(ResponseReceivedEventArgs e) {
-        foreach(var msg in e.Messages)
-            EnsureReasoningStopped(msg);
-    }
-}

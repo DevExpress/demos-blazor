@@ -31,7 +31,6 @@
     grid-template-columns: auto 1fr;
     column-gap: 8px;
     row-gap: 4px;
-    font-size: 0.85em;
     color: var(--dxds-color-content-neutral-subdued-rest, var(--bs-gray-700));
 }
 .tool-approval-arg {
@@ -96,4 +95,9 @@
     border-radius: var(--dxds-border-radius-40, var(--bs-border-radius));
     font-size: 0.85em;
     color: var(--dxds-color-content-neutral-subdued-rest, var(--bs-secondary-color));
+}
+
+.theme-blazing-dark .tool-approval-batch-status {
+    background-color: var(--bs-gray-900);
+    border-color: var(--bs-border-color);
 }
