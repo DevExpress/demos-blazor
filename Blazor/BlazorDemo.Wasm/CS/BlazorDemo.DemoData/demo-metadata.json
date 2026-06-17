@@ -228,9 +228,9 @@
             },
             {
               "Id": "ToolApproval",
-              "Title": "Tool Approval",
+              "Title": "AI Tool Approval",
               "IsNew": true,
-              "DocUrl": "DevExpress.AIIntegration.Blazor.Chat.DxAIChat",
+              "DocUrl": "DevExpress.AIIntegration.Blazor.Chat.BlazorChatMessage.Contents",
               "AdditionalCodeFiles": [
                 {
                   "Title": "Razor",
@@ -254,7 +254,7 @@
               "Id": "Reasoning",
               "Title": "Reasoning Visualization",
               "IsNew": true,
-              "DocUrl": "DevExpress.AIIntegration.Blazor.Chat.DxAIChat",
+              "DocUrl": "DevExpress.AIIntegration.Blazor.Chat.BlazorChatMessage.Contents",
               "AdditionalCodeFiles": [
                 {
                   "Title": "Razor",
@@ -302,7 +302,7 @@
               "Id": "WorkflowResponseStreaming",
               "IsNew": true,
               "Title": "Workflow Response Streaming",
-              "DocUrl": "DevExpress.AIIntegration.Blazor.Chat.DxAIChat",
+              "DocUrl": "DevExpress.AIIntegration.Blazor.Chat.DxAIChat#streaming-response",
               "AdditionalCodeFiles": [
                 {
                   "Title": "Razor",

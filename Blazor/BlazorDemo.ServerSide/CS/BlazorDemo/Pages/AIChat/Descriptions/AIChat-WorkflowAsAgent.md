@@ -1,1 +1,3 @@
-This demo wraps a multi-step agent workflow into a single IChatResponseProvider instance. The DevExpress Blazor AI Chat Control uses that object as a standard chat client. To see the workflow in action, select a predefined keyword combination or enter custom keywords. The pipeline generates a short lyrical poem, then rewrites it in the style of William Shakespeare. A separate AI agent handles each workflow step.
+This demo wraps a multi-step agent workflow into a single `IChatResponseProvider` instance. The DevExpress [Blazor AI Chat](https://docs.devexpress.com/Blazor/DevExpress.AIIntegration.Blazor.Chat.DxAIChat) component uses that object as a standard chat client.
+
+To see the workflow in action, select a predefined keyword combination or enter custom keywords. The pipeline generates a short lyrical poem, then rewrites it in the style of William Shakespeare. A separate AI agent handles each workflow step.
