@@ -16,13 +16,7 @@
                     <div class="tagbox-tag-template">
                         <img class="tagbox-tag-template-employee-photo" src="@GetImageFileName(tagContext.DataItem)" alt="@tagContext.DataItem.FullName" />
                         <div>@tagContext.DataItem.FullName</div>
-                        <DxButton tabindex="-1"
-                                  aria-label="Remove Tag"
-                                  Click="@tagContext.RemoveTagAction"
-                                  CssClass="tagbox-tag-template-close-btn"
-                                  IconCssClass="tagbox-tag-template-close-btn-icon"
-                            RenderStyle="ButtonRenderStyle.None" RenderStyleMode="ButtonRenderStyleMode.Text">
-                        </DxButton>
+                        <div @onclick="@tagContext.RemoveTagAction" class="tagbox-tag-template-close-btn-icon" role="button" aria-label="Remove tag"></div>
                     </div>
                 </TagDisplayTemplate>
                 <ItemDisplayTemplate>

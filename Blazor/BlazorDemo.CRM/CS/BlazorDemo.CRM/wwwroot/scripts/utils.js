@@ -41,7 +41,40 @@ function getCookie(key) {
     }
 }
 
-export async function copy(textToCopy) {
+const copySubscriptions = new Map();
+
+export function initCopyButton(dotNetRef, buttonSelector, sourceSelector) {
+    disposeCopyButton(buttonSelector);
+
+    const button = document.querySelector(buttonSelector);
+    if (!button)
+        return;
+
+    const copyToClipboard = async () => {
+        try {
+            const text = document.querySelector(sourceSelector).textContent.trim();
+            await copy(text);
+            await dotNetRef.invokeMethodAsync("OnCopySuccess");
+        } catch (error) {
+            console.error(error);
+            await dotNetRef.invokeMethodAsync("OnCopyError");
+        }
+    };
+
+    button.addEventListener("click", copyToClipboard);
+    copySubscriptions.set(buttonSelector, { button, copyToClipboard });
+}
+
+export function disposeCopyButton(buttonSelector) {
+    const subscription = copySubscriptions.get(buttonSelector);
+    if (!subscription)
+        return;
+
+    subscription.button.removeEventListener("click", subscription.copyToClipboard);
+    copySubscriptions.delete(buttonSelector);
+}
+
+async function copy(textToCopy) {
     if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(textToCopy);
     } else {

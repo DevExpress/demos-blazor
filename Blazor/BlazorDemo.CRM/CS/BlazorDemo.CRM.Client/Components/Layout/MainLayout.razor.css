@@ -77,6 +77,10 @@
     width: 19rem;
 }
 
+::deep .main-menu-small {
+    width: 17rem;
+}
+
 ::deep .main-menu [role="treeitem"][aria-level="1"] {
     font-weight: 500;
 }

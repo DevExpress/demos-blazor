@@ -1,4 +1,8 @@
-﻿/*BeginHide*/::deep /*EndHide*/.demo-drawer-mini .demo-drawer-mini-menu .dxbl-menu-item-text {
+/*BeginHide*/::deep /*EndHide*/.demo-drawer-mini .demo-drawer-mini-menu .dxbl-menu-item-text {
     visibility: hidden;
     transition: visibility linear var(--dxbl-drawer-animation-duration);
+}
+
+/*BeginHide*/::deep /*EndHide*/.demo-drawer-mini .demo-drawer-mini-menu button {
+    min-width: 0;
 }

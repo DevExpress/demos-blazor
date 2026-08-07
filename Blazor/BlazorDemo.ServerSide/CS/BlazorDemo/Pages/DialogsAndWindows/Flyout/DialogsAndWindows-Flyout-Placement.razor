@@ -51,7 +51,7 @@
         DemoFlyoutAlignment[] alignments = { DemoFlyoutAlignment.Start, DemoFlyoutAlignment.Center, DemoFlyoutAlignment.End };
         /*EndHide*/
         FlyoutPosition Position { get; set; } = FlyoutPosition.Bottom;
-        bool IsOpen { get; set; } = true;
+        bool IsOpen { get; set; }
         FlyoutAnimationType[] Animations { get; set; } = Enum.GetValues<FlyoutAnimationType>();
         FlyoutAnimationType Animation { get; set; } = FlyoutAnimationType.Fade;
         /*BeginHide*/

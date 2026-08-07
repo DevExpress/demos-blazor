@@ -13,7 +13,7 @@
 
   <DemoProduct Key="GridView" Url="MVCxGridViewDemos" IsMvc="true" Title="Grid View" SeoTitle="ASP.NET MVC Extensions - Grid View" NavItemTitle="Grid View" OrderIndex="0" IntegrationHighlighted="true">
     <Keywords>gridview, table, datatable, datagrid, grid, webgrid</Keywords>
-    <IntegrationImageUrl>~/Content/Grid.png</IntegrationImageUrl>
+    <IntegrationImageUrl>~/Content/Grid.jpg</IntegrationImageUrl>
     <IntegrationDescription>
       Unlimited master-detail levels, Web Accessibility support, and unmatched end-user data analysis capabilities.
     </IntegrationDescription>
@@ -1508,7 +1508,7 @@ You can try GridView with a responsive layout in the <a href="ResponsiveLayout">
 
   <DemoProduct Key="CardView" Url="MVCxCardViewDemos" IsMvc="true" Title="Card View" SeoTitle="ASP.NET MVC Extensions - Card View" NavItemTitle="Card View" OrderIndex="10">
     <Keywords></Keywords>
-    <IntegrationImageUrl>~/Content/CardView.png</IntegrationImageUrl>
+    <IntegrationImageUrl>~/Content/CardView.jpg</IntegrationImageUrl>
     <IntegrationDescription>
       Microsoft Outlook® Contacts View style interface provided with rich data shaping and editing capabilities.
     </IntegrationDescription>
@@ -1916,7 +1916,7 @@ The DevExpress ASP.NET MVC Card View (<helplink href="https://docs.devexpress.co
       </Demo>
     </DemoGroup>
     <DemoGroup Key="FocusingAndSelection" Title="Focusing and Selection">
-      <Demo Key="Selection" Title="Selection" HighlightedIndex="4" HighlightedImageUrl="~/Content/DemoIcons/Selection.png">
+      <Demo Key="Selection" Title="Selection" HighlightedIndex="4" HighlightedImageUrl="~/Content/DemoIcons/Selection.jpg">
         <Description>
           <![CDATA[
 <p>
@@ -2537,7 +2537,7 @@ Note that toolbar items expose the <helplink href="https://docs.devexpress.com/A
   </DemoProduct>
 
   <DemoProduct Key="Report" Url="MVCxReportDemos" IsMvc="true" Title="Report" SeoTitle="ASP.NET MVC Report" NavItemTitle="Reporting" OrderIndex="3" SupportsThemeParameters="false" IntegrationHighlighted="true" HideSourceCode="true">
-    <IntegrationImageUrl>~/Content/ReportsLargeLogo.png</IntegrationImageUrl>
+    <IntegrationImageUrl>~/Content/ReportsLargeLogo.jpg</IntegrationImageUrl>
     <IntegrationDescription>
       Native integration with DevExpress ASP.NET MVC Extensions and unparalleled design-time productivity.
     </IntegrationDescription>
@@ -4168,7 +4168,7 @@ Note: the <helplink href="https://docs.devexpress.com/AspNetMvc/DevExpress.Web.M
 
     <DemoGroup Key="Appearance" Title="Appearance">
       <Demo Key="Templates" Title="Templates" SeoTitle="Templates"
-            HighlightedIndex="3" HighlightedImageUrl="~/Content/DemoIcons/Templates.png">
+            HighlightedIndex="3" HighlightedImageUrl="~/Content/DemoIcons/FieldValueTemplates.jpg">
         <Description>
           <![CDATA[
             <p>
@@ -8170,7 +8170,7 @@ Note that toolbar items expose the <helplink href="https://docs.devexpress.com/A
         </Description>
         <SourceFile>~/Views/UICustomization/ChartAppearancePartial.cshtml</SourceFile>
       </Demo>
-	  <Demo Key="TaskTemplate" Title="Task Template" SeoTitle="Gantt Chart Appearance Customization" HighlightedIndex="1" HighlightedImageUrl="~/Content/DemoIcons/TaskTemplate.png">
+	  <Demo Key="TaskTemplate" Title="Task Template" SeoTitle="Gantt Chart Appearance Customization" HighlightedIndex="1" HighlightedImageUrl="~/Content/DemoIcons/TaskTemplate.jpg">
 			<Keywords>task dependency, task diagram, task relationships, gantt control, gantt chart, business diagram</Keywords>
 			<Description>
 				<![CDATA[
@@ -9950,7 +9950,7 @@ Note that toolbar items expose the <helplink href="https://docs.devexpress.com/A
 
   <DemoProduct Key="FileManagerAndUpload" Url="MVCxFileManagerAndUploadDemos" Title="ASP.NET MVC File Manager and File Upload" SeoTitle="ASP.NET MVC File Manager and File Upload" NavItemTitle="File Management and Upload" OrderIndex="16" IsMvc="true">
     <Keywords>files, download. filecontrol, uploading</Keywords>
-    <IntegrationImageUrl>~/Content/FileManager.png</IntegrationImageUrl>
+    <IntegrationImageUrl>~/Content/FileManager.jpg</IntegrationImageUrl>
 
     <Intro Title="Introduction" SeoTitle="ASP.NET MVC File Manager and File Upload">
       <BannerTitle>
@@ -10040,7 +10040,7 @@ Note that toolbar items expose the <helplink href="https://docs.devexpress.com/A
         <SourceFile>~/Views/FileManager/FeaturesOptionsPartial.cshtml</SourceFile>
         <SourceFile>~/Code/Helpers/FileManagerHelper.cs</SourceFile>
       </Demo>
-      <Demo Key="DataBinding" Title="Data Binding" SeoTitle="Data Binding" HighlightedIndex="1" HighlightedImageUrl="~/Content/DemoIcons/DatabaseBinding.png">
+      <Demo Key="DataBinding" Title="Data Binding" SeoTitle="Data Binding" HighlightedIndex="1" HighlightedImageUrl="~/Content/DemoIcons/DatabaseBinding.jpg">
         <Keywords>filebinding, filesystembinding, database, db, datasource</Keywords>
         <Description>
           <![CDATA[
@@ -10219,7 +10219,7 @@ Note that toolbar items expose the <helplink href="https://docs.devexpress.com/A
         <SourceFile>~/Views/FileManager/CustomToolbarPopupPartial.cshtml</SourceFile>
         <SourceFile>~/Code/Helpers/FileManagerHelper.cs</SourceFile>
       </Demo>
-      <Demo Key="Templates" Title ="Templates" SeoTitle="Templates" HighlightedIndex="4" HighlightedImageUrl="~/Content/DemoIcons/Templates.png" HighlightedTitle="File Manager - Templates">
+      <Demo Key="Templates" Title ="Templates" SeoTitle="Templates" HighlightedIndex="4" HighlightedImageUrl="~/Content/DemoIcons/Templates.jpg" HighlightedTitle="File Manager - Templates">
         <Keywords>templates</Keywords>
         <Description>
           <![CDATA[
@@ -10248,7 +10248,7 @@ In this demo, the <helplink href="https://docs.devexpress.com/AspNetMvc/DevExpre
         <HighlightedDescription>Virtual scrolling allows loading files and folders in the file area on demand. In this mode, the file manager loads items automatically when the end-user scrolls the content. Unnecessary files are unloaded.</HighlightedDescription>
         <SourceFile>~/Views/FileManager/VirtualScrollingPartial.cshtml</SourceFile>
       </Demo>
-      <Demo Key="SubfolderSearching" Title ="Subfolder Searching" SeoTitle="Subfolder Searching" HighlightedIndex="3" HighlightedImageUrl="~/Content/DemoIcons/Subfolder-Searching.png">
+      <Demo Key="SubfolderSearching" Title ="Subfolder Searching" SeoTitle="Subfolder Searching" HighlightedIndex="3" HighlightedImageUrl="~/Content/DemoIcons/Subfolder-Searching.jpg">
         <Description>
           <![CDATA[
           <p>DevExpress ASP.NET MVC File Manger allows searching for files and folders using the built-in filter box. This demo illustrates how to search the selected (current) folder or all subfolders the <helplink href="https://docs.devexpress.com/AspNet/DevExpress.Web.FileManagerSettingsFiltering.FilterBoxMode">SettingsFiltering.FilterBoxMode</helplink> property.</p>
@@ -10721,7 +10721,7 @@ ImageZoom caches binary images to the folder specified by the <helplink href="ht
         <SourceFile>~/Models/BinaryImages.cs</SourceFile>
         <SourceFile>~/Code/Helpers/ImageSliderHelper.cs</SourceFile>
       </Demo>
-      <Demo Key="SlideShow" Title="Slide Show" SeoTitle="Slide Show and Ad Banner Rotator" HighlightedIndex="0" HighlightedImageUrl="~/Content/DemoIcons/Slide-Show.png" HighlightedTitle="Image Slider - Slide Show">
+      <Demo Key="SlideShow" Title="Slide Show" SeoTitle="Slide Show and Ad Banner Rotator" HighlightedIndex="0" HighlightedImageUrl="~/Content/DemoIcons/Slide-Show.jpg" HighlightedTitle="Image Slider - Slide Show">
         <Description>
           <![CDATA[
                   <p>The <helplink href="https://docs.devexpress.com/AspNetMvc/14979/components/data-and-image-navigation/image-slider">ImageSlider</helplink> has a built-in ability to display an image slide show. The <helplink href="https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.ImageSliderSettings.SettingsSlideShow">SettingsSlideShow</helplink> property provides access to the following properties.</p>

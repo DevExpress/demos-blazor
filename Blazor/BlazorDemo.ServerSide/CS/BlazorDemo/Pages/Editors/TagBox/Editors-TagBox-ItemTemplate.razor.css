@@ -39,6 +39,7 @@
 .tagbox-tag-template-employee-photo {
     width: 24px;
     height: 24px;
+    margin-left: 0.125rem;
 }
 
 .tagbox-item-template-employee-home-phone {
@@ -46,30 +47,25 @@
     display: block;
 }
 
-/*BeginHide*/::deep /*EndHide*/.tagbox-tag-template-close-btn {
-    border: 0;
-    border-radius: 3rem;
-    box-shadow: none;
-    font-weight: 600;
-    padding: 0;
-    width: 16px;
-    height: 16px;
-    margin: 0 0 0 0.5em;
-    opacity: 0.5;
-}
-
-/*BeginHide*/::deep /*EndHide*/.tagbox-tag-template-close-btn:hover {
-    opacity: 0.75;
-}
-
-/*BeginHide*/::deep /*EndHide*/.tagbox-tag-template-close-btn-icon {
-    height: 16px;
-    width: 16px;
-    mask-image: url("images/icons/clear.svg");
-    -webkit-mask-image: url("images/icons/clear.svg");
-    background-size: contain;
+.tagbox-tag-template-close-btn-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-left: 0.25rem;
+    mask-image: url(images/icons/dismiss.svg);
+    -webkit-mask-image: url("images/icons/dismiss.svg");
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
-    background-position: center center;
     background-color: currentColor;
+    mask-size: 100% 100%;
+    cursor: pointer;
+}
+
+.dxbl-sm .tagbox-tag-template-close-btn-icon {
+    height: 1rem;
+    width: 1rem;
+}
+
+.dxbl-lg .tagbox-tag-template-close-btn-icon {
+    height: 1.5rem;
+    width: 1.5rem;
 }

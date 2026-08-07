@@ -348,6 +348,7 @@ body {
 }
 
 /* Form Layout */
+.demo-form-layout .demo-form-checkbox,
 .demo-form-layout .dxbl-checkbox {
     padding-left: 0;
 }
@@ -360,25 +361,22 @@ body {
     --dxbl-menu-item-padding-x-l: 1.313rem;
 }
 
-.dxbl-btn-toolbar > .dxbl-btn-group > .dxbl-toolbar-item > .demo-drawer-toggle-button {
-    --dxbl-btn-padding-x-s: var(--dxds-spacing-80);
-    --dxbl-btn-padding-x-m: var(--dxds-spacing-120);
-    --dxbl-btn-padding-x-l: var(--dxds-spacing-160);
+.demo-drawer-toggle-button {
+    padding-inline: var(--dxds-spacing-120);
+}
+
+.dxbl-sm .demo-drawer-toggle-button {
+    padding-inline: var(--dxds-spacing-80);
+}
+
+.dxbl-lg .demo-drawer-toggle-button {
+    padding-inline: var(--dxds-spacing-160);
 }
 
 .demo-drawer-overview-left .dxbl-menu.demo-drawer-menu {
     --dxbl-menu-item-padding-x-s: 0.813rem;
     --dxbl-menu-item-padding-x-m: 1.188rem;
     --dxbl-menu-item-padding-x-l: 1.563rem;
-}
-
-/* TagBox */
-.tagbox-tag-template-btn {
-    padding: 0;
-}
-
-.tagbox-tag-template-btn .dxbl-btn-caption {
-    padding: 2px 4px 2px 8px;
 }
 
 /* Demo Page */
@@ -572,4 +570,48 @@ body {
 /* AIChat */
 .aichat-icon {
     --dxbl-icon-ai-chat: url("../images/icons/ai-chat-fluent.svg");
+}
+
+/* Products */
+.demo-products .demo-product,
+.demo-products .demo-rwa {
+    border: 1px solid var(--dxds-color-border-neutral-default-rest);
+    color: var(--dxds-color-content-neutral-default-rest);
+}
+
+.demo-products .demo-product:hover,
+.demo-products .demo-rwa:hover {
+    background-color: var(--dxds-color-surface-primary-default-rest);
+    color: var(--dxds-color-content-neutral-default-static-dark-rest);
+}
+
+.demo-products .demo-product > span {
+    font-family: var(--dxds-font-family-sans-serif);
+    font-weight: var(--dxds-font-weight-title-default);
+    font-size: var(--dxds-font-size-title-sm);
+    line-height: var(--dxds-line-height-title-sm);
+    letter-spacing: var(--dxds-letter-spacing-title-sm);
+}
+
+.demo-products .demo-rwa .demo-rwa-title {
+    font-family: var(--dxds-font-family-sans-serif);
+    font-weight: var(--dxds-font-weight-title-default);
+    font-size: var(--dxds-font-size-title-lg);
+    line-height: var(--dxds-line-height-title-lg);
+    letter-spacing: var(--dxds-letter-spacing-title-lg);
+}
+
+.demo-products .demo-rwa .demo-rwa-info {
+    font-family: var(--dxds-font-family-sans-serif);
+    font-weight: var(--dxds-font-weight-base-default);
+    font-size: var(--dxds-font-size-base-lg);
+    line-height: var(--dxds-line-height-base-lg);
+    letter-spacing: var(--dxds-letter-spacing-base-lg);
+}
+
+.demo-product-icon {
+    background-color: var(--dxds-color-surface-primary-subdued-rest);
+}
+.demo-product-icon span {
+    background-color: var(--dxds-color-content-primary-default-rest);
 }

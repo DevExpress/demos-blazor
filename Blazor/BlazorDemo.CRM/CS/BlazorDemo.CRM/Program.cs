@@ -43,7 +43,11 @@ builder.Services.AddDbContext<ApplicationDbContext>((provider, options) => {
         string? dataKey = context.Request.Cookies["DemoDataKey"];
         if(dataKey == null) {
             dataKey = Guid.NewGuid().ToString();
-            context.Response.Cookies.Append("DemoDataKey", dataKey);
+            context.Response.Cookies.Append("DemoDataKey", dataKey, new CookieOptions {
+                Secure = context.Request.IsHttps,
+                HttpOnly = true,
+                SameSite = SameSiteMode.Lax
+            });
         }
         options.UseInMemoryDatabase(dataKey);
     }

@@ -60,15 +60,12 @@
         IEnumerable<DataPoint> points3;
 
         async void ExportChart(ChartExportFormat format) {
-        await chart?.ExportAsync("ScatterChart", format);
+            await chart?.ExportAsync("ScatterChart", format);
         }
 
         protected override async Task OnInitializedAsync() {
-            int pointCount;
-            if (DemoConfiguration.IsServerSide)
-                pointCount = 1000;
-            else
-                pointCount = 500;
+            int pointCount = 500;
+
             points1 = await Experiment.GenerateCluster(140, 1280, 100, 1240, pointCount, 1);
             points2 = await Experiment.GenerateCluster(500, 1600, 1000, 2100, pointCount, 2);
             points3 = await Experiment.GenerateCluster(450, 950, 1550, 2050, pointCount, 3);

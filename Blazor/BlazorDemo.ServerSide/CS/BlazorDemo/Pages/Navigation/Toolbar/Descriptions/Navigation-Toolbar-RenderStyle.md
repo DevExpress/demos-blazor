@@ -3,5 +3,5 @@ The [Toolbar](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbar) su
 - [DxToolbar.ItemRenderStyleMode](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbar.ItemRenderStyleMode): Specifies how to apply render style to all Toolbar items.
 - [DxToolbarItem.RenderStyle](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbarItem.RenderStyle): Specifies the item render style.
 - [DxToolbarItem.RenderStyleMode](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbarItem.RenderStyleMode): Specifies how to apply the render style to an individual item. Overrides the common [ItemRenderStyleMode](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbar.ItemRenderStyleMode) value.
-- [DxToolbarDataMapping.RenderStyle](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbarDataMapping.RenderStyle): Maps a data source field to the item render style.
-- [DxToolbarDataMapping.BeginGroup](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxToolbarDataMapping.BeginGroup): Maps a data source field that indicates whether a separator is displayed before the item.
+- [DxToolbarDataMappingBase.RenderStyle](https://docs.devexpress.com/Blazor/DevExpress.Blazor.Base.DxToolbarDataMappingBase.RenderStyle): Maps a data source field to the item render style.
+- [DxToolbarDataMappingBase.BeginGroup](https://docs.devexpress.com/Blazor/DevExpress.Blazor.Base.DxToolbarDataMappingBase.BeginGroup): Maps a data source field that indicates whether a separator is displayed before the item.

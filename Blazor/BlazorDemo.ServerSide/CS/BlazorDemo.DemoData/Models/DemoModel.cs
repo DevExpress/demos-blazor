@@ -9,6 +9,7 @@ namespace BlazorDemo.DemoData {
         public DemoGroup[] Groups { get; set; }
         public DemoPage HomePage { get; set; }
         public DemoProductInfo[] Products { get; set; }
+        public DemoRwaInfo[] RwaDemos { get; set; }
         public DemoSearchModel Search { get; set; }
 
         [JsonIgnore] public Dictionary<string, string> Redirects { get; private set; } = new();

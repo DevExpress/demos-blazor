@@ -1,6 +1,5 @@
 ﻿@page "/IconExplorer"
 @using DevExpress.Blazor.Internal
-@using GridRenderHelper = DevExpress.Blazor.Grid.Internal.GridRenderHelper;
 
 @inject IDemoIconDataProvider IconDataProvider
 
@@ -10,8 +9,7 @@
             <div class="icon-filters-container">
                 <IconFilters FiltersChanged="OnFiltersChanged" />
             </div>
-            <DxGrid @ref="grid"
-                    Data="iconGroups"
+            <DxGrid Data="iconGroups"
                     CssClass="icon-grid border-0"
                     CustomizeElement="OnGridCustomizeElement"
                     SearchBoxInputDelay="250"
@@ -23,8 +21,8 @@
                         <CellDisplayTemplate Context="cellContext">
                             @{ var iconGroup = (DemoIconGroup)cellContext.DataItem; }
                             <div class="mt-4 mb-2">
-                                <h4 class="mb-1">@GridRenderHelper.GetHighlightedTextFragment(cellContext.DataColumn, iconGroup.Name)</h4>
-                                <div class="icon-tags">@GridRenderHelper.GetHighlightedTextFragment(cellContext.DataColumn, iconGroup.Tags)</div>
+                                <h2 class="h4 mb-1">@cellContext.GetHighlightedText(iconGroup.Name)</h2>
+                                <div class="icon-tags">@cellContext.GetHighlightedText(iconGroup.Tags)</div>
                             </div>
                             <div class="icon-group-icons">
                                 @foreach(DemoIcon icon in iconGroup.Icons) {
@@ -64,11 +62,6 @@
     DemoIcon popupIcon;
     FilterValues filterValues = new();
     DemoIconGroup[] iconGroups = [];
-
-    @* todo [kk] ask grid to make a public method for highlighting *@
-    DxGrid grid;
-    GridRenderHelper renderHelper;
-    GridRenderHelper GridRenderHelper => renderHelper ??= new GridRenderHelper(grid);
 
     protected override async Task OnInitializedAsync() {
         providerIcons = IconDataProvider.GetIcons();

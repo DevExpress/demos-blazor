@@ -99,7 +99,7 @@
                       Mode="@SideMenuMode"
                       Position="DrawerPosition.Left"
                       ZIndex="102"
-                      PanelWidth="22rem">
+                      PanelWidth="@GetSideMenuPanelWidth()">
                 <BodyTemplate>
                     <DxTreeView AllowSelectNodes="true"
                                 SelectionChanged="@(e => CurrentModule = e.NodeInfo?.Text)"
@@ -108,7 +108,7 @@
                                 ShowFilterPanel="true"
                                 TextWrapEnabled="true"
                                 FilterMode="NavigationFilterMode.Nodes"
-                                CssClass="main-menu">
+                                CssClass="@GetMainMenuCssClass()">
                         <Nodes>
                             <DxTreeViewNode Text="Contacts" AllowSelection="false" Expanded="true" IconCssClass="crm-icon icon medium-icon">
                                 <Nodes>
@@ -192,6 +192,16 @@
         IsSideMenuOpen = !IsSmallScreen;
         SideMenuMode = IsSmallScreen ? DrawerMode.Overlap : DrawerMode.Shrink;
     }
+
+    string GetSideMenuPanelWidth() => SizeMode switch {
+        SizeMode.Small => "20rem",
+        _ => "22rem",
+    };
+
+    string GetMainMenuCssClass() => SizeMode switch {
+        SizeMode.Small => "main-menu main-menu-small",
+        _ => "main-menu",
+    };
 
     public void Dispose() => locationChangeSubscription?.Dispose();
 }

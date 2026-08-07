@@ -2,11 +2,15 @@
 <ChildContentWithParameters Context="Params">
 @inject NwindDataService NwindDataService
 <div class="cw-480">
+    <label for="tbCellDisplayTemplate" class="demo-text mb-1">
+        Products
+    </label>
     <DxTagBox TData="Product" TValue="Product" Data="@Products"
                 @bind-Values="@SelectedProducts"
                 TextFieldName="@nameof(Product.ProductName)"
                 SizeMode="Params.SizeMode"
-                ListRenderMode="ListRenderMode.Virtual">
+                ListRenderMode="ListRenderMode.Virtual"
+                InputId="tbCellDisplayTemplate">
         <Columns>
             <DxListEditorColumn FieldName="@nameof(Product.ProductName)" Caption="Product" Width="30%">
                 <CellDisplayTemplate>

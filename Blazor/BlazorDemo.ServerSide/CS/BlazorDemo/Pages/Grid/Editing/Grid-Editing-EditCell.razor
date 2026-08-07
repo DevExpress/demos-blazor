@@ -14,6 +14,7 @@
                 EditMode="GridEditMode.EditCell"                
                 EditOnKeyPress="EnableEditOnKeyPress"
                 EnterKeyDirection="EnterKeyDirectionValue"
+                EditNextCellOnEnter="EditNextCellOnEnter"
                 EditModelSaving="Grid_EditModelSaving"
                 DataItemDeleting="Grid_DataItemDeleting"
                 CustomizeEditModel="Grid_CustomizeEditModel"
@@ -74,7 +75,14 @@
                         <DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
                             <Template Context="toolbar_item_context">
                                 <div class="ms-2 me-2">
-                                    <DxCheckBox @bind-Checked="EnableEditOnKeyPress">Edit On Key Press</DxCheckBox>
+                                    <DxCheckBox @bind-Checked="EnableEditOnKeyPress">Edit on Key Press</DxCheckBox>
+                                </div>
+                            </Template>
+                        </DxToolbarItem>
+                        <DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
+                            <Template Context="toolbar_item_context">
+                                <div class="ms-2 me-2">
+                                    <DxCheckBox @bind-Checked="EditNextCellOnEnter">Edit Next Cell on Enter</DxCheckBox>
                                 </div>
                             </Template>
                         </DxToolbarItem>
@@ -88,6 +96,7 @@
         IGrid Grid { get; set; }
         IEnumerable<EditableEmployee> DataSource { get; set; }
         bool EnableEditOnKeyPress { get; set; }
+        bool EditNextCellOnEnter { get; set; }
 
         GridEnterKeyDirection EnterKeyDirectionValue { get; set; } = GridEnterKeyDirection.None;
         object[] EnterKeyDirectionValues { get; } = new[] {

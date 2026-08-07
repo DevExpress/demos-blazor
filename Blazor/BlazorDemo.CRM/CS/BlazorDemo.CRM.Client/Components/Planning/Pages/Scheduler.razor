@@ -27,7 +27,7 @@
                           Position="DrawerPosition.Left"
                           ApplyBackgroundShading="false"
                           ZIndex="151"
-                          PanelWidth="24em">
+                          PanelWidth="@GetSettingsPanelWidth()">
                     <BodyTemplate>
                         <Settings @bind-VisibleResources=VisibleResources @bind-SelectedDate=SelectedDate OnCreateEvent="@(_ => scheduler!.CreateAppointmentAsync())" />
                     </BodyTemplate>
@@ -60,6 +60,9 @@
 
 @code {
     WorkTaskScheduler? scheduler;
+
+    [CascadingParameter(Name = "ParentSizeMode")]
+    SizeMode SizeMode { get; set; }
     bool IsSmallScreen { get; set; }
     bool IsSideMenuOpen { get; set; }
     DrawerMode SideMenuMode { get; set; } = DrawerMode.Shrink;
@@ -80,4 +83,9 @@
         IsSmallScreen = isSmallScreen;
         SideMenuMode = IsSmallScreen ? DrawerMode.Overlap : DrawerMode.Shrink;
     }
+
+    string GetSettingsPanelWidth() => SizeMode switch {
+        SizeMode.Small => "20rem",
+        _ => "24rem",
+    };
 }

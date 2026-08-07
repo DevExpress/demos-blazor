@@ -7,7 +7,7 @@
     <ChildContentWithParameters Context="Params">
         @inherits OwningComponentBase
         @inject Microsoft.Extensions.Configuration.IConfiguration Configuration
-        
+
         <DataProviderAccessAreaContainer DataProvider="@RentInfoDataProvider">
         <div class="grid-container">
             <DxGrid @ref="Grid"
@@ -29,8 +29,11 @@
                         </FilterMenuTemplate>
                     </DxGridDataColumn>
                     <DxGridDataColumn FieldName="Bedrooms" Width="12%">
+                        <CellDisplayTemplate>
+                            @BedroomInfos[(int)context.Value].DisplayValue
+                        </CellDisplayTemplate>
                         <EditSettings>
-                            <DxComboBoxSettings Data="BedroomDisplayValues" />
+                            <DxComboBoxSettings Data="BedroomInfos" ValueFieldName="Value" TextFieldName="DisplayValue" />
                         </EditSettings>
                     </DxGridDataColumn>
                     <DxGridDataColumn FieldName="Rent" MinWidth="80" DisplayFormat="C0">
@@ -65,7 +68,13 @@
     @code {
         static IReadOnlyList<CustomRangeFilterItem> PopulationIntervals { get; } = CustomRangeFilterItem.CreateIntervals("Population", 10, 6, false, "{0:N0}");
         static IReadOnlyList<CustomRangeFilterItem> RentIntervals { get; } = CustomRangeFilterItem.CreateIntervals("Rent", 200, 10, true, "{0:c}");
-        static IReadOnlyList<string> BedroomDisplayValues { get; } = new[] { "Studio", "One Bedroom", "Two Bedrooms", "Three Bedrooms", "Four Bedrooms" };
+        static IReadOnlyList<BedroomInfo> BedroomInfos { get; } = [
+            new BedroomInfo("Studio", 0),
+            new BedroomInfo("One bedroom", 1),
+            new BedroomInfo("Two bedrooms", 2),
+            new BedroomInfo("Three bedrooms", 3),
+            new BedroomInfo("Four bedrooms", 4)
+        ];
         IRentInfoDataProvider RentInfoDataProvider { get; set; }
         RentInfoDataService RentInfoDataService { get; set; }
 

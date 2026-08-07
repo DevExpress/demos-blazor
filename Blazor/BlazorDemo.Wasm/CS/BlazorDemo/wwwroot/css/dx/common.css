@@ -245,8 +245,8 @@ body {
     --dxbl-icon-rb-clock: url("../images/icons/ribbon/berry/clock.svg");
 }
 
-.dxbl-ribbon__root {
-    --dxbl-icon-rb-opacity: 0.7;
+.demo-ribbon {
+    --icon-rb-opacity: 0.7;
 }
 
 /* Tabs */
@@ -354,12 +354,15 @@ dxbl-check {
 .e-icon-address {
     --dxbl-icon-address: url("../images/icons/address.svg");
 }
+
 .e-icon-city {
     --dxbl-icon-city: url("../images/icons/city.svg");
 }
+
 .e-icon-birthdate {
     --dxbl-icon-calendar-day: url("../images/icons/birthdate.svg");
 }
+
 .e-icon-phone {
     --dxbl-icon-phone: url("../images/icons/phone.svg");
 }
@@ -458,4 +461,48 @@ dxbl-check {
 /* AIChat */
 .aichat-icon {
     --dxbl-icon-ai-chat: url("../images/icons/ai-chat.svg");
+}
+
+/* Products */
+.demo-products .demo-product,
+.demo-products .demo-rwa {
+    border: 1px solid #D3D3D2;
+    color: rgba(var(--bs-body-color-rgb), var(--bs-text-opacity));
+}
+
+.demo-products .demo-product:hover,
+.demo-products .demo-rwa:hover {
+    background-color: var(--bs-primary);
+    color: var(--bs-white);
+}
+
+.demo-products .demo-product > span {
+    font-family: "Segoe UI";
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing:0;
+}
+
+.demo-products .demo-rwa .demo-rwa-title {
+    font-family: "Segoe UI";
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing:0;
+}
+
+.demo-products .demo-rwa .demo-rwa-info {
+    font-family: "Segoe UI";
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing:0;
+}
+
+.demo-product-icon {
+    background-color: var(--bs-primary-bg-subtle);
+}
+.demo-product-icon span {
+    background-color: var(--bs-primary);
 }

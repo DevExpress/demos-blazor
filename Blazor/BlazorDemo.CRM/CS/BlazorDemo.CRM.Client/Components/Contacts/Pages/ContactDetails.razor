@@ -5,7 +5,7 @@
 @using BlazorDemo.CRM.Services.DataProviders
 @using Microsoft.AspNetCore.Authorization
 
-@implements IDisposable
+@implements IAsyncDisposable
 
 @attribute [Authorize]
 
@@ -44,7 +44,7 @@
                         </AuthorizeView>
                     </Items>
                 </DxToolbarItem>
-                <DxToolbarItem Alignment="ToolbarItemAlignment.Right" Click="@CopyToClipboard" Tooltip="Copy Full Name to the Clipboard" Enabled="@IsDataLoaded" IconCssClass="copy-icon icon medium-icon" />
+                <DxToolbarItem Alignment="ToolbarItemAlignment.Right" CssClass="copy-button" Tooltip="Copy Full Name to the Clipboard" Enabled="@IsDataLoaded" IconCssClass="copy-icon icon medium-icon" />
                 <DxToolbarItem Alignment="ToolbarItemAlignment.Right" Click="@LoadDataAsync" Tooltip="Reload Data" IconCssClass="refresh-icon icon medium-icon" />
             </Items>
         </DxToolbar>
@@ -110,6 +110,7 @@
 
 @code {
     CancellationTokenSource disposalTokenSource = new CancellationTokenSource();
+    DotNetObjectReference<ContactDetails>? dotNetRef;
 
     [SupplyParameterFromQuery(Name = "id")]
     int? Id { get; set; }
@@ -131,6 +132,13 @@
         await base.OnInitializedAsync();
     }
 
+    protected override async Task OnAfterRenderAsync(bool firstRender) {
+        if(firstRender) {
+            dotNetRef = DotNetObjectReference.Create(this);
+            await ClipboardManager.InitCopyFromElementAsync(dotNetRef, ".card.toolbar .copy-button", ".card.toolbar .title");
+        }
+    }
+
     async Task LoadDataAsync() {
         IsDataLoaded = false;
         Contact = await DataProvider.GetAsync(Id ?? 12, true, disposalTokenSource.Token);
@@ -144,9 +152,14 @@
             Contact!.Tasks!.Remove(task);
     }
 
-    async Task CopyToClipboard() {
-        await ClipboardManager.CopyTextAsync(Contact!.Name ?? "");
+    [JSInvokable]
+    public void OnCopySuccess() {
         ToastService.ShowToast(new ToastOptions { Title = "Notification", Text = "The contact name has been copied to the clipboard." });
+    }
+
+    [JSInvokable]
+    public void OnCopyError() {
+        ToastService.ShowToast(new ToastOptions { Title = "Notification", Text = "Failed to copy the contact name to the clipboard." });
     }
 
     async Task OnTerminateClick() {
@@ -175,7 +188,13 @@
     void OnNotesChanged(List<Note> notes) => Contact!.Notes = notes;
     void OnContactChanged(ContactDetail contact) => Contact = contact;
 
-    void IDisposable.Dispose() {
+    async ValueTask IAsyncDisposable.DisposeAsync() {
+        try {
+            await ClipboardManager.DisposeCopyFromElementAsync(".card.toolbar .copy-button");
+        }
+        catch(JSDisconnectedException) {
+        }
+        dotNetRef?.Dispose();
         disposalTokenSource.Cancel();
         disposalTokenSource.Dispose();
     }

@@ -1,4 +1,6 @@
 ﻿@page "/"
+@using DevExpress.Blazor.Internal
+@using DevExpress.Images.Blazor.Internal
 @layout MainLayout
 
 @inject DemoConfiguration Configuration
@@ -6,45 +8,43 @@
 @inject DemoThemeService Themes
 
 @{
-    RenderFragment<DemoProductInfo> DemoProduct = (info) =>
-    @<div class="col-xl-4 col-lg-6 col-xs-12">
-        <a class="demo-product" href="@info.PageUri">
-            <div class="demo-product-icon demo-product-icon-@info.IconName">
-                <svg role="img" title="@info.Title">
-                    <use href="@(StaticAssetUtils.GetImagePath("products.svg"))#@info.IconName"></use>
-                </svg>
+    RenderFragment<DemoProductInfo> DemoComponentTile = (info) =>
+    @<a class="demo-product" href="@info.PageUri">
+        <div class="demo-product-icon">
+            <span class="@info.IconKey"></span>
+        </div>
+        <span>@info.Title</span>
+    </a>;
+
+    RenderFragment<DemoRwaInfo> DemoApplicationTile = (info) =>
+    @<a class="demo-rwa mb-4" href="@info.PageUri">
+        <div class="demo-rwa-image">
+            <img src="@(StaticAssetUtils.GetImagePath(info.ImagePath))" alt="" />
+        </div>
+        <div class="demo-rwa-text">
+            <div>
+                <span class="demo-rwa-title">@info.Title</span>
+                <span class="demo-rwa-info">@info.Description</span>
             </div>
-            <div class="flex-grow-1 text-body">
-                <h2>@info.Title</h2>
-                <span class="demo-product-info">@info.Description</span>
-            </div>
-        </a>
-    </div>;
-}
-@{
-    var CRMDemoLink = "https://demos.devexpress.com/blazor-showcase";
+        </div>
+    </a>;
 }
 <div class="demo-products demo-products-description theme-@Themes.ActiveTheme.Name.Replace(" ", "-")">
     <h1 class="mb-4">DevExpress UI Components for Blazor</h1>
     <p>The <a href="https://www.devexpress.com/blazor/" target="_blank">DevExpress Blazor UI component suite</a> ships with a comprehensive suite of Blazor components (including a DataGrid, Scheduler, Chart, Data Editors, Rich Text Editor, and Reporting). To learn more about the capabilities of our Blazor UI suite for your next great Blazor-based web app, select a component library from the list below. DevExpress Blazor UI components ship as part of the DevExpress ASP.NET, DXperience, and Universal Subscriptions.</p>
     <p>Should you have any questions about the products listed herein or are considering DevExpress UI components for an upcoming Blazor project, please email <a href="mailto:info@devexpress.com" tabindex="-1">info@devexpress.com</a>. We will be happy to follow-up.</p>
-    <a class="demo-product demo-rwa mb-4" href="@CRMDemoLink">
-        <div class="demo-product-icon demo-rwa-icon demo-rwa-icon-crm">
-            <svg role="img" title="TODO">
-                <use href="@(StaticAssetUtils.GetImagePath("products.svg"))#crm"></use>
-            </svg>
-        </div>
-        <div class="flex-grow-1 d-md-flex align-items-md-center justify-content-md-between">
-            <div class="text-body">
-                <h2 class="fw-bold">Blazor CRM Demo</h2>
-                <span class="demo-rwa-info">Explore how to build modern application with DevExpress Blazor UI components. This demo showcases best practices for creating data tables, analytic dashboards, interactive reports, and task/event management views.</span>
-            </div>
-            <DxButton Text="View CRM" CssClass="demo-nav-button ms-0 mt-2 ms-md-4 mt-md-0" IconCssClass="demo-external-link-icon" NavigateUrl="@CRMDemoLink" />
-        </div>
-    </a>
-    <div class="row mb-3">
-        @foreach(var info in Configuration.Products) {
-            @DemoProduct.Invoke(info)
+    <h2 class="mb-4">Components</h2>
+    <div class="demo-products-container mb-4">
+        @foreach (var info in Configuration.Products)
+        {
+            @DemoComponentTile.Invoke(info)
+        }
+    </div>
+    <h2 class="mb-4">Application</h2>
+    <div class="mb-4">
+        @foreach (var info in Configuration.RwaDemos)
+        {
+            @DemoApplicationTile.Invoke(info)
         }
     </div>
 </div>
@@ -83,8 +83,9 @@
 </p>
 
 @code {
-    public override async Task SetParametersAsync(ParameterView parameters) {
-        if(Configuration.ShowOnlyReporting)
+    public override async Task SetParametersAsync(ParameterView parameters)
+    {
+        if (Configuration.ShowOnlyReporting)
             NavigationManager.NavigateTo("ReportViewer");
         else
             await base.SetParametersAsync(parameters);

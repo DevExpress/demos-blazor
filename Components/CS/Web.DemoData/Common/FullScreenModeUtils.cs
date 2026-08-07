@@ -112,7 +112,7 @@ namespace DevExpress.Web.Demos {
 			return image;
 		}
 	}
-	public class QRBarCodeData : IBarCodeData {
+	class QRBarCodeData : IBarCodeData {
 		readonly string text;
 		readonly DevExpress.XtraPrinting.BrickStyle style;
 		public QRBarCodeData(string text) {
@@ -123,7 +123,7 @@ namespace DevExpress.Web.Demos {
 				Padding = new DevExpress.XtraPrinting.PaddingInfo()
 			};
 		}
-		DXGraphicsUnit IBarCodeData.ModuleUnit => DXGraphicsUnit.Pixel;
+		DXGraphicsUnit IBarCodeData.ModuleUnit { get { return DXGraphicsUnit.Pixel; } }
 		DevExpress.XtraPrinting.TextAlignment IBarCodeData.Alignment { get { return DevExpress.XtraPrinting.TextAlignment.MiddleCenter; } }
 		bool IBarCodeData.AutoModule { get { return true; } }
 		int? IBarCodeData.TargetDeviceDpi { get { return null; } }

@@ -6,7 +6,7 @@
             <p><em>Loading...</em></p>
         } else {
             <div class="w-100 chi-220">
-                <DxTabs SizeMode="Params.SizeMode">
+                <DxTabs SizeMode="Params.SizeMode" CssClass="demo-tabs-employees">
                     @foreach(var employee in Employees) {
                         <DxTabPage Text="@(employee.FirstName + ' ' + employee.LastName)">
                             <div class="d-flex pt-2 demo-employee-card">

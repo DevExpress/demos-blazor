@@ -8,7 +8,7 @@
 }
 
 .pane-option {
-    color: color-mix(in srgb, var(--dxbl-splitter-color) 80%, transparent);
-    font-size: calc(var(--dxbl-splitter-font-size) - 0.125rem);
-    line-height: calc(var(--dxbl-splitter-line-height) - 0.125rem);
+    color: color-mix(in srgb, currentColor 80%, transparent);
+    font-size: calc(1em - 0.125rem);
+    line-height: calc(1lh - 0.125rem);
 }

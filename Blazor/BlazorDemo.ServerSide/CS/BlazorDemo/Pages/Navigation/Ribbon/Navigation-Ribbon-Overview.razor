@@ -1,7 +1,10 @@
 ﻿<DemoPageSectionComponent Id="Navigation-Ribbon-Overview" ShowSizeMode="true">
     <ChildContentWithParameters Context="Params">
         <div class="ribbon-container">
-            <DxRibbon SizeMode="@Params.SizeMode" ItemClick="OnRibbonItemClick" ApplicationTabItemClick="OnApplicationTabItemClick">
+            <DxRibbon SizeMode="@Params.SizeMode"
+                      CssClass="demo-ribbon"
+                      ItemClick="OnRibbonItemClick"
+                      ApplicationTabItemClick="OnApplicationTabItemClick">
                 <DxRibbonApplicationTab Text="File">
                     <DxRibbonApplicationTabItem Text="New"
                                                 IconCssClass="rb-icon rb-icon-document-blank"/>
@@ -138,7 +141,8 @@
                                             Tooltip="Underline"/>
                         <DxRibbonColorPaletteItem Text="Font Color"
                                                   @bind-Value="color"
-                                                  Tooltip="Font Color">
+                                                  Tooltip="Font Color"
+                                                  CssClass="@GetCssClassWithSizeMode("rb-font-color", Params.SizeMode)">
                             <IconTemplate>
                                 @if(Themes.ActiveTheme.IsFluent) {
                                     <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -303,6 +307,14 @@
 </DemoPageSectionComponent>
 
 @code {
+    string GetCssClassWithSizeMode(string cssClass, SizeMode sizeMode) {
+        return sizeMode switch {
+            SizeMode.Large => $"{cssClass} {cssClass}-lg",
+            SizeMode.Small => $"{cssClass} {cssClass}-sm",
+            _ => cssClass
+        };
+    }
+
     public override Task SetParametersAsync(ParameterView parameters) {
         FontStyle = FontStyles[0];
         return base.SetParametersAsync(parameters);

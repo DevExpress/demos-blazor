@@ -6,24 +6,28 @@
                 <em>Loading...</em>
             </p>
         } else {
-            <div class="w-100 chi-220 max-h-300">
-                <DxTabs TabsPosition="@Position" RenderMode="TabsRenderMode.AllTabs" SizeMode="Params.SizeMode" ScrollMode="@ScrollMode">
-                    @foreach (var employee in Employees) {
-                        <DxTabPage Text="@(employee.FirstName + ' ' + employee.LastName)">
-                            <div class="h-100 d-flex demo-employee-card">
-                                <div class="flex-shrink-0 pe-3">
-                                    <img src="@(StaticAssetUtils.GetEmployeeImagePath(employee.EmployeeId))" width="125" alt="@(employee.FullName + " photo")"/>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <div class="h5">@employee.Title @employee.FirstName @employee.LastName</div>
-                                    <p>
-                                        <b>Birthday:</b> @employee.BirthDate?.ToShortDateString()
-                                    </p>
-                                </div>
-                            </div>
-                        </DxTabPage>
-                    }
-                </DxTabs>
+            <div class="w-100">
+                <DemoResizableContent MinWidth="320">
+                    <div class="w-100 demo-tabs-employees-container @TabsContainerCssClass">
+                        <DxTabs TabsPosition="@Position" RenderMode="TabsRenderMode.AllTabs" SizeMode="Params.SizeMode" ScrollMode="@ScrollMode" CssClass="demo-tabs-employees">
+                            @foreach(var employee in Employees) {
+                                <DxTabPage Text="@(employee.FirstName + ' ' + employee.LastName)">
+                                    <div class="h-100 d-flex @EmployeeCardCssClass">
+                                        <div class="flex-shrink-0 pe-3">
+                                            <img src="@(StaticAssetUtils.GetEmployeeImagePath(employee.EmployeeId))" width="125" alt="@(employee.FullName + " photo")" />
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <div class="h5">@employee.Title @employee.FirstName @employee.LastName</div>
+                                            <p>
+                                                <b>Birthday:</b> @employee.BirthDate?.ToShortDateString()
+                                            </p>
+                                        </div>
+                                    </div>
+                                </DxTabPage>
+                            }
+                        </DxTabs>
+                    </div>
+                </DemoResizableContent>
             </div>
         }
     </ChildContentWithParameters>
@@ -47,6 +51,8 @@
         TabsScrollMode ScrollMode { get; set; } = TabsScrollMode.Auto;
         IEnumerable<TabsPosition> Positions { get; } = Enum.GetValues<TabsPosition>();
         TabsPosition Position { get; set; } = TabsPosition.Top;
+        string EmployeeCardCssClass => string.Format("{0} {0}-{1}", "demo-employee-card", Position.ToString().ToLowerInvariant());
+        string TabsContainerCssClass => Position is TabsPosition.Left or TabsPosition.Right && ScrollMode != TabsScrollMode.NoScroll ? "chi-300" : string.Empty;
         /*EndHide*/
         IEnumerable<Employee> Employees;
 

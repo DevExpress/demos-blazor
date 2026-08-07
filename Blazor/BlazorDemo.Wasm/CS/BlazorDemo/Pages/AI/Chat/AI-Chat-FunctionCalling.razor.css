@@ -1,7 +1,7 @@
 .chat-demo-container {
     width: 100%;
-    border: 1px solid var(--bs-card-border-color);
-    border-radius: var(--bs-card-border-radius);
+    border: 1px solid var(--dxds-color-border-neutral-default-rest, var(--bs-card-border-color));
+    border-radius: var(--dxds-border-radius-40, var(--bs-card-border-radius));
     overflow: hidden;
 }
 

@@ -9,4 +9,4 @@ Key Radio component API members include:
 * [GroupValue](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxRadio-1.GroupValue) - Specifies the group's selected button.
 * [Enabled](https://docs.devexpress.com/Blazor/DevExpress.Blazor.Base.DxDataEditor-1.Enabled) - Specifies whether the button is enabled.
 
-Our Radio component supports different size modes. To specify the component size in code, use the [SizeMode](https://docs.devexpress.com/Blazor/DevExpress.Blazor.Base.DxDataEditor-1.SizeMode) property. To apply different size modes within this demo, use the drop-down list in the demo card's header.
+Our Radio component supports different size modes. To specify the component size in code, use the [SizeMode](https://docs.devexpress.com/Blazor/DevExpress.Blazor.Base.DxEditorComponentBase.SizeMode) property. To apply different size modes within this demo, use the drop-down list in the demo card's header.

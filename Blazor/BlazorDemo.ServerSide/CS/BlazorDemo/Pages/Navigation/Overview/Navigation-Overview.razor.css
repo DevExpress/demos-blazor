@@ -1,18 +1,9 @@
-/*BeginHide*/::deep /*EndHide*/ .dxbl-menu > .dxbl-menu-item-list .dxbl-menu-item.notoggle {
-    display: none;
-}
-/*BeginHide*/ ::deep /*EndHide*/ .dxbs-menu > .dxbl-menu-item-list .dx-menu-item.search-menu-item {
-    display: none;
-}
-/*BeginHide*/ ::deep /*EndHide*/ .dxbs-menu > .dxbl-menu-item-list .dxbl-menu-items-separator {
-    display: none;
-}
-/*BeginHide*/ ::deep /*EndHide*/ .dxbl-menu-item-tmpl {
+/*BeginHide*/ ::deep /*EndHide*/ .search-menu-item :has(> .search) {
     display: flex;
     align-items: center;
 }
 
-/*BeginHide*/ ::deep /*EndHide*/ .dxbl-menu-item .search {
+/*BeginHide*/ ::deep /*EndHide*/ .search-menu-item .search {
     width: 160px;
 }
 
@@ -27,10 +18,6 @@
 
 .overview-navigation > .card-body:last-child {
     flex-wrap: nowrap;
-}
-
-.dxbl-menu-item-tmpl > .search {
-    position: relative;
 }
 
 @media (max-width: 599.98px) {

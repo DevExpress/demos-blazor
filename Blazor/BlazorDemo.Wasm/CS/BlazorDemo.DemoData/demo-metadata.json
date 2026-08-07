@@ -221,6 +221,10 @@
                   "Path": "Services\\GridAIFunctions.cs"
                 },
                 {
+                  "Title": "OrderDataProvider.cs",
+                  "Path": "DataProviders\\OrderDataProvider.cs"
+                },
+                {
                   "Title": "Startup.cs",
                   "Path": "Pages\\CodeSnippets\\AIIntegrationWithGridFunctions.Startup.cs"
                 }
@@ -493,8 +497,8 @@
           "Id": "AI-FormLayout",
           "Url": "AI/FormLayoutSmartPaste",
           "SupportCenterId": "3c616c71-03dc-46b9-a54f-1334a22dffe7:e33ea808-c07a-42c7-9850-a34380eb5133",
-		  "DocUrl": "DevExpress.Blazor.DxFormLayout#ai-powered-smart-paste",
-		  "Keywords": "DxFormLayout, layout, ai, smart paste, data entry, autofill, input parsing",
+          "DocUrl": "DevExpress.Blazor.DxFormLayout#ai-powered-smart-paste",
+          "Keywords": "DxFormLayout, layout, ai, smart paste, data entry, autofill, input parsing",
           "IsNew": true,
           "Title": "Form Layout",
           "PageSections": [
@@ -762,6 +766,10 @@
                       "Path": "Data\\AreaRentInfo\\AreaRentInfo.cs"
                     },
                     {
+                      "Title": "BedroomInfo.cs",
+                      "Path": "Data\\AreaRentInfo\\BedroomInfo.cs"
+                    },
+                    {
                       "Title": "RentInfoDataService.cs",
                       "Path": "Services\\RentInfoDataService.AreaRentInfo.cs"
                     },
@@ -793,6 +801,10 @@
                     {
                       "Title": "AreaRentInfo.cs",
                       "Path": "Data\\AreaRentInfo\\AreaRentInfo.cs"
+                    },
+                    {
+                      "Title": "BedroomInfo.cs",
+                      "Path": "Data\\AreaRentInfo\\BedroomInfo.cs"
                     },
                     {
                       "Title": "RentInfoDataService.cs",
@@ -1117,6 +1129,7 @@
                   "Url": "Grid/EditData/EditCell",
                   "Title": "EditCell Mode",
                   "DocUrl": "404756",
+                  "IsUpdated": true,
                   "Keywords": "DxGrid, data grid, datagrid, grid, data editing, edit data, CRUD, edit cell, inplace edit, inplace editing, cell editing, add rows, add new row, insert row, remove rows, delete rows, edit options, command column",
                   "AdditionalCodeFiles": [
                     {
@@ -2892,6 +2905,7 @@
                   "Url": "TreeList/EditData/EditCell",
                   "Title": "EditCell Mode",
                   "DocUrl": "405166",
+                  "IsUpdated": true,
                   "Keywords": "DxTreeList, tree list, treelist, data editing, edit data, edit cell, inplace edit, inplace editing, cell editing, add rows, add new row, insert row, remove rows, delete rows, edit options, command column, ",
                   "AdditionalCodeFiles": [
                     {
@@ -7420,7 +7434,7 @@
               "Title": "Smart Paste",
               "IsAI": true,
               "IsNew": true,
-			  "DocUrl": "DevExpress.Blazor.DxFormLayout#ai-powered-smart-paste",
+              "DocUrl": "DevExpress.Blazor.DxFormLayout#ai-powered-smart-paste",
               "AdditionalCodeFiles": [
                 {
                   "Title": "Razor",
@@ -7703,6 +7717,10 @@
                 {
                   "Title": "Startup.cs",
                   "Path": "Pages\\CodeSnippets\\Nwind.Startup.cs"
+                },
+                {
+                  "Title": "CSS",
+                  "Path": "Pages\\Layout\\Tabs\\Layout-Tabs-TabsPosition.razor.css"
                 }
               ]
             },
@@ -8497,7 +8515,13 @@
               "Id": "DialogService",
               "Title": "Dialog Service",
               "DocUrl": "DevExpress.Blazor.IDialogService",
-              "IsUpdated": true
+              "IsUpdated": true,
+              "AdditionalCodeFiles": [
+                {
+                  "Title": "CSS",
+                  "Path": "Pages\\DialogsAndWindows\\MessageBox\\DialogsAndWindows-MessageBox-DialogService.razor.css"
+                }
+              ]
             },
             {
               "Id": "CustomContent",
@@ -10385,84 +10409,119 @@
   ],
   "Products": [
     {
+      "Title": "AI",
+      "PageUri": "AI/Chat",
+      "IconKey": "sparkle-fluent-filled-monochrome-32"
+    },
+    {
       "Title": "Grid",
       "PageUri": "Grid",
-      "IconName": "grid",
-      "Description": "A fast and responsive Blazor Grid component with support for unlimited Master-Detail levels, in-cell Data Editing, and flexible Data Shaping options (Grouping, Sorting, Filtering, and Data Summary Computation)."
+      "IconKey": "table_header-fluent-filled-monochrome-32"
     },
     {
-      "Title": "Charts",
-      "PageUri": "Charts",
-      "IconName": "charts",
-      "Description": "An elegant, fast, and lightweight Blazor Charting library with 20+ built-in data presentation options (from Pie Charts to Line and Range Charts)."
+      "Title": "TreeList",
+      "PageUri": "TreeList",
+      "IconKey": "list_bar_tree_offset-fluent-filled-monochrome-32"
     },
     {
-      "Title": "Scheduler",
-      "PageUri": "Scheduler",
-      "IconName": "scheduler",
-      "Description": "A feature-rich Scheduling/Event Management UI component designed to display detailed snapshots of events/appointments within your Blazor-powered web application (across a single day, a week, or more)."
+      "Title": "Pivot Table",
+      "PageUri": "PivotTable",
+      "IconKey": "table-fluent-filled-monochrome-32"
     },
     {
       "Title": "Data Editors",
       "PageUri": "Editors",
-      "IconName": "editors",
-      "Description": "A comprehensive and high-impact suite of Blazor Data Editor components. Our Blazor Data Editors can be used as standalone components or within container components such as our Blazor Data Grid."
+      "IconKey": "description-fluent-filled-monochrome-32"
+    },
+    {
+      "Title": "Gauges",
+      "PageUri": "BarGaugeGeometry",
+      "IconKey": "gauge_circular-fluent-filled-monochrome-32"
+    },
+    {
+      "Title": "Charts",
+      "PageUri": "Charts",
+      "IconKey": "data_pie-fluent-filled-monochrome-32"
+    },
+    {
+      "Title": "Map",
+      "PageUri": "Map",
+      "IconKey": "location-fluent-filled-monochrome-32"
+    },
+    {
+      "Title": "Layout",
+      "PageUri": "FormLayout",
+      "IconKey": "layout_free-fluent-filled-monochrome-32"
+    },
+    {
+      "Title": "Navigation",
+      "PageUri": "Navigation",
+      "IconKey": "arrow_circle_right-fluent-filled-monochrome-32"
+    },
+    {
+      "Title": "Ribbon",
+      "PageUri": "Ribbon",
+      "IconKey": "layout_row_single-fluent-filled-monochrome-32"
+    },
+    {
+      "Title": "Dialogs and Windows",
+      "PageUri": "DropDown",
+      "IconKey": "field_list-fluent-filled-monochrome-32"
+    },
+    {
+      "Title": "File Management",
+      "PageUri": "FileInput",
+      "IconKey": "folder-fluent-filled-monochrome-32"
+    },
+    {
+      "Title": "HTML Editor",
+      "PageUri": "HtmlEditor",
+      "IconKey": "code_block-fluent-filled-monochrome-32"
+    },
+    {
+      "Title": "PDF Viewer",
+      "PageUri": "PdfViewer",
+      "IconKey": "document_pdf-fluent-filled-monochrome-32"
     },
     {
       "Title": "Rich Text Editor",
       "PageUri": "RichEdit",
-      "IconName": "richedit",
-      "Description": "A Microsoft Word-inspired Word Processing component for your next Blazor-powered web app. The DevExpress Rich Text Editor allows you to display, edit, and apply rich formatting to any text document."
+      "IconKey": "edit_pen-fluent-filled-monochrome-32"
+    },
+    {
+      "Title": "Scheduler",
+      "PageUri": "Scheduler",
+      "IconKey": "calendar-fluent-filled-monochrome-32"
     },
     {
       "Title": "Reports",
       "PageUri": "ReportViewer/IndustryReports/Finance/InvoiceReport",
-      "IconName": "reports",
-      "Description": "DevExpress Reports for Blazor ships with an intuitive Visual Studio Report Designer and a comprehensive suite of report elements including Tables, Labels, Objects, Charts, Pivot Tables, and so much more.",
+      "IconKey": "document_data-fluent-filled-monochrome-32",
       "IsServerSideOnly": true
     },
     {
       "Title": "Reports",
       "PageUri": "ReportViewer/IndustryReports/Finance/BalanceSheetReport",
-      "IconName": "reports",
-      "Description": "DevExpress Reports for Blazor ships with an intuitive Visual Studio Report Designer and a comprehensive suite of report elements including Tables, Labels, Objects, Charts, Pivot Tables, and so much more.",
+      "IconKey": "document_data-fluent-filled-monochrome-32",
       "IsClientSideOnly": true
-    },
-    {
-      "Title": "Navigation",
-      "PageUri": "Navigation",
-      "IconName": "navigation",
-      "Description": "The DevExpress Navigation Suite includes a comprehensive suite of UI components designed to improve data presentation options, enhance overall usability, and extend app navigation choices within any Blazor-powered web app."
-    },
-    {
-      "Title": "Layout",
-      "PageUri": "FormLayout",
-      "IconName": "layout",
-      "Description": "A unique suite of adaptive page Layout components designed to simplify app design and help enhance the overall usability of your Blazor-powered web app."
-    },
-    {
-      "Title": "Dialogs and Windows",
-      "PageUri": "DropDown",
-      "IconName": "dialogs",
-      "Description": "Leverage the power of DevExpress Dialogs and Windows UI components and easily display data and forms within either modal or non-modal dialog windows."
-    },
-    {
-      "Title": "Pivot Table",
-      "PageUri": "PivotTable",
-      "IconName": "pivot",
-      "Description": "Our Pivot Table UI control is blazing fast and allows you to quickly incorporate multi-dimensional data analysis and cross-tab reporting within your next Blazor-powered web app."
-    },
-    {
-      "Title": "File Management",
-      "PageUri": "FileInput",
-      "IconName": "filemanager",
-      "Description": "Our Blazor file management-related components allow you to upload files within your Blazor project at runtime."
     },
     {
       "Title": "Progress Indicators",
       "PageUri": "LoadingPanel",
-      "IconName": "utility",
-      "Description": "Our Blazor UI Suite includes a collection of optimized Blazor Progress Indicators. Add our Progress Indicators to your next Blazor App to introduce intuitive usage feedback info and enhance overall responsiveness of your next great web app."
+      "IconKey": "spinner-fluent-regular-monochrome-24"
+    },
+    {
+      "Title": "Icon Library",
+      "PageUri": "IconExplorer",
+      "IconKey": "home-fluent-filled-monochrome-32"
+    }
+  ],
+  "RwaDemos": [
+    {
+      "Title": "Blazor CRM Demo",
+      "PageUri": "https://demos.devexpress.com/blazor-showcase",
+      "ImagePath": "crm-demo-image.png",
+      "Description": "Explore how to build modern application with DevExpress Blazor UI components. This demo showcases best practices for creating data tables, analytic dashboards, interactive reports, and task/event management views."
     }
   ],
   "HomePage": {

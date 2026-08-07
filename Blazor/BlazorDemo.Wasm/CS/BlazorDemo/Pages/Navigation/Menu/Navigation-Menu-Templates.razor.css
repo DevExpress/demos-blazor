@@ -1,19 +1,11 @@
 
-/*BeginHide*/ ::deep /*EndHide*/ .dxbl-menu-item-tmpl {
+/*BeginHide*/ ::deep /*EndHide*/ .search-menu-item :has(> .search) {
     display: flex;
     align-items: center;
 }
 
 /*BeginHide*/ ::deep /*EndHide*/ .notoggle svg {
     display: none;
-}
-
-.dxbl-menu-item .search {
-    min-width: 123px
-}
-
-.dxbl-menu-item-tmpl > .search {
-    position: relative;
 }
 
 .user-profile .logo-container {

@@ -3,7 +3,7 @@
     <ChildContentWithParameters Context="Params">
         @*BeginHide*@
         <style nonce="@NonceProvider.Nonce">
-            .dxbl-color-palette {
+            .color-palette {
                 border-width: 0px;
             }
             .target-container > p {
@@ -22,7 +22,7 @@
             <Items>
                 <DxContextMenuItem Text="Text color">
                     <SubMenuTemplate>
-                        <DxColorPalette Value="@TextColor" ValueChanged="ChangeTextColor">
+                        <DxColorPalette Value="@TextColor" ValueChanged="ChangeTextColor" CssClass="color-palette">
                             <Groups>
                                 <DxColorPaletteGroup Header="Text color" Colors="DxColorPalettePresets.GetPalette(ColorPalettePresetType.Universal)" />
                                 <DxColorPaletteGroup Colors="DxColorPalettePresets.GetPalette(ColorPalettePresetType.UniversalGradient)" />

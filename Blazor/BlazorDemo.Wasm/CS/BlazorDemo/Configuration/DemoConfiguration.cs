@@ -39,6 +39,8 @@ namespace BlazorDemo.Configuration {
 
         public virtual IEnumerable<DemoProductInfo> Products { get => Model.Products; }
 
+        public virtual IEnumerable<DemoRwaInfo> RwaDemos { get => Model.RwaDemos; }
+
         public virtual IEnumerable<DemoGroup> Groups {
             get {
                 return Model.Groups

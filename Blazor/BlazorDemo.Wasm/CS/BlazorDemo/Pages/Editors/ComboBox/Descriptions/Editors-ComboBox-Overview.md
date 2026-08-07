@@ -9,7 +9,7 @@ Core ComboBox API members are as follows:
 *   [Value](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxComboBox-2.Value) — Specifies the drop-down list's selected value.
 *   [ValueChanged](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxComboBox-2.ValueChanged) — Fires when the selected value was changed.
 
-Our Blazor ComboBox component supports different size modes. To specify the component's size in code, use the [SizeMode](https://docs.devexpress.com/Blazor/DevExpress.Blazor.Base.DxEditorBase.SizeMode) property. To apply different size modes, use the drop-down list in the demo card's header.
+Our Blazor ComboBox component supports different size modes. To specify the component's size in code, use the [SizeMode](https://docs.devexpress.com/Blazor/DevExpress.Blazor.Base.DxEditorComponentBase.SizeMode) property. To apply different size modes, use the drop-down list in the demo card's header.
 
 ComboBox also supports keyboard navigation ([list of supported keyboard shortcuts](https://docs.devexpress.com/Blazor/405362/components/data-editors/combobox/keyboard-support)), allowing users to navigate within the item list and select an item.
 

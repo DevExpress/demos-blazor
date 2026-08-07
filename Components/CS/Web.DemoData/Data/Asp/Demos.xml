@@ -2992,7 +2992,7 @@ To learn more on accessibility support in DevExpress ASP.NET controls, please vi
   <DemoProduct Key="ASPxperience.FileManagerAndUpload" Url="ASPxFileManagerAndUploadDemos" Title="DevExpress ASP.NET products" SeoTitle="ASP.NET AJAX File Manager and File Upload" NavItemTitle="File Management and Upload" OrderIndex="17">
     <Keywords>files, download, filecontrol, uploading</Keywords>
 
-    <IntegrationImageUrl>~/Content/FileManager.png</IntegrationImageUrl>
+    <IntegrationImageUrl>~/Content/FileManager.jpg</IntegrationImageUrl>
 
     <Intro Title="Introduction" SeoTitle="ASP.NET AJAX File Manager and File Upload">
       <BannerTitle>
@@ -3092,7 +3092,7 @@ In this demo, the <helplink href="https://docs.devexpress.com/AspNet/DevExpress.
           ]]>
         </Description>
       </Demo>
-      <Demo Key="BindingToDatabase" Title="Database Binding" HighlightedIndex="1" HighlightedImageUrl="~/Content/DemoIcons/DatabaseBinding.png">
+      <Demo Key="BindingToDatabase" Title="Database Binding" HighlightedIndex="1" HighlightedImageUrl="~/Content/DemoIcons/DatabaseBinding.jpg">
         <Keywords>filebinding, filesystembinding, database, db, datasource</Keywords>
         <Description>
           <![CDATA[
@@ -3246,7 +3246,7 @@ In this demo, the ASPxFileManager control’s <helplink href="https://docs.devex
         </Description>
         <HighlightedDescription>File Manager allows you to provide custom toolbar and context menu items, which can implement button or drop-down button functionality. This demo illustrates how to add custom buttons to a toolbar and context menu. </HighlightedDescription>
       </Demo>
-      <Demo Key="Templates" Title="Templates" HighlightedIndex="4" HighlightedImageUrl="~/Content/DemoIcons/Templates.png" HighlightedTitle="File Manager - Templates">
+      <Demo Key="Templates" Title="Templates" HighlightedIndex="4" HighlightedImageUrl="~/Content/DemoIcons/Templates.jpg" HighlightedTitle="File Manager - Templates">
         <Description>
           <![CDATA[
           <p>
@@ -3275,7 +3275,7 @@ In this demo, the <helplink href="https://docs.devexpress.com/AspNet/DevExpress.
         </Description>
         <HighlightedDescription>Virtual scrolling allows loading files and folders in the file area on demand. In this mode, the file manager loads items automatically when the end-user scrolls the control content. Unnecessary files are unloaded.</HighlightedDescription>
       </Demo>
-      <Demo Key="SubfolderSearching" Title="Subfolder Searching" HighlightedIndex="3" HighlightedImageUrl="~/Content/DemoIcons/Subfolder-Searching.png">
+      <Demo Key="SubfolderSearching" Title="Subfolder Searching" HighlightedIndex="3" HighlightedImageUrl="~/Content/DemoIcons/Subfolder-Searching.jpg">
         <Description>
           <![CDATA[
           <p>DevExpress File Manger allows searching for files and folders using the built-in filter box. This demo illustrates how to search the current folder or all subfolders the <helplink href="https://docs.devexpress.com/AspNet/DevExpress.Web.FileManagerSettingsFiltering.FilterBoxMode">SettingsFiltering.FilterBoxMode</helplink> property controls.</p>
@@ -4188,7 +4188,7 @@ A toolbar is implemented using the DevExpress <a href="https://demos.devexpress.
 
   <DemoProduct Key="ASPxGridView" Url="ASPxGridViewDemos" Title="DevExpress ASPxGridView" SeoTitle="ASP.NET AJAX Data Grid Control" NavItemTitle="Grid" OrderIndex="0" IntegrationHighlighted="true" HighlightedTagNames="dx:ASPxGridView">
     <Keywords>gridview, table, datatable, grid, datagrid</Keywords>
-    <IntegrationImageUrl>~/Content/Grid.png</IntegrationImageUrl>
+    <IntegrationImageUrl>~/Content/Grid.jpg</IntegrationImageUrl>
     <IntegrationDescription>
       Unlimited master-detail levels, Web Accessibility support,
       SharePoint integration and unmatched end-user data analysis capabilities.
@@ -5735,7 +5735,7 @@ The DevExpress ASP.NET GridView (<helplink href="https://docs.devexpress.com/Asp
 
   <DemoProduct Key="ASPxCardView" Url="ASPxCardViewDemos" Title="DevExpress ASPxCardView" SeoTitle="" NavItemTitle="Card View" OrderIndex="10" HighlightedTagNames="dx:ASPxCardView">
     <Keywords></Keywords>
-    <IntegrationImageUrl>~/Content/CardView.png</IntegrationImageUrl>
+    <IntegrationImageUrl>~/Content/CardView.jpg</IntegrationImageUrl>
     <IntegrationDescription>
       Microsoft Outlook® Contacts View style interface provided with rich data shaping and editing capabilities.
     </IntegrationDescription>
@@ -6044,7 +6044,7 @@ This demo shows how to dynamically display a focused employee's details outside 
                 ]]>
         </Description>
       </Demo>
-      <Demo Key="Selection" Title="Selection" HighlightedIndex="4" HighlightedImageUrl="~/Content/DemoIcons/Selection.png">
+      <Demo Key="Selection" Title="Selection" HighlightedIndex="4" HighlightedImageUrl="~/Content/DemoIcons/Selection.jpg">
         <Description>
           <![CDATA[
 <p>
@@ -7594,7 +7594,7 @@ This demo illustrates how you can use the DevExpress ASP.NET Image Slider (<help
                 ]]>
         </Description>
       </Demo>
-      <Demo Key="SlideShow" Title="Slide Show" HighlightedIndex="0" HighlightedImageUrl="~/Content/DemoIcons/Slide-Show.png" HighlightedTitle="Image Slider - Slide Show">
+      <Demo Key="SlideShow" Title="Slide Show" HighlightedIndex="0" HighlightedImageUrl="~/Content/DemoIcons/Slide-Show.jpg" HighlightedTitle="Image Slider - Slide Show">
         <Keywords>ad rotator, web banner, adrotator control</Keywords>
         <Description>
           <![CDATA[
@@ -7678,7 +7678,7 @@ Additionally, the demo illustrates the ability to customize the navigation dots 
     </DemoGroup>
 
     <DemoGroup Key="NewsControl" Title="News Control" SeoTitle="ASP.NET AJAX News Control" HighlightedTagNames="dx:ASPxNewsControl">
-      <Demo Key="DataBinding" Title="Data Binding"  HighlightedIndex="6" HighlightedImageUrl="~/Content/DemoIcons/NewsControlDataBinding.png" HighlightedTitle="News Control - Data Binding">
+      <Demo Key="DataBinding" Title="Data Binding"  HighlightedIndex="6" HighlightedImageUrl="~/Content/DemoIcons/NewsControlDataBinding.jpg" HighlightedTitle="News Control - Data Binding">
         <Description>
           <![CDATA[<p>
 					The DevExpress ASP.NET News Control (<helplink href="https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxNewsControl">ASPxNewsControl</helplink>) control was primarily designed to display a list of news/product announcements on a web page.
@@ -10072,7 +10072,7 @@ To learn more on accessibility support in DevExpress ASP.NET controls, please vi
         <SeeAlso Url="https://docs.devexpress.com/AspNet/7279/components/pivot-grid/appearance/aspxpivotgrid-elements-that-support-templates" Title="ASPxPivotGrid Elements that Support Templates" />
       </Demo>
       <Demo Key="FieldValueTemplates" Title="Field Value Templates" SeoTitle="Field Value Templates"
-            HighlightedIndex="5" HighlightedImageUrl="~/Content/DemoIcons/FieldValueTemplates.png">
+            HighlightedIndex="5" HighlightedImageUrl="~/Content/DemoIcons/FieldValueTemplates.jpg">
         <Description>
           <![CDATA[<p>
           This demo shows sales vary based on Moon phases and Chinese months. Axis values are replaced with the image of the Moon and Chinese letters using templates 
@@ -10260,7 +10260,7 @@ To learn more on accessibility support in DevExpress ASP.NET controls, please vi
   </DemoProduct>
 
   <DemoProduct Key="XtraReports" Url="XtraReportsDemos" Title="DevExpress XtraReports" SeoTitle="Reporting Tool for ASP.NET AJAX" NavItemTitle="Reporting" SupportsThemeParameters="false" OrderIndex="3" IntegrationHighlighted="true" HideSourceCode="true">
-    <IntegrationImageUrl>~/Content/ReportsLargeLogo.png</IntegrationImageUrl>
+    <IntegrationImageUrl>~/Content/ReportsLargeLogo.jpg</IntegrationImageUrl>
     <IntegrationDescription>
       Native integration with DevExpress WinForms and ASP.NET Controls and unparalleled design-time productivity.
     </IntegrationDescription>
@@ -11843,7 +11843,7 @@ To learn more on accessibility support in DevExpress ASP.NET controls, please vi
             ]]>
         </Description>
       </Demo>
-	  <Demo Key="TaskTemplate" Title="Task Template" SeoTitle="Gantt Task Template Customization" HighlightedIndex="1" HighlightedImageUrl="~/Content/DemoIcons/TaskTemplate.png">
+	  <Demo Key="TaskTemplate" Title="Task Template" SeoTitle="Gantt Task Template Customization" HighlightedIndex="1" HighlightedImageUrl="~/Content/DemoIcons/TaskTemplate.jpg">
         <Keywords>task dependency, task templates, customize tasks, task diagram, task relationships, gantt control, gantt chart, business diagram, tooltip</Keywords>
         <Description>
           <![CDATA[

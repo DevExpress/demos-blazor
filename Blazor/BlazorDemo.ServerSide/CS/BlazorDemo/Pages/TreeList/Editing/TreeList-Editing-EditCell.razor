@@ -18,6 +18,7 @@
                     EditMode="TreeListEditMode.EditCell"
                     EditOnKeyPress="EnableEditOnKeyPress"
                     EnterKeyDirection="EnterKeyDirectionValue"
+                    EditNextCellOnEnter="EditNextCellOnEnter"
                     EditModelSaving="TreeList_EditModelSaving"
                     DataItemDeleting="TreeList_DataItemDeleting"
                     CustomizeEditModel="TreeList_CustomizeEditModel"
@@ -106,7 +107,14 @@
                         <DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
                             <Template Context="toolbar_item_context">
                                 <div class="ms-2 me-2">
-                                    <DxCheckBox @bind-Checked="EnableEditOnKeyPress">Edit On Key Press</DxCheckBox>
+                                    <DxCheckBox @bind-Checked="EnableEditOnKeyPress">Edit on Key Press</DxCheckBox>
+                                </div>
+                            </Template>
+                        </DxToolbarItem>
+                        <DxToolbarItem BeginGroup="true" Alignment="ToolbarItemAlignment.Left">
+                            <Template Context="toolbar_item_context">
+                                <div class="ms-2 me-2">
+                                    <DxCheckBox @bind-Checked="EditNextCellOnEnter">Edit Next Cell on Enter</DxCheckBox>
                                 </div>
                             </Template>
                         </DxToolbarItem>
@@ -125,7 +133,8 @@
             new { Text = "Low", Value = -1 }
         };
         bool EnableEditOnKeyPress { get; set; }
-
+        bool EditNextCellOnEnter { get; set; }
+        
         TreeListEnterKeyDirection EnterKeyDirectionValue { get; set; } = TreeListEnterKeyDirection.None;
         object[] EnterKeyDirectionValues { get; } = new[] {
             new { Value = TreeListEnterKeyDirection.None, Text = "No" },

@@ -1,0 +1,20 @@
+.chi-300 {
+    height: 300px !important;
+}
+
+/*BeginHide*/ ::deep /*EndHide*/ .min-w-320 {
+    min-width: 320px;
+}
+
+.demo-tabs-employees-container {
+    overflow: hidden;
+}
+
+.demo-employee-card {
+    padding: 0.75rem;
+}
+
+.demo-employee-card-top, .demo-employee-card-bottom {
+    height: 185px !important;
+    align-items: center;
+}

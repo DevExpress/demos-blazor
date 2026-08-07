@@ -18,6 +18,7 @@
 
         <DxRangeSelector Width="100%"
                          Data="@Data"
+                         AnimationEnabled="@RangeSelectorAnimationEnabled"
                          SelectedRangeStartValue="RangeSelectorStartValue"
                          SelectedRangeEndValue="RangeSelectorEndValue"
                          ValueChanged="OnValueChanged"
@@ -68,6 +69,7 @@
         double EndValue = 650;
         double RangeSelectorStartValue = 10;
         double RangeSelectorEndValue = 650;
+        bool RangeSelectorAnimationEnabled = true;
         List<ZoomingData> Data;
 
         void OnSpinEditStartValueChanged(double newStartValue) {
@@ -109,5 +111,12 @@
             @<DxChartAreaSeries ArgumentField="@(s => s.Arg)"
                                 ValueField="@(valueField)">
             </DxChartAreaSeries>;
+
+        protected override void OnAfterRender(bool firstRender) {
+            if (firstRender) {
+                RangeSelectorAnimationEnabled = false;
+            }
+        }
+
     }
 </DemoPageSectionComponent>

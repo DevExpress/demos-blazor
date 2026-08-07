@@ -7,7 +7,7 @@
         <div class="chat-demo-container">
             <DxAIChat CssClass="demo-chat" SizeMode="Params.SizeMode" Initialized="ChatInitialized">
                 <MessageTemplate>
-                    <div class="@GetMessageClasses(context)">
+                    <div class="@GetMessageClasses(context)" tabindex="0">
                         @if(context.Typing) {
                             <span>Loading...</span>
                         } else {

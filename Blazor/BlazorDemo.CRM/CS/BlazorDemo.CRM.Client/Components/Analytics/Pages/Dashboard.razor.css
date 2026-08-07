@@ -26,6 +26,12 @@
     overflow-y: auto;
 }
 
+@supports (-moz-appearance: none) {
+    ::deep .dashboard-grid {
+        padding-right: 1rem;
+    }
+}
+
 ::deep .dashboard-drawer .dxbl-drawer-body {
     padding: 0;
 }

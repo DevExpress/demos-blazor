@@ -5,7 +5,7 @@
     <ChildContentWithParameters Context="Params">
         <DemoResizableContent>
             <DxRibbon SizeMode="Params.SizeMode"
-                      CssClass="rb-adaptive-ribbon"
+                      CssClass="demo-ribbon rb-adaptive-ribbon"
                       AdaptivityAutoCollapseItemsToGroups="@CollapseToGroup"
                       DropDownMenuMaxHeight="300px">
                 <DxRibbonTab Text="Home">
@@ -56,7 +56,8 @@
                                             Tooltip="Underline"/>
                         <DxRibbonColorPaletteItem Text="Font Color"
                                                   @bind-Value="color"
-                                                  Tooltip="Font color">
+                                                  Tooltip="Font Color"
+                                                  CssClass="@GetCssClassWithSizeMode("rb-font-color", Params.SizeMode)">
                             <IconTemplate>
                                 @if(Themes.ActiveTheme.IsFluent) {
                                     <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -154,6 +155,14 @@
     private bool UnderlineActive { get; set; }
     private bool BoldActive { get; set; }
     private bool ItalicActive { get; set; }
+
+    string GetCssClassWithSizeMode(string cssClass, SizeMode sizeMode) {
+        return sizeMode switch {
+            SizeMode.Large => $"{cssClass} {cssClass}-lg",
+            SizeMode.Small => $"{cssClass} {cssClass}-sm",
+            _ => cssClass
+        };
+    }
 
     public override Task SetParametersAsync(ParameterView parameters) {
         FontStyle = FontStyles[0];

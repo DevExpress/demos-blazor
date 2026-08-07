@@ -13,7 +13,8 @@
         <DxDropDownBox @bind-Value="@Value"
                         QueryDisplayText="@QueryText"
                         NullText="Select color..."
-                        CssClass="cw-240" SizeMode="@Params.SizeMode">
+                        CssClass="cw-240" SizeMode="@Params.SizeMode"
+                        aria-label="Select color">
             <DropDownBodyTemplate>
                 <DxColorPalette Value="@GetColorDropDownValue(context.DropDownBox)"
                                 ValueChanged="@(value => ColorDropDownValueChanged(value, context.DropDownBox))"

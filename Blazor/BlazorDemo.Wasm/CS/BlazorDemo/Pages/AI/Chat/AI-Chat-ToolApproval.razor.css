@@ -21,7 +21,7 @@
     align-items: center;
     gap: 4px;
     padding: 0 0 12px;
-    font-size: var(--dxbl-chatui-message-font-size);
+    font-size: 1em;
     font-weight: var(--dxds-font-weight-base-strong, 700);
     color: var(--dxds-color-content-neutral-default-rest, var(--bs-body-color));
 }

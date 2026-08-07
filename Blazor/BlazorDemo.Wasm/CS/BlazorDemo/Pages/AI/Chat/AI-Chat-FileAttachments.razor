@@ -19,7 +19,7 @@ ShowSizeMode="true">
                     <DxAIChatFileUploadSettings MaxFileSize="10000000" MaxFileCount="3" AllowedFileExtensions="@Extensions[SelectedFileType]" FileTypeFilter="@Types[SelectedFileType]" />
                 </AIChatSettings>
                 <MessageTemplate>
-                    <div class="@GetMessageClasses(context)">
+                    <div class="@GetMessageClasses(context)" tabindex="0">
                         @if (context.Typing) {
                             <span>Loading...</span>
                         } else {

@@ -23,6 +23,7 @@
     <Compile Include="Models\DemoPage.cs" />
     <Compile Include="Models\DemoPageSection.cs" />
     <Compile Include="Models\DemoCodeFile.cs" />
+    <Compile Include="Models\DemoRwaInfo.cs" />
     <Compile Include="Models\DemoProductInfo.cs" />
     <Compile Include="Search\DemoSearchTokenProcessor.cs" />
     <Compile Include="Search\DemoSearchEngine.cs" />
