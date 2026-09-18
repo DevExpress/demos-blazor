@@ -1771,7 +1771,7 @@
                   "Id": "NestedGrid",
                   "Url": "Grid/MasterDetail/NestedGrid",
                   "Title": "Nested Grid",
-                  "DocUrl": "DevExpress.Blazor.DxGrid.DetailRowTemplate",
+                  "DocUrl": "406128",
                   "Keywords": "DxGrid, data grid, datagrid, grid, master grid, detail grid, master-detail relationship, master-detail view, detail row, custom content in rows, templated content",
                   "AdditionalCodeFiles": [
                     {
@@ -1812,7 +1812,7 @@
                   "Id": "RowPreview",
                   "Url": "Grid/MasterDetail/RowPreview",
                   "Title": "Row Preview",
-                  "DocUrl": "DevExpress.Blazor.DxGrid.DetailRowDisplayMode",
+                  "DocUrl": "406128",
                   "Keywords": "DxGrid, data grid, datagrid, grid, detail row, row preview template, preview sections, custom row appearance, custom content in rows, templated content",
                   "AdditionalCodeFiles": [
                     {
@@ -10426,17 +10426,17 @@
     {
       "Title": "Pivot Table",
       "PageUri": "PivotTable",
-      "IconKey": "table-fluent-filled-monochrome-32"
+      "IconKey": "sum"
     },
     {
       "Title": "Data Editors",
       "PageUri": "Editors",
-      "IconKey": "description-fluent-filled-monochrome-32"
+      "IconKey": "edit_pen-fluent-filled-monochrome-32"
     },
     {
       "Title": "Gauges",
       "PageUri": "BarGaugeGeometry",
-      "IconKey": "gauge_circular-fluent-filled-monochrome-32"
+      "IconKey": "gauge_circular"
     },
     {
       "Title": "Charts",
@@ -10461,7 +10461,7 @@
     {
       "Title": "Ribbon",
       "PageUri": "Ribbon",
-      "IconKey": "layout_row_single-fluent-filled-monochrome-32"
+      "IconKey": "layout_row_single"
     },
     {
       "Title": "Dialogs and Windows",
@@ -10471,7 +10471,7 @@
     {
       "Title": "File Management",
       "PageUri": "FileInput",
-      "IconKey": "folder-fluent-filled-monochrome-32"
+      "IconKey": "arrow_import_up"
     },
     {
       "Title": "HTML Editor",
@@ -10486,12 +10486,12 @@
     {
       "Title": "Rich Text Editor",
       "PageUri": "RichEdit",
-      "IconKey": "edit_pen-fluent-filled-monochrome-32"
+      "IconKey": "description-fluent-filled-monochrome-32"
     },
     {
       "Title": "Scheduler",
       "PageUri": "Scheduler",
-      "IconKey": "calendar-fluent-filled-monochrome-32"
+      "IconKey": "calendar"
     },
     {
       "Title": "Reports",
@@ -10513,7 +10513,12 @@
     {
       "Title": "Icon Library",
       "PageUri": "IconExplorer",
-      "IconKey": "home-fluent-filled-monochrome-32"
+      "IconKey": "toolbox"
+    },
+    {
+      "Title": "Office & PDF File API",
+      "PageUri": "https://demos.devexpress.com/OfficeFileApi",
+      "IconKey": "document_copy"
     }
   ],
   "RwaDemos": [

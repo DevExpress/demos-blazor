@@ -9,12 +9,13 @@ public class Startup {
             new System.ClientModel.ApiKeyCredential(azureOpenAIKey))
             .GetChatClient(deployment).AsIChatClient();
 
-        services.AddKeyedScoped<IChatClient>(ChatClientKeys.FunctionCallingWithGrid, (provider, key) => {
+        services.AddKeyedScoped<IChatResponseProvider>(ChatClientKeys.FunctionCallingWithGrid, (provider, key) => {
             var baseClient = provider.GetService<IChatClient>();
             return baseClient.AsBuilder()
                .UseDXTools()
                .UseFunctionInvocation()
-               .Build(provider);
+               .Build(provider)
+               .AsIChatResponseProvider();
         });
         services.AddDevExpressAI();
     }

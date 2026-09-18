@@ -16,7 +16,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" />
   </ItemGroup>
   <ItemGroup Condition="!Exists('..\..\..\..\Reporting\CS\DevExpress.DemoReports\DevExpress.DemoReports.NetCore.csproj')">
-    <PackageReference Include="DevExpress.Reporting.Demos" VersionOverride="26.1.4" />
+    <PackageReference Include="DevExpress.Reporting.Demos" VersionOverride="26.1.5" />
   </ItemGroup>
   <ItemGroup Condition="Exists('..\..\..\..\Reporting\CS\DevExpress.DemoReports\DevExpress.DemoReports.NetCore.csproj')">
     <ProjectReference Include="..\..\..\..\Reporting\CS\DevExpress.DemoReports\DevExpress.DemoReports.NetCore.csproj" />

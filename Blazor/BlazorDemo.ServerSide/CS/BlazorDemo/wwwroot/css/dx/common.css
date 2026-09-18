@@ -466,22 +466,22 @@ dxbl-check {
 /* Products */
 .demo-products .demo-product,
 .demo-products .demo-rwa {
-    border: 1px solid #D3D3D2;
+    border: 1px solid #DBDBDB;
     color: rgba(var(--bs-body-color-rgb), var(--bs-text-opacity));
 }
 
 .demo-products .demo-product:hover,
 .demo-products .demo-rwa:hover {
-    background-color: var(--bs-primary);
-    color: var(--bs-white);
+    color: var(--bs-primary);
+    box-shadow: var(--bs-box-shadow-lg);
 }
 
 .demo-products .demo-product > span {
     font-family: "Segoe UI";
     font-weight: 600;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    letter-spacing:0;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0;
 }
 
 .demo-products .demo-rwa .demo-rwa-title {
@@ -495,8 +495,8 @@ dxbl-check {
 .demo-products .demo-rwa .demo-rwa-info {
     font-family: "Segoe UI";
     font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
     letter-spacing:0;
 }
 

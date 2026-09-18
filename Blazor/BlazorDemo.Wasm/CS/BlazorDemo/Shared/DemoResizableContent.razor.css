@@ -57,3 +57,8 @@
         margin-right: initial;
     }
 }
+
+@media (forced-colors: active) {    ::deep .demo-img-resize {
+        background-color: CanvasText;
+    }
+}

@@ -24,3 +24,8 @@
     margin-right: 0.5rem;
 }
 
+@media (forced-colors: active) {
+    .popup-image {
+        background-color: CanvasText;
+    }
+}

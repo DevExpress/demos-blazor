@@ -1,9 +1,9 @@
 ﻿<DemoPageSectionComponent Id="Editors-MaskedInput-TextMasks" ShowSizeMode="true">
     <ChildContentWithParameters Context="Params">
         <label for="teTextMasks" class="demo-text cw-320 mb-1">
-            Telephone
+            Phone
         </label>
-        <DxMaskedInput @bind-Value="@Telephone"
+        <DxMaskedInput @bind-Value="@Phone"
                        SizeMode="Params.SizeMode"
                        CssClass="cw-320"
                        Mask="(999)000-0000"
@@ -11,7 +11,7 @@
             <DxTextMaskProperties Placeholder="Placeholder" SaveLiteral="SaveLiterals" />
         </DxMaskedInput>
         <p class="demo-text cw-320 mt-3">
-            The entered value is: <b>@Telephone</b>
+            The entered value is: <b>@Phone</b>
         </p>
     </ChildContentWithParameters>
 
@@ -26,7 +26,7 @@
 
     @code {
         IEnumerable<char> PredefinedPlaceholders = new List<char>() { '_', '#' };
-        string Telephone { get; set; } = "5625595830";
+        string Phone { get; set; } = "5625595830";
         char Placeholder { get; set; } = '_';
         bool SaveLiterals { get; set; } = true;
     }

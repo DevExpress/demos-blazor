@@ -12,4 +12,10 @@
 .theme-fluent-dark .card {
     --bs-card-border-color: transparent;
 }
+
+@media (forced-colors: active) {
+    .card {
+        border: none;
+    }
+}
 /*EndHide*/

@@ -1,6 +1,8 @@
-The DevExpress Blazor Grid component includes an integrated Search Box UI element. When users enter values within the Search Box, our Blazor Grid filters data rows, displays records that match the search string, and highlights search results. You can use the following properties to customize search behavior: 
+The DevExpress Blazor Grid component includes an integrated Search Box UI element. When users enter values within the Search Box, our Blazor Grid filters data rows, displays records that match the search string, and highlights search results. You can use the following properties to customize search behavior:
 
 * [DxGrid.SearchTextParseMode](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid.SearchTextParseMode) — Specifies how the Grid searches for a match if the query contains multiple words: an exact matching phrase, all words in any order, or any individual word. Select a value from the **Find Rows Containing** box to see how behavior changes.
 * [DxGridDataColumn.SearchEnabled](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGridDataColumn.SearchEnabled) — Allows you to exclude a specific column from search operations (the component searches across all visible data columns by default).
- 
+
 Enable the [ShowSearchBox](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid.ShowSearchBox) property to display the built-in Search Box. Use the [SearchText](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid.SearchText) property to set an initial search string or implement an external search editor.
+
+Refer to the following topic for additional information: [Search Box](https://docs.devexpress.com/Blazor/404142/components/grid/data-shaping/filter-data/search-box).

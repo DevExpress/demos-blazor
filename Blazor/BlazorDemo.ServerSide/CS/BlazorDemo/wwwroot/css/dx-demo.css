@@ -357,7 +357,7 @@ body,
     width: 330px;
     overflow: hidden;
     padding-bottom: calc(3.5rem + 60px);
-    box-shadow: inset -140px -8px 30px -100px rgba(0, 0, 0, 0.08);
+    border-right: 1px solid #DBDBDB;
     z-index: 1029;
 }
 
@@ -425,21 +425,28 @@ body,
 }
 
 .demo-group {
-    display: flex;
-    gap: .375rem;
     margin-left: 8px;
     margin-right: .75rem;
     margin-bottom: 0;
-    padding: 8px 10px;
-    border-bottom: 1px solid;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 8px;
     color: var(--dxbl-demo-group-color);
+}
+
+.demo-group-content {
+    display: flex;
+    gap: .375rem;
+    width: 100%;
+    padding-bottom: 8px;
+    border-bottom: 1px solid;
     border-bottom-color: var(--dxbl-demo-group-border-bottom-color);
 }
 
 .demo-group-title {
     font-size: 1em;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.4285em;
     text-overflow: ellipsis;
 }
@@ -465,8 +472,9 @@ body,
     --dxbl-treeview-spacing-y: 0.5rem;
 }
 
-.dxbl-treeview.sidebar-tree .dxbl-scroll-viewer-content > .dxbl-treeview-items-container > .dxbl-treeview-item > .dxbl-treeview-item-content > .dxbl-treeview-item-container {
-    --dxbl-treeview-font-weight: 600;
+.dxbl-treeview.sidebar-tree {
+    padding-top: 4px;
+    padding-bottom: 12px;
 }
 
 .dxbl-treeview.sidebar-tree .dxbl-treeview-items-container .dxbl-treeview-item .dxbl-treeview-item-container {
@@ -561,7 +569,7 @@ body,
     margin: 0;
     font-weight: normal;
     position: relative;
-    box-shadow: inset -140px -8px 30px -100px rgba(0, 0, 0, 0.08);
+    border-right: 1px solid #DBDBDB;
 }
 
 .search-editor::before {
@@ -1497,9 +1505,9 @@ body,
     flex-direction: column;
     align-items: center;
     min-width: 124px;
-    min-height: 140px;
+    min-height: 138px;
     padding: 0.75rem 0.5rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     text-align: center;
     text-decoration: none;
 }
@@ -1509,12 +1517,13 @@ body,
 .demo-products .demo-rwa {
     display: flex;
     flex-direction: row;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
 }
 .demo-products .demo-rwa .demo-rwa-image,
 .demo-products .demo-rwa .demo-rwa-text {
     flex: 1 1 0;
     padding: 1.5rem;
+    align-content: center;
 }
 @media (max-width: 990px) {
     .demo-products .demo-rwa {
@@ -1529,6 +1538,9 @@ body,
 .demo-products .demo-rwa .demo-rwa-image img {
     width: 100%;
     height: 100%;
+}
+.demo-products .demo-rwa .demo-rwa-title {
+    margin-bottom: 1rem;
 }
 .demo-products .demo-rwa .demo-rwa-title,
 .demo-products .demo-rwa .demo-rwa-info {
@@ -1563,9 +1575,9 @@ body,
     -webkit-mask-image: url("../images/icons/products/arrow_circle_right-fluent-filled-monochrome-32.svg");
     mask-image: url("../images/icons/products/arrow_circle_right-fluent-filled-monochrome-32.svg");
 }
-.calendar-fluent-filled-monochrome-32 {
-    -webkit-mask-image: url("../images/icons/products/calendar-fluent-filled-monochrome-32.svg");
-    mask-image: url("../images/icons/products/calendar-fluent-filled-monochrome-32.svg");
+.calendar {
+    -webkit-mask-image: url("../images/icons/products/calendar.svg");
+    mask-image: url("../images/icons/products/calendar.svg");
 }
 .code_block-fluent-filled-monochrome-32 {
     -webkit-mask-image: url("../images/icons/products/code_block-fluent-filled-monochrome-32.svg");
@@ -1595,25 +1607,25 @@ body,
     -webkit-mask-image: url("../images/icons/products/field_list-fluent-filled-monochrome-32.svg");
     mask-image: url("../images/icons/products/field_list-fluent-filled-monochrome-32.svg");
 }
-.folder-fluent-filled-monochrome-32 {
-    -webkit-mask-image: url("../images/icons/products/folder-fluent-filled-monochrome-32.svg");
-    mask-image: url("../images/icons/products/folder-fluent-filled-monochrome-32.svg");
+.arrow_import_up {
+    -webkit-mask-image: url("../images/icons/products/arrow_import_up.svg");
+    mask-image: url("../images/icons/products/arrow_import_up.svg");
 }
-.gauge_circular-fluent-filled-monochrome-32 {
-    -webkit-mask-image: url("../images/icons/products/gauge_circular-fluent-filled-monochrome-32.svg");
-    mask-image: url("../images/icons/products/gauge_circular-fluent-filled-monochrome-32.svg");
+.gauge_circular {
+    -webkit-mask-image: url("../images/icons/products/gauge_circular.svg");
+    mask-image: url("../images/icons/products/gauge_circular.svg");
 }
-.home-fluent-filled-monochrome-32 {
-    -webkit-mask-image: url("../images/icons/products/home-fluent-filled-monochrome-32.svg");
-    mask-image: url("../images/icons/products/home-fluent-filled-monochrome-32.svg");
+.toolbox {
+    -webkit-mask-image: url("../images/icons/products/toolbox.svg");
+    mask-image: url("../images/icons/products/toolbox.svg");
 }
 .layout_free-fluent-filled-monochrome-32 {
     -webkit-mask-image: url("../images/icons/products/layout_free-fluent-filled-monochrome-32.svg");
     mask-image: url("../images/icons/products/layout_free-fluent-filled-monochrome-32.svg");
 }
-.layout_row_single-fluent-filled-monochrome-32 {
-    -webkit-mask-image: url("../images/icons/products/layout_row_single-fluent-filled-monochrome-32.svg");
-    mask-image: url("../images/icons/products/layout_row_single-fluent-filled-monochrome-32.svg");
+.layout_row_single {
+    -webkit-mask-image: url("../images/icons/products/layout_row_single.svg");
+    mask-image: url("../images/icons/products/layout_row_single.svg");
 }
 .list_bar_tree_offset-fluent-filled-monochrome-32 {
     -webkit-mask-image: url("../images/icons/products/list_bar_tree_offset-fluent-filled-monochrome-32.svg");
@@ -1635,9 +1647,13 @@ body,
     -webkit-mask-image: url("../images/icons/products/table_header-fluent-filled-monochrome-32.svg");
     mask-image: url("../images/icons/products/table_header-fluent-filled-monochrome-32.svg");
 }
-.table-fluent-filled-monochrome-32 {
-    -webkit-mask-image: url("../images/icons/products/table-fluent-filled-monochrome-32.svg");
-    mask-image: url("../images/icons/products/table-fluent-filled-monochrome-32.svg");
+.sum {
+    -webkit-mask-image: url("../images/icons/products/sum.svg");
+    mask-image: url("../images/icons/products/sum.svg");
+}
+.document_copy {
+    -webkit-mask-image: url("../images/icons/products/document_copy.svg");
+    mask-image: url("../images/icons/products/document_copy.svg");
 }
 
 /* Icons */

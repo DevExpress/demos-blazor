@@ -613,7 +613,7 @@ namespace DevExpress.Web.Demos {
 				var url = HttpContext.Current.Request.Url.AbsolutePath;
 				var productUrl = "/" + CurrentDemo.Product.Url;
 				url = url.Substring(0, url.IndexOf(productUrl, StringComparison.InvariantCultureIgnoreCase) + 1);
-				str.AppendFormat("{0}{1}/", url, demo.Product.Url);
+				str.AppendFormat("{0}{1}{2}/", url, demo.Product.Url, AppUrlPostfix);
 			}
 			DemoPageModel demoPage = demo as DemoPageModel;
 			bool hasDemoVirtualGroupKey = demoPage != null && !string.IsNullOrEmpty(demoPage.VirtualGroupKey);
@@ -691,6 +691,15 @@ namespace DevExpress.Web.Demos {
 					_isSiteMode = ConfigurationManager.AppSettings["SiteMode"].Equals("true", StringComparison.InvariantCultureIgnoreCase);
 				}
 				return _isSiteMode.Value;
+			}
+		}
+		static string _appUrlPostfix;
+		public static string AppUrlPostfix {
+			get {
+				if(_appUrlPostfix == null) {
+					_appUrlPostfix = ConfigurationManager.AppSettings["AppUrlPostfix"] ?? "";
+				}
+				return _appUrlPostfix;
 			}
 		}
 		static bool? _patchConnectionStrings;

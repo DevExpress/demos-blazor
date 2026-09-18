@@ -35,6 +35,11 @@
         height: 80px;
     }
 }
+@media (forced-colors: active) {
+    .e-divider {
+        background-color: CanvasText;
+    }
+}
 /*BeginHide*/::deep /*EndHide*/.e-details {
     width: 100%;
 }

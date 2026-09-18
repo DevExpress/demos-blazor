@@ -2942,7 +2942,7 @@ Here is a short summary on this accessible webpage implementation:
 <li>Specify <helplink href="https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxEdit.ValidationSettings">ValidationSettings</helplink> and <helplink href="https://docs.devexpress.com/AspNet/DevExpress.Web.ValidationSettings.SetFocusOnError">SetFocusOnError</helplink> properties for the data editors.</li>
 </ul>
 <p>
-Check the accessibility level of editors in this demo by clicking the <strong>Validate with WAVE</strong> link and running <helplink href="https://www.w3.org/WAI/ER/tools/#wave">WAVE</helplink> (a web accessibility evaluation tool). Note that data editors can look and operate correctly when the <helplink href="https://support.microsoft.com/en-US/accessibility/windows/change-color-contrast-in-windows">High Contrast</helplink> mode is enabled in Windows OS.
+Check the accessibility level of editors in this demo by clicking the <strong>Validate with WAVE</strong> link and running <helplink href="https://www.w3.org/WAI/ER/tools/#wave">WAVE</helplink> (a web accessibility evaluation tool). Note that data editors can look and operate correctly when the <helplink href="https://support.microsoft.com/en-us/accessibility/windows/change-color-contrast-in-windows">High Contrast</helplink> mode is enabled in Windows OS.
 </p>
 <p>
 To learn more on accessibility support in DevExpress ASP.NET controls, please view the <helplink href="https://www.devexpress.com/products/net/controls/asp/accessibility.xml">Section 508 and Accessibility</helplink> and <helplink href="https://docs.devexpress.com/AspNet/5294/common-concepts/accessibility-support">Accessibility Support</helplink> topics.
@@ -2967,7 +2967,7 @@ To learn more on accessibility support in DevExpress ASP.NET controls, please vi
                 <li>Handle the <helplink href="https://docs.devexpress.com/AspNet/js-ASPxClientGridView.EndCallback">ASPxClientGridView.EndCallback</helplink> event to check if the grid's content has been changed after a user selected or deselected list box items. If any changes occur, pass the generated message text as an argument to the <helplink href="https://docs.devexpress.com/AspNet/js-ASPxClientUtils.SendMessageToAssistiveTechnology.static(message)">ASPxClientUtils.SendMessageToAssistiveTechnology</helplink> method.</li>
                 </ul>
                 <p>
-                To check the accessibility level of the controls used in the demo, run the <a href="https://wave.webaim.org/report#/https://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">WAVE</a> or <a href="https://validator.w3.org/nu/?doc=http://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">W3C</a> automated web accessibility evaluation tool. In addition, you can enable the <a href="https://support.microsoft.com/en-US/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
+                To check the accessibility level of the controls used in the demo, run the <a href="https://wave.webaim.org/report#/https://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">WAVE</a> or <a href="https://validator.w3.org/nu/?doc=http://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">W3C</a> automated web accessibility evaluation tool. In addition, you can enable the <a href="https://support.microsoft.com/en-us/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
                 </p>
                 
         ]]>
@@ -5651,7 +5651,7 @@ The DevExpress ASP.NET Grid View control (<helplink href="https://docs.devexpres
 This demo illustrates how to make the ASPxGridView control more accessible for end-users by enabling the <helplink href="https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxGridBase.AccessibilityCompliant">AccessibilityCompliant</helplink> property and defining a caption through the <helplink href="https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxGridView.Caption">Caption</helplink> property.
 </p> 
 <p>
-Check ASPxGridView's accessibility level in this demo by clicking the <strong>Validate with WAVE</strong> link and running <helplink href="https://www.w3.org/WAI/ER/tools/#wave">WAVE</helplink> (a web accessibility evaluation tool). Note that ASPxGridView can look and operate correctly when the <helplink href="https://support.microsoft.com/en-US/accessibility/windows/change-color-contrast-in-windows">High Contrast</helplink> mode is enabled in Windows OS.
+Check ASPxGridView's accessibility level in this demo by clicking the <strong>Validate with WAVE</strong> link and running <helplink href="https://www.w3.org/WAI/ER/tools/#wave">WAVE</helplink> (a web accessibility evaluation tool). Note that ASPxGridView can look and operate correctly when the <helplink href="https://support.microsoft.com/en-us/accessibility/windows/change-color-contrast-in-windows">High Contrast</helplink> mode is enabled in Windows OS.
 </p>
 <p>
 To learn more on accessibility support in DevExpress ASP.NET controls, please view the <helplink href="https://www.devexpress.com/products/net/controls/asp/accessibility.xml">Section 508 and Accessibility</helplink> and <helplink href="https://docs.devexpress.com/AspNet/5294/common-concepts/accessibility-support">Accessibility Support</helplink> topics.
@@ -5671,7 +5671,7 @@ The DevExpress ASP.NET Grid View control (<helplink href="https://docs.devexpres
 This demo illustrates how to make the ASPxGridView control more accessible for end-users by enabling the <helplink href="https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxGridBase.AccessibilityCompliant">AccessibilityCompliant</helplink> property and defining a caption through the <helplink href="https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxGridView.Caption">Caption</helplink> property.
 </p> 
 <p>
-Check ASPxGridView's accessibility level in this demo by clicking the <strong>Validate with WAVE</strong> link and running <helplink href="https://www.w3.org/WAI/ER/tools/#wave">WAVE</helplink> (a web accessibility evaluation tool). Note that ASPxGridView can look and operate correctly when the <helplink href="https://support.microsoft.com/en-US/accessibility/windows/change-color-contrast-in-windows">High Contrast</helplink> mode is enabled in Windows OS.
+Check ASPxGridView's accessibility level in this demo by clicking the <strong>Validate with WAVE</strong> link and running <helplink href="https://www.w3.org/WAI/ER/tools/#wave">WAVE</helplink> (a web accessibility evaluation tool). Note that ASPxGridView can look and operate correctly when the <helplink href="https://support.microsoft.com/en-us/accessibility/windows/change-color-contrast-in-windows">High Contrast</helplink> mode is enabled in Windows OS.
 </p>
 <p>
 To learn more on accessibility support in DevExpress ASP.NET controls, please view the <helplink href="https://www.devexpress.com/products/net/controls/asp/accessibility.xml">Section 508 and Accessibility</helplink> and <helplink href="https://docs.devexpress.com/AspNet/5294/common-concepts/accessibility-support">Accessibility Support</helplink> topics.
@@ -6191,7 +6191,7 @@ The DevExpress ASP.NET Card View control (<helplink href="https://docs.devexpres
 This demo illustrates how to make the ASPxCardView control more accessible for end-users by enabling the <helplink href="https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxGridBase.AccessibilityCompliant">AccessibilityCompliant</helplink> property.
 </p> 
 <p>
-Check ASPxCardView's accessibility level in this demo by clicking the <strong>Validate with WAVE</strong> link and running <helplink href="https://www.w3.org/WAI/ER/tools/#wave">WAVE</helplink> (a web accessibility evaluation tool). Note that ASPxGridView can look and operate correctly when the <helplink href="https://support.microsoft.com/en-US/accessibility/windows/change-color-contrast-in-windows">High Contrast</helplink> mode is enabled in Windows OS.
+Check ASPxCardView's accessibility level in this demo by clicking the <strong>Validate with WAVE</strong> link and running <helplink href="https://www.w3.org/WAI/ER/tools/#wave">WAVE</helplink> (a web accessibility evaluation tool). Note that ASPxGridView can look and operate correctly when the <helplink href="https://support.microsoft.com/en-us/accessibility/windows/change-color-contrast-in-windows">High Contrast</helplink> mode is enabled in Windows OS.
 </p>
 <p>
 To learn more on accessibility support in DevExpress ASP.NET controls, please view the <helplink href="https://www.devexpress.com/products/net/controls/asp/accessibility.xml">Section 508 and Accessibility</helplink> and <helplink href="https://docs.devexpress.com/AspNet/5294/common-concepts/accessibility-support">Accessibility Support</helplink> topics.
@@ -6560,7 +6560,7 @@ The DevExpress ASP.NET Vertical Grid control (<helplink href="https://docs.devex
 This demo illustrates how to make the ASPxVerticalGrid control more accessible for end-users by enabling the <helplink href="https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxGridBase.AccessibilityCompliant">AccessibilityCompliant</helplink> property.
 </p> 
 <p>
-Check ASPxVerticalGrid's accessibility level in this demo by clicking the <strong>Validate with WAVE</strong> link and running <helplink href="https://www.w3.org/WAI/ER/tools/#wave">WAVE</helplink> (a web accessibility evaluation tool). Note that ASPxVerticalGrid can look and operate correctly when the <helplink href="https://support.microsoft.com/en-US/accessibility/windows/change-color-contrast-in-windows">High Contrast</helplink> mode is enabled in Windows OS.
+Check ASPxVerticalGrid's accessibility level in this demo by clicking the <strong>Validate with WAVE</strong> link and running <helplink href="https://www.w3.org/WAI/ER/tools/#wave">WAVE</helplink> (a web accessibility evaluation tool). Note that ASPxVerticalGrid can look and operate correctly when the <helplink href="https://support.microsoft.com/en-us/accessibility/windows/change-color-contrast-in-windows">High Contrast</helplink> mode is enabled in Windows OS.
 </p>
 <p>
 To learn more on accessibility support in DevExpress ASP.NET controls, please view the <helplink href="https://www.devexpress.com/products/net/controls/asp/accessibility.xml">Section 508 and Accessibility</helplink> and <helplink href="https://docs.devexpress.com/AspNet/5294/common-concepts/accessibility-support">Accessibility Support</helplink> topics.
@@ -9599,7 +9599,7 @@ Controls from the <helplink href="https://docs.devexpress.com/AspNet/14826/compo
 This demo illustrates how to make navigation and layout controls (<helplink href="https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxMenu">ASPxMenu</helplink>, <helplink href="https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxPopupMenu">ASPxPopupMenu</helplink>, <helplink href="https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxNavBar">ASPxNavBar</helplink>, <helplink href="https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxTreeView">ASPxTreeView</helplink>) more accessible for end-users by enabling the <helplink href="https://docs.devexpress.com/AspNet/116705/common-concepts/accessibility-support/controls-and-extensions-exposing-the-accessibilitycompliant-property">AccessibilityCompliant</helplink> property of the controls.
 </p> 
 <p>
-Check the accessibility level of controls in this demo by clicking the <strong>Validate with WAVE</strong> link and running <helplink href="https://www.w3.org/WAI/ER/tools/#wave">WAVE</helplink> (a web accessibility evaluation tool). Note that navigation and layout controls can look and operate correctly when the <helplink href="https://support.microsoft.com/en-US/accessibility/windows/change-color-contrast-in-windows">High Contrast</helplink> mode is enabled in Windows OS.
+Check the accessibility level of controls in this demo by clicking the <strong>Validate with WAVE</strong> link and running <helplink href="https://www.w3.org/WAI/ER/tools/#wave">WAVE</helplink> (a web accessibility evaluation tool). Note that navigation and layout controls can look and operate correctly when the <helplink href="https://support.microsoft.com/en-us/accessibility/windows/change-color-contrast-in-windows">High Contrast</helplink> mode is enabled in Windows OS.
 </p>
 <p>
 To learn more on accessibility support in DevExpress ASP.NET controls, please view the <helplink href="https://www.devexpress.com/products/net/controls/asp/accessibility.xml">Section 508 and Accessibility</helplink> and <helplink href="https://docs.devexpress.com/AspNet/5294/common-concepts/accessibility-support">Accessibility Support</helplink> topics.
@@ -10618,11 +10618,6 @@ To learn more on accessibility support in DevExpress ASP.NET controls, please vi
 		  ]]>
         </Description>
       </Demo>      
-      <Demo Key="MobileViewer" Title="Mobile Viewer">
-        <Description>
-          <![CDATA[<p>This demo illustrates a Document Viewer for mobile devices.</p><p>The Mobile Viewer enables you to view, export and navigate documents on phones and tablets. The viewer supports text search and provides a user interface to enter report parameter values.</p>]]>
-        </Description>
-      </Demo>
     </DemoGroup>
 
   </DemoProduct>
@@ -11741,7 +11736,7 @@ The DevExpress ASP.NET Tree List control (<helplink href="https://docs.devexpres
 This demo illustrates how to make the ASPxTreeList control more accessible for end-users by enabling the <helplink href="https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxTreeList.ASPxTreeList.AccessibilityCompliant">AccessibilityCompliant</helplink> property and defining a caption through the <helplink href="https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxTreeList.ASPxTreeList.Caption">Caption</helplink> property.
 </p> 
 <p>
-Check ASPxTreeList's accessibility level in this demo by clicking the <strong>Validate with WAVE</strong> link and running <helplink href="https://www.w3.org/WAI/ER/tools/#wave">WAVE</helplink> (a web accessibility evaluation tool). Note that ASPxTreeList can look and operate correctly when the <helplink href="https://support.microsoft.com/en-US/accessibility/windows/change-color-contrast-in-windows">High Contrast</helplink> mode is enabled in Windows OS.
+Check ASPxTreeList's accessibility level in this demo by clicking the <strong>Validate with WAVE</strong> link and running <helplink href="https://www.w3.org/WAI/ER/tools/#wave">WAVE</helplink> (a web accessibility evaluation tool). Note that ASPxTreeList can look and operate correctly when the <helplink href="https://support.microsoft.com/en-us/accessibility/windows/change-color-contrast-in-windows">High Contrast</helplink> mode is enabled in Windows OS.
 </p>
 <p>
 To learn more on accessibility support in DevExpress ASP.NET controls, please view the <helplink href="https://www.devexpress.com/products/net/controls/asp/accessibility.xml">Section 508 and Accessibility</helplink> and <helplink href="https://docs.devexpress.com/AspNet/5294/common-concepts/accessibility-support">Accessibility Support</helplink> topics.

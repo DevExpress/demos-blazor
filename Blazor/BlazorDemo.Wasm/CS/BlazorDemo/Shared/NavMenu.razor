@@ -7,17 +7,22 @@
 @foreach(var group in VisibleGroups) {
     if(!Configuration.IsSingleProduct) {
         <div class="demo-group">
-            <svg class="demo-group-icon dxbl-image">
-                <use class="demo-group-icon-classic" href="@GetGroupIconUrl(group)"></use>
-                <use class="demo-group-icon-fluent" href="@GetGroupIconUrl(group, true)"></use>
-            </svg>
-            <h5 class="demo-group-title">
-                @if(SearchResult != null) {
-                    @(new MarkupString(SearchResult.GetHighlightedMarkup(group.Title)))
-                } else {
-                    @group.Title
+            <div class="demo-group-content">
+                @if(!String.IsNullOrEmpty(GetGroupIconUrl(group)) || !String.IsNullOrEmpty(GetGroupIconUrl(group, true))) {
+                    <svg class="demo-group-icon dxbl-image">
+                        <use class="demo-group-icon-classic" href="@GetGroupIconUrl(group)"></use>
+                        <use class="demo-group-icon-fluent" href="@GetGroupIconUrl(group, true)"></use>
+                    </svg>
                 }
-            </h5>
+                <span class="demo-group-title">
+                    @if(SearchResult != null) {
+                        @(new MarkupString(SearchResult.GetHighlightedMarkup(group.Title)))
+                    }
+                    else {
+                        @group.Title
+                    }
+                </span>
+            </div>
         </div>
     }
 
@@ -254,7 +259,7 @@
         if(string.IsNullOrEmpty(group.Icon))
             return string.Empty;
         var fluentPostfix = isFluent ? "-fluent" : string.Empty;
-        return StaticAssetUtils.GetImagePath($"icons/{group.Icon}{fluentPostfix}.svg");
+        return StaticAssetUtils.GetImagePath($"icons/{group.Icon}{fluentPostfix}.svg#ai-icon");
     }
 
     static string GetItemCssClass(DemoItem item) {

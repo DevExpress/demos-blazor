@@ -1418,7 +1418,7 @@ You can try GridView with a responsive layout in the <a href="ResponsiveLayout">
                 </p>
                 <p>
                     To check the accessibility level of the extensions used in the demo, run the <a href="https://wave.webaim.org/report#/https://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">WAVE</a> or <a href="https://validator.w3.org/nu/?doc=http://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">W3C</a> automated web accessibility evaluation tool.
-                    In addition, you can enable the <a href="https://support.microsoft.com/en-US/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
+                    In addition, you can enable the <a href="https://support.microsoft.com/en-us/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
                 </p>
                 <p><b>See also</b>:</p>
                 <p><a href="https://docs.devexpress.com/AspNet/116777/common-concepts/accessibility-support/accessibility-best-practices" target="_blank">Accessibility Techniques Used in DevExpress Demos</a></p>
@@ -1439,7 +1439,7 @@ You can try GridView with a responsive layout in the <a href="ResponsiveLayout">
                 </p>
                 <p>
                     To check the accessibility level of the extensions used in the demo, run the <a href="https://wave.webaim.org/report#/https://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">WAVE</a> or <a href="https://validator.w3.org/nu/?doc=http://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">W3C</a> automated web accessibility evaluation tool.
-                    In addition, you can enable the <a href="https://support.microsoft.com/en-US/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
+                    In addition, you can enable the <a href="https://support.microsoft.com/en-us/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
                 </p>
                 <p><b>See also</b>:</p>
                 <p><a href="https://docs.devexpress.com/AspNet/116777/common-concepts/accessibility-support/accessibility-best-practices" target="_blank">Accessibility Techniques Used in DevExpress Demos</a></p>
@@ -2075,7 +2075,7 @@ Template is defined by using the <helplink href="https://docs.devexpress.com/Asp
                 </p>
                 <p>
                     To check the accessibility level of the extensions used in the demo, run the <a href="https://wave.webaim.org/report#/https://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">WAVE</a> or <a href="https://validator.w3.org/nu/?doc=http://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">W3C</a> automated web accessibility evaluation tool.
-                    In addition, you can enable the <a href="https://support.microsoft.com/en-US/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
+                    In addition, you can enable the <a href="https://support.microsoft.com/en-us/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
                 </p>
                 <p><b>See also</b>:</p>
                 <p><a href="https://docs.devexpress.com/AspNet/116777/common-concepts/accessibility-support/accessibility-best-practices" target="_blank">Accessibility Techniques Used in DevExpress Demos</a></p>
@@ -2522,7 +2522,7 @@ Note that toolbar items expose the <helplink href="https://docs.devexpress.com/A
                 </p>
                 <p>
                     To check the accessibility level of the extensions used in the demo, run the <a href="https://wave.webaim.org/report#/https://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">WAVE</a> or <a href="https://validator.w3.org/nu/?doc=http://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">W3C</a> automated web accessibility evaluation tool.
-                    In addition, you can enable the <a href="https://support.microsoft.com/en-US/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
+                    In addition, you can enable the <a href="https://support.microsoft.com/en-us/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
                 </p>
                 <p><b>See also</b>:</p>
                 <p><a href="https://docs.devexpress.com/AspNet/116777/common-concepts/accessibility-support/accessibility-best-practices" target="_blank">Accessibility Techniques Used in DevExpress Demos</a></p>
@@ -3019,11 +3019,6 @@ Note that toolbar items expose the <helplink href="https://docs.devexpress.com/A
         <SourceFile>~/Views/WebSpecificFeatures/ColorSchemeCustomizationPartial.cshtml</SourceFile>
         <SourceFile>~/Models/ReportsDemoModel.cs</SourceFile>
       </Demo>    
-      <Demo Key="MobileViewer" Title="Mobile Viewer">
-        <Description>
-          <![CDATA[<p>This demo illustrates a Document Viewer for mobile devices.</p><p>The Mobile Viewer enables you to view, export and navigate documents on phones and tablets. The viewer supports text search and provides a user interface to enter report parameter values.</p>]]>
-        </Description>
-      </Demo>
     </DemoGroup>
   </DemoProduct>
 
@@ -6782,7 +6777,7 @@ You can disable the access key auto generation by setting the <helplink href="ht
                 </p>
                 <p>
                     To check the accessibility level of the extensions used in the demo, run the <a href="https://wave.webaim.org/report#/https://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">WAVE</a> or <a href="https://validator.w3.org/nu/?doc=http://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">W3C</a> automated web accessibility evaluation tool.
-                    In addition, you can enable the <a href="https://support.microsoft.com/en-US/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
+                    In addition, you can enable the <a href="https://support.microsoft.com/en-us/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
                 </p>
                 <p><b>See also</b>:</p>
                 <p><a href="https://docs.devexpress.com/AspNet/116777/common-concepts/accessibility-support/accessibility-best-practices" target="_blank">Accessibility Techniques Used in DevExpress Demos</a></p>
@@ -8063,7 +8058,7 @@ Note that toolbar items expose the <helplink href="https://docs.devexpress.com/A
                 </p>
                 <p>
                     To check the accessibility level of the extensions used in the demo, run the <a href="https://wave.webaim.org/report#/https://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">WAVE</a> or <a href="https://validator.w3.org/nu/?doc=http://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">W3C</a> automated web accessibility evaluation tool.
-                    In addition, you can enable the <a href="https://support.microsoft.com/en-US/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
+                    In addition, you can enable the <a href="https://support.microsoft.com/en-us/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
                 </p>
                 <p><b>See also</b>:</p>
                 <p><a href="https://docs.devexpress.com/AspNet/116777/common-concepts/accessibility-support/accessibility-best-practices" target="_blank">Accessibility Techniques Used in DevExpress Demos</a></p>
@@ -9342,7 +9337,7 @@ Note that toolbar items expose the <helplink href="https://docs.devexpress.com/A
                 </ul>
                 <p>
                     To check the accessibility level of the extensions used in the demo, run the <a href="https://wave.webaim.org/report#/https://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">WAVE</a> or <a href="https://validator.w3.org/nu/?doc=http://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">W3C</a> automated web accessibility evaluation tool.
-                    In addition, you can enable the <a href="https://support.microsoft.com/en-US/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
+                    In addition, you can enable the <a href="https://support.microsoft.com/en-us/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
                 </p>
                 <p><b>See also</b>:</p>
                 <p><a href="https://docs.devexpress.com/AspNet/116777/common-concepts/accessibility-support/accessibility-best-practices" target="_blank">Accessibility Techniques Used in DevExpress Demos</a></p>
@@ -9365,7 +9360,7 @@ Note that toolbar items expose the <helplink href="https://docs.devexpress.com/A
                 <li>Handle the <helplink href="https://docs.devexpress.com/AspNet/js-ASPxClientGridView.EndCallback">MVCxClientGridView.EndCallback</helplink> event to check if the grid's content has been changed after a user selected or deselected list box items. If any changes occur, pass the generated message text as an argument to the <helplink href="https://docs.devexpress.com/AspNet/js-ASPxClientUtils.SendMessageToAssistiveTechnology.static(message)">ASPxClientUtils.SendMessageToAssistiveTechnologies</helplink> method.</li>
                 </ul>
                 <p>
-                To check the accessibility level of the controls used in the demo, run the <a href="https://wave.webaim.org/report#/https://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">WAVE</a> or <a href="https://validator.w3.org/nu/?doc=http://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">W3C</a> automated web accessibility evaluation tool. In addition, you can enable the <a href="https://support.microsoft.com/en-US/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
+                To check the accessibility level of the controls used in the demo, run the <a href="https://wave.webaim.org/report#/https://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">WAVE</a> or <a href="https://validator.w3.org/nu/?doc=http://demos.devexpress.com/ASPxEditorsDemos/Features/RightToLeft.aspx">W3C</a> automated web accessibility evaluation tool. In addition, you can enable the <a href="https://support.microsoft.com/en-us/accessibility/windows/change-color-contrast-in-windows" target="_blank">High Contrast</a> mode to make sure the demo is rendered correctly in this mode.
                 </p>
                 <p>See also: <a href="https://docs.devexpress.com/AspNet/116777/common-concepts/accessibility-support/accessibility-best-practices" target="_blank">Accessibility Techniques Used in DevExpress Demos</a></p>                                                
         ]]>

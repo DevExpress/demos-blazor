@@ -8,3 +8,8 @@
     font-weight: 600;
     line-height: 1.2;
 }
+
+@media (forced-colors: active) {    .demo-treeview-template .treeview-expand-btn {
+        background-color: CanvasText;
+    }
+}

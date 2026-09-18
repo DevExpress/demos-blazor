@@ -350,6 +350,7 @@ body.modal-open .main {
     display: flex;
     align-items: center;
     justify-content: center;
+    forced-color-adjust: none;
 }
 
 .gridlayout-item:before,
@@ -362,6 +363,7 @@ body.modal-open .main {
     left: 0;
     top: 0;
     opacity: 0.4;
+    forced-color-adjust: none;
 }
 
 .gridlayout-header:before,
@@ -756,6 +758,7 @@ body.modal-open .main {
     -webkit-mask-repeat: no-repeat;
     mask-image: url(../images/icons/logo-color.svg);
     -webkit-mask-image: url(../images/icons/logo-color.svg);
+    forced-color-adjust: none;
 }
 
 .icon-devexpress-title {
@@ -1533,9 +1536,10 @@ body.modal-open .main {
 }
 
 .demo-treeview-template .treeview-template-icon {
-    padding: 7px;
+    padding: 6px;
     width: 30px;
     height: 30px;
+    pointer-events: none;
 }
 
 .demo-treeview-template .treeview-expand-btn {
@@ -1656,4 +1660,12 @@ body:has(header:not(.theme-blazing-dark):not(.theme-default-dark):not(.theme-flu
 .icon-preview.size-48 .dxbl-image {
     --dxbl-image-width: 48px;
     --dxbl-image-height: 48px;
+}
+
+@media (forced-colors: active) {
+    .e-icon,
+    .menu-icon,
+    .icon-logo {
+        background-color: CanvasText;
+    }
 }

@@ -575,22 +575,22 @@ body {
 /* Products */
 .demo-products .demo-product,
 .demo-products .demo-rwa {
-    border: 1px solid var(--dxds-color-border-neutral-default-rest);
+    border: 1px solid var(--dxds-color-border-neutral-subdued-rest);
     color: var(--dxds-color-content-neutral-default-rest);
 }
 
 .demo-products .demo-product:hover,
 .demo-products .demo-rwa:hover {
-    background-color: var(--dxds-color-surface-primary-default-rest);
-    color: var(--dxds-color-content-neutral-default-static-dark-rest);
+    color: var(--dxds-color-content-primary-default-rest);
+    box-shadow: var(--dxds-box-shadow-lg);
 }
 
 .demo-products .demo-product > span {
     font-family: var(--dxds-font-family-sans-serif);
     font-weight: var(--dxds-font-weight-title-default);
-    font-size: var(--dxds-font-size-title-sm);
-    line-height: var(--dxds-line-height-title-sm);
-    letter-spacing: var(--dxds-letter-spacing-title-sm);
+    font-size: var(--dxds-font-size-title-xs);
+    line-height: var(--dxds-line-height-title-xs);
+    letter-spacing: var(--dxds-letter-spacing-title-xs);
 }
 
 .demo-products .demo-rwa .demo-rwa-title {
@@ -604,13 +604,13 @@ body {
 .demo-products .demo-rwa .demo-rwa-info {
     font-family: var(--dxds-font-family-sans-serif);
     font-weight: var(--dxds-font-weight-base-default);
-    font-size: var(--dxds-font-size-base-lg);
-    line-height: var(--dxds-line-height-base-lg);
-    letter-spacing: var(--dxds-letter-spacing-base-lg);
+    font-size: var(--dxds-font-size-base-md);
+    line-height: var(--dxds-line-height-base-md);
+    letter-spacing: var(--dxds-letter-spacing-base-md);
 }
 
 .demo-product-icon {
-    background-color: var(--dxds-color-surface-primary-subdued-rest);
+    background-color: var(--dxds-color-surface-primary-alpha-rest);
 }
 .demo-product-icon span {
     background-color: var(--dxds-color-content-primary-default-rest);

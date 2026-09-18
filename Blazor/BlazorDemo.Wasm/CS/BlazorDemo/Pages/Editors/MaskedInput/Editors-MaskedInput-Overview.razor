@@ -4,7 +4,7 @@
             <label for="textMaskID" class="demo-text mb-1">
                 Text Mask
             </label>
-            <DxMaskedInput @bind-Value="@Telephone"
+            <DxMaskedInput @bind-Value="@Phone"
                            SizeMode="Params.SizeMode"
                            CssClass="cw-320"
                            InputId="textMaskID"
@@ -61,6 +61,6 @@
         DateTimeOffset DateOffset { get; set; } = DateTimeOffset.Now;
         string EmailMask { get; set; } = @"(\w|[.-])+@(\w|-)+\.(\w|-){2,4}";
         string Email { get; set; } = "leahs@dx-email.com";
-        string Telephone { get; set; } = "5625595830";
+        string Phone { get; set; } = "5625595830";
     }
 </DemoPageSectionComponent>
