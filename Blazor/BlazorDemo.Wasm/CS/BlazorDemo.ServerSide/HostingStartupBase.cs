@@ -40,6 +40,11 @@ namespace BlazorDemo.ServerSide {
                     app.UsePathBase(pathString);
                 }
 
+                app.Use((httpContext, next) => {
+                    httpContext.Response.Headers["Permissions-Policy"] = "unload=(self)";
+                    return next(httpContext);
+                });
+
                 app.UseRequestLocalization(new RequestLocalizationOptions().SetDefaultCulture("en-US"));
 
                 app.UseResponseCompression();

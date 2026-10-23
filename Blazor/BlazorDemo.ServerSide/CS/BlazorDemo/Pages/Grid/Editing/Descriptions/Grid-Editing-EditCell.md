@@ -34,6 +34,4 @@ Hides the editor, focuses the next/previous data cell, and displays an editor in
 
 When the [EditOnKeyPress](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxGrid.EditOnKeyPress) property is enabled, users can start editing a cell by entering a value within it. The editor opens automatically and accepts entered characters. Select the **Edit on Key Press** option to try it out.
 
-In this demo, you can open a context menu to test edit cell mode in combination with other Grid features.
-
 For additional information on how you can enable data editing and use edit-related options, refer to the following help topic: [Edit Cell](https://docs.devexpress.com/Blazor/404756/components/grid/editing-and-validation/edit-modes/edit-cell).

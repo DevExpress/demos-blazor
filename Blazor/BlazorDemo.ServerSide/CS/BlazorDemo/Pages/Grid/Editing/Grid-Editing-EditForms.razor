@@ -65,6 +65,7 @@
                                         TextFieldName="CountryName"
                                         ValueFieldName="CountryName"
                                         Value="@supplier.Country"
+                                        ValueExpression="@(() => supplier.Country)"
                                         ValueChanged="(string newCellValue) => {
                                                             supplier.Country = newCellValue;
                                                             supplier.City = null;

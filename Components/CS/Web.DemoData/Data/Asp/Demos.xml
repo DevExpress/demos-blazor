@@ -4190,8 +4190,7 @@ A toolbar is implemented using the DevExpress <a href="https://demos.devexpress.
     <Keywords>gridview, table, datatable, grid, datagrid</Keywords>
     <IntegrationImageUrl>~/Content/Grid.jpg</IntegrationImageUrl>
     <IntegrationDescription>
-      Unlimited master-detail levels, Web Accessibility support,
-      SharePoint integration and unmatched end-user data analysis capabilities.
+      Unlimited master-detail levels, Web Accessibility support, and unmatched end-user data analysis capabilities.
     </IntegrationDescription>
 
     <Intro Title="Introduction" SeoTitle="ASP.NET AJAX Data Grid Control">

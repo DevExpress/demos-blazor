@@ -73,6 +73,11 @@ if(!string.IsNullOrEmpty(pathBase)) {
     app.UsePathBase(pathString);
 }
 
+app.Use((httpContext, next) => {
+    httpContext.Response.Headers["Permissions-Policy"] = "unload=(self)";
+    return next(httpContext);
+});
+
 app.UseRouting();
 
 // Configure the HTTP request pipeline.

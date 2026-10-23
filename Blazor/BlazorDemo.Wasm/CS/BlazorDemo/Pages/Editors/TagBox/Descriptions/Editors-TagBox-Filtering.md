@@ -1,6 +1,6 @@
 The DevExpress Blazor [TagBox](https://docs.devexpress.com/Blazor/DevExpress.Blazor.DxTagBox-2) allows users to filter data. When a user enters text in the edit box, the TagBox searches for this text in all visible columns, filters items, and highlights matches.
 
-Users can use [special characters](xref:DevExpress.Blazor.Base.DxDropDownListEditorBase`2.SearchMode#search-syntax) to create composite criteria.
+Users can use [special characters](https://docs.devexpress.com/Blazor/DevExpress.Blazor.Base.DxDropDownListEditorBase-2.SearchMode#search-syntax) to create composite criteria.
 
 You can use the following API members to configure search and filter capabilities:
 

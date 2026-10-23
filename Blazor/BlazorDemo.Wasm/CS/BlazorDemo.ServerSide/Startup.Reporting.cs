@@ -51,6 +51,10 @@ namespace BlazorDemo.ServerSide {
             return ConfigureApp;
 
             void ConfigureApp(IApplicationBuilder app) {
+                app.Use((context, next) => {
+                    DemoReportStorageWebExtension.EnsureSessionId(context);
+                    return next(context);
+                });
                 app.UseSession();
 #if SERVER_BLAZOR
                 app.UseDevExpressBlazorReporting();
@@ -141,6 +145,7 @@ namespace BlazorDemo.ServerSide {
                 services.AddTransient<DevExpress.DataAccess.Wizard.Services.ICustomQueryValidator, DevExpress.DataAccess.Wizard.Services.CustomQueryValidator>();
                 services.AddSingleton<IDemoReportSource, DemoReportSource>();
                 services.AddSingleton<IPdfSignatureOptionsProviderAsync, CustomPdfSignatureOptionsProviderAsync>();
+                services.AddScoped<ReportingSession>();
                 services.AddScoped<ReportStorageWebExtension, DemoReportStorageWebExtension>();
                 services.AddScoped(serviceProvider => (IReportProviderAsync)serviceProvider.GetRequiredService<ReportStorageWebExtension>());
                 services.AddControllers(options => options.EnableEndpointRouting = false);

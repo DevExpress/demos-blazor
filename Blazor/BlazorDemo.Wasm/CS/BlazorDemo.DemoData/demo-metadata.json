@@ -8293,8 +8293,29 @@
               "DocUrl": "DevExpress.Blazor.DxTreeView#check-nodes",
               "AdditionalCodeFiles": [
                 {
-                  "Title": "CSS",
-                  "Path": "Pages\\Navigation\\TreeView\\Navigation-TreeView-CheckBoxesRecursiveMode.razor.css"
+                  "Title": "Icons.css",
+                  "Path": "wwwroot\\css\\dx-demo-pages.css",
+                  "ExtractRegex": "\\.treeview-icon(()|(-folder)|(-image)|(-video)|(-music)|(-document)) {[^}]+}"
+                },
+                {
+                  "Title": "FluentIcons.css",
+                  "Path": "wwwroot\\css\\fluent\\common.css",
+                  "ExtractRegex": "(?<BeginIconSizes>body \\{)[^}]*?(?<IconSizes>\\s*--dxbl-icon-width:[^;]+;\\s*--dxbl-icon-height:[^;]+;)[^}]*?(?<EndIconSizes>\\s*\\})|\\.treeview-icon(()|(-folder)|(-image)|(-video)|(-music)|(-document)) {[^}]+}",
+                  "ExtractRegexGroups": [
+                    "BeginIconSizes",
+                    "IconSizes",
+                    "EndIconSizes"
+                  ]
+                },
+                {
+                  "Title": "ClassicIcons.css",
+                  "Path": "wwwroot\\css\\dx\\common.css",
+                  "ExtractRegex": "(?<BeginIconSizes>body \\{)[^}]*?(?<IconSizes>\\s*--dxbl-icon-width:[^;]+;\\s*--dxbl-icon-height:[^;]+;)[^}]*?(?<EndIconSizes>\\s*\\})|\\.treeview-icon(()|(-folder)|(-image)|(-video)|(-music)|(-document)) {[^}]+}",
+                  "ExtractRegexGroups": [
+                    "BeginIconSizes",
+                    "IconSizes",
+                    "EndIconSizes"
+                  ]
                 },
                 {
                   "Title": "FileSystemObject.cs",
@@ -8303,6 +8324,10 @@
                 {
                   "Title": "FileObjects.cs",
                   "Path": "Data\\FileSystem\\FileSystemObjects.cs"
+                },
+                {
+                  "Title": "FileSettings.cs",
+                  "Path": "Data\\FileSystem\\FileSettings.cs"
                 }
               ]
             },
@@ -9076,7 +9101,13 @@
               "IsAI": true,
               "Keywords": "dxHtmlEditor, ai, summarize text, proofread text, grammar check, spell check, rewrite text",
               "Description": "The DevExpress AI-powered extension for HTML Editor allows you to add AI-related commands that are designed to process text/HTML content to the editor's toolbar.",
-              "DocUrl": "405187"
+              "DocUrl": "405187",
+              "AdditionalCodeFiles": [
+                {
+                  "Title": "Razor",
+                  "Path": "Pages\\AI\\HtmlEditor\\AI-HtmlEditor-Content.razor"
+                }
+              ]
             }
           ]
         },

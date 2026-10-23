@@ -82,6 +82,7 @@
     <environment include="ServerSide">
         <link rel="stylesheet" href="BlazorDemo.ServerSide.styles.css" asp-append-version="true">
         <component type="typeof(BlazorDemo.Shared.DemoThemeManager)" render-mode="@renderMode" param-InitialThemeName="@storedThemeName" param-InitialThemeState="@themeState" />
+        <component type="typeof(ReportingSessionInitializer)" render-mode="@renderMode" param-SessionId="@DemoReportStorageWebExtension.ReadSessionId(HttpContextAccessor.HttpContext)" />
 
         <script src="@DxResourceManager.PreloadScriptPath" type="text/javascript"></script>
         <script src="_framework/blazor.server.js" defer></script>

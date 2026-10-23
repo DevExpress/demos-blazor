@@ -10,6 +10,7 @@
                 <DxComboBox Data="@Countries"
                             TextFieldName="@nameof(Country.CountryName)"
                             Value="@CurrentCountry"
+                            ValueExpression="@(() => CurrentCountry)"
                             ValueChanged="@((Country country) => SelectedCountryChanged(country))"
                             SizeMode="Params.SizeMode"
                             InputId="cbCountryName" />
